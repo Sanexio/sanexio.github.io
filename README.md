@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# JUVANTIS
+
+JUVANTIS
 Zum ersten Mal in der Geschichte der Menschheit wird unsere Lebenserwartung nicht durch externe Faktoren wie beispielsweise 
 Infektionen begrenzt sondern durch den eigenen Lebensstil. Allein in Deutschland entwickelt mehr als die Hälfte der Bevölkerung 
 in ihrem Leben Risikofaktoren für schwerwiegende chronische Erkrankungen, die in vielen Fällen durch einen gesunden Lebensstil 
@@ -19,7 +19,3 @@ Hilfe einer internetbasierten Gesundheitsplattform sowie zertifizierten Coaches 
 Die Plattform wird Präventions- und Motivationsmaßnahmen in ein netzwerkbasiertes Management transformieren und gleichzeitig emergentes 
 Wissen der Selbsthilfe aufbereiten und allen Nutzern zur Verfügung stellen. Über das Netzwerk wird eine bessere Vernetzung von Betroffenen
 mit medizinischem Fachpersonal auf virtueller aber auch regionaler Ebene vorgenommen. 
-=======
-# sanexio.github.io
-Sanexio-Page on GitHub
->>>>>>> b8e915210fb6c9ef5e298c99014f38725d503518
