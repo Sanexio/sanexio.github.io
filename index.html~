@@ -27,9 +27,28 @@
                     </ul>
                 </nav>    
     		</div>
-            
+         <section>
+         
+         
+<section>
+    <div class="column"><img src="/pictures/qr-sanexio_10_10.jpg" />
+    </div>
+    <div class="column">
+      <h2>Unsere Vision.<br /> 
+      <strong>Medizin & IT = Du++</strong></h2>
+      </p>
+      Wir wollen komplexe Sachverhalte verständlich und einfach erklären.<br>
+      Wir lieben das Internet und wie es das Leben jedes einzelnen vereinfacht.<br>
+      Wir wollen innovative Technologien für Deine Gesundheit nutzen.<br> 
+      Wir arbeiten an Schnittstellen von Medizin und Informationstechnologie.<br>
+      <strong>Das haben wir alles zusammengepackt und Sanexio gegründet!</strong> 
+      </p>
+    </div>
+</section>
+
+<!--   
             <img src="/pictures/qr-logo_sanexio.jpg">
-            
+-->            
 		</div>
 		<footer>
     		<ul>
