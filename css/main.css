@@ -60,29 +60,4 @@ ul.posts li {
         float: left;
         overflow: auto;
         
-}
-    
-#grauerbalken{
-        
-        background-color: #516384;
-        width: 300px;
-        padding: 2px;
-        margin-bottom: 1px;
-        
-}
-    
-#gelberbalken{
-        
-        background-color: #FFD33B;
-        width: 300px;
-        padding: 2px;
-        margin-bottom: 1px;
-}
-    
-#lilabalken{
-        
-        background-color: #561151;
-        width: 300px;
-        padding: 2px;
-        margin-bottom: 1px;
-}        
+}       
