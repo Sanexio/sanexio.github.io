@@ -41,3 +41,48 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+#mittlererblock{
+        
+        width: 1050px;
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        margin-top: 20px;
+        
+}
+    
+.mittlerebloecke{
+        
+        width: 330px;
+        margin: 10px;
+        float: left;
+        overflow: auto;
+        
+}
+    
+#grauerbalken{
+        
+        background-color: #516384;
+        width: 300px;
+        padding: 2px;
+        margin-bottom: 1px;
+        
+}
+    
+#gelberbalken{
+        
+        background-color: #FFD33B;
+        width: 300px;
+        padding: 2px;
+        margin-bottom: 1px;
+}
+    
+#lilabalken{
+        
+        background-color: #561151;
+        width: 300px;
+        padding: 2px;
+        margin-bottom: 1px;
+}        
