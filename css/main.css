@@ -45,6 +45,18 @@ footer {
     */
 }
 
+  footer a {
+    color: darkseagreen;
+    background-color: #303728;
+    transition: background-color .25s ease-in;
+  }
+
+  footer a:focus, footer a:hover {
+    color: #303728; 
+    background-color: greenyellow;
+    transition: background-color 0.01s;
+  }
+
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
