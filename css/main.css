@@ -1,6 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
+    background-color: black;
 }
 nav ul, /*footer ul*/ {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -12,6 +13,20 @@ nav ul li, /*footer ul li*/ {
     display: inline;
     margin-right: 20px;
 }
+
+  nav a {
+    color: darkseagreen;
+    background-color: #303728;
+    transition: background-color .25s ease-in;
+  }
+ 
+  nav a:focus, nav a:hover, nav span {
+    color: #303728; 
+    background-color: greenyellow;
+    transition: background-color 0.01s;
+  }
+
+/*
 a {
     text-decoration: none;
     color: #999;
@@ -19,6 +34,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+*/
+
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -26,7 +43,7 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    color: white;
 }
 footer {
     border-top: 1px solid #d5d5d5;
