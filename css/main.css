@@ -39,6 +39,7 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: white;
 }
 p {
     font-size: 1.5em;
@@ -46,8 +47,9 @@ p {
     color: white;
 }
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid white;
     font-size: .8em;
+    color: white;
 }
 
 ul.posts { 
@@ -65,7 +67,7 @@ ul.posts li {
         height: 350px;
         margin-left: 10px;
         margin-right: auto;
-        background-color: white;
+        background-color: black;
         margin-top: 20px;
         
 }
