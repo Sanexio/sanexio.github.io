@@ -20,7 +20,7 @@ nav ul li, /*footer ul li*/ {
     transition: background-color .25s ease-in;
   }
  
-  nav a:focus, nav a:hover, nav span {
+  nav a:focus, nav a:hover, a:footer nav span {
     color: #303728; 
     background-color: greenyellow;
     transition: background-color 0.01s;
