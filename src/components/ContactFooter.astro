@@ -1,0 +1,142 @@
+---
+import SocialBar from './SocialBar.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="sx-footer" id="kontakt">
+  <div class="sx-container sx-footer__inner">
+    <div class="sx-footer__brand-col">
+      <p class="sx-footer__wordmark">sanexio</p>
+      <p class="sx-footer__tagline">
+        Digital Health Care Startup mit Schwerpunkt
+        <strong>Human Enhancement</strong> durch den Digital Health Twin.
+      </p>
+      <SocialBar variant="on-brand" />
+    </div>
+
+    <div class="sx-footer__col">
+      <p class="sx-footer__col-title">Kontakt</p>
+      <ul>
+        <li><a href="mailto:s.stracke@sanexio.de">s.stracke@sanexio.de</a></li>
+        <li><a href="mailto:team@sanexio.de">team@sanexio.de</a></li>
+        <li>069 727819</li>
+        <li>Grüneburgweg 12</li>
+        <li>60322 Frankfurt am Main</li>
+      </ul>
+    </div>
+
+    <div class="sx-footer__col">
+      <p class="sx-footer__col-title">Sanexio-Universum</p>
+      <ul>
+        <li><a href="https://sanexio.eu" target="_blank" rel="noopener">sanexio.eu — Bloody Check &amp; DHT-Shop</a></li>
+        <li><a href="https://sanexio.de" target="_blank" rel="noopener">sanexio.de — Hauptseite &amp; Blog</a></li>
+        <li><a href="https://westend-hausarzt.com" target="_blank" rel="noopener">westend-hausarzt.com — Partnerpraxis</a></li>
+        <li><a href="https://github.com/Sanexio" target="_blank" rel="noopener">github.com/Sanexio — Projekte</a></li>
+      </ul>
+    </div>
+
+    <div class="sx-footer__col">
+      <p class="sx-footer__col-title">Rechtliches</p>
+      <ul>
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sx-footer__bottom">
+    <div class="sx-container sx-footer__bottom-inner">
+      <p>© {year} Sanexio GmbH · Frankfurt am Main</p>
+      <p>Geschäftsführer: Dr. med. Siegbert Stracke, MBA</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .sx-footer {
+    background: var(--sx-c-bg-brand);
+    color: var(--sx-c-ink-on-brand);
+    padding-top: 5rem;
+  }
+
+  .sx-footer__inner {
+    display: grid;
+    gap: 3rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sx-footer__wordmark {
+    font-family: var(--sx-font-brand);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--sx-c-ink-on-brand);
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .sx-footer__tagline {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.55;
+    max-width: 22rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .sx-footer__tagline strong {
+    color: var(--sx-c-ink-on-brand);
+    font-weight: 600;
+  }
+
+  .sx-footer__col-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--sx-c-data-hi);
+    margin: 0 0 1.25rem;
+  }
+
+  .sx-footer__col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .sx-footer__col li,
+  .sx-footer__col a {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .sx-footer__col a:hover {
+    color: var(--sx-c-data-hi);
+    opacity: 1;
+  }
+
+  .sx-footer__bottom {
+    padding-block: 2rem;
+  }
+
+  .sx-footer__bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8125rem;
+    margin: 0;
+  }
+
+  .sx-footer__bottom-inner p { margin: 0; }
+
+  @media (min-width: 768px) {
+    .sx-footer__inner {
+      grid-template-columns: 1.4fr 1fr 1.4fr 0.8fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

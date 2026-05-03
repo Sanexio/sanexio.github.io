@@ -1,0 +1,96 @@
+---
+import { missionPillars } from '../data/mission';
+
+const accentVar: Record<string, string> = {
+  pulse: 'var(--sx-c-accent)',
+  data: 'var(--sx-c-data)',
+  tech: 'var(--sx-c-tech)',
+  vital: 'var(--sx-c-vital)',
+};
+---
+
+<section class="sx-mission sx-section" id="mission">
+  <div class="sx-container">
+    <p class="sx-eyebrow sx-mission__eyebrow">Mission &amp; Werte</p>
+    <h2 class="sx-title-1 sx-mission__heading">
+      Vier Pfeiler, die definieren, wie wir arbeiten.
+    </h2>
+
+    <div class="sx-mission__grid">
+      {missionPillars.map((pillar) => (
+        <article class="sx-mission__card" style={`--pillar-accent: ${accentVar[pillar.accent]};`}>
+          <div class="sx-mission__bar" aria-hidden="true"></div>
+          <h3 class="sx-title-3 sx-mission__title">{pillar.title}</h3>
+          <p class="sx-mission__body">{pillar.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .sx-mission {
+    background: var(--sx-c-surface);
+    color: var(--sx-c-ink);
+  }
+
+  .sx-mission__eyebrow {
+    color: var(--sx-c-data);
+  }
+
+  .sx-mission__heading {
+    color: var(--sx-c-ink);
+    margin: 0.75rem 0 3rem;
+    max-width: 42rem;
+  }
+
+  .sx-mission__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sx-mission__card {
+    position: relative;
+    background: var(--sx-c-bg);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+    padding: 2rem 1.75rem 2rem 2.25rem;
+    overflow: hidden;
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+
+  .sx-mission__card:hover {
+    box-shadow: var(--sx-shadow-card-hi);
+    transform: translateY(-2px);
+  }
+
+  .sx-mission__bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--pillar-accent, var(--sx-c-accent));
+  }
+
+  .sx-mission__title {
+    color: var(--sx-c-ink);
+    margin: 0 0 0.75rem;
+  }
+
+  .sx-mission__body {
+    color: var(--sx-c-ink-subtle);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .sx-mission__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1280px) {
+    .sx-mission__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>

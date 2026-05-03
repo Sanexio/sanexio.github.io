@@ -1,0 +1,144 @@
+/*
+ * Sanexio.github.io — Design Tokens (Schicht 1 + 2)
+ *
+ * Architecture mirrors the Praxis-Webseite 4-layer model:
+ *   1. PRIMITIVES  — hard values (hex, px, font names) → --color-*, --space-*, ...
+ *   2. SEMANTIC    — meaning-bearing aliases → --sx-c-*, --sx-space-*, ...
+ *   3. COMPONENTS  → Astro components consume only Schicht 2 tokens
+ *   4. PAGES       → assemble components + page-specific layout
+ *
+ * Namespace: --sx-* (Sanexio). Distinct from Praxis (--pxz-*) and
+ * Juvantis-Shopify (settings_data.json).
+ */
+
+:root {
+  /* ============================================================ */
+  /* SCHICHT 1 — PRIMITIVES                                       */
+  /* ============================================================ */
+
+  /* Brand colours */
+  --color-brand-900: #0a2540;   /* Sanexio dark blue (logo wordmark) */
+  --color-brand-950: #0a0f1a;   /* Health-Graph background, deep hero */
+  --color-brand-700: #163b5e;   /* hover / hairline on dark */
+  --color-brand-50:  #f0f4f8;   /* tinted off-white, soft background */
+
+  /* Pulse accent (EKG glyph in logo) */
+  --color-pulse-600: #c1121f;
+  --color-pulse-700: #8e0d18;
+
+  /* Data accent (Health Graph teal gradient) */
+  --color-data-500:  #028090;
+  --color-data-400:  #02c39a;
+
+  /* Tech accent (Juvantis Shopify) */
+  --color-tech-500:  #4ea1d9;
+  --color-vital-500: #73c25e;
+
+  /* Ink (text) — blue-tinted for tech feel */
+  --color-ink-900:   #020912;
+  --color-ink-700:   #2a3340;
+  --color-ink-500:   #5b6878;
+
+  /* Surface */
+  --color-line:      #d8dee6;
+  --color-snow:      #fcfcfc;
+  --color-white:     #ffffff;
+
+  /* Praxis red (used only inside the Praxis-island section) */
+  --color-praxis-red: #c8161d;
+
+  /* Spacing — 4pt grid, identical to Praxis */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 56px;
+  --space-11: 64px;
+  --space-12: 72px;
+  --space-13: 80px;
+  --space-14: 96px;
+  --space-15: 112px;
+  --space-16: 128px;
+  --space-17: 160px;
+
+  /* Typography */
+  --font-brand:    Georgia, "Times New Roman", "Liberation Serif", serif;
+  --font-display:  "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-body:     "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+  /* Radii */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(2, 9, 18, 0.04), 0 1px 3px rgba(2, 9, 18, 0.06);
+  --shadow-2: 0 4px 8px rgba(2, 9, 18, 0.06), 0 2px 4px rgba(2, 9, 18, 0.04);
+  --shadow-3: 0 12px 24px rgba(2, 9, 18, 0.08), 0 4px 8px rgba(2, 9, 18, 0.04);
+  --shadow-pulse: 0 0 0 4px rgba(193, 18, 31, 0.15);
+
+  /* ============================================================ */
+  /* SCHICHT 2 — SEMANTIC (consumed by components)                */
+  /* ============================================================ */
+
+  /* Surface */
+  --sx-c-bg:           var(--color-snow);
+  --sx-c-bg-brand:     var(--color-brand-900);
+  --sx-c-bg-deep:      var(--color-brand-950);   /* matches Health-Graph BG */
+  --sx-c-bg-soft:      var(--color-brand-50);    /* Praxis-island bridge */
+  --sx-c-surface:      var(--color-white);
+
+  /* Ink */
+  --sx-c-ink:          var(--color-ink-900);
+  --sx-c-ink-on-brand: var(--color-white);
+  --sx-c-ink-muted:    var(--color-ink-500);
+  --sx-c-ink-subtle:   var(--color-ink-700);
+
+  /* Accents */
+  --sx-c-accent:       var(--color-pulse-600);   /* primary CTA, timeline */
+  --sx-c-accent-hover: var(--color-pulse-700);
+  --sx-c-data:         var(--color-data-500);    /* Health-Graph bridge */
+  --sx-c-data-hi:      var(--color-data-400);
+  --sx-c-tech:         var(--color-tech-500);
+  --sx-c-vital:        var(--color-vital-500);
+
+  /* Lines */
+  --sx-c-line:         var(--color-line);
+  --sx-c-line-on-brand: rgba(255, 255, 255, 0.12);
+
+  /* Spacing semantic */
+  --sx-space-section-y-desktop: var(--space-14);  /* 96px */
+  --sx-space-section-y-tablet:  var(--space-13);  /* 80px */
+  --sx-space-section-y-mobile:  var(--space-11);  /* 64px */
+  --sx-space-container-x-desktop: var(--space-11); /* 64px */
+  --sx-space-container-x-tablet:  var(--space-9);  /* 48px */
+  --sx-space-container-x-mobile:  var(--space-6);  /* 24px */
+  --sx-space-card-y: var(--space-12);              /* 72px */
+  --sx-space-card-x: var(--space-9);               /* 48px */
+
+  /* Typography semantic */
+  --sx-font-brand:   var(--font-brand);
+  --sx-font-display: var(--font-display);
+  --sx-font-body:    var(--font-body);
+
+  /* Radii semantic */
+  --sx-radius-card: var(--radius-lg);
+  --sx-radius-pill: var(--radius-pill);
+  --sx-radius-input: var(--radius-md);
+
+  /* Shadow semantic */
+  --sx-shadow-card:  var(--shadow-2);
+  --sx-shadow-card-hi: var(--shadow-3);
+  --sx-shadow-pulse: var(--shadow-pulse);
+
+  /* Layout */
+  --sx-container-max: 1280px;
+  --sx-content-max:   40rem;   /* prose readability cap */
+}

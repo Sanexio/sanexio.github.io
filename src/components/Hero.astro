@@ -1,0 +1,156 @@
+---
+// Hero — Brand-Dark BG, Georgia wordmark, vision claim, two CTAs.
+// Static (H2 from spec) — Health Graph showpiece lives in its own section.
+---
+
+<section class="sx-hero" id="vision">
+  <div class="sx-hero__deco" aria-hidden="true"></div>
+
+  <div class="sx-container sx-hero__inner">
+    <p class="sx-hero__eyebrow">Sanexio · Digital Health Care Startup</p>
+
+    <h1 class="sx-hero__wordmark">
+      <span class="sx-hero__san">sa</span><span class="sx-hero__pulse" aria-hidden="true">
+        <svg viewBox="0 0 80 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="EKG-Puls">
+          <path
+            d="M 4 50 L 18 50 L 24 22 L 32 70 L 40 92 L 44 4 L 50 86 L 56 30 L 62 50 L 76 50"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span><span class="sx-hero__exio">exio</span>
+    </h1>
+
+    <p class="sx-hero__claim sx-prose">
+      Wir bauen den <strong>Digital Health Twin</strong>: aus ärztlicher Anamnese,
+      standardisierten Blutprofilen und einem medizinischen Wissensgraph entsteht
+      ein digitaler Patientenzwilling. Klinisch validiert in der
+      <a href="#praxis">Partnerpraxis Dr. Stracke &amp; Kollegen</a>.
+    </p>
+
+    <div class="sx-hero__ctas">
+      <a href="#dht" class="sx-btn sx-btn-primary">Die DHT-Geschichte</a>
+      <a href="#health-graph" class="sx-btn sx-btn-ghost-on-brand">Health Graph erleben →</a>
+    </div>
+
+    <p class="sx-hero__scroll">
+      <span aria-hidden="true">↓</span> Vier Phasen der Entwicklung
+    </p>
+  </div>
+</section>
+
+<style>
+  .sx-hero {
+    position: relative;
+    background-color: var(--sx-c-bg-brand);
+    color: var(--sx-c-ink-on-brand);
+    padding-block: 9rem 6rem;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Subtle radial decoration — pulse-red glow + data-teal glow.
+     Adds depth without competing with the wordmark. */
+  .sx-hero__deco {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 40% at 80% 20%, rgba(2, 195, 154, 0.18), transparent 70%),
+      radial-gradient(50% 50% at 10% 90%, rgba(193, 18, 31, 0.20), transparent 75%),
+      radial-gradient(80% 60% at 50% 100%, rgba(10, 15, 26, 0.6), transparent 80%);
+    pointer-events: none;
+  }
+
+  .sx-hero__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .sx-hero__eyebrow {
+    font-family: var(--sx-font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sx-c-data-hi);
+    margin: 0 0 2rem;
+  }
+
+  .sx-hero__wordmark {
+    font-family: var(--sx-font-brand);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    font-size: clamp(4.5rem, 14vw, 11rem);
+    margin: 0 0 2.5rem;
+    color: var(--sx-c-ink-on-brand);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+  }
+
+  .sx-hero__san, .sx-hero__exio { display: inline-block; }
+
+  .sx-hero__pulse {
+    display: inline-block;
+    width: 0.65em;
+    height: 0.85em;
+    color: var(--sx-c-accent);
+    margin-inline: -0.04em;
+    transform: translateY(0.04em);
+  }
+
+  .sx-hero__pulse svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .sx-hero__claim {
+    font-family: var(--sx-font-body);
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 3rem;
+    max-width: 44rem;
+  }
+
+  .sx-hero__claim strong {
+    color: var(--sx-c-ink-on-brand);
+    font-weight: 600;
+  }
+
+  .sx-hero__claim a {
+    color: var(--sx-c-data-hi);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .sx-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .sx-hero__scroll {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    letter-spacing: 0.04em;
+  }
+
+  @media (min-width: 768px) {
+    .sx-hero { padding-block: 11rem 7rem; }
+  }
+
+  @media (min-width: 1280px) {
+    .sx-hero { padding-block: 13rem 8rem; }
+  }
+</style>

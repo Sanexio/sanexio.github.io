@@ -1,0 +1,270 @@
+/*
+ * Sanexio.github.io — Global stylesheet
+ *
+ * Order: Tailwind import → tokens → reset → typography → utilities.
+ * The @theme block bridges --sx-* tokens into Tailwind utility classes
+ * (e.g. bg-sx-bg-brand, text-sx-ink, p-sx-section-y).
+ */
+
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* ------------------------------------------------------------ */
+/* Tailwind 4 theme — bridge to --sx-* semantic tokens          */
+/* ------------------------------------------------------------ */
+
+@theme {
+  /* Colours */
+  --color-sx-bg:           #fcfcfc;
+  --color-sx-bg-brand:     #0a2540;
+  --color-sx-bg-deep:      #0a0f1a;
+  --color-sx-bg-soft:      #f0f4f8;
+  --color-sx-surface:      #ffffff;
+  --color-sx-ink:          #020912;
+  --color-sx-ink-on-brand: #ffffff;
+  --color-sx-ink-muted:    #5b6878;
+  --color-sx-ink-subtle:   #2a3340;
+  --color-sx-accent:       #c1121f;
+  --color-sx-accent-hover: #8e0d18;
+  --color-sx-data:         #028090;
+  --color-sx-data-hi:      #02c39a;
+  --color-sx-tech:         #4ea1d9;
+  --color-sx-vital:        #73c25e;
+  --color-sx-line:         #d8dee6;
+  --color-sx-praxis-red:   #c8161d;
+
+  /* Fonts */
+  --font-brand:   Georgia, "Times New Roman", "Liberation Serif", serif;
+  --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+
+  /* Container */
+  --container-sx: 1280px;
+}
+
+/* ------------------------------------------------------------ */
+/* Reset & base                                                 */
+/* ------------------------------------------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* sticky-nav offset */
+}
+
+body {
+  margin: 0;
+  font-family: var(--sx-font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--sx-c-ink);
+  background-color: var(--sx-c-bg);
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms ease, opacity 200ms ease;
+}
+
+a:hover { opacity: 0.85; }
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background-color: var(--color-pulse-600);
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------ */
+/* Typography utilities                                         */
+/* ------------------------------------------------------------ */
+
+.sx-display {
+  font-family: var(--sx-font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  text-wrap: balance;
+}
+
+.sx-display-brand {
+  font-family: var(--sx-font-brand);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(3rem, 8vw, 7rem);
+}
+
+.sx-title-1 {
+  font-family: var(--sx-font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  text-wrap: balance;
+}
+
+.sx-title-2 {
+  font-family: var(--sx-font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-wrap: balance;
+}
+
+.sx-title-3 {
+  font-family: var(--sx-font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+}
+
+.sx-body {
+  font-family: var(--sx-font-body);
+  font-weight: 400;
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+}
+
+.sx-body-lg {
+  font-family: var(--sx-font-body);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+.sx-eyebrow {
+  font-family: var(--sx-font-body);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-c-data);
+}
+
+.sx-prose {
+  max-width: var(--sx-content-max);
+}
+
+/* ------------------------------------------------------------ */
+/* Layout primitives                                            */
+/* ------------------------------------------------------------ */
+
+.sx-container {
+  width: 100%;
+  max-width: var(--sx-container-max);
+  margin-inline: auto;
+  padding-inline: var(--sx-space-container-x-mobile);
+}
+
+@media (min-width: 768px) {
+  .sx-container { padding-inline: var(--sx-space-container-x-tablet); }
+}
+
+@media (min-width: 1280px) {
+  .sx-container { padding-inline: var(--sx-space-container-x-desktop); }
+}
+
+.sx-section {
+  padding-block: var(--sx-space-section-y-mobile);
+}
+
+@media (min-width: 768px) {
+  .sx-section { padding-block: var(--sx-space-section-y-tablet); }
+}
+
+@media (min-width: 1280px) {
+  .sx-section { padding-block: var(--sx-space-section-y-desktop); }
+}
+
+/* ------------------------------------------------------------ */
+/* Buttons                                                      */
+/* ------------------------------------------------------------ */
+
+.sx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--sx-radius-pill);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  text-decoration: none;
+  min-height: 44px; /* touch target */
+}
+
+.sx-btn-primary {
+  background-color: var(--sx-c-accent);
+  color: var(--sx-c-ink-on-brand);
+}
+
+.sx-btn-primary:hover {
+  background-color: var(--sx-c-accent-hover);
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: var(--sx-shadow-pulse);
+}
+
+.sx-btn-ghost-on-brand {
+  background-color: transparent;
+  color: var(--sx-c-ink-on-brand);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.sx-btn-ghost-on-brand:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.sx-btn-ghost {
+  background-color: transparent;
+  color: var(--sx-c-ink);
+  border-color: var(--sx-c-line);
+}
+
+.sx-btn-ghost:hover {
+  background-color: var(--sx-c-bg-soft);
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------ */
+/* Focus states                                                 */
+/* ------------------------------------------------------------ */
+
+:focus-visible {
+  outline: 2px solid var(--sx-c-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------ */
+/* Reduced motion                                               */
+/* ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

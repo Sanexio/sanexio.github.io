@@ -1,0 +1,130 @@
+---
+import { socialChannels } from '../data/social';
+
+interface Props {
+  variant?: 'on-brand' | 'on-light';
+  showLabels?: boolean;
+}
+
+const { variant = 'on-brand', showLabels = false } = Astro.props;
+
+const icons: Record<string, string> = {
+  github:
+    'M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.15 0 .3.21.66.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z',
+  linkedin:
+    'M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.78 1.78 0 0 1 6.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z',
+  youtube:
+    'M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z',
+  twitter:
+    'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+  facebook:
+    'M22 12a10 10 0 1 0-11.56 9.88v-7H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.88h-2.33v7A10 10 0 0 0 22 12z',
+  xing:
+    'M18.19 2.5c-.3 0-.55.1-.7.34 0 0-7.4 13.13-7.65 13.55 0 0 4.83 8.86 4.85 8.9.16.27.42.41.7.41h3.03a.41.41 0 0 0 .37-.18.42.42 0 0 0 0-.42L13.92 16.4l7.55-13.32a.42.42 0 0 0 0-.41.41.41 0 0 0-.37-.18zM5.5 7c-.3 0-.55.1-.7.35a.42.42 0 0 0 0 .42L7 11.95l-3.62 6.4a.42.42 0 0 0 0 .42c.15.24.4.34.7.34h3.04c.28 0 .54-.14.7-.4l3.7-6.55C11.27 11.83 8.41 7.4 8.41 7.4c-.16-.26-.42-.4-.7-.4H5.5z',
+  udemy:
+    'M12 0L5.81 3.573v3.574l6.189-3.574 6.191 3.574V3.573zM5.81 10.755v8.7c0 1.83.85 3.235 2.298 4.06A6.41 6.41 0 0 0 12 24a6.41 6.41 0 0 0 3.892-1.485c1.448-.825 2.298-2.23 2.298-4.06v-8.7L12 14.327z',
+};
+---
+
+<ul class={`sx-social sx-social--${variant} ${showLabels ? 'sx-social--labelled' : ''}`} aria-label="Sanexio Social Media">
+  {socialChannels.map((channel) => (
+    <li class="sx-social__item">
+      <a href={channel.href} target="_blank" rel="noopener" aria-label={channel.label} title={channel.label}>
+        <svg
+          class="sx-social__icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d={icons[channel.icon]} />
+        </svg>
+        {channel.badge && <span class="sx-social__badge">{channel.badge}</span>}
+        {showLabels && <span class="sx-social__label">{channel.label}</span>}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .sx-social {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+
+  .sx-social__item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--sx-radius-pill);
+    border: 1px solid transparent;
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .sx-social--on-brand .sx-social__item a {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .sx-social--on-brand .sx-social__item a:hover {
+    color: var(--sx-c-data-hi);
+    border-color: var(--sx-c-data-hi);
+    background-color: rgba(2, 195, 154, 0.08);
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .sx-social--on-light .sx-social__item a {
+    color: var(--sx-c-ink-subtle);
+    border-color: var(--sx-c-line);
+    background-color: var(--sx-c-surface);
+  }
+
+  .sx-social--on-light .sx-social__item a:hover {
+    color: var(--sx-c-data);
+    border-color: var(--sx-c-data);
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .sx-social__icon {
+    flex-shrink: 0;
+  }
+
+  .sx-social__badge {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: var(--sx-c-accent);
+    color: var(--color-white);
+    padding: 0.125rem 0.4rem;
+    border-radius: 4px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .sx-social--labelled .sx-social__item a {
+    width: auto;
+    padding-inline: 1rem;
+  }
+
+  .sx-social__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+</style>

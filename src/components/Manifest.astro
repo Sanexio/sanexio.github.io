@@ -1,0 +1,102 @@
+---
+// Three-point manifest of "what Human Enhancement means".
+// Sits between Hero and DHT timeline, transitions from brand-dark to bg-deep.
+---
+
+<section class="sx-manifest sx-section">
+  <div class="sx-container">
+    <p class="sx-eyebrow">Was wir unter Human Enhancement verstehen</p>
+    <h2 class="sx-title-1 sx-manifest__heading">
+      Daten allein heilen nicht. Aber sie sind die Voraussetzung
+      für jede ärztliche Entscheidung im 21. Jahrhundert.
+    </h2>
+
+    <ol class="sx-manifest__list">
+      <li>
+        <span class="sx-manifest__num">01</span>
+        <h3 class="sx-title-3">Vom Symptom zum Modell</h3>
+        <p class="sx-body">
+          Anamnese, Laborwerte und klinische Befunde werden strukturiert
+          erfasst und maschinell verarbeitbar gemacht — die Voraussetzung
+          für jede digitale Gesundheitsanwendung.
+        </p>
+      </li>
+      <li>
+        <span class="sx-manifest__num">02</span>
+        <h3 class="sx-title-3">Vom Modell zum Zwilling</h3>
+        <p class="sx-body">
+          Aus den Daten entsteht der Digital Health Twin: ein lebendiges,
+          fortschreibbares digitales Abbild des Patienten. Er kennt seine
+          Geschichte, Werte und Risiken.
+        </p>
+      </li>
+      <li>
+        <span class="sx-manifest__num">03</span>
+        <h3 class="sx-title-3">Vom Zwilling zur Entscheidung</h3>
+        <p class="sx-body">
+          Der Zwilling unterstützt Patient und Arzt bei der nächsten
+          Entscheidung — Vorsorge, Diagnostik, Therapie. Klinisch validiert,
+          nicht algorithmisch erraten.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<style>
+  .sx-manifest {
+    background: linear-gradient(
+      180deg,
+      var(--sx-c-bg-brand) 0%,
+      var(--sx-c-bg-deep) 100%
+    );
+    color: var(--sx-c-ink-on-brand);
+  }
+
+  .sx-manifest__heading {
+    color: var(--sx-c-ink-on-brand);
+    max-width: 52rem;
+    margin: 0.75rem 0 4rem;
+  }
+
+  .sx-manifest__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sx-manifest__list li {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--sx-radius-card);
+    padding: 2rem 2rem 2.25rem;
+  }
+
+  .sx-manifest__num {
+    display: inline-block;
+    font-family: var(--sx-font-display);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--sx-c-data-hi);
+    margin-bottom: 1.5rem;
+  }
+
+  .sx-manifest h3 {
+    color: var(--sx-c-ink-on-brand);
+    margin: 0 0 0.75rem;
+  }
+
+  .sx-manifest p {
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .sx-manifest__list { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

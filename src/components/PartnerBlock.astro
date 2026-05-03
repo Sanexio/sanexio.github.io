@@ -1,0 +1,215 @@
+---
+// Praxis-island — bright clinical section that visually breaks the
+// tech-dark frame. Praxis-red accent, white BG, Praxis logo.
+---
+
+<section class="sx-partner sx-section" id="praxis">
+  <div class="sx-container sx-partner__inner">
+    <div class="sx-partner__copy">
+      <p class="sx-eyebrow sx-partner__eyebrow">Klinischer Partner</p>
+      <h2 class="sx-title-1 sx-partner__heading">
+        Die Partnerpraxis Dr. Stracke &amp; Kollegen.
+      </h2>
+      <p class="sx-body-lg sx-prose sx-partner__lead">
+        Bevor eine Methode bei Sanexio Produkt wird, durchläuft sie den
+        Realitätscheck in der hausärztlichen Praxis im Frankfurter
+        Westend. Hier sehen Patient und Arzt zuerst, ob ein Datenpunkt,
+        ein Score oder eine Visualisierung tatsächlich hilft.
+      </p>
+
+      <ul class="sx-partner__facts">
+        <li><strong>Internistisch-hausärztliche Praxisgemeinschaft</strong> mit Schwerpunkt Innere Medizin und Diagnostik.</li>
+        <li><strong>Standort Frankfurt am Main</strong>, Westend (Grüneburgweg 12).</li>
+        <li><strong>Vollelektronische Patientenakte</strong> mit standardisierter Anamnese — die Datenbasis für SEBaNA und den DHT.</li>
+        <li><strong>Klinisch validiert seit 2017</strong> — fortlaufende Praxisstudien zu DHT-Methoden in der hausärztlichen Versorgung.</li>
+      </ul>
+
+      <a href="https://westend-hausarzt.com" class="sx-btn sx-btn-praxis" target="_blank" rel="noopener">
+        Praxis-Webseite öffnen →
+      </a>
+    </div>
+
+    <aside class="sx-partner__card" aria-label="Praxiszentrum Dr. Stracke und Kollegen">
+      <div class="sx-partner__brand">
+        <span class="sx-partner__logo" aria-hidden="true">+</span>
+        <div>
+          <p class="sx-partner__brand-top">Praxiszentrum</p>
+          <p class="sx-partner__brand-sub">Dr. Stracke &amp; Kollegen</p>
+        </div>
+      </div>
+      <p class="sx-partner__quote">
+        „Eine ärztliche Entscheidung ist immer auch eine Entscheidung
+        unter Unsicherheit. Der Digital Health Twin reduziert die
+        Unsicherheit, ersetzt aber nicht das Gespräch."
+      </p>
+      <p class="sx-partner__attribution">
+        Dr. med. Siegbert Stracke, MBA<br />
+        <span>Geschäftsführer Sanexio GmbH · Internist</span>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .sx-partner {
+    background: var(--sx-c-bg);
+    color: var(--sx-c-ink);
+    position: relative;
+  }
+
+  /* Soft tinted bridge from the deep tech section above into the
+     bright clinical island. */
+  .sx-partner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    background: linear-gradient(
+      180deg,
+      var(--sx-c-bg-soft) 0%,
+      var(--sx-c-bg) 100%
+    );
+    pointer-events: none;
+  }
+
+  .sx-partner__inner {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+  }
+
+  .sx-partner__eyebrow {
+    color: var(--color-praxis-red);
+  }
+
+  .sx-partner__heading {
+    color: var(--sx-c-ink);
+    margin: 0.75rem 0 1.5rem;
+    max-width: 38rem;
+  }
+
+  .sx-partner__lead {
+    color: var(--sx-c-ink-subtle);
+    margin: 0 0 2rem;
+  }
+
+  .sx-partner__facts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  .sx-partner__facts li {
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--sx-c-ink-subtle);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .sx-partner__facts li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-praxis-red);
+  }
+
+  .sx-partner__facts strong {
+    color: var(--sx-c-ink);
+  }
+
+  .sx-btn-praxis {
+    background-color: var(--color-praxis-red);
+    color: var(--color-white);
+  }
+
+  .sx-btn-praxis:hover {
+    background-color: #8b0f14;
+    opacity: 1;
+  }
+
+  .sx-partner__card {
+    background: var(--sx-c-surface);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+    padding: 2.5rem;
+    box-shadow: var(--sx-shadow-card);
+  }
+
+  .sx-partner__brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--sx-c-line);
+  }
+
+  .sx-partner__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--color-praxis-red);
+    color: var(--color-white);
+    border-radius: 14px;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .sx-partner__brand-top {
+    font-family: var(--sx-font-display);
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--sx-c-ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .sx-partner__brand-sub {
+    font-size: 0.9375rem;
+    color: var(--sx-c-ink-muted);
+    margin: 0.125rem 0 0;
+  }
+
+  .sx-partner__quote {
+    font-family: var(--sx-font-display);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--sx-c-ink);
+    margin: 0 0 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .sx-partner__attribution {
+    font-size: 0.9375rem;
+    color: var(--sx-c-ink-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .sx-partner__attribution span {
+    color: var(--sx-c-ink-muted);
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1024px) {
+    .sx-partner__inner {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+</style>

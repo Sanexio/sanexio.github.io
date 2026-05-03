@@ -1,0 +1,188 @@
+---
+import Default from './Default.astro';
+import Nav from '../components/Nav.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+
+interface Props {
+  badge: string;
+  heading: string;
+  subtitle: string;
+  lastUpdated?: string;
+  pageTitle: string;
+  pageDescription?: string;
+}
+
+const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = Astro.props;
+---
+
+<Default title={pageTitle} description={pageDescription}>
+  <Nav />
+  <main class="sx-legal-main">
+    <section class="sx-legal">
+      <div class="sx-legal__container">
+        <header class="sx-legal__header">
+          <span class="sx-legal__badge">{badge}</span>
+          <h1 class="sx-legal__heading">{heading}</h1>
+          <p class="sx-legal__subtitle">{subtitle}</p>
+          {lastUpdated && (
+            <p class="sx-legal__date">Stand: {lastUpdated}</p>
+          )}
+          <p class="sx-legal__back"><a href="/">← zurück zur Startseite</a></p>
+        </header>
+
+        <article class="sx-legal__body">
+          <slot />
+        </article>
+      </div>
+    </section>
+  </main>
+  <ContactFooter />
+</Default>
+
+<style>
+  .sx-legal-main {
+    padding-top: 6rem;
+    background: var(--sx-c-bg);
+    color: var(--sx-c-ink);
+  }
+
+  .sx-legal {
+    padding-block: 3rem 6rem;
+  }
+
+  .sx-legal__container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding-inline: var(--sx-space-container-x-mobile);
+  }
+
+  .sx-legal__header {
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--sx-c-line);
+  }
+
+  .sx-legal__badge {
+    display: inline-block;
+    background: var(--sx-c-bg-soft);
+    color: var(--sx-c-data);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.875rem;
+    border-radius: var(--sx-radius-pill);
+    margin-bottom: 1.5rem;
+  }
+
+  .sx-legal__heading {
+    font-family: var(--sx-font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--sx-c-ink);
+    margin: 0 0 0.75rem;
+  }
+
+  .sx-legal__subtitle {
+    font-size: 1.125rem;
+    color: var(--sx-c-ink-subtle);
+    margin: 0 0 1rem;
+  }
+
+  .sx-legal__date {
+    font-size: 0.875rem;
+    color: var(--sx-c-ink-muted);
+    margin: 0 0 1rem;
+  }
+
+  .sx-legal__back {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  .sx-legal__back a {
+    color: var(--sx-c-data);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .sx-legal__back a:hover {
+    color: var(--sx-c-accent);
+    opacity: 1;
+  }
+
+  .sx-legal__body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--sx-c-ink-subtle);
+  }
+
+  .sx-legal__body :global(h2) {
+    font-family: var(--sx-font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--sx-c-ink);
+    margin: 2.5rem 0 1rem;
+  }
+
+  .sx-legal__body :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .sx-legal__body :global(p) {
+    margin: 0 0 1.25rem;
+  }
+
+  .sx-legal__body :global(strong) {
+    color: var(--sx-c-ink);
+    font-weight: 600;
+  }
+
+  .sx-legal__body :global(a) {
+    color: var(--sx-c-data);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .sx-legal__body :global(a:hover) {
+    color: var(--sx-c-accent);
+    opacity: 1;
+  }
+
+  .sx-legal__body :global(ul) {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .sx-legal__body :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .sx-legal__body :global(.sx-info-box) {
+    background: var(--sx-c-bg-soft);
+    border-left: 4px solid var(--sx-c-data);
+    border-radius: var(--sx-radius-md);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .sx-legal__body :global(.sx-contact-card) {
+    background: var(--sx-c-surface);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-md);
+    padding: 1.5rem 1.75rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .sx-legal__container { padding-inline: var(--sx-space-container-x-tablet); }
+  }
+
+  @media (min-width: 1280px) {
+    .sx-legal__container { padding-inline: var(--sx-space-container-x-desktop); }
+  }
+</style>

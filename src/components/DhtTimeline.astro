@@ -1,0 +1,219 @@
+---
+// DHT Timeline — four chronological phases from concept to product.
+// Mobile: vertical stack with a left rail in pulse-red.
+// Desktop: horizontal four-column layout, cards offset along the rail.
+import { dhtPhases } from '../data/dht-phases';
+
+const iconPaths: Record<string, string> = {
+  // Concept — brain/idea (simplified node)
+  concept: 'M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0-3 3.87V14a4 4 0 0 0 4 4h1v3h2v-3h2v3h2v-3h1a4 4 0 0 0 4-4v-2.13A4 4 0 0 0 16 8V7a4 4 0 0 0-4-4z',
+  // Bloodtest — droplet
+  bloodtest: 'M12 2.5c4.5 5 7 8.5 7 12a7 7 0 1 1-14 0c0-3.5 2.5-7 7-12z',
+  // Graph — connected nodes
+  graph: 'M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 5l10 12M17 5L7 17M5 12h14',
+  // Avatar — human silhouette
+  avatar: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 0 1 14 0H5z',
+};
+---
+
+<section class="sx-dht sx-section" id="dht">
+  <div class="sx-container">
+    <p class="sx-eyebrow">Die DHT-Geschichte</p>
+    <h2 class="sx-title-1 sx-dht__heading">
+      Vier Phasen, ein Ziel: Gesundheit datenbasiert verstehen.
+    </h2>
+    <p class="sx-body-lg sx-prose sx-dht__lead">
+      Aus einer ärztlichen Vorüberlegung wurde eine Datenmethode, aus der
+      Datenmethode wurde ein Wissensmodell, aus dem Wissensmodell wird
+      ein digitaler Zwilling. Das ist der rote Faden, der Sanexio seit
+      Jahren durchzieht.
+    </p>
+
+    <ol class="sx-dht__list" aria-label="DHT-Phasen chronologisch">
+      {dhtPhases.map((phase) => (
+        <li class="sx-dht__item" data-icon={phase.icon}>
+          <div class="sx-dht__node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d={iconPaths[phase.icon]} fill="none" />
+            </svg>
+          </div>
+          <div class="sx-dht__card">
+            <p class="sx-dht__num">Phase {phase.number} · {phase.year}</p>
+            <h3 class="sx-title-2 sx-dht__name">{phase.name}</h3>
+            <p class="sx-dht__tagline">{phase.tagline}</p>
+            <p class="sx-dht__desc">{phase.description}</p>
+            <a
+              href={phase.link.href}
+              class="sx-dht__link"
+              target={phase.link.external ? '_blank' : undefined}
+              rel={phase.link.external ? 'noopener' : undefined}
+            >
+              {phase.link.label} <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .sx-dht {
+    background: var(--sx-c-bg-deep);
+    color: var(--sx-c-ink-on-brand);
+    position: relative;
+  }
+
+  .sx-dht__heading {
+    color: var(--sx-c-ink-on-brand);
+    max-width: 44rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  .sx-dht__lead {
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 4rem;
+  }
+
+  .sx-dht__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  /* The rail — pulses in accent red */
+  .sx-dht__list::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      var(--sx-c-accent) 0%,
+      var(--sx-c-accent) 90%,
+      transparent 100%
+    );
+    opacity: 0.55;
+  }
+
+  .sx-dht__item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    position: relative;
+  }
+
+  .sx-dht__node {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--sx-c-bg-deep);
+    border: 2px solid var(--sx-c-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sx-c-data-hi);
+    box-shadow: 0 0 0 6px rgba(193, 18, 31, 0.12);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .sx-dht__node svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+  }
+
+  .sx-dht__card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--sx-radius-card);
+    padding: 1.75rem 2rem 2rem;
+  }
+
+  .sx-dht__num {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--sx-c-data-hi);
+    margin: 0 0 0.5rem;
+  }
+
+  .sx-dht__name {
+    color: var(--sx-c-ink-on-brand);
+    margin: 0 0 0.4rem;
+  }
+
+  .sx-dht__tagline {
+    color: var(--sx-c-accent);
+    font-weight: 600;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+
+  .sx-dht__desc {
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .sx-dht__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--sx-c-data-hi);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+
+  .sx-dht__link:hover {
+    color: var(--sx-c-data);
+    opacity: 1;
+  }
+
+  /* Desktop: horizontal four-column layout */
+  @media (min-width: 1024px) {
+    .sx-dht__list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sx-dht__list::before {
+      top: 23px;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        var(--sx-c-accent) 0%,
+        var(--sx-c-accent) 95%,
+        transparent 100%
+      );
+    }
+
+    .sx-dht__item {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .sx-dht__node {
+      margin: 0 auto;
+    }
+
+    .sx-dht__card {
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+  }
+</style>

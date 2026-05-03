@@ -1,0 +1,148 @@
+---
+// Health Graph — fullscreen iframe of public/health-graph.html
+// (the D3.js force-directed knowledge graph copied verbatim from the
+// Juvantis Shopify theme assets/).
+//
+// Mobile: lazy-load + tap-to-open-fullscreen pattern. Force-directed
+// graphs are touch-hostile on small screens, so we show a static
+// teaser image with an "Open Live Demo" button that opens the iframe
+// in a fullscreen modal.
+---
+
+<section class="sx-hg sx-section" id="health-graph">
+  <div class="sx-container sx-hg__intro">
+    <p class="sx-eyebrow">Phase 3 — das Wissensmodell</p>
+    <h2 class="sx-title-1 sx-hg__heading">
+      Der Health Graph: wie Organe, Werte und Krankheiten zusammenhängen.
+    </h2>
+    <p class="sx-body-lg sx-prose sx-hg__lead">
+      Ein interaktives medizinisches Netz aus drei Knotentypen — Organe,
+      Laborwerte und Erkrankungen — verknüpft über drei Beziehungstypen:
+      Organe produzieren Werte, Werte indizieren Krankheiten, Krankheiten
+      schädigen Organe. Hover über einen Knoten zeigt Details, Suche
+      filtert das Netz, und der Force-Directed-Algorithmus hält das Ganze
+      lebendig.
+    </p>
+  </div>
+
+  <div class="sx-hg__stage" id="sx-hg-stage">
+    <iframe
+      src="/health-graph.html"
+      title="Sanexio Health Graph — Live-Demo"
+      class="sx-hg__frame"
+      loading="lazy"
+      allow="fullscreen"
+    ></iframe>
+
+    <div class="sx-hg__mobile-fallback" aria-hidden="true">
+      <div class="sx-hg__mobile-card">
+        <p class="sx-hg__mobile-eyebrow">Live-Demo</p>
+        <p class="sx-hg__mobile-text">
+          Der Health Graph wird mit dem Finger nicht gut bedient.
+          Öffne ihn vollflächig oder probiere ihn am Desktop.
+        </p>
+        <a href="/health-graph.html" class="sx-btn sx-btn-primary" target="_blank" rel="noopener">
+          Vollflächig öffnen →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sx-container sx-hg__outro">
+    <p class="sx-body sx-prose">
+      Der Health Graph ist nicht nur Visualisierung — er ist die kognitive
+      Karte unter dem Digital Health Twin. Jeder Datenpunkt eines
+      Patienten wird auf diese Karte projiziert, und das Modell zeigt:
+      Welche Organe sind betroffen? Welche weiteren Werte sollten
+      kontrolliert werden? Welche Erkrankungen rücken in den Vordergrund?
+    </p>
+  </div>
+</section>
+
+<style>
+  .sx-hg {
+    background: #0a0f1a;
+    color: var(--sx-c-ink-on-brand);
+  }
+
+  .sx-hg__intro { margin-bottom: 3rem; }
+
+  .sx-hg__heading {
+    color: var(--sx-c-ink-on-brand);
+    background: linear-gradient(135deg, var(--sx-c-data), var(--sx-c-data-hi));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 44rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  .sx-hg__lead {
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+  }
+
+  .sx-hg__stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0a0f1a;
+    overflow: hidden;
+    border-block: 1px solid rgba(2, 195, 154, 0.18);
+  }
+
+  .sx-hg__frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .sx-hg__mobile-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 26, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .sx-hg__mobile-card {
+    max-width: 22rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(2, 195, 154, 0.25);
+    border-radius: var(--sx-radius-card);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .sx-hg__mobile-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sx-c-data-hi);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+
+  .sx-hg__mobile-text {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .sx-hg__outro {
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  /* On small screens hide the iframe and show the fallback CTA — much
+     better UX than a tiny ungrabbable graph. */
+  @media (max-width: 767px) {
+    .sx-hg__frame { visibility: hidden; }
+    .sx-hg__mobile-fallback { display: flex; aria-hidden: false; }
+    .sx-hg__stage { aspect-ratio: 4 / 5; }
+  }
+</style>

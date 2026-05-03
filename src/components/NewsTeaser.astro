@@ -1,0 +1,121 @@
+---
+import { newsItems } from '../data/news';
+---
+
+<section class="sx-news sx-section" id="news">
+  <div class="sx-container">
+    <div class="sx-news__head">
+      <div>
+        <p class="sx-eyebrow">Aktuelles</p>
+        <h2 class="sx-title-1 sx-news__heading">Was bei Sanexio gerade passiert.</h2>
+      </div>
+      <a href="https://sanexio.de/blog" class="sx-btn sx-btn-ghost sx-news__cta" target="_blank" rel="noopener">
+        Zum Blog auf sanexio.de →
+      </a>
+    </div>
+
+    <ul class="sx-news__list">
+      {newsItems.map((item) => (
+        <li class="sx-news__item">
+          <a href={item.href} target="_blank" rel="noopener">
+            <time class="sx-news__date">{item.date}</time>
+            <h3 class="sx-title-3 sx-news__title">{item.title}</h3>
+            <p class="sx-news__excerpt">{item.excerpt}</p>
+            <span class="sx-news__more">Weiterlesen →</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .sx-news {
+    background: var(--sx-c-bg);
+    color: var(--sx-c-ink);
+  }
+
+  .sx-news__head {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .sx-news__heading {
+    color: var(--sx-c-ink);
+    margin: 0.5rem 0 0;
+  }
+
+  .sx-news__cta {
+    align-self: start;
+  }
+
+  .sx-news__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sx-news__item a {
+    display: block;
+    height: 100%;
+    background: var(--sx-c-surface);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+    padding: 1.75rem;
+    color: var(--sx-c-ink);
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  .sx-news__item a:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sx-shadow-card-hi);
+    border-color: var(--sx-c-data);
+    opacity: 1;
+  }
+
+  .sx-news__date {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sx-c-data);
+    font-weight: 600;
+    margin-bottom: 0.875rem;
+  }
+
+  .sx-news__title {
+    color: var(--sx-c-ink);
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .sx-news__excerpt {
+    color: var(--sx-c-ink-subtle);
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .sx-news__more {
+    color: var(--sx-c-data);
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    .sx-news__head {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    .sx-news__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
