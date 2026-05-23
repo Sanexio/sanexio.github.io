@@ -24,7 +24,9 @@ circle,line,polygon{shape-rendering:geometricPrecision}
 #header h1{font-size:clamp(18px,2.4vw,26px);font-weight:700;background:linear-gradient(135deg,#028090,#02C39A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.5px;line-height:1.1}
 #header p{font-size:12px;color:#8899AA;margin-top:3px;font-weight:400}
 
-#search-box{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:100;
+/* 2026-05-23: Suchfeld unter den Header verschoben (vorher top:14px →
+ * kollidierte bei iframe-Breiten ≤ 1100px mit dem Header-Block links). */
+#search-box{position:absolute;top:88px;left:50%;transform:translateX(-50%);z-index:100;
   width:min(440px, calc(100% - 36px));max-width:440px}
 #search-input{width:100%;padding:10px 16px 10px 38px;border-radius:24px;border:1px solid rgba(2,128,144,0.3);background:rgba(10,15,26,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#E0E0E0;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;text-overflow:ellipsis}
 #search-input:focus{border-color:#02C39A}
@@ -37,6 +39,8 @@ circle,line,polygon{shape-rendering:geometricPrecision}
   #header{top:10px;left:12px;padding:6px 10px;max-width:calc(100% - 24px)}
   #header h1{font-size:16px}
   #header p{display:none}
+  /* Bei sehr schmal bleibt das Suchfeld unten — sonst überlappt es mit dem
+   * Graph-Inhalt knapp unter dem Header. */
   #search-box{top:auto;bottom:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:420px}
   #search-input{font-size:14px;padding-top:12px;padding-bottom:12px}
 }
