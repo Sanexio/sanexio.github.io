@@ -28,6 +28,83 @@ need() {
   command -v "$1" >/dev/null 2>&1 || die "'$1' fehlt — bitte installieren (z.B. via Homebrew)."
 }
 
+# ---------- Bundle-Modus-Implementation ----------
+# In Funktion gewrappt, damit 'local' auch unter POSIX sh (curl|sh)
+# funktioniert. Wäre sonst "local: can only be used in a function".
+install_bundle() {
+  # Pfad:
+  #   1. GET <manifest-url> → JSON
+  #   2. Asset für aktuelles Mac-Target (arch) auswählen
+  #   3. Download Tarball + sha256-Verify gegen Manifest-Hash
+  #   4. Extract nach $INSTALL_DIR (default ~/.cortex/cli)
+  #   5. Bin-Wrapper auf $CORTEX_BIN_TARGET zeigen lassen
+  need curl
+  need shasum
+  need tar
+
+  local arch arch_key
+  arch="$(uname -m)"
+  case "$arch" in
+    arm64)  arch_key="darwin-arm64" ;;
+    x86_64) arch_key="darwin-x64"   ;;
+    *)      die "Unbekannte Architektur: $arch" ;;
+  esac
+
+  local manifest_url
+  manifest_url="${CORTEX_MANIFEST_URL:-https://sanexio.github.io/cortex/api/v1/update/manifest.json}"
+  log "Hole Manifest: $manifest_url"
+  local manifest
+  if ! manifest="$(curl -fsSL "$manifest_url")"; then
+    die "Manifest-Download fehlgeschlagen ($manifest_url)"
+  fi
+
+  # JSON-Parse ohne jq-Dependency (BSD-grep + sed liegt überall).
+  local version asset_url asset_sha
+  version="$(printf "%s" "$manifest" | grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
+  asset_url="$(printf "%s" "$manifest" | grep -A2 "\"${arch_key}\"" | grep -o '"url"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
+  asset_sha="$(printf "%s" "$manifest" | grep -A3 "\"${arch_key}\"" | grep -o '"sha256"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
+
+  [ -n "$version" ]   || die "Manifest ohne 'version'-Feld"
+  [ -n "$asset_url" ] || die "Manifest hat kein Asset für $arch_key"
+  [ -n "$asset_sha" ] || die "Manifest ohne sha256 für $arch_key"
+
+  log "Distribution: cortex-cli $version ($arch_key)"
+
+  local install_dir tmp_tgz
+  install_dir="${CORTEX_INSTALL_DIR:-$HOME/.cortex/cli}"
+  mkdir -p "$install_dir"
+  tmp_tgz="$(mktemp -t cortex-cli-bundle.XXXXXX).tar.gz"
+
+  log "Lade $asset_url …"
+  if ! curl -fsSL -o "$tmp_tgz" "$asset_url"; then
+    rm -f "$tmp_tgz"
+    die "Bundle-Download fehlgeschlagen ($asset_url)"
+  fi
+
+  # sha256-Verify — schützt vor MITM + corrupted Download.
+  local local_sha
+  local_sha="$(shasum -a 256 "$tmp_tgz" | awk '{print $1}')"
+  if [ "$local_sha" != "$asset_sha" ]; then
+    rm -f "$tmp_tgz"
+    die "sha256-Mismatch! Expected $asset_sha, got $local_sha"
+  fi
+  log "sha256 verified ($local_sha)"
+
+  # Extract — Tarball-Inhalt: cortex-darwin-<arch> Binary.
+  tar -xzf "$tmp_tgz" -C "$install_dir"
+  rm -f "$tmp_tgz"
+
+  local extracted_bin
+  extracted_bin="$install_dir/cortex-${arch_key}"
+  [ -x "$extracted_bin" ] || die "Erwartetes Binary nicht im Tarball: $extracted_bin"
+  ln -sf "$extracted_bin" "$install_dir/cortex"
+
+  # Bin-Wrapper auf das Binary zeigen.
+  mkdir -p "$(dirname "$CORTEX_BIN_TARGET")"
+  ln -sf "$install_dir/cortex" "$CORTEX_BIN_TARGET"
+  log "Wrapper-Symlink: ${CORTEX_BIN_TARGET} → ${install_dir}/cortex"
+}
+
 # ---------- Plattform-Check ----------
 
 if [ "$(uname)" != "Darwin" ]; then
@@ -81,81 +158,11 @@ EOF
     ;;
 
   bundle)
-    # Welle 3.6d: Download signiertes + notarisiertes Bundle vom
-    # cortex.sanexio.de-Manifest-Endpoint, sha256-Verify, Extract.
-    #
-    # Pfad:
-    #   1. GET https://sanexio.github.io/cortex/api/v1/update/manifest.json → JSON
-    #   2. Asset für aktuelles Mac-Target (arch) auswählen
-    #   3. Download Tarball + sha256-Verify gegen Manifest-Hash
-    #   4. Extract nach $INSTALL_DIR (default ~/.cortex/cli)
-    #   5. Bin-Wrapper auf $CORTEX_BIN_TARGET zeigen lassen
-    need curl
-    need shasum
-    need tar
-
-    local arch
-    arch="$(uname -m)"
-    case "$arch" in
-      arm64)  arch_key="darwin-arm64" ;;
-      x86_64) arch_key="darwin-x64"   ;;
-      *)      die "Unbekannte Architektur: $arch" ;;
-    esac
-
-    local manifest_url="${CORTEX_MANIFEST_URL:-https://sanexio.github.io/cortex/api/v1/update/manifest.json}"
-    log "Hole Manifest: $manifest_url"
-    local manifest
-    if ! manifest="$(curl -fsSL "$manifest_url")"; then
-      die "Manifest-Download fehlgeschlagen ($manifest_url)"
-    fi
-
-    # JSON-Parse ohne jq-Dependency (BSD-grep + sed liegt überall).
-    # Schema-Erwartung:
-    #   { "version": "...", "assets": { "darwin-x64": { "url": "...", "sha256": "..." }, ... } }
-    local version asset_url asset_sha
-    version="$(printf "%s" "$manifest" | grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
-    asset_url="$(printf "%s" "$manifest" | grep -A2 "\"${arch_key}\"" | grep -o '"url"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
-    asset_sha="$(printf "%s" "$manifest" | grep -A3 "\"${arch_key}\"" | grep -o '"sha256"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
-
-    [ -n "$version" ]   || die "Manifest ohne 'version'-Feld"
-    [ -n "$asset_url" ] || die "Manifest hat kein Asset für $arch_key"
-    [ -n "$asset_sha" ] || die "Manifest ohne sha256 für $arch_key"
-
-    log "Distribution: cortex-cli $version ($arch_key)"
-
-    local install_dir="${CORTEX_INSTALL_DIR:-$HOME/.cortex/cli}"
-    mkdir -p "$install_dir"
-    local tmp_tgz
-    tmp_tgz="$(mktemp -t cortex-cli-bundle.XXXXXX).tar.gz"
-
-    log "Lade $asset_url …"
-    if ! curl -fsSL -o "$tmp_tgz" "$asset_url"; then
-      rm -f "$tmp_tgz"
-      die "Bundle-Download fehlgeschlagen ($asset_url)"
-    fi
-
-    # sha256-Verify — schützt vor MITM + corrupted Download.
-    local local_sha
-    local_sha="$(shasum -a 256 "$tmp_tgz" | awk '{print $1}')"
-    if [ "$local_sha" != "$asset_sha" ]; then
-      rm -f "$tmp_tgz"
-      die "sha256-Mismatch! Expected $asset_sha, got $local_sha"
-    fi
-    log "sha256 verified ($local_sha)"
-
-    # Extract — Tarball-Inhalt: cortex-darwin-<arch> Binary + ggf. README.
-    tar -xzf "$tmp_tgz" -C "$install_dir"
-    rm -f "$tmp_tgz"
-
-    # Binary umbenennen auf 'cortex' für stabilen Pfad.
-    local extracted_bin="$install_dir/cortex-${arch_key}"
-    [ -x "$extracted_bin" ] || die "Erwartetes Binary nicht im Tarball: $extracted_bin"
-    ln -sf "$extracted_bin" "$install_dir/cortex"
-
-    # Bin-Wrapper auf das Binary zeigen.
-    mkdir -p "$(dirname "$CORTEX_BIN_TARGET")"
-    ln -sf "$install_dir/cortex" "$CORTEX_BIN_TARGET"
-    log "Wrapper-Symlink: ${CORTEX_BIN_TARGET} → ${install_dir}/cortex"
+    # Welle 3.6d: Bundle-Modus.
+    # Funktion wegen 'local'-Nutzung — POSIX sh (curl|sh) verbietet
+    # local außerhalb von Funktionen, bash erlaubt es. Wrapper macht
+    # beide Shells happy.
+    install_bundle
     ;;
 
   *)
