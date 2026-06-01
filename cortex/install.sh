@@ -36,18 +36,22 @@ fi
 
 log "Plattform-Check: macOS $(sw_vers -productVersion) ($(uname -m))"
 
-# ---------- Bun-Check ----------
+# ---------- Bun-Check (nur für dev-Modus) ----------
+# Im bundle-Modus enthält das Standalone-Binary die Bun-Runtime
+# bereits eingebackten — Bun auf dem Ziel-Mac wird nicht gebraucht.
+# Im dev-Modus läuft `bun bin/cortex.mjs` direkt, dann muss Bun da sein.
 
-if ! command -v bun >/dev/null 2>&1; then
-  log "Bun nicht gefunden — installiere via Homebrew …"
-  if command -v brew >/dev/null 2>&1; then
-    brew install oven-sh/bun/bun
-  else
-    die "Homebrew fehlt. Bitte erst installieren: https://brew.sh"
+if [ "$CORTEX_INSTALL_MODE" = "dev" ]; then
+  if ! command -v bun >/dev/null 2>&1; then
+    log "Bun nicht gefunden — installiere via Homebrew …"
+    if command -v brew >/dev/null 2>&1; then
+      brew install oven-sh/bun/bun
+    else
+      die "Homebrew fehlt. Bitte erst installieren: https://brew.sh"
+    fi
   fi
+  log "Bun-Version: $(bun --version)"
 fi
-
-log "Bun-Version: $(bun --version)"
 
 # ---------- Install-Modus ----------
 
