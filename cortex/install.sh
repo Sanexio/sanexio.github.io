@@ -179,16 +179,26 @@ log "Lege ~/.cortex/-Struktur an …"
 
 install_launchagent() {
   local label="de.sanexio.cortex-update-check"
-  local script_dir
-  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-  local template="${script_dir}/${label}.plist.template"
+  local script_dir template
+  # BASH_SOURCE existiert nur in bash; unter POSIX sh (curl|sh) ist es
+  # nicht definiert. ${BASH_SOURCE[0]:-} ist auch nicht POSIX-safe
+  # (Array-Subscript). Fallback: $0 (auch unter sh definiert, zeigt im
+  # curl|sh-Pfad auf stdin oder "-"). Wenn der Pfad sinnlos auflöst,
+  # ist das OK — Template-Datei existiert dann eh nicht.
+  if [ -n "${BASH_VERSION:-}" ]; then
+    # Echtes bash mit gefülltem BASH_SOURCE-Array.
+    script_dir="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd || echo "")"
+  else
+    script_dir="$(cd "$(dirname "$0")" 2>/dev/null && pwd || echo "")"
+  fi
+  template="${script_dir}/${label}.plist.template"
   local target_dir="${HOME}/Library/LaunchAgents"
   local target_plist="${target_dir}/${label}.plist"
 
-  if [ ! -f "$template" ]; then
+  if [ -z "$script_dir" ] || [ ! -f "$template" ]; then
     # install.sh kann via 'curl|sh' ohne lokales Repo laufen — Template
     # nicht vorhanden ist OK, dann skippen mit Hinweis.
-    warn "LaunchAgent-Template fehlt: $template — skip (Update-Check muss manuell laufen)"
+    warn "LaunchAgent-Template fehlt: ${template:-<unbekannt>} — skip (Update-Check muss manuell laufen)"
     return 0
   fi
 
