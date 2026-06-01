@@ -2,12 +2,12 @@
   "schema_version": 1,
   "name": "cortex-cli",
   "version": "0.0.1-w3.0",
-  "released_at": "2026-06-01T19:39:05Z",
+  "released_at": "2026-06-01T19:45:06Z",
   "assets": {
     "darwin-x64": {
       "url": "https://sanexio.github.io/cortex/dist/cortex-cli-0.0.1-w3.0-darwin-x64.tar.gz",
-      "sha256": "9c9aa5894156f3e45f2509edd2700edbce4e117f4a3e8d16ca406d28a3eab9bd",
-      "size_bytes": 25005560,
+      "sha256": "83c7dfeab565127b4e9331f42501e9532ab1633dba184f3963b10be846f12c96",
+      "size_bytes": 25539177,
       "codesign": "Developer ID Application: Siegbert Stracke (QYC7S8YGXV)",
       "notarized": true
     },
