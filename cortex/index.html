@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortex-Plattform — Distribution &amp; Doku</title>
+<style>
+  :root {
+    --fg: #1a1a1a; --bg: #fff; --muted: #555; --accent: #1f6feb;
+    --code-bg: #f5f5f5; --code-fg: #24292e; --border: #e1e4e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e6e6e6; --bg: #0f1115; --muted: #9aa0a6; --accent: #58a6ff;
+            --code-bg: #1c1f24; --code-fg: #e6e6e6; --border: #30363d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         color: var(--fg); background: var(--bg); line-height: 1.6; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+  h1 { font-size: 1.8rem; margin: 0 0 0.5rem; }
+  .sub { color: var(--muted); margin: 0 0 2rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
+  pre, code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.95em; }
+  code { background: var(--code-bg); color: var(--code-fg); padding: 0.1em 0.35em; border-radius: 4px; }
+  pre { background: var(--code-bg); padding: 1rem; border-radius: 8px; overflow-x: auto;
+        border: 1px solid var(--border); }
+  pre code { background: none; padding: 0; }
+  a { color: var(--accent); }
+  ul.links { list-style: none; padding: 0; }
+  ul.links li { margin: 0.5rem 0; padding: 0.6rem 0.9rem;
+                background: var(--code-bg); border-radius: 6px; border: 1px solid var(--border); }
+  ul.links code { background: transparent; padding: 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+           color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Cortex-Plattform</h1>
+<p class="sub">Offenes Framework für Arztpraxen — Distribution + Doku auf einen Blick.</p>
+
+<h2>Erst-Installation</h2>
+<pre><code>curl -fsSL https://sanexio.github.io/cortex/install.sh | bash</code></pre>
+<p>Lädt das signierte und Apple-notarisierte Cortex-CLI für dein Mac-Target (arm64 oder x64), legt den Befehl <code>cortex</code> in <code>~/bin/</code> an, prüft SHA-256.</p>
+
+<h2>Vollständige Anleitung</h2>
+<p>Das <a href="docs/">Onboarding-Tutorial</a> zeigt dich Schritt für Schritt: Voraussetzungen, Lizenz, Wizard, Tenant-Inhalte, Site-Bau, DSGVO, häufige Fehler, FAQ.</p>
+
+<h2>Endpoints</h2>
+<ul class="links">
+  <li><code>install.sh</code> &mdash; <a href="install.sh">Bootstrap-Skript</a></li>
+  <li><code>api/v1/update/manifest.json</code> &mdash; <a href="api/v1/update/manifest.json">Cortex-CLI Update-Manifest</a></li>
+  <li><code>dist/</code> &mdash; <a href="dist/">signierte Cortex-CLI-Bundles</a> (arm64 + x64)</li>
+  <li><code>nexus/api/v1/update/manifest.json</code> &mdash; <a href="nexus/api/v1/update/manifest.json">Nexus-Gateway Update-Manifest</a></li>
+  <li><code>nexus/dist/</code> &mdash; <a href="nexus/dist/">signierte Nexus-Bundles</a> (arm64 + x64)</li>
+  <li><code>docs/</code> &mdash; <a href="docs/">Onboarding-Tutorial</a></li>
+</ul>
+
+<h2>Repositories</h2>
+<ul class="links">
+  <li><a href="https://github.com/Sanexio/cortex-cli">Sanexio/cortex-cli</a> &mdash; Kommandozeilen-Werkzeug</li>
+  <li><a href="https://github.com/Sanexio/cortex-web">Sanexio/cortex-web</a> &mdash; Framework (Theme, Schemata, Adapter)</li>
+  <li><a href="https://github.com/Sanexio/cortex-tenant-template">Sanexio/cortex-tenant-template</a> &mdash; Vorlage für neue Tenants</li>
+  <li><a href="https://github.com/Sanexio/nexus">Sanexio/nexus</a> &mdash; Plattform-Spec und Roadmap</li>
+</ul>
+
+<footer>
+  <p>Gehört zur <a href="https://github.com/Sanexio">Sanexio-Organisation</a>. Lizenz: Apache 2.0 für Framework und Werkzeuge. Tenant-Inhalte gehören dem jeweiligen Arzt-Tenant.</p>
+</footer>
+
+</div>
+</body>
+</html>
