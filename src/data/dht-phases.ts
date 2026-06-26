@@ -9,7 +9,7 @@ export interface DhtPhase {
   tagline: string;
   description: string;
   link: { label: string; href: string; external: boolean };
-  icon: 'concept' | 'bloodtest' | 'graph' | 'avatar';
+  icon: 'concept' | 'bloodtest' | 'graph' | 'avatar' | 'brain';
 }
 
 export const dhtPhases: DhtPhase[] = [
@@ -49,12 +49,23 @@ export const dhtPhases: DhtPhase[] = [
   {
     id: 'juvantis',
     number: 4,
-    name: 'Juvantis DHT',
+    name: 'Juvantis & LifeLinker',
     year: '2026',
     tagline: 'Der digitale Zwilling',
     description:
-      'Die iOS-Anwendung mit Avatar-Visualisierung — der digitale Zwilling im Hosentaschenformat. Er wird mit den Daten gefüttert (Anamnese, Bloody Check) und nutzt den Health Graph als medizinischen Verstand.',
-    link: { label: 'JUVANTIS auf GitHub', href: 'https://github.com/Sanexio/JUVANTIS', external: true },
+      'Der DHT als 3D-Avatar auf Web und iOS — live auf dem iPhone mit echter HealthKit-Anbindung. Der Avatar reagiert in Echtzeit auf Vitalwerte, markiert Anomalien als Cyan-Halo und projiziert den Verlauf: „Jetzt / In 3 Monaten".',
+    link: { label: 'Juvantis-App auf GitHub', href: 'https://github.com/Sanexio/juvantis-app', external: true },
     icon: 'avatar',
+  },
+  {
+    id: 'health-llm',
+    number: 5,
+    name: 'Eigenes Health-LLM',
+    year: '2026 · live',
+    tagline: 'Der medizinische Verstand',
+    description:
+      'Der Zwilling bekommt ein Gehirn: ein eigenes, on-prem laufendes Health-LLM, das den longitudinalen Verlauf versteht, erklärt und im Avatar-Chat antwortet. Kein fremder API-Key — DSGVO-konform, mit Guardrails. Das proprietäre Backend von Sanexio.',
+    link: { label: 'Unser LLM-Konzept', href: '#llm', external: false },
+    icon: 'brain',
   },
 ];

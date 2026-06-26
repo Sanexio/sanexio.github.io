@@ -13,6 +13,8 @@ const iconPaths: Record<string, string> = {
   graph: 'M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm14 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM7 5l10 12M17 5L7 17M5 12h14',
   // Avatar — human silhouette
   avatar: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 0 1 14 0H5z',
+  // Brain — LLM / medizinischer Verstand
+  brain: 'M9.5 3A3.5 3.5 0 0 0 6 6.5a3 3 0 0 0-1.5 5.6A3 3 0 0 0 6 17.5a3 3 0 0 0 3.5 3V3zm5 0A3.5 3.5 0 0 1 18 6.5a3 3 0 0 1 1.5 5.6A3 3 0 0 1 18 17.5a3 3 0 0 1-3.5 3V3z',
 };
 ---
 
@@ -20,12 +22,13 @@ const iconPaths: Record<string, string> = {
   <div class="sx-container">
     <p class="sx-eyebrow">Die DHT-Geschichte</p>
     <h2 class="sx-title-1 sx-dht__heading">
-      Vier Phasen, ein Ziel: Gesundheit datenbasiert verstehen.
+      Fünf Phasen, ein Ziel: Gesundheit datenbasiert verstehen.
     </h2>
     <p class="sx-body-lg sx-prose sx-dht__lead">
       Aus einer ärztlichen Vorüberlegung wurde eine Datenmethode, aus der
-      Datenmethode wurde ein Wissensmodell, aus dem Wissensmodell wird
-      ein digitaler Zwilling. Das ist der rote Faden, der Sanexio seit
+      Datenmethode wurde ein Wissensmodell, aus dem Wissensmodell ein
+      digitaler Zwilling — und der Zwilling bekommt einen eigenen
+      medizinischen Verstand. Das ist der rote Faden, der Sanexio seit
       Jahren durchzieht.
     </p>
 
@@ -181,11 +184,11 @@ const iconPaths: Record<string, string> = {
     opacity: 1;
   }
 
-  /* Desktop: horizontal four-column layout */
+  /* Desktop: horizontal five-column layout */
   @media (min-width: 1024px) {
     .sx-dht__list {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
     }
 
     .sx-dht__list::before {

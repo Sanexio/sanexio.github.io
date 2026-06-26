@@ -1,0 +1,310 @@
+---
+// LLM Concept — the proprietary Health-LLM that powers the Digital Health Twin.
+// Explains the reasoning pipeline, the staged model strategy and the moat.
+// Brand-blue background to bridge the deep-dark DHT timeline and the light
+// content sections that follow.
+
+interface FlowNode {
+  step: string;
+  title: string;
+  body: string;
+  glyph: string;
+}
+
+const flow: FlowNode[] = [
+  {
+    step: 'Frontend',
+    title: 'Juvantis / LifeLinker',
+    body: 'Twin-Abfrage: Patient-Kontext und Frage gehen an das Backend.',
+    glyph: 'M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2z',
+  },
+  {
+    step: 'Twin-Store + RAG',
+    title: 'Longitudinaler Verlauf',
+    body: 'Labor, Vitalwerte, Medikation als Zeitreihen — relevante Historie wird in den Prompt geholt.',
+    glyph: 'M4 6c0-1.66 3.58-3 8-3s8 1.34 8 3-3.58 3-8 3-8-1.34-8-3zm0 6c0 1.66 3.58 3 8 3s8-1.34 8-3M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6',
+  },
+  {
+    step: 'Tools',
+    title: 'Zeitreihen-Engine',
+    body: 'Trend, Prognose und Anomalien als harte Zahlen — Grounding, auf dem das Modell narriert.',
+    glyph: 'M3 3v18h18M7 14l4-4 3 3 5-6',
+  },
+  {
+    step: 'Reasoning',
+    title: 'Eigenes Health-LLM',
+    body: 'Beschreibt Verlauf und tentativen Ausblick — mit Guardrails und Quellenbezug.',
+    glyph: 'M9.5 3A3.5 3.5 0 0 0 6 6.5a3 3 0 0 0-1.5 5.6A3 3 0 0 0 6 17.5a3 3 0 0 0 3.5 3V3zm5 0A3.5 3.5 0 0 1 18 6.5a3 3 0 0 1 1.5 5.6A3 3 0 0 1 18 17.5a3 3 0 0 1-3.5 3V3z',
+  },
+];
+
+interface Pillar {
+  title: string;
+  body: string;
+}
+
+const pillars: Pillar[] = [
+  {
+    title: 'Basismodell: Qwen 14B',
+    body: 'Open-Weight als Fundament — nach Recherche bewusst gewählt (spezialisierte Medizin-Modelle fielen im Eval durch). Läuft lokal, ohne Abhängigkeit von externen Anbietern.',
+  },
+  {
+    title: 'RAG jetzt → Fine-Tune später',
+    body: 'Gestaffelt: Heute reasoned ein offenes Modell über beigefügte Twin-Daten (kein Training). Später Fine-Tune auf einer GPU-VM mit kuratierten Daten — als austauschbares Backend.',
+  },
+  {
+    title: 'Distillation eines Lehrers',
+    body: 'Der Burggraben: Das eigene Modell lernt, die Lösungen eines starken Lehrer-Modells zu imitieren. Premium-Trainingsdaten = kuratierte Teacher-Trajektorien, die über die Zeit wachsen.',
+  },
+  {
+    title: 'Verlauf & Prognose, nicht nur Q&A',
+    body: 'Die erste Kernfähigkeit ist der eigentliche Twin: den Gesundheitszustand über die Zeit modellieren — der ambitionierteste Pfad mit dem höchsten Mehrwert.',
+  },
+  {
+    title: 'DSGVO Art. 9 als Fundament',
+    body: 'Synthetische Daten zuerst — kein Personenbezug, bis Architektur, Eval und Governance stehen. Pseudonymisierung, Einwilligung, Zweckbindung sind kein Nachgedanke.',
+  },
+  {
+    title: 'Sicherheit per Guardrail',
+    body: 'Jede Antwort ist als Entscheidungsunterstützung markiert, nicht-klinisch, nie autonom. Der Disclaimer steckt im Antwort-Pfad selbst — verifiziert, nicht behauptet.',
+  },
+];
+---
+
+<section class="sx-llm sx-section" id="llm">
+  <div class="sx-container">
+    <p class="sx-eyebrow sx-llm__eyebrow">Unser LLM-Konzept</p>
+    <h2 class="sx-title-1 sx-llm__heading">
+      Ein eigenes Health-LLM — kein fremder API-Key.
+    </h2>
+    <p class="sx-body-lg sx-prose sx-llm__lead">
+      Das Frontend ist Juvantis. Das Gehirn ist <strong>proprietär</strong>: unser
+      eigenes Large Language Model, das über den Twin reasoned. Es läuft on-prem,
+      die Daten verlassen das System nicht, und es wird über die Zeit klüger —
+      durch <strong>Distillation eines starken Lehrers</strong>.
+    </p>
+
+    <p class="sx-llm__flow-label">Die Reasoning-Pipeline</p>
+    <ol class="sx-llm__flow" aria-label="Reasoning-Pipeline des Health-LLM">
+      {flow.map((node) => (
+        <li class="sx-llm__node">
+          <div class="sx-llm__glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d={node.glyph} />
+            </svg>
+          </div>
+          <p class="sx-llm__step">{node.step}</p>
+          <h3 class="sx-llm__node-title">{node.title}</h3>
+          <p class="sx-llm__node-body">{node.body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="sx-llm__pillars">
+      {pillars.map((pillar) => (
+        <article class="sx-llm__pillar">
+          <span class="sx-llm__pillar-mark" aria-hidden="true">◆</span>
+          <h3 class="sx-title-3 sx-llm__pillar-title">{pillar.title}</h3>
+          <p class="sx-llm__pillar-body">{pillar.body}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="sx-llm__note">
+      <strong>Ehrlich eingeordnet:</strong> Das ist Forschung <em>und</em> Produkt
+      mit Monats- bis Jahres-Horizont — nicht in einer Nacht gebaut. Die
+      KI-Erklärung und der Avatar-Chat laufen heute live über das deployte
+      Backend; echte Praxisdaten, Fine-Tune und klinische Validierung sind klar
+      gated und folgen erst nach Governance-Freigabe. Genau diese Disziplin ist
+      im Gesundheitsmarkt der Wert.
+    </p>
+  </div>
+</section>
+
+<style>
+  .sx-llm {
+    background: var(--sx-c-bg-brand);
+    color: var(--sx-c-ink-on-brand);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sx-llm::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(50% 40% at 85% 0%, rgba(2, 195, 154, 0.12), transparent 70%),
+      radial-gradient(45% 45% at 0% 100%, rgba(2, 128, 144, 0.16), transparent 75%);
+    pointer-events: none;
+  }
+
+  .sx-llm > .sx-container { position: relative; z-index: 1; }
+
+  .sx-llm__eyebrow { color: var(--sx-c-data-hi); }
+
+  .sx-llm__heading {
+    color: var(--sx-c-ink-on-brand);
+    max-width: 40rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  .sx-llm__lead {
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 3.5rem;
+  }
+
+  .sx-llm__lead strong { color: var(--sx-c-ink-on-brand); font-weight: 600; }
+
+  .sx-llm__flow-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 1.25rem;
+  }
+
+  /* Pipeline */
+  .sx-llm__flow {
+    list-style: none;
+    margin: 0 0 4rem;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sx-llm__node {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--sx-radius-card);
+    padding: 1.5rem 1.5rem 1.625rem;
+  }
+
+  .sx-llm__glyph {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sx-c-data-hi);
+    background: rgba(2, 195, 154, 0.1);
+    border: 1px solid rgba(2, 195, 154, 0.25);
+    margin-bottom: 1rem;
+  }
+
+  .sx-llm__glyph svg { width: 22px; height: 22px; }
+
+  .sx-llm__step {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--sx-c-data-hi);
+    margin: 0 0 0.4rem;
+  }
+
+  .sx-llm__node-title {
+    font-family: var(--sx-font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--sx-c-ink-on-brand);
+    margin: 0 0 0.4rem;
+  }
+
+  .sx-llm__node-body {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+  /* Arrow connectors between pipeline nodes */
+  .sx-llm__node:not(:last-child)::after {
+    content: '↓';
+    position: absolute;
+    bottom: -1.05rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--sx-c-data-hi);
+    font-size: 1.1rem;
+    z-index: 2;
+  }
+
+  /* Pillars */
+  .sx-llm__pillars {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sx-llm__pillar {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--sx-radius-card);
+    padding: 1.75rem 1.75rem 1.875rem;
+    transition: border-color 200ms ease, transform 200ms ease;
+  }
+
+  .sx-llm__pillar:hover {
+    border-color: rgba(2, 195, 154, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .sx-llm__pillar-mark {
+    color: var(--sx-c-data-hi);
+    font-size: 0.875rem;
+  }
+
+  .sx-llm__pillar-title {
+    color: var(--sx-c-ink-on-brand);
+    margin: 0.5rem 0 0.6rem;
+  }
+
+  .sx-llm__pillar-body {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Honest note */
+  .sx-llm__note {
+    margin: 2.5rem 0 0;
+    max-width: 52rem;
+    border-left: 3px solid var(--sx-c-data-hi);
+    background: rgba(2, 195, 154, 0.06);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1.25rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+
+  .sx-llm__note strong { color: var(--sx-c-ink-on-brand); }
+
+  /* Tablet+ */
+  @media (min-width: 700px) {
+    .sx-llm__flow { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .sx-llm__node:not(:last-child)::after { display: none; }
+    .sx-llm__pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Desktop — full pipeline in one row with → connectors */
+  @media (min-width: 1024px) {
+    .sx-llm__flow { grid-template-columns: repeat(4, 1fr); }
+    .sx-llm__node:not(:last-child)::after {
+      display: block;
+      content: '→';
+      bottom: auto;
+      top: 2.6rem;
+      left: auto;
+      right: -0.75rem;
+      transform: none;
+    }
+    .sx-llm__pillars { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
