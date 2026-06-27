@@ -12,12 +12,6 @@ export interface SocialChannel {
 
 export const socialChannels: SocialChannel[] = [
   {
-    id: 'github',
-    label: 'Sanexio auf GitHub',
-    href: 'https://github.com/Sanexio',
-    icon: 'github',
-  },
-  {
     id: 'linkedin',
     label: 'Dr. Stracke auf LinkedIn',
     href: 'https://www.linkedin.com/in/dr-siegbert-stracke-mba',

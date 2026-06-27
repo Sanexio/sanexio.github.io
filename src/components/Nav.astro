@@ -18,11 +18,8 @@
       <a href="#kontakt">Kontakt</a>
     </nav>
 
-    <a href="https://github.com/Sanexio" class="sx-nav__github" target="_blank" rel="noopener" aria-label="Sanexio auf GitHub">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.15 0 .3.21.66.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
-      </svg>
-      <span>GitHub</span>
+    <a href="#kontakt" class="sx-nav__cta" aria-label="Kontakt aufnehmen">
+      <span>Kontakt</span>
     </a>
   </div>
 </header>
@@ -95,19 +92,19 @@
     opacity: 1;
   }
 
-  .sx-nav__github {
+  .sx-nav__cta {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.875rem;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--sx-radius-pill);
   }
 
-  .sx-nav__github:hover {
+  .sx-nav__cta:hover {
     border-color: var(--sx-c-data-hi);
     color: var(--sx-c-data-hi);
     opacity: 1;
@@ -115,10 +112,6 @@
 
   @media (min-width: 900px) {
     .sx-nav__links { display: flex; }
-  }
-
-  @media (max-width: 600px) {
-    .sx-nav__github span { display: none; }
   }
 </style>
 

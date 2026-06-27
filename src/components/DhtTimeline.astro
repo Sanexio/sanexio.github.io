@@ -41,18 +41,11 @@ const iconPaths: Record<string, string> = {
             </svg>
           </div>
           <div class="sx-dht__card">
-            <p class="sx-dht__num">Phase {phase.number} · {phase.year}</p>
-            <h3 class="sx-title-2 sx-dht__name">{phase.name}</h3>
+            <p class="sx-dht__num">Phase {phase.number}</p>
+            <h3 class="sx-dht__name">{phase.name}</h3>
+            <p class="sx-dht__year">{phase.year}</p>
             <p class="sx-dht__tagline">{phase.tagline}</p>
             <p class="sx-dht__desc">{phase.description}</p>
-            <a
-              href={phase.link.href}
-              class="sx-dht__link"
-              target={phase.link.external ? '_blank' : undefined}
-              rel={phase.link.external ? 'noopener' : undefined}
-            >
-              {phase.link.label} <span aria-hidden="true">→</span>
-            </a>
           </div>
         </li>
       ))}
@@ -101,7 +94,7 @@ const iconPaths: Record<string, string> = {
       var(--sx-c-accent) 90%,
       transparent 100%
     );
-    opacity: 0.55;
+    opacity: 0.4;
   }
 
   .sx-dht__item {
@@ -141,51 +134,53 @@ const iconPaths: Record<string, string> = {
     padding: 1.75rem 2rem 2rem;
     display: flex;
     flex-direction: column;
+    transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+  }
+
+  .sx-dht__card:hover {
+    border-color: rgba(2, 195, 154, 0.35);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .sx-dht__num {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--sx-c-data-hi);
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.6rem;
   }
 
   .sx-dht__name {
+    font-family: var(--sx-font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
     color: var(--sx-c-ink-on-brand);
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .sx-dht__year {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0 0 0.85rem;
   }
 
   .sx-dht__tagline {
-    color: var(--sx-c-accent);
+    color: rgba(255, 255, 255, 0.92);
     font-weight: 600;
-    margin: 0 0 1rem;
-    font-size: 1rem;
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
   }
 
   .sx-dht__desc {
-    color: rgba(255, 255, 255, 0.78);
-    margin: 0 0 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .sx-dht__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: auto;
-    align-self: flex-start;
-    color: var(--sx-c-data-hi);
-    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
     font-size: 0.9375rem;
-    text-decoration: none;
-  }
-
-  .sx-dht__link:hover {
-    color: var(--sx-c-data);
-    opacity: 1;
+    line-height: 1.55;
   }
 
   /* Desktop: horizontal five-column layout */
@@ -199,22 +194,24 @@ const iconPaths: Record<string, string> = {
     .sx-dht__list::before {
       top: 23px;
       bottom: auto;
-      left: 0;
-      right: 0;
+      left: 10%;
+      right: 10%;
       width: auto;
       height: 2px;
       background: linear-gradient(
         90deg,
-        var(--sx-c-accent) 0%,
-        var(--sx-c-accent) 95%,
+        transparent 0%,
+        var(--sx-c-accent) 12%,
+        var(--sx-c-accent) 88%,
         transparent 100%
       );
+      opacity: 0.45;
     }
 
     .sx-dht__item {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
       gap: 1.5rem;
       height: 100%;
     }
@@ -224,8 +221,11 @@ const iconPaths: Record<string, string> = {
     }
 
     .sx-dht__card {
-      padding: 1.5rem 1.5rem 1.75rem;
+      width: 100%;
+      padding: 1.625rem 1.4rem 1.75rem;
       flex: 1;
+      text-align: center;
+      align-items: center;
     }
   }
 </style>
