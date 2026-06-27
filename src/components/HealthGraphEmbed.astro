@@ -34,6 +34,11 @@
       allow="fullscreen"
     ></iframe>
 
+    <button type="button" class="sx-hg__hint" id="sx-hg-hint" aria-label="Health Graph aktivieren">
+      <span class="sx-hg__hint-icon" aria-hidden="true">✦</span>
+      Klicken zum Interagieren — zum Weiterscrollen Maus aus dem Graphen bewegen
+    </button>
+
     <div class="sx-hg__mobile-fallback" aria-hidden="true">
       <div class="sx-hg__mobile-card">
         <p class="sx-hg__mobile-eyebrow">Live-Demo</p>
@@ -96,6 +101,48 @@
     height: 100%;
     border: 0;
     display: block;
+    /* Default: graph ignores the mouse so the wheel scrolls the PAGE
+       (no scroll-trapping). A click activates it (see script). */
+    pointer-events: none;
+  }
+
+  .sx-hg__stage.is-active .sx-hg__frame {
+    pointer-events: auto;
+  }
+
+  /* Click-to-interact hint overlay */
+  .sx-hg__hint {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: calc(100% - 2rem);
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--sx-radius-pill);
+    border: 1px solid rgba(2, 195, 154, 0.35);
+    background: rgba(10, 15, 26, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--sx-font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .sx-hg__hint-icon { color: var(--sx-c-data-hi); }
+
+  .sx-hg__stage.is-active .sx-hg__hint {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(0.5rem);
   }
 
   .sx-hg__mobile-fallback {
@@ -142,7 +189,20 @@
      better UX than a tiny ungrabbable graph. */
   @media (max-width: 767px) {
     .sx-hg__frame { visibility: hidden; }
+    .sx-hg__hint { display: none; }
     .sx-hg__mobile-fallback { display: flex; aria-hidden: false; }
     .sx-hg__stage { aspect-ratio: 4 / 5; }
   }
 </style>
+
+<script>
+  // Click-to-interact: the iframe ignores the mouse by default (CSS
+  // pointer-events:none) so the wheel scrolls the page — no scroll-trap.
+  // A click activates the graph; moving the mouse out re-arms it so the
+  // user can keep scrolling the page afterwards.
+  const stage = document.getElementById('sx-hg-stage');
+  if (stage) {
+    stage.addEventListener('click', () => stage.classList.add('is-active'));
+    stage.addEventListener('mouseleave', () => stage.classList.remove('is-active'));
+  }
+</script>
