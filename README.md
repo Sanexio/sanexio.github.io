@@ -21,6 +21,10 @@ bun run build    # → dist/
 bun run preview  # serve dist/ locally
 ```
 
+## Dev-Status-Sync
+
+Der Abschnitt „Wo steht die Entwicklung“ wird aus dem pitchbar gefilterten Juvantis-Feature-Feed unter `/Users/clusteradm/Cortex/projects/Juvantis/juvantis-mvp/web/assets/features-feed.json` erzeugt. Regenerieren: `node tools/gen-dev-status.mjs` oder mit abweichendem Feed `node tools/gen-dev-status.mjs --feed /pfad/zum/features-feed.json`. Die Freigabe läuft über den Entwurfs-Branch `pitch-dev-status`; erst nach fachlicher Freigabe und Merge nach `main` deployt die Seite.
+
 ## Deployment
 
 GitHub Action `.github/workflows/deploy.yml` runs on every push to `main`:
