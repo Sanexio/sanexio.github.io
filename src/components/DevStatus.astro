@@ -1,0 +1,225 @@
+---
+import { devStatus } from '../data/dev-status';
+
+const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
+
+const formattedDate = dateFormatter.format(new Date(`${devStatus.standDatum}T00:00:00Z`));
+---
+
+<section class="sx-dev sx-section" id="dev-status">
+  <div class="sx-container">
+    <div class="sx-dev__intro">
+      <div>
+        <p class="sx-eyebrow sx-dev__eyebrow">Wo steht die Entwicklung</p>
+        <h2 class="sx-title-1 sx-dev__heading">
+          Der digitale Zwilling ist als Produktoberfläche sichtbar.
+        </h2>
+      </div>
+
+      <div class="sx-dev__meta" aria-label="Aktueller Entwicklungsstand">
+        <p class="sx-dev__date">Stand {formattedDate}</p>
+        <div class="sx-dev__badges">
+          {devStatus.appVersion && <span class="sx-dev__badge">App {devStatus.appVersion}</span>}
+          {devStatus.webVersion && <span class="sx-dev__badge">Web {devStatus.webVersion}</span>}
+        </div>
+      </div>
+    </div>
+
+    <div class="sx-dev__panel">
+      <ol class="sx-dev__features" aria-label="Aktuelle Produktfunktionen">
+        {devStatus.features.map((feature) => (
+          <li class="sx-dev__feature">
+            <div class="sx-dev__feature-top">
+              <h3 class="sx-dev__feature-name">{feature.name}</h3>
+              <div class="sx-dev__feature-versions" aria-label="Verfügbar seit">
+                {feature.seitIos && <span>{feature.seitIos}</span>}
+                {feature.seitWeb && <span>{feature.seitWeb}</span>}
+              </div>
+            </div>
+            <p class="sx-dev__feature-body">{feature.beschreibung}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="sx-dev__footer">
+        <p>Aktualisiert sich mit jedem Release.</p>
+        {devStatus.weitereFeatures > 0 && (
+          <span>+{devStatus.weitereFeatures} weitere</span>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sx-dev {
+    background: var(--sx-c-bg);
+    color: var(--sx-c-ink);
+  }
+
+  .sx-dev__intro {
+    display: grid;
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: 2.75rem;
+  }
+
+  .sx-dev__eyebrow { color: var(--sx-c-accent); }
+
+  .sx-dev__heading {
+    color: var(--sx-c-ink);
+    max-width: 45rem;
+    margin: 0.75rem 0 0;
+  }
+
+  .sx-dev__meta {
+    display: grid;
+    gap: 0.9rem;
+    justify-items: start;
+  }
+
+  .sx-dev__date {
+    margin: 0;
+    color: var(--sx-c-ink-muted);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .sx-dev__badges,
+  .sx-dev__feature-versions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .sx-dev__badge,
+  .sx-dev__feature-versions span,
+  .sx-dev__footer span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    border-radius: var(--sx-radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .sx-dev__badge {
+    background: var(--sx-c-bg-brand);
+    color: var(--sx-c-ink-on-brand);
+    padding: 0.5rem 0.85rem;
+  }
+
+  .sx-dev__panel {
+    background: var(--sx-c-surface);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+    box-shadow: var(--sx-shadow-card);
+    overflow: hidden;
+  }
+
+  .sx-dev__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+  }
+
+  .sx-dev__feature {
+    padding: 1.35rem 1.5rem 1.45rem;
+    border-bottom: 1px solid var(--sx-c-line);
+  }
+
+  .sx-dev__feature-top {
+    display: grid;
+    gap: 0.75rem;
+    align-items: start;
+    margin-bottom: 0.5rem;
+  }
+
+  .sx-dev__feature-name {
+    font-family: var(--sx-font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--sx-c-ink);
+    margin: 0;
+  }
+
+  .sx-dev__feature-versions span {
+    background: var(--sx-c-bg-soft);
+    color: var(--sx-c-ink-subtle);
+    padding: 0.45rem 0.7rem;
+  }
+
+  .sx-dev__feature-body {
+    color: var(--sx-c-ink-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .sx-dev__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.5rem;
+    background: var(--sx-c-bg-soft);
+  }
+
+  .sx-dev__footer p {
+    color: var(--sx-c-ink-subtle);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .sx-dev__footer span {
+    background: rgba(2, 128, 144, 0.1);
+    color: var(--sx-c-data);
+    padding: 0.5rem 0.75rem;
+  }
+
+  @media (min-width: 760px) {
+    .sx-dev__intro {
+      grid-template-columns: 1fr auto;
+    }
+
+    .sx-dev__meta {
+      justify-items: end;
+      text-align: right;
+      padding-bottom: 0.25rem;
+    }
+
+    .sx-dev__features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sx-dev__feature:nth-child(odd) {
+      border-right: 1px solid var(--sx-c-line);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .sx-dev__features {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .sx-dev__feature,
+    .sx-dev__feature:nth-child(odd) {
+      border-right: 1px solid var(--sx-c-line);
+    }
+
+    .sx-dev__feature:nth-child(5n) {
+      border-right: 0;
+    }
+  }
+</style>
