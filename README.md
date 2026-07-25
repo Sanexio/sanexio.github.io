@@ -31,6 +31,32 @@ GitHub Action `.github/workflows/deploy.yml` runs on every push to `main`:
 build → push `dist/` to the `gh-pages` branch. GitHub Pages serves from
 that branch.
 
+## Cortex-Distribution auf gh-pages
+
+Der Branch `gh-pages` enthält neben der Astro-Site den manuell publizierten
+`cortex/`-Distributions-Baum. Diese Artefakte kommen nicht aus dem Astro-Build:
+sie enthalten Update-Manifeste, signierte und notarisierte Tarballs, Docs und
+`install.sh`. Deshalb nutzt der Pages-Deploy `keep_files: true`; ohne diese
+Einstellung würde jeder Deploy aus `dist/` den `cortex/`-Baum löschen.
+
+Publizieren:
+
+```bash
+bash tools/publish-cortex.sh --from-ref <ref>
+bash tools/publish-cortex.sh --source <dir-mit-cortex-baum>
+```
+
+Vor dem Commit validiert der Publisher die JSON-Manifeste und die SHA-256-Werte
+der referenzierten Tarballs. Mit `--dry-run` werden Dateiliste und Validierung
+angezeigt, ohne nach `gh-pages` zu committen oder zu pushen.
+
+Vertraglich stabile URLs:
+
+- `https://sanexio.github.io/cortex/api/v1/update/manifest.json`
+- `https://sanexio.github.io/cortex/nexus/api/v1/update/manifest.json`
+- `https://sanexio.github.io/cortex/dist/<tarball>`
+- `https://sanexio.github.io/cortex/docs/`
+
 ## Project structure
 
 ```

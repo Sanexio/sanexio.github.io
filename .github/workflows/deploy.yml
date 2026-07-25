@@ -45,6 +45,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+          # gh-pages also carries the manually published /cortex/ distribution tree
+          # (signed+notarized release artifacts, not part of the Astro build);
+          # without keep_files, every site deploy wipes these artifacts (incident June 2026).
+          keep_files: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'deploy: ${{ github.event.head_commit.message }}'
