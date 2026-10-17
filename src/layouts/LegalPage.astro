@@ -17,7 +17,7 @@ const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = As
 
 <Default title={pageTitle} description={pageDescription}>
   <Nav />
-  <main class="sx-legal-main">
+  <main class="sx-legal-main" id="inhalt">
     <section class="sx-legal">
       <div class="sx-legal__container">
         <header class="sx-legal__header">
@@ -41,7 +41,7 @@ const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = As
 
 <style>
   .sx-legal-main {
-    padding-top: 6rem;
+    padding-top: 1rem;
     background: var(--sx-c-bg);
     color: var(--sx-c-ink);
   }
@@ -51,6 +51,7 @@ const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = As
   }
 
   .sx-legal__container {
+    overflow-wrap: anywhere;
     max-width: 56rem;
     margin: 0 auto;
     padding-inline: var(--sx-space-container-x-mobile);
@@ -114,6 +115,7 @@ const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = As
   }
 
   .sx-legal__body {
+    overflow-wrap: anywhere;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--sx-c-ink-subtle);
@@ -179,10 +181,12 @@ const { badge, heading, subtitle, lastUpdated, pageTitle, pageDescription } = As
   }
 
   @media (min-width: 768px) {
-    .sx-legal__container { padding-inline: var(--sx-space-container-x-tablet); }
+    .sx-legal__container {
+    overflow-wrap: anywhere; padding-inline: var(--sx-space-container-x-tablet); }
   }
 
   @media (min-width: 1280px) {
-    .sx-legal__container { padding-inline: var(--sx-space-container-x-desktop); }
+    .sx-legal__container {
+    overflow-wrap: anywhere; padding-inline: var(--sx-space-container-x-desktop); }
   }
 </style>

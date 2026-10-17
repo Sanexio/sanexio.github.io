@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Sanexio Brand-Hub — Human Enhancement, Digital Health Twin, Health Graph",
+  "description": "Sanexio GmbH — Cortex, Nexus und Digital Health Twin",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

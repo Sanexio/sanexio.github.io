@@ -6,7 +6,7 @@ interface Props {
   showLabels?: boolean;
 }
 
-const { variant = 'on-brand', showLabels = false } = Astro.props;
+const { variant = 'on-light', showLabels = false } = Astro.props;
 
 const icons: Record<string, string> = {
   github:
@@ -71,27 +71,13 @@ const icons: Record<string, string> = {
     position: relative;
   }
 
-  .sx-social--on-brand .sx-social__item a {
-    color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(255, 255, 255, 0.15);
-    background-color: rgba(255, 255, 255, 0.04);
-  }
-
-  .sx-social--on-brand .sx-social__item a:hover {
-    color: var(--sx-c-data-hi);
-    border-color: var(--sx-c-data-hi);
-    background-color: rgba(2, 195, 154, 0.08);
-    transform: translateY(-2px);
-    opacity: 1;
-  }
-
-  .sx-social--on-light .sx-social__item a {
+  .sx-social__item a {
     color: var(--sx-c-ink-subtle);
     border-color: var(--sx-c-line);
     background-color: var(--sx-c-surface);
   }
 
-  .sx-social--on-light .sx-social__item a:hover {
+  .sx-social__item a:hover {
     color: var(--sx-c-data);
     border-color: var(--sx-c-data);
     transform: translateY(-2px);
@@ -111,7 +97,7 @@ const icons: Record<string, string> = {
     font-weight: 700;
     letter-spacing: 0.05em;
     background: var(--sx-c-accent);
-    color: var(--color-white);
+    color: var(--sx-c-on-accent);
     padding: 0.125rem 0.4rem;
     border-radius: 4px;
     line-height: 1;

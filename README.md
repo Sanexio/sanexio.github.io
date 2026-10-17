@@ -1,7 +1,6 @@
 # sanexio.github.io
 
-Brand-Hub of **Sanexio GmbH** — Digital Health Care Startup focused on
-**Human Enhancement** through the Digital Health Twin (DHT).
+Öffentliche Konzeptseite der **Sanexio GmbH**. Cortex ist unser KI-Framework und unsere Produktplattform, Nexus unsere eigene KI-Engine. Der Digital Health Twin ist ein Produkt dieser Palette.
 
 Live: https://sanexio.github.io
 
@@ -21,9 +20,16 @@ bun run build    # → dist/
 bun run preview  # serve dist/ locally
 ```
 
-## Dev-Status-Sync
+## Inhalte pflegen
 
-Der Abschnitt „Wo steht die Entwicklung“ wird aus dem pitchbar gefilterten Juvantis-Feature-Feed unter `/Users/clusteradm/Cortex/projects/Juvantis/juvantis-mvp/web/assets/features-feed.json` erzeugt. Regenerieren: `node tools/gen-dev-status.mjs` oder mit abweichendem Feed `node tools/gen-dev-status.mjs --feed /pfad/zum/features-feed.json`. Die Freigabe läuft über den Entwurfs-Branch `pitch-dev-status`; erst nach fachlicher Freigabe und Merge nach `main` deployt die Seite.
+Die öffentliche Seite nutzt redaktionell gepflegte Daten unter `src/data/`.
+`dev-status.ts` enthält die geplante Cortex-Produktpalette. Der frühere
+Release-Feed-Import ist stillgelegt und beendet sich ohne Schreibzugriff.
+Die Roadmap enthält geplante Schritte, keine bestätigten Freigaben.
+
+Der Investoren-Pitch wird separat unter `public/investoren/` gepflegt.
+Die öffentliche Seite verlinkt `/investoren/`; der Zugangsschutz muss dort
+bereitgestellt und vor Veröffentlichung geprüft werden.
 
 ## Deployment
 
@@ -70,23 +76,15 @@ src/
 .github/workflows/  CI/CD
 ```
 
-## Branding & Tokens
+## Gestaltung
 
-Sanexio identity layer lives in `src/styles/tokens.css`, namespace
-`--sx-*`. Three colour anchors:
+„Praxis 2025“: heller Hintergrund, weiße Karten mit 18px Radius, rote Akzente
+und lokal geladene Inter/Inter Tight. Primitive und semantische Zuordnungen
+liegen ausschließlich in `src/styles/tokens.css`. Komponenten verwenden
+semantische Tokens. Der helle Modus gilt auch für die Rechtsseiten.
 
-- `#0a2540` Brand-Dark-Blue (Sanexio logo wordmark)
-- `#c1121f` Pulse-Red (EKG glyph in logo)
-- `#028090 → #02C39A` Teal gradient (Health Graph data viz)
-
-Wordmark uses Georgia serif (brand recognition); body and UI use Inter.
-
-## Connected projects
-
-- **Praxiszentrum Dr. Stracke & Kollegen** — clinical partner
-  (`westend-hausarzt.com`)
-- **sanexio.eu** — Shopify storefront for Bloody Check products
-- **Juvantis DHT** — iOS app + GitHub repo
+`/health-graph.html` führt zum aktuellen Twin-Konzept auf der Startseite.
+Die frühere isolierte Demo wird nicht mehr öffentlich ausgeliefert.
 
 ## License
 

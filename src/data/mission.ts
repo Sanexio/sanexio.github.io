@@ -1,36 +1,6 @@
-// Sanexio mission pillars — four values that define the company DNA.
-// Editable by Dr. Stracke; current text is Phase-3 proposal.
-
-export interface MissionPillar {
-  id: string;
-  title: string;
-  body: string;
-  accent: 'pulse' | 'data' | 'tech' | 'vital';
-}
-
-export const missionPillars: MissionPillar[] = [
-  {
-    id: 'evidence-based',
-    title: 'Evidence-Based',
-    body: 'Jeder Datenpunkt im Digital Health Twin ist klinisch validiert. Keine Wellness-Esoterik, keine ungeprüften Versprechen — nur Werte, die in der ärztlichen Praxis Bestand haben.',
-    accent: 'pulse',
-  },
-  {
-    id: 'patient-first',
-    title: 'Patient-First',
-    body: 'Der digitale Zwilling gehört dem Patienten, nicht der Plattform. Datensouveränität, Transparenz und Exportierbarkeit sind keine Features, sondern Voraussetzungen.',
-    accent: 'data',
-  },
-  {
-    id: 'open-knowledge',
-    title: 'Open Knowledge',
-    body: 'Der Health Graph und die zugrundeliegenden Forschungsergebnisse sind transparent, nachvollziehbar und überprüfbar. Wir arbeiten mit der medizinischen Community, nicht gegen sie.',
-    accent: 'tech',
-  },
-  {
-    id: 'clinically-validated',
-    title: 'Klinisch validiert',
-    body: 'Jede Methode wird in der Partnerpraxis Dr. Stracke & Kollegen am echten Patienten geprüft, bevor sie zum Produkt wird. Die Praxis ist der Realitätscheck — kein Fokustest, keine Persona-Studie.',
-    accent: 'vital',
-  },
+export const missionPillars = [
+ { id: 'edge', title: 'Edge Inference', body: 'Die Verarbeitung bleibt dort, wo die Daten entstehen. Nähe zur Versorgung prägt unsere Architektur.' },
+ { id: 'sovereignty', title: 'Data Sovereignty', body: 'Zugriff und Freigabe bleiben kontrollierbar. Patient:innen entscheiden, welche Informationen ihre Praxis einsehen darf.' },
+ { id: 'guardrails', title: 'Guardrails', body: 'Berechtigungen, nachvollziehbare Abläufe und fachliche Prüfungen begrenzen die KI. Die ärztliche Verantwortung liegt bei Ärzt:innen.' },
+ { id: 'exclusive', title: 'Exclusive Model', body: 'Nexus baut auf einer Open-Weight-Basis auf. LoRA auf proprietären Daten ergibt eine eigene medizinische Gewichtung.' },
 ];

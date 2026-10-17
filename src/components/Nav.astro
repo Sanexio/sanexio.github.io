@@ -1,131 +1,22 @@
----
-// Sticky top navigation. Transparent over hero, solid on scroll.
-// JS toggles `is-scrolled` class to add background + shadow.
----
-
-<header class="sx-nav" id="sx-nav">
-  <div class="sx-container sx-nav__inner">
-    <a href="#vision" class="sx-nav__brand" aria-label="Sanexio Startseite">
-      <span class="sx-nav__wordmark">sanexio</span>
-    </a>
-
-    <nav class="sx-nav__links" aria-label="Hauptnavigation">
-      <a href="#vision">Vision</a>
-      <a href="#dht">DHT</a>
-      <a href="#dev-status">Entwicklung</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#llm">LLM</a>
-      <a href="#health-graph">Health Graph</a>
-      <a href="#investoren">Investoren</a>
-      <a href="#kontakt">Kontakt</a>
+<a class="sx-skip sx-btn" href="#inhalt">Zum Inhalt</a>
+<header class="sx-nav">
+  <div class="sx-container sx-nav-inner">
+    <a href="/" class="sx-brand" aria-label="Sanexio Startseite">sanexio<span aria-hidden="true">.</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#cortex">Cortex &amp; Nexus</a>
+      <a href="/#dht">Digital Health Twin</a>
+      <a href="/#roadmap">Roadmap</a>
+      <a href="/investoren/">Investoren</a>
+      <a href="/#kontakt">Kontakt</a>
     </nav>
-
-    <a href="#kontakt" class="sx-nav__cta" aria-label="Kontakt aufnehmen">
-      <span>Kontakt</span>
-    </a>
   </div>
 </header>
-
 <style>
-  .sx-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    transition: background-color 280ms ease, box-shadow 280ms ease, backdrop-filter 280ms ease;
-    background-color: transparent;
-  }
-
-  .sx-nav.is-scrolled {
-    background-color: rgba(10, 37, 64, 0.85);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
-  }
-
-  .sx-nav__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-block: 1.25rem;
-  }
-
-  .sx-nav__brand {
-    font-family: var(--sx-font-brand);
-    font-size: 1.875rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--sx-c-ink-on-brand);
-    text-decoration: none;
-  }
-
-  .sx-nav__brand:hover { opacity: 1; color: var(--sx-c-data-hi); }
-
-  .sx-nav__wordmark {
-    /* The "n" gets the EKG-pulse colour for brand recognition */
-    background: linear-gradient(
-      90deg,
-      currentColor 0,
-      currentColor 25%,
-      var(--sx-c-accent) 25%,
-      var(--sx-c-accent) 45%,
-      currentColor 45%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .sx-nav__links {
-    display: none;
-    gap: 2rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-  }
-
-  .sx-nav__links a {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .sx-nav__links a:hover {
-    color: var(--sx-c-data-hi);
-    opacity: 1;
-  }
-
-  .sx-nav__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 0.5rem 1.1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--sx-radius-pill);
-  }
-
-  .sx-nav__cta:hover {
-    border-color: var(--sx-c-data-hi);
-    color: var(--sx-c-data-hi);
-    opacity: 1;
-  }
-
-  @media (min-width: 900px) {
-    .sx-nav__links { display: flex; }
-  }
+ .sx-nav { position: sticky; top: 0; z-index: 100; background: var(--sx-c-bg); border-bottom: 1px solid var(--sx-c-line); }
+ .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem 2rem; padding-block: 1rem; }
+ .sx-brand { font: 800 1.9rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
+ .sx-brand span { color: var(--sx-c-accent); }
+ nav { display: flex; flex-wrap: wrap; gap: .15rem 1.3rem; }
+ nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .82rem; font-weight: 600; text-decoration: none; }
+ @media(max-width: 767px) { nav { width: 100%; gap: 0 1rem; } nav a { font-size: .76rem; } }
 </style>
-
-<script>
-  // Add `.is-scrolled` to <header> after 8px of scroll. Also handles initial state.
-  const nav = document.getElementById('sx-nav');
-  if (nav) {
-    const update = () => {
-      if (window.scrollY > 8) nav.classList.add('is-scrolled');
-      else nav.classList.remove('is-scrolled');
-    };
-    update();
-    window.addEventListener('scroll', update, { passive: true });
-  }
-</script>
