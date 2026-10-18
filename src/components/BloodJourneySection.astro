@@ -1,0 +1,60 @@
+<section class="sx-section" id="blood-journey" aria-labelledby="blood-journey-title">
+  <div class="sx-container">
+    <article class="sx-card">
+      <p class="sx-eyebrow">Von der Blutprobe zum Digital Health Twin</p>
+      <h2 id="blood-journey-title">Die Reise Ihrer Blutprobe</h2>
+      <p class="sx-lead">Der Film zeigt, was mit einer Blutprobe geschieht – von der Abnahme bis zu den Werten, die der Digital Health Twin nutzt.</p>
+      <video
+        id="blood-journey-video"
+        muted
+        autoplay
+        playsinline
+        loop
+        controls
+        preload="auto"
+        poster="/videos/blood-journey-poster.jpg"
+        width="1920"
+        height="1080"
+        aria-label="Die Reise Ihrer Blutprobe – stummer Erklärfilm mit eingeblendeten Texttafeln"
+      ></video>
+    </article>
+  </div>
+</section>
+
+<script is:inline>
+  (() => {
+    const video = document.getElementById('blood-journey-video');
+    if (!(video instanceof HTMLVideoElement)) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    video.muted = true;
+    if (reducedMotion) {
+      video.autoplay = false;
+      video.removeAttribute('autoplay');
+      video.preload = 'metadata';
+    }
+
+    const useSmallVideo = window.matchMedia('(max-width: 768px)').matches
+      || navigator.connection?.saveData;
+    video.src = useSmallVideo
+      ? '/videos/blood-journey-720.mp4'
+      : '/videos/blood-journey-1080.mp4';
+
+    if (!reducedMotion) video.play().catch(() => {});
+  })();
+</script>
+
+<style>
+  .sx-eyebrow {
+    color: var(--sx-c-accent);
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--sx-radius-card);
+    background: var(--sx-c-bg-soft);
+  }
+</style>
