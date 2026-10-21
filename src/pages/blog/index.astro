@@ -1,0 +1,117 @@
+---
+import Default from '../../layouts/Default.astro';
+import Nav from '../../components/Nav.astro';
+import ContactFooter from '../../components/ContactFooter.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Default
+  title="DHT-Blog — Sanexio"
+  description="Beiträge zum Digital Health Twin, zu 3D-Organen und zum Health Graph auf sanexio.github.io."
+>
+  <Nav />
+  <main class="sx-legal-main">
+    <section class="sx-legal sx-blog-index">
+      <div class="sx-legal__container">
+        <header class="sx-legal__header">
+          <span class="sx-legal__badge">Blog</span>
+          <h1 class="sx-legal__heading">Digital Health Twin im Bau</h1>
+          <p class="sx-legal__subtitle">
+            Chronologische Einblicke in Idee, Werkstatt, Mitgestaltung und Health Graph — verknüpft mit der
+            <a href="/#dht">DHT-Zeitleiste</a> auf der Startseite.
+          </p>
+          <p class="sx-legal__back"><a href="/">← zurück zur Startseite</a></p>
+        </header>
+
+        <ul class="sx-blog-list">
+          {posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`} class="sx-blog-card">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('de-DE', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </time>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <span class="sx-blog-card__more">Weiterlesen →</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+  <ContactFooter />
+</Default>
+
+<style>
+  .sx-blog-index .sx-legal__subtitle a {
+    color: var(--sx-c-data);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .sx-blog-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .sx-blog-card {
+    display: block;
+    background: var(--sx-c-surface);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+    padding: 1.75rem;
+    color: var(--sx-c-ink);
+    text-decoration: none;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  .sx-blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sx-shadow-card-hi);
+    border-color: var(--sx-c-data);
+    opacity: 1;
+  }
+
+  .sx-blog-card time {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sx-c-data);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .sx-blog-card h2 {
+    font-family: var(--sx-font-display);
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    line-height: 1.25;
+  }
+
+  .sx-blog-card p {
+    margin: 0 0 1rem;
+    color: var(--sx-c-ink-subtle);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .sx-blog-card__more {
+    color: var(--sx-c-data);
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+</style>

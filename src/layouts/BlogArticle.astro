@@ -1,0 +1,91 @@
+---
+import Default from './Default.astro';
+import Nav from '../components/Nav.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  stagingNote: string;
+  pageTitle: string;
+}
+
+const { title, description, pubDate, stagingNote, pageTitle } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<Default title={pageTitle} description={description}>
+  <Nav />
+  <main class="sx-legal-main">
+    <section class="sx-legal">
+      <div class="sx-legal__container">
+        <header class="sx-legal__header">
+          <span class="sx-legal__badge">DHT-Blog</span>
+          <h1 class="sx-legal__heading">{title}</h1>
+          <p class="sx-legal__subtitle">{description}</p>
+          <p class="sx-legal__date">{formattedDate}</p>
+          <p class="sx-legal__back">
+            <a href="/blog/">← alle Beiträge</a>
+            <span aria-hidden="true"> · </span>
+            <a href="/#dht">DHT-Zeitleiste</a>
+          </p>
+        </header>
+
+        <div class="sx-blog-staging">
+          <p><strong>Hinweis:</strong> {stagingNote}</p>
+        </div>
+
+        <article class="sx-legal__body sx-blog-body">
+          <slot />
+        </article>
+      </div>
+    </section>
+  </main>
+  <ContactFooter />
+</Default>
+
+<style>
+  .sx-blog-staging {
+    background: var(--sx-c-bg-soft);
+    border-left: 4px solid var(--sx-c-data);
+    border-radius: var(--sx-radius-md);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--sx-c-ink-subtle);
+  }
+
+  .sx-blog-staging strong {
+    color: var(--sx-c-ink);
+  }
+
+  .sx-blog-body :global(.sx-graph-placeholder),
+  .sx-blog-body :global(.sx-3d-placeholder) {
+    background: var(--sx-c-surface);
+    border: 1px dashed var(--sx-c-line);
+    border-radius: var(--sx-radius-md);
+    padding: 2.5rem 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sx-c-ink-muted);
+  }
+
+  .sx-blog-body :global(.sx-nexus-note) {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sx-c-line);
+    font-size: 0.875rem;
+    color: var(--sx-c-ink-muted);
+  }
+</style>

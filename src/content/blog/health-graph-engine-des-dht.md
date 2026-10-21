@@ -16,19 +16,19 @@ Im Graph sind Organe, Laborgrößen und klinische Begriffe Knoten. Kanten beschr
 
 Die aktuelle Graph-Ansicht zeigt, wie wir Produktion, Indikation und Wirkung nebeneinander lesbar machen.
 
-<div class="sx-graph-placeholder">[GRAPH]</div>
+<iframe src="/health-graph.html" title="Sanexio Health Graph — Live-Demo" loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:2rem 0;display:block;"></iframe>
+
+<p><a href="/health-graph.html" target="_blank" rel="noopener">Health Graph vollflächig öffnen →</a> · <a href="/#health-graph">Demo auf der Startseite</a></p>
 
 ## Stationen und Graph als ein System
 
 Die Reise durch den Körper mit ihren fünf Stationen ist unser sichtbarer Prüfstand. Jede Station wird mit dem Health Graph verknüpft. Der Ganzkörper gibt Orientierung, die Niere trägt Filterlogik, das Nierenkörperchen die mikroskopische Ebene, die Blutbahn die Brücke zu Blutbild und Sauerstofftransport. Herz und Leber ergänzen den Bestand parallel. Wenn Nutzerinnen und Nutzer zoomen, sollen sie dieselbe Logik spüren, die der Graph im Hintergrund führt.
 
-<div class="sx-3d-placeholder">[3D]</div>
-
 Langfristig soll der Twin nicht nur Formen zeigen. Er soll Wechselwirkungen spürbar machen, soweit ein verständliches Modell das erlaubt. Daten aus standardisierten Profilen und aus der Anamnese sollen den Graphen nähren. Anschließend soll der Graph mitbestimmen, wie sich die räumliche Darstellung verformt, wenn sich Zusammenhänge verschieben. Das ist Forschung und Produktentwicklung in einem, offen dokumentiert mit Staging-Hinweisen.
 
 ## Prominenz in der Kommunikation
 
-Wir werden den Health Graph in unseren öffentlichen Texten nicht als Fußnote behandeln. Im Blog erklären wir ihn in diesem Beitrag ausführlich und verweisen in den übrigen Artikeln der Reihe darauf, wenn Stationen und Engine zusammengehören. Auf der Startseite von sanexio.github.io planen wir ihn später als eigene Phase in der DHT-Zeitleiste und als Demo zum Ausprobieren — ohne Technik-Interna. Bis das live ist, zeigen wir den Werkstattstand hier mit Graph- und 3D-Platzhaltern.
+Wir werden den Health Graph in unseren öffentlichen Texten nicht als Fußnote behandeln. Im Blog erklären wir ihn in diesem Beitrag ausführlich und verweisen in den übrigen Artikeln der Reihe darauf, wenn Stationen und Engine zusammengehören. Auf der Startseite von sanexio.github.io ist er als Phase in der DHT-Zeitleiste und als Demo zum Ausprobieren erreichbar — ohne Technik-Interna. Hier im Blog binden wir dieselbe Live-Demo ein; die 3D-Stationen der Reise durch den Körper findest Du auf den Laborseiten unserer Partnerpraxis.
 
 ## Was wir von Dir brauchen
 
