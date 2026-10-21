@@ -50,6 +50,10 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
   <ContactFooter />
 </Default>
 
+<style is:global>
+  @import '../styles/legal-layout.css';
+</style>
+
 <style>
   .sx-blog-staging {
     background: var(--sx-c-bg-soft);
@@ -86,6 +90,25 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
     padding-top: 1.5rem;
     border-top: 1px solid var(--sx-c-line);
     font-size: 0.875rem;
+    color: var(--sx-c-ink-muted);
+  }
+
+  .sx-blog-body :global(.sx-blog-figure) {
+    margin: 2rem 0;
+  }
+
+  .sx-blog-body :global(.sx-blog-figure img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--sx-radius-md);
+    border: 1px solid var(--sx-c-line);
+  }
+
+  .sx-blog-body :global(.sx-blog-figure figcaption) {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
     color: var(--sx-c-ink-muted);
   }
 </style>

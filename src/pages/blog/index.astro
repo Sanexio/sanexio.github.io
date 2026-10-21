@@ -51,6 +51,10 @@ const posts = (await getCollection('blog')).sort(
   <ContactFooter />
 </Default>
 
+<style is:global>
+  @import '../../styles/legal-layout.css';
+</style>
+
 <style>
   .sx-blog-index .sx-legal__subtitle a {
     color: var(--sx-c-data);

@@ -16,9 +16,22 @@ Im Graph sind Organe, Laborgrößen und klinische Begriffe Knoten. Kanten beschr
 
 Die aktuelle Graph-Ansicht zeigt, wie wir Produktion, Indikation und Wirkung nebeneinander lesbar machen.
 
-<iframe src="/health-graph.html" title="Sanexio Health Graph — Live-Demo" loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:2rem 0;display:block;"></iframe>
-
-<p><a href="/health-graph.html" target="_blank" rel="noopener">Health Graph vollflächig öffnen →</a> · <a href="/#health-graph">Demo auf der Startseite</a></p>
+<figure class="sx-blog-figure">
+  <picture>
+    <source srcset="/images/blog/healthgraph-panel-1440.webp" type="image/webp" />
+    <img
+      src="/images/blog/healthgraph-panel-1440.jpg"
+      alt="Sanexio Health Graph — Knoten und Kanten für Organe, Laborwerte und Wechselwirkungen"
+      width="896"
+      height="561"
+      loading="lazy"
+    />
+  </picture>
+  <figcaption>
+    Der Health Graph im aktuellen Werkstattstand.
+    <a href="https://westend-hausarzt.com/laborwerte/" rel="noopener">Interaktiv ausprobieren auf westend-hausarzt.com/laborwerte/</a>
+  </figcaption>
+</figure>
 
 ## Stationen und Graph als ein System
 
@@ -28,7 +41,7 @@ Langfristig soll der Twin nicht nur Formen zeigen. Er soll Wechselwirkungen spü
 
 ## Prominenz in der Kommunikation
 
-Wir werden den Health Graph in unseren öffentlichen Texten nicht als Fußnote behandeln. Im Blog erklären wir ihn in diesem Beitrag ausführlich und verweisen in den übrigen Artikeln der Reihe darauf, wenn Stationen und Engine zusammengehören. Auf der Startseite von sanexio.github.io ist er als Phase in der DHT-Zeitleiste und als Demo zum Ausprobieren erreichbar — ohne Technik-Interna. Hier im Blog binden wir dieselbe Live-Demo ein; die 3D-Stationen der Reise durch den Körper findest Du auf den Laborseiten unserer Partnerpraxis.
+Wir werden den Health Graph in unseren öffentlichen Texten nicht als Fußnote behandeln. Im Blog erklären wir ihn in diesem Beitrag ausführlich und verweisen in den übrigen Artikeln der Reihe darauf, wenn Stationen und Engine zusammengehören. Auf der Startseite von sanexio.github.io ist er als Phase in der DHT-Zeitleiste erreichbar — ohne Technik-Interna. Hier im Blog zeigen wir den aktuellen Werkstattstand als Screenshot; interaktiv ausprobieren kannst Du den Graphen auf den Laborseiten unserer Partnerpraxis.
 
 ## Was wir von Dir brauchen
 
