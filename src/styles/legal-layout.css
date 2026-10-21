@@ -80,7 +80,7 @@
   max-width: 44rem;
 }
 
-.sx-legal__bodyh2 {
+.sx-legal__body h2 {
   font-family: var(--sx-font-display);
   font-size: 1.5rem;
   font-weight: 600;
@@ -89,41 +89,41 @@
   margin: 2.5rem 0 1rem;
 }
 
-.sx-legal__bodyh2:first-child {
+.sx-legal__body h2:first-child {
   margin-top: 0;
 }
 
-.sx-legal__bodyp {
+.sx-legal__body p {
   margin: 0 0 1.25rem;
 }
 
-.sx-legal__bodystrong {
+.sx-legal__body strong {
   color: var(--sx-c-ink);
   font-weight: 600;
 }
 
-.sx-legal__bodya {
+.sx-legal__body a {
   color: var(--sx-c-data);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-.sx-legal__bodya:hover {
+.sx-legal__body a:hover {
   color: var(--sx-c-accent);
   opacity: 1;
 }
 
-.sx-legal__bodyul {
+.sx-legal__body ul {
   margin: 0 0 1.25rem;
   padding-left: 1.5rem;
 }
 
-.sx-legal__bodyli {
+.sx-legal__body li {
   margin-bottom: 0.4rem;
 }
 
-.sx-legal__body.sx-info-box {
+.sx-legal__body .sx-info-box {
   background: var(--sx-c-bg-soft);
   border-left: 4px solid var(--sx-c-data);
   border-radius: var(--sx-radius-md);
@@ -131,7 +131,7 @@
   margin: 2rem 0;
 }
 
-.sx-legal__body.sx-contact-card {
+.sx-legal__body .sx-contact-card {
   background: var(--sx-c-surface);
   border: 1px solid var(--sx-c-line);
   border-radius: var(--sx-radius-md);
