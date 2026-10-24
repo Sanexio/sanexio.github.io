@@ -9,7 +9,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node tests/anatomy-loading.mjs && node tests/anatomy-assets.mjs",
+    "test:browser": "node tests/anatomy-browser.mjs",
+    "check": "astro check"
   },
   "dependencies": {
     "astro": "^5.0.0",

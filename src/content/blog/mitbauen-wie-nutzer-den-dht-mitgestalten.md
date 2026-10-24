@@ -1,4 +1,5 @@
 ---
+organs: ["herz-male", "leber-male"]
 title: "Mitbauen: wie Nutzer den DHT mitgestalten"
 description: "Der Digital Health Twin wächst mit Feedback: Sanexio lädt ein, Fragen zu stellen, Stationen zu testen und die nächsten Schritte mitzubestimmen."
 pubDate: 2026-10-20

@@ -1,4 +1,5 @@
 ---
+organs: ["herz-male", "leber-male", "niere-male", "lunge-male", "carotis-left", "schilddruese-spl-manix"]
 title: "Werkstattbericht: 3D-Organe Schritt für Schritt"
 description: "Herz, Niere, Leber, Blut: Sanexio pflegt einen gemeinsamen 3D-Bestand und bringt ihn Schritt für Schritt in Reise und Digital Health Twin."
 pubDate: 2026-10-16
@@ -43,6 +44,12 @@ In öffentlichen Texten erzählen wir nicht von internen Werkzeugketten. Wir erz
 Unsere Reels „Vom Organ bis zur Filterschicht“ und „Ein Bestand für alle Organe“ zeigen dieselbe Oberfläche: Schichten ansehen, vergleichen, neugierig bleiben, ohne Selbstdiagnose. Wenn Du Inhalte teilst oder kommentierst, hilfst Du uns zu verstehen, welche Formate verständlich ankommen.
 
 Am Ende zählt, ob eine Ansicht Dir beim Verstehen hilft und ob wir sie gemeinsam verbessern können.
+
+## Sechs Organe zum Erkunden
+
+Unter diesem Beitrag kannst Du Herz, Leber, Niere, Lunge, die linke Halsschlagader (Carotis) und Schilddrüse direkt erkunden. Neben jedem Bild steht eine räumliche Ansicht. So lässt sich dieselbe Form aus unterschiedlichen Blickwinkeln betrachten, ohne dass das ruhige Bild beim Drehen verschwindet.
+
+Die gezeigten Exemplare sind anatomische Referenzmodelle, kein Abbild Deines eigenen Körpers. Ihre Quellen und Lizenzen stehen jeweils dabei. Die Freigabe für diese Darstellung macht daraus noch kein diagnostisches Werkzeug: Wir zeigen Anschauung und laden zum Fragenstellen ein.
 
 
 <p class="sx-nexus-note">Erstellt mit der Nexus KI unseres Cortex-Systems.</p>

@@ -6,6 +6,7 @@ interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   description = 'Sanexio entwickelt Cortex als KI-Framework, Nexus als eigene Engine und den Digital Health Twin als Verbindung zwischen Patient:innen und Ärzt:innen.',
   canonical = Astro.url.href,
   ogImage = '/logo-sanexio-red.svg',
+  ogImageAlt = title,
 } = Astro.props;
 ---
 
@@ -33,6 +35,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content="Sanexio" />
     <meta property="og:locale" content="de_DE" />
 
@@ -41,6 +44,7 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

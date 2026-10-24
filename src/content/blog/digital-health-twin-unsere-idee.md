@@ -1,4 +1,5 @@
 ---
+organs: ["herz-male", "niere-male", "leber-male"]
 title: "Der Digital Health Twin – unsere Idee"
 description: "Bei Sanexio entsteht ein Digital Health Twin: Schicht für Schicht, im Browser erlebbar — mit Nutzerinnen und Nutzern, nicht hinter verschlossenen Türen."
 pubDate: 2026-10-10

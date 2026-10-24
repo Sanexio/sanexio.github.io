@@ -1,0 +1,71 @@
+---
+import anatomy from '../data/anatomy.json';
+interface Props { organs: (keyof typeof anatomy)[] }
+const { organs } = Astro.props;
+const absolute = (path: string) => new URL(path, Astro.site).href;
+const graph = organs.flatMap((id) => {
+  const model = anatomy[id];
+  const imageId = `${Astro.url.href}#${id}-image`;
+  const common = { name: model.name, creditText: model.credit, license: model.licenseUrl };
+  return [
+    { '@type': 'ImageObject', '@id': imageId, ...common,
+      contentUrl: absolute(`/anatomy/${id}-600.webp`), encodingFormat: 'image/webp', width: 600, height: 600 },
+    { '@type': '3DModel', '@id': `${Astro.url.href}#${id}`, ...common,
+      contentUrl: absolute(`/anatomy/${id}-mobil.glb`), encodingFormat: 'model/gltf-binary',
+      image: { '@id': imageId }, isAccessibleForFree: true },
+  ];
+});
+---
+{organs.length > 0 && <section class="organ-gallery" aria-labelledby="organ-gallery-title">
+  <h2 id="organ-gallery-title">Vom Bild zum drehbaren Organ</h2>
+  <p>Schau Dir die Formen in Ruhe an: Das Bild bleibt neben der räumlichen Ansicht stehen.
+    Du kannst das Modell drehen und näher heranholen. Die Farben helfen bei der Orientierung;
+    sie zeigen keine Messwerte und keine individuelle Diagnose.</p>
+  {organs.map((id) => {
+    const model = anatomy[id];
+    return <section class="organ-card" id={id} aria-labelledby={`${id}-title`}>
+      <h3 id={`${id}-title`}>{model.name}</h3>
+      <div class="organ-pair">
+        <figure>
+          <img src={`/anatomy/${id}-600.webp`} width="600" height="600" loading="lazy" decoding="async"
+            alt={`${model.name}: farbiges anatomisches Referenzmodell in der Vorderansicht`} />
+          <figcaption>2D-Ansicht · anatomisches Referenzmodell</figcaption>
+        </figure>
+        <div class="organ-viewer" data-organ-viewer data-model={`/anatomy/${id}-mobil.glb`}
+          data-camera={JSON.stringify(model.camera)} data-name={model.name}>
+          <div class="organ-stage">
+            <img class="organ-poster" src={`/anatomy/${id}-600.webp`} width="600" height="600"
+              loading="lazy" decoding="async" alt={`${model.name}: Vorschau der drehbaren 3D-Ansicht`} />
+          </div>
+          <div class="organ-actions">
+            <button type="button" data-load hidden>3D ansehen</button>
+            <button type="button" data-rotate hidden aria-pressed="false">Rotation starten</button>
+            <button type="button" data-reset hidden>Ansicht zurücksetzen</button>
+          </div>
+          <p class="organ-status" role="status" aria-live="polite">3D-Ansicht benötigt JavaScript; das Bild bleibt verfügbar.</p>
+        </div>
+      </div>
+      <p class="organ-credit">{model.credit} <a href={model.licenseUrl}>{model.license}</a>
+        {' · '}<a href={`/anatomy/licenses/${id}.md`}>Quellennachweis</a></p>
+    </section>;
+  })}
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
+</section>}
+<script is:inline type="module" src="/scripts/organ-loader.js"></script>
+<style>
+  .organ-gallery { margin-top: 3rem; }
+  .organ-card { margin-block: 2rem; border-top: 1px solid var(--sx-c-line); padding-top: 1rem; }
+  .organ-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+  figure { margin: 0; min-width: 0; }
+  .organ-pair img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: .75rem; }
+  .organ-stage { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: .75rem; background: #03132b; }
+  .organ-stage :global(canvas) { display: block; width: 100%; height: 100%; touch-action: pan-y; }
+  .organ-stage img { position: absolute; inset: 0; }
+  .organ-stage img[hidden] { display: none; }
+  .organ-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+  button { font: inherit; font-size: .875rem; padding: .5rem .7rem; border: 1px solid currentColor; border-radius: .4rem; cursor: pointer; background: white; color: #12304b; }
+  button:focus-visible { outline: 3px solid #006d91; outline-offset: 3px; }
+  figcaption, .organ-status, .organ-credit { font-size: .8rem; line-height: 1.5; }
+  .organ-credit { overflow-wrap: anywhere; }
+  @media (max-width: 560px) { .organ-pair { grid-template-columns: minmax(0, 1fr); } }
+</style>

@@ -9,9 +9,11 @@ interface Props {
   pubDate: Date;
   stagingNote: string;
   pageTitle: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
-const { title, description, pubDate, stagingNote, pageTitle } = Astro.props;
+const { title, description, pubDate, stagingNote, pageTitle, ogImage, ogImageAlt } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('de-DE', {
   day: '2-digit',
@@ -20,7 +22,7 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
 });
 ---
 
-<Default title={pageTitle} description={description}>
+<Default title={pageTitle} description={description} ogImage={ogImage} ogImageAlt={ogImageAlt}>
   <Nav />
   <main class="sx-legal-main">
     <section class="sx-legal">

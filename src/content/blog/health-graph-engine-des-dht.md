@@ -1,4 +1,5 @@
 ---
+organs: ["niere-male", "herz-male", "leber-male"]
 title: "Health Graph – die Engine hinter dem Digital Health Twin"
 description: "Der Health Graph vernetzt Organe, Laborwerte und Wechselwirkungen. Er wird die Engine, die das Verhalten des Digital Health Twin steuert und mit 3D-Stationen gekoppelt ist."
 pubDate: 2026-10-21

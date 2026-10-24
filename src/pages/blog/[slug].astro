@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
+import OrganGallery from '../../components/OrganGallery.astro';
+import anatomy from '../../data/anatomy.json';
 import BlogArticle from '../../layouts/BlogArticle.astro';
 
 export async function getStaticPaths() {
@@ -21,6 +23,9 @@ const pageTitle = `${post.data.title} — Sanexio DHT-Blog`;
   pubDate={post.data.pubDate}
   stagingNote={post.data.stagingNote}
   pageTitle={pageTitle}
+  ogImage={post.data.organs.length ? `/anatomy/og/${post.data.organs[0]}.jpg` : undefined}
+  ogImageAlt={post.data.organs.length ? `${anatomy[post.data.organs[0]].name}: farbiges anatomisches Referenzmodell` : undefined}
 >
   <Content />
+  <OrganGallery organs={post.data.organs} />
 </BlogArticle>

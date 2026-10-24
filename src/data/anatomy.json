@@ -1,0 +1,224 @@
+{
+  "herz-male": {
+    "name": "Herz",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        0.018727341666817665,
+        0.3692219406366348,
+        0.03123783878982067
+      ],
+      "position": [
+        0.018727341666817665,
+        0.3692219406366348,
+        0.9573029853022057
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.5992242870718467,
+      "far": 1.2529060059529233,
+      "coordinate_system": "HRA VH United",
+      "axes": {
+        "right": "-x",
+        "cranial": "+y",
+        "anterior": "+z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md"
+    },
+    "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Heart, Male v1.2. https://doi.org/10.48539/HBM373.VSTV.568 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "bytes": 694136,
+    "sha256": "92df432a0cdd8f7efea7f75650da5205d41dbd1f4ebe6243e63d36d8ef870db7"
+  },
+  "leber-male": {
+    "name": "Leber",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        -0.03758496046066284,
+        0.3672509342432022,
+        0.011299069970846176
+      ],
+      "position": [
+        -0.03758496046066284,
+        0.3672509342432022,
+        0.7089996407035568
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.45145757689017807,
+      "far": 0.9439435645752432,
+      "coordinate_system": "HRA VH United",
+      "axes": {
+        "right": "-x",
+        "cranial": "+y",
+        "anterior": "+z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md"
+    },
+    "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Liver, Male v1.1. https://doi.org/10.48539/HBM677.HVRF.764 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "bytes": 479124,
+    "sha256": "474c467610e97c64fbc614cd0ce375938bcfe6ac9c294f9fcc5173ea0216fdbf"
+  },
+  "niere-male": {
+    "name": "Niere",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        -0.018026510253548622,
+        0.28527987748384476,
+        -0.013197080232203007
+      ],
+      "position": [
+        -0.018026510253548622,
+        0.28527987748384476,
+        0.4294941889996713
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.286449998898488,
+      "far": 0.5989325395652606,
+      "coordinate_system": "HRA VH United",
+      "axes": {
+        "right": "-x",
+        "cranial": "+y",
+        "anterior": "+z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md"
+    },
+    "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Kidney, Male, Right v1.2. https://doi.org/10.48539/HBM272.ZVPQ.979 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "bytes": 571720,
+    "sha256": "0f98873350696077bd12c95e9b78e780c5c03bf89886a15e919e9714e1efe7c0"
+  },
+  "lunge-male": {
+    "name": "Lunge",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        0.0047336481511592865,
+        0.500180646777153,
+        0.002616945654153824
+      ],
+      "position": [
+        0.0047336481511592865,
+        0.500180646777153,
+        0.8413826343637252
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.5427358687778858,
+      "far": 1.134795508641257,
+      "coordinate_system": "HRA VH United",
+      "axes": {
+        "right": "-x",
+        "cranial": "+y",
+        "anterior": "+z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md"
+    },
+    "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Lung, Male v1.3.\nhttps://doi.org/10.48539/HBM737.FFBT.876 Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "bytes": 999396,
+    "sha256": "93bd7dc0a1857e1d7a73c98c4f71e410af67f07a7381ff3035d4f96065cfc41e"
+  },
+  "carotis-left": {
+    "name": "Halsschlagader links",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        -0.01001096609979868,
+        -0.04778893664479256,
+        0.03162062540650368
+      ],
+      "position": [
+        -0.01001096609979868,
+        -0.04778893664479256,
+        -0.4111418410335497
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.28649606811561956,
+      "far": 0.5990288647644872,
+      "coordinate_system": "SPL native GLB (not HRA registered)",
+      "axes": {
+        "right": "+x",
+        "cranial": "+y",
+        "anterior": "-z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md; pipeline/BERICHT_X10.md"
+    },
+    "credit": "SPL Head and Neck Atlas; Marianna Jakab, Ron Kikinis; Surgical Planning Laboratory, Brigham and Women's Hospital; Open Anatomy Project 3D Slicer License Part B. Geänderte Darstellung: Web-Farben und Kompression. Forschungsmodell; nicht für klinische Anwendung empfohlen; nicht FDA-geprüft.",
+    "license": "3D Slicer License section B (Software License)",
+    "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
+    "bytes": 484552,
+    "sha256": "d60d4a06a78b25a21ea77128668317a9e06d7633273d49cd712f822c6b4939ee"
+  },
+  "schilddruese-spl-manix": {
+    "name": "Schilddrüse",
+    "camera": {
+      "view": "anterior",
+      "target": [
+        -0.004764941520988941,
+        -0.07109885849058628,
+        0.010349706746637821
+      ],
+      "position": [
+        -0.004764941520988941,
+        -0.07109885849058628,
+        -0.1918641656275005
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov_degrees": 30,
+      "minimum_aspect_ratio": 1,
+      "near": 0.13084550689092359,
+      "far": 0.27358223785735303,
+      "coordinate_system": "SPL native GLB (not HRA registered)",
+      "axes": {
+        "right": "+x",
+        "cranial": "+y",
+        "anterior": "-z"
+      },
+      "evidence": "pipeline/hra_koordinatensystem.md; pipeline/BERICHT_X10.md"
+    },
+    "credit": "SPL Head and Neck Atlas; Marianna Jakab, Ron Kikinis; Surgical Planning Laboratory, Brigham and Women's Hospital; Open Anatomy Project. 3D Slicer License Part B. Geänderte Darstellung: Web-Farben und Kompression. Forschungsmodell; nicht für klinische Anwendung empfohlen; nicht FDA-geprüft.",
+    "license": "3D-Slicer-License-B",
+    "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
+    "bytes": 465356,
+    "sha256": "80cf642c378fc48d1c9e44147eccc72bc1fb16898cc1fa5c9ce7dfd9d86bda19"
+  }
+}
