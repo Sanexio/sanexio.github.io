@@ -1,6 +1,7 @@
 import * as THREE from '../vendor/three/build/three.module.js';
 import { GLTFLoader } from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from '../vendor/three/examples/jsm/controls/OrbitControls.js';
+import { organBounds, organCamera } from './organ-camera.js';
 
 export async function createViewer(element, reducedMotion) {
   const stage = element.querySelector('.organ-stage');
@@ -22,14 +23,10 @@ export async function createViewer(element, reducedMotion) {
   canvas.setAttribute('aria-label', `${element.dataset.name}: interaktives 3D-Modell. Pfeiltasten drehen, Plus und Minus zoomen, Pos1 setzt zurück.`);
   const controls = new OrbitControls(camera, canvas);
   controls.target.fromArray(config.target);
-  controls.enablePan = false;
+  controls.enablePan = true;
   controls.enableDamping = false;
   controls.autoRotateSpeed = 0.5;
-  const distance = camera.position.distanceTo(controls.target);
-  controls.minDistance = distance * 0.55;
-  controls.maxDistance = distance * 2;
   controls.update();
-  controls.saveState();
   scene.add(new THREE.HemisphereLight(0xd9f7ff, 0x304062, 2.5));
   const key = new THREE.DirectionalLight(0xffffff, 3);
   key.position.set(2, 3, 4);
@@ -39,6 +36,8 @@ export async function createViewer(element, reducedMotion) {
   scene.add(fill);
   let draco;
   let model;
+  let bounds;
+  let fullBounds;
   try {
     const loader = new GLTFLoader();
     if (element.dataset.model.includes('carotis-')) {
@@ -54,6 +53,8 @@ export async function createViewer(element, reducedMotion) {
     }
     model = (await loader.loadAsync(element.dataset.model)).scene;
     scene.add(model);
+    bounds = organBounds(model, config.framing);
+    fullBounds = new THREE.Box3().setFromObject(model);
   } catch (error) {
     controls.dispose();
     renderer.dispose();
@@ -68,10 +69,29 @@ export async function createViewer(element, reducedMotion) {
   let frame = 0;
   let previous = 0;
   const render = () => renderer.render(scene, camera);
+  let fittedDistance = 0;
   const resize = () => {
+    if (!stage.clientWidth || !stage.clientHeight) return;
     renderer.setSize(stage.clientWidth, stage.clientHeight, false);
     camera.aspect = stage.clientWidth / stage.clientHeight;
+    const fit = organCamera(bounds, fullBounds, config, camera.aspect);
+    if (fittedDistance) {
+      // Preserve manual orbit, pan and relative zoom across layout changes.
+      camera.position.sub(controls.target).multiplyScalar(fit.distance / fittedDistance).add(controls.target);
+    } else {
+      camera.position.copy(fit.position);
+      controls.target.copy(fit.target);
+    }
+    fittedDistance = fit.distance;
+    controls.minDistance = fit.minDistance;
+    controls.maxDistance = fit.maxDistance;
+    controls.position0.copy(fit.position);
+    controls.target0.copy(fit.target);
+    controls.zoom0 = 1;
+    camera.near = fit.near;
+    camera.far = fit.far;
     camera.updateProjectionMatrix();
+    controls.update();
     render();
   };
   const observer = new ResizeObserver(resize);

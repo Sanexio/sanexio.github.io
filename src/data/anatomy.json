@@ -2,6 +2,7 @@
   "herz-male": {
     "name": "Herz",
     "camera": {
+      "framing": { "source_index": 0 },
       "view": "anterior",
       "target": [
         0.018727341666817665,
@@ -39,6 +40,7 @@
   "leber-male": {
     "name": "Leber",
     "camera": {
+      "framing": { "source_index": 0 },
       "view": "anterior",
       "target": [
         -0.03758496046066284,
@@ -76,6 +78,7 @@
   "niere-male": {
     "name": "Niere",
     "camera": {
+      "framing": { "source_index": 0 },
       "view": "anterior",
       "target": [
         -0.018026510253548622,
@@ -113,6 +116,7 @@
   "lunge-male": {
     "name": "Lunge",
     "camera": {
+      "framing": { "source_index": 0 },
       "view": "anterior",
       "target": [
         0.0047336481511592865,
@@ -150,6 +154,7 @@
   "carotis-left": {
     "name": "Halsschlagader links",
     "camera": {
+      "framing": { "source_index": 0, "structures": ["A_carotis_communis_sinistra", "A_carotis_interna_sinistra", "A_carotis_externa_sinistra", "V_jugularis_interna_sinistra"] },
       "view": "anterior",
       "target": [
         -0.01001096609979868,
@@ -187,6 +192,7 @@
   "schilddruese-spl-manix": {
     "name": "Schilddrüse",
     "camera": {
+      "framing": { "source_index": 0, "structures": ["Glandula_thyroidea"] },
       "view": "anterior",
       "target": [
         -0.004764941520988941,

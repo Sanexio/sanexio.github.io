@@ -84,6 +84,12 @@ try {
   await mobileViewer.locator('canvas').focus();
   await mobile.keyboard.press('ArrowRight');
   assert(!still.equals(await mobileViewer.locator('canvas').screenshot()), 'Keyboard rotates');
+  await mobile.keyboard.press('Home');
+  assert(still.equals(await mobileViewer.locator('canvas').screenshot()), 'Home restores anterior organ framing');
+  await mobile.keyboard.press('+');
+  assert(!still.equals(await mobileViewer.locator('canvas').screenshot()), 'Keyboard zoom changes framing');
+  await mobileViewer.locator('[data-reset]').click();
+  assert(still.equals(await mobileViewer.locator('canvas').screenshot()), 'Reset restores organ framing after zoom');
   assert(await mobile.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   await mobile.locator('.organ-card').first().screenshot({ path: `${output}/mobile-heart.png` });
   const broken = await browser.newPage({ reducedMotion: 'reduce' });
