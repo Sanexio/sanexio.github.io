@@ -2,7 +2,9 @@
   "herz-male": {
     "name": "Herz",
     "camera": {
-      "framing": { "source_index": 0 },
+      "framing": {
+        "source_index": 0
+      },
       "view": "anterior",
       "target": [
         0.018727341666817665,
@@ -35,12 +37,33 @@
     "license": "CC-BY-4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "bytes": 694136,
-    "sha256": "92df432a0cdd8f7efea7f75650da5205d41dbd1f4ebe6243e63d36d8ef870db7"
+    "sha256": "92df432a0cdd8f7efea7f75650da5205d41dbd1f4ebe6243e63d36d8ef870db7",
+    "section": {
+      "plane": "vierkammer",
+      "normal_gltf": [
+        -0.32708851946119843,
+        0.14018079405479933,
+        -0.9345386270319955
+      ],
+      "fraction": 0.5,
+      "enabled": true,
+      "native_frame": false,
+      "label": "Vierkammerblick-ähnlich (schematische Annäherung)",
+      "landmark_pattern": null,
+      "point_gltf": [
+        -0.008910427805377926,
+        0.003818754773733397,
+        -0.025458365158222647
+      ],
+      "half_space_offset": 0.027241640336554046
+    }
   },
   "leber-male": {
     "name": "Leber",
     "camera": {
-      "framing": { "source_index": 0 },
+      "framing": {
+        "source_index": 0
+      },
       "view": "anterior",
       "target": [
         -0.03758496046066284,
@@ -73,12 +96,33 @@
     "license": "CC-BY-4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "bytes": 479124,
-    "sha256": "474c467610e97c64fbc614cd0ce375938bcfe6ac9c294f9fcc5173ea0216fdbf"
+    "sha256": "474c467610e97c64fbc614cd0ce375938bcfe6ac9c294f9fcc5173ea0216fdbf",
+    "section": {
+      "plane": "frontal",
+      "normal_gltf": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fraction": 0.5,
+      "enabled": true,
+      "native_frame": false,
+      "label": "Frontalschnitt",
+      "landmark_pattern": null,
+      "point_gltf": [
+        -0.0,
+        -0.0,
+        0.011299069970846176
+      ],
+      "half_space_offset": -0.011299069970846176
+    }
   },
   "niere-male": {
     "name": "Niere",
     "camera": {
-      "framing": { "source_index": 0 },
+      "framing": {
+        "source_index": 0
+      },
       "view": "anterior",
       "target": [
         -0.018026510253548622,
@@ -111,12 +155,33 @@
     "license": "CC-BY-4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "bytes": 571720,
-    "sha256": "0f98873350696077bd12c95e9b78e780c5c03bf89886a15e919e9714e1efe7c0"
+    "sha256": "0f98873350696077bd12c95e9b78e780c5c03bf89886a15e919e9714e1efe7c0",
+    "section": {
+      "plane": "frontal",
+      "normal_gltf": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fraction": 0.5,
+      "enabled": true,
+      "native_frame": false,
+      "label": "Frontalschnitt",
+      "landmark_pattern": "hilum_of_kidney|renal_pelvis",
+      "point_gltf": [
+        0.0,
+        0.0,
+        -0.013197080232203007
+      ],
+      "half_space_offset": 0.013197080232203007
+    }
   },
   "lunge-male": {
     "name": "Lunge",
     "camera": {
-      "framing": { "source_index": 0 },
+      "framing": {
+        "source_index": 0
+      },
       "view": "anterior",
       "target": [
         0.0047336481511592865,
@@ -149,12 +214,39 @@
     "license": "CC-BY-4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
     "bytes": 999396,
-    "sha256": "93bd7dc0a1857e1d7a73c98c4f71e410af67f07a7381ff3035d4f96065cfc41e"
+    "sha256": "93bd7dc0a1857e1d7a73c98c4f71e410af67f07a7381ff3035d4f96065cfc41e",
+    "section": {
+      "plane": "frontal",
+      "normal_gltf": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fraction": 0.5,
+      "enabled": true,
+      "native_frame": false,
+      "label": "Frontalschnitt",
+      "landmark_pattern": null,
+      "point_gltf": [
+        -0.0,
+        -0.0,
+        0.002616945654153824
+      ],
+      "half_space_offset": -0.002616945654153824
+    }
   },
   "carotis-left": {
     "name": "Halsschlagader links",
     "camera": {
-      "framing": { "source_index": 0, "structures": ["A_carotis_communis_sinistra", "A_carotis_interna_sinistra", "A_carotis_externa_sinistra", "V_jugularis_interna_sinistra"] },
+      "framing": {
+        "source_index": 0,
+        "structures": [
+          "A_carotis_communis_sinistra",
+          "A_carotis_interna_sinistra",
+          "A_carotis_externa_sinistra",
+          "V_jugularis_interna_sinistra"
+        ]
+      },
       "view": "anterior",
       "target": [
         -0.01001096609979868,
@@ -187,12 +279,31 @@
     "license": "3D Slicer License section B (Software License)",
     "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
     "bytes": 484552,
-    "sha256": "d60d4a06a78b25a21ea77128668317a9e06d7633273d49cd712f822c6b4939ee"
+    "sha256": "d60d4a06a78b25a21ea77128668317a9e06d7633273d49cd712f822c6b4939ee",
+    "section": {
+      "plane": "frontal",
+      "normal_gltf": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fraction": 0.5,
+      "enabled": false,
+      "native_frame": true,
+      "label": "Native Modellebenen; anatomischer Achsenrahmen nicht validiert",
+      "landmark_pattern": null,
+      "point_gltf": null
+    }
   },
   "schilddruese-spl-manix": {
     "name": "Schilddrüse",
     "camera": {
-      "framing": { "source_index": 0, "structures": ["Glandula_thyroidea"] },
+      "framing": {
+        "source_index": 0,
+        "structures": [
+          "Glandula_thyroidea"
+        ]
+      },
       "view": "anterior",
       "target": [
         -0.004764941520988941,
@@ -225,6 +336,20 @@
     "license": "3D-Slicer-License-B",
     "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
     "bytes": 465356,
-    "sha256": "80cf642c378fc48d1c9e44147eccc72bc1fb16898cc1fa5c9ce7dfd9d86bda19"
+    "sha256": "80cf642c378fc48d1c9e44147eccc72bc1fb16898cc1fa5c9ce7dfd9d86bda19",
+    "section": {
+      "plane": "frontal",
+      "normal_gltf": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "fraction": 0.5,
+      "enabled": false,
+      "native_frame": true,
+      "label": "Native Modellebenen; anatomischer Achsenrahmen nicht validiert",
+      "landmark_pattern": null,
+      "point_gltf": null
+    }
   }
 }

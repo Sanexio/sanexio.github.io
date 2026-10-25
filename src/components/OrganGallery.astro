@@ -32,7 +32,8 @@ const graph = organs.flatMap((id) => {
           <figcaption>2D-Ansicht · anatomisches Referenzmodell</figcaption>
         </figure>
         <div class="organ-viewer" data-organ-viewer data-model={`/anatomy/${id}-mobil.glb`}
-          data-camera={JSON.stringify(model.camera)} data-name={model.name}>
+          data-camera={JSON.stringify(model.camera)} data-name={model.name}
+          data-section={JSON.stringify(model.section ?? null)}>
           <div class="organ-stage">
             <img class="organ-poster" src={`/anatomy/${id}-600.webp`} width="600" height="600"
               loading="lazy" decoding="async" alt={`${model.name}: Vorschau der drehbaren 3D-Ansicht`} />
@@ -40,6 +41,7 @@ const graph = organs.flatMap((id) => {
           <div class="organ-actions">
             <button type="button" data-load hidden>3D ansehen</button>
             <button type="button" data-rotate hidden aria-pressed="false">Rotation starten</button>
+            <button type="button" data-section-cut hidden aria-pressed="false">Schnitt</button>
             <button type="button" data-reset hidden>Ansicht zurücksetzen</button>
           </div>
           <p class="organ-status" role="status" aria-live="polite">3D-Ansicht benötigt JavaScript; das Bild bleibt verfügbar.</p>
