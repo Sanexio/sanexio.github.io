@@ -2,17 +2,26 @@ import * as THREE from '../vendor/three/build/three.module.js';
 import { GLTFLoader } from '../vendor/three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from '../vendor/three/examples/jsm/controls/OrbitControls.js';
 import { organBounds, organCamera } from './organ-camera.js';
+import {
+  applySectionViewMode,
+  buildSectionRoots,
+  recomputeSectionClip,
+  sectionEnabled,
+} from './section-display.js';
 
 export async function createViewer(element, reducedMotion) {
   const stage = element.querySelector('.organ-stage');
   const poster = element.querySelector('.organ-poster');
   const rotate = element.querySelector('[data-rotate]');
   const reset = element.querySelector('[data-reset]');
+  const sectionBtn = element.querySelector('[data-section-cut]');
+  const section = element.dataset.section ? JSON.parse(element.dataset.section) : null;
   const config = JSON.parse(element.dataset.camera);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
   renderer.setClearColor('#03132b');
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.localClippingEnabled = true;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(config.fov_degrees, 1, config.near * 0.1, config.far * 10);
   camera.position.fromArray(config.position);
@@ -36,6 +45,8 @@ export async function createViewer(element, reducedMotion) {
   scene.add(fill);
   let draco;
   let model;
+  let sectionState;
+  let viewMode = 'normal';
   let bounds;
   let fullBounds;
   try {
@@ -51,8 +62,19 @@ export async function createViewer(element, reducedMotion) {
       const { MeshoptDecoder } = await import('../vendor/three/examples/jsm/libs/meshopt_decoder.module.js');
       loader.setMeshoptDecoder(MeshoptDecoder);
     }
-    model = (await loader.loadAsync(element.dataset.model)).scene;
+    const gltfScene = (await loader.loadAsync(element.dataset.model)).scene;
+    const built = buildSectionRoots(gltfScene);
+    model = built.root;
+    sectionState = {
+      opaqueRoot: built.opaqueRoot,
+      supplementRoot: built.supplementRoot,
+      section,
+      viewMode: 'normal',
+      clip: null,
+    };
     scene.add(model);
+    recomputeSectionClip(sectionState);
+    viewMode = sectionState.viewMode;
     bounds = organBounds(model, config.framing);
     fullBounds = new THREE.Box3().setFromObject(model);
   } catch (error) {
@@ -115,6 +137,16 @@ export async function createViewer(element, reducedMotion) {
   }
   rotate.hidden = false;
   reset.hidden = false;
+  if (sectionBtn && sectionEnabled(section)) {
+    sectionBtn.hidden = false;
+    sectionBtn.setAttribute('aria-pressed', 'false');
+    sectionBtn.addEventListener('click', () => {
+      viewMode = viewMode === 'schnitt' ? 'normal' : 'schnitt';
+      applySectionViewMode(sectionState, viewMode);
+      sectionBtn.setAttribute('aria-pressed', viewMode === 'schnitt' ? 'true' : 'false');
+      render();
+    });
+  }
   rotate.addEventListener('click', () => { rotating = !rotating; sync(); });
   reset.addEventListener('click', () => { controls.reset(); render(); });
   reducedMotion.addEventListener('change', sync);
