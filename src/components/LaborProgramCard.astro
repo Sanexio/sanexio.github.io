@@ -1,6 +1,5 @@
 ---
-import OrganGallery from './OrganGallery.astro';
-import anatomy from '../data/anatomy.json';
+import LaborVisual from './LaborVisual.astro';
 
 interface Position {
   ziffer: string;
@@ -17,7 +16,6 @@ interface Program {
   anzahl_ziffern: number;
   ziffern_gruppiert: string;
   positionen: Position[];
-  organ_id: keyof typeof anatomy | null;
   image_webp: string | null;
 }
 
@@ -31,9 +29,6 @@ const { program, infoboxHeading, disclaimerDu } = Astro.props;
 
 const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzte (GOÄ). Dieses Programm umfasst ${program.anzahl_ziffern} Laborpositionen mit folgenden GOÄ-Ziffern: ${program.ziffern_gruppiert}.`;
 
-const organKey =
-  program.organ_id && program.organ_id in anatomy ? program.organ_id : null;
-const organs = organKey ? [organKey] : [];
 ---
 
 <article class="sx-card labor-card" id={program.praxis_slug}>
@@ -43,18 +38,7 @@ const organs = organKey ? [organKey] : [];
       <h2 class="labor-shop">{program.shop_name}</h2>
       <p class="labor-praxis">{program.praxis_name}</p>
     </div>
-    {program.image_webp && (
-      <figure class="labor-visual">
-        <img
-          src={program.image_webp}
-          width="480"
-          height="270"
-          loading="lazy"
-          decoding="async"
-          alt={`${program.praxis_name}: Motiv aus der Reise durch den Körper`}
-        />
-      </figure>
-    )}
+    <LaborVisual program={program} />
   </header>
 
   <p class="labor-price">
@@ -94,11 +78,7 @@ const organs = organKey ? [organKey] : [];
 
   <p class="sx-note labor-disclaimer">{disclaimerDu}</p>
 
-  {organs.length > 0 && (
-    <div class="labor-organ">
-      <OrganGallery organs={organs} />
-    </div>
-  )}
+
 </article>
 
 <style>
@@ -125,18 +105,6 @@ const organs = organKey ? [organKey] : [];
     margin: 0;
     font-size: 1.05rem;
     color: var(--sx-c-ink-subtle);
-  }
-  .labor-visual {
-    margin: 0;
-    border-radius: var(--sx-radius-card);
-    overflow: hidden;
-    border: 1px solid var(--sx-c-line);
-  }
-  .labor-visual img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
   }
   .labor-price {
     font-size: 1.05rem;
@@ -194,12 +162,5 @@ const organs = organKey ? [organKey] : [];
   .labor-disclaimer {
     border-top: 1px solid var(--sx-c-line);
     padding-top: 1rem;
-  }
-  .labor-organ :global(.organ-gallery) {
-    margin-top: 1.5rem;
-  }
-  .labor-organ :global(.organ-gallery > h2),
-  .labor-organ :global(.organ-gallery > p:first-of-type) {
-    display: none;
   }
 </style>

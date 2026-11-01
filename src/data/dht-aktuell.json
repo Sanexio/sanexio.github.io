@@ -1,0 +1,28 @@
+{
+  "source": "trunk",
+  "heading": "DHT aktuell",
+  "lead": "Was am Digital Health Twin gerade entsteht — Stand 01.11.2026.",
+  "note": "Die Körper-bis-Molekül-Ansicht ist ein Entwicklungsprototyp mit Referenzmodellen — kein individuelles Körpermodell und keine diagnostische Anwendung.",
+  "items": [
+    {
+      "title": "iOS-App mit HealthKit",
+      "description": "In Entwicklung: eine App, die Gesundheitsdaten nach ausdrücklicher Freigabe aus HealthKit übernimmt.",
+      "href": ""
+    },
+    {
+      "title": "Verlaufs-Diagramme",
+      "description": "In Entwicklung: Diagramme, die Messwerte und ihre zeitlichen Verläufe darstellen.",
+      "href": ""
+    },
+    {
+      "title": "Vom Körper zum Molekül",
+      "description": "In Entwicklung: 3D-Ansichten vom Körper bis zu Organ-, Gewebe- und Molekülebene.",
+      "href": ""
+    },
+    {
+      "title": "Als Nächstes die Zelldarstellung",
+      "description": "Die im Prototyp noch fehlende eigenständige Zelldarstellung wird aufgebaut.",
+      "href": ""
+    }
+  ]
+}

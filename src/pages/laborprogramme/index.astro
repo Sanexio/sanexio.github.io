@@ -1,4 +1,5 @@
 ---
+import OrganGallery from '../../components/OrganGallery.astro';
 import Default from '../../layouts/Default.astro';
 import Nav from '../../components/Nav.astro';
 import ContactFooter from '../../components/ContactFooter.astro';
@@ -40,6 +41,11 @@ const description =
             disclaimerDu={laborData.disclaimer_du}
           />
         ))}
+      </div>
+    </section>
+    <section class="sx-section" aria-label="Drehbare anatomische Referenzmodelle">
+      <div class="sx-container">
+        <OrganGallery organs={['herz-male', 'leber-male', 'niere-male']} compact />
       </div>
     </section>
   </main>

@@ -41,6 +41,7 @@ const PROGRAM_META = {
   'LABOR - STATUS: RISK': {
     slug: 'labor-risikoprofil',
     organ_id: 'herz-male',
+    image_folder: 'Risikoprofil',
   },
   'LABOR - SYSTEM: IMMUNE': {
     slug: 'labor-immunprofil',

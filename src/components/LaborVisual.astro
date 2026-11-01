@@ -1,0 +1,19 @@
+---
+import { laborVisuals } from '../data/labor-visuals';
+interface Props {
+  program: { praxis_slug: string; praxis_name: string; image_webp: string | null };
+}
+const { program } = Astro.props;
+const motif = laborVisuals[program.praxis_slug];
+if (program.image_webp && !motif) throw new Error(`Motivbeschreibung fehlt: ${program.praxis_slug}`);
+---
+<div class="labor-visual">
+  {program.image_webp ? <img src={program.image_webp} width="960" height="540"
+    loading="lazy" decoding="async" alt={`${program.praxis_name}: ${motif}`} />
+    : <span class="sx-note">{program.praxis_name}</span>}
+</div>
+<style>
+  .labor-visual { display: grid; place-items: center; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); }
+  img { width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
+  span { padding: 1rem; text-align: center; }
+</style>

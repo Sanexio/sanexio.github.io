@@ -1,0 +1,23 @@
+---
+import data from '../data/dht-aktuell.json';
+---
+<section class="sx-section" id="dht-aktuell" aria-labelledby="dht-aktuell-title">
+  <div class="sx-container">
+    <p class="sx-eyebrow">Aus der Entwicklung</p>
+    <h2 id="dht-aktuell-title">{data.heading}</h2>
+    <p class="sx-lead">{data.lead}</p>
+    {data.note && <p class="sx-note">{data.note}</p>}
+    <div class="sx-grid sx-grid-three">
+      {data.items.map(item => <article class="sx-card dht-update">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+        {item.href && <a class="sx-btn" href={item.href}>Mehr erfahren</a>}
+      </article>)}
+    </div>
+  </div>
+</section>
+<style>
+  .dht-update { display: flex; flex-direction: column; align-items: start; }
+  h3 { margin-top: 0; }
+  .sx-btn { margin-top: auto; }
+</style>

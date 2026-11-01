@@ -1,7 +1,8 @@
 ---
 import anatomy from '../data/anatomy.json';
-interface Props { organs: (keyof typeof anatomy)[] }
-const { organs } = Astro.props;
+interface Props { organs: (keyof typeof anatomy)[]; compact?: boolean }
+const { organs, compact = false } = Astro.props;
+if (new Set(organs).size !== organs.length) throw new Error("Doppelte Organe in der Galerie");
 const absolute = (path: string) => new URL(path, Astro.site).href;
 const graph = organs.flatMap((id) => {
   const model = anatomy[id];
@@ -16,21 +17,22 @@ const graph = organs.flatMap((id) => {
   ];
 });
 ---
-{organs.length > 0 && <section class="organ-gallery" aria-labelledby="organ-gallery-title">
+{organs.length > 0 && <section class:list={["organ-gallery", { "organ-gallery-compact": compact }]} aria-labelledby="organ-gallery-title">
   <h2 id="organ-gallery-title">Vom Bild zum drehbaren Organ</h2>
-  <p>Schau Dir die Formen in Ruhe an: Das Bild bleibt neben der räumlichen Ansicht stehen.
+  <p>Schau Dir die Formen in Ruhe an: {compact ? 'Mit „3D ansehen“ öffnest Du die räumliche Ansicht.' : 'Das Bild bleibt neben der räumlichen Ansicht stehen.'}
     Du kannst das Modell drehen und näher heranholen. Die Farben helfen bei der Orientierung;
     sie zeigen keine Messwerte und keine individuelle Diagnose.</p>
+  <div class="organ-grid">
   {organs.map((id) => {
     const model = anatomy[id];
     return <section class="organ-card" id={id} aria-labelledby={`${id}-title`}>
       <h3 id={`${id}-title`}>{model.name}</h3>
       <div class="organ-pair">
-        <figure>
+        {!compact && <figure>
           <img src={`/anatomy/${id}-600.webp`} width="600" height="600" loading="lazy" decoding="async"
             alt={`${model.name}: farbiges anatomisches Referenzmodell in der Vorderansicht`} />
           <figcaption>2D-Ansicht · anatomisches Referenzmodell</figcaption>
-        </figure>
+        </figure>}
         <div class="organ-viewer" data-organ-viewer data-model={`/anatomy/${id}-mobil.glb`}
           data-camera={JSON.stringify(model.camera)} data-name={model.name}
           data-section={JSON.stringify(model.section ?? null)}>
@@ -39,10 +41,10 @@ const graph = organs.flatMap((id) => {
               loading="lazy" decoding="async" alt={`${model.name}: Vorschau der drehbaren 3D-Ansicht`} />
           </div>
           <div class="organ-actions">
-            <button type="button" data-load hidden>3D ansehen</button>
-            <button type="button" data-rotate hidden aria-pressed="false">Rotation starten</button>
-            <button type="button" data-section-cut hidden aria-pressed="false">Schnitt</button>
-            <button type="button" data-reset hidden>Ansicht zurücksetzen</button>
+            <button class="sx-btn" type="button" data-load hidden>3D ansehen</button>
+            <button class="sx-btn" type="button" data-rotate hidden aria-pressed="false">Rotation starten</button>
+            <button class="sx-btn" type="button" data-section-cut hidden aria-pressed="false">Schnitt</button>
+            <button class="sx-btn" type="button" data-reset hidden>Ansicht zurücksetzen</button>
           </div>
           <p class="organ-status" role="status" aria-live="polite">3D-Ansicht benötigt JavaScript; das Bild bleibt verfügbar.</p>
         </div>
@@ -51,6 +53,7 @@ const graph = organs.flatMap((id) => {
         {' · '}<a href={`/anatomy/licenses/${id}.md`}>Quellennachweis</a></p>
     </section>;
   })}
+  </div>
   <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
 </section>}
 <script is:inline type="module" src="/scripts/organ-loader.js"></script>
@@ -59,15 +62,20 @@ const graph = organs.flatMap((id) => {
   .organ-card { margin-block: 2rem; border-top: 1px solid var(--sx-c-line); padding-top: 1rem; }
   .organ-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
   figure { margin: 0; min-width: 0; }
-  .organ-pair img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: .75rem; }
-  .organ-stage { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: .75rem; background: #03132b; }
+  .organ-pair img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: var(--sx-radius-card); }
+  .organ-stage { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: var(--sx-radius-card); background: #03132b; }
   .organ-stage :global(canvas) { display: block; width: 100%; height: 100%; touch-action: pan-y; }
   .organ-stage img { position: absolute; inset: 0; }
   .organ-stage img[hidden] { display: none; }
   .organ-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
-  button { font: inherit; font-size: .875rem; padding: .5rem .7rem; border: 1px solid currentColor; border-radius: .4rem; cursor: pointer; background: white; color: #12304b; }
-  button:focus-visible { outline: 3px solid #006d91; outline-offset: 3px; }
+  .organ-actions button[hidden] { display: none; }
   figcaption, .organ-status, .organ-credit { font-size: .8rem; line-height: 1.5; }
   .organ-credit { overflow-wrap: anywhere; }
+  .organ-gallery-compact { margin-top: 0; }
+  .organ-gallery-compact .organ-card { margin: 0; padding: 1.5rem; background: var(--sx-c-surface); border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); box-shadow: var(--sx-shadow-card); }
+  .organ-gallery-compact .organ-pair { grid-template-columns: minmax(0, 1fr); }
+  .organ-gallery-compact .organ-grid { display: grid; gap: 1rem; margin-top: 2.5rem; }
+  @media (min-width: 768px) { .organ-gallery-compact .organ-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1100px) { .organ-gallery-compact .organ-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 560px) { .organ-pair { grid-template-columns: minmax(0, 1fr); } }
 </style>
