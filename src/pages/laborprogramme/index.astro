@@ -1,0 +1,47 @@
+---
+import Default from '../../layouts/Default.astro';
+import Nav from '../../components/Nav.astro';
+import ContactFooter from '../../components/ContactFooter.astro';
+import LaborProgramCard from '../../components/LaborProgramCard.astro';
+import laborData from '../../data/laborprogramme.json';
+
+const title = 'Laborprogramme | Sanexio — Datenbasis für den Digital Health Twin';
+const description =
+  'Acht Laborprogramme mit transparenten GOÄ-Preisen: Messdaten für Deinen persönlichen Digital Health Twin — verbunden mit 3D-Organ-Ansichten.';
+---
+
+<Default {title} {description} canonical={new URL('/laborprogramme/', Astro.site).href}>
+  <Nav />
+  <main id="inhalt">
+    <section class="sx-section" aria-labelledby="labor-title">
+      <div class="sx-container sx-prose">
+        <p class="sx-eyebrow">Digital Health Twin</p>
+        <h1 id="labor-title">Laborprogramme</h1>
+        <p class="sx-lead">
+          Diese Untersuchungsprogramme liefern die Laborwerte, die Dein persönlicher Digital Health Twin
+          später verstehen und einordnen soll — vom Basis-Check bis zu organbezogenen Profilen. Die
+          drehbaren Organ-Modelle und die Reise durch den Körper zeigen, wo im Körper die Messgrößen
+          hingehören; sie ersetzen keine ärztliche Beratung.
+        </p>
+        <div class="sx-actions">
+          <a class="sx-btn sx-btn-primary" href="/#dht">Den Twin verstehen</a>
+          <a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a>
+          <a class="sx-btn" href="/blog/werkstattbericht-3d-organe-schritt-fuer-schritt/">3D-Werkstatt im Blog</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sx-section sx-soft" aria-label="Laborprogramme mit GOÄ-Preisen">
+      <div class="sx-container">
+        {laborData.programmes.map((program) => (
+          <LaborProgramCard
+            program={program}
+            infoboxHeading={laborData.infobox_heading}
+            disclaimerDu={laborData.disclaimer_du}
+          />
+        ))}
+      </div>
+    </section>
+  </main>
+  <ContactFooter />
+</Default>

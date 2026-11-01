@@ -1,0 +1,1235 @@
+{
+  "generated_at": "2026-11-01",
+  "source": {
+    "overview_csv": "/Users/clusteradm/Cortex/outputs/Laborprogramme-Uebernahme-20261101/laborprogramme_uebersicht.csv",
+    "ziffern_csv": "/Users/clusteradm/Cortex/outputs/Laborprogramme-Uebernahme-20261101/laborprogramme_ziffern.csv"
+  },
+  "disclaimer_du": "Die gesetzlichen Krankenkassen erstatten die Kosten dieser Leistung nicht. Private Krankenversicherungen erstatten sie im Regelfall — frag aber sicherheitshalber vorher bei deiner Versicherung nach. Ansonsten gilt der Preis für Selbstzahler; die Abrechnung erfolgt nach der Gebührenordnung für Ärzte (GOÄ).",
+  "infobox_heading": "Transparente Abrechnung nach GOÄ",
+  "programmes": [
+    {
+      "shop_name": "LABOR - STATUS: BASELINE",
+      "praxis_name": "Basis-Check",
+      "praxis_slug": "labor-basis-check",
+      "goae_summe_eur": 74.14,
+      "goae_summe_display": "74,14 €",
+      "anzahl_ziffern": 9,
+      "ziffern_gruppiert": "1, 250, 3550, 3561, 3564H1, 3585H1, 3592H1, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3550",
+          "bezeichnung": "Blutbild und Blutbildbestandteile",
+          "faktor": 1.15,
+          "betrag_eur": 4.02,
+          "betrag_display": "4,02 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3592H1",
+          "bezeichnung": "Gamma-Glutamyltranspeptidase (Gamma-Glutamyltransferase, Gamma-GT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3585H1",
+          "bezeichnung": "Kreatinin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3561",
+          "bezeichnung": "Glykierte Hämoglobine (HbA1, HbA1c)",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3564H1",
+          "bezeichnung": "LDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        }
+      ],
+      "organ_id": "herz-male",
+      "image_webp": "/images/labor/labor-basis-check.webp"
+    },
+    {
+      "shop_name": "LABOR - STATUS: ADVANCED",
+      "praxis_name": "Erweiterter Check",
+      "praxis_slug": "labor-erweiterter-check",
+      "goae_summe_eur": 99.6,
+      "goae_summe_display": "99,60 €",
+      "anzahl_ziffern": 19,
+      "ziffern_gruppiert": "1, 250, 3550, 3551, 3561, 3562H1, 3563H1, 3564H1, 3565H1, 3581H1, 3583H1, 3584H1, 3585H1, 3589H1, 3592H1, 3594H1, 3595H1, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "3589H1",
+          "bezeichnung": "Cholinesterase (Pseudocholinesterase, CHE, PCHE)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "3581H1",
+          "bezeichnung": "Bilirubin, gesamt",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3550",
+          "bezeichnung": "Blutbild und Blutbildbestandteile",
+          "faktor": 1.15,
+          "betrag_eur": 4.02,
+          "betrag_display": "4,02 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3551",
+          "bezeichnung": "Differenzierung der Leukozyten, elektronisch-zytometrisch, zytochemisch-zytometrisch oder mittels mechanisierter Mustererkennung (Bildanalyse), zusätzlich zu der Leistung nach Nummer 3550",
+          "faktor": 1.15,
+          "betrag_eur": 1.34,
+          "betrag_display": "1,34 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3592H1",
+          "bezeichnung": "Gamma-Glutamyltranspeptidase (Gamma-Glutamyltransferase, Gamma-GT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3594H1",
+          "bezeichnung": "Glutamatoxalazetattransaminase (GOT, Aspartataminotransferase, ASAT, AST)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3595H1",
+          "bezeichnung": "Glutamatpyruvattransaminase (GPT, Alaninaminotransferase, ALAT, ALT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3583H1",
+          "bezeichnung": "Harnsäure",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3584H1",
+          "bezeichnung": "Harnstoff (Harnstoff-N, BUN)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3585H1",
+          "bezeichnung": "Kreatinin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3561",
+          "bezeichnung": "Glykierte Hämoglobine (HbA1, HbA1c)",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "3562H1",
+          "bezeichnung": "Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "3563H1",
+          "bezeichnung": "HDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 16,
+          "ziffer": "3564H1",
+          "bezeichnung": "LDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 17,
+          "ziffer": "3565H1",
+          "bezeichnung": "Triglyzeride",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 18,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        },
+        {
+          "position": 19,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        }
+      ],
+      "organ_id": "herz-male",
+      "image_webp": "/images/labor/labor-erweiterter-check.webp"
+    },
+    {
+      "shop_name": "LABOR - STATUS: PREVENT",
+      "praxis_name": "Vorsorge-Check",
+      "praxis_slug": "labor-vorsorge-check",
+      "goae_summe_eur": 258.46,
+      "goae_summe_display": "258,46 €",
+      "anzahl_ziffern": 37,
+      "ziffern_gruppiert": "1, 250, 3541H, 3550, 3551, 3557, 3558, 3561, 3562H1, 3563H1, 3564H1, 3565H1, 3571 (3×), 3572, 3573H1, 3574, 3581H1, 3583H1, 3584H1, 3585H1, 3587H1, 3589H1, 3590H1, 3591H1, 3592H1, 3594H1, 3595H1, 3597H1, 3598H1, 3741, 4030, 4062, 4138, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "4062",
+          "bezeichnung": "NTproBNP",
+          "faktor": 1.15,
+          "betrag_eur": 32.17,
+          "betrag_display": "32,17 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3741",
+          "bezeichnung": "C-reaktives Protein (CRP), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "4030",
+          "bezeichnung": "Thyreoidea stimulierendes Hormon (TSH) mittels Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -",
+          "faktor": 1.15,
+          "betrag_eur": 16.76,
+          "betrag_display": "16,76 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "4138",
+          "bezeichnung": "25-Hydroxy-Vitamin D (25-OH-D, D2), Ligandenassay - einschließlich Doppelbestimmung und aktueller Bezugskurve -",
+          "faktor": 1.15,
+          "betrag_eur": 32.17,
+          "betrag_display": "32,17 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3551",
+          "bezeichnung": "Differenzierung der Leukozyten, elektronisch-zytometrisch, zytochemisch-zytometrisch oder mittels mechanisierter Mustererkennung (Bildanalyse), zusätzlich zu der Leistung nach Nummer 3550",
+          "faktor": 1.15,
+          "betrag_eur": 1.34,
+          "betrag_display": "1,34 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3550",
+          "bezeichnung": "Blutbild und Blutbildbestandteile",
+          "faktor": 1.15,
+          "betrag_eur": 4.02,
+          "betrag_display": "4,02 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3587H1",
+          "bezeichnung": "Alkalische Phosphatase",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3581H1",
+          "bezeichnung": "Bilirubin, gesamt",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3589H1",
+          "bezeichnung": "Cholinesterase (Pseudocholinesterase, CHE, PCHE)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3591H1",
+          "bezeichnung": "Creatinkinase MB (CK-MB), Immuninhibitionsmethode",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3590H1",
+          "bezeichnung": "Creatinkinase (CK)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "3592H1",
+          "bezeichnung": "Gamma-Glutamyltranspeptidase (Gamma-Glutamyltransferase, Gamma-GT)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "3594H1",
+          "bezeichnung": "Glutamatoxalazetattransaminase (GOT, Aspartataminotransferase, ASAT, AST)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 16,
+          "ziffer": "3595H1",
+          "bezeichnung": "Glutamatpyruvattransaminase (GPT, Alaninaminotransferase, ALAT, ALT)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 17,
+          "ziffer": "3583H1",
+          "bezeichnung": "Harnsäure",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 18,
+          "ziffer": "3584H1",
+          "bezeichnung": "Harnstoff (Harnstoff-N, BUN)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 19,
+          "ziffer": "3557",
+          "bezeichnung": "Kalium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 20,
+          "ziffer": "3585H1",
+          "bezeichnung": "Kreatinin",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 21,
+          "ziffer": "3598H1",
+          "bezeichnung": "Lipase",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 22,
+          "ziffer": "3558",
+          "bezeichnung": "Natrium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 23,
+          "ziffer": "3573H1",
+          "bezeichnung": "Gesamt-Protein im Serum oder Plasma",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 24,
+          "ziffer": "3574",
+          "bezeichnung": "Proteinelektrophorese im Serum",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 25,
+          "ziffer": "3561",
+          "bezeichnung": "Glykierte Hämoglobine (HbA1, HbA1c)",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 26,
+          "ziffer": "3572",
+          "bezeichnung": "Immunglobulin E (IgE), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden",
+          "faktor": 1.15,
+          "betrag_eur": 16.76,
+          "betrag_display": "16,76 €"
+        },
+        {
+          "position": 27,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 28,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 29,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 30,
+          "ziffer": "3597H1",
+          "bezeichnung": "Laktatdehydrogenase (LDH)",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 31,
+          "ziffer": "3562H1",
+          "bezeichnung": "Cholesterin",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 32,
+          "ziffer": "3563H1",
+          "bezeichnung": "HDL-Cholesterin",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 33,
+          "ziffer": "3564H1",
+          "bezeichnung": "LDL-Cholesterin",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 34,
+          "ziffer": "3565H1",
+          "bezeichnung": "Triglyzeride",
+          "faktor": 0,
+          "betrag_eur": 0,
+          "betrag_display": "0,00 €"
+        },
+        {
+          "position": 35,
+          "ziffer": "3541H",
+          "bezeichnung": "Höchstwert für die mit H1 gekennzeichneten Untersuchungen des Abschnitts M II",
+          "faktor": 1.15,
+          "betrag_eur": 32.17,
+          "betrag_display": "32,17 €"
+        },
+        {
+          "position": 36,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        },
+        {
+          "position": 37,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        }
+      ],
+      "organ_id": "herz-male",
+      "image_webp": "/images/labor/labor-vorsorge-check.webp"
+    },
+    {
+      "shop_name": "LABOR - STATUS: METABOLIC",
+      "praxis_name": "Stoffwechsel-Werte",
+      "praxis_slug": "labor-stoffwechsel-werte",
+      "goae_summe_eur": 75.48,
+      "goae_summe_display": "75,48 €",
+      "anzahl_ziffern": 10,
+      "ziffern_gruppiert": "1, 250, 3561, 3562H1, 3563H1, 3564H1, 3565H1, 3583H1, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3583H1",
+          "bezeichnung": "Harnsäure",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3561",
+          "bezeichnung": "Glykierte Hämoglobine (HbA1, HbA1c)",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3562H1",
+          "bezeichnung": "Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3563H1",
+          "bezeichnung": "HDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3564H1",
+          "bezeichnung": "LDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3565H1",
+          "bezeichnung": "Triglyzeride",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        }
+      ],
+      "organ_id": "leber-male",
+      "image_webp": "/images/labor/labor-stoffwechsel-werte.webp"
+    },
+    {
+      "shop_name": "LABOR - STATUS: RISK",
+      "praxis_name": "Risikoprofil",
+      "praxis_slug": "labor-risikoprofil",
+      "goae_summe_eur": 91.56,
+      "goae_summe_display": "91,56 €",
+      "anzahl_ziffern": 16,
+      "ziffern_gruppiert": "1, 250, 3550, 3551, 3561, 3562H1, 3563H1, 3564H1, 3565H1, 3583H1, 3585H1, 3592H1, 3594H1, 3595H1, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3550",
+          "bezeichnung": "Blutbild und Blutbildbestandteile",
+          "faktor": 1.15,
+          "betrag_eur": 4.02,
+          "betrag_display": "4,02 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3551",
+          "bezeichnung": "Differenzierung der Leukozyten, elektronisch-zytometrisch, zytochemisch-zytometrisch oder mittels mechanisierter Mustererkennung (Bildanalyse), zusätzlich zu der Leistung nach Nummer 3550",
+          "faktor": 1.15,
+          "betrag_eur": 1.34,
+          "betrag_display": "1,34 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3583H1",
+          "bezeichnung": "Harnsäure",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3592H1",
+          "bezeichnung": "Gamma-Glutamyltranspeptidase (Gamma-Glutamyltransferase, Gamma-GT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3595H1",
+          "bezeichnung": "Glutamatpyruvattransaminase (GPT, Alaninaminotransferase, ALAT, ALT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3594H1",
+          "bezeichnung": "Glutamatoxalazetattransaminase (GOT, Aspartataminotransferase, ASAT, AST)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3585H1",
+          "bezeichnung": "Kreatinin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3561",
+          "bezeichnung": "Glykierte Hämoglobine (HbA1, HbA1c)",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3562H1",
+          "bezeichnung": "Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3563H1",
+          "bezeichnung": "HDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3564H1",
+          "bezeichnung": "LDL-Cholesterin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "3565H1",
+          "bezeichnung": "Triglyzeride",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        },
+        {
+          "position": 16,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        }
+      ],
+      "organ_id": "herz-male",
+      "image_webp": null
+    },
+    {
+      "shop_name": "LABOR - SYSTEM: IMMUNE",
+      "praxis_name": "Immunprofil",
+      "praxis_slug": "labor-immunprofil",
+      "goae_summe_eur": 137.8,
+      "goae_summe_display": "137,80 €",
+      "anzahl_ziffern": 18,
+      "ziffern_gruppiert": "1, 250, 3550, 3551, 3552, 3555, 3557, 3558, 3571 (3×), 3572, 3574, 3575, 3620, 3621, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3551",
+          "bezeichnung": "Differenzierung der Leukozyten, elektronisch-zytometrisch, zytochemisch-zytometrisch oder mittels mechanisierter Mustererkennung (Bildanalyse), zusätzlich zu der Leistung nach Nummer 3550",
+          "faktor": 1.15,
+          "betrag_eur": 1.34,
+          "betrag_display": "1,34 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3550",
+          "bezeichnung": "Blutbild und Blutbildbestandteile",
+          "faktor": 1.15,
+          "betrag_eur": 4.02,
+          "betrag_display": "4,02 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3552",
+          "bezeichnung": "Retikulozytenzahl",
+          "faktor": 1.15,
+          "betrag_eur": 4.69,
+          "betrag_display": "4,69 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3555",
+          "bezeichnung": "Calcium",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3557",
+          "bezeichnung": "Kalium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3621",
+          "bezeichnung": "Magnesium",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3558",
+          "bezeichnung": "Natrium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3574",
+          "bezeichnung": "Proteinelektrophorese im Serum",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3620",
+          "bezeichnung": "Eisen im Serum oder Plasma",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3572",
+          "bezeichnung": "Immunglobulin E (IgE), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden",
+          "faktor": 1.15,
+          "betrag_eur": 16.76,
+          "betrag_display": "16,76 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "3571",
+          "bezeichnung": "Immunglobulin (IgA, IgG, IgM), Ligandenassay - gegebenenfalls einschließlich Doppelbestimmung und aktueller Bezugskurve -, Immundiffusion oder ähnliche Untersuchungsmethoden, je Immunglobulin",
+          "faktor": 1.15,
+          "betrag_eur": 10.05,
+          "betrag_display": "10,05 €"
+        },
+        {
+          "position": 16,
+          "ziffer": "3575",
+          "bezeichnung": "Transferrin, Immundiffusion oder ähnliche Untersuchungsmethoden",
+          "faktor": 1.15,
+          "betrag_eur": 6.7,
+          "betrag_display": "6,70 €"
+        },
+        {
+          "position": 17,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        },
+        {
+          "position": 18,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        }
+      ],
+      "organ_id": "lunge-male",
+      "image_webp": "/images/labor/labor-immunprofil.webp"
+    },
+    {
+      "shop_name": "LABOR - SYSTEM: LIVER",
+      "praxis_name": "Leberwerte",
+      "praxis_slug": "labor-leberwerte",
+      "goae_summe_eur": 94.91,
+      "goae_summe_display": "94,91 €",
+      "anzahl_ziffern": 16,
+      "ziffern_gruppiert": "1, 250, 3573H1, 3574, 3581H1, 3587H1, 3589H1, 3592H1, 3593H1, 3594H1, 3595H1, 3605, 3606, 3607, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3587H1",
+          "bezeichnung": "Alkalische Phosphatase",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3581H1",
+          "bezeichnung": "Bilirubin, gesamt",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3593H1",
+          "bezeichnung": "Glutamatdehydrogenase (GLDH)",
+          "faktor": 1.15,
+          "betrag_eur": 3.35,
+          "betrag_display": "3,35 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "3589H1",
+          "bezeichnung": "Cholinesterase (Pseudocholinesterase, CHE, PCHE)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "3592H1",
+          "bezeichnung": "Gamma-Glutamyltranspeptidase (Gamma-Glutamyltransferase, Gamma-GT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3594H1",
+          "bezeichnung": "Glutamatoxalazetattransaminase (GOT, Aspartataminotransferase, ASAT, AST)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3595H1",
+          "bezeichnung": "Glutamatpyruvattransaminase (GPT, Alaninaminotransferase, ALAT, ALT)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3573H1",
+          "bezeichnung": "Gesamt-Protein im Serum oder Plasma",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3574",
+          "bezeichnung": "Proteinelektrophorese im Serum",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3607",
+          "bezeichnung": "Thromboplastinzeit (Prothrombinzeit, TPZ, Quickwert), Einfachbestimmung",
+          "faktor": 1.15,
+          "betrag_eur": 3.35,
+          "betrag_display": "3,35 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3605",
+          "bezeichnung": "Partielle Thromboplastinzeit (PTT, aPTT), Einfachbestimmung",
+          "faktor": 1.15,
+          "betrag_eur": 3.35,
+          "betrag_display": "3,35 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "3606",
+          "bezeichnung": "Plasmathrombinzeit (PTZ, TZ), Doppelbestimmung",
+          "faktor": 1.15,
+          "betrag_eur": 4.69,
+          "betrag_display": "4,69 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        },
+        {
+          "position": 16,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        }
+      ],
+      "organ_id": "leber-male",
+      "image_webp": "/images/labor/labor-leberwerte.webp"
+    },
+    {
+      "shop_name": "LABOR - SYSTEM: RENAL",
+      "praxis_name": "Nierenwerte",
+      "praxis_slug": "labor-nierenwerte",
+      "goae_summe_eur": 89.55,
+      "goae_summe_display": "89,55 €",
+      "anzahl_ziffern": 15,
+      "ziffern_gruppiert": "1, 250, 3511, 3531, 3555, 3557, 3558, 3573H1, 3574, 3580H1, 3583H1, 3584H1, 3585H1, 5, 75",
+      "positionen": [
+        {
+          "position": 1,
+          "ziffer": "3531",
+          "bezeichnung": "Urinsediment",
+          "faktor": 1.15,
+          "betrag_eur": 4.69,
+          "betrag_display": "4,69 €"
+        },
+        {
+          "position": 2,
+          "ziffer": "3511",
+          "bezeichnung": "Untersuchung eines Körpermaterials mit vorgefertigten Reagenzträgern oder Reagenzzubereitungen und visueller Auswertung (z. B. Glukose, Harnstoff, Urinteststreifen), qualitativ oder semiquantitativ, auch bei Verwendung eines Mehrfachreagenzträgers, je Untersuchung",
+          "faktor": 1.15,
+          "betrag_eur": 3.35,
+          "betrag_display": "3,35 €"
+        },
+        {
+          "position": 3,
+          "ziffer": "3580H1",
+          "bezeichnung": "Anorganisches Phosphat",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 4,
+          "ziffer": "3555",
+          "bezeichnung": "Calcium",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 5,
+          "ziffer": "3583H1",
+          "bezeichnung": "Harnsäure",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 6,
+          "ziffer": "75",
+          "bezeichnung": "Ausführlicher schriftlicher Krankheits- und Befundbericht (einschließlich Angaben zur Anamnese, zu (n) Befund(en), zur epikritischen Bewertung und gegebenenfalls zur Therapie",
+          "faktor": 2.3,
+          "betrag_eur": 17.43,
+          "betrag_display": "17,43 €"
+        },
+        {
+          "position": 7,
+          "ziffer": "5",
+          "bezeichnung": "Symptombezogene Untersuchung",
+          "faktor": 2.3,
+          "betrag_eur": 10.72,
+          "betrag_display": "10,72 €"
+        },
+        {
+          "position": 8,
+          "ziffer": "3584H1",
+          "bezeichnung": "Harnstoff (Harnstoff-N, BUN)",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 9,
+          "ziffer": "3557",
+          "bezeichnung": "Kalium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 10,
+          "ziffer": "3585H1",
+          "bezeichnung": "Kreatinin",
+          "faktor": 1.15,
+          "betrag_eur": 2.68,
+          "betrag_display": "2,68 €"
+        },
+        {
+          "position": 11,
+          "ziffer": "3558",
+          "bezeichnung": "Natrium",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 12,
+          "ziffer": "3573H1",
+          "bezeichnung": "Gesamt-Protein im Serum oder Plasma",
+          "faktor": 1.15,
+          "betrag_eur": 2.01,
+          "betrag_display": "2,01 €"
+        },
+        {
+          "position": 13,
+          "ziffer": "3574",
+          "bezeichnung": "Proteinelektrophorese im Serum",
+          "faktor": 1.15,
+          "betrag_eur": 13.41,
+          "betrag_display": "13,41 €"
+        },
+        {
+          "position": 14,
+          "ziffer": "1",
+          "bezeichnung": "Beratung - auch mittels Fernsprecher",
+          "faktor": 3.5,
+          "betrag_eur": 16.32,
+          "betrag_display": "16,32 €"
+        },
+        {
+          "position": 15,
+          "ziffer": "250",
+          "bezeichnung": "Blutentnahme mittels Spritze, Kanüle oder Katheter aus der Vene",
+          "faktor": 1.8,
+          "betrag_eur": 4.2,
+          "betrag_display": "4,20 €"
+        }
+      ],
+      "organ_id": "niere-male",
+      "image_webp": "/images/labor/labor-nierenwerte.webp"
+    }
+  ]
+}

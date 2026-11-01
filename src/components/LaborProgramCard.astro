@@ -1,0 +1,205 @@
+---
+import OrganGallery from './OrganGallery.astro';
+import anatomy from '../data/anatomy.json';
+
+interface Position {
+  ziffer: string;
+  bezeichnung: string;
+  faktor: number;
+  betrag_display: string;
+}
+
+interface Program {
+  shop_name: string;
+  praxis_name: string;
+  praxis_slug: string;
+  goae_summe_display: string;
+  anzahl_ziffern: number;
+  ziffern_gruppiert: string;
+  positionen: Position[];
+  organ_id: keyof typeof anatomy | null;
+  image_webp: string | null;
+}
+
+interface Props {
+  program: Program;
+  infoboxHeading: string;
+  disclaimerDu: string;
+}
+
+const { program, infoboxHeading, disclaimerDu } = Astro.props;
+
+const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzte (GOÄ). Dieses Programm umfasst ${program.anzahl_ziffern} Laborpositionen mit folgenden GOÄ-Ziffern: ${program.ziffern_gruppiert}.`;
+
+const organKey =
+  program.organ_id && program.organ_id in anatomy ? program.organ_id : null;
+const organs = organKey ? [organKey] : [];
+---
+
+<article class="sx-card labor-card" id={program.praxis_slug}>
+  <header class="labor-card-head">
+    <div>
+      <p class="sx-eyebrow" style="margin-bottom: 0.5rem">Laborprogramm</p>
+      <h2 class="labor-shop">{program.shop_name}</h2>
+      <p class="labor-praxis">{program.praxis_name}</p>
+    </div>
+    {program.image_webp && (
+      <figure class="labor-visual">
+        <img
+          src={program.image_webp}
+          width="480"
+          height="270"
+          loading="lazy"
+          decoding="async"
+          alt={`${program.praxis_name}: Motiv aus der Reise durch den Körper`}
+        />
+      </figure>
+    )}
+  </header>
+
+  <p class="labor-price">
+    Preis: <strong>{program.goae_summe_display}</strong> (Abrechnung nach GOÄ)
+  </p>
+
+  <aside class="goae-infobox" aria-labelledby={`${program.praxis_slug}-goae-title`}>
+    <h3 id={`${program.praxis_slug}-goae-title`}>{infoboxHeading}</h3>
+    <p>{infoboxBody}</p>
+  </aside>
+
+  <details class="goae-details">
+    <summary>Details zu den GOÄ-Positionen</summary>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Ziffer</th>
+            <th scope="col">Bezeichnung</th>
+            <th scope="col">Faktor</th>
+            <th scope="col">Betrag</th>
+          </tr>
+        </thead>
+        <tbody>
+          {program.positionen.map((pos) => (
+            <tr>
+              <td>{pos.ziffer}</td>
+              <td>{pos.bezeichnung}</td>
+              <td>{pos.faktor.toLocaleString('de-DE')}</td>
+              <td>{pos.betrag_display}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="sx-note labor-disclaimer">{disclaimerDu}</p>
+
+  {organs.length > 0 && (
+    <div class="labor-organ">
+      <OrganGallery organs={organs} />
+    </div>
+  )}
+</article>
+
+<style>
+  .labor-card {
+    margin-bottom: 2rem;
+  }
+  .labor-card-head {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+    margin-bottom: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .labor-card-head {
+      grid-template-columns: 1fr minmax(0, 14rem);
+    }
+  }
+  .labor-shop {
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    margin: 0 0 0.35rem;
+    line-height: 1.25;
+  }
+  .labor-praxis {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--sx-c-ink-subtle);
+  }
+  .labor-visual {
+    margin: 0;
+    border-radius: var(--sx-radius-card);
+    overflow: hidden;
+    border: 1px solid var(--sx-c-line);
+  }
+  .labor-visual img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .labor-price {
+    font-size: 1.05rem;
+    color: var(--sx-c-ink);
+    margin-bottom: 1rem;
+  }
+  .labor-price strong {
+    font-family: var(--sx-font-display);
+    font-weight: 750;
+  }
+  .goae-infobox {
+    padding: 1rem 1.15rem;
+    margin-bottom: 1rem;
+    background: var(--sx-c-bg-soft);
+    border: 1px solid var(--sx-c-line);
+    border-radius: var(--sx-radius-card);
+  }
+  .goae-infobox h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+  }
+  .goae-infobox p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--sx-c-ink-subtle);
+  }
+  .goae-details {
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+  }
+  .goae-details summary {
+    font-weight: 650;
+    color: var(--sx-c-accent);
+    margin-bottom: 0.75rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 0.45rem 0.5rem;
+    border-bottom: 1px solid var(--sx-c-line);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 650;
+    color: var(--sx-c-ink-muted);
+  }
+  .labor-disclaimer {
+    border-top: 1px solid var(--sx-c-line);
+    padding-top: 1rem;
+  }
+  .labor-organ :global(.organ-gallery) {
+    margin-top: 1.5rem;
+  }
+  .labor-organ :global(.organ-gallery > h2),
+  .labor-organ :global(.organ-gallery > p:first-of-type) {
+    display: none;
+  }
+</style>
