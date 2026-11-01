@@ -1,0 +1,23 @@
+---
+import laborData from '../data/laborprogramme.json';
+import LaborVisual from './LaborVisual.astro';
+import LaborPrice from './LaborPrice.astro';
+
+const programmes = laborData.programmes;
+if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) throw new Error('Doppelte Laborprogramme');
+---
+
+<div class="sx-grid sx-grid-four">
+  {programmes.map(program => <article class="sx-card journey-card">
+    <LaborVisual {program} />
+    <h3>{program.praxis_name}</h3>
+    <LaborPrice amount={program.goae_summe_eur} />
+    <a class="sx-btn" href={`/laborprogramme/#${program.praxis_slug}`}>Programm ansehen</a>
+  </article>)}
+</div>
+
+<style>
+  .journey-card { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
+  h3 { margin: 0; }
+  .journey-card .sx-btn { margin-top: auto; }
+</style>

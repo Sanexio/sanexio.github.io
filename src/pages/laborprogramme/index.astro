@@ -4,6 +4,7 @@ import Default from '../../layouts/Default.astro';
 import Nav from '../../components/Nav.astro';
 import ContactFooter from '../../components/ContactFooter.astro';
 import LaborProgramCard from '../../components/LaborProgramCard.astro';
+import LaborProgramGrid from '../../components/LaborProgramGrid.astro';
 import laborData from '../../data/laborprogramme.json';
 
 const title = 'Laborprogramme | Sanexio — Datenbasis für den Digital Health Twin';
@@ -32,7 +33,14 @@ const description =
       </div>
     </section>
 
-    <section class="sx-section sx-soft" aria-label="Laborprogramme mit GOÄ-Preisen">
+    <section class="sx-section sx-soft" aria-labelledby="programme-preise-title">
+      <div class="sx-container">
+        <h2 id="programme-preise-title">Programme und Preise im Überblick</h2>
+        <LaborProgramGrid />
+      </div>
+    </section>
+
+    <section class="sx-section" aria-label="Laborprogramme mit GOÄ-Preisen im Detail">
       <div class="sx-container">
         {laborData.programmes.map((program) => (
           <LaborProgramCard

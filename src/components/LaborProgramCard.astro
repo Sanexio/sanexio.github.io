@@ -1,5 +1,6 @@
 ---
 import LaborVisual from './LaborVisual.astro';
+import LaborPrice from './LaborPrice.astro';
 
 interface Position {
   ziffer: string;
@@ -12,7 +13,7 @@ interface Program {
   shop_name: string;
   praxis_name: string;
   praxis_slug: string;
-  goae_summe_display: string;
+  goae_summe_eur?: number | null;
   anzahl_ziffern: number;
   ziffern_gruppiert: string;
   positionen: Position[];
@@ -41,9 +42,7 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
     <LaborVisual program={program} />
   </header>
 
-  <p class="labor-price">
-    Preis: <strong>{program.goae_summe_display}</strong> (Abrechnung nach GOÄ)
-  </p>
+  <LaborPrice amount={program.goae_summe_eur} />
 
   <aside class="goae-infobox" aria-labelledby={`${program.praxis_slug}-goae-title`}>
     <h3 id={`${program.praxis_slug}-goae-title`}>{infoboxHeading}</h3>
@@ -105,15 +104,6 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
     margin: 0;
     font-size: 1.05rem;
     color: var(--sx-c-ink-subtle);
-  }
-  .labor-price {
-    font-size: 1.05rem;
-    color: var(--sx-c-ink);
-    margin-bottom: 1rem;
-  }
-  .labor-price strong {
-    font-family: var(--sx-font-display);
-    font-weight: 750;
   }
   .goae-infobox {
     padding: 1rem 1.15rem;

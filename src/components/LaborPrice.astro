@@ -1,0 +1,35 @@
+---
+interface Props {
+  amount?: number | null;
+}
+
+const { amount } = Astro.props;
+const hasPrice = typeof amount === 'number' && Number.isFinite(amount) && amount >= 0;
+const display = hasPrice
+  ? `${amount.toFixed(2).replace('.', ',')}\u00a0€`
+  : 'Preis auf Anfrage';
+---
+
+<p class="labor-price">
+  <strong>{display}</strong>
+  {hasPrice && <span>Abrechnung nach GOÄ</span>}
+</p>
+
+<style>
+  .labor-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0 0 1rem;
+    color: var(--sx-c-ink);
+  }
+  strong {
+    font-family: var(--sx-font-display);
+    font-size: 1.5rem;
+    font-weight: 750;
+  }
+  span {
+    font-size: 0.875rem;
+    color: var(--sx-c-ink-subtle);
+  }
+</style>
