@@ -22,8 +22,10 @@ export async function createStructureLexicon(host, manifest, manifestBytes) {
     delete box.dataset.entry; delete box.dataset.source; delete box.dataset.sourceSha256;
     if (failure) {box.textContent = `Lexikonbindung nicht verfügbar: ${failure}.`; return;}
     const binding = bindings.get(entry?.id);
+    if(!binding&&document.querySelector('.app')?.dataset.mode==='explore'){box.textContent='';return;}
     if (!binding) {box.textContent = entry ? 'Kein quellengebundener Lexikontext für diese Registerstruktur vorhanden.' : 'Lexikon: Registerstruktur wählen; Texte erscheinen nur bei belegter Einzelbindung.'; return;}
     box.dataset.entry = binding.id; box.dataset.source = binding.source; box.dataset.sourceSha256 = binding.source_sha256;
+    if(document.querySelector('.app')?.dataset.mode==='explore'){box.textContent=binding.text;return;}
     box.textContent = `${binding.title}: ${binding.text} Quelle: eigenes DHT-Lexikon, Abschnitt „Was ist das?“, ${binding.id}. Keine neue ärztliche Prüfung; keine Diagnose oder individuelle Beratung.`;
   }
   show(null);

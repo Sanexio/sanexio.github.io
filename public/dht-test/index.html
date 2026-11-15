@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="dht-selection-root" content="./"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DHT — Wo tut es weh?</title>
+<title>DHT — Körper erkunden</title>
 <meta name="referrer" content="no-referrer"/>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"/>
 <script type="importmap">{"imports":{"three":"./avatar/vendor/three.module.js"}}</script>
@@ -18,12 +18,12 @@
 <meta name="theme-color" content="#c8161d"/>
 </head>
 <body>
-<div class="app">
+<div class="app" data-mode="explore">
 <div class="notice-rail"><details id="mvp-hinweis"><summary title="MVP · frühe Testfassung – Ihre Verbesserungsvorschläge sind willkommen">MVP · frühe Testfassung – Ihre Verbesserungsvorschläge sind willkommen</summary>
 <div class="mvp-text"><p>Sie sehen eine frühe Testfassung (MVP) des Digital Health Twin (DHT). Sie zeigt, wohin die Entwicklung geht, und ist noch nicht vollständig.</p>
 <p>Keine Diagnose, keine Behandlungsempfehlung. Ihre Angaben bleiben auf Ihrem Gerät.</p>
 <p>Was fehlt Ihnen? Was ist unklar? Was würden Sie anders machen? Schreiben Sie uns über die Kontaktseite. Bitte schreiben Sie keine Gesundheitsangaben in Ihre Rückmeldung.</p>
-</div></details><header><h1>Wo tut es weh?</h1></header>
+</div></details><nav class="explore-tabs" role="tablist" aria-label="DHT entdecken"><button id="explore-tab" type="button" role="tab" aria-selected="true" aria-controls="schritt-region">Körper erkunden</button><button id="pain-tab" type="button" role="tab" aria-selected="false" aria-controls="schritt-region">Wo tut es weh?</button></nav><header><h1>Wo tut es weh?</h1></header>
 <p id="safety-core">Keine Diagnose. Angaben bleiben lokal.</p>
 <div class="notice" id="female-standhinweis" role="status" hidden></div>
 </div><div class="app-content"><p class="notice" id="ladefehler" hidden></p>
