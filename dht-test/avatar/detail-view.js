@@ -63,7 +63,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const hullData = await download(web.file,'Männliche Hülle',web.bytes);
   if (await digest(hullData) !== web.sha256) throw new Error('Hüllen-Prüfsumme abweichend');
   const hull = (await parse(hullData)).scene;
-  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xb99d89,emissive:0xb99d89,emissiveIntensity:0.35,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;} });
+  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xb99d89,emissive:0xb99d89,emissiveIntensity:0.35,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=new THREE.MeshBasicMaterial({color:0x88959b,transparent:true,opacity:0.18,depthWrite:false,side:THREE.FrontSide,forceSinglePass:true});} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
   const pathEntries = new Map();
@@ -147,7 +147,10 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   }
   function render(){renderer.render(scene,camera);renderLabels();}
   function updateVisibility(){
-    hull.visible=!exploring()||layer==='haut';
+    const outline=layer!=='haut';
+    hull.visible=true;
+    hull.traverse(o=>{if(o.isMesh)o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;});
+    host.querySelector('#muscle-notice').hidden=layer!=='muskel';
     let triangles=hull.visible?141050:0, omitted=0;
     for(const a of assets.values()) {
       const show=layerKinds[layer]?.includes(a.kind);
@@ -186,6 +189,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
   function fillSelect(){
+    const ideas=host.querySelector('.quick-suggestions');
     const term=norm(search.value);select.replaceChildren();results.replaceChildren();results.hidden=!term;
     const empty=document.createElement('option');empty.value='';empty.textContent='Körperteil wählen';select.append(empty);
     const matched=manifest.entries.filter(e=>!term||norm(`${label(e)} ${e.id}`).includes(term));
@@ -195,7 +199,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       const title=document.createElement('p');title.textContent=has3D?'Zum Anschauen':'ohne 3D-Darstellung';results.append(title);
       for(const e of rows){const b=btn('', '',()=>run(()=>choose(e)));b.dataset.result=e.id;const name=document.createElement('span'),latin=document.createElement('small');name.textContent=Array.isArray(e.names.de)?e.names.de.join(', '):e.names.de||'Körperteil';latin.textContent=Array.isArray(e.names.la)?e.names.la.join(', '):e.names.la||'';b.append(name,latin);results.append(b);}
     }
-    if(term&&!matched.length){const p=document.createElement('p');p.textContent='Dazu ist noch kein Körperteil hinterlegt. Versuchen Sie einen anderen Namen.';results.append(p);}
+    if(term&&!matched.length){const p=document.createElement('p');p.textContent='Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.';results.append(p,ideas);}
+    else search.after(ideas);
     if(selected)select.value=selected.id;
   }
   const run=fn=>Promise.resolve().then(fn).catch(error=>{layerStatus.textContent='Laden fehlgeschlagen. Bitte die Schicht erneut wählen.';status.textContent=error.message;});
@@ -212,7 +217,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     const meshes=[];for(const a of assets.values())if(a.group.visible)a.group.traverse(o=>{if(o.isMesh)meshes.push(o);});
     const hit=raycaster.intersectObjects(meshes,false)[0];
     if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
-    const shellHit=raycaster.intersectObject(hull,true)[0];
+    const shellHit=(layer==='haut')?raycaster.intersectObject(hull,true)[0]:null;
     if(shellHit){if(exploring()){detail.replaceChildren();const name=document.createElement('strong'),latin=document.createElement('small');name.textContent='Haut';latin.textContent='Cutis · vereinfachte Körperhülle';detail.append(name,latin);syncBadge();showLexicon(null);return;}if(hover)return;const p=shellHit.point;const region=p.y>1.52?'kopf':p.y>1.43?'hals':Math.abs(p.x)>0.20&&p.y>0.76?(p.x>0?'arm_links':'arm_rechts'):p.y>1.16?'brust':p.y>0.97?'bauch':p.y>0.78?'becken':p.x>0?'bein_links':'bein_rechts';onRegion(region);}
   }
   let pointer=null, tapPending=false;
@@ -228,11 +233,11 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';host.setAttribute('aria-busy','false');progress.hidden=true;
   const api={
     async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}layer=value;updateVisibility();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
-    setOpacity(value){hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));o.material.opacity=opacity;o.material.transparent=opacity<1;o.material.depthWrite=opacity===1;o.material.needsUpdate=true;}});render();},
+    setOpacity(value){hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity;m.transparent=opacity<1;m.depthWrite=opacity===1;m.needsUpdate=true;}});render();},
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
-    state(){return {revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,hullOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});renderer.dispose();},
+    state(){return {revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},hullOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
+    dispose(){resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});
