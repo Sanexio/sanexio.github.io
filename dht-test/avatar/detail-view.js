@@ -29,6 +29,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const exploring=()=>document.querySelector('.app')?.dataset.mode==='explore';
   const manifestBytes = await (await fetch(new URL('manifest.json', BASE), {signal})).arrayBuffer();
   const manifest = JSON.parse(new TextDecoder().decode(manifestBytes));
+  const muscleEntries=manifest.entries.filter(e=>e.kind==='muscle'),representedMuscles=muscleEntries.filter(e=>e.geometry.length).length;
+  host.querySelector('#muscle-coverage').textContent=`Muskeln: ${representedMuscles} von ${muscleEntries.length} Einträgen mit eigener 3D-Darstellung.`;
   if (manifest.sex !== 'male' || manifest.register_count !== 1559) throw new Error('Anatomieregister nicht freigegeben');
   const showLexicon = await createStructureLexicon(host, manifest, manifestBytes);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, preserveDrawingBuffer: true });
@@ -63,6 +65,16 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const hullData = await download(web.file,'Männliche Hülle',web.bytes);
   if (await digest(hullData) !== web.sha256) throw new Error('Hüllen-Prüfsumme abweichend');
   const hull = (await parse(hullData)).scene;
+  let previewGeometry=preview?.geometry;
+  if(!previewGeometry){
+    const data=await (await fetch(new URL('assets/male-preview.bin',BASE),{signal})).arrayBuffer(),header=new Uint32Array(data,0,2),count=header[0];
+    previewGeometry={positions:new Float32Array(data,8,count*3),normals:new Float32Array(data,8+count*12,count*3),indices:new Uint16Array(data,8+count*24,header[1])};
+  }
+  const outlineGeometry=new THREE.BufferGeometry();
+  outlineGeometry.setAttribute('position',new THREE.BufferAttribute(previewGeometry.positions,3));
+  outlineGeometry.setAttribute('normal',new THREE.BufferAttribute(previewGeometry.normals,3));
+  outlineGeometry.setIndex(new THREE.BufferAttribute(previewGeometry.indices,1));
+  hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
   hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xb99d89,emissive:0xb99d89,emissiveIntensity:0.35,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=new THREE.MeshBasicMaterial({color:0x88959b,transparent:true,opacity:0.18,depthWrite:false,side:THREE.FrontSide,forceSinglePass:true});} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
@@ -149,15 +161,15 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   function updateVisibility(){
     const outline=layer!=='haut';
     hull.visible=true;
-    hull.traverse(o=>{if(o.isMesh)o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;});
-    host.querySelector('#muscle-notice').hidden=layer!=='muskel';
-    let triangles=hull.visible?141050:0, omitted=0;
+    hull.traverse(o=>{if(o.isMesh){o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;o.geometry=outline?outlineGeometry:o.userData.skinGeometry;}});
+    let triangles=0, omitted=0;
+    if(hull.visible)hull.traverse(o=>{if(o.isMesh)triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3;});
     for(const a of assets.values()) {
       const show=layerKinds[layer]?.includes(a.kind);
       a.group.visible=Boolean(show && triangles+a.triangles<=manifest.triangle_limit);
       if(a.group.visible)triangles+=a.triangles;else if(show)omitted++;
     }
-    status.textContent=`3D lokal bereit · ${manifest.register_count} Registereinträge · ${[...assets.values()].filter(a=>a.group.visible).length} sichtbare Anatomieobjekte · ${triangles.toLocaleString('de-DE')} Dreiecke${omitted ? ` · ${omitted} durch Detailbudget ausgeblendet` : ''}`;
+    status.textContent=`3D lokal bereit · ${manifest.entries.length} Registereinträge · ${[...assets.values()].filter(a=>a.group.visible).length} sichtbare Anatomieobjekte · ${triangles.toLocaleString('de-DE')} Dreiecke${omitted ? ` · ${omitted} durch Detailbudget ausgeblendet` : ''}`;
     host.dataset.triangles=String(triangles);host.dataset.layer=layer;host.dispatchEvent(new CustomEvent('avatar-layer',{bubbles:true,detail:{layer}}));
     for(const b of host.querySelectorAll('[data-layer]'))b.setAttribute('aria-pressed',String(b.dataset.layer===layer));
     const depth=['haut','muskel','binde','organ','skelett'];host.querySelector('#layer-peel').value=depth.indexOf(layer);host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');
@@ -170,7 +182,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     badge.hidden=true;delete host.dataset.selected;selected=e;lastHit=hit;select.value=e.id;
     showLexicon(e);
     restoreMaterials();
-    if(e.geometry.length===0){detail.textContent=`${label(e)} — ohne 3D-Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();return;}
+    if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();return;}
     const a=assets.get(e.geometry[0]);if(!a){detail.textContent='Dieser Körperteil ist noch nicht in 3D verfügbar.';return;}
     if(!layerKinds[layer].includes(a.kind)) {layer=Object.keys(layerKinds).find(k=>layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
     // Selected object has priority within the measured view budget.
@@ -192,8 +204,10 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     const ideas=host.querySelector('.quick-suggestions');
     const term=norm(search.value);select.replaceChildren();results.replaceChildren();results.hidden=!term;
     const empty=document.createElement('option');empty.value='';empty.textContent='Körperteil wählen';select.append(empty);
-    const matched=manifest.entries.filter(e=>!term||norm(`${label(e)} ${e.id}`).includes(term));
+    const rank=e=>{const de=norm((Array.isArray(e.names.de)?e.names.de[0]:e.names.de)||'');return de===term?0:de.startsWith(term+' ')?1:2;};
+    const matched=manifest.entries.filter(e=>!term||norm(`${label(e)} ${e.id}`).includes(term)).sort((a,b)=>term?rank(a)-rank(b):0);
     for(const e of matched){const o=document.createElement('option');o.value=e.id;o.textContent=`${label(e)}${e.geometry.length?'':' — ohne 3D-Darstellung'}`;select.append(o);}
+    if(term&&matched.some(e=>rank(e)<=1&&!e.geometry.length)){const p=document.createElement('p');p.textContent='Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.';results.append(p);}
     for(const has3D of [true,false]){
       const rows=matched.filter(e=>Boolean(e.geometry.length)===has3D).slice(0,8);if(!term||!rows.length)continue;
       const title=document.createElement('p');title.textContent=has3D?'Zum Anschauen':'ohne 3D-Darstellung';results.append(title);
