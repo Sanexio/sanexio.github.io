@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de" data-ready="false">
+<head>
+<meta charset="utf-8"/>
+<meta name="dht-selection-root" content="../"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DHT Browser — Vollfunktion (lokal)</title>
+<link rel="icon" type="image/svg+xml" href="../icons/vitruv.svg"/>
+<meta name="referrer" content="no-referrer"/>
+<link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<div class="shell">
+<a class="toplink" href="../index.html">← Schmerzortwahl (Termin-Widget)</a>
+<header>
+<h1>DHT Browser-App (lokal)</h1>
+<p class="banner">Alles nur auf diesem Gerät — keine externen Netzanfragen, keine Diagnose, keine Dosierung. Synthetische Demo-Daten.</p>
+</header>
+<nav class="modules" id="mod-nav" aria-label="Bereiche"></nav>
+<section class="panel" id="panel-anatomie" data-mod="anatomie"><h2>3D-Anatomie und Körperauswahl</h2><iframe title="Lokaler 3D-Avatar mit Körperauswahl und Standhinweis" id="anatomie-frame" data-src="../index.html" style="width:100%;height:1200px;border:0"></iframe></section>
+<section class="panel" id="panel-dashboard" data-mod="dashboard"><h2>Gesundheitsdashboard</h2>
+<fieldset><legend>Lokales Profil / Einstieg</legend><p>1. Hinweise lesen. 2. Lokale Verarbeitung bestätigen. 3. Alias speichern. Kein Modell antwortet; regelbasierte lokale Berechnung, keine Datenübertragung.</p><label>Alias <input id="profile-alias" maxlength="80" autocomplete="off"/></label><label><input id="consent" type="checkbox"/> Lokale Speicherung auf diesem Gerät verstanden und eingewilligt</label><button id="profile-save" type="button" class="act">Profil speichern</button><p id="profile-status" role="status"></p></fieldset><div id="dash-ampeln"></div>
+<button type="button" class="act" id="dash-refresh">Ampeln aktualisieren</button>
+</section>
+<section class="panel" id="panel-labor" data-mod="labor"><h2>Labor manuell</h2>
+<label>Marker <input id="lab-marker" value="hba1c"/></label>
+<label>Wert <input id="lab-wert" type="number" step="0.1" value="5.8"/></label>
+<label>Einheit <input id="lab-einheit" value="%"/></label>
+<div class="row"><button type="button" class="act" id="lab-save">Speichern</button><button type="button" class="sec" id="lab-list">Liste anzeigen</button></div>
+<pre class="out" id="lab-out"></pre>
+</section>
+<section class="panel" id="panel-health-import" data-mod="health-import"><h2>Gesundheitswerte importieren (Ersatz HealthKit)</h2>
+<input type="file" id="health-file" accept=".json,application/json"/>
+<button type="button" class="act" id="health-import">JSON importieren</button>
+<pre class="out" id="health-out"></pre>
+</section>
+<section class="panel" id="panel-ocr" data-mod="ocr"><h2>Laborimport / Text</h2>
+<p>Bild-OCR nicht verfügbar: Browser-OCR-Laufzeit und deutsche Erkennungsdaten fehlen. Hier werden ausschließlich eingefügte Texte oder JSON strukturiert.</p>
+<textarea id="ocr-text" placeholder="Laborzeilen oder JSON einfügen (lokal, kein Upload)"></textarea>
+<button type="button" class="act" id="ocr-parse">Strukturieren</button>
+<pre class="out" id="ocr-out"></pre>
+</section>
+<section class="panel" id="panel-narrator" data-mod="narrator"><h2>Regelbasierte Erklärung</h2>
+<button type="button" class="act" id="narrator-run">Letzten Laborwert erklären</button>
+<p id="narrator-text"></p>
+</section>
+<section class="panel" id="panel-ki-manifest" data-mod="ki-manifest"><h2>Lokales Modellmanifest · nur Metadaten</h2>
+<p>Kein Modell aktiv. Die Erklärung im benachbarten Bereich arbeitet regelbasiert lokal; keine Datenübertragung.</p>
+<input type="file" id="ki-manifest-file" accept=".json,application/json"/>
+<button type="button" class="act" id="ki-manifest-check">Manifest prüfen</button>
+<pre class="out" id="ki-manifest-out"></pre>
+</section>
+<section class="panel" id="panel-verlauf" data-mod="verlauf"><h2>Verlauf / Basislinie</h2>
+<label>Reihe <select id="series-select"></select></label><pre class="out" id="verlauf-out"></pre><canvas id="verlauf-chart" class="chart" width="560" height="160"></canvas>
+<button type="button" class="sec" id="verlauf-draw">Chart zeichnen</button>
+</section>
+<section class="panel" id="panel-future" data-mod="future"><h2>Future-Self (illustrativ)</h2>
+<label>Alter + Jahre <input id="future-years" type="range" min="0" max="30" value="10"/></label>
+<p id="future-text"></p><iframe title="Illustrative Altersansicht am Atlasavatar mit Standhinweis" id="future-frame" data-src="../index.html" style="width:100%;height:1200px;border:0"></iframe>
+</section>
+<section class="panel" id="panel-ziele" data-mod="ziele"><h2>Ziele &amp; Tagesübersicht</h2>
+<label>Ziel <input id="ziel-text" value="Täglich Schritte notieren"/></label>
+<button type="button" class="act" id="ziel-save">Ziel speichern</button>
+<button type="button" class="sec" id="briefing-show">Tagesübersicht</button>
+<button type="button" class="sec" id="visit-save">Besuch speichern und vergleichen</button><pre class="out" id="ziel-out"></pre>
+</section>
+<section class="panel" id="panel-badges" data-mod="badges"><h2>Herausforderungen &amp; Badges</h2>
+<button type="button" class="act" id="badge-earn">Herausforderung prüfen</button>
+<p id="challenge-status"></p><ul id="badge-list"></ul>
+</section>
+<section class="panel" id="panel-nudges" data-mod="nudges"><h2>Erinnerungen (In-App / optional Benachrichtigung)</h2>
+<label>Text <input id="nudge-text" value="Trinken nicht vergessen"/></label>
+<label>Minuten <input id="nudge-min" type="number" value="1" min="1" max="1440"/></label>
+<button type="button" class="act" id="nudge-set">Erinnerung setzen</button>
+<button type="button" class="sec" id="nudge-notify">Benachrichtigungen erlauben</button>
+<button type="button" class="sec" id="nudge-cancel">Erinnerung abbrechen</button><ul id="nudge-list"></ul><p id="nudge-status"></p>
+</section>
+<section class="panel" id="panel-quick" data-mod="quick"><h2>Schnellübersicht (Ersatz Watch-Widget)</h2>
+<button type="button" class="act" id="quick-refresh">Kompakte Übersicht</button>
+<pre class="out" id="quick-out"></pre>
+</section>
+<section class="panel" id="panel-graph" data-mod="graph"><h2>Wissensgraph</h2>
+<div id="graph-nodes"></div>
+<button type="button" class="sec" id="graph-load">Graph laden</button>
+</section>
+<section class="panel" id="panel-produkte" data-mod="produkte"><h2>Angebote</h2>
+<ul id="produkt-list"></ul>
+<button type="button" class="sec" id="produkt-load">Katalog laden</button>
+</section>
+<section class="panel" id="panel-physio" data-mod="physio"><h2>Physiologieprofile</h2>
+<pre class="out" id="physio-out"></pre>
+<button type="button" class="sec" id="physio-load">Profile laden</button>
+</section>
+<section class="panel" id="panel-g6b" data-mod="g6b"><h2>G6B validieren</h2>
+<button type="button" class="act" id="g6b-validate">Modell prüfen &amp; Bilanz</button>
+<pre class="out" id="g6b-out"></pre>
+</section>
+<section class="panel" id="panel-pbpk" data-mod="pbpk"><h2>Verteilungsmodell (synthetisch)</h2>
+<label>Synthetischer Beispielparameter <input id="pbpk-dose" type="number" value="100"/></label>
+<button type="button" class="act" id="pbpk-run">Simulation starten</button>
+<pre class="out" id="pbpk-out"></pre>
+</section>
+<section class="panel" id="panel-simzeit" data-mod="simzeit"><h2>Simulationszeitachse</h2>
+<label>Ereignis <select id="event-type"><option value="eingang">Synthetischer Eingang</option><option value="entnahme">Synthetische Entnahme</option></select></label><label>Zeit (Stunden) <input id="event-time" type="number" min="0" max="12" step="0.25" value="0"/></label><label>Modellmenge <input id="event-amount" type="number" min="0" value="50"/></label><button type="button" class="sec" id="event-clear">Ereignisse zurücksetzen</button><button type="button" class="act" id="sim-event">Ereignis hinzufügen</button>
+<pre class="out" id="simzeit-out"></pre>
+</section>
+<section class="panel" id="panel-editor" data-mod="editor"><h2>Modell-Editor</h2>
+<textarea id="model-json"></textarea>
+<button type="button" class="act" id="model-apply">JSON anwenden</button>
+<button type="button" class="sec" id="model-code">Geprüften Rechencode anzeigen</button><pre class="out" id="model-code-out"></pre><p id="model-status"></p>
+</section>
+<section class="panel" id="panel-compare" data-mod="compare"><h2>Läufe vergleichen</h2>
+<button type="button" class="act" id="sim-save">Lauf speichern</button>
+<button type="button" class="sec" id="sim-compare">Zwei letzte vergleichen</button>
+<button type="button" class="sec" id="sim-restore">Letzten Arbeitsstand wiederaufnehmen</button><pre class="out" id="compare-out"></pre>
+</section>
+<section class="panel" id="panel-notizen" data-mod="notizen"><h2>Reviewnotizen</h2>
+<textarea id="note-text"></textarea>
+<button type="button" class="act" id="note-save">Notiz speichern</button>
+<ul id="note-list"></ul>
+</section>
+<section class="panel" id="panel-mandant" data-mod="mandant"><h2>Zweckbereiche (IndexedDB)</h2>
+<label>Bereich <select id="mandant-sel"><option value="termin">Termin</option><option value="forschung">Forschung (synthetisch)</option></select></label>
+<button type="button" class="act" id="mandant-set">Aktiven Bereich setzen</button>
+<p id="mandant-status"></p>
+</section>
+<section class="panel" id="panel-export" data-mod="export"><h2>Export / Löschweg</h2>
+<label for="export-directory">Exportordner (leer = geschütztes Vorgabeziel ~/.cortex/lokal/dht-exporte/)</label>
+<input id="export-directory" type="text" placeholder="~/.cortex/lokal/dht-exporte/" autocomplete="off">
+<button type="button" class="act" id="export-json">JSON lokal exportieren</button>
+<button type="button" class="sec" id="export-pdf">PDF lokal exportieren</button><button type="button" class="sec" id="export-clear">Lokale Daten leeren</button>
+<p id="export-status"></p>
+</section>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><title>IK8 B-klar: eigene vitruvianische Strichfassung</title>
+<rect x="0" y="0" width="1000" height="1000" rx="110" fill="#f5f5f7"/>
+<circle cx="500" cy="460" r="400" stroke="#c8161d" stroke-width="8" fill="none"/>
+<rect x="140" y="160" width="720" height="720" stroke="#c8161d" stroke-width="8" fill="none"/>
+<path d="M 458 520 C 433 555 412 610 385 657 C 350 705 310 753 277 789 L 247 804 L 238 793 L 264 766 C 295 719 321 673 347 628 C 371 579 402 538 427 514 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 542.0 520 C 567.0 555 588.0 610 615.0 657 C 650.0 705 690.0 753 723.0 789 L 753.0 804 L 762.0 793 L 736.0 766 C 705.0 719 679.0 673 653.0 628 C 629.0 579 598.0 538 573.0 514 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 455 523 C 438 569 441 625 443 674 C 438 733 437 801 435 855 L 409 868 L 407 880 L 465 880 C 473 822 478 750 478 691 C 488 643 492 586 498 559 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 545.0 523 C 562.0 569 559.0 625 557.0 674 C 562.0 733 563.0 801 565.0 855 L 591.0 868 L 593.0 880 L 535.0 880 C 527.0 822 522.0 750 522.0 691 C 512.0 643 508.0 586 502.0 559 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 441 301 C 401 279 364 256 333 232 C 304 211 280 191 254 175 L 232 158 L 217 165 L 233 184 L 246 191 C 272 216 299 242 323 264 C 357 293 393 326 426 343 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 559.0 301 C 599.0 279 636.0 256 667.0 232 C 696.0 211 720.0 191 746.0 175 L 768.0 158 L 783.0 165 L 767.0 184 L 754.0 191 C 728.0 216 701.0 242 677.0 264 C 643.0 293 607.0 326 574.0 343 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 434 311 C 389 313 348 319 307 320 L 200 326 L 164 322 L 140 329 L 140 340 L 165 345 L 202 345 L 311 351 C 354 353 394 352 435 350 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 566.0 311 C 611.0 313 652.0 319 693.0 320 L 800.0 326 L 836.0 322 L 860.0 329 L 860.0 340 L 835.0 345 L 798.0 345 L 689.0 351 C 646.0 353 606.0 352 565.0 350 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 477 242 L 476 278 C 468 291 450 295 435 302 C 415 311 415 332 428 352 C 441 375 444 405 447 432 C 441 458 433 484 430 505 C 428 527 444 547 467 554 L 500 569 L 533 554 C 556 547 572 527 570 505 C 567 484 559 458 553 432 C 556 405 559 375 572 352 C 585 332 585 311 565 302 C 550 295 532 291 524 278 L 523 242 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 465 185 C 465 169 480 160 500 160 C 520 160 535 169 535 185 L 536 211 L 529 232 L 517 247 L 500 250 L 483 247 L 471 232 L 464 211 Z" fill="#f5f5f7" stroke="#282329" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 465 216 C 453 214 454 200 457 187 C 450 173 466 154 478 159 C 487 149 514 151 522 160 C 541 155 551 179 541 191 L 544 218 L 534 229 L 530 195 L 518 179 L 506 184 L 491 178 L 475 192 L 470 222 Z" fill="#282329" stroke="#282329" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 455 326 Q 476 315 497 331 M 503 331 Q 524 315 545 326" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 450 359 Q 473 371 493 357 M 507 357 Q 527 371 550 359" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 499 345 L 500 416" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 465 402 Q 479 396 490 406 M 510 406 Q 521 396 535 402" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 456 482 Q 479 501 500 523 Q 521 501 544 482" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 479 200 L 490 199 M 511 199 L 522 200 M 502 201 L 498 215 L 505 217 M 489 230 Q 500 236 512 230" fill="none" stroke="#282329" stroke-width="5.8500000000000005" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="460" r="5" fill="#282329"/>
+</svg>

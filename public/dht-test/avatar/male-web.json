@@ -1,0 +1,8 @@
+{
+  "file": "assets/male-web.glb",
+  "bytes": 6829736,
+  "sha256": "10e41212ed08c1dcc9cad62206e224451814afab57360c63b261879126cdb277",
+  "original_sha256": "7067f722a68c608ba1f4ef325dc2d605b6bbd145aca280a065dcffa4d44b67e6",
+  "compression": "EXT_meshopt_compression; meshoptimizer 1.3.0; lossless, no quantization or simplification",
+  "maxPointDeviation": 0
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "dht-source-profiles/1",
+  "herkunft": {
+    "datei": "dht-desktop-app/app/Sources/MA2/TF1LocalWork.swift",
+    "sha256": "c504e90d0f6b977e7a4214be83528bb7a25bba11020d4fd6ffc16dbab21f4ed8",
+    "auswahl": "TF1Sources.entries; eigene Kurztexte und bibliografische Nachweise"
+  },
+  "hinweis": "Lesbare Quellenprofile, keine Freigabe physiologischer Parameter; kein fremder Fließtext.",
+  "profile": [
+    {
+      "titel": "Stoffbilanz",
+      "art": "Physiologie",
+      "quelle": "Lokaler G6B-Vertrag · _engine/MODELLFORMAT.md · Dynamik",
+      "lizenz": "Eigener Lehrtext; keine fremden Fließtexte",
+      "kurztext": "In diesem Lehrmodell wird die Stoffmenge je Kompartiment geführt. Externe Ereignisse stehen getrennt in der Bilanz."
+    },
+    {
+      "titel": "Verteilungsraum",
+      "art": "Physiologie",
+      "quelle": "SimulatorDistribution.swift · lokale Gleichung R65",
+      "lizenz": "Eigener Gleichungsadapter; keine Literaturfreigabe",
+      "kurztext": "Ein Verteilungsraum ist eine Modellgröße. Er ist weder eine neue Organmessung noch eine individuelle Aussage."
+    },
+    {
+      "titel": "Gaohua 2012",
+      "art": "Quellenprofil",
+      "quelle": "DOI 10.1111/j.1365-2125.2012.04363.x · Tabellen 1–5",
+      "lizenz": "Nur bibliografischer Nachweis; Originaltext nicht enthalten",
+      "kurztext": "Parameterherkunft des gebundenen Simulators. Keine unabhängige Bestätigung aller Stoffmodelle."
+    },
+    {
+      "titel": "G6B Modellformat",
+      "art": "Quellenprofil",
+      "quelle": "Gebündelt: simulator/_engine/MODELLFORMAT.md · Version 1",
+      "lizenz": "Lokaler Projektvertrag; Vertriebsfreigabe nicht abgeleitet",
+      "kurztext": "Feste Volumina, lineare Reaktionen erster Ordnung, explizite Einheiten und zeitgesteuerte Ereignisse."
+    },
+    {
+      "titel": "Radau",
+      "art": "Quellenprofil",
+      "quelle": "Gebündelte SciPy-Laufzeit · solve_ivp(method=Radau)",
+      "lizenz": "SciPy: BSD-3-Clause; vollständige gebündelte Hinweise maßgeblich",
+      "kurztext": "Numerisches Integrationsverfahren. Numerische Genauigkeit bestätigt keine physiologische Gültigkeit."
+    }
+  ]
+}

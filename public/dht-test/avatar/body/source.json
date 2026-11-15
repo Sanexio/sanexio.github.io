@@ -1,0 +1,27 @@
+{
+  "credit": "MakeHuman hm08 · Data Collection AB, Joel Palmius, Jonas Hauquier (2020)",
+  "origin": "https://github.com/makehumancommunity/makehuman/blob/master/makehuman/data/3dobjs/base.obj",
+  "license": "CC0 1.0",
+  "license_url": "https://github.com/makehumancommunity/makehuman/blob/master/LICENSE.ASSETS.md",
+  "license_read_at": "2026-11-14",
+  "sha256": "dd1ae551a3231e72238ec0a199441733570c0a4ca9672b1da4b7766207ea1b7d",
+  "bytes": 1219056,
+  "original_sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+  "original_bytes": 1749303,
+  "license_sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c",
+  "vertices": 13380,
+  "triangles": 26756,
+  "source_bbox": {
+    "min": [
+      -4.9627,
+      -8.1676,
+      -1.0154
+    ],
+    "max": [
+      4.9627,
+      8.4913,
+      3.2147
+    ]
+  },
+  "normalization": "each axis normalized independently to [-0.5,0.5]; no original unit assumed"
+}

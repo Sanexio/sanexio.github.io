@@ -7,6 +7,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   canonical = Astro.url.href,
   ogImage = '/logo-sanexio-red.svg',
   ogImageAlt = title,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -27,6 +29,7 @@ const {
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->

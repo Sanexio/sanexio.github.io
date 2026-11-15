@@ -1,0 +1,26 @@
+[
+  {
+    "file": "regenerator-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/facebook/regenerator/main/LICENSE",
+    "bytes": 1080,
+    "sha256": "51887a3d47051ac2fce1210562e5b9fe0830a8a8fabeb272c2d586eeb18a05fd"
+  },
+  {
+    "file": "buffer-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/feross/buffer/master/LICENSE",
+    "bytes": 2306,
+    "sha256": "ed2e878b5cbcda860c7640ce99838e3d83d7cf5e8ad31fc57c11f313b685ae00"
+  },
+  {
+    "file": "ieee754-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/feross/ieee754/master/LICENSE",
+    "bytes": 1465,
+    "sha256": "18d45466ba3253deae04667e267a91ea8de8548f18c1125264d1c9db28194cc1"
+  },
+  {
+    "file": "zlib-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/imaya/zlib.js/master/LICENSE",
+    "bytes": 1222,
+    "sha256": "131afe3f7bdce1698beb292fb8de1a968de01bce876122a60ef5db230471c866"
+  }
+]

@@ -1,0 +1,741 @@
+{
+  "schema": "dht-source-variants/1",
+  "catalog_sha256": "9e4d0ba9e1235ec004f4a242eb18a40872bca57553612fcb18e4e34ad1dcb66f",
+  "bundle_sha256": "16240d820746de0b565c0b5c744a74ca3dc51bfd725be4bf49c159037ba01bbc",
+  "license_read_at": "2026-11-14",
+  "default": {
+    "id": "BR6-Z-Anatomy-KMS2-AHF2",
+    "sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+    "credit": "Z-Anatomy · Gauthier Kervyn, Marcin Zielinski · CC BY-SA 4.0; BodyParts3D · DBCLS · CC BY-SA 2.1 Japan. Bestehende lokale Ableitungen."
+  },
+  "variants": [
+    {
+      "id": "TA2:2901:M:organe:lod2",
+      "label": "Gaster · Z-Anatomy / organe / lod2",
+      "original": [
+        "Stomach.001",
+        "Mucosa of stomach.001"
+      ],
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "42005645e7d9e9541e69092377d9ac613c34845dd62fe452333007c9b1806fdc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. Lage konstruiert. ",
+      "original_file": "modelle/organe/TA2-2901-M/organ.glb",
+      "sha256": "78c711916ce91d1c4c9496b5830c852956c6b54cd87386abf4a4b0cb9349468f",
+      "bytes": 466428,
+      "offset": 0
+    },
+    {
+      "id": "TA2:3871:L:organe:lod2",
+      "label": "Glandula parathyreoidea superior · Z-Anatomy / organe / lod2",
+      "original": [
+        "Superior parathyroid gland.l.001"
+      ],
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "e4a39c2a649ed8f55ed6e06b69f976c4f71bd9312d5422dfbcafc7be4070015a",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. Lage konstruiert. ",
+      "original_file": "modelle/organe/TA2-3871-L/organ.glb",
+      "sha256": "b5749264f02a258311f9633462fab2291516c743c43bacc054b552a8a1bc204c",
+      "bytes": 4432,
+      "offset": 466428
+    },
+    {
+      "id": "TA2:3871:R:organe:lod2",
+      "label": "Glandula parathyreoidea superior · Z-Anatomy / organe / lod2",
+      "original": [
+        "Superior parathyroid gland.r.001"
+      ],
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "c94f28cb8e32c4c84748e2a22f5bae50bdf74b335c3c555c0f6031c917ca6040",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. Lage konstruiert. ",
+      "original_file": "modelle/organe/TA2-3871-R/organ.glb",
+      "sha256": "aa249c78e29e56d70b4c7de0f003d24cc35e7fae7c69ea7b9f8995b9e5ccc064",
+      "bytes": 4432,
+      "offset": 470860
+    },
+    {
+      "id": "TA2:3872:L:organe:lod2",
+      "label": "Glandula parathyreoidea inferior · Z-Anatomy / organe / lod2",
+      "original": [
+        "Inferior parathyroid gland.l.001"
+      ],
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "a07f7583e831127aa74067ad70025d8a9c86504d51c9f1a687af48125f39c511",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. Lage konstruiert. ",
+      "original_file": "modelle/organe/TA2-3872-L/organ.glb",
+      "sha256": "9c5037d489308644e1de4ad4990beb668641ab389f7f2ac37bce5a4d6b48a2b0",
+      "bytes": 4428,
+      "offset": 475292
+    },
+    {
+      "id": "TA2:3872:R:organe:lod2",
+      "label": "Glandula parathyreoidea inferior · Z-Anatomy / organe / lod2",
+      "original": [
+        "Inferior parathyroid gland.r.001"
+      ],
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "e4b92b677c684ba3f9619df6fa16f97fdc0f4bdcfc97603b894be8b7d94e8d97",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. Lage konstruiert. ",
+      "original_file": "modelle/organe/TA2-3872-R/organ.glb",
+      "sha256": "1afa6960626e474d0ef472a35e46e9c97c7652d5477099b913d3da9fef841ff4",
+      "bytes": 4432,
+      "offset": 479720
+    },
+    {
+      "id": "TA2:4044:M:muskulatur:lod1",
+      "label": "Musculus papillaris anterior ventriculi dextri · Z-Anatomy / muskulatur / lod1",
+      "original": "Anterior papillary muscle of right ventricle",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "2c949cf12e2b19a32bd16dd53cf5ebb8912c9d9e932a8da96680e0bf0efc118b",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/muskulatur/TA2-4044-M/lod1.glb",
+      "sha256": "4fbca3ba3c19d11fc280bdb2ebde5ec760268ae433c4ce74ca1e5c6abd25baef",
+      "bytes": 19836,
+      "offset": 484152
+    },
+    {
+      "id": "TA2:4045:M:muskulatur:lod1",
+      "label": "Musculus papillaris inferior ventriculi dextri · Z-Anatomy / muskulatur / lod1",
+      "original": "Inferior papillary muscle of right ventricle",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "41ded648323e2df5a2c5fe7c0b06890e5d2a6e8be3f73de0759cdf0e8bbbc463",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/muskulatur/TA2-4045-M/lod1.glb",
+      "sha256": "22e6427e3182cc8608152e724c50b27acceb2f3ae8003337246830a145896889",
+      "bytes": 14364,
+      "offset": 503988
+    },
+    {
+      "id": "TA2:4046:M:muskulatur:lod1",
+      "label": "Musculus papillaris septalis ventriculi dextri · Z-Anatomy / muskulatur / lod1",
+      "original": "Septal papillary muscle of right ventricle",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "8dd93108a8ed065abc66b73367a560c1264330d4d2d95070586282ca7ba81dd5",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/muskulatur/TA2-4046-M/lod1.glb",
+      "sha256": "d540092c4bfe5c1925c16fae6b4cc3d29e989167d9f6ec7747f8efb2c30b5560",
+      "bytes": 11432,
+      "offset": 518352
+    },
+    {
+      "id": "TA2:4068:M:muskulatur:lod1",
+      "label": "Musculus papillaris inferior ventriculi sinistri · Z-Anatomy / muskulatur / lod1",
+      "original": "Inferior papillary muscle of left ventricle",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "7e531212ef40f61fc76653d1395b4d99def1f9450dac04d9a9bd95bc70c1dd9e",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/muskulatur/TA2-4068-M/lod1.glb",
+      "sha256": "a19bcdc1fb22f121b2fd64839422a1e43e1ff1fc6390c2771c9d2781ef36bff2",
+      "bytes": 20028,
+      "offset": 529784
+    },
+    {
+      "id": "TA2:6818:L:bindegewebe:BR6",
+      "label": "Suspensory ligament of eyeball.l · Z-Anatomy / BR6 / bindegewebe",
+      "original": "Suspensory ligament of eyeball.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+      "provenance_sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "BR6-LOD, Atlaslage; fachliche Abnahme offen.",
+      "original_file": "modelle/bindegewebe/TA2-6818-L/lod0.glb",
+      "sha256": "ac198d269985d8d7f302577aa544066610069a58ad8d5994b3c59008cb430445",
+      "bytes": 21120,
+      "offset": 549812
+    },
+    {
+      "id": "TA2:6818:L:bindegewebe:lod1",
+      "label": "Ligamentum suspensorium bulbi · Z-Anatomy / bindegewebe / lod1",
+      "original": "Suspensory ligament of eyeball.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "5cbf187ce3754499a2d9143f1cf87c1ba916211f311c1430e67d0f1b51b225cc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-6818-L/lod1.glb",
+      "sha256": "279d62975b8bf1edd7a4c7c97fd713f0cce38008288e85eb268b8737a57ef5f8",
+      "bytes": 67352,
+      "offset": 570932
+    },
+    {
+      "id": "TA2:6818:R:bindegewebe:BR6",
+      "label": "Suspensory ligament of eyeball.r · Z-Anatomy / BR6 / bindegewebe",
+      "original": "Suspensory ligament of eyeball.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+      "provenance_sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "BR6-LOD, Atlaslage; fachliche Abnahme offen.",
+      "original_file": "modelle/bindegewebe/TA2-6818-R/lod0.glb",
+      "sha256": "cd25be104902f05056d4ae061e4be8b9d82378d045639ef5f715f55a1865358b",
+      "bytes": 21120,
+      "offset": 638284
+    },
+    {
+      "id": "TA2:6818:R:bindegewebe:lod1",
+      "label": "Ligamentum suspensorium bulbi · Z-Anatomy / bindegewebe / lod1",
+      "original": "Suspensory ligament of eyeball.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "95f1c6ad26676c05e95279be79a8de877c02c093143277fcff30923f0fbbc7cc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-6818-R/lod1.glb",
+      "sha256": "742acf78b99d9015ebebe3e5249fa01b9e7074f74af43e56f9dcbd67633e522e",
+      "bytes": 67352,
+      "offset": 659404
+    },
+    {
+      "id": "TA2:940:L:bindegewebe:lod1",
+      "label": "Cartilago alaris major · Z-Anatomy / bindegewebe / lod1",
+      "original": "Major alar cartilage.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "0e8d118b6244af7756ed1213dafd43c5843902072aaf6e5d87e0c2e86cad4a83",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-940-L/lod1.glb",
+      "sha256": "15cc132dad349d69399cf7a095d18c2f2677ab31640d4cabd87090b56ba88ff0",
+      "bytes": 5412,
+      "offset": 726756
+    },
+    {
+      "id": "TA2:940:R:bindegewebe:lod1",
+      "label": "Cartilago alaris major · Z-Anatomy / bindegewebe / lod1",
+      "original": "Major alar cartilage.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "a84cc383ce5c0713dd754520b42f617b6702d47fd7fb70bfd42bbaf8b1e8f25d",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-940-R/lod1.glb",
+      "sha256": "6639fbef5854124e4d3ef1d5525f008bf75fe45d624659fd55c6adf296f7990e",
+      "bytes": 5412,
+      "offset": 732168
+    },
+    {
+      "id": "TA2:946:M:bindegewebe:lod1",
+      "label": "Cartilago septi nasi · Z-Anatomy / bindegewebe / lod1",
+      "original": "Nasal septal cartilage",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "34c63fcb912e966aac8fbd4378b082a0ef498dfffe51e843021c0ab0b2c10371",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-946-M/lod1.glb",
+      "sha256": "3189e5a002bbaa1dac6c62487c3ea5a94eb9f3623b936f98a297778092e059f5",
+      "bytes": 5604,
+      "offset": 737580
+    },
+    {
+      "id": "TA2:947:L:bindegewebe:lod1",
+      "label": "Processus lateralis cartilaginis septi nasi · Z-Anatomy / bindegewebe / lod1",
+      "original": "Lateral process of nasal septal cartilage.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "07f37cf4aa0477f696f2b8bfdc63be1f91411cbe2f7384ab44628765992ffe50",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-947-L/lod1.glb",
+      "sha256": "4b2c5fb8b3472b39ab9cfff5d6e5921806ca87ec4dbdfe06164087889cac1f06",
+      "bytes": 5424,
+      "offset": 743184
+    },
+    {
+      "id": "TA2:947:R:bindegewebe:lod1",
+      "label": "Processus lateralis cartilaginis septi nasi · Z-Anatomy / bindegewebe / lod1",
+      "original": "Lateral process of nasal septal cartilage.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "4b1ed9f715269c190fcdaa649476e2569dc7e4a1101a1b6571f67dd8303853f8",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-947-R/lod1.glb",
+      "sha256": "b255d30790a63052420157e42167082c1a19d5bc232f3af228ce84d195cc2797",
+      "bytes": 5424,
+      "offset": 748608
+    },
+    {
+      "id": "TA2:967:M:bindegewebe:lod1",
+      "label": "Cartilago thyreoidea · Z-Anatomy / bindegewebe / lod1",
+      "original": "Thyroid cartilage",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "1466302e907a89f1957c733f7dcc26a79205e728d61809d90fd21bb86a879ebb",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-967-M/lod1.glb",
+      "sha256": "0cb04b8b565487e11f06a753ea2141f2e9a799a17b3034654c43ea91b329d48a",
+      "bytes": 55148,
+      "offset": 754032
+    },
+    {
+      "id": "TA2:978:M:bindegewebe:lod1",
+      "label": "Cartilago cricoidea · Z-Anatomy / bindegewebe / lod1",
+      "original": "Cricoid cartilage",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "d748417a87123291a681e6d2b08f61876d6e134c344f9c8ec81d33b547390b41",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-978-M/lod1.glb",
+      "sha256": "d6e194c0fe1074c51ebe3505402caee9975a4c2e345a2cb00e4295983b56d834",
+      "bytes": 23800,
+      "offset": 809180
+    },
+    {
+      "id": "TA2:983:L:bindegewebe:lod1",
+      "label": "Cartilago arytenoidea · Z-Anatomy / bindegewebe / lod1",
+      "original": "Arytenoid cartilage.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "2f3a4feaf9a36a142e2151622d5e4ae2cce33197e299297eb9317403252b221c",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-983-L/lod1.glb",
+      "sha256": "c256f1f6a1c0de216093f1f46909a794e69a1f9070c2604f7e20a2201255bbac",
+      "bytes": 46656,
+      "offset": 832980
+    },
+    {
+      "id": "TA2:983:R:bindegewebe:lod1",
+      "label": "Cartilago arytenoidea · Z-Anatomy / bindegewebe / lod1",
+      "original": "Arytenoid cartilage.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "8acfaff90ad3b12ebac95bc3073fab26ab7976277502070d93e3fc19a1e61ecc",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-983-R/lod1.glb",
+      "sha256": "5b64e0499a98a3a1e83aa1f3b548d1e68816f2a90e136a7174540c325969cd99",
+      "bytes": 46656,
+      "offset": 879636
+    },
+    {
+      "id": "TA2:997:L:bindegewebe:lod1",
+      "label": "Cartilago corniculata · Z-Anatomy / bindegewebe / lod1",
+      "original": "Corniculate cartilage.l",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "943f4700a2d9ca534c70b6447b1ec0044b86971593b37efb843d323707971450",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-997-L/lod1.glb",
+      "sha256": "bd624fcaba5bd96ed45575e3e995d323f364529d05442ece3a76fa6568350ca3",
+      "bytes": 2912,
+      "offset": 926292
+    },
+    {
+      "id": "TA2:997:R:bindegewebe:lod1",
+      "label": "Cartilago corniculata · Z-Anatomy / bindegewebe / lod1",
+      "original": "Corniculate cartilage.r",
+      "source_url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "source_sha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+      "provenance_sha256": "e918ff9f02a2e931d6c70561875d071ea3d024aaafa03cbc52146d8bbc5fb5a0",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "credit": "Gauthier Kervyn, Marcin Zielinski · Z-Anatomy; BodyParts3D — The Database Center for Life Science — CC BY-SA 2.1 Japan.",
+      "warning": "Vorhandene Ableitung; fachliche Abnahme offen. ",
+      "original_file": "modelle/bindegewebe/TA2-997-R/lod1.glb",
+      "sha256": "68b391d57a362336683a74c03ef2fdccf287b54e75aa7e5ad206a1478233787c",
+      "bytes": 2916,
+      "offset": 929204
+    }
+  ],
+  "missing": [
+    {
+      "id": "TA2:2901:M",
+      "layer": "viszera",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:3871:L",
+      "layer": "viszera",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:3871:R",
+      "layer": "viszera",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:3872:L",
+      "layer": "viszera",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:3872:R",
+      "layer": "viszera",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:4044:M",
+      "layer": "gefaesse",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:4045:M",
+      "layer": "gefaesse",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:4046:M",
+      "layer": "gefaesse",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:4068:M",
+      "layer": "gefaesse",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:6818:L",
+      "layer": "nerven",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:6818:R",
+      "layer": "nerven",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:7099:L",
+      "layer": "brustdruese_neu",
+      "reason": "Keine eindeutige getrennte Quellfassung."
+    },
+    {
+      "id": "TA2:7099:L",
+      "layer": "brustdruese_neu",
+      "reason": "Keine eindeutige getrennte Quellfassung."
+    },
+    {
+      "id": "TA2:7099:R",
+      "layer": "brustdruese_neu",
+      "reason": "Keine eindeutige getrennte Quellfassung."
+    },
+    {
+      "id": "TA2:7099:R",
+      "layer": "brustdruese_neu",
+      "reason": "Keine eindeutige getrennte Quellfassung."
+    },
+    {
+      "id": "TA2:940:L",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:940:R",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:946:M",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:947:L",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:947:R",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:967:M",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:978:M",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:983:L",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:983:R",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:997:L",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "TA2:997:R",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_eighth_rib_l_7eb664747f",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_eighth_rib_l_7eb664747f",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_eighth_rib_r_876fb154a2",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_eighth_rib_r_876fb154a2",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fifth_rib_l_b6db86b657",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fifth_rib_l_b6db86b657",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fifth_rib_r_ec45a227f8",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fifth_rib_r_ec45a227f8",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_first_rib_l_69adeba528",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_first_rib_l_69adeba528",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_first_rib_r_bc0af66939",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_first_rib_r_bc0af66939",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fourth_rib_l_50dc66aa12",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fourth_rib_l_50dc66aa12",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fourth_rib_r_b7aeaa2e72",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_fourth_rib_r_b7aeaa2e72",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_ninth_rib_l_db058d9c11",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_ninth_rib_l_db058d9c11",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_ninth_rib_r_d85f5535e4",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_ninth_rib_r_d85f5535e4",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_second_rib_l_6926a0d3ac",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_second_rib_l_6926a0d3ac",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_second_rib_r_0fd88f0ce8",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_second_rib_r_0fd88f0ce8",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_seventh_rib_l_3f48cf0e0e",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_seventh_rib_l_3f48cf0e0e",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_seventh_rib_r_1e5c9d5678",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_seventh_rib_r_1e5c9d5678",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_sixth_rib_l_50ba98f51d",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_sixth_rib_l_50ba98f51d",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_sixth_rib_r_3821a88e93",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_sixth_rib_r_3821a88e93",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_tenth_rib_l_1c378e1d6d",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_tenth_rib_l_1c378e1d6d",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_tenth_rib_r_b318306600",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_tenth_rib_r_b318306600",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_third_rib_l_71b86e83f6",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_third_rib_l_71b86e83f6",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_third_rib_r_2a54134ad0",
+      "layer": "skelett",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    },
+    {
+      "id": "unbenannt_Costal_cartilage_of_third_rib_r_2a54134ad0",
+      "layer": "bindegewebe",
+      "reason": "Gehashte Geometrie am geprüften lokalen Pfad nicht vorhanden."
+    }
+  ],
+  "open": "Keine eigenständige BodyParts3D-Quellfassung lokal nachgewiesen; die mitgenannte Herkunft ist keine zweite Koordinatenfassung."
+}

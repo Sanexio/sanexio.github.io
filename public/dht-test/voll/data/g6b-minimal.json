@@ -1,0 +1,23 @@
+{
+  "schema": "g6b-minimal/1",
+  "kompartimente": [
+    {
+      "id": "blut",
+      "volumen_l": 5.0
+    },
+    {
+      "id": "leber",
+      "volumen_l": 1.5
+    }
+  ],
+  "fluss": [
+    {
+      "von": "blut",
+      "nach": "leber",
+      "rate_l_h": 90
+    }
+  ],
+  "quellen": [
+    "synthetisch-browser-demo"
+  ]
+}
