@@ -8,6 +8,7 @@ clearTimeout(avatarTimer);
 avatarAbort?.abort();
 const abort = avatarAbort = new AbortController();
 const generation = ++viewGeneration, sex = state.darstellung.geschlecht;
+const toolbar=document.querySelector('.anatomie-toolbar');if(toolbar&&$('avatar-stage').contains(toolbar))$('text-path-note').before(toolbar);
 avatarView?.dispose(); avatarView = null;
 const host = document.createElement('div'); host.id = 'avatar-stage';
 $('avatar-stage').replaceWith(host);
@@ -24,7 +25,7 @@ view = await createFemaleView(host, femaleRegister, {signal:abort.signal});
 } else {
 const {createAvatarView} = await import('./avatar/avatar-view.js');
 if (generation !== viewGeneration) return;
-view = await createAvatarView(host, {onRegion: selectRegion, signal:abort.signal});
+view = await createAvatarView(host, {onRegion: id=>{if(document.querySelector('.app').dataset.mode==='pain')selectRegion(id);}, signal:abort.signal});
 }
 if (generation !== viewGeneration) {view.dispose(); return;}
 avatarView = view; renderAvatar(); renderSchicht(); renderSpotLabels();
@@ -146,7 +147,7 @@ diagnose: false,
 };
 }
 
-function renderSchicht() { avatarView?.setLayer(state.darstellung.schicht); }
+function renderSchicht() { avatarView?.setLayer(state.darstellung.schicht)?.catch(err=>{$('ladefehler').hidden=false;$('ladefehler').textContent='Diese Schicht konnte nicht geladen werden. Bitte erneut wählen.';}); }
 function renderAvatar() { avatarView?.setOpacity(Number($('huelle-alpha').value)/100); }
 function renderSpotLabels() { avatarView?.setLabels(state.darstellung.labels); }
 
@@ -417,6 +418,7 @@ if (state.darstellung.geschlecht === sex) return;
 state.darstellung.geschlecht = sex;
 document.querySelector('.app').dataset.sex = sex;
 const isFemale = sex === 'weiblich';
+if(isFemale&&document.querySelector('.app').dataset.mode==='explore')setMode('pain');
 if (isFemale) {maleOpacity = $('huelle-alpha').value; $('huelle-alpha').value = '100';}
 else $('huelle-alpha').value = maleOpacity;
 note.hidden = !isFemale;
@@ -434,7 +436,20 @@ male.addEventListener('click', () => switchSex('maennlich'));
 female.addEventListener('click', () => switchSex('weiblich'));
 }
 
+function setMode(mode){
+ const app=document.querySelector('.app');app.dataset.mode=mode;
+ $('explore-tab').setAttribute('aria-selected',String(mode==='explore'));$('pain-tab').setAttribute('aria-selected',String(mode==='pain'));
+ document.querySelector('header h1').textContent=mode==='explore'?'Körper erkunden':'Wo tut es weh?';
+ const toolbar=document.querySelector('.anatomie-toolbar'),tech=$('technical-info');
+ if(toolbar&&tech){if(mode==='explore')tech.append(toolbar);else $('text-path-note').before(toolbar);}
+ if(avatarView)renderSchicht();
+}
 async function init() {
+setMode(new URLSearchParams(location.search).get('modus')==='schmerz'?'pain':'explore');
+document.addEventListener('avatar-layer',e=>{state.darstellung.schicht=e.detail.layer;$('schicht-wahl').value=e.detail.layer;});
+$('explore-tab').addEventListener('click',()=>setMode('explore'));$('pain-tab').addEventListener('click',()=>setMode('pain'));
+for(const id of ['explore-tab','pain-tab'])$(id).addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const target=e.key==='Home'?'explore-tab':e.key==='End'?'pain-tab':id==='explore-tab'?'pain-tab':'explore-tab';$(target).click();$(target).focus();}});
+
 try { const r = await fetch('./technik-release.json', {cache:'no-store'}); technikEnabled = r.ok && (await r.json()).enabled === true; } catch {}
 await configureAvatarRelease();
 const res = await fetch('./katalog-patient.json');
@@ -489,7 +504,7 @@ if (parent !== window) import('./frame-height.js');
 document.documentElement.dataset.ready='true';
 performance.mark('dht-text-ready');
 enableOfflineCache();
-avatarTimer = setTimeout(loadAvatar, 1200);
+avatarTimer = setTimeout(loadAvatar, 0);
 
 }
 
