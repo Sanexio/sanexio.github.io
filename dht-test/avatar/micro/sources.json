@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "id": "tissue",
+      "title": "Gewebe · menschliche Leber · TP53 · Bild 851159",
+      "file": "hpa-gewebe.jpg",
+      "bytes": 1313105,
+      "sha256": "5dd47d2c1b3c0f6de792a9c5a51ffd9fe61d3e918fedfacaca3739ea457d46c1",
+      "credit": "Human Protein Atlas, Version 24",
+      "origin": "https://v24.proteinatlas.org/ENSG00000141510-TP53/tissue/liver",
+      "image_url": "https://images.proteinatlas.org/2973/6986_A_7_4.jpg",
+      "license": "CC BY 4.0",
+      "license_url": "https://www.proteinatlas.org/about/licence",
+      "license_read_at": "2026-11-14",
+      "publication": "Uhlén M et al. (2015), doi:10.1126/science.1260419",
+      "pixels_per_meter": 2000000,
+      "scale_um": 100,
+      "calibration_metadata_sha256": "e955c8e7d9542bb143c2fb39c519b9630a3c35deadb85313dd34606c66382055",
+      "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken"
+    },
+    {
+      "id": "cell",
+      "title": "Zelle · A-431-Zelllinie · TP53 / CAB039238",
+      "file": "hpa-zelle.jpg",
+      "bytes": 283675,
+      "sha256": "6ec8f0574465ce60216a3eb24c405682ce5bf3c43facf9289a55acdca6703cbb",
+      "credit": "Human Protein Atlas, Version 24",
+      "origin": "https://v24.proteinatlas.org/ENSG00000141510-TP53/subcellular",
+      "image_url": "https://images.proteinatlas.org/39238/651_H2_1_red_green.jpg",
+      "license": "CC BY 4.0",
+      "license_url": "https://www.proteinatlas.org/about/licence",
+      "license_read_at": "2026-11-14",
+      "publication": "Thul PJ et al. (2017), doi:10.1126/science.aal3321",
+      "pixels_per_meter": 12480094,
+      "scale_um": 10,
+      "calibration_metadata_sha256": "f51f72256af31920b560312e84e8b2b21ba1864c690b00b3d23b39a1a4a45d1b",
+      "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken"
+    },
+    {
+      "id": "molecule",
+      "title": "Molekül · DNA-Doppelhelix 1BNA",
+      "file": "1BNA.pdb",
+      "bytes": 76464,
+      "sha256": "df42f1506792f191b957227b061360652adcf6f813eb69d9ec553067ea584670",
+      "credit": "Drew HR, Wing RM, Takano T, Broka C, Tanaka S, Itakura K, Dickerson RE · wwPDB / RCSB PDB",
+      "origin": "https://files.rcsb.org/download/1BNA.pdb",
+      "license": "CC0 1.0",
+      "license_url": "https://www.rcsb.org/pages/policies#usage",
+      "license_read_at": "2026-11-14",
+      "publication": "Drew et al. (1981), doi:10.1073/pnas.78.4.2179; PDB doi:10.2210/pdb1BNA/pdb",
+      "change": "Eigene x/y-Atomprojektion aus unveränderten Archivkoordinaten, Wasser nicht dargestellt"
+    }
+  ]
+}

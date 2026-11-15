@@ -1,0 +1,9 @@
+{
+  "schema": "dht-lexikon-snippets/1",
+  "hinweis": "Kurztexte zu Strukturen — keine Diagnose, keine Dosierung.",
+  "eintraege": {
+    "TA2.KOPF.SCHAEFE": "Die Schläfe bezeichnet die Seite des Kopfes oberhalb der Ohrmuschel.",
+    "TA2.RUECKEN.ISCHIAS": "Ischias beschreibt oft Schmerzen entlang des Verlaufs des großen Hüftnervs im Bein — hier nur als Lokalisation.",
+    "TA2.BAUCH.OBERBAUCH": "Der Oberbauch liegt zwischen Brustkorb und Nabel."
+  }
+}

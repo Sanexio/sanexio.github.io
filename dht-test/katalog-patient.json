@@ -1,0 +1,2529 @@
+{
+  "schema": "dht-patient-auswahl/2",
+  "erzeugt_aus": {
+    "katalog_pfad": "projects/dht-avatar-grundhuelse-20261104/katalog.json",
+    "katalog_sha256": "9b10eb5c71a75a0b2306577986d78f7846450ece4b431d96e821ab3c275631cc",
+    "eintraege_gesamt_avatar": 6799,
+    "org1_quelle": "projects/dht-avatar-grundhuelse-20261104/_auftraege/BERICHT_ORG1.md",
+    "org1_auswahl": "22 neue patientennahe Organbegriffe aus 44 ORG1-Makrokonzepten (197 Quellenfassungen nicht vollständig; keine Organteil-Duplikate, keine fehlenden ORG1-Lücken, keine Darmabschnitts-Latein)",
+    "nrv1_quelle": "projects/dht-avatar-grundhuelse-20261104/_auftraege/BERICHT_NRV1.md",
+    "nrv1_auswahl": "Patientennahe Nerven-/Rückenbegriffe aus NRV1 (527 Nervenschichteinträge nicht vollständig): Ischias-Verlauf, Karpaltunnel, Ellennerv, Bandscheibe, Nervenwurzeln (Sammelobjekt), Zwischenrippenbereich; deutsche Alltagssprache only"
+  },
+  "hinweis_patient": "Dies ist keine Diagnose. Sie geben nur an, wo es wehtut oder wo Ihr Problem liegt.",
+  "regionen": [
+    {
+      "id": "kopf",
+      "label": "Kopf",
+      "svgHotspot": "kopf",
+      "strukturen": [
+        {
+          "id": "kopf-TA2-520-M",
+          "label": "Stirn",
+          "ta2_kennung": "TA2:520:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Stirnbein",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-641-L",
+          "label": "Schläfe",
+          "ta2_kennung": "TA2:641:L",
+          "seite": null,
+          "seite_abfragen": true,
+          "quelle_register": "Schläfenbein",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ],
+          "ta2_paar": {
+            "links": "TA2:641:L",
+            "rechts": "TA2:641:R"
+          }
+        },
+        {
+          "id": "kopf-TA2-552-M",
+          "label": "Hinterkopf",
+          "ta2_kennung": "TA2:552:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Hinterhauptbein",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-835-M",
+          "label": "Kiefer",
+          "ta2_kennung": "TA2:835:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Unterkiefer",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-105-L",
+          "label": "Ohr",
+          "ta2_kennung": "TA2:105:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Ohrläppchen",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-105-R",
+          "label": "Ohr",
+          "ta2_kennung": "TA2:105:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Ohrläppchen",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-6753-L",
+          "label": "Auge",
+          "ta2_kennung": "TA2:6753:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Regenbogenhaut",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-6753-R",
+          "label": "Auge",
+          "ta2_kennung": "TA2:6753:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Regenbogenhaut",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-946-M",
+          "label": "Nase",
+          "ta2_kennung": "TA2:946:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Nasenscheidewandknorpel",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-2820-M",
+          "label": "Zunge",
+          "ta2_kennung": "TA2:2820:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Zunge",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "kopf-TA2-2800-L",
+          "label": "Ohrspeicheldrüse",
+          "ta2_kennung": "TA2:2800:L",
+          "seite": null,
+          "seite_abfragen": true,
+          "quelle_register": "Ohrspeicheldrüse",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ],
+          "ta2_paar": {
+            "links": "TA2:2800:L",
+            "rechts": "TA2:2800:R"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hals",
+      "label": "Hals",
+      "svgHotspot": "hals",
+      "strukturen": [
+        {
+          "id": "hals-TA2-5874-L",
+          "label": "Hals",
+          "ta2_kennung": "TA2:5874:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Mittelhirn",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Hals vorn"
+            },
+            {
+              "id": "seite",
+              "label": "Hals seitlich"
+            },
+            {
+              "id": "nacken",
+              "label": "Nacken"
+            }
+          ]
+        },
+        {
+          "id": "hals-TA2-3863-M",
+          "label": "Schilddrüse",
+          "ta2_kennung": "TA2:3863:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Schilddrüse",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Hals vorn"
+            },
+            {
+              "id": "seite",
+              "label": "Hals seitlich"
+            },
+            {
+              "id": "nacken",
+              "label": "Nacken"
+            }
+          ]
+        },
+        {
+          "id": "hals-TA2-3184-M",
+          "label": "Kehlkopf",
+          "ta2_kennung": "TA2:3184:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Kehlkopf",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Hals vorn"
+            },
+            {
+              "id": "seite",
+              "label": "Hals seitlich"
+            },
+            {
+              "id": "nacken",
+              "label": "Nacken"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brust",
+      "label": "Brust",
+      "svgHotspot": "brust",
+      "strukturen": [
+        {
+          "id": "brust-TA2-1129-M",
+          "label": "Brustbein",
+          "ta2_kennung": "TA2:1129:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Brustbein",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-1720-M",
+          "label": "Rippen",
+          "ta2_kennung": "TA2:1720:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Rippen-Wirbel-Gelenke",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-3932-M",
+          "label": "Herz",
+          "ta2_kennung": "TA2:3932:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Herz",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-3265-M",
+          "label": "Atmung / Lunge",
+          "ta2_kennung": "TA2:3265:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Lunge beidseits",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-3283-R",
+          "label": "Lunge rechts",
+          "ta2_kennung": "TA2:3283:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "rechte Lunge",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-3299-L",
+          "label": "Lunge links",
+          "ta2_kennung": "TA2:3299:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "linke Lunge",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-3213-M",
+          "label": "Luftröhre",
+          "ta2_kennung": "TA2:3213:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Luftröhre",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-2327-M",
+          "label": "Zwerchfell",
+          "ta2_kennung": "TA2:2327:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Zwerchfell",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-5152-M",
+          "label": "Thymus",
+          "ta2_kennung": "TA2:5152:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Thymus",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-5181-L",
+          "label": "Mandeln",
+          "ta2_kennung": "TA2:5181:L",
+          "seite": null,
+          "seite_abfragen": true,
+          "quelle_register": "Gaumenmandel",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "links",
+              "label": "Links"
+            },
+            {
+              "id": "rechts",
+              "label": "Rechts"
+            },
+            {
+              "id": "oben",
+              "label": "Oben"
+            }
+          ],
+          "ta2_paar": {
+            "links": "TA2:5181:L",
+            "rechts": "TA2:5181:R"
+          }
+        },
+        {
+          "id": "brust-TA2-6471-L",
+          "label": "Zwischenrippenbereich",
+          "ta2_kennung": "TA2:6471:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Zwischenrippennerven (Sammelobjekt) – links",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich an der Brustkorb"
+            },
+            {
+              "id": "hinten",
+              "label": "Nach hinten / Rücken"
+            },
+            {
+              "id": "beim_atemen",
+              "label": "Stärker beim Atmen"
+            }
+          ]
+        },
+        {
+          "id": "brust-TA2-6471-R",
+          "label": "Zwischenrippenbereich",
+          "ta2_kennung": "TA2:6471:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Zwischenrippennerven (Sammelobjekt) – rechts",
+          "feiner": [
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich an der Brustkorb"
+            },
+            {
+              "id": "hinten",
+              "label": "Nach hinten / Rücken"
+            },
+            {
+              "id": "beim_atemen",
+              "label": "Stärker beim Atmen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bauch",
+      "label": "Bauch",
+      "svgHotspot": "bauch",
+      "strukturen": [
+        {
+          "id": "bauch-TA2-2901-M",
+          "label": "Magen",
+          "ta2_kennung": "TA2:2901:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Magen",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-3023-M",
+          "label": "Leber",
+          "ta2_kennung": "TA2:3023:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Leber",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-3081-M",
+          "label": "Gallenblase",
+          "ta2_kennung": "TA2:3081:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Gallenblase",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-3114-M",
+          "label": "Bauchspeicheldrüse",
+          "ta2_kennung": "TA2:3114:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Bauchspeicheldrüse",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2933-M",
+          "label": "Dünndarm",
+          "ta2_kennung": "TA2:2933:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Dünndarm",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2963-M",
+          "label": "Dickdarm",
+          "ta2_kennung": "TA2:2963:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Dickdarm",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2944-M",
+          "label": "Zwölffingerdarm",
+          "ta2_kennung": "TA2:2944:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Zwölffingerdarm",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2970-M",
+          "label": "Blinddarm",
+          "ta2_kennung": "TA2:2970:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Blinddarm",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2976-M",
+          "label": "Wurmfortsatz",
+          "ta2_kennung": "TA2:2976:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Wurmfortsatz",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-2887-M",
+          "label": "Speiseröhre",
+          "ta2_kennung": "TA2:2887:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Speiseröhre",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-5159-M",
+          "label": "Milz",
+          "ta2_kennung": "TA2:5159:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Milz",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-3874-L",
+          "label": "Nebenniere",
+          "ta2_kennung": "TA2:3874:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Nebenniere",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        },
+        {
+          "id": "bauch-TA2-3874-R",
+          "label": "Nebenniere",
+          "ta2_kennung": "TA2:3874:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Nebenniere",
+          "feiner": [
+            {
+              "id": "oberbauch",
+              "label": "Oberbauch"
+            },
+            {
+              "id": "nabel",
+              "label": "Um den Nabel"
+            },
+            {
+              "id": "unterbauch",
+              "label": "Unterbauch"
+            },
+            {
+              "id": "seite",
+              "label": "Seitlich (Flanke)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruecken",
+      "label": "Rücken",
+      "svgHotspot": "ruecken",
+      "strukturen": [
+        {
+          "id": "ruecken-TA2-1057-M",
+          "label": "Nacken",
+          "ta2_kennung": "TA2:1057:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "7. Halswirbel",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-1063-M",
+          "label": "Brustwirbel",
+          "ta2_kennung": "TA2:1063:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Erster Brustwirbel",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-1001-M",
+          "label": "Lendenwirbel",
+          "ta2_kennung": "TA2:1001:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Wirbelsäule – vorhandene Knochenanteile",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-1071-M",
+          "label": "Kreuzbein",
+          "ta2_kennung": "TA2:1071:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Kreuzbein",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-6569-L",
+          "label": "Ischias",
+          "ta2_kennung": "TA2:6569:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Ischiasnerv",
+          "feiner": [
+            {
+              "id": "lenden_gesass",
+              "label": "Ausgang: unterer Rücken / Gesäß"
+            },
+            {
+              "id": "oberschenkel_hinten",
+              "label": "Verlauf: Oberschenkel (hinten)"
+            },
+            {
+              "id": "kniekehle_wade",
+              "label": "Verlauf: Kniekehle / Wade"
+            },
+            {
+              "id": "fuss_zehen",
+              "label": "Verlauf: Fuß / Zehen"
+            },
+            {
+              "id": "ganzes_bein",
+              "label": "Gesamter Verlauf (Rücken bis Fuß)"
+            }
+          ],
+          "feiner_modus": "verlauf",
+          "verlauf_hinweis": "Bitte wählen Sie, wo der Schmerz entlang des Ischias-Nervs verläuft — das ist Ihre Angabe, keine Diagnose."
+        },
+        {
+          "id": "ruecken-TA2-6569-R",
+          "label": "Ischias",
+          "ta2_kennung": "TA2:6569:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Ischiasnerv",
+          "feiner": [
+            {
+              "id": "lenden_gesass",
+              "label": "Ausgang: unterer Rücken / Gesäß"
+            },
+            {
+              "id": "oberschenkel_hinten",
+              "label": "Verlauf: Oberschenkel (hinten)"
+            },
+            {
+              "id": "kniekehle_wade",
+              "label": "Verlauf: Kniekehle / Wade"
+            },
+            {
+              "id": "fuss_zehen",
+              "label": "Verlauf: Fuß / Zehen"
+            },
+            {
+              "id": "ganzes_bein",
+              "label": "Gesamter Verlauf (Rücken bis Fuß)"
+            }
+          ],
+          "feiner_modus": "verlauf",
+          "verlauf_hinweis": "Bitte wählen Sie, wo der Schmerz entlang des Ischias-Nervs verläuft — das ist Ihre Angabe, keine Diagnose."
+        },
+        {
+          "id": "ruecken-TA2-1684-M",
+          "label": "Bandscheibe",
+          "ta2_kennung": "TA2:1684:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Bandscheibe",
+          "feiner": [
+            {
+              "id": "halsbereich",
+              "label": "Halsbereich"
+            },
+            {
+              "id": "brustbereich",
+              "label": "Brustwirbelsäule"
+            },
+            {
+              "id": "lendenbereich",
+              "label": "Lendenwirbelbereich"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Mit Ausstrahlung"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-6145-L",
+          "label": "Nervenwurzeln",
+          "ta2_kennung": "TA2:6145:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Vordere Spinalnervenwurzel (Sammelobjekt, ohne Segmenttrennung) – links",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben (Nacken / oberer Rücken)"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte (Brustwirbelsäule)"
+            },
+            {
+              "id": "unten",
+              "label": "Unten (Lendenwirbelbereich)"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Mit Ausstrahlung ins Bein oder Arm"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-6145-R",
+          "label": "Nervenwurzeln",
+          "ta2_kennung": "TA2:6145:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Vordere Spinalnervenwurzel (Sammelobjekt, ohne Segmenttrennung) – rechts",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben (Nacken / oberer Rücken)"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte (Brustwirbelsäule)"
+            },
+            {
+              "id": "unten",
+              "label": "Unten (Lendenwirbelbereich)"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Mit Ausstrahlung ins Bein oder Arm"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-3358-L",
+          "label": "Niere",
+          "ta2_kennung": "TA2:3358:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Niere links",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-3358-R",
+          "label": "Niere",
+          "ta2_kennung": "TA2:3358:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Niere rechts",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-3394-L",
+          "label": "Harnleiter",
+          "ta2_kennung": "TA2:3394:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Harnleiter",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        },
+        {
+          "id": "ruecken-TA2-3394-R",
+          "label": "Harnleiter",
+          "ta2_kennung": "TA2:3394:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Harnleiter",
+          "feiner": [
+            {
+              "id": "oben",
+              "label": "Oben"
+            },
+            {
+              "id": "mitte",
+              "label": "Mitte"
+            },
+            {
+              "id": "unten",
+              "label": "Unten"
+            },
+            {
+              "id": "ausstrahlend",
+              "label": "Ausstrahlend ins Bein / Beinbereich"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "becken",
+      "label": "Becken / Unterleib",
+      "svgHotspot": "becken",
+      "strukturen": [
+        {
+          "id": "becken-TA2-3401-M",
+          "label": "Harnblase",
+          "ta2_kennung": "TA2:3401:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Harnblase",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3500-M",
+          "label": "Gebärmutter",
+          "ta2_kennung": "TA2:3500:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Gebärmutter",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3637-M",
+          "label": "Prostata",
+          "ta2_kennung": "TA2:3637:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Vorsteherdrüse",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3425-M",
+          "label": "Harnröhre",
+          "ta2_kennung": "TA2:3425:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Harnröhre",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3470-L",
+          "label": "Eierstock",
+          "ta2_kennung": "TA2:3470:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Eierstock",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3470-R",
+          "label": "Eierstock",
+          "ta2_kennung": "TA2:3470:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Eierstock",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3486-L",
+          "label": "Eileiter",
+          "ta2_kennung": "TA2:3486:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Eileiter",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3486-R",
+          "label": "Eileiter",
+          "ta2_kennung": "TA2:3486:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Eileiter",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3523-M",
+          "label": "Scheide",
+          "ta2_kennung": "TA2:3523:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Scheide",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3576-L",
+          "label": "Hoden",
+          "ta2_kennung": "TA2:3576:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Hoden",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3576-R",
+          "label": "Hoden",
+          "ta2_kennung": "TA2:3576:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Hoden",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3603-L",
+          "label": "Nebenhoden",
+          "ta2_kennung": "TA2:3603:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Nebenhoden",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3603-R",
+          "label": "Nebenhoden",
+          "ta2_kennung": "TA2:3603:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Nebenhoden",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3621-L",
+          "label": "Samenleiter",
+          "ta2_kennung": "TA2:3621:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Samenleiter",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3621-R",
+          "label": "Samenleiter",
+          "ta2_kennung": "TA2:3621:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Samenleiter",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        },
+        {
+          "id": "becken-TA2-3631-M",
+          "label": "Samenblase",
+          "ta2_kennung": "TA2:3631:M",
+          "seite": "mitte",
+          "seite_abfragen": false,
+          "quelle_register": "Samenblase",
+          "feiner": [
+            {
+              "id": "leiste",
+              "label": "Leistenbereich"
+            },
+            {
+              "id": "gesaess",
+              "label": "Gesäß"
+            },
+            {
+              "id": "unterleib",
+              "label": "Unterleib"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arm_links",
+      "label": "Arm links",
+      "svgHotspot": "arm_links",
+      "strukturen": [
+        {
+          "id": "arm_links-TA2-1143-L",
+          "label": "Schulter",
+          "ta2_kennung": "TA2:1143:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Schulterblatt links",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-1772-M",
+          "label": "Ellenbogen",
+          "ta2_kennung": "TA2:1772:M",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Ellenbogengelenk – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-1786-M",
+          "label": "Handgelenk",
+          "ta2_kennung": "TA2:1786:M",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Handgelenk zwischen Speiche und Handwurzel – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-2491-L",
+          "label": "Finger",
+          "ta2_kennung": "TA2:2491:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "tiefer Fingerbeuger",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-2465-L",
+          "label": "Oberarm",
+          "ta2_kennung": "TA2:2465:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Langer Kopf des zweiköpfigen Oberarmmuskels",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-1762-L",
+          "label": "Unterarm",
+          "ta2_kennung": "TA2:1762:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Schrägstrang des Unterarms links",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-6459-L",
+          "label": "Karpaltunnel",
+          "ta2_kennung": "TA2:6459:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "mittlerer Armnerv",
+          "feiner": [
+            {
+              "id": "handgelenk",
+              "label": "Handgelenk"
+            },
+            {
+              "id": "hohlhand",
+              "label": "Handfläche / Finger (Kribbeln)"
+            },
+            {
+              "id": "nachts",
+              "label": "Nachts stärker"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "arm_links-TA2-6449-L",
+          "label": "Ellennerv",
+          "ta2_kennung": "TA2:6449:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Ellennerv",
+          "feiner": [
+            {
+              "id": "ellenbogen",
+              "label": "Am Ellenbogen (Nervengefühl)"
+            },
+            {
+              "id": "unterarm",
+              "label": "Unterarm"
+            },
+            {
+              "id": "kleinfinger",
+              "label": "Kleinfinger / Handkante"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arm_rechts",
+      "label": "Arm rechts",
+      "svgHotspot": "arm_rechts",
+      "strukturen": [
+        {
+          "id": "arm_rechts-TA2-1143-R",
+          "label": "Schulter",
+          "ta2_kennung": "TA2:1143:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Schulterblatt rechts",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-1772-M",
+          "label": "Ellenbogen",
+          "ta2_kennung": "TA2:1772:M",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Ellenbogengelenk – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-1786-M",
+          "label": "Handgelenk",
+          "ta2_kennung": "TA2:1786:M",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Handgelenk zwischen Speiche und Handwurzel – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-2491-R",
+          "label": "Finger",
+          "ta2_kennung": "TA2:2491:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "tiefer Fingerbeuger",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-2465-R",
+          "label": "Oberarm",
+          "ta2_kennung": "TA2:2465:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Langer Kopf des zweiköpfigen Oberarmmuskels",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-1762-R",
+          "label": "Unterarm",
+          "ta2_kennung": "TA2:1762:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Schrägstrang des Unterarms rechts",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Handfläche / Vorderseite"
+            },
+            {
+              "id": "rueck",
+              "label": "Handrücken / Rückseite"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-6459-R",
+          "label": "Karpaltunnel",
+          "ta2_kennung": "TA2:6459:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "mittlerer Armnerv",
+          "feiner": [
+            {
+              "id": "handgelenk",
+              "label": "Handgelenk"
+            },
+            {
+              "id": "hohlhand",
+              "label": "Handfläche / Finger (Kribbeln)"
+            },
+            {
+              "id": "nachts",
+              "label": "Nachts stärker"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        },
+        {
+          "id": "arm_rechts-TA2-6449-R",
+          "label": "Ellennerv",
+          "ta2_kennung": "TA2:6449:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Ellennerv",
+          "feiner": [
+            {
+              "id": "ellenbogen",
+              "label": "Am Ellenbogen (Nervengefühl)"
+            },
+            {
+              "id": "unterarm",
+              "label": "Unterarm"
+            },
+            {
+              "id": "kleinfinger",
+              "label": "Kleinfinger / Handkante"
+            },
+            {
+              "id": "allgemein",
+              "label": "Allgemein"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bein_links",
+      "label": "Bein links",
+      "svgHotspot": "bein_links",
+      "strukturen": [
+        {
+          "id": "bein_links-TA2-1873-M",
+          "label": "Hüfte",
+          "ta2_kennung": "TA2:1873:M",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Hüftgelenk – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_links-TA2-1390-L",
+          "label": "Knie",
+          "ta2_kennung": "TA2:1390:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Kniescheibe",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_links-TA2-1912-M",
+          "label": "Sprunggelenk",
+          "ta2_kennung": "TA2:1912:M",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Oberes Sprunggelenk",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_links-TA2-336-L",
+          "label": "Fuß",
+          "ta2_kennung": "TA2:336:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Fußrücken",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_links-TA2-1360-L",
+          "label": "Oberschenkel",
+          "ta2_kennung": "TA2:1360:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Oberschenkelknochen",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_links-TA2-1397-L",
+          "label": "Unterschenkel",
+          "ta2_kennung": "TA2:1397:L",
+          "seite": "links",
+          "seite_abfragen": false,
+          "quelle_register": "Schienbein",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bein_rechts",
+      "label": "Bein rechts",
+      "svgHotspot": "bein_rechts",
+      "strukturen": [
+        {
+          "id": "bein_rechts-TA2-1873-M",
+          "label": "Hüfte",
+          "ta2_kennung": "TA2:1873:M",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Hüftgelenk – vorhandene Bandanteile",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_rechts-TA2-1390-R",
+          "label": "Knie",
+          "ta2_kennung": "TA2:1390:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Kniescheibe",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_rechts-TA2-1912-M",
+          "label": "Sprunggelenk",
+          "ta2_kennung": "TA2:1912:M",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Oberes Sprunggelenk",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_rechts-TA2-336-R",
+          "label": "Fuß",
+          "ta2_kennung": "TA2:336:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Fußrücken",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_rechts-TA2-1360-R",
+          "label": "Oberschenkel",
+          "ta2_kennung": "TA2:1360:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Oberschenkelknochen",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        },
+        {
+          "id": "bein_rechts-TA2-1397-R",
+          "label": "Unterschenkel",
+          "ta2_kennung": "TA2:1397:R",
+          "seite": "rechts",
+          "seite_abfragen": false,
+          "quelle_register": "Schienbein",
+          "feiner": [
+            {
+              "id": "vorn",
+              "label": "Vorne"
+            },
+            {
+              "id": "hinten",
+              "label": "Hinten"
+            },
+            {
+              "id": "innen",
+              "label": "Innenseite"
+            },
+            {
+              "id": "aussen",
+              "label": "Außenseite"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

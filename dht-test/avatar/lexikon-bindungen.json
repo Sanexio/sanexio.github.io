@@ -1,0 +1,711 @@
+{
+  "schema": "dht-structure-lexicon/1",
+  "sex": "male",
+  "manifest_sha256": "dc20a9ba166246fc1049c2f465f284d7d870ef3b5b2385713e103af9a1aaedcc",
+  "index_source": "projects/dht-lexikon/lexikon/index.json",
+  "index_sha256": "99b5435ef9598ffe206b78a06f71a00446222e441e9a91112efe24fd2643dc41",
+  "policy": "Nur eigene Organ-Kurztexte, explizite TA2-Einzelbezüge und vorhandene identische Registergeometrie. Keine klinische Abnahme.",
+  "bindings": [
+    {
+      "id": "TA2:3114:M",
+      "article": "organ-bauchspeicheldruese",
+      "title": "Die Bauchspeicheldrüse — Kurzüberblick",
+      "text": "Die Bauchspeicheldrüse liegt hinter dem Magen. Sie bildet Verdauungsenzyme und Hormone (z. B. Insulin), die den Blutzucker mitregeln.",
+      "source": "projects/dht-lexikon/lexikon/organ-bauchspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "d9f71c34db4506c3907bb348545d9dfbb29e16f9939f54569a006cce9f927e21",
+      "text_sha256": "497682deea319c72309e0f01cc4ca89984ac175a088eadf72b6c578dcb6cae0d",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3114-M/lod0.glb",
+          "sha256": "4a58841fe34236307d1f3b1f2facdaf867a995c01628f4ff2da4965d663efa53"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3081:M",
+      "article": "organ-gallenblase",
+      "title": "Die Gallenblase — Kurzüberblick",
+      "text": "Die Gallenblase speichert Galle aus der Leber und entleert sie beim Essen in den Darm — besonders bei fetthaltigen Mahlzeiten.",
+      "source": "projects/dht-lexikon/lexikon/organ-gallenblase.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "b634e95f35a26ad2d2cebe04b3ed9b10298d1c963cb3049d090da06517bf4852",
+      "text_sha256": "9cdb1551dfde3204066e26fec51419fb3826a6ca6ce0a3bc6daf98d16a054615",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3081-M/lod0.glb",
+          "sha256": "d35e680dafaee3ae33abfc5faf473705ca12b4a899d78d5d8244c7f454cdc43e"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3401:M",
+      "article": "organ-harnblase",
+      "title": "Die Harnblase — Kurzüberblick",
+      "text": "Die Harnblase speichert Urin, bis er über die Harnröhre entleert wird. Muskel und Nerven steuern Füllen und Entleeren.",
+      "source": "projects/dht-lexikon/lexikon/organ-harnblase.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "b17224a4c62e7ff56c7f317502641de6352cb37bf9aab294dc0b6626c94e790c",
+      "text_sha256": "c08895e81188f30baafe628768373dd433c93acc1a7f9379e75577bee738b11e",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3401-M/lod0.glb",
+          "sha256": "6730658e4023ceb0b54691d92be9e364ab78345d37f4e8283140153beae44f92"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3394:L",
+      "article": "organ-harnleiter",
+      "title": "Die Harnleiter — Kurzüberblick",
+      "text": "Die Harnleiter verbinden Nieren und Harnblase und transportieren Urin in eine Richtung.",
+      "source": "projects/dht-lexikon/lexikon/organ-harnleiter.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "ab12f25620fd87d628e54f7647bf4c2dd59ec8531ad109ebe1af5f3af91615d5",
+      "text_sha256": "c21329ba8c7788c91644ca0d11701c1be0a0f2ca7c8472bebbaf14d664a78550",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3394-L/lod0.glb",
+          "sha256": "939326d54b06b89bbdabe537b0918a044cf1678f85a885154b6704f3e2e1fd1f"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3394:R",
+      "article": "organ-harnleiter",
+      "title": "Die Harnleiter — Kurzüberblick",
+      "text": "Die Harnleiter verbinden Nieren und Harnblase und transportieren Urin in eine Richtung.",
+      "source": "projects/dht-lexikon/lexikon/organ-harnleiter.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "ab12f25620fd87d628e54f7647bf4c2dd59ec8531ad109ebe1af5f3af91615d5",
+      "text_sha256": "c21329ba8c7788c91644ca0d11701c1be0a0f2ca7c8472bebbaf14d664a78550",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3394-R/lod0.glb",
+          "sha256": "5f6967e009523e956280a8dadab3a3fa6a2f3aa936c014b661b263d738df2f8b"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3425:M",
+      "article": "organ-harnroehre",
+      "title": "Die Harnröhre — Kurzüberblick",
+      "text": "Die Harnröhre führt aus der Harnblase nach außen. Bei Männern ist sie länger als bei Frauen.",
+      "source": "projects/dht-lexikon/lexikon/organ-harnroehre.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "55e6ab0e8f3cf905d4165011365ae2d5fd67e056453cb510ee8f25664c371754",
+      "text_sha256": "491a726f2ff07c4585d17343b144354df3e97d01033012f10b07e672d0cd04e8",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3425-M/lod0.glb",
+          "sha256": "86253295adbcb5cfe7cadb4cb0fd91320397877fd7f73b4f7294c02c6e9d322e"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3576:L",
+      "article": "organ-hoden",
+      "title": "Die Hoden — Kurzüberblick",
+      "text": "Die Hoden bilden Spermien und Testosteron. Sie liegen im Hodensack außerhalb des Bauches.",
+      "source": "projects/dht-lexikon/lexikon/organ-hoden.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "b1fbd29734947de0213599128db2e9f79b0ce9d38dc3c5ddb4cb5ac2a6e4f2fc",
+      "text_sha256": "01ff29ddbc6c04047e9e09cd670157f35abd7b05d1f5e3bb1cece13005cbae55",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3576-L/lod0.glb",
+          "sha256": "d658b2d1e6cb5af2b55e726032852be0abdca8ba99f5c027821a294440f56e80"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3576:R",
+      "article": "organ-hoden",
+      "title": "Die Hoden — Kurzüberblick",
+      "text": "Die Hoden bilden Spermien und Testosteron. Sie liegen im Hodensack außerhalb des Bauches.",
+      "source": "projects/dht-lexikon/lexikon/organ-hoden.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "b1fbd29734947de0213599128db2e9f79b0ce9d38dc3c5ddb4cb5ac2a6e4f2fc",
+      "text_sha256": "01ff29ddbc6c04047e9e09cd670157f35abd7b05d1f5e3bb1cece13005cbae55",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3576-R/lod0.glb",
+          "sha256": "8860277e7c23137345f37a22dde2fb538e45029a693df143b4b0d49a9162a33b"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3023:M",
+      "article": "organ-leber",
+      "title": "Die Leber — Kurzüberblick",
+      "text": "Die Leber entgiftet, speichert Nährstoffe und bildet Galle. Sie regeneriert sich oft bemerkenswert gut.",
+      "source": "projects/dht-lexikon/lexikon/organ-leber.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "a44f3b556e27bd0ab88879211a7db6762661427c254d10199e64fc2be174e580",
+      "text_sha256": "0af8d6bce3620038d96137d52d82f57d9fb8e7b354c042e2d02b9d44289faa5d",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3023-M/lod0.glb",
+          "sha256": "98ca1c35fe8728d156786f70c4578bd79396fed705e3645dfc18a62d0da6e691"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3213:M",
+      "article": "organ-luftroehre",
+      "title": "Die Luftröhre — Kurzüberblick",
+      "text": "Die Luftröhre verbindet Kehlkopf und Bronchien und transportiert Atemluft mit warmen, feuchten Schleimhäuten.",
+      "source": "projects/dht-lexikon/lexikon/organ-luftroehre.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "52b1341ac1ade67c0335ef203f37b2e59a2ab0125f9071d5f747f8e04eecd2c1",
+      "text_sha256": "fcce20a481500193a32e7dad481efcc178d4bb3d6909bcdc876041bcf0881330",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3213-M/lod0.glb",
+          "sha256": "ba64c5b5870cd565a8278cc4bc829b174f6d7b9d743c161edf3fe7dc011a6ae9"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3603:L",
+      "article": "organ-nebenhoden",
+      "title": "Der Nebenhoden — Kurzüberblick",
+      "text": "Der Nebenhoden liegt am Hoden und reift Spermien; er verbindet Hoden und Samenleiter.",
+      "source": "projects/dht-lexikon/lexikon/organ-nebenhoden.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "19fbb56f6dde3c672c432624680c38869c2d6d2b670a2305b6b16694ce0ea5dc",
+      "text_sha256": "81940ad8adb9553a2edf73f3ec8035591213e13054aa0683795e58cb06fcdbf6",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3603-L/lod0.glb",
+          "sha256": "b46f79c4a97c9e0ea3dd2dbaf6e7460f4ed053fd43a64793087df0b3f244885a"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3603:R",
+      "article": "organ-nebenhoden",
+      "title": "Der Nebenhoden — Kurzüberblick",
+      "text": "Der Nebenhoden liegt am Hoden und reift Spermien; er verbindet Hoden und Samenleiter.",
+      "source": "projects/dht-lexikon/lexikon/organ-nebenhoden.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "19fbb56f6dde3c672c432624680c38869c2d6d2b670a2305b6b16694ce0ea5dc",
+      "text_sha256": "81940ad8adb9553a2edf73f3ec8035591213e13054aa0683795e58cb06fcdbf6",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3603-R/lod0.glb",
+          "sha256": "937b7718f380cd8a5a1b732c206d1648eb9ae01d159e22593c9ff33a71ca3c8d"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3874:L",
+      "article": "organ-nebenniere",
+      "title": "Die Nebenniere — Kurzüberblick",
+      "text": "Die Nebennieren sitzen oben auf beiden Nieren und bilden Stresshormone, Mineralocorticoide und kleine Mengen Geschlechtshormone.",
+      "source": "projects/dht-lexikon/lexikon/organ-nebenniere.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "e3ecb6756625ac3126dfc72d8a5cc45483f328d0d33578a68c3a03e459b7d173",
+      "text_sha256": "4fa249765209436ca484d64002869ff36d9d4efbdaf9b2a6b292185c281be5e9",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3874-L/lod0.glb",
+          "sha256": "00162f60ad2a35558738114556074c4b1b3dbffa0f70115984c684d952d4f291"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3874:R",
+      "article": "organ-nebenniere",
+      "title": "Die Nebenniere — Kurzüberblick",
+      "text": "Die Nebennieren sitzen oben auf beiden Nieren und bilden Stresshormone, Mineralocorticoide und kleine Mengen Geschlechtshormone.",
+      "source": "projects/dht-lexikon/lexikon/organ-nebenniere.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "e3ecb6756625ac3126dfc72d8a5cc45483f328d0d33578a68c3a03e459b7d173",
+      "text_sha256": "4fa249765209436ca484d64002869ff36d9d4efbdaf9b2a6b292185c281be5e9",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3874-R/lod0.glb",
+          "sha256": "7ad1229dd5a46d116dfff365951b65bc498cc0bd95a69823ea6d049f2dfb3295"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2800:L",
+      "article": "organ-ohrspeicheldruese",
+      "title": "Die Ohrspeicheldrüse — Kurzüberblick",
+      "text": "Die Ohrspeicheldrüse produziert Speichel vor dem Kauen. Sie liegt vor dem Ohr am Kieferwinkel.",
+      "source": "projects/dht-lexikon/lexikon/organ-ohrspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "fb2e37b9d2c443e01b79c4a7effb9fd147013737efe2c5ff01e598df1e10346c",
+      "text_sha256": "54e99d3c6ac6e727f09085e0788120ccccb49d0a3376c506bd10873d92094757",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2800-L/lod0.glb",
+          "sha256": "3115ecfa91d2ae24a3b5f72569b1679e74ddb9198bc16d7f85763923b6e347d9"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2800:R",
+      "article": "organ-ohrspeicheldruese",
+      "title": "Die Ohrspeicheldrüse — Kurzüberblick",
+      "text": "Die Ohrspeicheldrüse produziert Speichel vor dem Kauen. Sie liegt vor dem Ohr am Kieferwinkel.",
+      "source": "projects/dht-lexikon/lexikon/organ-ohrspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "fb2e37b9d2c443e01b79c4a7effb9fd147013737efe2c5ff01e598df1e10346c",
+      "text_sha256": "54e99d3c6ac6e727f09085e0788120ccccb49d0a3376c506bd10873d92094757",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2800-R/lod0.glb",
+          "sha256": "5b0dc53cc08a51560bf9c0b5e48446b221676beee58014d311befe27666bb9c0"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3631:L",
+      "article": "organ-samenblase",
+      "title": "Die Samenblase — Kurzüberblick",
+      "text": "Die Samenblasen sind paarige Drüsen, die einen Teil des Ejakulates bilden.",
+      "source": "projects/dht-lexikon/lexikon/organ-samenblase.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "0737aa3495bfd4690724fa703c17567aab084b77ed50889e2053eaba1fc26b62",
+      "text_sha256": "4b306ef624b4718fc76d9920ab537f9f0f2dd6968a2d2968bf812cf7d4b7dae9",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3631-L/lod0.glb",
+          "sha256": "21f555575e35ea6e586d5becf79ee55db3312437a9659fac50dbf8b158d8c350"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3631:R",
+      "article": "organ-samenblase",
+      "title": "Die Samenblase — Kurzüberblick",
+      "text": "Die Samenblasen sind paarige Drüsen, die einen Teil des Ejakulates bilden.",
+      "source": "projects/dht-lexikon/lexikon/organ-samenblase.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "0737aa3495bfd4690724fa703c17567aab084b77ed50889e2053eaba1fc26b62",
+      "text_sha256": "4b306ef624b4718fc76d9920ab537f9f0f2dd6968a2d2968bf812cf7d4b7dae9",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3631-R/lod0.glb",
+          "sha256": "00fe846e9319540f79fe3fd5c620654c1c9b854e36fca6a49668bed8f4c84d96"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3621:L",
+      "article": "organ-samenleiter",
+      "title": "Der Samenleiter — Kurzüberblick",
+      "text": "Die Samenleiter transportieren Spermien vom Nebenhoden zur Harnröhre.",
+      "source": "projects/dht-lexikon/lexikon/organ-samenleiter.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "05f887cd707064358efe47efe5b4e0111cd5cc9198f0dd29442b180b74e42d08",
+      "text_sha256": "95b2e442aff9c2faf176abdefc9b9fce763a271661867aea3f2808c8949e014e",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3621-L/lod0.glb",
+          "sha256": "999b3dbbbbc5db7763db7ab099fd567ce783eb7a98701b37cc5f3053168a7033"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3621:R",
+      "article": "organ-samenleiter",
+      "title": "Der Samenleiter — Kurzüberblick",
+      "text": "Die Samenleiter transportieren Spermien vom Nebenhoden zur Harnröhre.",
+      "source": "projects/dht-lexikon/lexikon/organ-samenleiter.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "05f887cd707064358efe47efe5b4e0111cd5cc9198f0dd29442b180b74e42d08",
+      "text_sha256": "95b2e442aff9c2faf176abdefc9b9fce763a271661867aea3f2808c8949e014e",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3621-R/lod0.glb",
+          "sha256": "e66d5598b464809379774aecf3f92a0ab179326dc09018b3f727ace22a20eddc"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3863:M",
+      "article": "organ-schilddruese",
+      "title": "Die Schilddrüse — Kurzüberblick",
+      "text": "Die Schilddrüse am Hals bildet Hormone, die Stoffwechsel, Herz und Wärmehaushalt mitsteuern.",
+      "source": "projects/dht-lexikon/lexikon/organ-schilddruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "ba9ea57df5ff3f03782e75c73e59756e8c0447dab7ef61e60d19a29964969f53",
+      "text_sha256": "c5dbee548ab73aedd78c08357f389f08f2cef30f7e5b43e42a6496770168ce6a",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3863-M/lod0.glb",
+          "sha256": "99e09e444f31a424ca50d842f2e27e3f9b68163f4962226d461fa11d86ca4004"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2887:M",
+      "article": "organ-speiseroehre",
+      "title": "Die Speiseröhre — Kurzüberblick",
+      "text": "Die Speiseröhre transportiert zerkaute Nahrung vom Mund in den Magen — eine muskuläre Schlauchstruktur.",
+      "source": "projects/dht-lexikon/lexikon/organ-speiseroehre.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "0fd7c844d1f912ed6a13c56c4e06de0f9d2d18a04d197c3e62f3fed145107478",
+      "text_sha256": "ed333d996da0047ab11129f9828005f9fff4a0130f262cbc071c56f1df46293f",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2887-M/lod0.glb",
+          "sha256": "4c0ceb83351f38a7b8d7497ff0edcc48875e6f0f99f3078daea29dfbc9a5916e"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2810:L",
+      "article": "organ-unterkieferspeicheldruese",
+      "title": "Die Unterkieferspeicheldrüse — Kurzüberblick",
+      "text": "Sie liegt unter dem Kiefer und liefert Speichel beim Kauen und in Ruhe.",
+      "source": "projects/dht-lexikon/lexikon/organ-unterkieferspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "557da342929b92c3aea6b6110a4dedd92d5824e8f4dd350e7f52b7123e219641",
+      "text_sha256": "333dd5cedc9be312546d3aab6bb074de3d001bc4a8129d3387823046cf4dd3e0",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2810-L/lod0.glb",
+          "sha256": "11a1950d4a002519ca99bd9a4e4ca7e695f2cf33141e6282affe61cd34d7284c"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2810:R",
+      "article": "organ-unterkieferspeicheldruese",
+      "title": "Die Unterkieferspeicheldrüse — Kurzüberblick",
+      "text": "Sie liegt unter dem Kiefer und liefert Speichel beim Kauen und in Ruhe.",
+      "source": "projects/dht-lexikon/lexikon/organ-unterkieferspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "557da342929b92c3aea6b6110a4dedd92d5824e8f4dd350e7f52b7123e219641",
+      "text_sha256": "333dd5cedc9be312546d3aab6bb074de3d001bc4a8129d3387823046cf4dd3e0",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2810-R/lod0.glb",
+          "sha256": "a883e5467e8631b79e6b8ab6d96e9d78bd4c18ae6aff1c3346fbbb9e2729bf53"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2807:L",
+      "article": "organ-unterzungenspeicheldruese",
+      "title": "Die Unterzungenspeicheldrüse — Kurzüberblick",
+      "text": "Sie liegt unter der Zunge und feuchtet Mund und Speise ständig leicht.",
+      "source": "projects/dht-lexikon/lexikon/organ-unterzungenspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "8bfcc38d87dd05beab2fbb6b78b5945922b1451d6987bf6294404211a291cf1b",
+      "text_sha256": "29c9334ca121e7c0b65fdb96e68f1382fa234789da4c9be2b182469ea6201d89",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2807-L/lod0.glb",
+          "sha256": "21478afac30c79b975228eae520fc206c220c7871854905abcfafe0fe276d849"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2807:R",
+      "article": "organ-unterzungenspeicheldruese",
+      "title": "Die Unterzungenspeicheldrüse — Kurzüberblick",
+      "text": "Sie liegt unter der Zunge und feuchtet Mund und Speise ständig leicht.",
+      "source": "projects/dht-lexikon/lexikon/organ-unterzungenspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "8bfcc38d87dd05beab2fbb6b78b5945922b1451d6987bf6294404211a291cf1b",
+      "text_sha256": "29c9334ca121e7c0b65fdb96e68f1382fa234789da4c9be2b182469ea6201d89",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2807-R/lod0.glb",
+          "sha256": "cb1b7c4ec28e92a81e350dc615a66dc4588c0d20d3e0eb466b0e1547f7359615"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3637:M",
+      "article": "organ-vorsteherdruese",
+      "title": "Die Vorsteherdrüse — Kurzüberblick",
+      "text": "Die Vorsteherdrüse (Prostata) umgibt den ersten Abschnitt der männlichen Harnröhre und bildet einen Teil der Samenflüssigkeit.",
+      "source": "projects/dht-lexikon/lexikon/organ-vorsteherdruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "b88993fbc20c0c09b69f33c666bfdda15799e8f25c833db3b53e37a0977cb1e4",
+      "text_sha256": "cbd9feab6c9887f123f5e86e3c0752979fcccdd970a0b598b32a52a921c5617d",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3637-M/lod0.glb",
+          "sha256": "e2ed4846ae9a02148bedf7fb1d74ebd230ed87d0d4da1cb9a1b0fad1b5d53ac6"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2976:M",
+      "article": "organ-wurmfortsatz",
+      "title": "Der Wurmfortsatz — Kurzüberblick",
+      "text": "Der Wurmfortsatz ist ein fingerförmiger Auslauf am Blinddarm; seine Funktion ist klein, Entzündungen können aber ernst werden.",
+      "source": "projects/dht-lexikon/lexikon/organ-wurmfortsatz.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "972623b998fb3fd5081ae3f43ad559359de947dcc9e9c98444e32762b1ee2792",
+      "text_sha256": "410f9a4f589db5e6dc657560cdcd81875b55c71720a24b5330a365a8c3e5c4f4",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2976-M/lod0.glb",
+          "sha256": "cfa18b842d1d0c865890a8328bca5eb78d55d8e43439e88a2fe110bf7bf31980"
+        }
+      ]
+    },
+    {
+      "id": "TA2:3862:M",
+      "article": "organ-zirbeldruese",
+      "title": "Die Zirbeldrüse — Kurzüberblick",
+      "text": "Die Zirbeldrüse im Gehirn wird mit Schlaf-Wach-Rhythmus und Hormonen in Verbindung gebracht; bei Erwachsenen oft verkalkt.",
+      "source": "projects/dht-lexikon/lexikon/organ-zirbeldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "d1d984f8c1bc3bd4c0993cd666d5404868e283e106ea80c8418957cffe627ff5",
+      "text_sha256": "a507ed40ea51bf9fe3c16514321217ba39fc3baed43a8be971f560525e3ee534",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-3862-M/lod0.glb",
+          "sha256": "e1c33984bcb228e8fc56caeed600213393177f38682608324dca0d6dc2cce0d5"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2820:M",
+      "article": "organ-zunge",
+      "title": "Die Zunge — Kurzüberblick",
+      "text": "Die Zunge schmeckt, hilft beim Sprechen und Wälzen der Nahrung und ist reich durchblutet.",
+      "source": "projects/dht-lexikon/lexikon/organ-zunge.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "a6185ced226edbf942054f5be2a86717047313bd072436d89649dac14452ecb7",
+      "text_sha256": "f5310fd5e663731eab9ede533923c40bd6953b2f160ddffdc248408a4bf6b4f0",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2820-M/lod0.glb",
+          "sha256": "6b66f7b669c74a115bbcba9d0db84beaa4614588766c237640d38c36bc2ad885"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2806:L",
+      "article": "organ-zusaetzliche-ohrspeicheldruese",
+      "title": "Zusätzliche Ohrspeicheldrüse — Kurzüberblick",
+      "text": "Manche Menschen haben kleine zusätzliche Speicheldrüsen am Wangenbereich — eine anatomische Variante.",
+      "source": "projects/dht-lexikon/lexikon/organ-zusaetzliche-ohrspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "6a0fccf032a31d2111ee09d5c2d28e0c32984f26c09cc8fabc1a83dc3b018e99",
+      "text_sha256": "adc793aee9bdde385d08314d9e2bce0d201fcf27e344bc3468f0cb1f6422a7e5",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2806-L/lod0.glb",
+          "sha256": "d256c84f650930197768135e823b58c5fb63e88e072918fbefba5816c19b7cb4"
+        }
+      ]
+    },
+    {
+      "id": "TA2:2806:R",
+      "article": "organ-zusaetzliche-ohrspeicheldruese",
+      "title": "Zusätzliche Ohrspeicheldrüse — Kurzüberblick",
+      "text": "Manche Menschen haben kleine zusätzliche Speicheldrüsen am Wangenbereich — eine anatomische Variante.",
+      "source": "projects/dht-lexikon/lexikon/organ-zusaetzliche-ohrspeicheldruese.md",
+      "source_section": "Was ist das?",
+      "source_sha256": "6a0fccf032a31d2111ee09d5c2d28e0c32984f26c09cc8fabc1a83dc3b018e99",
+      "text_sha256": "adc793aee9bdde385d08314d9e2bce0d201fcf27e344bc3468f0cb1f6422a7e5",
+      "source_status": "Eigener vorhandener Lexikontext; keine neue ärztliche Prüfung.",
+      "geometry": [
+        {
+          "file": "modelle/viszera/TA2-2806-R/lod0.glb",
+          "sha256": "d1b378149f06b507398287e55b5e8521f8dd8b25912f52f56fdd7b163ae026fd"
+        }
+      ]
+    }
+  ],
+  "unbound": [
+    {
+      "article": "organ-augapfel",
+      "id": "TA2:6735:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-augapfel",
+      "id": "TA2:6735:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-dickdarm",
+      "id": "TA2:2963:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-duenndarm",
+      "id": "TA2:2933:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-eierstock",
+      "id": "TA2:3470:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-eierstock",
+      "id": "TA2:3470:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-eileiter",
+      "id": "TA2:3486:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-eileiter",
+      "id": "TA2:3486:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-gaumenmandel",
+      "id": "TA2:5181:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-gaumenmandel",
+      "id": "TA2:5181:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-gebaermutter",
+      "id": "TA2:3500:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-gehirn",
+      "id": "TA2:5415:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-herz",
+      "id": "TA2:3932:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-hirnanhangdruese",
+      "id": "TA2:3853:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-kehlkopf",
+      "id": "TA2:3184:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-lunge",
+      "id": "TA2:3265:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-magen",
+      "id": "TA2:2901:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-milz",
+      "id": "TA2:5159:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-niere",
+      "id": "TA2:3358:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-niere",
+      "id": "TA2:3358:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-obere-nebenschilddruese",
+      "id": "TA2:3871:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-obere-nebenschilddruese",
+      "id": "TA2:3871:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-rachen",
+      "id": "TA2:2855:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-rueckenmark",
+      "id": "TA2:6049:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-samenblase",
+      "id": "TA2:3631:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-scheide",
+      "id": "TA2:3523:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-thymus",
+      "id": "TA2:5152:M",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-traenendruese",
+      "id": "TA2:6846:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-traenendruese",
+      "id": "TA2:6846:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-untere-nebenschilddruese",
+      "id": "TA2:3872:L",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    },
+    {
+      "article": "organ-untere-nebenschilddruese",
+      "id": "TA2:3872:R",
+      "reason": "Keine identische Registerkennung mit freigegebener Einzelgeometrie im männlichen Browseratlas."
+    }
+  ]
+}

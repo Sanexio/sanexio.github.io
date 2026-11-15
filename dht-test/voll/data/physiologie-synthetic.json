@@ -1,0 +1,11 @@
+{
+  "schema": "dht-physio-synthetic/1",
+  "profile": [
+    {
+      "id": "koffein-pk",
+      "titel": "Koffein — vereinfachtes Verteilungsmodell",
+      "quelle": "synthetisch, Browser-Demo",
+      "parameter": { "Vd_l": 0.6, "kelim_h": 0.15 }
+    }
+  ]
+}
