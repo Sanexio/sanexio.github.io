@@ -1,0 +1,145 @@
+{
+  "budget": 2000000,
+  "bindings": {
+    "org1:organ:kidney-left": {
+      "2": "kidney-tissue",
+      "3": "podocyte",
+      "4": "nephrin"
+    },
+    "org1:organ:kidney-right": {
+      "2": "kidney-tissue",
+      "3": "podocyte",
+      "4": "nephrin"
+    },
+    "org1:organ:heart": {
+      "3": "red-cell",
+      "4": "haemoglobin"
+    },
+    "TA2:3023:M": {
+      "2": "liver-tissue"
+    }
+  },
+  "materials": {
+    "kidney-tissue": {
+      "file": "renal_corpuscle_kidney.png",
+      "bytes": 324308,
+      "sha256": "9f0b8ed5e9720fae357088e50a29d4ffba0e7351b5794e350397b465fa10deba",
+      "title": "Nierenkörperchen · beschriftetes Schema",
+      "kind": "image",
+      "credit": "HuBMAP Consortium / HRA · 2D Reference Object Library v1.0 · HRA v1.2",
+      "license": "CC BY 4.0",
+      "sentence": ""
+    },
+    "podocyte": {
+      "file": "podozyt.svg",
+      "bytes": 3531,
+      "sha256": "5e40a7526c8b6bbe6876d9c84b3f7b4ac64a7ae724040f64529d85ea916f4d57",
+      "title": "Podozyt · schematische Einzelzelle",
+      "kind": "image",
+      "credit": "HuBMAP / HRA; Bearbeitung Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "sentence": ""
+    },
+    "nephrin": {
+      "file": "nephrin.bin",
+      "bytes": 19852,
+      "sha256": "d15f82c33cfb3077c66c362595952cc447622ef2d82bddb433ac28eaf7a57a60",
+      "title": "Nephrin · Proteinvorhersage",
+      "kind": "lines",
+      "credit": "AlphaFold O60500 / NPHS1 · DeepMind; Jumper et al. (2021), DOI 10.1038/s41586-021-03819-2",
+      "license": "CC BY 4.0",
+      "sentence": "",
+      "meta": {
+        "meshes": [
+          {
+            "name": "nephrin",
+            "positionOffset": 0,
+            "vertices": 1241,
+            "indexOffset": 14892,
+            "indices": 2480,
+            "indexBytes": 2,
+            "color": [
+              1,
+              0.41,
+              0.34
+            ],
+            "mode": "lines"
+          }
+        ],
+        "draws": [
+          {
+            "mesh": 0,
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "angle": 0
+          }
+        ],
+        "min": [
+          -7.428826269137792,
+          -7.606776792908944,
+          -8.146963497179694
+        ],
+        "max": [
+          7.534973730862208,
+          4.415923207091057,
+          8.120536502820306
+        ],
+        "binaryBytes": 19852
+      }
+    },
+    "red-cell": {
+      "file": "erythrozyt.opt.glb",
+      "bytes": 64700,
+      "sha256": "1c223722664af2db21233d94021cea0bd00f238685b1490ca52c4a2cac392464",
+      "title": "Rotes Blutkörperchen · Blutreferenz",
+      "kind": "glb",
+      "credit": "Digital Health Twin / Erythrozyt E2 · eigenes parametrisches Modell",
+      "license": "Eigenes Modell; keine externe Modellquelle",
+      "sentence": ""
+    },
+    "haemoglobin": {
+      "file": "haemoglobin.glb",
+      "bytes": 826248,
+      "sha256": "ea9c24d8c3c3935180ad553cf15ca14a3e3c4bef7f187895ae4265cc1c85a4b3",
+      "title": "Hämoglobin · Blutreferenz",
+      "kind": "glb",
+      "credit": "PDB 1A3N · J. R. Tame, B. Vallone; eigene GLB-Aufbereitung (2026)",
+      "license": "Gemeinfreie PDB-Messdaten; eigene Darstellung",
+      "sentence": "Der Sauerstoff-Transporter in deinen roten Blutkörperchen"
+    },
+    "liver-tissue": {
+      "id": "tissue",
+      "title": "Lebergewebe · allgemeine Referenz (TP53)",
+      "file": "../micro/hpa-gewebe.jpg",
+      "bytes": 1313105,
+      "sha256": "5dd47d2c1b3c0f6de792a9c5a51ffd9fe61d3e918fedfacaca3739ea457d46c1",
+      "credit": "Human Protein Atlas, Version 24 · Uhlén M et al. (2015), doi:10.1126/science.1260419",
+      "origin": "https://v24.proteinatlas.org/ENSG00000141510-TP53/tissue/liver",
+      "image_url": "https://images.proteinatlas.org/2973/6986_A_7_4.jpg",
+      "license": "CC BY 4.0",
+      "license_url": "https://www.proteinatlas.org/about/licence",
+      "license_read_at": "2026-11-14",
+      "publication": "Uhlén M et al. (2015), doi:10.1126/science.1260419",
+      "pixels_per_meter": 2000000,
+      "scale_um": 100,
+      "calibration_metadata_sha256": "e955c8e7d9542bb143c2fb39c519b9630a3c35deadb85313dd34606c66382055",
+      "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken",
+      "kind": "image",
+      "sentence": ""
+    }
+  },
+  "missing": "Für dieses Organ gibt es diese Stufe in der frühen Testfassung noch nicht.",
+  "excluded": [
+    {
+      "file": "glom.opt.glb",
+      "reason": "Artlist/Tripo genannt; kein lokaler Beleg für gewerbliche Weitergabe gefunden. Daher nicht verwendet."
+    },
+    {
+      "file": "hpa-zelle.jpg / 1BNA.pdb",
+      "reason": "Keine organspezifische Zuordnung; bleiben nur getrennte allgemeine Referenzen."
+    }
+  ]
+}
