@@ -22,11 +22,11 @@
   "materials": {
     "kidney-tissue": {
       "file": "renal_corpuscle_kidney.png",
-      "bytes": 324308,
-      "sha256": "9f0b8ed5e9720fae357088e50a29d4ffba0e7351b5794e350397b465fa10deba",
+      "bytes": 324472,
+      "sha256": "12f704fb74f8189681c72d4739c9e573a759c82829998a12db8a16472e8a1af6",
       "title": "Nierenkörperchen · beschriftetes Schema",
       "kind": "image",
-      "credit": "HuBMAP Consortium / HRA · 2D Reference Object Library v1.0 · HRA v1.2",
+      "credit": "HuBMAP Consortium / HRA · 2D Reference Object Library v1.0 · HRA v1.2; Beschriftung ins Deutsche übertragen: Digital Health Twin (2026)",
       "license": "CC BY 4.0",
       "sentence": ""
     },
