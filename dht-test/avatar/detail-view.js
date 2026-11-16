@@ -1,3 +1,4 @@
+import {studio,outlineMaterial,bakedSurfaces} from './look1-style.js';
 import {mountAvatarShell,layerChoices,suggestions} from './explore-shell.js';
 import * as THREE from 'three';
 import { smoothHullNormals } from './smooth-hull.js';
@@ -33,7 +34,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   host.querySelector('#muscle-coverage').textContent=`Muskeln: ${representedMuscles} von ${muscleEntries.length} Einträgen mit eigener 3D-Darstellung.`;
   if (manifest.sex !== 'male' || manifest.register_count !== 1559) throw new Error('Anatomieregister nicht freigegeben');
   const showLexicon = await createStructureLexicon(host, manifest, manifestBytes);
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, preserveDrawingBuffer: true });
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0xeaf0f3);
   renderer.domElement.id = preview ? 'detail-canvas' : 'avatar-canvas';
@@ -45,9 +46,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.minDistance = 0.015; controls.maxDistance = 7; controls.enableDamping = false;
   const body = new THREE.Group(); scene.add(body);
-  scene.add(new THREE.HemisphereLight(0xffffff,0x465469,2.2));
-  const light = new THREE.DirectionalLight(0xffffff, 2.8); light.position.set(1,2,3); scene.add(light);
-  const back = new THREE.DirectionalLight(0xdce9ff, 1.5);back.position.set(-2,1,-2);scene.add(back);
+  const disposeStudio=studio(renderer,scene,viewport);
+  const surfaces=await bakedSurfaces(BASE,signal);
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const parse = (data) => new Promise((resolve,reject) => loader.parse(data, BASE.href, resolve,reject));
   const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -74,8 +74,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   outlineGeometry.setAttribute('position',new THREE.BufferAttribute(previewGeometry.positions,3));
   outlineGeometry.setAttribute('normal',new THREE.BufferAttribute(previewGeometry.normals,3));
   outlineGeometry.setIndex(new THREE.BufferAttribute(previewGeometry.indices,1));
+  surfaces.apply(hull,'skin',await surfaces.load('haut'),web.sha256);
   hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
-  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xb99d89,emissive:0xb99d89,emissiveIntensity:0.35,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=new THREE.MeshBasicMaterial({color:0x88959b,transparent:true,opacity:0.18,depthWrite:false,side:THREE.FrontSide,forceSinglePass:true});} });
+  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xffffff,vertexColors:true,emissive:0xc69b80,emissiveIntensity:0.16,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial();} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
   const pathEntries = new Map();
@@ -90,15 +91,19 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     const task=(async()=>{pending++;host.dataset.loading='true';progress.hidden=false;
       try{const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
+      const baked=await surfaces.load(value);
       let i=0;
       for(const segment of pack.assets){const asset=manifest.assets.find(a=>a.file===segment.file);if(!asset||asset.sha256!==segment.sha256||asset.length!==segment.length)throw Error('Einzelbindung abweichend');
     const data=bundle.slice(segment.offset,segment.offset+segment.length);
     if(await digest(data)!==asset.sha256) throw new Error('Anatomie-Prüfsumme abweichend');
     const group=(await parse(data)).scene;
+    surfaces.apply(group,asset.file,baked,asset.sha256);
     let triangles=0;
     group.traverse(o=>{if(o.isMesh){
       triangles+=(o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count)/3;
-      o.material=new THREE.MeshStandardMaterial({color:colors[asset.kind],roughness:0.7,side:THREE.DoubleSide,forceSinglePass:true});
+      smoothHullNormals(o.geometry);
+      o.material=new THREE.MeshStandardMaterial({color:o.geometry.hasAttribute('color')?0xffffff:0xa4493e,vertexColors:o.geometry.hasAttribute('color'),roughness:asset.kind==='organ'?.38:.65,metalness:0,side:THREE.DoubleSide,forceSinglePass:true});
+      o.userData.baseColor=o.material.color.clone();
       o.userData.asset=asset; o.userData.entries=pathEntries.get(asset.file)||[];
     }});
     if(triangles!==asset.triangles) throw new Error('Dreieckszahl abweichend');
@@ -160,6 +165,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   function render(){renderer.render(scene,camera);renderLabels();}
   function updateVisibility(){
     const outline=layer!=='haut';
+    viewport.style.background=outline?'radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)':'radial-gradient(ellipse at 45% 26%, #ffffff 0%, #e2edf0 57%, #c5d8df 100%)';
     hull.visible=true;
     hull.traverse(o=>{if(o.isMesh){o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;o.geometry=outline?outlineGeometry:o.userData.skinGeometry;}});
     let triangles=0, omitted=0;
@@ -175,7 +181,12 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     const depth=['haut','muskel','binde','organ','skelett'];host.querySelector('#layer-peel').value=depth.indexOf(layer);host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');
     layerStatus.textContent=layerChoices.find(c=>c[0]===layer)?.[2]+' · bereit';render();
   }
-  function restoreMaterials(){for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissive.setHex(0);o.material.color.setHex(colors[a.kind]);o.material.opacity=1;o.material.transparent=false;o.material.depthWrite=true;o.material.needsUpdate=true;}});}
+  let glowFrame;
+  function pulseSelection(e){
+    cancelAnimationFrame(glowFrame);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const start=performance.now();const tick=t=>{const p=Math.min(1,(t-start)/700);for(const f of e.geometry)assets.get(f)?.group.traverse(o=>{if(o.isMesh)o.material.emissiveIntensity=.35+.22*Math.sin(p*Math.PI);});render();if(p<1)glowFrame=requestAnimationFrame(tick);};glowFrame=requestAnimationFrame(tick);
+  }
+  function restoreMaterials(){cancelAnimationFrame(glowFrame);for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissiveIntensity=.35;o.material.emissive.setHex(0);o.material.color.copy(o.userData.baseColor);o.material.opacity=1;o.material.transparent=false;o.material.depthWrite=true;o.material.needsUpdate=true;}});}
   async function choose(e,hit=null){
     const generation=++layerGeneration;
     if(e.geometry.length){const kind=manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
@@ -189,14 +200,14 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     for(const file of e.geometry){const selectedAsset=assets.get(file);if(!selectedAsset)continue;
       if(!selectedAsset.group.visible){for(const other of assets.values())other.group.visible=false;selectedAsset.group.visible=true;}
     }
-    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);o.material.emissive.setHex(chosen?0x663509:0);if(exploring()){o.material.color.setHex(chosen?0xeaa13e:colors[asset.kind]);o.material.opacity=chosen?1:.12;o.material.transparent=!chosen;o.material.depthWrite=chosen;o.material.needsUpdate=true;}}});
+    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);o.material.emissive.setHex(chosen?0x6d3525:0);if(exploring()){o.material.color.copy(o.userData.baseColor);o.material.opacity=chosen?1:.08;o.material.transparent=!chosen;o.material.depthWrite=chosen;o.material.needsUpdate=true;}}});
     pins=pins.filter(p=>p.id!==e.id);pins.unshift(e);pins=pins.slice(0,8);
     const box=selectedBox();regionBox=box.clone().expandByScalar(0.15);regionBox.intersect(bodyBox);
     host.querySelector('#avatar-focus').disabled=box.isEmpty();host.querySelector('#avatar-region').disabled=box.isEmpty();
     detail.replaceChildren();const title=document.createElement('strong'),latin=document.createElement('small');title.textContent=Array.isArray(e.names.de)?e.names.de.join(', '):e.names.de||'Körperteil';latin.textContent=Array.isArray(e.names.la)?e.names.la.join(', '):e.names.la||'';detail.append(title,latin);syncBadge();
     if(exploring())frame(box,1.65);
 
-    host.dataset.selected=e.id;render();
+    host.dataset.selected=e.id;render();pulseSelection(e);
   }
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
@@ -251,7 +262,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
     state(){return {revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},hullOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
+    dispose(){cancelAnimationFrame(glowFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});

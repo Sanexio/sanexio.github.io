@@ -1,7 +1,7 @@
 {
   "schema": "dht-structure-lexicon/1",
   "sex": "male",
-  "manifest_sha256": "6372c8f5ce97105c221ce5f072db6e7251c8f76c1d489decd07f022e669174d3",
+  "manifest_sha256": "800b102253fbcd086fca63d0edc4a1532616274450f67ec93f48a413c6d025c5",
   "index_source": "projects/dht-lexikon/lexikon/index.json",
   "index_sha256": "99b5435ef9598ffe206b78a06f71a00446222e441e9a91112efe24fd2643dc41",
   "policy": "Nur eigene Organ-Kurztexte, explizite TA2-Einzelbezüge und vorhandene identische Registergeometrie. Keine klinische Abnahme.",
