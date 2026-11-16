@@ -450,9 +450,11 @@ document.addEventListener('avatar-layer',e=>{state.darstellung.schicht=e.detail.
 $('explore-tab').addEventListener('click',()=>setMode('explore'));$('pain-tab').addEventListener('click',()=>setMode('pain'));
 for(const id of ['explore-tab','pain-tab'])$(id).addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const target=e.key==='Home'?'explore-tab':e.key==='End'?'pain-tab':id==='explore-tab'?'pain-tab':'explore-tab';$(target).click();$(target).focus();}});
 
-try { const r = await fetch('./technik-release.json', {cache:'no-store'}); technikEnabled = r.ok && (await r.json()).enabled === true; } catch {}
-await configureAvatarRelease();
-const res = await fetch('./katalog-patient.json');
+const [res] = await Promise.all([
+ fetch('./katalog-patient.json'),
+ configureAvatarRelease(),
+ (async()=>{try { const r=await fetch('./technik-release.json',{cache:'no-store'});technikEnabled=r.ok&&(await r.json()).enabled===true;}catch{}})()
+]);
 if (!res.ok) throw new Error('Katalog nicht geladen');
 state.katalog = await res.json();
 renderHerkunft();
@@ -499,12 +501,13 @@ $('kopier-status').textContent = 'JSON in Zwischenablage kopiert (nur auf diesem
 $('kopier-status').textContent = 'Kopieren nicht möglich — bitte JSON manuell markieren.';
 }
 });
-await mountLazyFeatures();
+const lazyFeatures=mountLazyFeatures();
 if (parent !== window) import('./frame-height.js');
 document.documentElement.dataset.ready='true';
 performance.mark('dht-text-ready');
 enableOfflineCache();
 avatarTimer = setTimeout(loadAvatar, 0);
+await lazyFeatures;
 
 }
 

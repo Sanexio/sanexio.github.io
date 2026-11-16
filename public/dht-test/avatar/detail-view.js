@@ -20,6 +20,11 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const labelsHost = host.querySelector('.avatar-labels');
   const status = host.querySelector('#avatar-status');
   const detail = host.querySelector('#avatar-treffer');
+  let zoomView, zoomPromise;
+  async function selectZoom(e){
+    zoomPromise ||= import('./zoom-view.js').then(m=>m.mountZoom(host,{organ:()=>{const box=selectedBox();frame(box,2);if(!box.isEmpty()){const shift=box.getSize(new THREE.Vector3()).y*.35;camera.position.y-=shift;controls.target.y-=shift;controls.update();render();}},body:reset}));
+    zoomView=await zoomPromise;if(selected?.id===e.id)zoomView.select(e);
+  }
   const badge=host.querySelector('#canvas-name');
   const syncBadge=()=>{badge.querySelector('p').replaceChildren(...[...detail.children].map(e=>e.cloneNode(true)));badge.hidden=false;};
   const search = host.querySelector('#anatomie-suche');
@@ -34,8 +39,14 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   host.querySelector('#muscle-coverage').textContent=`Muskeln: ${representedMuscles} von ${muscleEntries.length} Einträgen mit eigener 3D-Darstellung.`;
   if (manifest.sex !== 'male' || manifest.register_count !== 1559) throw new Error('Anatomieregister nicht freigegeben');
   const showLexicon = await createStructureLexicon(host, manifest, manifestBytes);
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  performance.mark('dht-detail-scripts');
+  const renderer = new THREE.WebGLRenderer({ antialias: !preview?.lowPower, alpha: true, preserveDrawingBuffer: true });
+  const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
+  const device=debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):'';
+  const economy=Boolean(preview?.lowPower)||/swiftshader|llvmpipe|softpipe|software/i.test(device);
+  host.dataset.renderer=device;host.dataset.renderQuality=economy?'economy':'full';
+  const SurfaceMaterial=economy?THREE.MeshLambertMaterial:THREE.MeshStandardMaterial;
+  renderer.setPixelRatio(economy?.75:Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0xeaf0f3);
   renderer.domElement.id = preview ? 'detail-canvas' : 'avatar-canvas';
   renderer.domElement.setAttribute('aria-label','Männlicher 3D-Avatar; ziehen zum Drehen, Rad zum Zoomen, Körperteil anklicken');
@@ -46,7 +57,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.minDistance = 0.015; controls.maxDistance = 7; controls.enableDamping = false;
   const body = new THREE.Group(); scene.add(body);
-  const disposeStudio=studio(renderer,scene,viewport);
+  const disposeStudio=studio(renderer,scene,viewport,{economy});
+  performance.mark('dht-detail-studio');
   const surfaces=await bakedSurfaces(BASE,signal);
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const parse = (data) => new Promise((resolve,reject) => loader.parse(data, BASE.href, resolve,reject));
@@ -76,7 +88,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   outlineGeometry.setIndex(new THREE.BufferAttribute(previewGeometry.indices,1));
   surfaces.apply(hull,'skin',await surfaces.load('haut'),web.sha256);
   hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
-  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new THREE.MeshStandardMaterial({color:0xffffff,vertexColors:true,emissive:0xc69b80,emissiveIntensity:0.16,transparent:false,opacity:1,forceSinglePass:true,roughness:0.8,depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial();} });
+  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new SurfaceMaterial({color:0xffffff,vertexColors:true,emissive:0xc69b80,emissiveIntensity:0.16,transparent:false,opacity:1,forceSinglePass:true,...(economy?{}:{roughness:0.8}),depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
   const pathEntries = new Map();
@@ -102,7 +114,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     group.traverse(o=>{if(o.isMesh){
       triangles+=(o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count)/3;
       smoothHullNormals(o.geometry);
-      o.material=new THREE.MeshStandardMaterial({color:o.geometry.hasAttribute('color')?0xffffff:0xa4493e,vertexColors:o.geometry.hasAttribute('color'),roughness:asset.kind==='organ'?.38:.65,metalness:0,side:THREE.DoubleSide,forceSinglePass:true});
+      o.material=new SurfaceMaterial({color:o.geometry.hasAttribute('color')?0xffffff:0xa4493e,vertexColors:o.geometry.hasAttribute('color'),...(economy?{}:{roughness:asset.kind==='organ'?.38:.65,metalness:0}),side:THREE.DoubleSide,forceSinglePass:true});
       o.userData.baseColor=o.material.color.clone();
       o.userData.asset=asset; o.userData.entries=pathEntries.get(asset.file)||[];
     }});
@@ -192,8 +204,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(e.geometry.length){const kind=manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
     badge.hidden=true;delete host.dataset.selected;selected=e;lastHit=hit;select.value=e.id;
     showLexicon(e);
+    zoomView?.hide();
     restoreMaterials();
-    if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();return;}
+    if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();await selectZoom(e);return;}
     const a=assets.get(e.geometry[0]);if(!a){detail.textContent='Dieser Körperteil ist noch nicht in 3D verfügbar.';return;}
     if(!layerKinds[layer].includes(a.kind)) {layer=Object.keys(layerKinds).find(k=>layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
     // Selected object has priority within the measured view budget.
@@ -208,6 +221,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(exploring())frame(box,1.65);
 
     host.dataset.selected=e.id;render();pulseSelection(e);
+    await selectZoom(e);
   }
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
@@ -235,13 +249,13 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const switchLayer=async value=>{const control=document.getElementById('schicht-wahl');control.value=value;control.dispatchEvent(new Event('change',{bubbles:true}));await api.setLayer(value);};
   for(const b of host.querySelectorAll('.layer-button'))b.addEventListener('click',()=>run(()=>switchLayer(b.dataset.layer)));
   host.querySelector('#layer-peel').addEventListener('input',e=>run(()=>switchLayer(['haut','muskel','binde','organ','skelett'][Number(e.target.value)])));
-  host.querySelector('#whole-body').addEventListener('click',()=>{badge.hidden=true;selected=null;lastHit=null;delete host.dataset.selected;showLexicon(null);detail.textContent='Entdecken Sie Ihren Körper';reset();restoreMaterials();render();});
+  host.querySelector('#whole-body').addEventListener('click',()=>{zoomView?.hide();badge.hidden=true;selected=null;lastHit=null;delete host.dataset.selected;showLexicon(null);detail.textContent='Entdecken Sie Ihren Körper';reset();restoreMaterials();render();});
   host.querySelector('#canvas-reset').addEventListener('click',()=>host.querySelector('#whole-body').click());
   function pick(clientX,clientY,hover=false){
     const r=renderer.domElement.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((clientX-r.left)/r.width*2-1,1-(clientY-r.top)/r.height*2),camera);
     const meshes=[];for(const a of assets.values())if(a.group.visible)a.group.traverse(o=>{if(o.isMesh)meshes.push(o);});
     const hit=raycaster.intersectObjects(meshes,false)[0];
-    if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
+    if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){if(selected)return;detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
     const shellHit=(layer==='haut')?raycaster.intersectObject(hull,true)[0]:null;
     if(shellHit){if(exploring()){detail.replaceChildren();const name=document.createElement('strong'),latin=document.createElement('small');name.textContent='Haut';latin.textContent='Cutis · vereinfachte Körperhülle';detail.append(name,latin);syncBadge();showLexicon(null);return;}if(hover)return;const p=shellHit.point;const region=p.y>1.52?'kopf':p.y>1.43?'hals':Math.abs(p.x)>0.20&&p.y>0.76?(p.x>0?'arm_links':'arm_rechts'):p.y>1.16?'brust':p.y>0.97?'bauch':p.y>0.78?'becken':p.x>0?'bein_links':'bein_rechts';onRegion(region);}
   }
@@ -255,14 +269,15 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   renderer.domElement.addEventListener('keydown',ev=>{if(ev.key==='ArrowLeft'){ev.preventDefault();rotate(Math.PI/12);}if(ev.key==='ArrowRight'){ev.preventDefault();rotate(-Math.PI/12);}if(ev.key==='+')zoom(0.8);if(ev.key==='-')zoom(1.25);});
   controls.addEventListener('change',render);
   const resize=new ResizeObserver(()=>{const w=viewport.clientWidth,h=viewport.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();render();});resize.observe(viewport);
-  reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';host.setAttribute('aria-busy','false');progress.hidden=true;
+  performance.mark('dht-detail-built');
+  reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();performance.mark('dht-detail-frame');if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';host.setAttribute('aria-busy','false');progress.hidden=true;
   const api={
-    async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}layer=value;updateVisibility();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
+    async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){zoomView?.hide();badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}layer=value;updateVisibility();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
     setOpacity(value){hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity;m.transparent=opacity<1;m.depthWrite=opacity===1;m.needsUpdate=true;}});render();},
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
     state(){return {revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},hullOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){cancelAnimationFrame(glowFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
+    dispose(){zoomView?.dispose();cancelAnimationFrame(glowFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});

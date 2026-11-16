@@ -5,8 +5,9 @@ export async function mountLazyFeatures(){
  {row:8,id:'micro-open',label:'Gewebe, Zelle und Molekül öffnen',file:'./micro-reference.js',mount:'mountMicroReferences',section:'micro-references'},
  {row:9,id:'body-open',label:'Illustrative Außenhülle öffnen',file:'./body-prototype.js',mount:'mountBodyPrototype',section:'body-prototype'}];
  const host=document.createElement('div');host.id='optional-functions';host.className='actions';(document.querySelector('.app-content')||document.querySelector('.app')).append(host);
- for(const f of features){
-  if(!await enabled(f.row))continue;
+ const flags=await Promise.all(features.map(f=>enabled(f.row)));
+ for(const [index,f] of features.entries()){
+  if(!flags[index])continue;
   const button=document.createElement('button');button.id=f.id;button.type='button';button.className='secondary';button.textContent=f.label;host.append(button);
   let pending;
   f.open=async()=>{

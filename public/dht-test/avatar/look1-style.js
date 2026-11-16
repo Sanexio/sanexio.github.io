@@ -1,6 +1,12 @@
 /** LOOK1 baked surface loader. RGB8 is linear, bound to original primitive counts. */
 import * as THREE from 'three';
-export function studio(renderer,scene,viewport){
+export function studio(renderer,scene,viewport,{economy=false}={}){
+ if(economy){
+  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NoToneMapping;renderer.setClearColor(0x000000,0);
+  scene.add(new THREE.HemisphereLight(0xf4f9ff,0x989494,1.6));
+  const key=new THREE.DirectionalLight(0xffe8d8,2.2);key.position.set(-2,3,4);scene.add(key);
+  return ()=>{scene.remove(key);};
+ }
  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
  renderer.setClearColor(0x000000,0);viewport.style.background='radial-gradient(ellipse at 45% 26%, #ffffff 0%, #e2edf0 57%, #c5d8df 100%)';
  scene.add(new THREE.HemisphereLight(0xf4f9ff,0x989494,1.6));
@@ -9,7 +15,7 @@ export function studio(renderer,scene,viewport){
  const shadow=document.createElement('div');shadow.className='look1-contact';shadow.style.cssText='pointer-events:none;position:absolute;left:33%;right:33%;bottom:4%;height:4%;border-radius:50%;background:radial-gradient(ellipse,rgba(35,68,84,.23),rgba(35,68,84,0) 70%);filter:blur(5px)';viewport.prepend(shadow);
  return ()=>shadow.remove();
 }
-export function outlineMaterial(){return new THREE.ShaderMaterial({transparent:true,opacity:.18,depthWrite:false,side:THREE.FrontSide,uniforms:{opacity:{value:.18}},vertexShader:`varying vec3 N;varying vec3 V;void main(){vec4 p=modelViewMatrix*vec4(position,1.);N=normalize(normalMatrix*normal);V=normalize(-p.xyz);gl_Position=projectionMatrix*p;}`,fragmentShader:`varying vec3 N;varying vec3 V;uniform float opacity;void main(){float rim=pow(1.-abs(dot(normalize(N),normalize(V))),2.3);gl_FragColor=vec4(.10,.42,.63,opacity*(.14+.86*rim));#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}`.replace(';#include',';\n#include')});}
+export function outlineMaterial(economy=false){if(economy)return new THREE.MeshBasicMaterial({color:0x1a6ba1,transparent:true,opacity:.10,depthWrite:false,side:THREE.FrontSide});return new THREE.ShaderMaterial({transparent:true,opacity:.18,depthWrite:false,side:THREE.FrontSide,uniforms:{opacity:{value:.18}},vertexShader:`varying vec3 N;varying vec3 V;void main(){vec4 p=modelViewMatrix*vec4(position,1.);N=normalize(normalMatrix*normal);V=normalize(-p.xyz);gl_Position=projectionMatrix*p;}`,fragmentShader:`varying vec3 N;varying vec3 V;uniform float opacity;void main(){float rim=pow(1.-abs(dot(normalize(N),normalize(V))),2.3);gl_FragColor=vec4(.10,.42,.63,opacity*(.14+.86*rim));#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}`.replace(';#include',';\n#include')});}
 export async function bakedSurfaces(base,signal){
  const descriptor=await(await fetch(new URL('look1.json',base),{signal})).json(),cache=new Map();
  const digest=async b=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b)),v=>v.toString(16).padStart(2,'0')).join('');
