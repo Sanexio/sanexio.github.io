@@ -9,8 +9,22 @@ export async function drawZoom(host,s,bytes){
  const unstudio=studio(renderer,scene,host);let group,decoder;
  try{
  if(s.kind==='glb'){
-  const loader=new GLTFLoader();decoder=new DRACOLoader().setDecoderPath(new URL('vendor/draco/',import.meta.url).href);loader.setDRACOLoader(decoder);
+  // glTF embedded bufferView images (including EXT_texture_webp) are decoded by
+  // GLTFLoader. Zoom assets must never resolve external buffers or textures.
+  const jsonLength=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength).getUint32(12,true);
+  const document=JSON.parse(new TextDecoder().decode(bytes.subarray(20,20+jsonLength)));
+  if([...(document.buffers||[]),...(document.images||[])].some(v=>Object.hasOwn(v,'uri')))throw Error('Externe Zoomdateien sind nicht erlaubt');
+  const loader=new GLTFLoader();
+  // ImageBitmapLoader fetches blob URLs through connect-src. The existing CSP
+  // permits embedded images through img-src; use that supported GLTFLoader path.
+  loader.register(parser=>({name:'DHTEmbeddedImages',beforeRoot(){parser.textureLoader=new THREE.TextureLoader(parser.options.manager);}}));
+  decoder=new DRACOLoader().setDecoderPath(new URL('vendor/draco/',import.meta.url).href);loader.setDRACOLoader(decoder);
   group=(await loader.parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),new URL('zoom/',import.meta.url).href)).scene;
+  if(s.file==='glom.opt.glb'){
+   group.rotation.y=-Math.PI/2; // Existing cutaway faces the viewer; geometry stays unchanged.
+   const textures=new Set();group.traverse(o=>{if(o.isMesh){if(!o.material.map)throw Error('Eingebettete Modellfarbe fehlt');for(const v of Object.values(o.material))if(v?.isTexture)textures.add(v);}});
+   if(textures.size<4)throw Error('Eingebettete Modelltexturen fehlen');renderer.domElement.dataset.embeddedTextures=String(textures.size);
+  }
   // The existing haemoglobin representation shares atom meshes. Batch identical pairs.
   const groups=new Map();group.updateMatrixWorld(true);group.traverse(o=>{if(o.isMesh){const key=o.geometry.uuid+'/'+o.material.uuid;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(o);}});
   if(s.file==='haemoglobin.glb'){

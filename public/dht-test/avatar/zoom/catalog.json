@@ -2,12 +2,18 @@
   "budget": 2000000,
   "bindings": {
     "org1:organ:kidney-left": {
-      "2": "kidney-tissue",
+      "2": [
+        "kidney-glom",
+        "kidney-tissue"
+      ],
       "3": "podocyte",
       "4": "nephrin"
     },
     "org1:organ:kidney-right": {
-      "2": "kidney-tissue",
+      "2": [
+        "kidney-glom",
+        "kidney-tissue"
+      ],
       "3": "podocyte",
       "4": "nephrin"
     },
@@ -129,14 +135,21 @@
       "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken",
       "kind": "image",
       "sentence": ""
+    },
+    "kidney-glom": {
+      "file": "glom.opt.glb",
+      "bytes": 662708,
+      "sha256": "a7a37cb6d5c172723837cd69fb2e7fe45dc6d0eb64545605b2d0d9e869a1bb70",
+      "title": "Nierenkörperchen · 3D-Modell",
+      "kind": "glb",
+      "credit": "3D-Modell: KI-gestützt erzeugt (Artlist, Tripo H3.1) im Artlist-Konto Sanexio; vereinfacht, nicht vermessen",
+      "license": "3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1), Lizenz über das Artlist-Konto von Sanexio; vereinfacht, nicht vermessen.",
+      "sentence": "",
+      "limits": "KI-gestützt erzeugtes Modell, vereinfacht, nicht vermessen; nicht ärztlich geprüft."
     }
   },
   "missing": "Für dieses Organ gibt es diese Stufe in der frühen Testfassung noch nicht.",
   "excluded": [
-    {
-      "file": "glom.opt.glb",
-      "reason": "Artlist/Tripo genannt; kein lokaler Beleg für gewerbliche Weitergabe gefunden. Daher nicht verwendet."
-    },
     {
       "file": "hpa-zelle.jpg / 1BNA.pdb",
       "reason": "Keine organspezifische Zuordnung; bleiben nur getrennte allgemeine Referenzen."

@@ -34,6 +34,11 @@ https://v24.proteinatlas.org/ENSG00000141510-TP53/tissue/liver
 https://www.proteinatlas.org/about/licence
 Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken
 
+Nierenkörperchen · 3D-Modell
+Datei: glom.opt.glb
+Quelle / Bearbeitung: 3D-Modell: KI-gestützt erzeugt (Artlist, Tripo H3.1) im Artlist-Konto Sanexio; vereinfacht, nicht vermessen
+Lizenz: 3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1), Lizenz über das Artlist-Konto von Sanexio; vereinfacht, nicht vermessen.
+
 HuBMAP / HRA: https://hubmapconsortium.github.io/ccf-2d-reference-object-library/v1.0/png/renal_corpuscle_kidney.png
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
 Nierenkörperchen: englische Beschriftung ins Deutsche übertragen (Digital Health Twin, 2026); Zeichnung unverändert.

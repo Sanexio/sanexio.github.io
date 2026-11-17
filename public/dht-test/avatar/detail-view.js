@@ -9,7 +9,7 @@ import { createStructureLexicon } from './structure-lexicon.js';
 
 const BASE = new URL('./', import.meta.url);
 const colors = { bone: 0xe8ddbb, tooth: 0xfaf4dc, muscle: 0xa94e48, ligament: 0xe2bd71, tendon: 0xd0bd92, organ: 0x658ca5 };
-const layerKinds = { haut: [], skelett: ['bone','tooth'], muskel: ['muscle'], organ: ['organ'], binde: ['ligament','tendon'] };
+const layerKinds = { haut: ['organ'], skelett: ['bone','tooth'], muskel: ['muscle'], organ: ['organ'], binde: ['ligament','tendon'] };
 const label = (e) => [Array.isArray(e.names.de) ? e.names.de.join(', ') : e.names.de, Array.isArray(e.names.la) ? e.names.la.join(', ') : e.names.la].filter(Boolean).join(' · ') || e.id;
 const btn = (text, id, handler) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'secondary'; b.textContent = text; b.id = id; b.addEventListener('click',handler); return b; };
 
@@ -63,13 +63,13 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const parse = (data) => new Promise((resolve,reject) => loader.parse(data, BASE.href, resolve,reject));
   const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))].map(b=>b.toString(16).padStart(2,'0')).join('');
-  async function download(file, description, expected) {
+  async function download(file, description, expected, quiet=false) {
     const response = await fetch(new URL(file, BASE), {signal});
     if (!response.ok) throw Error('3D-Datei fehlt: '+file);
     const length = expected || Number(response.headers.get('Content-Length'));
-    if(length) {progress.max=length;progress.value=0;} else progress.removeAttribute('value');
+    if(!quiet){if(length) {progress.max=length;progress.value=0;} else progress.removeAttribute('value');}
     const reader=response.body.getReader(),chunks=[];let received=0;
-    while(true){const {done,value}=await reader.read();if(done)break;chunks.push(value);received+=value.length;if(length)progress.value=received;layerStatus.textContent=`${description}: ${(received/1000000).toFixed(1)} MB${length ? ' / '+(length/1000000).toFixed(1)+' MB' : ''}`;}
+    while(true){const {done,value}=await reader.read();if(done)break;chunks.push(value);received+=value.length;if(!quiet){if(length)progress.value=received;layerStatus.textContent=`${description}: ${(received/1000000).toFixed(1)} MB${length ? ' / '+(length/1000000).toFixed(1)+' MB' : ''}`;}}
     const data=new Uint8Array(received);let offset=0;for(const c of chunks){data.set(c,offset);offset+=c.length;}return data.buffer;
   }
   const web = await (await fetch(new URL('male-web.json',BASE), {signal})).json();
@@ -88,7 +88,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   outlineGeometry.setIndex(new THREE.BufferAttribute(previewGeometry.indices,1));
   surfaces.apply(hull,'skin',await surfaces.load('haut'),web.sha256);
   hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
-  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = new SurfaceMaterial({color:0xffffff,vertexColors:true,emissive:0xc69b80,emissiveIntensity:0.16,transparent:false,opacity:1,forceSinglePass:true,...(economy?{}:{roughness:0.8}),depthWrite:true,side:THREE.FrontSide});o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
+  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = outlineMaterial(economy,true);o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
   const pathEntries = new Map();
@@ -96,12 +96,13 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(!pathEntries.has(file))pathEntries.set(file,[]);pathEntries.get(file).push(e);
   }
   const progressive=await (await fetch(new URL('progressive.json',BASE),{signal})).json();
-  const loading=new Map(),loaded=new Set();let pending=0;
-  async function ensureLayer(value){
+  const loading=new Map(),loaded=new Set();let pending=0,foreground=0;
+  async function ensureLayer(value,{background=false}={}){
     if(value==='haut')return;
     if(loading.has(value))return loading.get(value);
-    const task=(async()=>{pending++;host.dataset.loading='true';progress.hidden=false;
-      try{const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes);
+    const added=[];
+    const task=(async()=>{pending++;host.dataset.loading='true';if(!background){foreground++;progress.hidden=false;}
+      try{const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
       const baked=await surfaces.load(value);
       let i=0;
@@ -119,15 +120,18 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       o.userData.asset=asset; o.userData.entries=pathEntries.get(asset.file)||[];
     }});
     if(triangles!==asset.triangles) throw new Error('Dreieckszahl abweichend');
-    group.visible=false;body.add(group);assets.set(asset.file,{...asset,group});
-    if(++i%50===0){status.textContent=`Lokal geladen: ${i}/${manifest.assets.length} Geometrien`;await new Promise(r=>setTimeout(r,0));}
+    group.visible=false;body.add(group);assets.set(asset.file,{...asset,group});added.push(asset.file);
+    if(++i%50===0){if(!background)status.textContent=`Lokal geladen: ${i}/${manifest.assets.length} Geometrien`;await new Promise(r=>setTimeout(r,0));}
 
       }
       loaded.add(value);
-      }finally{pending--;host.dataset.loading=String(pending>0);progress.hidden=!pending;}
+      if(value==='organ'&&!background){host.dataset.organs='ready';delete host.dataset.organError;}
+      }catch(error){if(value==='organ'){host.dataset.organs='error';host.dataset.organError=error.message;}for(const file of added){const a=assets.get(file);body.remove(a.group);a.group.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});assets.delete(file);}throw error;
+      }finally{pending--;host.dataset.loading=String(pending>0);if(!background)foreground--;progress.hidden=!foreground;}
     })();loading.set(value,task);try{await task;}catch(e){loading.delete(value);throw e;}
   }
   let layerGeneration=0;
+  let skinOpacity=1;
   let layer='haut', selected=null, lastHit=null, pins=[], labelsEnabled=false, regionBox=null;
   const raycaster=new THREE.Raycaster();
   const selectedBox=()=>{
@@ -177,38 +181,39 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   function render(){renderer.render(scene,camera);renderLabels();}
   function updateVisibility(){
     const outline=layer!=='haut';
-    viewport.style.background=outline?'radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)':'radial-gradient(ellipse at 45% 26%, #ffffff 0%, #e2edf0 57%, #c5d8df 100%)';
+    viewport.style.background='radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)';
     hull.visible=true;
-    hull.traverse(o=>{if(o.isMesh){o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;o.geometry=outline?outlineGeometry:o.userData.skinGeometry;}});
+    hull.traverse(o=>{if(o.isMesh){o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;o.geometry=outlineGeometry;}});
     let triangles=0, omitted=0;
     if(hull.visible)hull.traverse(o=>{if(o.isMesh)triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3;});
     for(const a of assets.values()) {
       const show=layerKinds[layer]?.includes(a.kind);
       a.group.visible=Boolean(show && triangles+a.triangles<=manifest.triangle_limit);
       if(a.group.visible)triangles+=a.triangles;else if(show)omitted++;
+      a.group.traverse(o=>{if(o.isMesh){const muted=layer==='haut';o.material.color.copy(o.userData.baseColor);o.material.opacity=muted?.32:1;o.material.transparent=muted;o.material.depthWrite=!muted;o.material.needsUpdate=true;}});
     }
     status.textContent=`3D lokal bereit · ${manifest.entries.length} Registereinträge · ${[...assets.values()].filter(a=>a.group.visible).length} sichtbare Anatomieobjekte · ${triangles.toLocaleString('de-DE')} Dreiecke${omitted ? ` · ${omitted} durch Detailbudget ausgeblendet` : ''}`;
     host.dataset.triangles=String(triangles);host.dataset.layer=layer;host.dispatchEvent(new CustomEvent('avatar-layer',{bubbles:true,detail:{layer}}));
     for(const b of host.querySelectorAll('[data-layer]'))b.setAttribute('aria-pressed',String(b.dataset.layer===layer));
     const depth=['haut','muskel','binde','organ','skelett'];host.querySelector('#layer-peel').value=depth.indexOf(layer);host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');
-    layerStatus.textContent=layerChoices.find(c=>c[0]===layer)?.[2]+' · bereit';render();
+    layerStatus.textContent=layer==='haut'&&host.dataset.organs==='error'?'Organe konnten nicht geladen werden':layerChoices.find(c=>c[0]===layer)?.[2]+' · bereit';render();
   }
-  let glowFrame;
+  let glowFrame,organFrame;
   function pulseSelection(e){
     cancelAnimationFrame(glowFrame);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const start=performance.now();const tick=t=>{const p=Math.min(1,(t-start)/700);for(const f of e.geometry)assets.get(f)?.group.traverse(o=>{if(o.isMesh)o.material.emissiveIntensity=.35+.22*Math.sin(p*Math.PI);});render();if(p<1)glowFrame=requestAnimationFrame(tick);};glowFrame=requestAnimationFrame(tick);
   }
-  function restoreMaterials(){cancelAnimationFrame(glowFrame);for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissiveIntensity=.35;o.material.emissive.setHex(0);o.material.color.copy(o.userData.baseColor);o.material.opacity=1;o.material.transparent=false;o.material.depthWrite=true;o.material.needsUpdate=true;}});}
+  function restoreMaterials(){cancelAnimationFrame(glowFrame);for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissiveIntensity=.35;o.material.emissive.setHex(0);o.material.color.copy(o.userData.baseColor);o.material.opacity=layer==='haut'?.32:1;o.material.transparent=layer==='haut';o.material.depthWrite=layer!=='haut';o.material.needsUpdate=true;}});}
   async function choose(e,hit=null){
     const generation=++layerGeneration;
-    if(e.geometry.length){const kind=manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
+    if(e.geometry.length){const kind=manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
     badge.hidden=true;delete host.dataset.selected;selected=e;lastHit=hit;select.value=e.id;
     showLexicon(e);
     zoomView?.hide();
     restoreMaterials();
     if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();await selectZoom(e);return;}
     const a=assets.get(e.geometry[0]);if(!a){detail.textContent='Dieser Körperteil ist noch nicht in 3D verfügbar.';return;}
-    if(!layerKinds[layer].includes(a.kind)) {layer=Object.keys(layerKinds).find(k=>layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
+    if(layer==='haut'||!layerKinds[layer].includes(a.kind)) {layer=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
     // Selected object has priority within the measured view budget.
     for(const file of e.geometry){const selectedAsset=assets.get(file);if(!selectedAsset)continue;
       if(!selectedAsset.group.visible){for(const other of assets.values())other.group.visible=false;selectedAsset.group.visible=true;}
@@ -253,7 +258,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   host.querySelector('#canvas-reset').addEventListener('click',()=>host.querySelector('#whole-body').click());
   function pick(clientX,clientY,hover=false){
     const r=renderer.domElement.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((clientX-r.left)/r.width*2-1,1-(clientY-r.top)/r.height*2),camera);
-    const meshes=[];for(const a of assets.values())if(a.group.visible)a.group.traverse(o=>{if(o.isMesh)meshes.push(o);});
+    const meshes=[];for(const a of assets.values())if(layer!=='haut'&&a.group.visible)a.group.traverse(o=>{if(o.isMesh)meshes.push(o);});
     const hit=raycaster.intersectObjects(meshes,false)[0];
     if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){if(selected)return;detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
     const shellHit=(layer==='haut')?raycaster.intersectObject(hull,true)[0]:null;
@@ -270,20 +275,21 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   controls.addEventListener('change',render);
   const resize=new ResizeObserver(()=>{const w=viewport.clientWidth,h=viewport.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();render();});resize.observe(viewport);
   performance.mark('dht-detail-built');
-  reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();performance.mark('dht-detail-frame');if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';host.setAttribute('aria-busy','false');progress.hidden=true;
+  reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();performance.mark('dht-detail-frame');if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';performance.mark('dht-glass-ready');host.setAttribute('aria-busy','false');progress.hidden=true;
   const api={
     async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){zoomView?.hide();badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}layer=value;updateVisibility();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
-    setOpacity(value){hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity;m.transparent=opacity<1;m.depthWrite=opacity===1;m.needsUpdate=true;}});render();},
+    setOpacity(value){skinOpacity=Math.min(1,Math.max(0,value));hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity*(economy?.48:.78);if(m.uniforms)m.uniforms.opacity.value=m.opacity;}});render();},
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
-    state(){return {revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},hullOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){zoomView?.dispose();cancelAnimationFrame(glowFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
+    state(){return {viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(),revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},skinOpacity,hullOpacity:layer==='haut'?skinOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
+    dispose(){zoomView?.dispose();cancelAnimationFrame(glowFrame);cancelAnimationFrame(organFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});
   Object.defineProperty(host,'avatarInventory',{value:()=>[...assets.values()].map(a=>{
     let objects=0,triangles=0;a.group.traverse(o=>{if(o.isMesh){objects++;triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3;}});
-    return {file:a.file,kind:a.kind,visible:a.group.visible,objects,triangles,entryIds:(pathEntries.get(a.file)||[]).map(e=>e.id)};
+    const materials=[];a.group.traverse(o=>{if(o.isMesh)materials.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite,transparent:o.material.transparent});});
+    return {file:a.file,kind:a.kind,visible:a.group.visible,objects,triangles,materials,entryIds:(pathEntries.get(a.file)||[]).map(e=>e.id)};
   })});
   Object.defineProperty(host,'avatarGeometry',{value:()=>{
     hull.updateWorldMatrix(true,true);
@@ -292,6 +298,28 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       rows.push({id:'AHF2_male_study_envelope',name:o.name,positions:points,indices:g.index?Array.from(g.index.array):Array.from({length:p.count},(_,i)=>i)});
     }});return rows;
   }});
+  // Two frames leave a painted, ready glass body before any organ request.
+  host.dataset.organs='pending';
+  requestAnimationFrame(()=>requestAnimationFrame(async()=>{
+    if(signal?.aborted)return;
+    performance.mark('dht-organs-start');host.dataset.organs='loading';
+    try{
+      await ensureLayer('organ',{background:true});
+      if(signal?.aborted)return;
+      if(layer==='haut')updateVisibility();
+      if(layer==='haut'&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const start=performance.now();
+        await new Promise(resolve=>{const fade=now=>{if(signal?.aborted||layer!=='haut'){resolve();return;}const t=Math.min(1,(now-start)/360);for(const a of assets.values())if(a.kind==='organ')a.group.traverse(o=>{if(o.isMesh)o.material.opacity=.32*t;});render();if(t<1)organFrame=requestAnimationFrame(fade);else resolve();};
+        fade(start);});
+      }
+      host.dataset.organs='ready';delete host.dataset.organError;performance.mark('dht-organs-ready');
+    }catch(error){
+      if(signal?.aborted)return;
+      host.dataset.organs='error';
+      if(layer==='haut')updateVisibility();
+      host.dataset.organError=error.message;
+    }
+  }));
   if(host.dataset.pendingEntry){const e=entries.get(host.dataset.pendingEntry);if(e)setTimeout(()=>run(()=>choose(e)),0);}else if(host.dataset.pendingLayer)setTimeout(()=>run(()=>switchLayer(host.dataset.pendingLayer)),0);
   return api;
 }
