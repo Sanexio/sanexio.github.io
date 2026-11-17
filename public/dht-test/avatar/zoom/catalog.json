@@ -22,7 +22,27 @@
       "4": "haemoglobin"
     },
     "TA2:3023:M": {
-      "2": "liver-tissue"
+      "2": [
+        "liver-tissue",
+        "liver-ftu"
+      ],
+      "3": "liver-cell",
+      "4": "p02768"
+    },
+    "TA2:3114:M": {
+      "2": "pancreas-ftu",
+      "3": "pancreas-cell",
+      "4": "p01308"
+    },
+    "org1:organ:lung-left": {
+      "2": "lung-ftu",
+      "3": "lung-cell",
+      "4": "p11686"
+    },
+    "org1:organ:lung-right": {
+      "2": "lung-ftu",
+      "3": "lung-cell",
+      "4": "p11686"
     }
   },
   "materials": {
@@ -38,8 +58,8 @@
     },
     "podocyte": {
       "file": "podozyt.svg",
-      "bytes": 3531,
-      "sha256": "5e40a7526c8b6bbe6876d9c84b3f7b4ac64a7ae724040f64529d85ea916f4d57",
+      "bytes": 3606,
+      "sha256": "8b203519d9f9363e3db9c4eb3bb2c74ece2855c7e1ed2b8d69daded7b1f334a1",
       "title": "Podozyt · schematische Einzelzelle",
       "kind": "image",
       "credit": "HuBMAP / HRA; Bearbeitung Digital Health Twin (2026)",
@@ -142,10 +162,238 @@
       "sha256": "a7a37cb6d5c172723837cd69fb2e7fe45dc6d0eb64545605b2d0d9e869a1bb70",
       "title": "Nierenkörperchen · 3D-Modell",
       "kind": "glb",
-      "credit": "3D-Modell: KI-gestützt erzeugt (Artlist, Tripo H3.1) im Artlist-Konto Sanexio; vereinfacht, nicht vermessen",
-      "license": "3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1), Lizenz über das Artlist-Konto von Sanexio; vereinfacht, nicht vermessen.",
+      "credit": "3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1); vereinfacht, nicht vermessen.",
+      "license": "Lizenz über das Artlist-Konto von Sanexio.",
       "sentence": "",
       "limits": "KI-gestützt erzeugtes Modell, vereinfacht, nicht vermessen; nicht ärztlich geprüft."
+    },
+    "liver-ftu": {
+      "file": "liver-ftu.png",
+      "bytes": 152894,
+      "sha256": "3fd4c8a3ea15996d0e97b0f63c7be20d25d4074a1037efcce78352743ac8859b",
+      "title": "Leberläppchen · beschriftetes Gewebeschema",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "liver-cell": {
+      "file": "liver-cell.svg",
+      "bytes": 102511,
+      "sha256": "1ad1150fd788cbafe4970b14ad098df1d5e93207113b4984448b099c313b978b",
+      "title": "Leberzelle (Hepatozyt) · schematische Einzelzelle",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "p02768": {
+      "file": "p02768.bin",
+      "bytes": 9740,
+      "sha256": "462d3293800389806dd39ff67405c21bf3909a816089e9633d52e5a07d16e7db",
+      "title": "Albumin · Proteinvorhersage",
+      "kind": "lines",
+      "credit": "AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://alphafold.ebi.ac.uk/files/AF-P02768-F1-model_v6.pdb",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Vorhergesagte Vorstufenstruktur; keine experimentelle Messung, keine Aussage zur Funktion.",
+      "sentence": "",
+      "meta": {
+        "meshes": [
+          {
+            "name": "p02768",
+            "positionOffset": 0,
+            "vertices": 609,
+            "indexOffset": 7308,
+            "indices": 1216,
+            "indexBytes": 2,
+            "color": [
+              1,
+              0.41,
+              0.34
+            ],
+            "mode": "lines"
+          }
+        ],
+        "draws": [
+          {
+            "mesh": 0,
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "angle": 0
+          }
+        ],
+        "min": [
+          -3.8119799671592767,
+          -2.769549753694582,
+          -4.4811357963875205
+        ],
+        "max": [
+          3.300120032840723,
+          2.7477502463054186,
+          4.353564203612479
+        ],
+        "binaryBytes": 9740
+      }
+    },
+    "pancreas-ftu": {
+      "file": "pancreas-ftu.png",
+      "bytes": 304864,
+      "sha256": "bd4f9b976136ffcf64758bb62cc87dd09c19a86cc1be4259cacfe572bee601ca",
+      "title": "Langerhans-Insel · beschriftetes Gewebeschema",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "pancreas-cell": {
+      "file": "pancreas-cell.svg",
+      "bytes": 56005,
+      "sha256": "e67e80d08389b722c9e0bdb6117fdeaac3e30043749926b345dd3d2b5a8b8165",
+      "title": "Betazelle · schematische Einzelzelle",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "p01308": {
+      "file": "p01308.bin",
+      "bytes": 1756,
+      "sha256": "3d3f1fb0329cefdbaa65fb8247e5bc4c1328e37c7db7a9609b42608a56d64d99",
+      "title": "Präproinsulin (Vorstufe des Insulins) · Proteinvorhersage",
+      "kind": "lines",
+      "credit": "AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://alphafold.ebi.ac.uk/files/AF-P01308-F1-model_v6.pdb",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Vorhergesagte Vorstufenstruktur; keine experimentelle Messung, keine Aussage zur Funktion.",
+      "sentence": "",
+      "meta": {
+        "meshes": [
+          {
+            "name": "p01308",
+            "positionOffset": 0,
+            "vertices": 110,
+            "indexOffset": 1320,
+            "indices": 218,
+            "indexBytes": 2,
+            "color": [
+              1,
+              0.41,
+              0.34
+            ],
+            "mode": "lines"
+          }
+        ],
+        "draws": [
+          {
+            "mesh": 0,
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "angle": 0
+          }
+        ],
+        "min": [
+          -2.685204545454546,
+          -1.9623172727272729,
+          -4.185315454545455
+        ],
+        "max": [
+          2.797995454545454,
+          1.4376827272727273,
+          4.730184545454546
+        ],
+        "binaryBytes": 1756
+      }
+    },
+    "lung-ftu": {
+      "file": "lung-ftu.png",
+      "bytes": 185291,
+      "sha256": "0d21acdb7ba9ed5a8011a3b4edd162ca1d7e99549b36e0fa92724639c944d6fd",
+      "title": "Lungenbläschen (Alveole) · beschriftetes Gewebeschema",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "lung-cell": {
+      "file": "lung-cell.svg",
+      "bytes": 63371,
+      "sha256": "966f42b9f3f39fd8592a3a99b6a9947345ec77b33c68ca1f0e7b6cd6147fc3fb",
+      "title": "Typ-II-Pneumozyt · schematische Einzelzelle",
+      "kind": "image",
+      "credit": "Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Schematische Referenz; keine kalibrierte Größenmessung.",
+      "sentence": ""
+    },
+    "p11686": {
+      "file": "p11686.bin",
+      "bytes": 3148,
+      "sha256": "684838832c62c917bc3418cb89038563ae6f3bd156697dd9715807cdab54cacc",
+      "title": "Surfactant-Protein C (Vorstufe) · Proteinvorhersage",
+      "kind": "lines",
+      "credit": "AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)",
+      "license": "CC BY 4.0",
+      "origin": "https://alphafold.ebi.ac.uk/files/AF-P11686-F1-model_v6.pdb",
+      "limits": "Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. Vorhergesagte Vorstufenstruktur; keine experimentelle Messung, keine Aussage zur Funktion.",
+      "sentence": "",
+      "meta": {
+        "meshes": [
+          {
+            "name": "p11686",
+            "positionOffset": 0,
+            "vertices": 197,
+            "indexOffset": 2364,
+            "indices": 392,
+            "indexBytes": 2,
+            "color": [
+              1,
+              0.41,
+              0.34
+            ],
+            "mode": "lines"
+          }
+        ],
+        "draws": [
+          {
+            "mesh": 0,
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "angle": 0
+          }
+        ],
+        "min": [
+          -4.813162944162436,
+          -1.9203934010152284,
+          -8.040593908629443
+        ],
+        "max": [
+          7.317637055837563,
+          2.307206598984772,
+          3.851106091370558
+        ],
+        "binaryBytes": 3148
+      }
     }
   },
   "missing": "Für dieses Organ gibt es diese Stufe in der frühen Testfassung noch nicht.",

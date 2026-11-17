@@ -36,8 +36,62 @@ Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsba
 
 Nierenkörperchen · 3D-Modell
 Datei: glom.opt.glb
-Quelle / Bearbeitung: 3D-Modell: KI-gestützt erzeugt (Artlist, Tripo H3.1) im Artlist-Konto Sanexio; vereinfacht, nicht vermessen
-Lizenz: 3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1), Lizenz über das Artlist-Konto von Sanexio; vereinfacht, nicht vermessen.
+Quelle / Bearbeitung: 3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1); vereinfacht, nicht vermessen.
+Lizenz: Lizenz über das Artlist-Konto von Sanexio.
+
+Leberläppchen · beschriftetes Gewebeschema
+Datei: liver-ftu.png
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg
+
+Leberzelle (Hepatozyt) · schematische Einzelzelle
+Datei: liver-cell.svg
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg
+
+Albumin · Proteinvorhersage
+Datei: p02768.bin
+Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://alphafold.ebi.ac.uk/files/AF-P02768-F1-model_v6.pdb
+
+Langerhans-Insel · beschriftetes Gewebeschema
+Datei: pancreas-ftu.png
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg
+
+Betazelle · schematische Einzelzelle
+Datei: pancreas-cell.svg
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg
+
+Präproinsulin (Vorstufe des Insulins) · Proteinvorhersage
+Datei: p01308.bin
+Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://alphafold.ebi.ac.uk/files/AF-P01308-F1-model_v6.pdb
+
+Lungenbläschen (Alveole) · beschriftetes Gewebeschema
+Datei: lung-ftu.png
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg
+
+Typ-II-Pneumozyt · schematische Einzelzelle
+Datei: lung-cell.svg
+Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg
+
+Surfactant-Protein C (Vorstufe) · Proteinvorhersage
+Datei: p11686.bin
+Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
+Lizenz: CC BY 4.0
+https://alphafold.ebi.ac.uk/files/AF-P11686-F1-model_v6.pdb
 
 HuBMAP / HRA: https://hubmapconsortium.github.io/ccf-2d-reference-object-library/v1.0/png/renal_corpuscle_kidney.png
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
