@@ -2,7 +2,7 @@
 export async function previewView(host,{signal}={}){
  const canvas=document.createElement('canvas');canvas.id='avatar-canvas';canvas.setAttribute('aria-label','Körper wird vorbereitet');canvas.tabIndex=0;
  const viewport=host.querySelector('.avatar-viewport')||document.createElement('div');viewport.classList.add('avatar-viewport');viewport.prepend(canvas);if(!viewport.parentElement)host.append(viewport);
- viewport.style.background='radial-gradient(ellipse at 45% 26%, #ffffff 0%, #e2edf0 57%, #c5d8df 100%)';
+ viewport.style.background='radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)';
  const response=await fetch(new URL('assets/male-preview.bin',import.meta.url),{signal});if(!response.ok)throw Error('Startfigur fehlt');const data=await response.arrayBuffer(),header=new Uint32Array(data,0,2),count=header[0],faces=header[1];
  const p=new Float32Array(data,8,count*3),n=new Float32Array(data,8+count*12,count*3),indices=new Uint16Array(data,8+count*24,faces);
  performance.mark('dht-preview-geometry');
@@ -23,7 +23,7 @@ export async function previewView(host,{signal}={}){
    for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){
     const u=((b[0]-x-.5)*(d[1]-y-.5)-(b[1]-y-.5)*(d[0]-x-.5))/area,v=((d[0]-x-.5)*(a[1]-y-.5)-(d[1]-y-.5)*(a[0]-x-.5))/area,t=1-u-v;if(u<0||v<0||t<0)continue;
     const depth=u*a[2]+v*b[2]+t*d[2],j=y*w+x;if(depth>=depths[j])continue;depths[j]=depth;
-    pixels[j*4]=186*light;pixels[j*4+1]=143*light;pixels[j*4+2]=112*light;pixels[j*4+3]=255;
+    pixels[j*4]=37*light;pixels[j*4+1]=142*light;pixels[j*4+2]=198*light;pixels[j*4+3]=122;
    }
   }
   ctx.putImageData(image,0,0);
