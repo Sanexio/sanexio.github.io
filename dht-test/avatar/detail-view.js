@@ -96,12 +96,15 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(!pathEntries.has(file))pathEntries.set(file,[]);pathEntries.get(file).push(e);
   }
   const progressive=await (await fetch(new URL('progressive.json',BASE),{signal})).json();
-  const loading=new Map(),loaded=new Set();let pending=0,foreground=0;
+  const loading=new Map(),promotions=new Map(),loaded=new Set();let pending=0,foreground=0;
   async function ensureLayer(value,{background=false}={}){
     if(value==='haut')return;
-    if(loading.has(value))return loading.get(value);
+    if(loading.has(value)){if(!background)promotions.get(value)?.();return loading.get(value);}
+    let promoted=!background;
+    const promote=()=>{if(promoted)return;promoted=true;foreground++;progress.hidden=false;progress.removeAttribute('value');layerStatus.textContent='Organe werden geladen …';};
+    promotions.set(value,promote);
     const added=[];
-    const task=(async()=>{pending++;host.dataset.loading='true';if(!background){foreground++;progress.hidden=false;}
+    const task=(async()=>{pending++;host.dataset.loading='true';if(promoted){foreground++;progress.hidden=false;layerStatus.textContent=value==='organ'?'Organe werden geladen …':'Schicht wird geladen …';}
       try{const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
       const baked=await surfaces.load(value);
@@ -125,9 +128,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
 
       }
       loaded.add(value);
-      if(value==='organ'&&!background){host.dataset.organs='ready';delete host.dataset.organError;}
+      if(value==='organ'&&promoted){host.dataset.organs='ready';delete host.dataset.organError;}
       }catch(error){if(value==='organ'){host.dataset.organs='error';host.dataset.organError=error.message;}for(const file of added){const a=assets.get(file);body.remove(a.group);a.group.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});assets.delete(file);}throw error;
-      }finally{pending--;host.dataset.loading=String(pending>0);if(!background)foreground--;progress.hidden=!foreground;}
+      }finally{pending--;host.dataset.loading=String(pending>0);if(promoted)foreground--;promotions.delete(value);progress.hidden=!foreground;}
     })();loading.set(value,task);try{await task;}catch(e){loading.delete(value);throw e;}
   }
   let layerGeneration=0;

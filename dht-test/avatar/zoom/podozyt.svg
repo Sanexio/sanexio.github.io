@@ -8,13 +8,13 @@
 <text x="36" y="48" font-size="29">Podozyt · schematische Einzelzelle</text>
 <text x="36" y="80" font-size="17" fill="#a6bacb">Vom Zellverband zur Zelle · flach aufgefächert · Schema, nicht vermessen</text>
 <g fill="none" stroke="#33f0f4" stroke-linecap="round" stroke-linejoin="round">
-<g stroke-width="27"><path d="M 280,280 Q 225,215 115,205"/><path d="M 275,335 Q 200,410 95,400"/><path d="M 340,262 Q 380,165 475,150"/><path d="M 405,280 Q 490,240 615,190"/><path d="M 407,330 Q 490,395 645,410"/><path d="M 350,357 Q 340,445 450,490"/></g><g stroke-width="11"><path d="M 120,205 L 100,172"/><path d="M 145,208 L 132,173"/><path d="M 170,213 L 160,177"/><path d="M 195,220 L 190,185"/><path d="M 100,400 L 80,433"/><path d="M 127,398 L 115,435"/><path d="M 155,395 L 148,432"/><path d="M 180,386 L 180,425"/><path d="M 402,173 L 390,138"/><path d="M 425,161 L 419,126"/><path d="M 450,153 L 447,119"/><path d="M 474,150 L 478,116"/><path d="M 535,223 L 527,184"/><path d="M 560,213 L 558,174"/><path d="M 585,202 L 587,163"/><path d="M 613,191 L 620,153"/><path d="M 554,395 L 547,435"/><path d="M 582,402 L 578,442"/><path d="M 611,407 L 613,447"/><path d="M 642,410 L 650,450"/><path d="M 375,459 L 352,488"/><path d="M 398,473 L 379,505"/><path d="M 421,484 L 409,518"/><path d="M 448,490 L 443,525"/></g>
+<g stroke-width="27"><path d="M 280, 280 Q 225, 215 115, 205"/><path d="M 275, 335 Q 200, 410 95, 400"/><path d="M 340, 262 Q 380, 165 475, 150"/><path d="M 405, 280 Q 490, 240 615, 190"/><path d="M 407, 330 Q 490, 395 645, 410"/><path d="M 350, 357 Q 340, 445 450, 490"/></g><g stroke-width="11"><path d="M 120, 205 L 100, 172"/><path d="M 145, 208 L 132, 173"/><path d="M 170, 213 L 160, 177"/><path d="M 195, 220 L 190, 185"/><path d="M 100, 400 L 80, 433"/><path d="M 127, 398 L 115, 435"/><path d="M 155, 395 L 148, 432"/><path d="M 180, 386 L 180, 425"/><path d="M 402, 173 L 390, 138"/><path d="M 425, 161 L 419, 126"/><path d="M 450, 153 L 447, 119"/><path d="M 474, 150 L 478, 116"/><path d="M 535, 223 L 527, 184"/><path d="M 560, 213 L 558, 174"/><path d="M 585, 202 L 587, 163"/><path d="M 613, 191 L 620, 153"/><path d="M 554, 395 L 547, 435"/><path d="M 582, 402 L 578, 442"/><path d="M 611, 407 L 613, 447"/><path d="M 642, 410 L 650, 450"/><path d="M 375, 459 L 352, 488"/><path d="M 398, 473 L 379, 505"/><path d="M 421, 484 L 409, 518"/><path d="M 448, 490 L 443, 525"/></g>
 </g>
 <ellipse cx="340" cy="310" rx="86" ry="60" fill="#176077" stroke="#33f0f4" stroke-width="3"/>
 <ellipse cx="337" cy="306" rx="32" ry="25" fill="#f46956"/>
 <g fill="none" stroke="#a6bacb" stroke-width="1.5">
-<path d="M 340,280 L 340,216 L 270,185"/><path d="M 397,321 L 720,298"/>
-<path d="M 480,370 L 720,335"/><path d="M 650,447 L 720,414"/>
+<path d="M 340, 280 L 340, 216 L 270, 185"/><path d="M 397, 321 L 720, 298"/>
+<path d="M 480, 370 L 720, 335"/><path d="M 650, 447 L 720, 414"/>
 </g>
 <text x="204" y="174" font-size="19">Zellkern</text>
 <text x="730" y="303" font-size="19">Zellkörper</text>

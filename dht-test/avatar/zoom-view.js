@@ -23,7 +23,7 @@ export async function mountZoom(host,{organ,body}){
  function sync(){
   panel.hidden=!entry;if(!entry)return;panel.dataset.level=String(level);panel.dataset.structure=entry.id;panel.dataset.busy=String(busy);panel.dataset.material=level>1?choices(level)[variants[level]||0]:'';
   const options=level>1?choices(level):[],switcher=$('#zoom-variants');switcher.hidden=options.length<2;
-  if(switcher.dataset.options!==options.join(',')){switcher.replaceChildren(...options.map((key,i)=>{const b=document.createElement('button');b.type='button';b.dataset.zoomVariant=i;b.textContent=catalog.materials[key].kind==='glb'?'3D-Modell':'Beschriftetes Schema';b.addEventListener('click',()=>go(level,i));return b;}));switcher.dataset.options=options.join(',');}
+  if(switcher.dataset.options!==options.join(',')){switcher.replaceChildren(...options.map((key,i)=>{const b=document.createElement('button');b.type='button';b.dataset.zoomVariant=i;b.textContent=catalog.materials[key].kind==='glb'?'3D-Modell':catalog.materials[key].file.endsWith('.jpg')?'Gewebebild':'Beschriftetes Schema';b.addEventListener('click',()=>go(level,i));return b;}));switcher.dataset.options=options.join(',');}
   for(const b of switcher.children){b.disabled=busy;b.setAttribute('aria-pressed',String(Number(b.dataset.zoomVariant)===(variants[level]||0)));}
   $('#zoom-location').textContent=`${title()} › ${names[level]}${level>1?' · '+spec(level).title:''}`;
   const legend=$('#zoom-color-legend');legend.hidden=!(level>1&&spec(level).kind==='lines');legend.textContent=legend.hidden?'':'Farbe: Kettenanfang blau → Kettenende rot';
