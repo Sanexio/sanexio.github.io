@@ -62,3 +62,15 @@ button,input,select,textarea,summary,a{font:inherit}button,input,select,textarea
 @media(max-height:450px) and (orientation:landscape){.app[data-mode=pain] #schritt-region{display:flex;flex-direction:column}.app[data-mode=pain] #schritt-region>h2{order:0}.app[data-mode=pain] #text-path-note{order:1}.app[data-mode=pain] #hotspots{order:2}.app[data-mode=pain] .anatomie-toolbar{order:3}.app[data-mode=pain] #avatar-heading{order:4}.app[data-mode=pain] #zoom-kette{order:5}.app[data-mode=pain] #avatar-stage{order:6}}
 
 #search-results .quick-suggestions button{width:auto;border-radius:999px;margin:0;padding:6px 12px}#muscle-notice{font-size:.85rem;color:#536870;margin:6px 0}
+
+/* INT1: keep the fit limitation visible without pushing the figure off screen. */
+.female-fit{font-size:.85rem;line-height:1.35;margin:4px 0}
+.app[data-sex=weiblich][data-mode=explore] #avatar-stage>#female-load-progress{order:1}
+@media(max-width:760px){
+ .app[data-sex=weiblich][data-mode=explore] #avatar-stage>.avatar-viewport{order:-1;height:320px}
+}
+.app[data-sex=weiblich] #avatar-treffer,.app[data-sex=weiblich] #canvas-name p{overflow-wrap:anywhere}
+
+/* INT1M: neutral compact disclosure, with full provenance inside. */
+#female-standhinweis{background:var(--card);border-color:var(--line);color:var(--muted)}
+#female-standhinweis summary{font-weight:400}

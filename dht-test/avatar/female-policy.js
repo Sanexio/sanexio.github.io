@@ -1,4 +1,5 @@
 // Only the register determines terminology and binding eligibility.
+export const femaleFitNote = 'Illustrative Einpassung: 761 von 868 Strukturen. Nicht enthalten u. a.: Leberflächen und Leberbänder, Nierenkapseln und äußere Nierenrinde, große Beinknochen. Keine anatomische Registrierung; keine Aussage über Lage oder Größe eines Organs bei einer Person.';
 export function femaleCounts(register) {
   const counts = {secured: 0, probable: 0, unnamed: 0, rejected: 0};
   for (const e of register.entries) {

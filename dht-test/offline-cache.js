@@ -8,10 +8,10 @@ export async function enableOfflineCache(selectionRoot=new URL('./',location.hre
   enabled=response.ok&&(await response.json()).enabled===true;
  }catch{} // Missing switch, including a legacy flat host, defaults to OFF.
  if(!enabled){
-  const cleanup=[];
-  try{if('serviceWorker' in navigator)cleanup.push(navigator.serviceWorker.getRegistrations().then(registrations=>Promise.allSettled(registrations.filter(r=>r.scope===root.href).map(r=>r.unregister()))));}catch{}
-  try{cleanup.push(caches.keys().then(names=>Promise.allSettled(names.filter(n=>n.startsWith('dht-public-assets-')).map(n=>caches.delete(n)))));}catch{}
-  await Promise.allSettled(cleanup);
+  // Finish registration jobs before deleting their caches: a pending install
+  // can otherwise repopulate a cache that was removed in parallel.
+  try{if('serviceWorker' in navigator)await navigator.serviceWorker.getRegistrations().then(registrations=>Promise.allSettled(registrations.filter(r=>r.scope===root.href).map(r=>r.unregister())));}catch{}
+  try{await caches.keys().then(names=>Promise.allSettled(names.filter(n=>n.startsWith('dht-public-assets-')).map(n=>caches.delete(n))));}catch{}
   return;
  }
  try{if('serviceWorker' in navigator)await navigator.serviceWorker.register(new URL('./sw.js',root),{scope:root.pathname,updateViaCache:'none'});}catch{}
