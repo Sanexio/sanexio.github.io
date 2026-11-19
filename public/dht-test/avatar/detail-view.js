@@ -1,3 +1,4 @@
+import {createDataMarkers} from './data-markers.js';
 import {studio,outlineMaterial,bakedSurfaces} from './look1-style.js';
 import {mountAvatarShell,layerChoices,suggestions} from './explore-shell.js';
 import * as THREE from 'three';
@@ -13,7 +14,7 @@ const layerKinds = { haut: ['organ'], skelett: ['bone','tooth'], muskel: ['muscl
 const label = (e) => [Array.isArray(e.names.de) ? e.names.de.join(', ') : e.names.de, Array.isArray(e.names.la) ? e.names.la.join(', ') : e.names.la].filter(Boolean).join(' · ') || e.id;
 const btn = (text, id, handler) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'secondary'; b.textContent = text; b.id = id; b.addEventListener('click',handler); return b; };
 
-export async function createAvatarView(host, { onRegion = () => {}, signal, preview } = {}) {
+export async function createAvatarView(host, { onRegion = () => {}, signal, preview, onDataOrgan = () => {} } = {}) {
   if(!host.querySelector('#anatomie-suche'))mountAvatarShell(host);
   const viewport=host.querySelector('.avatar-viewport');
   if(preview)host.querySelector('#avatar-canvas').style.cssText='position:absolute;inset:0;z-index:1';
@@ -181,7 +182,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       const line=document.createElement('span');line.className='avatar-leader';line.style.left=`${anchorX}px`;line.style.top=`${anchorY}px`;line.style.width=`${Math.hypot(x-anchorX,y-anchorY)}px`;line.style.transform=`rotate(${Math.atan2(y-anchorY,x-anchorX)}rad)`;labelsHost.append(line,el);
     }
   }
-  function render(){renderer.render(scene,camera);renderLabels();}
+  const dataMarkers=createDataMarkers({THREE,viewport,assets,manifest,camera,choose});
+  function render(){dataMarkers.paint();renderer.render(scene,camera);renderLabels();}
   function updateVisibility(){
     const outline=layer!=='haut';
     viewport.style.background='radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)';
@@ -216,7 +218,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     restoreMaterials();
     if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();await selectZoom(e);return;}
     const a=assets.get(e.geometry[0]);if(!a){detail.textContent='Dieser Körperteil ist noch nicht in 3D verfügbar.';return;}
-    if(layer==='haut'||!layerKinds[layer].includes(a.kind)) {layer=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
+    if(!dataMarkers.active&&(layer==='haut'||!layerKinds[layer].includes(a.kind))) {layer=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
     // Selected object has priority within the measured view budget.
     for(const file of e.geometry){const selectedAsset=assets.get(file);if(!selectedAsset)continue;
       if(!selectedAsset.group.visible){for(const other of assets.values())other.group.visible=false;selectedAsset.group.visible=true;}
@@ -228,8 +230,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     detail.replaceChildren();const title=document.createElement('strong'),latin=document.createElement('small');title.textContent=Array.isArray(e.names.de)?e.names.de.join(', '):e.names.de||'Körperteil';latin.textContent=Array.isArray(e.names.la)?e.names.la.join(', '):e.names.la||'';detail.append(title,latin);syncBadge();
     if(exploring())frame(box,1.65);
 
-    host.dataset.selected=e.id;render();pulseSelection(e);
-    await selectZoom(e);
+    host.dataset.selected=e.id;render();pulseSelection(e);onDataOrgan(e.id);
+    if(!dataMarkers.active)await selectZoom(e);
   }
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
@@ -280,6 +282,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   performance.mark('dht-detail-built');
   reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();performance.mark('dht-detail-frame');if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';performance.mark('dht-glass-ready');host.setAttribute('aria-busy','false');progress.hidden=true;
   const api={
+    setDataMarkers(counts, selected){dataMarkers.set(counts,selected);if(!counts)restoreMaterials();render();},
+    selectDataOrgan(id){const e=manifest.entries.find(e=>e.id===id);if(e)return choose(e);},
     async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){zoomView?.hide();badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}layer=value;updateVisibility();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
     setOpacity(value){skinOpacity=Math.min(1,Math.max(0,value));hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity*(economy?.48:.78);if(m.uniforms)m.uniforms.opacity.value=m.opacity;}});render();},
     setLabels(value){labelsEnabled=value;render();},

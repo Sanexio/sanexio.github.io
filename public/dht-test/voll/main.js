@@ -1,8 +1,9 @@
+import {publicFullView} from './lib/public-view.js';
 import { idbPut, idbAll, idbClear, STORES, scope, snapshot } from './lib/idb.js';
 import { simulateCaffeine } from './lib/pbpk.js';
 import { validateG6B, balanceFlow, simulateG6B } from './lib/g6b.js';
 import { explainValue } from './lib/narrator.js';
-import {enableOfflineCache} from './offline-cache.js';
+import {enableOfflineCache} from '../offline-cache.js';
 let browserOCR = {clear(){}};
 
 const MODS = [
@@ -73,13 +74,9 @@ function parseLabText(text) {
 async function refreshDashboard() {
   const labs = await idbAll('labor');
   const last = labs[labs.length - 1];
-  const amp = (label, cls) => `<span class="ampel ampel-${cls}"></span>${label}`;
-  let hba = amp('Kein Labor', 'gelb');
-  if (last?.marker === 'hba1c') {
-    const w = Number(last.wert);
-    hba = w <= 5.7 ? amp('HbA1c orientierend OK', 'gruen') : w <= 6.4 ? amp('HbA1c erhöht — ärztlich klären', 'gelb') : amp('HbA1c deutlich erhöht — Kontakt', 'rot');
-  }
-  $('dash-ampeln').innerHTML = `<p>${hba}</p><p>${amp('Nur lokale Demo — keine Diagnose', 'gelb')}</p><p>Organampeln nicht verfügbar: Es fehlen geprüfte Marker→Organ-Beziehungen und Bewertungskriterien. Die Werteampel ist keine Organbewertung.</p>`;
+  const summary = document.createElement('p');
+  summary.textContent = last ? `${last.marker}: ${last.wert} ${last.einheit || ''}. Kein Vergleichsbereich angegeben. Die Einordnung erfolgt ärztlich.` : 'Keine eigenen Daten vorhanden. Die Einordnung erfolgt ärztlich.';
+  $('dash-ampeln').replaceChildren(summary);
 }
 
 let nudgeTimer;
@@ -151,6 +148,8 @@ async function exportLocal(format) {
 }
 
 async function init() {
+  if(publicFullView())return;
+  document.querySelector('.shell').hidden=false;document.querySelector('.shell').removeAttribute('inert');
   const nav = $('mod-nav');
   for (const [key, label] of MODS) {
     const b = document.createElement('button');
