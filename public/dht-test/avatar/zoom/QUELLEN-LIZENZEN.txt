@@ -98,3 +98,17 @@ CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
 Nierenkörperchen: englische Beschriftung ins Deutsche übertragen (Digital Health Twin, 2026); Zeichnung unverändert.
 Podozyt: schematische Neuzeichnung nach HuBMAP / HRA, Digital Health Twin (2026); keine PDB-Koordinaten verwendet.
 Nephrin: Proteinvorhersage O60500 / NPHS1, keine experimentell gemessene Proteinstruktur.
+
+Weibliche Glasfigur A — Quellen und Lizenzen
+Hülle: MakeHuman hm08 und offizielle Kern-Targets (MakeHuman Community), CC0-1.0.
+Quelle: https://github.com/makehumancommunity/makehuman/tree/a8bc2d54ff0ac92e78ff71431b1023eda42bf482/makehuman/data
+Bearbeitung: gestalterische Figur A, illustrative Gesamteinpassung;
+Material- und Normalenkorrektur für die Webdarstellung, verlustfreie Meshopt-Kompression.
+Atlas-Innenleben: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+Kristen Browne; Heidi Schlehlein; HuBMAP;
+Courtesy of the U.S. National Library of Medicine.
+Abgeleitete Namenszuordnungen: CC BY-SA 4.0.
+Illustrative Einpassung: 761 von 868 Strukturen. Nicht enthalten u. a.:
+Leberflächen und Leberbänder, Nierenkapseln und äußere Nierenrinde,
+große Beinknochen. Keine anatomische Registrierung; keine Aussage über
+Lage oder Größe eines Organs bei einer Person. Keine individuelle Morphometrie.

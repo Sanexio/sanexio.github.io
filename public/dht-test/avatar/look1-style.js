@@ -23,6 +23,21 @@ export function outlineMaterial(economy=false,skin=false){
 #include <colorspace_fragment>
 }`});
 }
+/** Assign existing head triangles a calm opaque surface. No vertex/index changes.
+ * This prevents transparent eye and mouth interiors from reading as bright rings.
+ */
+export function calmGlassFace(mesh,economy,worldHeight){
+ const g=mesh.geometry,p=g.attributes.position,index=g.index;
+ mesh.updateWorldMatrix(true,false);
+ const point=new THREE.Vector3(),head=new Uint8Array(p.count);
+ for(let i=0;i<p.count;i++){point.fromBufferAttribute(p,i).applyMatrix4(mesh.matrixWorld);head[i]=point.y>worldHeight?1:0;}
+ const count=index?.count??p.count;g.clearGroups();let start=0,last=-1;
+ for(let i=0;i<count;i+=3){const kind=[0,1,2].every(k=>head[index?index.getX(i+k):i+k])?1:0;
+  if(last!==kind){if(i>start)g.addGroup(start,i-start,last);start=i;last=kind;}}
+ if(count>start)g.addGroup(start,count-start,last);
+ const Material=economy?THREE.MeshLambertMaterial:THREE.MeshStandardMaterial;
+ return new Material({color:0x4e94af,emissive:0x4e94af,emissiveIntensity:.65,...(economy?{}:{roughness:.8}),side:THREE.FrontSide});
+}
 export async function bakedSurfaces(base,signal){
  const descriptor=await(await fetch(new URL('look1.json',base),{signal})).json(),cache=new Map();
  const digest=async b=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b)),v=>v.toString(16).padStart(2,'0')).join('');

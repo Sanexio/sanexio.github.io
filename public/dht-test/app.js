@@ -1,5 +1,5 @@
 import {mountEigeneDaten} from './eigene-daten/einstieg.js';
-import { femaleNote, femaleCounts } from './avatar/female-policy.js';
+import { femaleNote, femaleCounts, femaleFitNote } from './avatar/female-policy.js';
 import { mountLazyFeatures } from './avatar/lazy-features.js';
 import { enableOfflineCache } from './offline-cache.js';
 let avatarView = null, viewGeneration = 0, avatarTimer, avatarAbort;
@@ -23,6 +23,7 @@ renderFemaleNotice();
 const {createFemaleView} = await import('./avatar/female-view.js');
 if (generation !== viewGeneration) return;
 view = await createFemaleView(host, femaleRegister, {signal:abort.signal,onDataOrgan:id=>eigeneDaten.organGewaehlt(id)});
+if(generation===viewGeneration)renderFemaleNotice();
 } else {
 const {createAvatarView} = await import('./avatar/avatar-view.js');
 if (generation !== viewGeneration) return;
@@ -47,13 +48,14 @@ let technikEnabled = false;
 let femaleAvailability = '';
 function renderFemaleNotice(){
 const note=$('female-standhinweis');note.replaceChildren();
-const core=document.createElement('p');core.className='female-core';core.textContent='Weibliche Teilansicht · Schmerzortwahl gesperrt';note.append(core);
 const details=document.createElement('details'),summary=document.createElement('summary');
+summary.className='female-core';summary.textContent='Weibliche Teilansicht – einige Strukturen fehlen noch';
 const c=femaleRegister && femaleCounts(femaleRegister);
-summary.textContent=c ? `Stand: ${c.secured} gesichert · ${c.probable} wahrscheinlich · ${c.unnamed} noch unbenannt` : 'Stand wird aus dem Register geladen';
 const full=document.createElement('p');full.textContent=c ? `${femaleAvailability} ${femaleNote(femaleRegister)}` : 'Teilansicht wird geprüft.';
+const fit=document.createElement('p');fit.className='female-fit';fit.textContent=femaleFitNote;
 const reason=document.createElement('p');reason.id='female-selection-reason';reason.textContent='Schmerzortübernahme und Lexikonbindung sind in der weiblichen Teilansicht gesperrt: Für diese Netze fehlt eine geprüfte Bindung an den Alltagssprachkatalog. Ein gesicherter Name allein belegt diese Beziehung nicht.';
-details.append(summary,full,reason);note.append(details);
+details.append(summary,full,fit,reason);note.append(details);
+let technical=$('female-fit-technical');if(!technical){technical=document.createElement('p');technical.id='female-fit-technical';$('technical-info')?.append(technical);}technical.textContent=[full.textContent,femaleFitNote,reason.textContent].join(' ');technical.hidden=false;
 }
 
 
@@ -419,10 +421,11 @@ if (state.darstellung.geschlecht === sex) return;
 state.darstellung.geschlecht = sex;
 document.querySelector('.app').dataset.sex = sex;
 const isFemale = sex === 'weiblich';
-if(isFemale&&document.querySelector('.app').dataset.mode==='explore')setMode('pain');
+
 if (isFemale) {maleOpacity = $('huelle-alpha').value; $('huelle-alpha').value = '100';}
 else $('huelle-alpha').value = maleOpacity;
 note.hidden = !isFemale;
+if($('female-fit-technical'))$('female-fit-technical').hidden=!isFemale;
 if(isFemale) renderFemaleNotice();
 
 $('avatar-heading').textContent = isFemale ? 'Weiblicher 3D-Avatar — gekennzeichnete Teilansicht' : 'Männlicher 3D-Avatar — drehen, zoomen, antippen';

@@ -1,4 +1,5 @@
 import {createDataMarkers} from './data-markers.js';
+import {layerLifecycle,organsAfterPaint,surfaceSelection,replayPendingSelection} from './layer-lifecycle.js';
 import {studio,outlineMaterial,bakedSurfaces} from './look1-style.js';
 import {mountAvatarShell,layerChoices,suggestions} from './explore-shell.js';
 import * as THREE from 'three';
@@ -97,16 +98,8 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(!pathEntries.has(file))pathEntries.set(file,[]);pathEntries.get(file).push(e);
   }
   const progressive=await (await fetch(new URL('progressive.json',BASE),{signal})).json();
-  const loading=new Map(),promotions=new Map(),loaded=new Set();let pending=0,foreground=0;
-  async function ensureLayer(value,{background=false}={}){
-    if(value==='haut')return;
-    if(loading.has(value)){if(!background)promotions.get(value)?.();return loading.get(value);}
-    let promoted=!background;
-    const promote=()=>{if(promoted)return;promoted=true;foreground++;progress.hidden=false;progress.removeAttribute('value');layerStatus.textContent='Organe werden geladen …';};
-    promotions.set(value,promote);
-    const added=[];
-    const task=(async()=>{pending++;host.dataset.loading='true';if(promoted){foreground++;progress.hidden=false;layerStatus.textContent=value==='organ'?'Organe werden geladen …':'Schicht wird geladen …';}
-      try{const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
+  const {ensureLayer,loaded}=layerLifecycle({host,progress,layerStatus,
+    async load(value,{background,added}) {const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
       const baked=await surfaces.load(value);
       let i=0;
@@ -128,12 +121,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(++i%50===0){if(!background)status.textContent=`Lokal geladen: ${i}/${manifest.assets.length} Geometrien`;await new Promise(r=>setTimeout(r,0));}
 
       }
-      loaded.add(value);
-      if(value==='organ'&&promoted){host.dataset.organs='ready';delete host.dataset.organError;}
-      }catch(error){if(value==='organ'){host.dataset.organs='error';host.dataset.organError=error.message;}for(const file of added){const a=assets.get(file);body.remove(a.group);a.group.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});assets.delete(file);}throw error;
-      }finally{pending--;host.dataset.loading=String(pending>0);if(promoted)foreground--;promotions.delete(value);progress.hidden=!foreground;}
-    })();loading.set(value,task);try{await task;}catch(e){loading.delete(value);throw e;}
-  }
+    },
+    rollback(added){for(const file of added){const a=assets.get(file);body.remove(a.group);a.group.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});assets.delete(file);}}
+  });
   let layerGeneration=0;
   let skinOpacity=1;
   let layer='haut', selected=null, lastHit=null, pins=[], labelsEnabled=false, regionBox=null;
@@ -223,7 +213,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     for(const file of e.geometry){const selectedAsset=assets.get(file);if(!selectedAsset)continue;
       if(!selectedAsset.group.visible){for(const other of assets.values())other.group.visible=false;selectedAsset.group.visible=true;}
     }
-    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);o.material.emissive.setHex(chosen?0x6d3525:0);if(exploring()){o.material.color.copy(o.userData.baseColor);o.material.opacity=chosen?1:.08;o.material.transparent=!chosen;o.material.depthWrite=chosen;o.material.needsUpdate=true;}}});
+    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);surfaceSelection(o.material,o.userData.baseColor,{selected:chosen,muted:exploring()&&!chosen,opacity:layer==='haut'?.32:1});}});
     pins=pins.filter(p=>p.id!==e.id);pins.unshift(e);pins=pins.slice(0,8);
     const box=selectedBox();regionBox=box.clone().expandByScalar(0.15);regionBox.intersect(bodyBox);
     host.querySelector('#avatar-focus').disabled=box.isEmpty();host.querySelector('#avatar-region').disabled=box.isEmpty();
@@ -289,7 +279,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
     state(){return {viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(),revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},skinOpacity,hullOpacity:layer==='haut'?skinOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){zoomView?.dispose();cancelAnimationFrame(glowFrame);cancelAnimationFrame(organFrame);disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
+    dispose(){zoomView?.dispose();cancelAnimationFrame(glowFrame);stopOrgans();disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});
@@ -305,28 +295,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       rows.push({id:'AHF2_male_study_envelope',name:o.name,positions:points,indices:g.index?Array.from(g.index.array):Array.from({length:p.count},(_,i)=>i)});
     }});return rows;
   }});
-  // Two frames leave a painted, ready glass body before any organ request.
-  host.dataset.organs='pending';
-  requestAnimationFrame(()=>requestAnimationFrame(async()=>{
-    if(signal?.aborted)return;
-    performance.mark('dht-organs-start');host.dataset.organs='loading';
-    try{
-      await ensureLayer('organ',{background:true});
-      if(signal?.aborted)return;
-      if(layer==='haut')updateVisibility();
-      if(layer==='haut'&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-        const start=performance.now();
-        await new Promise(resolve=>{const fade=now=>{if(signal?.aborted||layer!=='haut'){resolve();return;}const t=Math.min(1,(now-start)/360);for(const a of assets.values())if(a.kind==='organ')a.group.traverse(o=>{if(o.isMesh)o.material.opacity=.32*t;});render();if(t<1)organFrame=requestAnimationFrame(fade);else resolve();};
-        fade(start);});
-      }
-      host.dataset.organs='ready';delete host.dataset.organError;performance.mark('dht-organs-ready');
-    }catch(error){
-      if(signal?.aborted)return;
-      host.dataset.organs='error';
-      if(layer==='haut')updateVisibility();
-      host.dataset.organError=error.message;
-    }
-  }));
-  if(host.dataset.pendingEntry){const e=entries.get(host.dataset.pendingEntry);if(e)setTimeout(()=>run(()=>choose(e)),0);}else if(host.dataset.pendingLayer)setTimeout(()=>run(()=>switchLayer(host.dataset.pendingLayer)),0);
+  const stopOrgans=organsAfterPaint({host,signal,ensureLayer,isSkin:()=>layer==='haut',refresh:updateVisibility,render,
+    fade(t){for(const a of assets.values())if(a.kind==='organ')a.group.traverse(o=>{if(o.isMesh)o.material.opacity=.32*t;});}
+  });
+  replayPendingSelection(host,{choose:id=>{const e=entries.get(id);if(e)run(()=>choose(e));},setLayer:value=>run(()=>switchLayer(value))});
   return api;
 }
