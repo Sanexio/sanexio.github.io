@@ -1,3 +1,4 @@
+import {mountEigeneDaten} from './eigene-daten/einstieg.js';
 import { femaleNote, femaleCounts } from './avatar/female-policy.js';
 import { mountLazyFeatures } from './avatar/lazy-features.js';
 import { enableOfflineCache } from './offline-cache.js';
@@ -21,14 +22,14 @@ if (generation !== viewGeneration) return;
 renderFemaleNotice();
 const {createFemaleView} = await import('./avatar/female-view.js');
 if (generation !== viewGeneration) return;
-view = await createFemaleView(host, femaleRegister, {signal:abort.signal});
+view = await createFemaleView(host, femaleRegister, {signal:abort.signal,onDataOrgan:id=>eigeneDaten.organGewaehlt(id)});
 } else {
 const {createAvatarView} = await import('./avatar/avatar-view.js');
 if (generation !== viewGeneration) return;
-view = await createAvatarView(host, {onRegion: id=>{if(document.querySelector('.app').dataset.mode==='pain')selectRegion(id);}, signal:abort.signal});
+view = await createAvatarView(host, {onRegion: id=>{if(document.querySelector('.app').dataset.mode==='pain')selectRegion(id);}, signal:abort.signal,onDataOrgan:id=>eigeneDaten.organGewaehlt(id)});
 }
 if (generation !== viewGeneration) {view.dispose(); return;}
-avatarView = view; renderAvatar(); renderSchicht(); renderSpotLabels();
+avatarView = view; eigeneDaten.avatarBereit(); renderAvatar(); renderSchicht(); renderSpotLabels();
 if (state.region) {focusedRegion = state.region.id; view.focusRegion?.(focusedRegion);}
 $('ladefehler').hidden = true; delete document.documentElement.dataset.error;
 } catch (err) {
@@ -437,6 +438,7 @@ female.addEventListener('click', () => switchSex('weiblich'));
 }
 
 function setMode(mode){
+ if(mode==='pain'&&eigeneDaten.publicExampleOnly){eigeneDaten.schmerzBeispiel();return;}
  const app=document.querySelector('.app');app.dataset.mode=mode;
  $('explore-tab').setAttribute('aria-selected',String(mode==='explore'));$('pain-tab').setAttribute('aria-selected',String(mode==='pain'));
  document.querySelector('header h1').textContent=mode==='explore'?'Körper erkunden':'Wo tut es weh?';
@@ -511,6 +513,7 @@ await lazyFeatures;
 
 }
 
+const eigeneDaten=mountEigeneDaten({avatar:()=>avatarView,geschlecht:()=>state.darstellung.geschlecht,katalog:()=>state.katalog});
 init().catch((err) => {
 document.documentElement.dataset.ready = 'false';
 document.documentElement.dataset.error = err.message;
