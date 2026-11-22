@@ -15,9 +15,11 @@ export function studio(renderer,scene,viewport,{economy=false}={}){
  const shadow=document.createElement('div');shadow.className='look1-contact';shadow.style.cssText='pointer-events:none;position:absolute;left:33%;right:33%;bottom:4%;height:4%;border-radius:50%;background:radial-gradient(ellipse,rgba(35,68,84,.23),rgba(35,68,84,0) 70%);filter:blur(5px)';viewport.prepend(shadow);
  return ()=>shadow.remove();
 }
-export function outlineMaterial(economy=false,skin=false){
+export function outlineMaterial(economy=false,skin=false, EconomyMaterial=THREE.MeshBasicMaterial){
  const opacity=skin?(economy?.48:.78):(economy?.10:.18);
- if(economy)return new THREE.MeshBasicMaterial({color:skin?0x258ec6:0x1a6ba1,transparent:true,opacity,depthWrite:false,side:THREE.FrontSide});
+ if(economy){
+  return new EconomyMaterial({color:skin?0x258ec6:0x1a6ba1,transparent:true,opacity,depthWrite:false,side:THREE.FrontSide});
+ }
  return new THREE.ShaderMaterial({transparent:true,opacity,depthWrite:false,side:THREE.FrontSide,uniforms:{opacity:{value:opacity},fill:{value:skin?.32:.14}},vertexShader:`varying vec3 N;varying vec3 V;void main(){vec4 p=modelViewMatrix*vec4(position,1.);N=normalize(normalMatrix*normal);V=normalize(-p.xyz);gl_Position=projectionMatrix*p;}`,fragmentShader:`varying vec3 N;varying vec3 V;uniform float opacity;uniform float fill;void main(){float rim=pow(1.-abs(dot(normalize(N),normalize(V))),2.3);gl_FragColor=vec4(.10,.42,.63,opacity*(fill+(1.-fill)*rim));
 #include <tonemapping_fragment>
 #include <colorspace_fragment>

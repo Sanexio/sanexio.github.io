@@ -1,3 +1,4 @@
+import {femaleDataMarkers} from './female-data-markers.js';
 import {mountAvatarShell,layerChoices} from './explore-shell.js';
 import * as THREE from 'three';
 import {GLTFLoader} from './vendor/loaders/GLTFLoader.js';
@@ -15,7 +16,7 @@ const button = (id, text, fn) => {
   const b = document.createElement('button'); b.id = id; b.type = 'button'; b.className = 'secondary'; b.textContent = text; b.addEventListener('click', fn); return b;
 };
 
-export async function createFemaleView(host, register, {signal} = {}) {
+export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{}} = {}) {
   mountAvatarShell(host);
   [...host.querySelectorAll('#technical-info > p')].at(-1).textContent=femaleFitNote;
   const reasonNode=document.createElement('p');reasonNode.id='avatar-binding-reason';reasonNode.className='notice';host.querySelector('#technical-info').append(reasonNode);
@@ -59,6 +60,8 @@ export async function createFemaleView(host, register, {signal} = {}) {
   const controls = new OrbitControls(camera, renderer.domElement);
   const layerById=new Map(Object.entries(web.layers).flatMap(([layer,packs])=>packs.flatMap(p=>p.ids.map(id=>[id,layer]))));
   const objects=new Map(register.entries.map(entry=>[entry.id,{entry,object:null,triangles:0,layer:layerById.get(entry.id)}]));
+  const markers=femaleDataMarkers({THREE,viewport,objects,camera,onDataOrgan});
+  let markerSignature=null;
   const skin=gltf.scene;skin.updateWorldMatrix(true,true);let skinTriangles=0,skinOpacity=1;
   skin.traverse(m=>{if(m.isMesh){skinTriangles+=(m.geometry.index?.count??m.geometry.attributes.position.count)/3;smoothHullNormals(m.geometry);m.material=outlineMaterial(economy,true);m.userData.skinMaterial=m.material;m.userData.outlineMaterial=outlineMaterial(economy);m.userData.faceMaterial=calmGlassFace(m,economy,1.48);}});
   const layerStatus=host.querySelector('#layer-status');
@@ -88,7 +91,7 @@ export async function createFemaleView(host, register, {signal} = {}) {
     controls.target.copy(c); camera.position.copy(c).addScaledVector(dir, distance); controls.update(); render();
   }
   function render() {
-    renderer.render(scene, camera); labels.replaceChildren();
+    renderer.render(scene, camera); markers.paint();labels.replaceChildren();
     if (!labelsOn) return;
     const candidates = [...objects.values()].filter(a => a.object?.visible);
     if (selected) candidates.sort((a, b) => Number(b.entry.id === selected.id) - Number(a.entry.id === selected.id));
@@ -104,10 +107,10 @@ export async function createFemaleView(host, register, {signal} = {}) {
     let triangles=skinTriangles,omitted=0;
     // Torso organs first in the glass overview; no skull/eye fragments in the face.
     const priority=a=>/bronchopulmonary|^VH_F_(left|right)_(cardiac_atrium|ventricle)$|^VH_F_interventricular_septum$/i.test(a.entry.mesh)?0:/mammary_lobes/i.test(a.entry.mesh)?1:/lung|stomach|intestin|colon|uter|heart|bladder/i.test(a.entry.mesh)?2:3;
-    const ordered=[...objects.values()].filter(a=>a.object).sort((a,b)=>Number(b.entry.id===selected?.id)-Number(a.entry.id===selected?.id)||priority(a)-priority(b));
+    const ordered=[...objects.values()].filter(a=>a.object).sort((a,b)=>Number(markers.present.has(b.entry.id))-Number(markers.present.has(a.entry.id))||Number(b.entry.id===selected?.id)-Number(a.entry.id===selected?.id)||priority(a)-priority(b));
     for(const a of ordered){
       const box=new THREE.Box3().setFromObject(a.object),c=box.getCenter(new THREE.Vector3());
-      const wanted=a.entry.id===selected?.id||(layer==='haut'?a.layer==='organ'&&c.y<size.y*.85:a.layer===layer);
+      const wanted=markers.present.has(a.entry.id)||a.entry.id===selected?.id||(layer==='haut'?a.layer==='organ'&&c.y<size.y*.85:a.layer===layer);
       a.object.visible=Boolean(wanted&&triangles+a.triangles<=LIMIT);
       if(a.object.visible)triangles+=a.triangles;else if(wanted)omitted++;
       surfaceSelection(a.object.material,a.object.userData.baseColor,{selected:a.entry.id===selected?.id,muted:Boolean(selected&&a.entry.id!==selected.id),opacity:layer==='haut'?.44:1});
@@ -169,6 +172,13 @@ export async function createFemaleView(host, register, {signal} = {}) {
   const resize = new ResizeObserver(() => {const w = viewport.clientWidth, h = viewport.clientHeight; if (!w || !h) return; renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); render();}); resize.observe(viewport);
   renderer.setSize(viewport.clientWidth,viewport.clientHeight);camera.aspect=viewport.clientWidth/viewport.clientHeight;camera.updateProjectionMatrix();camera.position.copy(center).add(new THREE.Vector3(0, 0, size.y * 2)); controls.target.copy(center); frame(bounds,1.12); visibility(); progress.hidden = true; host.setAttribute('aria-busy', 'false'); host.dataset.ready = 'true';
   const api = {
+    setDataMarkers(counts,selected){
+      const signature=JSON.stringify(counts);
+      if(signature===markerSignature&&counts===null)return;
+      markers.set(counts,selected);
+      if(signature!==markerSignature){markerSignature=signature;visibility();}else markers.paint();
+    },
+    dataOrganStatus(id){const failed=host.dataset.organs==='error';return failed||loaded.has('organ')?markers.status(id,failed):'loading';},
     async setLayer(value){const task=++generation;await ensureLayer(value);if(task!==generation)return;if(!initialLayerApplied&&value===layer){initialLayerApplied=true;visibility();return;}initialLayerApplied=true;layer=value;host.querySelector('#canvas-name').hidden=true;search.value='';fill();selected=null;lastHit=null;select.value='';delete host.dataset.selected;detail.textContent='Schicht gewechselt — Struktur wählen.';binding(null);visibility();},
     setOpacity(value){skinOpacity=value;skin.traverse(m=>{if(m.isMesh){const material=m.userData.skinMaterial;material.opacity=value*(economy?.48:.78);if(material.uniforms)material.uniforms.opacity.value=material.opacity;const face=m.userData.faceMaterial;face.opacity=value;face.transparent=value<1;face.depthWrite=value>=1;face.needsUpdate=true;}});render();},
     setLabels(value) {labelsOn = value; render();}, focusRegion() {},
