@@ -1,105 +1,251 @@
-Quellen und Lizenzen der Zoomdarstellungen
-Keine räumliche Registrierung zwischen den Stufen.
+ZOOM1 — vorhandenes Material; keine räumliche Registrierung zwischen den Stufen.
 
-Nierenkörperchen · beschriftetes Schema
-Datei: renal_corpuscle_kidney.png
-Quelle / Bearbeitung: HuBMAP Consortium / HRA · 2D Reference Object Library v1.0 · HRA v1.2; Beschriftung ins Deutsche übertragen: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
 
-Podozyt · schematische Einzelzelle
-Datei: podozyt.svg
-Quelle / Bearbeitung: HuBMAP / HRA; Bearbeitung Digital Health Twin (2026)
-Lizenz: CC BY 4.0
 
-Nephrin · Proteinvorhersage
-Datei: nephrin.bin
-Quelle / Bearbeitung: AlphaFold O60500 / NPHS1 · DeepMind; Jumper et al. (2021), DOI 10.1038/s41586-021-03819-2
-Lizenz: CC BY 4.0
+# HuBMAP 2D-Gewebeeinheiten — Herkunft und Lizenz
 
-Rotes Blutkörperchen · Blutreferenz
-Datei: erythrozyt.opt.glb
-Quelle / Bearbeitung: Digital Health Twin / Erythrozyt E2 · eigenes parametrisches Modell
-Lizenz: Eigenes Modell; keine externe Modellquelle
+Geholt am 01.11.2026 fuer die fehlende **Gewebestufe** der Zoomkette.
 
-Hämoglobin · Blutreferenz
-Datei: haemoglobin.glb
-Quelle / Bearbeitung: PDB 1A3N · J. R. Tame, B. Vallone; eigene GLB-Aufbereitung (2026)
-Lizenz: Gemeinfreie PDB-Messdaten; eigene Darstellung
+## Was hier liegt
 
-Lebergewebe · allgemeine Referenz (TP53)
-Datei: ../micro/hpa-gewebe.jpg
-Quelle / Bearbeitung: Human Protein Atlas, Version 24 · Uhlén M et al. (2015), doi:10.1126/science.1260419
-Lizenz: CC BY 4.0
-https://v24.proteinatlas.org/ENSG00000141510-TP53/tissue/liver
-https://www.proteinatlas.org/about/licence
-Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken
+| Datei | Byte | Groesse | Inhalt |
+| --- | ---: | --- | --- |
+| `renal_corpuscle_kidney.png` | 324 308 | 1035 × 770 | Nierenkoerperchen mit beschrifteten Zelltypen, Massstab 50 µm |
+| `nephron_kidney.png` | 277 191 | 1506 × 1697 | Nephron im Ueberblick |
 
-Nierenkörperchen · 3D-Modell
-Datei: glom.opt.glb
-Quelle / Bearbeitung: 3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1); vereinfacht, nicht vermessen.
-Lizenz: Lizenz über das Artlist-Konto von Sanexio.
+## Warum 2D
 
-Leberläppchen · beschriftetes Gewebeschema
-Datei: liver-ftu.png
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg
+Die HuBMAP-Bibliothek fuehrt **Gewebeeinheiten ausdruecklich nur als 2D**;
+dreidimensional liegen dort allein die Referenzorgane vor, und die haben
+wir bereits als HRA-Szenen. Eine 2D-Illustration ist fuer diese Stufe
+keine Notloesung, sondern das, was die Quelle bereitstellt — mit dem
+Vorteil, dass sie **beschriftet** ist und einen Massstab traegt.
 
-Leberzelle (Hepatozyt) · schematische Einzelzelle
-Datei: liver-cell.svg
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/liver-liver-lobule/v1.5/assets/2d-ftu-liver-liver-lobule.svg
+## Warum gerade diese beiden
 
-Albumin · Proteinvorhersage
-Datei: p02768.bin
-Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
+Sie schliessen die Luecke zwischen Organ und Molekuel:
+
+- Die **HRA-Niere** ist die Organstufe.
+- Das **Nierenkoerperchen** zeigt die Zellen, darunter die
+  *glomerular visceral epithelial cell* — den **Podozyten**.
+- Dessen Schlitzmembran besteht aus **Nephrin**, und `_daten/nephrin.pdb`
+  liegt bereits vor.
+
+Damit laeuft die Kette durchgehend von der Figur bis zum Molekuel.
+
+## Lizenz
+
+**CC BY 4.0 (Attribution 4.0 International)**, woertlich von der Quelle:
+„All CCF 3D reference objects are released under Attribution 4.0
+International (CC BY 4.0)." Dieselbe Lizenz gilt fuer die
+2D-Bibliothek.
+
+Die Namensnennung ist Pflicht und muss bei der Anzeige mitgeliefert
+werden — wie bei den HRA-Organen auf der Praxisseite.
+
+**Keine Share-alike-Bedingung.** Anders als BodyParts3D stellt CC-BY keine
+Anforderung an abgeleitete Werke.
+
+## Bezug
+
+- Uebersicht: https://hubmapconsortium.github.io/ccf/pages/ccf-2d-reference-library.html
+- Nierenkoerperchen: https://hubmapconsortium.github.io/ccf-2d-reference-object-library/v1.0/png/renal_corpuscle_kidney.png
+- Nephron: https://hubmapconsortium.github.io/ccf-2d-reference-object-library/v1.0/png/nephron_kidney.png
+- Fassung: 3. HRA-Release v1.2
+- Zuordnung der Zelltypen: eigene CSV („ASCT-B to 2D FTU mapping v1.0"),
+  **noch nicht geholt**.
+
+## Was fehlt
+
+Die **Zellstufe** zwischen Gewebe und Molekuel. Das Konzept nennt dafuer
+cellPACK und Mesoscope; beides sind freie Werkzeuge, aber Rezeptbauten,
+keine fertigen Dateien. Dieser Schritt ist offen.
+
+
+
+
+Formprinzip und Zelltyp nach HuBMAP Consortium / Human Reference Atlas, 2D Reference Object Library v1.0, HRA v1.2. Vereinfachte Neuzeichnungen: Digital Health Twin (2026). Schlitzbreite: Orientierungswert aus Auftrag BA, kein Messbefund.
+
+Beide SVG-Schemata: CC BY 4.0 — Formkontext HuBMAP Consortium / Human Reference Atlas, 2D Reference Object Library v1.0, HRA v1.2; Bearbeitung Digital Health Twin (2026): vereinfacht, flach aufgefächert, Schlitzdetail neu angeordnet. https://creativecommons.org/licenses/by/4.0/ · keine PDB-Koordinaten verwendet.
+
+Belegt im HuBMAP-Bild: Podozyt im Zellverband und verzweigtes Formprinzip. Schematisch ergänzt: Einzelzellkontur, Zellkern, Haupt- und Fußfortsätze sowie der Querschnitt zweier benachbarter Zellen im Schlitzdetail. Nephrin gehört zur Schlitzmembran; seine Symbole zeigen den Übergang zur separaten AlphaFold-Vorhersage O60500 / NPHS1.
+
+AlphaFold Monomer-Vorhersage O60500 · NPHS1, lokale nephrin.pdb (Dateikopf 01.08.2025)
+
+CC BY 4.0 — AlphaFold-Daten, Copyright 2021 DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Vorhersage; als Cα-Linien dargestellt, Å → nm (0,1), zentriert.
+
+1.241 Cα-Punkte, alle erhalten. Kein experimenteller Atomoberflächen-Nachweis. pLDDT wird aus dem B-Faktor der Cα-Records statistisch ausgewiesen; eine unabhängige Konfidenz- und Funktionsprüfung bleibt offen.
+
+# Erythrozyt E2
+
+Eigenes parametrisches Modell, ohne externe Modellquelle.
+Die lokale Three.js-Kopie steht unter ihrer mitgelieferten MIT-Lizenz (vendor/three/LICENSE).
+
+erythrozyt.opt.glb und erythrozyt.glb sind bewusst bytegleich: Das einzelne
+indizierte Mesh bleibt bereits ohne Kompression weit unter 3 MB.
+Die Ladekette versucht zuerst .opt.glb und dann .glb.
+
+
+# Hämoglobin — PDB → GLB → Kachel
+
+Stand: 2026-10-16. Technisch offline geprüft; visuelle Abnahme im CM02-Chrome ausstehend. Kein Render, Commit oder Deployment ausgeführt.
+
+## Ergebnis
+
+Quelle ist die unveränderte lokale `1a3n.pdb` (DEOXY HUMAN HEMOGLOBIN).
+4370 ATOM-Zeilen plus 627 HETATM-Zeilen; davon entfallen 455 HOH-Wasseratome.
+Ausgabe: **4542 Atom-Node-Instanzen**, darunter **172 Häm-Atome** in vier
+HEM-Gruppen A–D (je 43 Atome einschließlich eines Fe).
+Die Struktur zeigt desoxygeniertes Hämoglobin; es wurden keine Sauerstoffliganden erfunden.
+
+| Messung | Ergebnis |
+|---|---:|
+| GLB-Größe | 826248 Byte (0,826 MB) |
+| Elementgeometrien C/N/O/S/Fe | 5 |
+| Mesh-/Materialkombinationen | 32 |
+| Dreiecke je Atom | 80 |
+| Dreiecke gesamt | 363360 |
+| Ausdehnung X/Y/Z | 3,400 / 2,944 / 3,038 |
+| Browser-GPU-Gruppen, mit Three.js nachgemessen | 32 |
+
+## Darstellung und Portabilität
+
+`../pdb_zu_glb.py` benötigt nur Python ab 3.9 und die Standardbibliothek.
+Der Lauf mit `python3 -I -S` belegt den Betrieb ohne NumPy und ohne Site-Packages.
+Keine Blender-, Draco- oder Download-Abhängigkeit.
+
+Eine einmal unterteilte Ikosaeder-Kugel hat 42 Vertices und 80 Dreiecke.
+Pro Element gibt es genau einen POSITION-Accessor; Index- und Normalen-Accessor
+werden gemeinsam genutzt. Mesh-Varianten entstehen ausschließlich durch die
+Element-/Materialkombinationen, nicht pro Atom. Normale GLB-Nodes referenzieren
+diese Meshes. Die Kachel bündelt sie zusätzlich mit `THREE.InstancedMesh`.
+
+Radien: C 1,7, N 1,55, O 1,52, S 1,8 und Fe 2,0 Å, jeweils × 0,45.
+Zentrierung und Skalierung berücksichtigen die Kugelradien, nicht nur Atomzentren.
+Größte Ausdehnung 3,4. Keine Bindungen: 363360 Dreiecke reichen für die gewünschte
+Kugeldarstellung; zusätzliche Häm-Zylinder sind für diesen ersten Baustein entbehrlich.
+
+Kettenfarben: A `#10E3E7`, B `#16B9DA`, C `#309ACB`, D `#67D5EE`.
+HEM `#F46956`, Fe `#FFB36B`, mit stärkerer Emission als die Proteinketten.
+Die sRGB-Farben werden korrekt in lineare glTF-Materialwerte umgerechnet.
+Jede Häm-Gruppe ist über Atom-Metadaten und tatsächliche Materialreferenzen prüfbar.
+
+## Wiederverwendung
+
+Aus dem Ordner `3D/molekuele/`:
+
+```sh
+python3 -I -S pdb_zu_glb.py haemoglobin/1a3n.pdb haemoglobin/haemoglobin.glb --stil haemoglobin
+python3 -I -S pruefung_molekuel.py
+```
+
+`-I` isoliert Python von Umgebungs-/Benutzerpfaden, `-S` verhindert Site-Packages.
+Eingabe und Ausgabe sind die beiden Positionsargumente; `--stil` wählt das Preset.
+Für weitere Moleküle `PRESETS` um Ketten-/Residuum-/Elementfarben und Skalierung
+ergänzen. Häufige weitere Elemente einschließlich P sind bereits unterstützt;
+unbekannte Elemente führen zu einem erklärten Fehler statt geratenen Radien.
+Der Prüfer ist bewusst die Hämoglobin-Abnahme mit vier Häm-Gruppen; weitere
+Moleküle benötigen entsprechend andere fachliche Sollwerte.
+
+ATOM und HETATM werden strikt gelesen; H/D/T und HOH entfallen. Fehlende
+Elementfelder werden anhand der PDB-Atomnamen-Ausrichtung abgeleitet.
+Alternative Atomlagen bleiben als getrennte Datensätze erhalten, damit die
+Instanzzahl den gefilterten Quelldatensätzen entspricht. Mehrere MODEL-Blöcke
+werden mit einer Fehlermeldung abgewiesen; zuvor ein einzelnes Modell auswählen.
+Kaputte Zahlen, abgeschnittene Atomzeilen und nicht-endliche Koordinaten sind Fehler.
+
+## Eigenständiges Kachelpaket
+
+`../../haemoglobin-kachel/` enthält `index.html`, `molekuel.glb` und den
+vollständig kopierten lokalen `vendor/`-Ordner inklusive Three.js-Lizenz.
+Alle Laufzeitreferenzen liegen im Paket. Die mitkopierten Draco-Dateien werden
+nicht importiert oder benötigt. Die Vorlage `../../glomerulum-kachel/` bleibt unverändert.
+
+Übernommen: Lade-Layer, OrbitControls, 24-Sekunden-Autorotation, Bloom und
+`?record=N` (größer 0 bis 3600 Sekunden, 1080×1080 WebM).
+Beschriftung: „Hämoglobin“ / „Der Sauerstoff-Transporter in deinen roten Blutkörperchen“.
+Entfernt: Bowman-Kuppel, Glomerulum-Emissionseingriff, Draco-Loader und Poster-Referenz.
+Preload und Loader zeigen auf `./molekuel.glb`.
+Die Kamera passt ihren Abstand an Modellradius und Seitenverhältnis an.
+
+Das Paket wird als statischer Ordner über HTTP bereitgestellt; ES-Module/Fetch
+sind nicht für einen direkten `file://`-Aufruf vorgesehen. Kein Server wurde
+für diesen Auftrag gestartet. `MATERIAL_OK` wird erst nach erfolgreichem Laden
+gesetzt; Recording behält `RECORDING`, `RECORD_DONE` und `RECORD_ERROR` bei.
+
+## Nachweise und Abnahmegrenze
+
+- `pruefergebnis.json`: GLB-Container, Buffer/Accessor-Grenzen, Indizes, Normalen,
+  Dreiecksorientierung, Radien, Koordinaten, Zentrierung, Atome, echte Materialfarben,
+  vier Häm-Gruppen, Dateibudget und Kachel-Kennzeichen bestanden.
+- 15 lokal aufgelöste Vendor-Module; GLB-Kopie im Kachelpaket bytegleich.
+- Drei PDB-Köder (abgeschnittene Zeile, kaputte Zahl, NaN): jeweils rc=1,
+  keine Ausgabedatei erzeugt.
+- `zusatzpruefung.json`: fehlendes Atom, falsche Häm-Farbe und verschobenes Atom
+  im GLB jeweils durch Prüfer-CLI mit rc=1 abgewiesen; Quell-/Ausgabe-SHA256.
+- Echter Three.js-GLTFLoader in Node: PASS, 4542 Mesh-Nodes zu 32
+  InstancedMesh-Gruppen zusammengefasst, Ausdehnung erneut gemessen.
+- Kachel-JavaScript mit `node --check` geprüft.
+- `sanitizer.json`: lokaler Arbeitsfehler-Sanitizer im Berichtsmodus, 0 Befunde
+  im Molekülordner. Kachel: 0 Befunde, siehe `sanitizer_kachel.json`.
+
+Die Prüfungen sind strukturell und funktional ohne WebGL-Render. Sichtbarkeit der
+Häm-Zentren, Gesamteindruck, tatsächliche Browser-Framerate und WebM-Aufnahme
+bleiben Teil der beauftragten visuellen Abnahme im CM02-Chrome.
+
+
+{
+  "id": "tissue",
+  "title": "Gewebe · menschliche Leber · TP53 · Bild 851159",
+  "file": "hpa-gewebe.jpg",
+  "bytes": 1313105,
+  "sha256": "5dd47d2c1b3c0f6de792a9c5a51ffd9fe61d3e918fedfacaca3739ea457d46c1",
+  "credit": "Human Protein Atlas, Version 24",
+  "origin": "https://v24.proteinatlas.org/ENSG00000141510-TP53/tissue/liver",
+  "image_url": "https://images.proteinatlas.org/2973/6986_A_7_4.jpg",
+  "license": "CC BY 4.0",
+  "license_url": "https://www.proteinatlas.org/about/licence",
+  "license_read_at": "2026-11-14",
+  "publication": "Uhlén M et al. (2015), doi:10.1126/science.1260419",
+  "pixels_per_meter": 2000000,
+  "scale_um": 100,
+  "calibration_metadata_sha256": "e955c8e7d9542bb143c2fb39c519b9630a3c35deadb85313dd34606c66382055",
+  "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken"
+}
+
+3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1); vereinfacht, nicht vermessen.
+Lizenz über das Artlist-Konto von Sanexio.
+
+ZOOM2 (2026): englische Beschriftung durch deutsche ersetzt, Zeichnung unverändert.
+
+
+Z1A — Leberläppchen
+Bajema, Rachel. 2026. 2D Liver Lobule Functional Tissue Unit (FTU) for Liver, v1.5. https://doi.org/10.48539/HBM693.LTPG.393.
+CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Beschriftung/Freistellung: Digital Health Twin (2026). Originalzeichnung an der benannten Einzelzellkontur ausgeschnitten; vergrößert. Keine ergänzten Organellen.
 https://alphafold.ebi.ac.uk/files/AF-P02768-F1-model_v6.pdb
+AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2.
+CC BY 4.0. Cα-Spur, Å → nm, zentriert; Ketten-/Sequenzlücken bleiben getrennt. Proteinvorhersage, keine experimentelle Struktur.
 
-Langerhans-Insel · beschriftetes Gewebeschema
-Datei: pancreas-ftu.png
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg
 
-Betazelle · schematische Einzelzelle
-Datei: pancreas-cell.svg
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/pancreas-islets-langerhans/v1.4/assets/2d-ftu-pancreas-islets-langerhans.svg
-
-Präproinsulin (Vorstufe des Insulins) · Proteinvorhersage
-Datei: p01308.bin
-Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
+Z1A — Langerhans-Insel
+Bajema, Rachel. 2026. 2D Islets of Langerhans FTU for Pancreas, v1.4. https://doi.org/10.48539/HBM354.HHRL.928.
+CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Beschriftung/Freistellung: Digital Health Twin (2026). Originalzeichnung an der benannten Einzelzellkontur ausgeschnitten; vergrößert. Keine ergänzten Organellen.
 https://alphafold.ebi.ac.uk/files/AF-P01308-F1-model_v6.pdb
+AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2.
+CC BY 4.0. Cα-Spur, Å → nm, zentriert; Ketten-/Sequenzlücken bleiben getrennt. Proteinvorhersage, keine experimentelle Struktur.
 
-Lungenbläschen (Alveole) · beschriftetes Gewebeschema
-Datei: lung-ftu.png
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg
 
-Typ-II-Pneumozyt · schematische Einzelzelle
-Datei: lung-cell.svg
-Quelle / Bearbeitung: Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647. Beschriftung/Freistellung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
-https://cdn.humanatlas.io/digital-objects/2d-ftu/lung-pulmonary-alveolus/v1.5/assets/2d-ftu-lung-pulmonary-alveolus.svg
-
-Surfactant-Protein C (Vorstufe) · Proteinvorhersage
-Datei: p11686.bin
-Quelle / Bearbeitung: AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2. Cα-Aufbereitung: Digital Health Twin (2026)
-Lizenz: CC BY 4.0
+Z1A — Lungenbläschen (Alveole)
+Bajema, Rachel. 2026. 2D Pulmonary Alveolus Functional Tissue Unit (FTU) for Lung, v1.5. https://doi.org/10.48539/HBM949.RSKR.647.
+CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Beschriftung/Freistellung: Digital Health Twin (2026). Originalzeichnung an der benannten Einzelzellkontur ausgeschnitten; vergrößert. Keine ergänzten Organellen.
 https://alphafold.ebi.ac.uk/files/AF-P11686-F1-model_v6.pdb
+AlphaFold Data Copyright (2021) DeepMind Technologies Limited; Jumper et al., Nature 596 (2021), DOI 10.1038/s41586-021-03819-2.
+CC BY 4.0. Cα-Spur, Å → nm, zentriert; Ketten-/Sequenzlücken bleiben getrennt. Proteinvorhersage, keine experimentelle Struktur.
 
-HuBMAP / HRA: https://hubmapconsortium.github.io/ccf-2d-reference-object-library/v1.0/png/renal_corpuscle_kidney.png
-CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
-Nierenkörperchen: englische Beschriftung ins Deutsche übertragen (Digital Health Twin, 2026); Zeichnung unverändert.
-Podozyt: schematische Neuzeichnung nach HuBMAP / HRA, Digital Health Twin (2026); keine PDB-Koordinaten verwendet.
-Nephrin: Proteinvorhersage O60500 / NPHS1, keine experimentell gemessene Proteinstruktur.
-
-Weibliche Glasfigur A — Quellen und Lizenzen
+Weibliche Glasfigur A
 Hülle: MakeHuman hm08 und offizielle Kern-Targets (MakeHuman Community), CC0-1.0.
 Quelle: https://github.com/makehumancommunity/makehuman/tree/a8bc2d54ff0ac92e78ff71431b1023eda42bf482/makehuman/data
 Bearbeitung: gestalterische Figur A, illustrative Gesamteinpassung;

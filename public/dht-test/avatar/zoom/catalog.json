@@ -54,7 +54,8 @@
       "kind": "image",
       "credit": "HuBMAP Consortium / HRA · 2D Reference Object Library v1.0 · HRA v1.2; Beschriftung ins Deutsche übertragen: Digital Health Twin (2026)",
       "license": "CC BY 4.0",
-      "sentence": ""
+      "sentence": "",
+      "original": "/Users/clusteradm/Cortex/projects/digital-health-twin/quellen/hubmap-ftu-2d-ccby/renal_corpuscle_kidney.png"
     },
     "podocyte": {
       "file": "podozyt.svg",
@@ -64,7 +65,8 @@
       "kind": "image",
       "credit": "HuBMAP / HRA; Bearbeitung Digital Health Twin (2026)",
       "license": "CC BY 4.0",
-      "sentence": ""
+      "sentence": "",
+      "original": "/Users/clusteradm/Cortex/projects/digital-health-twin/zoomkette/data/podozyt.svg"
     },
     "nephrin": {
       "file": "nephrin.bin",
@@ -114,7 +116,8 @@
           8.120536502820306
         ],
         "binaryBytes": 19852
-      }
+      },
+      "original": "/Users/clusteradm/Cortex/projects/digital-health-twin/zoomkette/data/molekuel.js"
     },
     "red-cell": {
       "file": "erythrozyt.opt.glb",
@@ -124,7 +127,8 @@
       "kind": "glb",
       "credit": "Digital Health Twin / Erythrozyt E2 · eigenes parametrisches Modell",
       "license": "Eigenes Modell; keine externe Modellquelle",
-      "sentence": ""
+      "sentence": "",
+      "original": "/Users/clusteradm/Cortex/projects/cortex-marketing/Assets-3D-Anatomie/zoom-kette/erythrozyt.opt.glb"
     },
     "haemoglobin": {
       "file": "haemoglobin.glb",
@@ -134,7 +138,8 @@
       "kind": "glb",
       "credit": "PDB 1A3N · J. R. Tame, B. Vallone; eigene GLB-Aufbereitung (2026)",
       "license": "Gemeinfreie PDB-Messdaten; eigene Darstellung",
-      "sentence": "Der Sauerstoff-Transporter in deinen roten Blutkörperchen"
+      "sentence": "Der Sauerstoff-Transporter in deinen roten Blutkörperchen",
+      "original": "/Users/clusteradm/Cortex/projects/cortex-marketing/Assets-3D-Anatomie/zoom-kette/haemoglobin.glb"
     },
     "liver-tissue": {
       "id": "tissue",
@@ -154,7 +159,8 @@
       "calibration_metadata_sha256": "e955c8e7d9542bb143c2fb39c519b9630a3c35deadb85313dd34606c66382055",
       "change": "Originalbild unverändert, Anzeige proportional verkleinert, eigener Maßstabsbalken",
       "kind": "image",
-      "sentence": ""
+      "sentence": "",
+      "original": "embed/avatar/micro/hpa-gewebe.jpg"
     },
     "kidney-glom": {
       "file": "glom.opt.glb",
@@ -165,7 +171,8 @@
       "credit": "3D-Modell: KI-gestützt erzeugt mit Artlist (Tripo H3.1); vereinfacht, nicht vermessen.",
       "license": "Lizenz über das Artlist-Konto von Sanexio.",
       "sentence": "",
-      "limits": "KI-gestützt erzeugtes Modell, vereinfacht, nicht vermessen; nicht ärztlich geprüft."
+      "limits": "KI-gestützt erzeugtes Modell, vereinfacht, nicht vermessen; nicht ärztlich geprüft.",
+      "original": "/Users/clusteradm/Cortex/projects/cortex-marketing/Assets-3D-Anatomie/glomerulum/3d/glom_v42d.opt.glb"
     },
     "liver-ftu": {
       "file": "liver-ftu.png",

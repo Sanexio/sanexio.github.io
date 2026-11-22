@@ -33,8 +33,11 @@ export function createDataMarkers({THREE, viewport, assets, manifest, camera, ch
       const present = files.has(a.file), selected = selectedFiles.includes(a.file);
       o.material.color.setHex(selected ? 0x63ded3 : (present ? 0xba8267 : 0x86979a));
       o.material.emissive.setHex(selected ? 0x178f88 : (present ? 0x523126 : 0)); o.material.emissiveIntensity = selected ? .65 : .15;
-      o.material.opacity = picked ? (selected ? .96 : .24) : (present ? .92 : .08);
-      o.material.transparent = true; o.material.depthWrite = false;
+      // Solid foreground organs occlude their rear faces and interior segments.
+      const solid = picked ? selected : present;
+      o.material.opacity = solid ? 1 : (picked ? .24 : .08);
+      o.material.transparent = !solid;
+      o.material.depthWrite = solid;
     }});
 
     for (const b of host.children) {

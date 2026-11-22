@@ -23,3 +23,26 @@ export function reihen(data,mapping) {
   }
   return [...groups.values()].map(g=>({...g,werte:g.werte.sort((a,b)=>datum(a.zeit)-datum(b.zeit))}));
 }
+
+export function bereichText({vergleich,einheit}) {
+  if (!vergleich) return 'Kein Bereich im Befund';
+  const {unten,oben,text} = vergleich;
+  if (unten !== undefined && oben !== undefined) return `${zahl(unten)}–${zahl(oben)} ${einheit}`;
+  if (unten !== undefined) return `ab ${zahl(unten)} ${einheit}`;
+  if (oben !== undefined) return `bis ${zahl(oben)} ${einheit}`;
+  return text || 'Kein Bereich im Befund';
+}
+
+export function verlaufsText(werte) {
+  if (werte.length < 2) return '';
+  const first = werte[0], last = werte.at(-1);
+  if (!Number.isFinite(first.wert) || !Number.isFinite(last.wert) ||
+      first.einheit !== last.einheit || datum(first.zeit) >= datum(last.zeit)) return '';
+  const delta = last.wert - first.wert;
+  const magnitude = Math.abs(delta);
+  const amount = magnitude && magnitude < .001
+    ? magnitude.toLocaleString('de-DE',{maximumSignificantDigits:2}) : zahl(magnitude);
+  const change = delta === 0 ? 'gleicher Wert' :
+    `um ${amount} ${last.einheit} ${delta > 0 ? 'gestiegen' : 'gesunken'}`;
+  return `Seit ${absolut(first.zeit)}: ${change} (rechnerisch).`;
+}

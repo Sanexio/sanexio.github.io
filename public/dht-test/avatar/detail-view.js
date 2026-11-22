@@ -10,6 +10,11 @@ import { OrbitControls } from './vendor/controls/OrbitControls.js';
 import { createStructureLexicon } from './structure-lexicon.js';
 
 const BASE = new URL('./', import.meta.url);
+// Baked on the original vertex order so LOOK1 colours and atlas picking stay aligned.
+const organSurfaces = new Map([
+  ['98ca1c35fe8728d156786f70c4578bd79396fed705e3645dfc18a62d0da6e691', ['oberflaechen/TA2-3023-M.glb', 'e39989623619cc26ce213ffc565029626d085778e5e40f15cb8626607a992fe0']],
+  ['4a58841fe34236307d1f3b1f2facdaf867a995c01628f4ff2da4965d663efa53', ['oberflaechen/TA2-3114-M.glb', 'e2bfc107373cb8108149fe8f3bb41221064fce0d0f0a9dbd47e4e9f6cdc745df']],
+]);
 const colors = { bone: 0xe8ddbb, tooth: 0xfaf4dc, muscle: 0xa94e48, ligament: 0xe2bd71, tendon: 0xd0bd92, organ: 0x658ca5 };
 const layerKinds = { haut: ['organ'], skelett: ['bone','tooth'], muskel: ['muscle'], organ: ['organ'], binde: ['ligament','tendon'] };
 const label = (e) => [Array.isArray(e.names.de) ? e.names.de.join(', ') : e.names.de, Array.isArray(e.names.la) ? e.names.la.join(', ') : e.names.la].filter(Boolean).join(' · ') || e.id;
@@ -90,7 +95,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   outlineGeometry.setIndex(new THREE.BufferAttribute(previewGeometry.indices,1));
   surfaces.apply(hull,'skin',await surfaces.load('haut'),web.sha256);
   hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
-  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = outlineMaterial(economy,true);o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
+  hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = outlineMaterial(economy,true,THREE.MeshLambertMaterial);o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
   body.add(hull);
   const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
   const pathEntries = new Map();
@@ -106,12 +111,18 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       for(const segment of pack.assets){const asset=manifest.assets.find(a=>a.file===segment.file);if(!asset||asset.sha256!==segment.sha256||asset.length!==segment.length)throw Error('Einzelbindung abweichend');
     const data=bundle.slice(segment.offset,segment.offset+segment.length);
     if(await digest(data)!==asset.sha256) throw new Error('Anatomie-Prüfsumme abweichend');
-    const group=(await parse(data)).scene;
+    const surface = organSurfaces.get(asset.sha256);
+    let drawData = data;
+    if (surface) {
+      drawData = await download(surface[0], asset.name, asset.length, true);
+      if (await digest(drawData) !== surface[1]) throw Error('Organoberfläche beschädigt');
+    }
+    const group=(await parse(drawData)).scene;
     surfaces.apply(group,asset.file,baked,asset.sha256);
     let triangles=0;
     group.traverse(o=>{if(o.isMesh){
       triangles+=(o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count)/3;
-      smoothHullNormals(o.geometry);
+      if (!surface) smoothHullNormals(o.geometry);
       o.material=new SurfaceMaterial({color:o.geometry.hasAttribute('color')?0xffffff:0xa4493e,vertexColors:o.geometry.hasAttribute('color'),...(economy?{}:{roughness:asset.kind==='organ'?.38:.65,metalness:0}),side:THREE.DoubleSide,forceSinglePass:true});
       o.userData.baseColor=o.material.color.clone();
       o.userData.asset=asset; o.userData.entries=pathEntries.get(asset.file)||[];
