@@ -20,9 +20,19 @@ const formattedDate = pubDate.toLocaleDateString('de-DE', {
   month: 'long',
   year: 'numeric',
 });
+
+const blogPostingLd = {
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  inLanguage: 'de-DE',
+  author: { '@type': 'Organization', name: 'Sanexio GmbH' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': Astro.url.href },
+};
 ---
 
-<Default title={pageTitle} description={description} ogImage={ogImage} ogImageAlt={ogImageAlt}>
+<Default title={pageTitle} description={description} ogImage={ogImage} ogImageAlt={ogImageAlt} extraJsonLd={blogPostingLd}>
   <Nav />
   <main class="sx-legal-main">
     <section class="sx-legal">

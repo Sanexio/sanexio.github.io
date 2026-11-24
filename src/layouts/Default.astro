@@ -8,6 +8,7 @@ interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   noindex?: boolean;
+  extraJsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -17,7 +18,30 @@ const {
   ogImage = '/logo-sanexio-red.svg',
   ogImageAlt = title,
   noindex = false,
+  extraJsonLd,
 } = Astro.props;
+
+const siteRoot = Astro.site ?? 'https://sanexio.github.io/';
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sanexio GmbH',
+  url: String(siteRoot),
+  logo: new URL('/logo-sanexio-red.svg', siteRoot).href,
+  description,
+};
+const webLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Sanexio',
+  url: String(siteRoot),
+  inLanguage: 'de-DE',
+  publisher: { '@type': 'Organization', name: 'Sanexio GmbH' },
+};
+const ldGraph = extraJsonLd
+  ? [orgLd, webLd, ...(Array.isArray(extraJsonLd) ? extraJsonLd : [extraJsonLd])]
+  : [orgLd, webLd];
+const jsonLd = JSON.stringify(ldGraph).replace(/</g, '\u003c');
 ---
 
 <!DOCTYPE html>
@@ -31,6 +55,8 @@ const {
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
+
+    <script type="application/ld+json" is:inline set:html={jsonLd}></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
