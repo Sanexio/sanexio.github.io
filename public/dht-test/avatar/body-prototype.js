@@ -2,10 +2,10 @@ import * as THREE from 'three';
 import {enabled,checked,section,notice} from './local-source.js';
 import {referenceView} from './reference-view.js';
 
-export async function mountBodyPrototype() {
+export async function mountBodyPrototype(parent = document.querySelector('.app')) {
   if(!await enabled(9))return;
   const base=new URL('body/',import.meta.url),source=await (await fetch(new URL('source.json',base))).json();
-  const host=section('body-prototype','Körpermaße: illustrative Außenhülle',document.querySelector('.app'));
+  const host=section('body-prototype','Körpermaße: illustrative Außenhülle',parent);
   const warning=notice(host,'Illustrativer Prototyp — keine individuelle Innenanatomie. Der Atlas bleibt unverändert; keine passende Registrierung. Drei äußere Gesamtausdehnungen, keine medizinisch validierte Passform. Eingaben bleiben flüchtig in diesem Browser und werden nicht gespeichert oder übertragen.');warning.id='body-warning';warning.style.cssText='position:sticky;top:0;background:#fff3d9;padding:12px;z-index:1';
   const form=document.createElement('form');form.id='body-measures';form.autocomplete='off';host.append(form);
   const fields=[['height','Körperhöhe',180,120,220],['span','Spannweite beider Arme (Pose der Vorlage)',175,100,230],['depth','Größte äußere Tiefe (einschließlich Pose)',30,15,55]];

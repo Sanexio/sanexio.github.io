@@ -1,5 +1,5 @@
 import {mountEigeneDaten} from './eigene-daten/einstieg.js';
-import { femaleNote, femaleCounts, femaleFitNote } from './avatar/female-policy.js';
+import { femaleNote, femaleCounts, femaleFitNote } from './avatar/female-summary.js';
 import { mountLazyFeatures } from './avatar/lazy-features.js';
 import { enableOfflineCache } from './offline-cache.js';
 let avatarView = null, viewGeneration = 0, avatarTimer, avatarAbort;
@@ -150,7 +150,22 @@ diagnose: false,
 };
 }
 
-function renderSchicht() { avatarView?.setLayer(state.darstellung.schicht)?.catch(err=>{$('ladefehler').hidden=false;$('ladefehler').textContent='Diese Schicht konnte nicht geladen werden. Bitte erneut wählen.';}); }
+let layerRequest = 0;
+function renderSchicht() {
+  if (!avatarView) return;
+  const request = ++layerRequest, view = avatarView, notice = $('ladefehler');
+  view.setLayer(state.darstellung.schicht).then(() => {
+    if (request === layerRequest && view === avatarView && notice.dataset.layerFailure) {
+      notice.hidden = true;
+      delete notice.dataset.layerFailure;
+    }
+  }).catch(() => {
+    if (request !== layerRequest || view !== avatarView) return;
+    notice.dataset.layerFailure = 'true';
+    notice.textContent = 'Diese Schicht konnte nicht geladen werden. Bitte erneut wählen.';
+    notice.hidden = false;
+  });
+}
 function renderAvatar() { avatarView?.setOpacity(Number($('huelle-alpha').value)/100); }
 function renderSpotLabels() { avatarView?.setLabels(state.darstellung.labels); }
 

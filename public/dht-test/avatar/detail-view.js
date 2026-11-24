@@ -1,7 +1,10 @@
+import {attachOrganAtlas} from './organatlas-suche.js';
+import {bindMuscleParts} from './muskelgruppen.js';
+import {atlasSurfaces,nerveEntries,brainEntry} from './nerven/schicht.js';
 import {createDataMarkers} from './data-markers.js';
 import {layerLifecycle,organsAfterPaint,surfaceSelection,replayPendingSelection} from './layer-lifecycle.js';
 import {studio,outlineMaterial,bakedSurfaces} from './look1-style.js';
-import {mountAvatarShell,layerChoices,suggestions} from './explore-shell.js';
+import {mountAvatarShell,layerChoices,suggestions,peelLayers} from './explore-shell.js';
 import * as THREE from 'three';
 import { smoothHullNormals } from './smooth-hull.js';
 import { MeshoptDecoder } from './vendor/meshopt/meshopt_decoder.js';
@@ -16,7 +19,7 @@ const organSurfaces = new Map([
   ['4a58841fe34236307d1f3b1f2facdaf867a995c01628f4ff2da4965d663efa53', ['oberflaechen/TA2-3114-M.glb', 'e2bfc107373cb8108149fe8f3bb41221064fce0d0f0a9dbd47e4e9f6cdc745df']],
 ]);
 const colors = { bone: 0xe8ddbb, tooth: 0xfaf4dc, muscle: 0xa94e48, ligament: 0xe2bd71, tendon: 0xd0bd92, organ: 0x658ca5 };
-const layerKinds = { haut: ['organ'], skelett: ['bone','tooth'], muskel: ['muscle'], organ: ['organ'], binde: ['ligament','tendon'] };
+const layerKinds = { haut: ['organ'], skelett: ['bone','tooth'], muskel: ['muscle'], organ: ['organ'], binde: ['ligament','tendon'], nerven: ['nerve'] };
 const label = (e) => [Array.isArray(e.names.de) ? e.names.de.join(', ') : e.names.de, Array.isArray(e.names.la) ? e.names.la.join(', ') : e.names.la].filter(Boolean).join(' · ') || e.id;
 const btn = (text, id, handler) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'secondary'; b.textContent = text; b.id = id; b.addEventListener('click',handler); return b; };
 
@@ -46,6 +49,13 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   host.querySelector('#muscle-coverage').textContent=`Muskeln: ${representedMuscles} von ${muscleEntries.length} Einträgen mit eigener 3D-Darstellung.`;
   if (manifest.sex !== 'male' || manifest.register_count !== 1559) throw new Error('Anatomieregister nicht freigegeben');
   const showLexicon = await createStructureLexicon(host, manifest, manifestBytes);
+  const partResponse = await fetch(new URL('muskelgruppen.json', BASE), {signal});
+  if (partResponse.ok) {
+    const coverage = bindMuscleParts(manifest, await partResponse.json());
+    const note = document.createElement('p');
+    note.textContent = `${coverage.parts} weitere Atlasstrukturen sind einzeln auswählbar. Für ${coverage.groups} Muskeleinträge lassen sich ihre Bestandteile gemeinsam anzeigen.`;
+    host.querySelector('#muscle-coverage').after(note);
+  }
   performance.mark('dht-detail-scripts');
   const renderer = new THREE.WebGLRenderer({ antialias: !preview?.lowPower, alpha: true, preserveDrawingBuffer: true });
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
@@ -97,14 +107,42 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   hull.traverse(o=>{if(o.isMesh)o.userData.skinGeometry=o.geometry;});
   hull.traverse(o=>{ if(o.isMesh) {smoothHullNormals(o.geometry);o.material = outlineMaterial(economy,true,THREE.MeshLambertMaterial);o.userData.hull=true;o.userData.skinMaterial=o.material;o.userData.outlineMaterial=outlineMaterial(economy);} });
   body.add(hull);
-  const assets = new Map(); const entries = new Map(manifest.entries.map(e=>[e.id,e]));
+  const atlas=atlasSurfaces({download,digest,parse});
+  const legend=document.createElement('p');
+  legend.className='nerven-legende';legend.hidden=true;
+  for(const [color,text] of [['#cc92a7','ZNS · Gehirn und Rückenmark'],['#f2bf65','PNS · periphere Nerven']]){
+    const item=document.createElement('span'),dot=document.createElement('i');
+    dot.style.backgroundColor=color;dot.setAttribute('aria-hidden','true');
+    item.append(dot,document.createTextNode(text));legend.append(item);
+  }
+  layerStatus.before(legend);
+  const searchable=[...manifest.entries,...nerveEntries,brainEntry];
+  const assets = new Map(); const entries = new Map(searchable.map(e=>[e.id,e]));
   const pathEntries = new Map();
-  for (const e of manifest.entries) for(const file of e.geometry) {
-    if(!pathEntries.has(file))pathEntries.set(file,[]);pathEntries.get(file).push(e);
+  for (const e of searchable) for(const file of e.geometry) {
+    if (!pathEntries.has(file)) pathEntries.set(file, []);
+    const list = pathEntries.get(file);
+    if (e.id.startsWith('atlas:muskel:')) list.unshift(e);
+    else list.push(e);
   }
   const progressive=await (await fetch(new URL('progressive.json',BASE),{signal})).json();
   const {ensureLayer,loaded}=layerLifecycle({host,progress,layerStatus,
-    async load(value,{background,added}) {const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
+    async load(value,{background,added}) {
+      if(value==='nerven'){
+        await atlas.nerves((asset,entry)=>{
+          asset.group.traverse(o=>{
+            if(!o.isMesh)return;
+            const color=entry.system==='ZNS'?0xcc92a7:0xf2bf65;
+            o.material=new SurfaceMaterial({color,side:THREE.DoubleSide,forceSinglePass:true});
+            o.userData.baseColor=o.material.color.clone();
+            o.userData.asset=asset;
+            o.userData.entries=pathEntries.get(asset.file);
+          });
+          asset.group.visible=false;body.add(asset.group);assets.set(asset.file,asset);added.push(asset.file);
+        });
+        return;
+      }
+      const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
       const baked=await surfaces.load(value);
       let i=0;
@@ -117,18 +155,20 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       drawData = await download(surface[0], asset.name, asset.length, true);
       if (await digest(drawData) !== surface[1]) throw Error('Organoberfläche beschädigt');
     }
-    const group=(await parse(drawData)).scene;
-    surfaces.apply(group,asset.file,baked,asset.sha256);
+    const refined=await atlas.organ(asset.sha256);
+    const group=refined?.group || (await parse(drawData)).scene;
+    if(!refined)surfaces.apply(group,asset.file,baked,asset.sha256);
+    const indexTriangles=await atlas.refineIndices(group,asset.sha256);
     let triangles=0;
     group.traverse(o=>{if(o.isMesh){
       triangles+=(o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count)/3;
-      if (!surface) smoothHullNormals(o.geometry);
+      if (!surface && !refined) smoothHullNormals(o.geometry);
       o.material=new SurfaceMaterial({color:o.geometry.hasAttribute('color')?0xffffff:0xa4493e,vertexColors:o.geometry.hasAttribute('color'),...(economy?{}:{roughness:asset.kind==='organ'?.38:.65,metalness:0}),side:THREE.DoubleSide,forceSinglePass:true});
       o.userData.baseColor=o.material.color.clone();
       o.userData.asset=asset; o.userData.entries=pathEntries.get(asset.file)||[];
     }});
-    if(triangles!==asset.triangles) throw new Error('Dreieckszahl abweichend');
-    group.visible=false;body.add(group);assets.set(asset.file,{...asset,group});added.push(asset.file);
+    if(triangles!==(refined?.triangles ?? indexTriangles ?? asset.triangles)) throw new Error('Dreieckszahl abweichend');
+    group.visible=false;body.add(group);assets.set(asset.file,{...asset,group,triangles});added.push(asset.file);
     if(++i%50===0){if(!background)status.textContent=`Lokal geladen: ${i}/${manifest.assets.length} Geometrien`;await new Promise(r=>setTimeout(r,0));}
 
       }
@@ -186,7 +226,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const dataMarkers=createDataMarkers({THREE,viewport,assets,manifest,camera,choose});
   function render(){dataMarkers.paint();renderer.render(scene,camera);renderLabels();}
   function updateVisibility(){
-    const outline=layer!=='haut';
+    const outline=layer!=='haut';legend.hidden=layer!=='nerven';
     viewport.style.background='radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)';
     hull.visible=true;
     hull.traverse(o=>{if(o.isMesh){o.material=outline?o.userData.outlineMaterial:o.userData.skinMaterial;o.geometry=outlineGeometry;}});
@@ -201,7 +241,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     status.textContent=`3D lokal bereit · ${manifest.entries.length} Registereinträge · ${[...assets.values()].filter(a=>a.group.visible).length} sichtbare Anatomieobjekte · ${triangles.toLocaleString('de-DE')} Dreiecke${omitted ? ` · ${omitted} durch Detailbudget ausgeblendet` : ''}`;
     host.dataset.triangles=String(triangles);host.dataset.layer=layer;host.dispatchEvent(new CustomEvent('avatar-layer',{bubbles:true,detail:{layer}}));
     for(const b of host.querySelectorAll('[data-layer]'))b.setAttribute('aria-pressed',String(b.dataset.layer===layer));
-    const depth=['haut','muskel','binde','organ','skelett'];host.querySelector('#layer-peel').value=depth.indexOf(layer);host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');
+    const depth=peelLayers;host.querySelector('#layer-peel').value=depth.indexOf(layer);host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');
     layerStatus.textContent=layer==='haut'&&host.dataset.organs==='error'?'Organe konnten nicht geladen werden':layerChoices.find(c=>c[0]===layer)?.[2]+' · bereit';render();
   }
   let glowFrame,organFrame;
@@ -212,12 +252,25 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   function restoreMaterials(){cancelAnimationFrame(glowFrame);for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissiveIntensity=.35;o.material.emissive.setHex(0);o.material.color.copy(o.userData.baseColor);o.material.opacity=layer==='haut'?.32:1;o.material.transparent=layer==='haut';o.material.depthWrite=layer!=='haut';o.material.needsUpdate=true;}});}
   async function choose(e,hit=null){
     const generation=++layerGeneration;
-    if(e.geometry.length){const kind=manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
+    if(e.geometry.length){const kind=e.kind==='nerve'?'nerve':manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
     badge.hidden=true;delete host.dataset.selected;selected=e;lastHit=hit;select.value=e.id;
     showLexicon(e);
     zoomView?.hide();
     restoreMaterials();
-    if(e.geometry.length===0){detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;host.querySelector('#avatar-focus').disabled=true;render();await selectZoom(e);return;}
+    if(e.geometry.length===0){
+      host.querySelector('#avatar-focus').disabled=true;
+      if(e.referenceModel){
+        host.dataset.selected=e.id;
+        detail.textContent=label(e)+(e.referenceWithoutSide ? ' · Das Quellmodell enthält keine Seitenangabe. ' : ' · Eigenes Quellmodell ohne Einpassung in die Figur. ');
+        detail.append(btn('Muskel im Atlas ansehen','muskel-detail',()=>run(async()=>{
+          const {openOrganAtlas}=await import('./organatlas-ansicht.js');
+          if(!signal?.aborted&&host.isConnected)await openOrganAtlas(host,e.referenceModel,'bodyparts',signal);
+        })));
+      }else{
+        detail.textContent=`${label(e)} — Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.`;
+      }
+      render();await selectZoom(e);return;
+    }
     const a=assets.get(e.geometry[0]);if(!a){detail.textContent='Dieser Körperteil ist noch nicht in 3D verfügbar.';return;}
     if(!dataMarkers.active&&(layer==='haut'||!layerKinds[layer].includes(a.kind))) {layer=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(a.kind));document.getElementById('schicht-wahl').value=layer;updateVisibility();}
     // Selected object has priority within the measured view budget.
@@ -232,7 +285,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(exploring())frame(box,1.65);
 
     host.dataset.selected=e.id;render();pulseSelection(e);onDataOrgan(e.id);
-    if(!dataMarkers.active)await selectZoom(e);
+    if(!dataMarkers.active&&e.kind!=='nerve')await selectZoom(e);
   }
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
@@ -240,12 +293,15 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     const ideas=host.querySelector('.quick-suggestions');
     const term=norm(search.value);select.replaceChildren();results.replaceChildren();results.hidden=!term;
     const empty=document.createElement('option');empty.value='';empty.textContent='Körperteil wählen';select.append(empty);
-    const rank=e=>{const de=norm((Array.isArray(e.names.de)?e.names.de[0]:e.names.de)||'');return de===term?0:de.startsWith(term+' ')?1:2;};
-    const matched=manifest.entries.filter(e=>!term||norm(`${label(e)} ${e.id}`).includes(term)).sort((a,b)=>term?rank(a)-rank(b):0);
-    for(const e of matched){const o=document.createElement('option');o.value=e.id;o.textContent=`${label(e)}${e.geometry.length?'':' — ohne 3D-Darstellung'}`;select.append(o);}
-    if(term&&matched.some(e=>rank(e)<=1&&!e.geometry.length)){const p=document.createElement('p');p.textContent='Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.';results.append(p);}
+    const rank=e=>{if(term==='darm' && ['org1:organ:small-intestine','org1:organ:large-intestine'].includes(e.id))return -1;const de=norm((Array.isArray(e.names.de)?e.names.de[0]:e.names.de)||'');return de===term?(layer==='nerven' && e.kind==='nerve' ? -1 : 0):de.startsWith(term+' ')?1:2;};
+    const aliases={'bizeps':'biceps brachii','trizeps':'triceps brachii','unterarmmuskeln':'unterarm','unterarmmuskulatur':'unterarm'};
+    const query=aliases[term] || term;
+    const matched=searchable.filter(e=>!term||norm(`${label(e)} ${e.id} ${e.searchRegion || ''} ${(e.aliases || []).join(' ')}`).includes(query)).sort((a,b)=>term?(aliases[term]?Number(Boolean(b.atlasGroup))-Number(Boolean(a.atlasGroup)):0)||rank(a)-rank(b):0);
+    const hasModel=e=>Boolean(e.geometry.length||e.referenceModel);
+    for(const e of matched){const o=document.createElement('option');o.value=e.id;o.textContent=label(e)+(e.referenceWithoutSide?' — Quellmodell ohne Seitenangabe':e.referenceModel?' — separates Quellmodell':hasModel(e)?'':' — ohne 3D-Darstellung');select.append(o);}
+    if(term&&matched.some(e=>rank(e)<=1&&!hasModel(e))){const p=document.createElement('p');p.textContent='Dazu gibt es in dieser frühen Testfassung noch keine Darstellung.';results.append(p);}
     for(const has3D of [true,false]){
-      const rows=matched.filter(e=>Boolean(e.geometry.length)===has3D).slice(0,8);if(!term||!rows.length)continue;
+      const rows=matched.filter(e=>hasModel(e)===has3D).slice(0,8);if(!term||!rows.length)continue;
       const title=document.createElement('p');title.textContent=has3D?'Zum Anschauen':'ohne 3D-Darstellung';results.append(title);
       for(const e of rows){const b=btn('', '',()=>run(()=>choose(e)));b.dataset.result=e.id;const name=document.createElement('span'),latin=document.createElement('small');name.textContent=Array.isArray(e.names.de)?e.names.de.join(', '):e.names.de||'Körperteil';latin.textContent=Array.isArray(e.names.la)?e.names.la.join(', '):e.names.la||'';b.append(name,latin);results.append(b);}
     }
@@ -254,12 +310,13 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     if(selected)select.value=selected.id;
   }
   const run=fn=>Promise.resolve().then(fn).catch(error=>{layerStatus.textContent='Laden fehlgeschlagen. Bitte die Schicht erneut wählen.';status.textContent=error.message;});
+  const refreshAtlas = attachOrganAtlas(host, 'male', signal);
   search.addEventListener('input',fillSelect);search.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();results.querySelector('button')?.focus();}if(e.key==='Escape'){results.hidden=true;}});
   select.addEventListener('change',()=>{const e=entries.get(select.value);if(e)run(()=>choose(e));});fillSelect();
   for(const b of host.querySelectorAll('.quick-suggestions button')){const e=entries.get(b.dataset.entry);if(!e?.geometry.length){b.remove();continue;}b.addEventListener('click',()=>run(()=>choose(e)));}
   const switchLayer=async value=>{const control=document.getElementById('schicht-wahl');control.value=value;control.dispatchEvent(new Event('change',{bubbles:true}));await api.setLayer(value);};
   for(const b of host.querySelectorAll('.layer-button'))b.addEventListener('click',()=>run(()=>switchLayer(b.dataset.layer)));
-  host.querySelector('#layer-peel').addEventListener('input',e=>run(()=>switchLayer(['haut','muskel','binde','organ','skelett'][Number(e.target.value)])));
+  host.querySelector('#layer-peel').addEventListener('input',e=>run(()=>switchLayer(peelLayers[Number(e.target.value)])));
   host.querySelector('#whole-body').addEventListener('click',()=>{zoomView?.hide();badge.hidden=true;selected=null;lastHit=null;delete host.dataset.selected;showLexicon(null);detail.textContent='Entdecken Sie Ihren Körper';reset();restoreMaterials();render();});
   host.querySelector('#canvas-reset').addEventListener('click',()=>host.querySelector('#whole-body').click());
   function pick(clientX,clientY,hover=false){

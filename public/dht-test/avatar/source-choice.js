@@ -3,10 +3,10 @@ import * as THREE from 'three';
 import { enabled, checked, section, notice, sha256 } from './local-source.js';
 import { referenceView } from './reference-view.js';
 
-export async function mountSourceChoice() {
+export async function mountSourceChoice(parent = document.querySelector('.app')) {
   if (!await enabled(2)) return;
   const data=await (await fetch(new URL('sources/variants.json',import.meta.url))).json();
-  const host=section('source-choice','Anatomie: Quellfassung wählen',document.querySelector('.app'));
+  const host=section('source-choice','Anatomie: Quellfassung wählen',parent);
   notice(host,'Die bisherige BR6-Ansicht bleibt Vorgabe. Alternative Fassungen erscheinen einzeln in einer eigenen Szene, ohne Hülle und ohne Koordinatenübertragung.');
   const label=document.createElement('label');label.textContent='Quellfassung ';const select=document.createElement('select');select.id='source-variant';label.append(select);host.append(label);
   select.add(new Option('BR6 · bisheriger männlicher Atlas (Vorgabe)','br6'));

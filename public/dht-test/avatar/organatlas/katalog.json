@@ -1,0 +1,3787 @@
+[
+ {
+  "id": "carotis-left",
+  "organ": "carotis",
+  "name": "Halsschlagader links",
+  "sex": "left",
+  "credit": "SPL Head and Neck Atlas; Marianna Jakab, Ron Kikinis; Surgical Planning Laboratory, Brigham and Women's Hospital; Open Anatomy Project 3D Slicer License Part B. Geänderte Darstellung: Web-Farben und Kompression. Forschungsmodell; nicht für klinische Anwendung empfohlen; nicht FDA-geprüft.",
+  "license": "3D Slicer License section B (Software License)",
+  "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
+  "camera": {
+   "position": [
+    -0.01001096609979868,
+    -0.04778893664479256,
+    -0.4111418410335497
+   ],
+   "target": [
+    -0.01001096609979868,
+    -0.04778893664479256,
+    0.03162062540650368
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "carotis-left.glb",
+    "sha256": "ffee40545c8a506b0d36f0df56a3bcc9ac175c3b20ec22118172fe754f74fd39",
+    "bytes": 1518024
+   },
+   "mobil": {
+    "file": "carotis-left-mobil.glb",
+    "sha256": "d60d4a06a78b25a21ea77128668317a9e06d7633273d49cd712f822c6b4939ee",
+    "bytes": 484552
+   }
+  }
+ },
+ {
+  "id": "carotis-right",
+  "organ": "carotis",
+  "name": "Halsschlagader rechts",
+  "sex": "right",
+  "credit": "SPL Head and Neck Atlas; Marianna Jakab, Ron Kikinis; Surgical Planning Laboratory, Brigham and Women's Hospital; Open Anatomy Project 3D Slicer License Part B. Geänderte Darstellung: Web-Farben und Kompression. Forschungsmodell; nicht für klinische Anwendung empfohlen; nicht FDA-geprüft.",
+  "license": "3D Slicer License section B (Software License)",
+  "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
+  "camera": {
+   "position": [
+    0.0040768347680568695,
+    -0.044480616226792336,
+    -0.39460234076213724
+   ],
+   "target": [
+    0.0040768347680568695,
+    -0.044480616226792336,
+    0.03162062540650368
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "carotis-right.glb",
+    "sha256": "981d60bda543e216314a826e72ff08073dc569c63d513e3754924c344558ca13",
+    "bytes": 1659676
+   },
+   "mobil": {
+    "file": "carotis-right-mobil.glb",
+    "sha256": "821d93722a18940820d488c22b612a44c81f8242a37111f623d67df412ef30d7",
+    "bytes": 527880
+   }
+  }
+ },
+ {
+  "id": "duenndarm-female",
+  "organ": "duenndarm",
+  "name": "Dünndarm",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein 2022. 3D Reference Organ for Small Intestine, Female v1.1. https://doi.org/10.48539/HBM887.PSNL.257 . Accessed on May 06, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.00634804368019104,
+    0.1875005066394806,
+    0.585132224561285
+   ],
+   "target": [
+    -0.00634804368019104,
+    0.1875005066394806,
+    -0.02816878817975521
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "duenndarm-female.glb",
+    "sha256": "a9a1af2f105026a05818ec53946bb8ba100c9d860ea0947ec9b9918532a3b007",
+    "bytes": 499176
+   },
+   "mobil": {
+    "file": "duenndarm-female-mobil.glb",
+    "sha256": "a9a1af2f105026a05818ec53946bb8ba100c9d860ea0947ec9b9918532a3b007",
+    "bytes": 499176
+   }
+  }
+ },
+ {
+  "id": "duenndarm-male",
+  "organ": "duenndarm",
+  "name": "Dünndarm",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein 2022. 3D Reference Organ for Small Intestine, Male v1.1. https://doi.org/10.48539/HBM468.FFTJ.536 . Accessed on May 06, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.03224272467195988,
+    0.23251577094197273,
+    0.8012775487794481
+   ],
+   "target": [
+    0.03224272467195988,
+    0.23251577094197273,
+    0.06305107101798058
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "duenndarm-male.glb",
+    "sha256": "246a0be5a9ba8f536777e4fa804e755d095ee5f8ac7c3ceff573379f3ed8380d",
+    "bytes": 395228
+   },
+   "mobil": {
+    "file": "duenndarm-male-mobil.glb",
+    "sha256": "246a0be5a9ba8f536777e4fa804e755d095ee5f8ac7c3ceff573379f3ed8380d",
+    "bytes": 395228
+   }
+  }
+ },
+ {
+  "id": "gefaesse-female",
+  "organ": "gefaesse",
+  "name": "Blutgefäße",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Blood Vasculature, Female v1.2 https://doi.org/10.48539/HBM232.FSRK.728 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.0068593211472034454,
+    0.3837719801813364,
+    1.73138119104172
+   ],
+   "target": [
+    0.0068593211472034454,
+    0.3837719801813364,
+    -0.058916689828038216
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "gefaesse-female.glb",
+    "sha256": "bf7613667b3bd5997096d37840a26b38795122c490ca66cfdfe15bc814521b08",
+    "bytes": 1212732
+   },
+   "mobil": {
+    "file": "gefaesse-female-mobil.glb",
+    "sha256": "bf7613667b3bd5997096d37840a26b38795122c490ca66cfdfe15bc814521b08",
+    "bytes": 1212732
+   }
+  }
+ },
+ {
+  "id": "gefaesse-male",
+  "organ": "gefaesse",
+  "name": "Blutgefäße",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Blood Vasculature, Male v1.2 https://doi.org/10.48539/HBM686.LBDQ.998 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.006211560219526291,
+    0.3928679842501879,
+    1.9635567827679459
+   ],
+   "target": [
+    0.006211560219526291,
+    0.3928679842501879,
+    0.0031970851123332977
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "gefaesse-male.glb",
+    "sha256": "54b5ea04715bf08317ba2e111f96e344de91b659e8c7ce5c8c197e67d9e9d7e9",
+    "bytes": 1252456
+   },
+   "mobil": {
+    "file": "gefaesse-male-mobil.glb",
+    "sha256": "54b5ea04715bf08317ba2e111f96e344de91b659e8c7ce5c8c197e67d9e9d7e9",
+    "bytes": 1252456
+   }
+  }
+ },
+ {
+  "id": "gehirn-female",
+  "organ": "gehirn",
+  "name": "Gehirn",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Brain, Female v1.3. https://doi.org/10.48539/HBM425.NDKM.969 . Accessed on December 15, 2023. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.0064917635172605515,
+    0.78407022356987,
+    0.4889370676544005
+   ],
+   "target": [
+    -0.0064917635172605515,
+    0.78407022356987,
+    -0.0645727152004838
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "mobil": {
+    "file": "gehirn-female-lod.glb",
+    "sha256": "465eca8c2e9cb1292e4b2c12ff6a0c062a82552e1cac0424cb53eb7023cc0cfa",
+    "bytes": 4699648
+   },
+   "desktop": {
+    "file": "gehirn-female-lod.glb",
+    "sha256": "465eca8c2e9cb1292e4b2c12ff6a0c062a82552e1cac0424cb53eb7023cc0cfa",
+    "bytes": 4699648
+   }
+  },
+  "optimized": true
+ },
+ {
+  "id": "gehirn-male",
+  "organ": "gehirn",
+  "name": "Gehirn",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Brain, Male v1.3 . https://doi.org/10.48539/HBM929.XKCL.339 . Accessed on December 15, 2023. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -9.0036541223526e-05,
+    0.8295670449733734,
+    0.5523545418083537
+   ],
+   "target": [
+    -9.0036541223526e-05,
+    0.8295670449733734,
+    -0.0011552274227142334
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "mobil": {
+    "file": "gehirn-male-lod.glb",
+    "sha256": "ed53507a0fdd542a740ec641a9df4ae9e17884aa60c8eb8b55b0e8c4c21a8d65",
+    "bytes": 4863368
+   },
+   "desktop": {
+    "file": "gehirn-male-lod.glb",
+    "sha256": "ed53507a0fdd542a740ec641a9df4ae9e17884aa60c8eb8b55b0e8c4c21a8d65",
+    "bytes": 4863368
+   }
+  },
+  "optimized": true
+ },
+ {
+  "id": "harnblase-female",
+  "organ": "harnblase",
+  "name": "Harnblase",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Urinary Bladder, Female v1.1. https://doi.org/10.48539/HBM235.KQNP.897 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.014551946427673101,
+    0.004116624593734741,
+    0.16706720249225432
+   ],
+   "target": [
+    -0.014551946427673101,
+    0.004116624593734741,
+    -0.028434470063075423
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "harnblase-female.glb",
+    "sha256": "7aaf134982a0720d480088252b65aa3d345243650d89d39ac5b3363596c62c5e",
+    "bytes": 447916
+   },
+   "mobil": {
+    "file": "harnblase-female-mobil.glb",
+    "sha256": "7aaf134982a0720d480088252b65aa3d345243650d89d39ac5b3363596c62c5e",
+    "bytes": 447916
+   }
+  }
+ },
+ {
+  "id": "harnblase-male",
+  "organ": "harnblase",
+  "name": "Harnblase",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Urinary Bladder, Male v1.1. https://doi.org/10.48539/HBM934.DMHJ.898 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.004978083074092865,
+    0.030371861066669226,
+    0.24046717098242906
+   ],
+   "target": [
+    -0.004978083074092865,
+    0.030371861066669226,
+    0.018707504495978355
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "harnblase-male.glb",
+    "sha256": "bb5648af8cccc3580af860f30d737f7a915288cd86bc462ab32f66da3def3a53",
+    "bytes": 133060
+   },
+   "mobil": {
+    "file": "harnblase-male-mobil.glb",
+    "sha256": "bb5648af8cccc3580af860f30d737f7a915288cd86bc462ab32f66da3def3a53",
+    "bytes": 133060
+   }
+  }
+ },
+ {
+  "id": "harnleiter-female",
+  "organ": "harnleiter",
+  "name": "Harnleiter",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Ureter, Female, Left v1.1. https://doi.org/10.48539/HBM923.WCQQ.623 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.002946212887763977,
+    0.14212553342804313,
+    0.6105951469032825
+   ],
+   "target": [
+    0.002946212887763977,
+    0.14212553342804313,
+    -0.08478589914739132
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "harnleiter-female.glb",
+    "sha256": "1e5ff51273fd783484f19f72bf65c91ee7bc6092b1df7b33bf0ea7495995fd61",
+    "bytes": 865912
+   },
+   "mobil": {
+    "file": "harnleiter-female-mobil.glb",
+    "sha256": "ce889cba05ce6b42669dd5ca90732d70f0fcf41c36467e461f228a64fa624600",
+    "bytes": 483996
+   }
+  }
+ },
+ {
+  "id": "harnleiter-male",
+  "organ": "harnleiter",
+  "name": "Harnleiter",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Ureter, Male, Left v1.1. https://doi.org/10.48539/HBM473.XWNL.438 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.006599348038434982,
+    0.1842574067413807,
+    0.7170387988830309
+   ],
+   "target": [
+    0.006599348038434982,
+    0.1842574067413807,
+    -0.005730500444769859
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "harnleiter-male.glb",
+    "sha256": "0c23c974a7608a6884f9c8c0059505d8fe45c0b1682c8c7786f13352ca8000c8",
+    "bytes": 697964
+   },
+   "mobil": {
+    "file": "harnleiter-male-mobil.glb",
+    "sha256": "0c23c974a7608a6884f9c8c0059505d8fe45c0b1682c8c7786f13352ca8000c8",
+    "bytes": 697964
+   }
+  }
+ },
+ {
+  "id": "herz-female",
+  "organ": "herz",
+  "name": "Herz",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Heart, Female v1.2. https://doi.org/10.48539/HBM384.VWVH.465 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, female. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.028783241286873817,
+    0.3517100363969803,
+    0.8700668862135528
+   ],
+   "target": [
+    0.028783241286873817,
+    0.3517100363969803,
+    -0.05843459884636104
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "herz-female.glb",
+    "sha256": "a061362e1ba7d3d50acc64a2c2546227cf2c267e853a8dc520ebb6c70fb4f6b2",
+    "bytes": 1481488
+   },
+   "mobil": {
+    "file": "herz-female-mobil.glb",
+    "sha256": "d42171932227e08cd517860cdfe00dc1c1c653d2a4ef62c3f90eecdef8c45a70",
+    "bytes": 585620
+   }
+  }
+ },
+ {
+  "id": "herz-male",
+  "organ": "herz",
+  "name": "Herz",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Heart, Male v1.2. https://doi.org/10.48539/HBM373.VSTV.568 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.018727341666817665,
+    0.3692219406366348,
+    0.9573029853022057
+   ],
+   "target": [
+    0.018727341666817665,
+    0.3692219406366348,
+    0.03123783878982067
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "herz-male.glb",
+    "sha256": "fa5efdee78531d6912566ea4ca2c7a99a1f9005b75df7498d495519697ab6dd4",
+    "bytes": 1562288
+   },
+   "mobil": {
+    "file": "herz-male-mobil.glb",
+    "sha256": "92df432a0cdd8f7efea7f75650da5205d41dbd1f4ebe6243e63d36d8ef870db7",
+    "bytes": 694136
+   }
+  }
+ },
+ {
+  "id": "kolon-female",
+  "organ": "kolon",
+  "name": "Dickdarm",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Large Intestine, Female v1.2. https://doi.org/10.48539/HBM637.SRWT.828 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.004816781729459763,
+    0.1341920210979879,
+    0.8607199975710341
+   ],
+   "target": [
+    -0.004816781729459763,
+    0.1341920210979879,
+    -0.04979664087295532
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "kolon-female.glb",
+    "sha256": "0e3a498543a3d5f0ca19d797d114faad39b7c22025be27fd6d0986a1f26957a1",
+    "bytes": 257092
+   },
+   "mobil": {
+    "file": "kolon-female-mobil.glb",
+    "sha256": "0e3a498543a3d5f0ca19d797d114faad39b7c22025be27fd6d0986a1f26957a1",
+    "bytes": 257092
+   }
+  }
+ },
+ {
+  "id": "kolon-male",
+  "organ": "kolon",
+  "name": "Dickdarm",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Large intestine, Male v1.2. https://doi.org/10.48539/HBM334.LVTH.937 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.013486180454492569,
+    0.18625417724251747,
+    1.229545754735187
+   ],
+   "target": [
+    0.013486180454492569,
+    0.18625417724251747,
+    0.026557091623544693
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "kolon-male.glb",
+    "sha256": "f12da8146974b65bd66d134667fbc1a00ccb89f77ca738d86ab06d702487e50b",
+    "bytes": 405412
+   },
+   "mobil": {
+    "file": "kolon-male-mobil.glb",
+    "sha256": "f12da8146974b65bd66d134667fbc1a00ccb89f77ca738d86ab06d702487e50b",
+    "bytes": 405412
+   }
+  }
+ },
+ {
+  "id": "leber-female",
+  "organ": "leber",
+  "name": "Leber",
+  "sex": "female",
+  "credit": "Kristen Browne. 2021. 3D Reference Organ for Liver, Female v1.1. https://doi.org/10.48539/HBM798.JZZM.649 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, female. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.011333577334880829,
+    0.3475114107131958,
+    0.658034034514559
+   ],
+   "target": [
+    -0.011333577334880829,
+    0.3475114107131958,
+    -0.07070436235517263
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "leber-female.glb",
+    "sha256": "202d19bed96943f9ec40de241f5cf4abb5acb9b04ac02c98ee87dda2e69ee1ff",
+    "bytes": 1137984
+   },
+   "mobil": {
+    "file": "leber-female-mobil.glb",
+    "sha256": "a7180c1e9cc92b066dd1e10c981b2b3a5d20886d98a8685c20a933faf17ec61b",
+    "bytes": 597576
+   }
+  }
+ },
+ {
+  "id": "leber-male",
+  "organ": "leber",
+  "name": "Leber",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Liver, Male v1.1. https://doi.org/10.48539/HBM677.HVRF.764 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.03758496046066284,
+    0.3672509342432022,
+    0.7089996407035568
+   ],
+   "target": [
+    -0.03758496046066284,
+    0.3672509342432022,
+    0.011299069970846176
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "leber-male.glb",
+    "sha256": "0ed4f98b7e35ab5ec3df86a05d64385ced8e99b749a210b0d21c337811c0c090",
+    "bytes": 865540
+   },
+   "mobil": {
+    "file": "leber-male-mobil.glb",
+    "sha256": "474c467610e97c64fbc614cd0ce375938bcfe6ac9c294f9fcc5173ea0216fdbf",
+    "bytes": 479124
+   }
+  }
+ },
+ {
+  "id": "lunge-female",
+  "organ": "lunge",
+  "name": "Lunge",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Lung, Female v1.3. https://doi.org/10.48539/HBM794.PKQV.978 . Accessed on June 15, 2023. Anschlussgefäße: HRA CCF Blood Vasculature, female. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.004961557686328888,
+    0.4785911738872528,
+    0.7038499556486967
+   ],
+   "target": [
+    -0.004961557686328888,
+    0.4785911738872528,
+    -0.0801189293852076
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "lunge-female.glb",
+    "sha256": "6d5c7754a631e7e92f353406817e9d229110284e11418c63e6347a518bd00296",
+    "bytes": 1845040
+   },
+   "mobil": {
+    "file": "lunge-female-mobil.glb",
+    "sha256": "c589108791499a7117dfc038a75be350913b384cbb31132d388db19b40da398c",
+    "bytes": 1154316
+   }
+  }
+ },
+ {
+  "id": "lunge-male",
+  "organ": "lunge",
+  "name": "Lunge",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Lung, Male v1.3.\nhttps://doi.org/10.48539/HBM737.FFBT.876 Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.0047336481511592865,
+    0.500180646777153,
+    0.8413826343637252
+   ],
+   "target": [
+    0.0047336481511592865,
+    0.500180646777153,
+    0.002616945654153824
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "lunge-male.glb",
+    "sha256": "7c690eef55ca218fd55b750f9b71f4e48e6c048142c038759c46a16e5df77f43",
+    "bytes": 1272700
+   },
+   "mobil": {
+    "file": "lunge-male-mobil.glb",
+    "sha256": "93bd7dc0a1857e1d7a73c98c4f71e410af67f07a7381ff3035d4f96065cfc41e",
+    "bytes": 999396
+   }
+  }
+ },
+ {
+  "id": "mamma-female",
+  "organ": "mamma",
+  "name": "Brustdrüse",
+  "sex": "female",
+  "credit": "Heidi Schlehlein 2022. 3D Reference Organ for Breast (mammary gland), Female left, v1.0 , https://doi.org/10.48539/HBM378.VWZG.633 . Accessed on December 15, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression. Web-Anzeige teilweise geometrisch vereinfacht; Quelldaten unverändert. Messbelege im Manifest.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.005713336169719696,
+    0.4372293949127197,
+    0.7978666980584374
+   ],
+   "target": [
+    -0.005713336169719696,
+    0.4372293949127197,
+    0.03262283559888601
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "mobil": {
+    "file": "mamma-female-lod.glb",
+    "sha256": "78d49bc0423307a907c8985140a206437c9e4a847bc873452aaf82fd245fe897",
+    "bytes": 4306860
+   },
+   "desktop": {
+    "file": "mamma-female-lod.glb",
+    "sha256": "78d49bc0423307a907c8985140a206437c9e4a847bc873452aaf82fd245fe897",
+    "bytes": 4306860
+   }
+  },
+  "optimized": true
+ },
+ {
+  "id": "milz-female",
+  "organ": "milz",
+  "name": "Milz",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Spleen, Female v1.2, https://doi.org/10.48539/HBM459.JHVH.373 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.08155457861721516,
+    0.3367045521736145,
+    0.20819317798292503
+   ],
+   "target": [
+    0.08155457861721516,
+    0.3367045521736145,
+    -0.1177222803235054
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "milz-female.glb",
+    "sha256": "b06ba941649bf6452c452205b0bdbfc6789e9f6afd4aa1fadc1fe1bdee0442aa",
+    "bytes": 101736
+   },
+   "mobil": {
+    "file": "milz-female-mobil.glb",
+    "sha256": "b06ba941649bf6452c452205b0bdbfc6789e9f6afd4aa1fadc1fe1bdee0442aa",
+    "bytes": 101736
+   }
+  }
+ },
+ {
+  "id": "milz-male",
+  "organ": "milz",
+  "name": "Milz",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Spleen, Male v1.2. https://doi.org/10.48539/HBM662.GMWC.569 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.0810917355120182,
+    0.3700637221336365,
+    0.3560068788253195
+   ],
+   "target": [
+    0.0810917355120182,
+    0.3700637221336365,
+    -0.03652402013540268
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "milz-male.glb",
+    "sha256": "4baae4f88afc53b3e10bd97457e46b18c4f6e7e81dd1aaea7913bc580b859f75",
+    "bytes": 195468
+   },
+   "mobil": {
+    "file": "milz-male-mobil.glb",
+    "sha256": "4baae4f88afc53b3e10bd97457e46b18c4f6e7e81dd1aaea7913bc580b859f75",
+    "bytes": 195468
+   }
+  }
+ },
+ {
+  "id": "niere-female",
+  "organ": "niere",
+  "name": "Niere",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Kidney, Female, Right v1.2. https://doi.org/10.48539/HBM487.ZGCW.688 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, female. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.02242257073521614,
+    0.24752311408519745,
+    0.35457661428517073
+   ],
+   "target": [
+    -0.02242257073521614,
+    0.24752311408519745,
+    -0.09662968665361404
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "niere-female.glb",
+    "sha256": "12fcacb23794880bd70670a1bab33ea448b503042312b1a99a175346e1e1b3f0",
+    "bytes": 971428
+   },
+   "mobil": {
+    "file": "niere-female-mobil.glb",
+    "sha256": "efc7eda6bc9109d80e528947e4b999da742ac5440ce63583c751c50dfd82b8db",
+    "bytes": 516696
+   }
+  }
+ },
+ {
+  "id": "niere-male",
+  "organ": "niere",
+  "name": "Niere",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Kidney, Male, Right v1.2. https://doi.org/10.48539/HBM272.ZVPQ.979 . Accessed on May 6, 2022. Anschlussgefäße: HRA CCF Blood Vasculature, male. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.018026510253548622,
+    0.28527987748384476,
+    0.4294941889996713
+   ],
+   "target": [
+    -0.018026510253548622,
+    0.28527987748384476,
+    -0.013197080232203007
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "niere-male.glb",
+    "sha256": "a504b3b0898140c4867d963d6bb8c8ac869fd47adeb7bcaf2045693227220aae",
+    "bytes": 1038488
+   },
+   "mobil": {
+    "file": "niere-male-mobil.glb",
+    "sha256": "0f98873350696077bd12c95e9b78e780c5c03bf89886a15e919e9714e1efe7c0",
+    "bytes": 571720
+   }
+  }
+ },
+ {
+  "id": "ovar-female",
+  "organ": "ovar",
+  "name": "Eierstock",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Ovary, Female, Left v1.1. https://doi.org/10.48539/HBM499.JLMB.357 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.013111686334013939,
+    0.060916345566511154,
+    0.23052496876412337
+   ],
+   "target": [
+    -0.013111686334013939,
+    0.060916345566511154,
+    -0.045502813532948494
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "ovar-female.glb",
+    "sha256": "f894511b242becc84bb5267ed4634f319660a08c06d939ce73dd94ced11f534f",
+    "bytes": 13808
+   },
+   "mobil": {
+    "file": "ovar-female-mobil.glb",
+    "sha256": "f894511b242becc84bb5267ed4634f319660a08c06d939ce73dd94ced11f534f",
+    "bytes": 13808
+   }
+  }
+ },
+ {
+  "id": "pankreas-female",
+  "organ": "pankreas",
+  "name": "Bauchspeicheldrüse",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Pancreas, Female v1.2. https://doi.org/10.48539/HBM938.BRGC.644 . Accessed on December 15, 2023. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.03206092305481434,
+    0.26580802351236343,
+    0.35462893813770663
+   ],
+   "target": [
+    0.03206092305481434,
+    0.26580802351236343,
+    -0.06990206521004438
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "pankreas-female.glb",
+    "sha256": "77ff29b339612530b75ea783a243fd705e46d4eaf2e4fb7ec57355b1b6913080",
+    "bytes": 444276
+   },
+   "mobil": {
+    "file": "pankreas-female-mobil.glb",
+    "sha256": "77ff29b339612530b75ea783a243fd705e46d4eaf2e4fb7ec57355b1b6913080",
+    "bytes": 444276
+   }
+  }
+ },
+ {
+  "id": "pankreas-male",
+  "organ": "pankreas",
+  "name": "Bauchspeicheldrüse",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Pancreas, Male v1.2. https://doi.org/10.48539/HBM368.XMJZ.722 . Accessed on December 15, 2023. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.02162381075322628,
+    0.339592769742012,
+    0.3425539065935148
+   ],
+   "target": [
+    0.02162381075322628,
+    0.339592769742012,
+    0.009290385991334915
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "pankreas-male.glb",
+    "sha256": "feb17adec0b8a00f16467fd466ea44cb4f7a08e755e3b44a1ec2ddf004975d9f",
+    "bytes": 1275576
+   },
+   "mobil": {
+    "file": "pankreas-male-mobil.glb",
+    "sha256": "49a025465b95a43041bb51e5432ea6767f81b0abe54ce9021bb8ed962c8d82d5",
+    "bytes": 604888
+   }
+  }
+ },
+ {
+  "id": "prostata-male",
+  "organ": "prostata",
+  "name": "Prostata",
+  "sex": "male",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Prostate, Male v1.1. https://doi.org/10.48539/HBM229.TSCH.665 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    0.004041697829961777,
+    0.027022413443773985,
+    0.22759857821721505
+   ],
+   "target": [
+    0.004041697829961777,
+    0.027022413443773985,
+    -0.021179511546506546
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "prostata-male.glb",
+    "sha256": "905503267313d6f8211a73b6e20eafa69ebeeef37a9d50f8f65a76d3ddf1b990",
+    "bytes": 1616444
+   },
+   "mobil": {
+    "file": "prostata-male-mobil.glb",
+    "sha256": "c5b8e5c69110d14fccfafe4080d76a92a922a3044a2b4fb2d8142edee996dd8d",
+    "bytes": 542248
+   }
+  }
+ },
+ {
+  "id": "schilddruese-spl-manix",
+  "organ": "schilddruese",
+  "name": "Schilddrüse",
+  "sex": "spl-manix",
+  "credit": "SPL Head and Neck Atlas; Marianna Jakab, Ron Kikinis; Surgical Planning Laboratory, Brigham and Women's Hospital; Open Anatomy Project. 3D Slicer License Part B. Geänderte Darstellung: Web-Farben und Kompression. Forschungsmodell; nicht für klinische Anwendung empfohlen; nicht FDA-geprüft.",
+  "license": "3D-Slicer-License-B",
+  "licenseUrl": "https://github.com/Slicer/Slicer/blob/master/License.txt",
+  "camera": {
+   "position": [
+    -0.004764941520988941,
+    -0.07109885849058628,
+    -0.1918641656275005
+   ],
+   "target": [
+    -0.004764941520988941,
+    -0.07109885849058628,
+    0.010349706746637821
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "schilddruese-spl-manix.glb",
+    "sha256": "522332df134cd059136b0de535e055074127943a86d4f08fe991cf711eead869",
+    "bytes": 989872
+   },
+   "mobil": {
+    "file": "schilddruese-spl-manix-mobil.glb",
+    "sha256": "80cf642c378fc48d1c9e44147eccc72bc1fb16898cc1fa5c9ce7dfd9d86bda19",
+    "bytes": 465356
+   }
+  }
+ },
+ {
+  "id": "uterus-female",
+  "organ": "uterus",
+  "name": "Gebärmutter",
+  "sex": "female",
+  "credit": "Kristen Browne; Heidi Schlehlein. 2022. 3D Reference Organ for Uterus v1.1. https://doi.org/10.48539/HBM228.JBNJ.299 . Accessed on May 6, 2022. CC BY 4.0. Geänderte Darstellung: Web-Farben und Kompression, keine Formvereinfachung.",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "camera": {
+   "position": [
+    -0.01350123854354024,
+    0.029715408803895116,
+    0.13801661745909863
+   ],
+   "target": [
+    -0.01350123854354024,
+    0.029715408803895116,
+    -0.05684439558535814
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  },
+  "variants": {
+   "desktop": {
+    "file": "uterus-female.glb",
+    "sha256": "e06fcded739fb8bf66bb952ec49361f53af59e62b0a01eced08cb9dd93b74531",
+    "bytes": 422328
+   },
+   "mobil": {
+    "file": "uterus-female-mobil.glb",
+    "sha256": "e06fcded739fb8bf66bb952ec49361f53af59e62b0a01eced08cb9dd93b74531",
+    "bytes": 422328
+   }
+  }
+ },
+ {
+  "id": "magen-atlas",
+  "organ": "magen",
+  "name": "Magen",
+  "sex": "atlas",
+  "credit": "Z-Anatomy · Gauthier Kervyn und Marcin Zielinski. BodyParts3D · Database Center for Life Science, CC BY-SA 2.1 Japan. Bestehender Webauszug aus dem Quellatlas.",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "magen.glb",
+    "sha256": "50aa9c7fde3ac68605abc721a34de74d43907f429e15c4c37d01f118e171dcef",
+    "bytes": 22488
+   },
+   "mobil": {
+    "file": "magen.glb",
+    "sha256": "50aa9c7fde3ac68605abc721a34de74d43907f429e15c4c37d01f118e171dcef",
+    "bytes": 22488
+   }
+  }
+ },
+ {
+  "id": "nebenniere-bodyparts",
+  "organ": "nebenniere",
+  "name": "Nebennieren",
+  "sex": "bodyparts",
+  "category": "Organmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Bestehende DHT-Webfassung. FJ3129, FJ3130.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "nebenniere-bp.glb",
+    "bytes": 116592,
+    "sha256": "3f48d9cb5979d0b6f6a104446059e625a8ada585b5c8ce635f974fe6d3d9f40e"
+   },
+   "mobil": {
+    "file": "nebenniere-bp.glb",
+    "bytes": 116592,
+    "sha256": "3f48d9cb5979d0b6f6a104446059e625a8ada585b5c8ce635f974fe6d3d9f40e"
+   }
+  }
+ },
+ {
+  "id": "hypophyse-bodyparts",
+  "organ": "hypophyse",
+  "name": "Hirnanhangdrüse (Hypophyse)",
+  "sex": "bodyparts",
+  "category": "Organmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Bestehende DHT-Webfassung. FJ1796.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "hypophyse-bp.glb",
+    "bytes": 23016,
+    "sha256": "a8db3b046e4578c3aec0f979e25b33d83af446972262f6991e8b1c0a62e80de7"
+   },
+   "mobil": {
+    "file": "hypophyse-bp.glb",
+    "bytes": 23016,
+    "sha256": "a8db3b046e4578c3aec0f979e25b33d83af446972262f6991e8b1c0a62e80de7"
+   }
+  }
+ },
+ {
+  "id": "gonaden_maennlich-bodyparts",
+  "organ": "gonaden_maennlich",
+  "name": "Hoden",
+  "sex": "bodyparts",
+  "category": "Organmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Bestehende DHT-Webfassung. FJ3138, FJ3142.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "gonaden_maennlich-bp.glb",
+    "bytes": 10928,
+    "sha256": "0bc48f272016bed325e39f47e9b97b38ac9cfc237912484b71dd901457a460f4"
+   },
+   "mobil": {
+    "file": "gonaden_maennlich-bp.glb",
+    "bytes": 10928,
+    "sha256": "0bc48f272016bed325e39f47e9b97b38ac9cfc237912484b71dd901457a460f4"
+   }
+  }
+ },
+ {
+  "id": "speiseroehre-bodyparts",
+  "organ": "speiseroehre",
+  "name": "Speiseröhre",
+  "sex": "bodyparts",
+  "category": "Organmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Bestehende DHT-Webfassung. FJ2563.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "speiseroehre-bp.glb",
+    "bytes": 12460,
+    "sha256": "07000cc5278362f55672dd95afcc12aef8e8d9d8d41617a28b9348b9f9101683"
+   },
+   "mobil": {
+    "file": "speiseroehre-bp.glb",
+    "bytes": 12460,
+    "sha256": "07000cc5278362f55672dd95afcc12aef8e8d9d8d41617a28b9348b9f9101683"
+   }
+  }
+ },
+ {
+  "id": "gallenblase-bodyparts",
+  "organ": "gallenblase",
+  "name": "Gallenblase",
+  "sex": "bodyparts",
+  "category": "Organmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Bestehende DHT-Webfassung. FJ2817, FJ3080.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "gallenblase-bp.glb",
+    "bytes": 51464,
+    "sha256": "aa5ac1f701fd72ff5047d48ae7cc7a71fd835b964c6f394149165ea24619096a"
+   },
+   "mobil": {
+    "file": "gallenblase-bp.glb",
+    "bytes": 51464,
+    "sha256": "aa5ac1f701fd72ff5047d48ae7cc7a71fd835b964c6f394149165ea24619096a"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2741",
+  "organ": "bp-fj2741",
+  "name": "Gaumensegelheber links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2741 (FMA46729), Left levator veli palatini.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2741.obj",
+    "bytes": 828321,
+    "sha256": "a7d1e90a0757aa53530521cd25ee855da0cc1e774dbe2c6bcaf372ab9e654259"
+   },
+   "mobil": {
+    "file": "FJ2741.obj",
+    "bytes": 828321,
+    "sha256": "a7d1e90a0757aa53530521cd25ee855da0cc1e774dbe2c6bcaf372ab9e654259"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2753",
+  "organ": "bp-fj2753",
+  "name": "Gaumensegelheber rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2753 (FMA46728), Right levator veli palatini.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2753.obj",
+    "bytes": 835932,
+    "sha256": "84b856010832db82451e940a172f175d3a753c08e7284663bd40de6ef427fbcc"
+   },
+   "mobil": {
+    "file": "FJ2753.obj",
+    "bytes": 835932,
+    "sha256": "84b856010832db82451e940a172f175d3a753c08e7284663bd40de6ef427fbcc"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2748",
+  "organ": "bp-fj2748",
+  "name": "Gaumensegelspanner links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2748 (FMA46732), Left tensor veli palatini.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2748.obj",
+    "bytes": 922698,
+    "sha256": "d6bca501cda0201b5221acbee58f2a58eff4784886825f72a0c40b1e1f7cbf97"
+   },
+   "mobil": {
+    "file": "FJ2748.obj",
+    "bytes": 922698,
+    "sha256": "d6bca501cda0201b5221acbee58f2a58eff4784886825f72a0c40b1e1f7cbf97"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2760",
+  "organ": "bp-fj2760",
+  "name": "Gaumensegelspanner rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2760 (FMA46731), Right tensor veli palatini.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2760.obj",
+    "bytes": 927859,
+    "sha256": "ceddb3e852a795354bf31e6151dd9d2feaacb9f4612e3f0376d980dc063fc33a"
+   },
+   "mobil": {
+    "file": "FJ2760.obj",
+    "bytes": 927859,
+    "sha256": "ceddb3e852a795354bf31e6151dd9d2feaacb9f4612e3f0376d980dc063fc33a"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2745",
+  "organ": "bp-fj2745",
+  "name": "Tuben-Rachen-Muskel links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2745 (FMA46670), Left salpingopharyngeus.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2745.obj",
+    "bytes": 600633,
+    "sha256": "81c70a6f8ab2de5d20a715cdf5339d756ca7171c473adc645231929b2732bf31"
+   },
+   "mobil": {
+    "file": "FJ2745.obj",
+    "bytes": 600633,
+    "sha256": "81c70a6f8ab2de5d20a715cdf5339d756ca7171c473adc645231929b2732bf31"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2757",
+  "organ": "bp-fj2757",
+  "name": "Tuben-Rachen-Muskel rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2757 (FMA46669), Right salpingopharyngeus.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2757.obj",
+    "bytes": 605640,
+    "sha256": "b10e40d550d6208c907df65d844403071233d8088a109b2be5f925cd5d9e6c36"
+   },
+   "mobil": {
+    "file": "FJ2757.obj",
+    "bytes": 605640,
+    "sha256": "b10e40d550d6208c907df65d844403071233d8088a109b2be5f925cd5d9e6c36"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2788",
+  "organ": "bp-fj2788",
+  "name": "Stimmmuskel links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2788 (FMA46593), Left vocalis.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2788.obj",
+    "bytes": 73831,
+    "sha256": "dd26f669e127e5c5fae7ff796da0f516887f8c3834bbde1f2881d3a222cc2375"
+   },
+   "mobil": {
+    "file": "FJ2788.obj",
+    "bytes": 73831,
+    "sha256": "dd26f669e127e5c5fae7ff796da0f516887f8c3834bbde1f2881d3a222cc2375"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2806",
+  "organ": "bp-fj2806",
+  "name": "Stimmmuskel rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2806 (FMA46592), Right vocalis.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2806.obj",
+    "bytes": 73039,
+    "sha256": "f4b83790f1c6364785f6ec6a8428443e7f20cfe48ed9a14234bb8aff1d80f2a9"
+   },
+   "mobil": {
+    "file": "FJ2806.obj",
+    "bytes": 73039,
+    "sha256": "f4b83790f1c6364785f6ec6a8428443e7f20cfe48ed9a14234bb8aff1d80f2a9"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2780",
+  "organ": "bp-fj2780",
+  "name": "Schräger Stellknorpelmuskel links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2780 (FMA46585), Left oblique arytenoid.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2780.obj",
+    "bytes": 467428,
+    "sha256": "9ad13a6a95301607fa5968e68ae47efc458ebc67f9582f6fc0861672b7b4de17"
+   },
+   "mobil": {
+    "file": "FJ2780.obj",
+    "bytes": 467428,
+    "sha256": "9ad13a6a95301607fa5968e68ae47efc458ebc67f9582f6fc0861672b7b4de17"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2798",
+  "organ": "bp-fj2798",
+  "name": "Schräger Stellknorpelmuskel rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ2798 (FMA46584), Right oblique arytenoid.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2798.obj",
+    "bytes": 451755,
+    "sha256": "706e265f99131c2bde1b61c4bc2cdfab7ae384ed2c84f10c8cbff91a295ca22c"
+   },
+   "mobil": {
+    "file": "FJ2798.obj",
+    "bytes": 451755,
+    "sha256": "706e265f99131c2bde1b61c4bc2cdfab7ae384ed2c84f10c8cbff91a295ca22c"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1526m",
+  "organ": "bp-fj1526m",
+  "name": "Darmbein-Rippen-Muskel des Halses links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1526M (FMA22745), Left iliocostalis cervicis.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1526M.obj",
+    "bytes": 235971,
+    "sha256": "edb4c7f871b6cee0ab8de9d31ad428b779a087a7b66dccf4421a806bfb11812d"
+   },
+   "mobil": {
+    "file": "FJ1526M.obj",
+    "bytes": 235971,
+    "sha256": "edb4c7f871b6cee0ab8de9d31ad428b779a087a7b66dccf4421a806bfb11812d"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1538m",
+  "organ": "bp-fj1538m",
+  "name": "Halbdornmuskel des Kopfes links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1538M (FMA22877), Left semispinalis capitis.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1538M.obj",
+    "bytes": 215105,
+    "sha256": "8f587a9a50e0ca6555ffb086e60445a499904ce55a5664340cce8ed12d86bb77"
+   },
+   "mobil": {
+    "file": "FJ1538M.obj",
+    "bytes": 215105,
+    "sha256": "8f587a9a50e0ca6555ffb086e60445a499904ce55a5664340cce8ed12d86bb77"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1538",
+  "organ": "bp-fj1538",
+  "name": "Halbdornmuskel des Kopfes rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1538 (FMA22876), Right semispinalis capitis.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1538.obj",
+    "bytes": 219002,
+    "sha256": "189e16f70c49bc3465f5216fcb0e0b0ffb114458fde427eaf5406ddd1a1bd315"
+   },
+   "mobil": {
+    "file": "FJ1538.obj",
+    "bytes": 219002,
+    "sha256": "189e16f70c49bc3465f5216fcb0e0b0ffb114458fde427eaf5406ddd1a1bd315"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1383m",
+  "organ": "bp-fj1383m",
+  "name": "Wurmmuskel des Fußes 1 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1383M (FMA37718), First lumbrical of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1383M.obj",
+    "bytes": 68454,
+    "sha256": "9da478797a43866ef3b3e4750b76d37de5d35b3fd3fe659935200cb2426dd139"
+   },
+   "mobil": {
+    "file": "FJ1383M.obj",
+    "bytes": 68454,
+    "sha256": "9da478797a43866ef3b3e4750b76d37de5d35b3fd3fe659935200cb2426dd139"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1385m",
+  "organ": "bp-fj1385m",
+  "name": "Wurmmuskel des Fußes 2 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1385M (FMA37720), Second lumbrical of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1385M.obj",
+    "bytes": 23468,
+    "sha256": "7b8bad4fbf9ab385a923da194a35a1fb06c42d7301d4977e736f8da0f6f7db0a"
+   },
+   "mobil": {
+    "file": "FJ1385M.obj",
+    "bytes": 23468,
+    "sha256": "7b8bad4fbf9ab385a923da194a35a1fb06c42d7301d4977e736f8da0f6f7db0a"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1387m",
+  "organ": "bp-fj1387m",
+  "name": "Wurmmuskel des Fußes 3 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1387M (FMA37486), Third lumbrical of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1387M.obj",
+    "bytes": 41173,
+    "sha256": "31a1eeffb990dc0f73817c3d53459bf3ef41b764a4c77eb04734f9d7e341c065"
+   },
+   "mobil": {
+    "file": "FJ1387M.obj",
+    "bytes": 41173,
+    "sha256": "31a1eeffb990dc0f73817c3d53459bf3ef41b764a4c77eb04734f9d7e341c065"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1389m",
+  "organ": "bp-fj1389m",
+  "name": "Wurmmuskel des Fußes 4 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1389M (FMA37484), Fourth lumbrical of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1389M.obj",
+    "bytes": 34068,
+    "sha256": "56b4b576426370d783dbf71f4e37922411644b3146fea22c6cde7c7800e061e9"
+   },
+   "mobil": {
+    "file": "FJ1389M.obj",
+    "bytes": 34068,
+    "sha256": "56b4b576426370d783dbf71f4e37922411644b3146fea22c6cde7c7800e061e9"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1383",
+  "organ": "bp-fj1383",
+  "name": "Wurmmuskel des Fußes 1 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1383 (FMA37717), First lumbrical of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1383.obj",
+    "bytes": 69503,
+    "sha256": "d7bce4728ada3797b2ada290797ee98aeaf1d43d0279d83401c9d54ff72add3f"
+   },
+   "mobil": {
+    "file": "FJ1383.obj",
+    "bytes": 69503,
+    "sha256": "d7bce4728ada3797b2ada290797ee98aeaf1d43d0279d83401c9d54ff72add3f"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1385",
+  "organ": "bp-fj1385",
+  "name": "Wurmmuskel des Fußes 2 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1385 (FMA37719), Second lumbrical of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1385.obj",
+    "bytes": 23781,
+    "sha256": "76ad80b70d292c181e8947d623ddee8f373a20813e4d0fc8842c9b29800234a6"
+   },
+   "mobil": {
+    "file": "FJ1385.obj",
+    "bytes": 23781,
+    "sha256": "76ad80b70d292c181e8947d623ddee8f373a20813e4d0fc8842c9b29800234a6"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1387",
+  "organ": "bp-fj1387",
+  "name": "Wurmmuskel des Fußes 3 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1387 (FMA37485), Third lumbrical of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1387.obj",
+    "bytes": 41535,
+    "sha256": "11b4051e92be3f915e1ca7be08be43f1d8fc360d391903e6b0a83cda69b0a00f"
+   },
+   "mobil": {
+    "file": "FJ1387.obj",
+    "bytes": 41535,
+    "sha256": "11b4051e92be3f915e1ca7be08be43f1d8fc360d391903e6b0a83cda69b0a00f"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1389",
+  "organ": "bp-fj1389",
+  "name": "Wurmmuskel des Fußes 4 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1389 (FMA37483), Fourth lumbrical of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1389.obj",
+    "bytes": 34476,
+    "sha256": "86b7a17497e4efde3030ec8e542178caba1c875a7af62d491ef8c89e42528444"
+   },
+   "mobil": {
+    "file": "FJ1389.obj",
+    "bytes": 34476,
+    "sha256": "86b7a17497e4efde3030ec8e542178caba1c875a7af62d491ef8c89e42528444"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1384m",
+  "organ": "bp-fj1384m",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 1 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1384M (FMA37746), First plantar interosseous of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1384M.obj",
+    "bytes": 53026,
+    "sha256": "66543fc74c686eb86051f82c9b7ed3931c0a5b72ebb14ff2e90ccbf65a70b522"
+   },
+   "mobil": {
+    "file": "FJ1384M.obj",
+    "bytes": 53026,
+    "sha256": "66543fc74c686eb86051f82c9b7ed3931c0a5b72ebb14ff2e90ccbf65a70b522"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1386m",
+  "organ": "bp-fj1386m",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 2 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1386M (FMA37744), Second plantar interosseous of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1386M.obj",
+    "bytes": 49624,
+    "sha256": "f426c6d272285a14f588a479e91093b56f39862b90b7c614ca37c6d2b68a9f8f"
+   },
+   "mobil": {
+    "file": "FJ1386M.obj",
+    "bytes": 49624,
+    "sha256": "f426c6d272285a14f588a479e91093b56f39862b90b7c614ca37c6d2b68a9f8f"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1388m",
+  "organ": "bp-fj1388m",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 3 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1388M (FMA37742), Third plantar interosseous of left foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1388M.obj",
+    "bytes": 76646,
+    "sha256": "ab3cd072c60f5f08f8b02866569b99e4050d52b3da1e0c3585630278863b6e6a"
+   },
+   "mobil": {
+    "file": "FJ1388M.obj",
+    "bytes": 76646,
+    "sha256": "ab3cd072c60f5f08f8b02866569b99e4050d52b3da1e0c3585630278863b6e6a"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1384",
+  "organ": "bp-fj1384",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 1 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1384 (FMA37745), First plantar interosseous of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1384.obj",
+    "bytes": 53768,
+    "sha256": "76db533b5ef8f3d4a85d142e0e5f7297c8996d0a75efcc4c5124d7643857e3a5"
+   },
+   "mobil": {
+    "file": "FJ1384.obj",
+    "bytes": 53768,
+    "sha256": "76db533b5ef8f3d4a85d142e0e5f7297c8996d0a75efcc4c5124d7643857e3a5"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1386",
+  "organ": "bp-fj1386",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 2 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1386 (FMA37743), Second plantar interosseous of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1386.obj",
+    "bytes": 50098,
+    "sha256": "aa653c971e6d50e27f0b0aa90e5a6bdf453038bc4c63c51395425d4e0f4bfa26"
+   },
+   "mobil": {
+    "file": "FJ1386.obj",
+    "bytes": 50098,
+    "sha256": "aa653c971e6d50e27f0b0aa90e5a6bdf453038bc4c63c51395425d4e0f4bfa26"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1388",
+  "organ": "bp-fj1388",
+  "name": "Fußsohlenseitiger Zwischenknochenmuskel 3 rechts",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · Originalnetz FJ1388 (FMA37741), Third plantar interosseous of right foot.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ1388.obj",
+    "bytes": 77768,
+    "sha256": "9b38a442bc6c67ecf339aa16a98f0c1aa3b83ec0f664cd6a443eed3ce381b464"
+   },
+   "mobil": {
+    "file": "FJ1388.obj",
+    "bytes": 77768,
+    "sha256": "9b38a442bc6c67ecf339aa16a98f0c1aa3b83ec0f664cd6a443eed3ce381b464"
+   }
+  }
+ },
+ {
+  "id": "bp-fj2762",
+  "organ": "bp-fj2762",
+  "name": "Zäpfchenmuskel (Quelle ohne Seitenangabe)",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan · FJ2762 (FMA46733), Uvular muscle.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "FJ2762.obj",
+    "bytes": 101559,
+    "sha256": "09d6a3c375d3ea9536e325a86996c521f647b1c31ee58ae2b99de6ea9cbca3bb"
+   },
+   "mobil": {
+    "file": "FJ2762.obj",
+    "bytes": 101559,
+    "sha256": "09d6a3c375d3ea9536e325a86996c521f647b1c31ee58ae2b99de6ea9cbca3bb"
+   }
+  }
+ },
+ {
+  "id": "frau2-32",
+  "organ": "frau2-32",
+  "name": "Lederhaut des Auges rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right sclera (TA2:6750).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-32.glb",
+    "bytes": 53116,
+    "sha256": "bddd4d1be8c9512fd1e466a43d47cd7fd8440d0cdc203a6340e240b895acbcbc"
+   },
+   "mobil": {
+    "file": "frau2-32.glb",
+    "bytes": 53116,
+    "sha256": "bddd4d1be8c9512fd1e466a43d47cd7fd8440d0cdc203a6340e240b895acbcbc"
+   }
+  }
+ },
+ {
+  "id": "frau2-33",
+  "organ": "frau2-33",
+  "name": "Aderhaut rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right choroid (TA2:6774).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-33.glb",
+    "bytes": 53936,
+    "sha256": "b714179a3d135d2597e603eda12e7032370f3272eebb7ca2b952a0a53037d18f"
+   },
+   "mobil": {
+    "file": "frau2-33.glb",
+    "bytes": 53936,
+    "sha256": "b714179a3d135d2597e603eda12e7032370f3272eebb7ca2b952a0a53037d18f"
+   }
+  }
+ },
+ {
+  "id": "frau2-48",
+  "organ": "frau2-48",
+  "name": "Glaskörperflüssigkeit rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Humor of right vitreous body (TA2:6814).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-48.glb",
+    "bytes": 136812,
+    "sha256": "2220c84c980ec7225ffcbc717e05c9773702106bd9931a98a05ae8e9c646d5b0"
+   },
+   "mobil": {
+    "file": "frau2-48.glb",
+    "bytes": 136812,
+    "sha256": "2220c84c980ec7225ffcbc717e05c9773702106bd9931a98a05ae8e9c646d5b0"
+   }
+  }
+ },
+ {
+  "id": "frau2-57",
+  "organ": "frau2-57",
+  "name": "Glaskörperflüssigkeit links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Humor of left vitreous body (TA2:6814).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-57.glb",
+    "bytes": 137644,
+    "sha256": "a7fc51b05370f779df235f5d272b9572e1f71bd0b4915f06ea96d783598fa377"
+   },
+   "mobil": {
+    "file": "frau2-57.glb",
+    "bytes": 137644,
+    "sha256": "a7fc51b05370f779df235f5d272b9572e1f71bd0b4915f06ea96d783598fa377"
+   }
+  }
+ },
+ {
+  "id": "frau2-72",
+  "organ": "frau2-72",
+  "name": "Aderhaut links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left choroid (TA2:6774).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-72.glb",
+    "bytes": 55320,
+    "sha256": "c90ea663df4336e3cdbdde6441d737e9ee794c79ebddc5273ce660d94157fe9c"
+   },
+   "mobil": {
+    "file": "frau2-72.glb",
+    "bytes": 55320,
+    "sha256": "c90ea663df4336e3cdbdde6441d737e9ee794c79ebddc5273ce660d94157fe9c"
+   }
+  }
+ },
+ {
+  "id": "frau2-73",
+  "organ": "frau2-73",
+  "name": "Lederhaut des Auges links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left sclera (TA2:6750).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-73.glb",
+    "bytes": 53480,
+    "sha256": "27649ef7c66a8f3dc67e1db7034dea1b2bf23836ead149cadac727414f83197a"
+   },
+   "mobil": {
+    "file": "frau2-73.glb",
+    "bytes": 53480,
+    "sha256": "27649ef7c66a8f3dc67e1db7034dea1b2bf23836ead149cadac727414f83197a"
+   }
+  }
+ },
+ {
+  "id": "frau2-400",
+  "organ": "frau2-400",
+  "name": "Innerer gerader Augenmuskel links",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left medial rectus (TA2:2044).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-400.glb",
+    "bytes": 8012,
+    "sha256": "522f70eda53e3d43c7fb06e2d1def35e682cc055b61098c8b83f764b5a021996"
+   },
+   "mobil": {
+    "file": "frau2-400.glb",
+    "bytes": 8012,
+    "sha256": "522f70eda53e3d43c7fb06e2d1def35e682cc055b61098c8b83f764b5a021996"
+   }
+  }
+ },
+ {
+  "id": "frau2-401",
+  "organ": "frau2-401",
+  "name": "Unterer gerader Augenmuskel links",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left inferior rectus (TA2:2043).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-401.glb",
+    "bytes": 44856,
+    "sha256": "2becd480402fb03b55c428e1d39565661bd88a70eef1cac9583eb82be5921ae5"
+   },
+   "mobil": {
+    "file": "frau2-401.glb",
+    "bytes": 44856,
+    "sha256": "2becd480402fb03b55c428e1d39565661bd88a70eef1cac9583eb82be5921ae5"
+   }
+  }
+ },
+ {
+  "id": "frau2-402",
+  "organ": "frau2-402",
+  "name": "Oberer gerader Augenmuskel links",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left superior rectus (TA2:2042).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-402.glb",
+    "bytes": 8632,
+    "sha256": "b587f2c7ee8dcfaf1befe777818851d0998cf42c405c5c3991aea1a33b23e242"
+   },
+   "mobil": {
+    "file": "frau2-402.glb",
+    "bytes": 8632,
+    "sha256": "b587f2c7ee8dcfaf1befe777818851d0998cf42c405c5c3991aea1a33b23e242"
+   }
+  }
+ },
+ {
+  "id": "frau2-404",
+  "organ": "frau2-404",
+  "name": "Äußerer gerader Augenmuskel links",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left lateral rectus (TA2:2045).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-404.glb",
+    "bytes": 52576,
+    "sha256": "396ab84cd0dc6c88ae26e20d5b9755f81a1858917f3f98914ee735dd3bf8e491"
+   },
+   "mobil": {
+    "file": "frau2-404.glb",
+    "bytes": 52576,
+    "sha256": "396ab84cd0dc6c88ae26e20d5b9755f81a1858917f3f98914ee735dd3bf8e491"
+   }
+  }
+ },
+ {
+  "id": "frau2-405",
+  "organ": "frau2-405",
+  "name": "Oberer schräger Augenmuskel links",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left superior oblique (TA2:2048).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-405.glb",
+    "bytes": 10348,
+    "sha256": "790100a456597d92385cb7f6afb17773e48e47f5ce436463f8317d0531872d3a"
+   },
+   "mobil": {
+    "file": "frau2-405.glb",
+    "bytes": 10348,
+    "sha256": "790100a456597d92385cb7f6afb17773e48e47f5ce436463f8317d0531872d3a"
+   }
+  }
+ },
+ {
+  "id": "frau2-407",
+  "organ": "frau2-407",
+  "name": "Innerer gerader Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right medial rectus (TA2:2044).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-407.glb",
+    "bytes": 8008,
+    "sha256": "d0dd7ff597ddb233b157c997d57db93259202a8d4b5ce07f2305029dd55d6e29"
+   },
+   "mobil": {
+    "file": "frau2-407.glb",
+    "bytes": 8008,
+    "sha256": "d0dd7ff597ddb233b157c997d57db93259202a8d4b5ce07f2305029dd55d6e29"
+   }
+  }
+ },
+ {
+  "id": "frau2-408",
+  "organ": "frau2-408",
+  "name": "Unterer gerader Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right inferior rectus (TA2:2043).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-408.glb",
+    "bytes": 44760,
+    "sha256": "f2d4eef4ca8969455fb9ed69aed2805a64722c3fee7a7a878bb037df88754883"
+   },
+   "mobil": {
+    "file": "frau2-408.glb",
+    "bytes": 44760,
+    "sha256": "f2d4eef4ca8969455fb9ed69aed2805a64722c3fee7a7a878bb037df88754883"
+   }
+  }
+ },
+ {
+  "id": "frau2-409",
+  "organ": "frau2-409",
+  "name": "Oberer gerader Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right superior rectus (TA2:2042).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-409.glb",
+    "bytes": 8612,
+    "sha256": "dc29b0d6995e3c0ae466c1babffd8c229a986c22c772a80e08aab42960ecb799"
+   },
+   "mobil": {
+    "file": "frau2-409.glb",
+    "bytes": 8612,
+    "sha256": "dc29b0d6995e3c0ae466c1babffd8c229a986c22c772a80e08aab42960ecb799"
+   }
+  }
+ },
+ {
+  "id": "frau2-410",
+  "organ": "frau2-410",
+  "name": "Unterer schräger Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right inferior oblique (TA2:2051).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-410.glb",
+    "bytes": 48908,
+    "sha256": "d8bfd6a460d6c6ac5321941883ab9cfdcb3339b701d12f8e057964207c77956d"
+   },
+   "mobil": {
+    "file": "frau2-410.glb",
+    "bytes": 48908,
+    "sha256": "d8bfd6a460d6c6ac5321941883ab9cfdcb3339b701d12f8e057964207c77956d"
+   }
+  }
+ },
+ {
+  "id": "frau2-411",
+  "organ": "frau2-411",
+  "name": "Äußerer gerader Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right lateral rectus (TA2:2045).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-411.glb",
+    "bytes": 52340,
+    "sha256": "6675271e6a4a0dbfe7d3a0ca82d4214e80709c78846b8ccf171c10cf1a4e8af3"
+   },
+   "mobil": {
+    "file": "frau2-411.glb",
+    "bytes": 52340,
+    "sha256": "6675271e6a4a0dbfe7d3a0ca82d4214e80709c78846b8ccf171c10cf1a4e8af3"
+   }
+  }
+ },
+ {
+  "id": "frau2-412",
+  "organ": "frau2-412",
+  "name": "Oberer schräger Augenmuskel rechts",
+  "sex": "frauatlas",
+  "category": "Muskeln im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right superior oblique (TA2:2048).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-412.glb",
+    "bytes": 10400,
+    "sha256": "ebacb9b27700883945d5263545b4d81abaa6124161da9d3e83ee08565a12ebe8"
+   },
+   "mobil": {
+    "file": "frau2-412.glb",
+    "bytes": 10400,
+    "sha256": "ebacb9b27700883945d5263545b4d81abaa6124161da9d3e83ee08565a12ebe8"
+   }
+  }
+ },
+ {
+  "id": "frau2-431",
+  "organ": "frau2-431",
+  "name": "Scheide",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. vagina (TA2:3523).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-431.glb",
+    "bytes": 25892,
+    "sha256": "8c2b2afb230708af3898540b3cc4a563d3e097ffc78b446aa67fe7f1eb01a4a1"
+   },
+   "mobil": {
+    "file": "frau2-431.glb",
+    "bytes": 25892,
+    "sha256": "8c2b2afb230708af3898540b3cc4a563d3e097ffc78b446aa67fe7f1eb01a4a1"
+   }
+  }
+ },
+ {
+  "id": "frau2-445",
+  "organ": "frau2-445",
+  "name": "Bauchfelltasche zwischen Harnblase und Gebärmutter",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Uterovesical pouch (TA2:3724).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-445.glb",
+    "bytes": 53776,
+    "sha256": "00e213d5a092a6e13adc67b0abaea81b8e2aee1ec578f1250a2f0e0a44f68b80"
+   },
+   "mobil": {
+    "file": "frau2-445.glb",
+    "bytes": 53776,
+    "sha256": "00e213d5a092a6e13adc67b0abaea81b8e2aee1ec578f1250a2f0e0a44f68b80"
+   }
+  }
+ },
+ {
+  "id": "frau2-447",
+  "organ": "frau2-447",
+  "name": "Rundes Gebärmutterband rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right round ligament of uterus (TA2:3835).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-447.glb",
+    "bytes": 4948,
+    "sha256": "3c82cb9be28f309266a8b2446cd3ccb74b45e14438c27d3bf9449403d48eaf59"
+   },
+   "mobil": {
+    "file": "frau2-447.glb",
+    "bytes": 4948,
+    "sha256": "3c82cb9be28f309266a8b2446cd3ccb74b45e14438c27d3bf9449403d48eaf59"
+   }
+  }
+ },
+ {
+  "id": "frau2-448",
+  "organ": "frau2-448",
+  "name": "Rundes Gebärmutterband links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left round ligament of uterus (TA2:3835).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-448.glb",
+    "bytes": 5304,
+    "sha256": "c0b88398ae83e9cbb9ad73d9201c9b6df5ee36a51d42ebe531d95ae33eef1986"
+   },
+   "mobil": {
+    "file": "frau2-448.glb",
+    "bytes": 5304,
+    "sha256": "c0b88398ae83e9cbb9ad73d9201c9b6df5ee36a51d42ebe531d95ae33eef1986"
+   }
+  }
+ },
+ {
+  "id": "frau2-484",
+  "organ": "frau2-484",
+  "name": "Gaumenmandel links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. left palatine tonsil (TA2:2853).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-484.glb",
+    "bytes": 94668,
+    "sha256": "30af6c92ff8e2605d663c6256164ecce11388a8e96f0c0951f8a0db08736fa88"
+   },
+   "mobil": {
+    "file": "frau2-484.glb",
+    "bytes": 94668,
+    "sha256": "30af6c92ff8e2605d663c6256164ecce11388a8e96f0c0951f8a0db08736fa88"
+   }
+  }
+ },
+ {
+  "id": "frau2-485",
+  "organ": "frau2-485",
+  "name": "Gaumenmandel rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. right palatine tonsil (TA2:2853).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-485.glb",
+    "bytes": 67900,
+    "sha256": "2dfb3767cb923cbde3ec9d8cb82535a4f58314c30964843b835af37d03f76ba6"
+   },
+   "mobil": {
+    "file": "frau2-485.glb",
+    "bytes": 67900,
+    "sha256": "2dfb3767cb923cbde3ec9d8cb82535a4f58314c30964843b835af37d03f76ba6"
+   }
+  }
+ },
+ {
+  "id": "frau2-494",
+  "organ": "frau2-494",
+  "name": "Mastdarm",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. rectum (TA2:2998).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-494.glb",
+    "bytes": 8548,
+    "sha256": "d4f046c7429794730a981b50894b8d555922e63aa297eea7b217af501a0ba30a"
+   },
+   "mobil": {
+    "file": "frau2-494.glb",
+    "bytes": 8548,
+    "sha256": "d4f046c7429794730a981b50894b8d555922e63aa297eea7b217af501a0ba30a"
+   }
+  }
+ },
+ {
+  "id": "frau2-529",
+  "organ": "frau2-529",
+  "name": "Unbedeckte Leberfläche",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. bare area of liver (TA2:3030).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-529.glb",
+    "bytes": 16852,
+    "sha256": "530957cd463c5ab6d14767d90c8772c7aad8762c39978c82f384eb4b1063994c"
+   },
+   "mobil": {
+    "file": "frau2-529.glb",
+    "bytes": 16852,
+    "sha256": "530957cd463c5ab6d14767d90c8772c7aad8762c39978c82f384eb4b1063994c"
+   }
+  },
+  "camera": {
+   "position": [
+    0.404781,
+    0.173118,
+    -0.897877
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-530",
+  "organ": "frau2-530",
+  "name": "Zwerchfellfläche der Leber",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. diaphragmatic surface of liver (TA2:3024).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-530.glb",
+    "bytes": 31004,
+    "sha256": "6a461adff8cfea9dc88842a50c26d563caeff07266406ea69e9ec47e2652eccc"
+   },
+   "mobil": {
+    "file": "frau2-530.glb",
+    "bytes": 31004,
+    "sha256": "6a461adff8cfea9dc88842a50c26d563caeff07266406ea69e9ec47e2652eccc"
+   }
+  },
+  "camera": {
+   "position": [
+    0.330059,
+    -0.74774,
+    -0.576147
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-547",
+  "organ": "frau2-547",
+  "name": "Kranzband der Leber",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. coronary ligament of liver (TA2:3772).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-547.glb",
+    "bytes": 9676,
+    "sha256": "deaa0f34da244db9b262c7ddba72aa602ebbfed23b961d34b19113f21f0360fc"
+   },
+   "mobil": {
+    "file": "frau2-547.glb",
+    "bytes": 9676,
+    "sha256": "deaa0f34da244db9b262c7ddba72aa602ebbfed23b961d34b19113f21f0360fc"
+   }
+  }
+ },
+ {
+  "id": "frau2-554",
+  "organ": "frau2-554",
+  "name": "Schwanz der Bauchspeicheldrüse",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. tail of pancreas (TA2:3127).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-554.glb",
+    "bytes": 21300,
+    "sha256": "540f1ac933885e9766ee6f0c40858a11c574f7c1d143d7afe28a1d5c64487811"
+   },
+   "mobil": {
+    "file": "frau2-554.glb",
+    "bytes": 21300,
+    "sha256": "540f1ac933885e9766ee6f0c40858a11c574f7c1d143d7afe28a1d5c64487811"
+   }
+  }
+ },
+ {
+  "id": "frau2-565",
+  "organ": "frau2-565",
+  "name": "Nierenkapsel links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. kidney capsule (TA2:3367).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-565.glb",
+    "bytes": 31532,
+    "sha256": "bbd4b954f437c06c3598672c991bfb5e445ab990adfaea73bebccd6411fa288f"
+   },
+   "mobil": {
+    "file": "frau2-565.glb",
+    "bytes": 31532,
+    "sha256": "bbd4b954f437c06c3598672c991bfb5e445ab990adfaea73bebccd6411fa288f"
+   }
+  }
+ },
+ {
+  "id": "frau2-583",
+  "organ": "frau2-583",
+  "name": "Nierenpyramide",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. renal pyramid (TA2:3379).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-583.glb",
+    "bytes": 4256,
+    "sha256": "1375cc1ddc679bd4df824d41c48d8f121682e8575789bd5ead88d1a3cfa8078b"
+   },
+   "mobil": {
+    "file": "frau2-583.glb",
+    "bytes": 4256,
+    "sha256": "1375cc1ddc679bd4df824d41c48d8f121682e8575789bd5ead88d1a3cfa8078b"
+   }
+  }
+ },
+ {
+  "id": "frau2-593",
+  "organ": "frau2-593",
+  "name": "Nierensäulen links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. renal column (TA2:3370).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-593.glb",
+    "bytes": 81088,
+    "sha256": "0f02e202383f729b81e237d4fc5f1ad19c77873edb91a1f1e7db067819f6c516"
+   },
+   "mobil": {
+    "file": "frau2-593.glb",
+    "bytes": 81088,
+    "sha256": "0f02e202383f729b81e237d4fc5f1ad19c77873edb91a1f1e7db067819f6c516"
+   }
+  }
+ },
+ {
+  "id": "frau2-596",
+  "organ": "frau2-596",
+  "name": "Nierenkapsel rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. kidney capsule (TA2:3367).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-596.glb",
+    "bytes": 30708,
+    "sha256": "d4269a9eba534f42c9d7654c6b0639c792ba71673f112697fcce89a1572f57ed"
+   },
+   "mobil": {
+    "file": "frau2-596.glb",
+    "bytes": 30708,
+    "sha256": "d4269a9eba534f42c9d7654c6b0639c792ba71673f112697fcce89a1572f57ed"
+   }
+  }
+ },
+ {
+  "id": "frau2-667",
+  "organ": "frau2-667",
+  "name": "Harnblasengrund",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. fundus of urinary bladder (TA2:3404).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-667.glb",
+    "bytes": 55680,
+    "sha256": "5245901a83d37a7bd25dbc8640adb3ab630faebf2fd8f6922346e14964411fe1"
+   },
+   "mobil": {
+    "file": "frau2-667.glb",
+    "bytes": 55680,
+    "sha256": "5245901a83d37a7bd25dbc8640adb3ab630faebf2fd8f6922346e14964411fe1"
+   }
+  }
+ },
+ {
+  "id": "frau2-704",
+  "organ": "frau2-704",
+  "name": "Untere Augenvene links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left inferior ophthalmic vein (TA2:4900).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-704.glb",
+    "bytes": 25972,
+    "sha256": "abd9e5c5f61d98a6c3468b382f702cb818cad7d1ffbea20ccbae9625d0a958b7"
+   },
+   "mobil": {
+    "file": "frau2-704.glb",
+    "bytes": 25972,
+    "sha256": "abd9e5c5f61d98a6c3468b382f702cb818cad7d1ffbea20ccbae9625d0a958b7"
+   }
+  }
+ },
+ {
+  "id": "frau2-709",
+  "organ": "frau2-709",
+  "name": "Untere Augenvene rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right inferior ophthalmic vein (TA2:4900).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-709.glb",
+    "bytes": 26000,
+    "sha256": "684727c43cecb1b954a267770d670e190fbd742ca3aaeb8df32e6ebdc3fc7cca"
+   },
+   "mobil": {
+    "file": "frau2-709.glb",
+    "bytes": 26000,
+    "sha256": "684727c43cecb1b954a267770d670e190fbd742ca3aaeb8df32e6ebdc3fc7cca"
+   }
+  }
+ },
+ {
+  "id": "frau2-714",
+  "organ": "frau2-714",
+  "name": "Augenarterie links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. ophthalmic artery (TA2:4469).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-714.glb",
+    "bytes": 57836,
+    "sha256": "19f6bd5894f9cbe708113d5544e402549511da5cd1562d9de489118a02fdaae2"
+   },
+   "mobil": {
+    "file": "frau2-714.glb",
+    "bytes": 57836,
+    "sha256": "19f6bd5894f9cbe708113d5544e402549511da5cd1562d9de489118a02fdaae2"
+   }
+  }
+ },
+ {
+  "id": "frau2-718",
+  "organ": "frau2-718",
+  "name": "Augenarterie rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. ophthalmic artery (TA2:4469).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-718.glb",
+    "bytes": 57636,
+    "sha256": "62d8314789a25883997e2257e757724cdb1e2055e27dbbb0d69d1ba980c938a9"
+   },
+   "mobil": {
+    "file": "frau2-718.glb",
+    "bytes": 57636,
+    "sha256": "62d8314789a25883997e2257e757724cdb1e2055e27dbbb0d69d1ba980c938a9"
+   }
+  }
+ },
+ {
+  "id": "frau2-742",
+  "organ": "frau2-742",
+  "name": "Untere Anorektalvenen rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Inferior rectal vein (TA2:5033).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-742.glb",
+    "bytes": 6860,
+    "sha256": "2ef2c5800005636683ecbfd2452eb304dcc411b5cd6f55fae2581e16231858c7"
+   },
+   "mobil": {
+    "file": "frau2-742.glb",
+    "bytes": 6860,
+    "sha256": "2ef2c5800005636683ecbfd2452eb304dcc411b5cd6f55fae2581e16231858c7"
+   }
+  }
+ },
+ {
+  "id": "frau2-887",
+  "organ": "frau2-887",
+  "name": "Stellknorpel rechts",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right arytenoid cartilage (TA2:983).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-887.glb",
+    "bytes": 10192,
+    "sha256": "cfb62c5f5e5fc42d7e7b3272f475e2630a24609f74a5a7611df9ace09c72d5a4"
+   },
+   "mobil": {
+    "file": "frau2-887.glb",
+    "bytes": 10192,
+    "sha256": "cfb62c5f5e5fc42d7e7b3272f475e2630a24609f74a5a7611df9ace09c72d5a4"
+   }
+  }
+ },
+ {
+  "id": "frau2-888",
+  "organ": "frau2-888",
+  "name": "Stellknorpel links",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left arytenoid cartilage (TA2:983).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-888.glb",
+    "bytes": 10320,
+    "sha256": "f45f02750b7e3042ccfbb550c3788f19696735355f56673aff72e440a2548ba9"
+   },
+   "mobil": {
+    "file": "frau2-888.glb",
+    "bytes": 10320,
+    "sha256": "f45f02750b7e3042ccfbb550c3788f19696735355f56673aff72e440a2548ba9"
+   }
+  }
+ },
+ {
+  "id": "frau2-889",
+  "organ": "frau2-889",
+  "name": "Kehldeckelknorpel",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. epiglottic cartilage (TA2:965).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-889.glb",
+    "bytes": 11448,
+    "sha256": "283ff42caf4764a43398fd22451cbcb92bac4fd5ed82db6f469ba4cab046ee1c"
+   },
+   "mobil": {
+    "file": "frau2-889.glb",
+    "bytes": 11448,
+    "sha256": "283ff42caf4764a43398fd22451cbcb92bac4fd5ed82db6f469ba4cab046ee1c"
+   }
+  }
+ },
+ {
+  "id": "frau2-890",
+  "organ": "frau2-890",
+  "name": "Ringknorpel",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. cricoid cartilage (TA2:978).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-890.glb",
+    "bytes": 13336,
+    "sha256": "e8900f0c671e82b8bbb1fb61a84f159636b0dc5c1c2b52e8921faed481110395"
+   },
+   "mobil": {
+    "file": "frau2-890.glb",
+    "bytes": 13336,
+    "sha256": "e8900f0c671e82b8bbb1fb61a84f159636b0dc5c1c2b52e8921faed481110395"
+   }
+  }
+ },
+ {
+  "id": "frau2-891",
+  "organ": "frau2-891",
+  "name": "Schildknorpel",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. thyroid cartilage (TA2:967).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-891.glb",
+    "bytes": 15960,
+    "sha256": "28d52d56c4ac393019a903964f9d0a8f29c6d39c603d4dc91e372a32851b2493"
+   },
+   "mobil": {
+    "file": "frau2-891.glb",
+    "bytes": 15960,
+    "sha256": "28d52d56c4ac393019a903964f9d0a8f29c6d39c603d4dc91e372a32851b2493"
+   }
+  }
+ },
+ {
+  "id": "frau2-897",
+  "organ": "frau2-897",
+  "name": "Luftröhre",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. trachea (TA2:3213).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-897.glb",
+    "bytes": 9784,
+    "sha256": "79bbef7354209ba39252a0f2a1d465eac99e4c4d812d568ef13c338ff2f8cf49"
+   },
+   "mobil": {
+    "file": "frau2-897.glb",
+    "bytes": 9784,
+    "sha256": "79bbef7354209ba39252a0f2a1d465eac99e4c4d812d568ef13c338ff2f8cf49"
+   }
+  }
+ },
+ {
+  "id": "frau2-946",
+  "organ": "frau2-946",
+  "name": "Zwerchfellfläche der Milz",
+  "sex": "frauatlas",
+  "category": "Innere Strukturen im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. diaphragmatic surface of spleen (TA2:5160).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-946.glb",
+    "bytes": 31488,
+    "sha256": "abd9e729ab0f06afaf31688551fcdf75ba9c2d8e5c24329b49596ad63540a245"
+   },
+   "mobil": {
+    "file": "frau2-946.glb",
+    "bytes": 31488,
+    "sha256": "abd9e729ab0f06afaf31688551fcdf75ba9c2d8e5c24329b49596ad63540a245"
+   }
+  },
+  "camera": {
+   "position": [
+    0.36831,
+    -0.090908,
+    -0.925248
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-989",
+  "organ": "frau2-989",
+  "name": "Knieinnenband rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right tibial collateral ligament (TA2:1896).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-989.glb",
+    "bytes": 6508,
+    "sha256": "babf82a50b571600b9c4021c76489d3b8951290dc7c88178d7f2d1771b7df5bd"
+   },
+   "mobil": {
+    "file": "frau2-989.glb",
+    "bytes": 6508,
+    "sha256": "babf82a50b571600b9c4021c76489d3b8951290dc7c88178d7f2d1771b7df5bd"
+   }
+  }
+ },
+ {
+  "id": "frau2-990",
+  "organ": "frau2-990",
+  "name": "Vorderes Kreuzband rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right anterior cruciate ligament (TA2:1890).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-990.glb",
+    "bytes": 5140,
+    "sha256": "89530cd08099ede5619f723e0a2a69b39d0fac74f8fbf3c8c55469b7845fb399"
+   },
+   "mobil": {
+    "file": "frau2-990.glb",
+    "bytes": 5140,
+    "sha256": "89530cd08099ede5619f723e0a2a69b39d0fac74f8fbf3c8c55469b7845fb399"
+   }
+  }
+ },
+ {
+  "id": "frau2-994",
+  "organ": "frau2-994",
+  "name": "Kniescheibenband rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right patellar ligament (TA2:2622).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-994.glb",
+    "bytes": 5048,
+    "sha256": "db962a644b4f9482a1383639142ffa3cf4a93aac53acb783e4b657c155c5225c"
+   },
+   "mobil": {
+    "file": "frau2-994.glb",
+    "bytes": 5048,
+    "sha256": "db962a644b4f9482a1383639142ffa3cf4a93aac53acb783e4b657c155c5225c"
+   }
+  }
+ },
+ {
+  "id": "frau2-998",
+  "organ": "frau2-998",
+  "name": "Oberschenkelknochen rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right femur (TA2:1360).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-998.glb",
+    "bytes": 22652,
+    "sha256": "58d07be587533f404e8fc467801838b0921f50edbf6e0f0cdb0c37dc1b49a6e8"
+   },
+   "mobil": {
+    "file": "frau2-998.glb",
+    "bytes": 22652,
+    "sha256": "58d07be587533f404e8fc467801838b0921f50edbf6e0f0cdb0c37dc1b49a6e8"
+   }
+  }
+ },
+ {
+  "id": "frau2-1002",
+  "organ": "frau2-1002",
+  "name": "Innerer Gelenkknorren des Oberschenkelknochens rechts (oberer Anteil)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Medial condyle of right femur (TA2:1380).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1002.glb",
+    "bytes": 2104,
+    "sha256": "2a8b0334b22ccba753c5899fed5d9e9b65b07dee7d9a6cba024994589fc0af47"
+   },
+   "mobil": {
+    "file": "frau2-1002.glb",
+    "bytes": 2104,
+    "sha256": "2a8b0334b22ccba753c5899fed5d9e9b65b07dee7d9a6cba024994589fc0af47"
+   }
+  }
+ },
+ {
+  "id": "frau2-1004",
+  "organ": "frau2-1004",
+  "name": "Innerer Gelenkknorren des Oberschenkelknochens rechts (unterer Anteil)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Medial condyle of right femur (TA2:1380).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1004.glb",
+    "bytes": 2436,
+    "sha256": "cc0c2802ac7bd139635e9b27b22000030b8c13cf72e7c71937b4d71843a26972"
+   },
+   "mobil": {
+    "file": "frau2-1004.glb",
+    "bytes": 2436,
+    "sha256": "cc0c2802ac7bd139635e9b27b22000030b8c13cf72e7c71937b4d71843a26972"
+   }
+  },
+  "camera": {
+   "position": [
+    -0.030153,
+    0.005081,
+    -0.999532
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-1008",
+  "organ": "frau2-1008",
+  "name": "Grube zwischen den Oberschenkelknorren rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Intercondylar fossa of right femur (TA2:1387).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1008.glb",
+    "bytes": 1872,
+    "sha256": "7f00189e00e441e5cbe562ea712b8ee2f51fe6e1c2266ef459fe784cfd6cbe76"
+   },
+   "mobil": {
+    "file": "frau2-1008.glb",
+    "bytes": 1872,
+    "sha256": "7f00189e00e441e5cbe562ea712b8ee2f51fe6e1c2266ef459fe784cfd6cbe76"
+   }
+  },
+  "camera": {
+   "position": [
+    -0.923021,
+    0.042821,
+    -0.38236
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-1014",
+  "organ": "frau2-1014",
+  "name": "Schienbein rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right tibia (TA2:1397).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1014.glb",
+    "bytes": 10996,
+    "sha256": "8d78226aed03edb9b8c46397e21276fcfbc66b4c8ddf96f5069e0e71a61a9f42"
+   },
+   "mobil": {
+    "file": "frau2-1014.glb",
+    "bytes": 10996,
+    "sha256": "8d78226aed03edb9b8c46397e21276fcfbc66b4c8ddf96f5069e0e71a61a9f42"
+   }
+  }
+ },
+ {
+  "id": "frau2-1015",
+  "organ": "frau2-1015",
+  "name": "Wadenbein rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right fibula (TA2:1427).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1015.glb",
+    "bytes": 5552,
+    "sha256": "8cdfe1fea858dd6cebaf3861f17563682e1885bc79422841457343230db0cf7f"
+   },
+   "mobil": {
+    "file": "frau2-1015.glb",
+    "bytes": 5552,
+    "sha256": "8cdfe1fea858dd6cebaf3861f17563682e1885bc79422841457343230db0cf7f"
+   }
+  }
+ },
+ {
+  "id": "frau2-1016",
+  "organ": "frau2-1016",
+  "name": "Kniescheibe rechts",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Right patella (TA2:1390).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1016.glb",
+    "bytes": 3352,
+    "sha256": "e0cb415b365635103578257bac7047dad4724b82b0ec2477c8ce66b60b0ecf84"
+   },
+   "mobil": {
+    "file": "frau2-1016.glb",
+    "bytes": 3352,
+    "sha256": "e0cb415b365635103578257bac7047dad4724b82b0ec2477c8ce66b60b0ecf84"
+   }
+  }
+ },
+ {
+  "id": "frau2-1021",
+  "organ": "frau2-1021",
+  "name": "Kniescheibenband links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left patellar ligament (TA2:2622).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1021.glb",
+    "bytes": 5040,
+    "sha256": "b8f307a06e9d6d2ccc97e78ba728ac1783f053d150beb540024612b5259598c5"
+   },
+   "mobil": {
+    "file": "frau2-1021.glb",
+    "bytes": 5040,
+    "sha256": "b8f307a06e9d6d2ccc97e78ba728ac1783f053d150beb540024612b5259598c5"
+   }
+  }
+ },
+ {
+  "id": "frau2-1022",
+  "organ": "frau2-1022",
+  "name": "Knieinnenband links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left tibial collateral ligament (TA2:1896).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1022.glb",
+    "bytes": 6468,
+    "sha256": "56f105a5557d0ed86429214ae3892420d7d182672fee9e465ab264fded118187"
+   },
+   "mobil": {
+    "file": "frau2-1022.glb",
+    "bytes": 6468,
+    "sha256": "56f105a5557d0ed86429214ae3892420d7d182672fee9e465ab264fded118187"
+   }
+  }
+ },
+ {
+  "id": "frau2-1023",
+  "organ": "frau2-1023",
+  "name": "Vorderes Kreuzband links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left anterior cruciate ligament (TA2:1890).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1023.glb",
+    "bytes": 5128,
+    "sha256": "3a141fdf45a20ec5aec41d74fea5b10a8ba0efc0b39928eb3fe0113f71edb2a1"
+   },
+   "mobil": {
+    "file": "frau2-1023.glb",
+    "bytes": 5128,
+    "sha256": "3a141fdf45a20ec5aec41d74fea5b10a8ba0efc0b39928eb3fe0113f71edb2a1"
+   }
+  }
+ },
+ {
+  "id": "frau2-1024",
+  "organ": "frau2-1024",
+  "name": "Hinteres Kreuzband links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left posterior cruciate ligament (TA2:1891).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1024.glb",
+    "bytes": 5224,
+    "sha256": "f0e86ee434fe4d8c43b2a7283c762d910e160884d833201aab025f3c3f544e6c"
+   },
+   "mobil": {
+    "file": "frau2-1024.glb",
+    "bytes": 5224,
+    "sha256": "f0e86ee434fe4d8c43b2a7283c762d910e160884d833201aab025f3c3f544e6c"
+   }
+  }
+ },
+ {
+  "id": "frau2-1028",
+  "organ": "frau2-1028",
+  "name": "Oberschenkelknochen links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left femur (TA2:1360).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1028.glb",
+    "bytes": 22824,
+    "sha256": "c62dec3bf3901241cbe4538aee837e9987220e0aa75f1424b8b605d853cd28fb"
+   },
+   "mobil": {
+    "file": "frau2-1028.glb",
+    "bytes": 22824,
+    "sha256": "c62dec3bf3901241cbe4538aee837e9987220e0aa75f1424b8b605d853cd28fb"
+   }
+  }
+ },
+ {
+  "id": "frau2-1029",
+  "organ": "frau2-1029",
+  "name": "Grube zwischen den Oberschenkelknorren links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Intercondylar fossa of left femur (TA2:1387).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1029.glb",
+    "bytes": 1872,
+    "sha256": "76157cffc809b109a104634c1497ff07ed0bc76909bb379fc578debaa59083e9"
+   },
+   "mobil": {
+    "file": "frau2-1029.glb",
+    "bytes": 1872,
+    "sha256": "76157cffc809b109a104634c1497ff07ed0bc76909bb379fc578debaa59083e9"
+   }
+  },
+  "camera": {
+   "position": [
+    0.92302,
+    0.042821,
+    -0.382361
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-1035",
+  "organ": "frau2-1035",
+  "name": "Kniescheibengelenkfläche des Oberschenkelknochens links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Patellar surface of left femur (TA2:1386).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1035.glb",
+    "bytes": 1716,
+    "sha256": "a80c2551cbd7853c16c03377414c2a2eb709d8f60b0fcb9c5d45771743da2780"
+   },
+   "mobil": {
+    "file": "frau2-1035.glb",
+    "bytes": 1716,
+    "sha256": "a80c2551cbd7853c16c03377414c2a2eb709d8f60b0fcb9c5d45771743da2780"
+   }
+  }
+ },
+ {
+  "id": "frau2-1038",
+  "organ": "frau2-1038",
+  "name": "Innerer Gelenkknorren des Oberschenkelknochens links (unterer Anteil)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Medial condyle of left femur (TA2:1380).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1038.glb",
+    "bytes": 2440,
+    "sha256": "4e860b2cd8278e82f01a778166306d622c562f05404a368c1136b91187deb3ca"
+   },
+   "mobil": {
+    "file": "frau2-1038.glb",
+    "bytes": 2440,
+    "sha256": "4e860b2cd8278e82f01a778166306d622c562f05404a368c1136b91187deb3ca"
+   }
+  },
+  "camera": {
+   "position": [
+    0.030153,
+    0.005083,
+    -0.999532
+   ],
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "up": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "frau2-1043",
+  "organ": "frau2-1043",
+  "name": "Innerer Gelenkknorren des Oberschenkelknochens links (oberer Anteil)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Medial condyle of left femur (TA2:1380).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1043.glb",
+    "bytes": 2100,
+    "sha256": "f6ca945eb8dbe718e5a9408b8a4fe629ef0b23673be307c2c4d82c471ff81e61"
+   },
+   "mobil": {
+    "file": "frau2-1043.glb",
+    "bytes": 2100,
+    "sha256": "f6ca945eb8dbe718e5a9408b8a4fe629ef0b23673be307c2c4d82c471ff81e61"
+   }
+  }
+ },
+ {
+  "id": "frau2-1044",
+  "organ": "frau2-1044",
+  "name": "Kniescheibe links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left patella (TA2:1390).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1044.glb",
+    "bytes": 3356,
+    "sha256": "888d5fa60d013f51e1ba3359e986a556474cdaca25737374f36b634665b1a26a"
+   },
+   "mobil": {
+    "file": "frau2-1044.glb",
+    "bytes": 3356,
+    "sha256": "888d5fa60d013f51e1ba3359e986a556474cdaca25737374f36b634665b1a26a"
+   }
+  }
+ },
+ {
+  "id": "frau2-1045",
+  "organ": "frau2-1045",
+  "name": "Schienbein links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left tibia (TA2:1397).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1045.glb",
+    "bytes": 11004,
+    "sha256": "160c97ca1606223263fffe01c262c96814afd89fdc552a6ee66b3fff12ca9113"
+   },
+   "mobil": {
+    "file": "frau2-1045.glb",
+    "bytes": 11004,
+    "sha256": "160c97ca1606223263fffe01c262c96814afd89fdc552a6ee66b3fff12ca9113"
+   }
+  }
+ },
+ {
+  "id": "frau2-1046",
+  "organ": "frau2-1046",
+  "name": "Wadenbein links",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. Left fibula (TA2:1427).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1046.glb",
+    "bytes": 5540,
+    "sha256": "1680709c6174792764234bde043f7cb59204d123d969541c88c0ef10eaaac8e8"
+   },
+   "mobil": {
+    "file": "frau2-1046.glb",
+    "bytes": 5540,
+    "sha256": "1680709c6174792764234bde043f7cb59204d123d969541c88c0ef10eaaac8e8"
+   }
+  }
+ },
+ {
+  "id": "frau2-1066",
+  "organ": "frau2-1066",
+  "name": "Erster Halswirbel (Atlas)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. vertebral bone 1 (TA2:1038).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1066.glb",
+    "bytes": 45848,
+    "sha256": "4cf8dc463e259ba676cc83a34217467e40f8c8cedb22a952583422fab19f9412"
+   },
+   "mobil": {
+    "file": "frau2-1066.glb",
+    "bytes": 45848,
+    "sha256": "4cf8dc463e259ba676cc83a34217467e40f8c8cedb22a952583422fab19f9412"
+   }
+  }
+ },
+ {
+  "id": "frau2-1067",
+  "organ": "frau2-1067",
+  "name": "Zweiter Halswirbel (Axis)",
+  "sex": "frauatlas",
+  "category": "Skelett im weiblichen Quellatlas",
+  "credit": "Kristen Browne; Heidi Schlehlein; HuBMAP · Courtesy of the U.S. National Library of Medicine. vertebral bone 2 (TA2:1050).",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "variants": {
+   "desktop": {
+    "file": "frau2-1067.glb",
+    "bytes": 45500,
+    "sha256": "db719f35b9f6a9c22a0753ca3faadcdc423cbfc2c4c1435e8ef671d7bf04510d"
+   },
+   "mobil": {
+    "file": "frau2-1067.glb",
+    "bytes": 45500,
+    "sha256": "db719f35b9f6a9c22a0753ca3faadcdc423cbfc2c4c1435e8ef671d7bf04510d"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-1",
+  "organ": "bp-fj1451m-1",
+  "name": "Äußerer Zwischenrippenmuskel 1 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 1 und 2. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-1.glb",
+    "bytes": 167920,
+    "sha256": "16110f40575737b5a1ec802ee17f65aebc62413c828d80a96c269eea698a58be"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-1.glb",
+    "bytes": 167920,
+    "sha256": "16110f40575737b5a1ec802ee17f65aebc62413c828d80a96c269eea698a58be"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-2",
+  "organ": "bp-fj1451m-2",
+  "name": "Äußerer Zwischenrippenmuskel 2 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 2 und 3. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-2.glb",
+    "bytes": 235036,
+    "sha256": "ca3162b043e555231a488672bd5fbdeda19191cc6510c71dccee5c9dc3e9795a"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-2.glb",
+    "bytes": 235036,
+    "sha256": "ca3162b043e555231a488672bd5fbdeda19191cc6510c71dccee5c9dc3e9795a"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-3",
+  "organ": "bp-fj1451m-3",
+  "name": "Äußerer Zwischenrippenmuskel 3 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 3 und 4. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-3.glb",
+    "bytes": 338792,
+    "sha256": "de8198a4372f74d3f0ca8a14e42e6160e68f34449e2632f9f2bf9c4e08e55366"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-3.glb",
+    "bytes": 338792,
+    "sha256": "de8198a4372f74d3f0ca8a14e42e6160e68f34449e2632f9f2bf9c4e08e55366"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-4",
+  "organ": "bp-fj1451m-4",
+  "name": "Äußerer Zwischenrippenmuskel 4 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 4 und 5. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-4.glb",
+    "bytes": 312532,
+    "sha256": "3489e07a80df9690fe798aab040fcecd4bb38db0f893323ea649bcdd4461e806"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-4.glb",
+    "bytes": 312532,
+    "sha256": "3489e07a80df9690fe798aab040fcecd4bb38db0f893323ea649bcdd4461e806"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-5",
+  "organ": "bp-fj1451m-5",
+  "name": "Äußerer Zwischenrippenmuskel 5 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 5 und 6. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-5.glb",
+    "bytes": 332220,
+    "sha256": "005cf073a5eea4900e8eb1bd69aed9b0e5d7415595e0f41103201a600d47d39f"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-5.glb",
+    "bytes": 332220,
+    "sha256": "005cf073a5eea4900e8eb1bd69aed9b0e5d7415595e0f41103201a600d47d39f"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-6",
+  "organ": "bp-fj1451m-6",
+  "name": "Äußerer Zwischenrippenmuskel 6 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 6 und 7. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-6.glb",
+    "bytes": 261508,
+    "sha256": "b96ab614926cdfbe36748b4a984cb1fd4a6db95a456ab6db1f7ba49589d0cec2"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-6.glb",
+    "bytes": 261508,
+    "sha256": "b96ab614926cdfbe36748b4a984cb1fd4a6db95a456ab6db1f7ba49589d0cec2"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-7",
+  "organ": "bp-fj1451m-7",
+  "name": "Äußerer Zwischenrippenmuskel 7 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 7 und 8. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-7.glb",
+    "bytes": 302504,
+    "sha256": "388c57d1949280f49f2470320befca810dc0155ad28bd7ddc381cdbcd15b7bae"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-7.glb",
+    "bytes": 302504,
+    "sha256": "388c57d1949280f49f2470320befca810dc0155ad28bd7ddc381cdbcd15b7bae"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-8",
+  "organ": "bp-fj1451m-8",
+  "name": "Äußerer Zwischenrippenmuskel 8 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 8 und 9. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-8.glb",
+    "bytes": 278768,
+    "sha256": "25d55fa4692e9814ea0c140585dc7938fd8040abd6292148c0fe888835705608"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-8.glb",
+    "bytes": 278768,
+    "sha256": "25d55fa4692e9814ea0c140585dc7938fd8040abd6292148c0fe888835705608"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-9",
+  "organ": "bp-fj1451m-9",
+  "name": "Äußerer Zwischenrippenmuskel 9 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 9 und 10. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-9.glb",
+    "bytes": 213724,
+    "sha256": "9505d686188142fdafeab3fcb1d23e8e37b2ae734612483deb6f2d13cb4c19b2"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-9.glb",
+    "bytes": 213724,
+    "sha256": "9505d686188142fdafeab3fcb1d23e8e37b2ae734612483deb6f2d13cb4c19b2"
+   }
+  }
+ },
+ {
+  "id": "bp-fj1451m-10",
+  "organ": "bp-fj1451m-10",
+  "name": "Äußerer Zwischenrippenmuskel 10 links",
+  "sex": "bodyparts",
+  "category": "Muskelmodelle",
+  "credit": "BodyParts3D, (c)  The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan. Zusammenhängende Hauptfläche aus FJ1451M (FMA9756) zwischen den linken Rippen 10 und 11. Umrechnung der Originalkoordinaten in Meter.",
+  "license": "CC BY-SA 2.1 Japan",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+  "variants": {
+   "desktop": {
+    "file": "bp-fj1451m-10.glb",
+    "bytes": 171820,
+    "sha256": "9d509abae100d6d791b762542c9e7f66be4715d7d36c12eb231f091b271fb1cb"
+   },
+   "mobil": {
+    "file": "bp-fj1451m-10.glb",
+    "bytes": 171820,
+    "sha256": "9d509abae100d6d791b762542c9e7f66be4715d7d36c12eb231f091b271fb1cb"
+   }
+  }
+ }
+]

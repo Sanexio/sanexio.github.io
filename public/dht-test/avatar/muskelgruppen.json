@@ -1,0 +1,1075 @@
+{
+ "segments": [
+  {
+   "id": "atlas:muskel:2304:L",
+   "de": "Bauchanteil des großen Brustmuskels",
+   "la": "(Pars abdominalis musculi pectoralis majoris)",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2304-L/lod0.glb",
+   "sha256": "e37b386daf96d39528b62c9a64e1cc437a7654c66f417bae114a074266f091b3"
+  },
+  {
+   "id": "atlas:muskel:2304:R",
+   "de": "Bauchanteil des großen Brustmuskels",
+   "la": "(Pars abdominalis musculi pectoralis majoris)",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2304-R/lod0.glb",
+   "sha256": "f16ba3e019ecdb5401481338b884a7022050525b7d88268b46ef64a23aedbbe3"
+  },
+  {
+   "id": "atlas:muskel:2454:L",
+   "de": "Mittlerer Anteil des Deltamuskels",
+   "la": "Pars acromialis musculi deltoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2454-L/lod0.glb",
+   "sha256": "9edc0dada02d98f14372a5eafdbefbd06835cb34ec94f6f07a2c20375c6c1246"
+  },
+  {
+   "id": "atlas:muskel:2454:R",
+   "de": "Mittlerer Anteil des Deltamuskels",
+   "la": "Pars acromialis musculi deltoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2454-R/lod0.glb",
+   "sha256": "b0eb5466c574653b01b0d317f4ec66025cd3e34bb564a85ae4fae37ebb331d87"
+  },
+  {
+   "id": "atlas:muskel:2161:L",
+   "de": "Vorderer Bauch des zweibäuchigen Muskels",
+   "la": "Venter anterior musculi digastrici",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2161-L/lod0.glb",
+   "sha256": "ed7b6b304b4268bfad0cb518941530a4130ce376063f9ce1d517e217fdd7eb3b"
+  },
+  {
+   "id": "atlas:muskel:2161:R",
+   "de": "Vorderer Bauch des zweibäuchigen Muskels",
+   "la": "Venter anterior musculi digastrici",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2161-R/lod0.glb",
+   "sha256": "d39ee19ecfa8dbc7b1df6b13dd29098f50eaaf21e5a1f4b09f532828c5204940"
+  },
+  {
+   "id": "atlas:muskel:2204:L",
+   "de": "Kehldeckelanteil des schrägen Stellknorpelmuskels",
+   "la": "Pars aryepiglottica musculi arytenoidei obliqui",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2204-L/lod0.glb",
+   "sha256": "c6ff759b56a131e5588380efc141e22cdc68de6763a2420f328d244671c24e2b"
+  },
+  {
+   "id": "atlas:muskel:2204:R",
+   "de": "Kehldeckelanteil des schrägen Stellknorpelmuskels",
+   "la": "Pars aryepiglottica musculi arytenoidei obliqui",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2204-R/lod0.glb",
+   "sha256": "ba1c7b5e6fb30d116134934beb0efd70a34ed7ba3adec0309ec64fe90ec791cd"
+  },
+  {
+   "id": "atlas:muskel:2229:L",
+   "de": "Aufsteigender Anteil des Trapezmuskels",
+   "la": "Pars ascendens musculi trapezii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2229-L/lod0.glb",
+   "sha256": "14b9b0ddf04ac89fee8fc167cf3216b0395d28079da1a91a15e3a6944ab7e76a"
+  },
+  {
+   "id": "atlas:muskel:2229:R",
+   "de": "Aufsteigender Anteil des Trapezmuskels",
+   "la": "Pars ascendens musculi trapezii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2229-R/lod0.glb",
+   "sha256": "fc20bbb2ef18fbf9b6516d98201b1caffa72b484411eae40cfd70df515f335f9"
+  },
+  {
+   "id": "atlas:muskel:2086:L",
+   "de": "Wangenmuskel",
+   "la": "Bucinator",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2086-L/lod0.glb",
+   "sha256": "a8b5468db06d18c29eba059b3195cda87ae9704b9d67e9884d48d8caff69ddab"
+  },
+  {
+   "id": "atlas:muskel:2086:R",
+   "de": "Wangenmuskel",
+   "la": "Bucinator",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2086-R/lod0.glb",
+   "sha256": "83ca871495874b5db3feee399a9923419a869421e567fb59b4bd57a30152b6c4"
+  },
+  {
+   "id": "atlas:muskel:2302:L",
+   "de": "Schlüsselbeinkopf des großen Brustmuskels",
+   "la": "Pars clavicularis musculi pectoralis majoris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2302-L/lod0.glb",
+   "sha256": "2674782bcb97072206b2ff2209be77f254472d4310acb39328a9f8f478848d6d"
+  },
+  {
+   "id": "atlas:muskel:2302:R",
+   "de": "Schlüsselbeinkopf des großen Brustmuskels",
+   "la": "Pars clavicularis musculi pectoralis majoris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2302-R/lod0.glb",
+   "sha256": "60c52874814d82a65bb468d082c0501b67cea0206f73659450c92cb97ead5cef"
+  },
+  {
+   "id": "atlas:muskel:2453:L",
+   "de": "Schlüsselbeinanteil des Deltamuskels",
+   "la": "Pars clavicularis musculi deltoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2453-L/lod0.glb",
+   "sha256": "aaa60bacbaeeb4e497d58bd263c5a8b713d04058b948d8c08ae89a395ba2c948"
+  },
+  {
+   "id": "atlas:muskel:2453:R",
+   "de": "Schlüsselbeinanteil des Deltamuskels",
+   "la": "Pars clavicularis musculi deltoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2453-R/lod0.glb",
+   "sha256": "413c4fed2a1b711e888d2b805677c4e63de1cb6637cc8bf82be22e15653b667b"
+  },
+  {
+   "id": "atlas:muskel:2107:L",
+   "de": "Tiefer Anteil des Kaumuskels",
+   "la": "Pars profunda masseteris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2107-L/lod0.glb",
+   "sha256": "b7153cedb87f51e2ef8f3ee7dbe9662e0497f5d5fd3c6686b9ae250b73cd6eb2"
+  },
+  {
+   "id": "atlas:muskel:2107:R",
+   "de": "Tiefer Anteil des Kaumuskels",
+   "la": "Pars profunda masseteris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2107-R/lod0.glb",
+   "sha256": "8802869f4011beb9f8db9c2fb1c4ab9fe680a16647f93343cb476fa2adb83b9c"
+  },
+  {
+   "id": "atlas:muskel:2227:L",
+   "de": "Absteigender Anteil des Trapezmuskels",
+   "la": "Pars descendens musculi trapezii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2227-L/lod0.glb",
+   "sha256": "7783c60bf7f42b76b38667c648c57df4a90b598f84bf01be879a0ed07988423c"
+  },
+  {
+   "id": "atlas:muskel:2227:R",
+   "de": "Absteigender Anteil des Trapezmuskels",
+   "la": "Pars descendens musculi trapezii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2227-R/lod0.glb",
+   "sha256": "07be4d7193928d929517be254861947bf96e3a6f2273b874c192bdeef0044baf"
+  },
+  {
+   "id": "atlas:muskel:2686:L",
+   "de": "Rückseitige Zwischenknochenmuskeln des Fußes",
+   "la": "Musculi interossei dorsales pedis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2686-L/lod0.glb",
+   "sha256": "9f3ba868bf59cdd64cf055e904f803bb43cff77c0618baff4b2b7bb154a1a094"
+  },
+  {
+   "id": "atlas:muskel:2686:R",
+   "de": "Rückseitige Zwischenknochenmuskeln des Fußes",
+   "la": "Musculi interossei dorsales pedis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2686-R/lod0.glb",
+   "sha256": "6c14def9304cea8ac0d604fbf858b33bd891ae7b210d1372d8bbad8f3615b971"
+  },
+  {
+   "id": "atlas:muskel:2240:L",
+   "de": "Hintere Anteile der seitlichen Zwischenquerfortsatzmuskeln der Lende",
+   "la": "Partes dors. musculorum intertransversariorum lat. lumborum",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2240-L/lod0.glb",
+   "sha256": "31ce0a627afa631b2101e7bc9ca86392c68c1b4e49793ebe97cabc9094d99774"
+  },
+  {
+   "id": "atlas:muskel:2240:R",
+   "de": "Hintere Anteile der seitlichen Zwischenquerfortsatzmuskeln der Lende",
+   "la": "Partes dors. musculorum intertransversariorum lat. lumborum",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2240-R/lod0.glb",
+   "sha256": "e69154165e2662880b94aee1c05d6c7b92684ca3bb907f075abb38a450bf1764"
+  },
+  {
+   "id": "atlas:muskel:2426:L",
+   "de": "Äußerer Afterschließmuskel",
+   "la": "Sphincter externus ani",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2426-L/lod0.glb",
+   "sha256": "1781f3150cf735973baced0d261107b2a0da6b4812c0b79db4469aacdf74113a"
+  },
+  {
+   "id": "atlas:muskel:2426:R",
+   "de": "Äußerer Afterschließmuskel",
+   "la": "Sphincter externus ani",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2426-R/lod0.glb",
+   "sha256": "9decf39f190fee04f56bfb0091803c635b29a299da34dd208aede20753d77dee"
+  },
+  {
+   "id": "atlas:muskel:2311:L",
+   "de": "Äußere Zwischenrippenmuskeln",
+   "la": "Musculi intercostales externi",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2311-L/lod0.glb",
+   "sha256": "f6f0d1cdb43cbe62658a224c618b46bc1357c219c2c84a17fbc750dbedefba64"
+  },
+  {
+   "id": "atlas:muskel:2311:R",
+   "de": "Äußere Zwischenrippenmuskeln",
+   "la": "Musculi intercostales externi",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2311-R/lod0.glb",
+   "sha256": "c9a87031f3b6f34720957c532a63c0b8f84acf8894ee47ef507a5d3e24508e91"
+  },
+  {
+   "id": "atlas:muskel:2200:L",
+   "de": "Äußerer Anteil des Schildknorpel-Stellknorpel-Muskels",
+   "la": "Pars externa musculi thyreoarytenoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2200-L/lod0.glb",
+   "sha256": "6acf531bff48d10512a065ca1b5b8a28983f96dde6a822336bdb9206b240b443"
+  },
+  {
+   "id": "atlas:muskel:2200:R",
+   "de": "Äußerer Anteil des Schildknorpel-Stellknorpel-Muskels",
+   "la": "Pars externa musculi thyreoarytenoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2200-R/lod0.glb",
+   "sha256": "4f98e695b5824c9aea9fec0652f5fc7360b4b3e76e952139a7c9a62d88e0a908"
+  },
+  {
+   "id": "atlas:muskel:2261:M",
+   "de": "Halsanteil des Darmbein-Rippen-Muskels",
+   "la": "Musculus iliocostalis colli",
+   "side": "M",
+   "file": "modelle/muskulatur/TA2-2261-M/lod0.glb",
+   "sha256": "651d323b67cef14534403ad4645af832409e458ada152d43124911a60f849d55"
+  },
+  {
+   "id": "atlas:muskel:2111:L",
+   "de": "Unterer Kopf des äußeren Flügelmuskels",
+   "la": "Caput inferius musculi pterygoidei lateralis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2111-L/lod0.glb",
+   "sha256": "4af9c9585ea7696efcb52f89a0fbddf2f06a59667e4f0920fe5c2f85e0c34ffb"
+  },
+  {
+   "id": "atlas:muskel:2111:R",
+   "de": "Unterer Kopf des äußeren Flügelmuskels",
+   "la": "Caput inferius musculi pterygoidei lateralis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2111-R/lod0.glb",
+   "sha256": "4bad0b168e57c6fe731c44d7c5f34cb1c815c887bf14d45394207d215ce4d541"
+  },
+  {
+   "id": "atlas:muskel:2187:L",
+   "de": "Unterer Schlundschnürer",
+   "la": "Constrictor inferior pharyngis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2187-L/lod0.glb",
+   "sha256": "4774446f7c1afa22f7e0b1ea5f58d6be769d3477907271ec58cd77aec307f8e3"
+  },
+  {
+   "id": "atlas:muskel:2187:R",
+   "de": "Unterer Schlundschnürer",
+   "la": "Constrictor inferior pharyngis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2187-R/lod0.glb",
+   "sha256": "5211bb2e806dacefde8a27006fa4e9632d5afb8921ed699519a9ecdedf6c1c46"
+  },
+  {
+   "id": "atlas:muskel:2313:L",
+   "de": "Innerste Zwischenrippenmuskeln",
+   "la": "Musculi intercostales intimi",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2313-L/lod0.glb",
+   "sha256": "5da6d332be61c148914e5117037cff831bcec2e4fd3ab17515e56827fc6f0d47"
+  },
+  {
+   "id": "atlas:muskel:2313:R",
+   "de": "Innerste Zwischenrippenmuskeln",
+   "la": "Musculi intercostales intimi",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2313-R/lod0.glb",
+   "sha256": "862a14e2fe583ec4a452ad2ead076ec72918770aa807970b30dfc323637e2635"
+  },
+  {
+   "id": "atlas:muskel:2312:L",
+   "de": "Innere Zwischenrippenmuskeln",
+   "la": "Musculi intercostales interni",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2312-L/lod0.glb",
+   "sha256": "e013aeeb259d938f8ea5a8e30ec2e8be94dfc9e62366e9bf9dfcf6ca65d0cf13"
+  },
+  {
+   "id": "atlas:muskel:2312:R",
+   "de": "Innere Zwischenrippenmuskeln",
+   "la": "Musculi intercostales interni",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2312-R/lod0.glb",
+   "sha256": "32c69093996fca2e1cd4d54ca1e95967b1e31d9a17f711f080f4fe040b670194"
+  },
+  {
+   "id": "atlas:muskel:2293:L",
+   "de": "Zwischendornmuskeln des Halses",
+   "la": "Musculi interspinales colli",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2293-L/lod0.glb",
+   "sha256": "c5eff88e4864826c23e160faece493b4ddb10ee068ac3ccc6d21af5627cfe1dd"
+  },
+  {
+   "id": "atlas:muskel:2293:R",
+   "de": "Zwischendornmuskeln des Halses",
+   "la": "Musculi interspinales colli",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2293-R/lod0.glb",
+   "sha256": "c872708a4e661cf1aca66d94577db6ba87b19ce3b337302704b66a198b9763fa"
+  },
+  {
+   "id": "atlas:muskel:2291:L",
+   "de": "Zwischendornmuskeln der Lende",
+   "la": "Musculi interspinales lumborum",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2291-L/lod0.glb",
+   "sha256": "15e38ec67cf69cca36ff5ae0e807ba45bf825159d604a6131293273f932c98c7"
+  },
+  {
+   "id": "atlas:muskel:2291:R",
+   "de": "Zwischendornmuskeln der Lende",
+   "la": "Musculi interspinales lumborum",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2291-R/lod0.glb",
+   "sha256": "0ea6f69f466de67ada143e153b269dc820682f3af2cdc1ddc434dee02d4cdb2f"
+  },
+  {
+   "id": "atlas:muskel:2292:L",
+   "de": "Zwischendornmuskeln der Brustwirbelsäule",
+   "la": "Musculi interspinales thoracis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2292-L/lod0.glb",
+   "sha256": "ef609c225cfcf73a49ee0ccc6e3dc6a3baacf0fb7f509925f114d4df570338f0"
+  },
+  {
+   "id": "atlas:muskel:2292:R",
+   "de": "Zwischendornmuskeln der Brustwirbelsäule",
+   "la": "Musculi interspinales thoracis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2292-R/lod0.glb",
+   "sha256": "52a687c60bf8c501a6d93e5da080791275e20835e4fac1da50a76bb135254034"
+  },
+  {
+   "id": "atlas:muskel:2675:L",
+   "de": "Äußerer Kopf des kurzen Großzehenbeugers",
+   "la": "Caput laterale flexoris brevis hallucis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2675-L/lod0.glb",
+   "sha256": "0ce222ad3b019eb94e15587ce1805ac41c70c2b8f9a9fd0177563c9dabe00178"
+  },
+  {
+   "id": "atlas:muskel:2675:R",
+   "de": "Äußerer Kopf des kurzen Großzehenbeugers",
+   "la": "Caput laterale flexoris brevis hallucis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2675-R/lod0.glb",
+   "sha256": "24acd6b31a961a1c269747b1cf571fd02d2cf5e0d0dbd5007d9b1f07cce0de74"
+  },
+  {
+   "id": "atlas:muskel:2658:L",
+   "de": "Äußerer Kopf des zweiköpfigen Wadenmuskels",
+   "la": "Caput laterale musculi gastrocnemii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2658-L/lod0.glb",
+   "sha256": "4e389876e501c0702601bb77da23efe4823e835e14da8fe992a39d8de589f4b1"
+  },
+  {
+   "id": "atlas:muskel:2658:R",
+   "de": "Äußerer Kopf des zweiköpfigen Wadenmuskels",
+   "la": "Caput laterale musculi gastrocnemii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2658-R/lod0.glb",
+   "sha256": "344aa57391c9075a6159a15ca4c7607da1b03e62c0b8a96f929188904620c115"
+  },
+  {
+   "id": "atlas:muskel:2473:L",
+   "de": "Äußerer Trizepskopf",
+   "la": "Caput laterale musculi tricipitis brachii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2473-L/lod0.glb",
+   "sha256": "78f2d7d54b2f9428ef594d3170d42117cf69ce86aebb6abf0819c7ba9653baf4"
+  },
+  {
+   "id": "atlas:muskel:2473:R",
+   "de": "Äußerer Trizepskopf",
+   "la": "Caput laterale musculi tricipitis brachii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2473-R/lod0.glb",
+   "sha256": "25e898920b0fccd90980c220e51420e9245f9c308353e4c7982402912a89c6ca"
+  },
+  {
+   "id": "atlas:muskel:2310:L",
+   "de": "Kurze Rippenheber",
+   "la": "Levatores breves costarum",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2310-L/lod0.glb",
+   "sha256": "99d8673d08b34292966aafb327a34fe37e938146f91aedc1f35bb5bcaca85d19"
+  },
+  {
+   "id": "atlas:muskel:2310:R",
+   "de": "Kurze Rippenheber",
+   "la": "Levatores breves costarum",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2310-R/lod0.glb",
+   "sha256": "ad2ee87248ccdb35a8d7c1517d53f430024a36288e8c513630bc73b9cf749a37"
+  },
+  {
+   "id": "atlas:muskel:2309:L",
+   "de": "Lange Rippenheber",
+   "la": "Levatores longi costarum",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2309-L/lod0.glb",
+   "sha256": "7c7fe676ee3f536d770418f1ab03cfe25553ea2ae42cbf429076f7553aa7fec2"
+  },
+  {
+   "id": "atlas:muskel:2309:R",
+   "de": "Lange Rippenheber",
+   "la": "Levatores longi costarum",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2309-R/lod0.glb",
+   "sha256": "ff6a35debd731fbe34abba86c83ad87fcdd487e51e8cdbe2e120190a7a401306"
+  },
+  {
+   "id": "atlas:muskel:2465:L",
+   "de": "Langer Bizepskopf",
+   "la": "Caput longum musculi bicipitis brachii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2465-L/lod0.glb",
+   "sha256": "9527103f52205f0ca98c7a558bdcb4abe9cc2dc95dd00f5fe95a38dac3b1ba50"
+  },
+  {
+   "id": "atlas:muskel:2465:R",
+   "de": "Langer Bizepskopf",
+   "la": "Caput longum musculi bicipitis brachii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2465-R/lod0.glb",
+   "sha256": "c6721587ce4e94538d9443d449d847a3f39f06af592e8c5ec09e5ac1d9ed3c66"
+  },
+  {
+   "id": "atlas:muskel:2639:L",
+   "de": "Langer Kopf des zweiköpfigen Oberschenkelmuskels",
+   "la": "Caput longum musculi bicipitis femoris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2639-L/lod0.glb",
+   "sha256": "537a3311a7c4157626ac5fd83b4692342d1ad777d7c211a3af03125d2effc0fb"
+  },
+  {
+   "id": "atlas:muskel:2639:R",
+   "de": "Langer Kopf des zweiköpfigen Oberschenkelmuskels",
+   "la": "Caput longum musculi bicipitis femoris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2639-R/lod0.glb",
+   "sha256": "34b48787584d6bdaa59016d750cad93457cf551149e83274702a92dda760cb27"
+  },
+  {
+   "id": "atlas:muskel:2472:L",
+   "de": "Langer Trizepskopf",
+   "la": "Caput longum musculi tricipitis brachii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2472-L/lod0.glb",
+   "sha256": "10898788094e38c79886ec3869f8b31dc30bb2a11177fd5db8b7811221beba21"
+  },
+  {
+   "id": "atlas:muskel:2472:R",
+   "de": "Langer Trizepskopf",
+   "la": "Caput longum musculi tricipitis brachii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2472-R/lod0.glb",
+   "sha256": "00a6c3f81327fc6915d7c10fdcb1441fb71a350c5b3cc895647a95bf34727e54"
+  },
+  {
+   "id": "atlas:muskel:2685:L",
+   "de": "Wurmmuskeln des Fußes",
+   "la": "Musculi lumbricales pedis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2685-L/lod0.glb",
+   "sha256": "d3fdce7cec6f047f6228243c3b3bf2f4a035f5c09f16ab4be9e9789e2bddc094"
+  },
+  {
+   "id": "atlas:muskel:2685:R",
+   "de": "Wurmmuskeln des Fußes",
+   "la": "Musculi lumbricales pedis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2685-R/lod0.glb",
+   "sha256": "ae030df732e221bd53a6df3edeb3b2988de00786371bf9de83ad26cbdfcd041d"
+  },
+  {
+   "id": "atlas:muskel:2674:L",
+   "de": "Innerer Kopf des kurzen Großzehenbeugers",
+   "la": "Caput mediale flexoris brevis hallucis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2674-L/lod0.glb",
+   "sha256": "7284f82c712fb59b673c28a921f90fff4769db55420b7e9bfb81b03881f244ee"
+  },
+  {
+   "id": "atlas:muskel:2674:R",
+   "de": "Innerer Kopf des kurzen Großzehenbeugers",
+   "la": "Caput mediale flexoris brevis hallucis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2674-R/lod0.glb",
+   "sha256": "8bef3f0c7a0e633cb01b40ce00b4e6da384c3de35b563cf6a9686bf031b01f6c"
+  },
+  {
+   "id": "atlas:muskel:2659:L",
+   "de": "Innerer Kopf des zweiköpfigen Wadenmuskels",
+   "la": "Caput mediale musculi gastrocnemii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2659-L/lod0.glb",
+   "sha256": "69df31aa5422ae4d8deea18e8e1aed972bba2546345eab955fd9293876d766c0"
+  },
+  {
+   "id": "atlas:muskel:2659:R",
+   "de": "Innerer Kopf des zweiköpfigen Wadenmuskels",
+   "la": "Caput mediale musculi gastrocnemii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2659-R/lod0.glb",
+   "sha256": "7ce1993b1b68975bc8dc1d1371cfa6199151ef1b5ace1d07f1e7950567cc9293"
+  },
+  {
+   "id": "atlas:muskel:2474:L",
+   "de": "Innerer Trizepskopf",
+   "la": "Caput mediale musculi tricipitis caput brachii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2474-L/lod0.glb",
+   "sha256": "57f872c042acfd8b828f334b2f352f8e3d19e93cfd81f88d07d1178e07478172"
+  },
+  {
+   "id": "atlas:muskel:2474:R",
+   "de": "Innerer Trizepskopf",
+   "la": "Caput mediale musculi tricipitis caput brachii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2474-R/lod0.glb",
+   "sha256": "8205d85177681c6e5e5dc265c17b160ff2ef7153c105a9c7719e77aaa1c9c1cf"
+  },
+  {
+   "id": "atlas:muskel:2184:L",
+   "de": "Mittlerer Schlundschnürer",
+   "la": "Constrictor medius pharyngis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2184-L/lod0.glb",
+   "sha256": "a6f3757f3e33f2cb5fd6257d359c71340e36729fe9318eb0511c5b328d679402"
+  },
+  {
+   "id": "atlas:muskel:2184:R",
+   "de": "Mittlerer Schlundschnürer",
+   "la": "Constrictor medius pharyngis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2184-R/lod0.glb",
+   "sha256": "795e899d60eb2e382e44f31e6f964eca015bb1b34c30923fa703fb7fc481b677"
+  },
+  {
+   "id": "atlas:muskel:2677:L",
+   "de": "Schräger Kopf des Großzehenanziehers",
+   "la": "Caput obliquum adductoris hallucis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2677-L/lod0.glb",
+   "sha256": "e5dbc8bf516b1242c106784ca8aad36eba6f6824a927ec79c7a0c5525d19a416"
+  },
+  {
+   "id": "atlas:muskel:2677:R",
+   "de": "Schräger Kopf des Großzehenanziehers",
+   "la": "Caput obliquum adductoris hallucis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2677-R/lod0.glb",
+   "sha256": "935192a44afb1ee9502a31ede5c0c23e9ef9d69332fcc75a7370e5b120d3d6ad"
+  },
+  {
+   "id": "atlas:muskel:2195:L",
+   "de": "Schräger Anteil des Ringknorpel-Schildknorpel-Muskels",
+   "la": "Pars obliqua musculi cricothyreoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2195-L/lod0.glb",
+   "sha256": "f15f7acdf882b5dad0632c059ac2ca1dd60364c76cf8ed7c4ec3895329305f91"
+  },
+  {
+   "id": "atlas:muskel:2195:R",
+   "de": "Schräger Anteil des Ringknorpel-Schildknorpel-Muskels",
+   "la": "Pars obliqua musculi cricothyreoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2195-R/lod0.glb",
+   "sha256": "a4e32b77b406a836c7b651de7d3e359b4fd9bdf5e2262f34d3d69af58d267a16"
+  },
+  {
+   "id": "atlas:muskel:2070:L",
+   "de": "Augenhöhlenanteil des Augenringmuskels",
+   "la": "Pars orbitalis musculi orbicularis oculi",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2070-L/lod0.glb",
+   "sha256": "fb6cea3a3322c461ef9adc4b6b82a13736ec9f2de527e68e60f5273d73d88b9d"
+  },
+  {
+   "id": "atlas:muskel:2070:R",
+   "de": "Augenhöhlenanteil des Augenringmuskels",
+   "la": "Pars orbitalis musculi orbicularis oculi",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2070-R/lod0.glb",
+   "sha256": "5a5c3eff6442e7522a5d3d31e3fb64fbb21dca13b150fdd44ef4dc7f585bd0e3"
+  },
+  {
+   "id": "atlas:muskel:2067:L",
+   "de": "Lidanteil des Augenringmuskels",
+   "la": "Pars palpebralis musculi orbicularis oculi",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2067-L/lod0.glb",
+   "sha256": "1f4e0ae9c103c2abbc9e6839570f4c93cfbab18c5b65859232bc7d4ac77e4ead"
+  },
+  {
+   "id": "atlas:muskel:2067:R",
+   "de": "Lidanteil des Augenringmuskels",
+   "la": "Pars palpebralis musculi orbicularis oculi",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2067-R/lod0.glb",
+   "sha256": "a71de9d3b3afb4605012d1711c94ed508e9d8035e15d4854421e6710f5aabeae"
+  },
+  {
+   "id": "atlas:muskel:2687:L",
+   "de": "Sohlenseitige Zwischenknochenmuskeln des Fußes",
+   "la": "Musculi interossei plantares",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2687-L/lod0.glb",
+   "sha256": "0b01b498336121d3fd4fcdf35b728a8c99a6ba2ab7f5654c68e76e905539dff2"
+  },
+  {
+   "id": "atlas:muskel:2687:R",
+   "de": "Sohlenseitige Zwischenknochenmuskeln des Fußes",
+   "la": "Musculi interossei plantares",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2687-R/lod0.glb",
+   "sha256": "b13e9650691397e39dc70b1b62b9363892f255563c6bb9b304331aa342b0dfda"
+  },
+  {
+   "id": "atlas:muskel:2163:L",
+   "de": "Hinterer Bauch des zweibäuchigen Muskels",
+   "la": "Venter posterior musculi digastrici",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2163-L/lod0.glb",
+   "sha256": "748f2cf4ddc50051e0548a3b475f3ce01244c98828e172ee6bf30d4e67c7e644"
+  },
+  {
+   "id": "atlas:muskel:2163:R",
+   "de": "Hinterer Bauch des zweibäuchigen Muskels",
+   "la": "Venter posterior musculi digastrici",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2163-R/lod0.glb",
+   "sha256": "09e1a7b5211e309316a16a9a5b3863ddcb1ecd4111d3bbd2b2d1de2c85b40e94"
+  },
+  {
+   "id": "atlas:muskel:2284:L",
+   "de": "Drehmuskeln der Wirbelsäule",
+   "la": "Rotatores",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2284-L/lod0.glb",
+   "sha256": "a07872eda983828fae9a8c10b1750b25fc655a179f8f163f9e235e45faf880bd"
+  },
+  {
+   "id": "atlas:muskel:2284:R",
+   "de": "Drehmuskeln der Wirbelsäule",
+   "la": "Rotatores",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2284-R/lod0.glb",
+   "sha256": "cc287d68f12e5780a2cfa0be9de0f5b45e15600777a014008b4490c919d9f22e"
+  },
+  {
+   "id": "atlas:muskel:2455:L",
+   "de": "Hinterer Anteil des Deltamuskels",
+   "la": "Pars spinalis scapularis musculi deltoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2455-L/lod0.glb",
+   "sha256": "9d895e041deb639e7a736e307c1a7edbb48e300f219f9cb0f7fc36db95fedd18"
+  },
+  {
+   "id": "atlas:muskel:2455:R",
+   "de": "Hinterer Anteil des Deltamuskels",
+   "la": "Pars spinalis scapularis musculi deltoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2455-R/lod0.glb",
+   "sha256": "508c4335e348031473442b8e58b3a524640cec2f8068695d58e2d5fb29dbae14"
+  },
+  {
+   "id": "atlas:muskel:2466:L",
+   "de": "Kurzer Bizepskopf",
+   "la": "Caput breve musculi bicipitis brachii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2466-L/lod0.glb",
+   "sha256": "c1f8a9f9ea4176d3d6a8cee50a79f592c3adf594d092a8b5c0fa2cf0322a2ff0"
+  },
+  {
+   "id": "atlas:muskel:2466:R",
+   "de": "Kurzer Bizepskopf",
+   "la": "Caput breve musculi bicipitis brachii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2466-R/lod0.glb",
+   "sha256": "b930f1240b4db375bc85a76ece74ebaa99fa359deba31d55a0d7be8cdbfd1929"
+  },
+  {
+   "id": "atlas:muskel:2640:L",
+   "de": "Kurzer Kopf des zweiköpfigen Oberschenkelmuskels",
+   "la": "Caput breve musculi bicipitis femoris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2640-L/lod0.glb",
+   "sha256": "4dc95eabe581c78f03439670ae26793525036721ce29d40fe067c0314a733aad"
+  },
+  {
+   "id": "atlas:muskel:2640:R",
+   "de": "Kurzer Kopf des zweiköpfigen Oberschenkelmuskels",
+   "la": "Caput breve musculi bicipitis femoris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2640-R/lod0.glb",
+   "sha256": "98e336af3e5eacb33a00d343b69b263fb9e4bb3e019d16045c3277c79dcc77d8"
+  },
+  {
+   "id": "atlas:muskel:2303:L",
+   "de": "Brustbein-Rippen-Kopf des großen Brustmuskels",
+   "la": "Pars sternocostalis musculi pectoralis majoris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2303-L/lod0.glb",
+   "sha256": "4bec4448d3a4bb6e1296818fb9655cdfe05c76c1e137a862c389311495035e3f"
+  },
+  {
+   "id": "atlas:muskel:2303:R",
+   "de": "Brustbein-Rippen-Kopf des großen Brustmuskels",
+   "la": "Pars sternocostalis musculi pectoralis majoris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2303-R/lod0.glb",
+   "sha256": "dadcbc24b2a1603e9bedd267a2447e626bce45b4ba18cbd7ee063f1596327183"
+  },
+  {
+   "id": "atlas:muskel:2194:L",
+   "de": "Gerader Anteil des Ringknorpel-Schildknorpel-Muskels",
+   "la": "Pars recta musculi cricothyreoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2194-L/lod0.glb",
+   "sha256": "be81fbccdc6e32a9bccea9abc43bbb6f74f6963e72fa2debfcc10a3003c6e6a2"
+  },
+  {
+   "id": "atlas:muskel:2194:R",
+   "de": "Gerader Anteil des Ringknorpel-Schildknorpel-Muskels",
+   "la": "Pars recta musculi cricothyreoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2194-R/lod0.glb",
+   "sha256": "ab75e2613289497189d23ded4753492ae6754adca0d0c15ca8deefc9f7b2e155"
+  },
+  {
+   "id": "atlas:muskel:2106:L",
+   "de": "Oberflächlicher Anteil des Kaumuskels",
+   "la": "Pars superficialis masseteris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2106-L/lod0.glb",
+   "sha256": "97c7a49dd792651c4114153cf6de921d669b1825dd5a43b47d06cfd5150e365f"
+  },
+  {
+   "id": "atlas:muskel:2106:R",
+   "de": "Oberflächlicher Anteil des Kaumuskels",
+   "la": "Pars superficialis masseteris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2106-R/lod0.glb",
+   "sha256": "d3bdddab62dbd453e3c84e1cd293bd00dc2a7fa391b8ab733bfd818d5dd883e0"
+  },
+  {
+   "id": "atlas:muskel:2110:L",
+   "de": "Oberer Kopf des äußeren Flügelmuskels",
+   "la": "Caput superius musculi pterygoidei lateralis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2110-L/lod0.glb",
+   "sha256": "251a85539647854f50d8a3a7a5e2cb0db07345ee4a5c4c14971231d720c1666f"
+  },
+  {
+   "id": "atlas:muskel:2110:R",
+   "de": "Oberer Kopf des äußeren Flügelmuskels",
+   "la": "Caput superius musculi pterygoidei lateralis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2110-R/lod0.glb",
+   "sha256": "dd6e80cf315651dc58a627cc7a4365aa0bc05c810ce03bc81ab64f66a08636cd"
+  },
+  {
+   "id": "atlas:muskel:2179:L",
+   "de": "Oberer Schlundschnürer",
+   "la": "Constrictor superior pharyngis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2179-L/lod0.glb",
+   "sha256": "98f3adba434af0ba421ee28b5e9758cd2608c6088f9ec180549fab085b324b84"
+  },
+  {
+   "id": "atlas:muskel:2179:R",
+   "de": "Oberer Schlundschnürer",
+   "la": "Constrictor superior pharyngis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2179-R/lod0.glb",
+   "sha256": "1ac2598c238093eedb01ff98c0c98ffe62ed7647fb4601af2cba081b44d221d4"
+  },
+  {
+   "id": "atlas:muskel:2201:L",
+   "de": "Kehldeckelanteil des Schildknorpel-Stellknorpel-Muskels",
+   "la": "Pars thyreoepiglottica musculi thyreoarytenoidei",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2201-L/lod0.glb",
+   "sha256": "7a795ce32c4f2ea9a93025cb652e4e6d84e9b19371adaf483f5523de3bee9d81"
+  },
+  {
+   "id": "atlas:muskel:2201:R",
+   "de": "Kehldeckelanteil des Schildknorpel-Stellknorpel-Muskels",
+   "la": "Pars thyreoepiglottica musculi thyreoarytenoidei",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2201-R/lod0.glb",
+   "sha256": "41b038470073a94824b1a63f7ce8ea3819f568d52e384c99e571cb27bb3a3639"
+  },
+  {
+   "id": "atlas:muskel:2678:L",
+   "de": "Querer Kopf des Großzehenanziehers",
+   "la": "Caput transversum adductoris hallucis",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2678-L/lod0.glb",
+   "sha256": "04f5047de32e1bfcf85529ec196f190449fc7d2718df95b74b147d4b1c97ccb6"
+  },
+  {
+   "id": "atlas:muskel:2678:R",
+   "de": "Querer Kopf des Großzehenanziehers",
+   "la": "Caput transversum adductoris hallucis",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2678-R/lod0.glb",
+   "sha256": "0b55be48df936a21b0c8d504ab547d40a0cb0a95040831b6bdc890a0d91efe33"
+  },
+  {
+   "id": "atlas:muskel:2228:L",
+   "de": "Querer Anteil des Trapezmuskels",
+   "la": "Pars transversa musculi trapezii",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2228-L/lod0.glb",
+   "sha256": "5762b0e5c95388cfb9d8c19f2a3c0c2da42e0bc71fac85ee0df15857debaac8a"
+  },
+  {
+   "id": "atlas:muskel:2228:R",
+   "de": "Querer Anteil des Trapezmuskels",
+   "la": "Pars transversa musculi trapezii",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2228-R/lod0.glb",
+   "sha256": "b67ddc36d6cda49af17ab9340e48409e2b67aaa2e2b8b0f654afc9342c4d8287"
+  },
+  {
+   "id": "atlas:muskel:2049:L",
+   "de": "Umlenkrolle des oberen schrägen Augenmuskels",
+   "la": "Trochlea musculi obliqui superioris",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2049-L/lod0.glb",
+   "sha256": "5841697dd822e9a88085fa31488ced3ba97bae4aad6f37fd91240616326420d5"
+  },
+  {
+   "id": "atlas:muskel:2049:R",
+   "de": "Umlenkrolle des oberen schrägen Augenmuskels",
+   "la": "Trochlea musculi obliqui superioris",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2049-R/lod0.glb",
+   "sha256": "b98678808ff1fe5e2f4c13d3dda624081ae704c09bc3984867ae3cd363d50bdc"
+  },
+  {
+   "id": "atlas:muskel:2241:L",
+   "de": "Vordere Anteile der seitlichen Zwischenquerfortsatzmuskeln der Lende",
+   "la": "Partes vent. musculorum intertransversariorum lat. lumborum",
+   "side": "L",
+   "file": "modelle/muskulatur/TA2-2241-L/lod0.glb",
+   "sha256": "652ebded31d050a17125cf46a3bd8c6a3bb518b8a139691a067e6681b332ceca"
+  },
+  {
+   "id": "atlas:muskel:2241:R",
+   "de": "Vordere Anteile der seitlichen Zwischenquerfortsatzmuskeln der Lende",
+   "la": "Partes vent. musculorum intertransversariorum lat. lumborum",
+   "side": "R",
+   "file": "modelle/muskulatur/TA2-2241-R/lod0.glb",
+   "sha256": "de8cf851ea8519e0be44bd094291f423c00ffa7d582d46e66ba0aff0e67cecb7"
+  }
+ ],
+ "groups": {
+  "2066": [
+   2067,
+   2070
+  ],
+  "2105": [
+   2106,
+   2107
+  ],
+  "2109": [
+   2110,
+   2111
+  ],
+  "2160": [
+   2161,
+   2163
+  ],
+  "2193": [
+   2194,
+   2195
+  ],
+  "2199": [
+   2200,
+   2201
+  ],
+  "2226": [
+   2227,
+   2228,
+   2229
+  ],
+  "2301": [
+   2302,
+   2303,
+   2304
+  ],
+  "2452": [
+   2453,
+   2454,
+   2455
+  ],
+  "2464": [
+   2465,
+   2466
+  ],
+  "2471": [
+   2472,
+   2473,
+   2474
+  ],
+  "2638": [
+   2639,
+   2640
+  ],
+  "2657": [
+   2658,
+   2659
+  ],
+  "2673": [
+   2674,
+   2675
+  ],
+  "2676": [
+   2677,
+   2678
+  ]
+ },
+ "regions": {
+  "modelle/muskulatur/TA2-2529-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2529-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2521-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2521-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2524-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2524-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2533-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2533-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2530-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2530-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2532-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2532-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2527-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2527-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2531-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2531-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2525-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2525-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2534-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2534-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2523-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2523-R/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2528-L/lod0.glb": "Handmuskeln",
+  "modelle/muskulatur/TA2-2528-R/lod0.glb": "Handmuskeln",
+  "org1/muscle-ee25387a1624f448.glb": "Unterarm",
+  "org1/muscle-f51fba62b25177d6.glb": "Unterarm",
+  "org1/muscle-336c80450ab61c6a.glb": "Unterarm",
+  "org1/muscle-e5072c12e9855e4e.glb": "Unterarm",
+  "org1/muscle-5071375025581f20.glb": "Unterarm",
+  "org1/muscle-2d3c7dfd5f1b9230.glb": "Unterarm",
+  "org1/muscle-eb596122a8c3e502.glb": "Unterarm",
+  "org1/muscle-d07e330c4242bcee.glb": "Unterarm",
+  "org1/muscle-47a2490791fea5b9.glb": "Unterarm",
+  "org1/muscle-470f08670831a330.glb": "Unterarm",
+  "org1/muscle-0de3145162a4e30c.glb": "Unterarm",
+  "org1/muscle-a1b0d0e77e9b9e76.glb": "Unterarm",
+  "org1/muscle-d9f1d582317fada3.glb": "Unterarm",
+  "org1/muscle-2c3b9ed0fe270cad.glb": "Unterarm",
+  "org1/muscle-53d11d3111ff76da.glb": "Unterarm",
+  "org1/muscle-f4ebdfd665b789c3.glb": "Unterarm",
+  "org1/muscle-08d2efe52d1965f2.glb": "Unterarm",
+  "org1/muscle-8ec4eed0ec3e776b.glb": "Unterarm",
+  "org1/muscle-e83791cbf571673b.glb": "Unterarm",
+  "org1/muscle-d88f2247ca5bc3cf.glb": "Unterarm",
+  "org1/muscle-a966dea83e712811.glb": "Unterarm",
+  "org1/muscle-cd37e9c12210b5e6.glb": "Unterarm",
+  "org1/muscle-8ef971f0d5b4ee0d.glb": "Unterarm",
+  "org1/muscle-05f25ab2d75f7868.glb": "Unterarm",
+  "org1/muscle-638e4f0945e54dd4.glb": "Unterarm",
+  "org1/muscle-3fa34f98207ff26d.glb": "Unterarm",
+  "org1/muscle-91699ebb0dcecaf6.glb": "Unterarm",
+  "org1/muscle-89e2ca7b60e58d88.glb": "Unterarm",
+  "org1/muscle-8816e8e0bbcf5bd4.glb": "Unterarm",
+  "org1/muscle-9d478abefe453188.glb": "Unterarm",
+  "org1/muscle-10a13b233ee2af65.glb": "Unterarm",
+  "org1/muscle-ea1579125cb62e06.glb": "Unterarm",
+  "org1/muscle-e4b54fa2c565a7ae.glb": "Unterarm",
+  "org1/muscle-843ee51e82678d31.glb": "Unterarm",
+  "org1/muscle-d9c040c649007859.glb": "Unterarm",
+  "org1/muscle-10ee0da80d3f847f.glb": "Unterarm",
+  "org1/muscle-c1d8ff0cc3b10dc2.glb": "Unterarm",
+  "org1/muscle-e3bd723aa71aa063.glb": "Unterarm",
+  "org1/muscle-0e74de56f3d8786d.glb": "Unterarm",
+  "org1/muscle-3a4df4fff34796f5.glb": "Unterarm",
+  "org1/muscle-26562b3e1d2386f6.glb": "Unterarm",
+  "org1/muscle-8cbafea2128ea982.glb": "Unterarm",
+  "org1/muscle-bd9e49892e037771.glb": "Unterarm",
+  "org1/muscle-9a89804bc595455f.glb": "Unterarm",
+  "org1/muscle-ae069275b5e3055a.glb": "Unterarm",
+  "org1/muscle-40b30c5dac9bbed2.glb": "Unterarm",
+  "org1/muscle-03222d0709174d32.glb": "Unterarm",
+  "org1/muscle-f33c67ca772fb9ff.glb": "Unterarm"
+ },
+ "references": {
+  "kms2:muscle:2128:L": "bp-fj2741",
+  "kms2:muscle:2128:R": "bp-fj2753",
+  "kms2:muscle:2129:L": "bp-fj2748",
+  "kms2:muscle:2129:R": "bp-fj2760",
+  "kms2:muscle:2191:L": "bp-fj2745",
+  "kms2:muscle:2191:R": "bp-fj2757",
+  "kms2:muscle:2202:L": "bp-fj2788",
+  "kms2:muscle:2202:R": "bp-fj2806",
+  "kms2:muscle:2203:L": "bp-fj2780",
+  "kms2:muscle:2203:R": "bp-fj2798",
+  "kms2:muscle:2261:L": "bp-fj1526m",
+  "kms2:muscle:2283:L": "bp-fj1538m",
+  "kms2:muscle:2283:R": "bp-fj1538",
+  "kms2:muscle:lumbrical-foot-1:L": "bp-fj1383m",
+  "kms2:muscle:lumbrical-foot-2:L": "bp-fj1385m",
+  "kms2:muscle:lumbrical-foot-3:L": "bp-fj1387m",
+  "kms2:muscle:lumbrical-foot-4:L": "bp-fj1389m",
+  "kms2:muscle:lumbrical-foot-1:R": "bp-fj1383",
+  "kms2:muscle:lumbrical-foot-2:R": "bp-fj1385",
+  "kms2:muscle:lumbrical-foot-3:R": "bp-fj1387",
+  "kms2:muscle:lumbrical-foot-4:R": "bp-fj1389",
+  "kms2:muscle:plantar-interosseous-foot-1:L": "bp-fj1384m",
+  "kms2:muscle:plantar-interosseous-foot-2:L": "bp-fj1386m",
+  "kms2:muscle:plantar-interosseous-foot-3:L": "bp-fj1388m",
+  "kms2:muscle:plantar-interosseous-foot-1:R": "bp-fj1384",
+  "kms2:muscle:plantar-interosseous-foot-2:R": "bp-fj1386",
+  "kms2:muscle:plantar-interosseous-foot-3:R": "bp-fj1388",
+  "kms2:muscle:external-intercostal-1:L": "bp-fj1451m-1",
+  "kms2:muscle:external-intercostal-2:L": "bp-fj1451m-2",
+  "kms2:muscle:external-intercostal-3:L": "bp-fj1451m-3",
+  "kms2:muscle:external-intercostal-4:L": "bp-fj1451m-4",
+  "kms2:muscle:external-intercostal-5:L": "bp-fj1451m-5",
+  "kms2:muscle:external-intercostal-6:L": "bp-fj1451m-6",
+  "kms2:muscle:external-intercostal-7:L": "bp-fj1451m-7",
+  "kms2:muscle:external-intercostal-8:L": "bp-fj1451m-8",
+  "kms2:muscle:external-intercostal-9:L": "bp-fj1451m-9",
+  "kms2:muscle:external-intercostal-10:L": "bp-fj1451m-10"
+ },
+ "unsidedReferences": {
+  "kms2:muscle:2130:L": "bp-fj2762",
+  "kms2:muscle:2130:R": "bp-fj2762"
+ }
+}

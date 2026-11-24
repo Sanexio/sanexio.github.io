@@ -1,9 +1,9 @@
 import {enabled,checked,section,notice} from './local-source.js';
 
-export async function mountMicroReferences() {
+export async function mountMicroReferences(parent = document.querySelector('.app')) {
   if(!await enabled(8))return;
   const base=new URL('micro/',import.meta.url),data=await (await fetch(new URL('sources.json',base))).json();
-  const host=section('micro-references','Gewebe · Zelle · Molekül: getrennte Referenzen',document.querySelector('.app'));
+  const host=section('micro-references','Gewebe · Zelle · Molekül: getrennte Referenzen',parent);
   notice(host,'Kein durchgehender Zoom vom Organ zur Zelle. Diese Referenzen sind weder untereinander noch zum Atlas räumlich registriert. Keine individuelle Anatomie.');
   const label=document.createElement('label');label.textContent='Referenz ';const select=document.createElement('select');select.id='micro-choice';label.append(select);host.append(label);
   for(const s of data.sources)select.add(new Option(s.title,s.id));
