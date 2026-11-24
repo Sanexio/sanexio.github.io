@@ -74,3 +74,20 @@ button,input,select,textarea,summary,a{font:inherit}button,input,select,textarea
 /* INT1M: neutral compact disclosure, with full provenance inside. */
 #female-standhinweis{background:var(--card);border-color:var(--line);color:var(--muted)}
 #female-standhinweis summary{font-weight:400}
+
+.atlas-open {margin-top:.4rem}
+.app:not([data-mode="explore"]) .atlas-open {display:none}
+.organ-atlas {width:min(42rem,92vw);max-height:90dvh;box-sizing:border-box;overflow:auto;padding:1rem 1.2rem;border:1px solid #b6ccd4;border-radius:1rem;background:#f8fbfc;color:#193747;box-shadow:0 1rem 4rem #132a4255}
+.organ-atlas::backdrop {background:#0d2537b3}
+.organ-atlas .atlas-heading {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.75rem}
+.organ-atlas h2,.organ-atlas p {margin:.45rem 0}
+.organ-atlas label {display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.organ-atlas select {flex:1;min-width:0}
+.organ-atlas [hidden] {display:none}
+.organ-atlas .atlas-vessels {margin:.6rem 0}
+.organ-atlas .atlas-stage {overflow:hidden;border-radius:.65rem}
+.organ-atlas .atlas-stage canvas {max-height:51dvh;touch-action:none}
+.organ-atlas details {margin-top:.6rem;overflow-wrap:anywhere}
+.nerven-legende:not([hidden]) { display:flex; flex-wrap:wrap; gap:.3rem 1rem; margin:.4rem 0; }
+.nerven-legende span { display:inline-flex; align-items:center; gap:.4rem; font-size:.82rem; }
+.nerven-legende i { width:.7rem; height:.7rem; border-radius:50%; border:1px solid #405967; }

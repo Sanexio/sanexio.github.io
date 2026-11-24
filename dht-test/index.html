@@ -9,7 +9,10 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"/>
 <script type="importmap">{"imports":{"three":"./avatar/vendor/three.module.js"}}</script>
 <link rel="stylesheet" href="./styles.css"/>
-<link rel="modulepreload" href="./avatar/female-policy.js"/>
+<link rel="preload" as="fetch" href="./katalog-patient.json" crossorigin="anonymous"/>
+<link rel="modulepreload" href="./eigene-daten/einstieg.js"/>
+<link rel="modulepreload" href="./eigene-daten/kontext.js"/>
+<link rel="modulepreload" href="./avatar/female-summary.js"/>
 <link rel="modulepreload" href="./avatar/lazy-features.js"/>
 <link rel="modulepreload" href="./avatar/local-source.js"/>
 <link rel="modulepreload" href="./offline-cache.js"/>
@@ -47,7 +50,7 @@
 <span id="avatar-geschlechtswahl">Männliche Darstellung</span>
 <p class="atlas-hinweis" id="atlas-schicht-hinweis" role="note">Illustrative Studienhülle nach Außenmaßen · Organe (Atlas)</p>
 <details id="darstellungsregler"><summary>Darstellung einstellen</summary><div class="display-controls"><label class="inline">Hülle <input type="range" id="huelle-alpha" min="0" max="100" value="100"/></label>
-<label class="inline">Schicht <select id="schicht-wahl"><option value="haut">Studienhülle</option><option value="skelett">Skelett</option><option value="muskel">Muskeln</option><option value="organ">Organe (Atlas)</option><option value="binde">Bänder / Sehnen</option></select></label>
+<label class="inline">Schicht <select id="schicht-wahl"><option value="haut">Studienhülle</option><option value="skelett">Skelett</option><option value="muskel">Muskeln</option><option value="organ">Organe (Atlas)</option><option value="binde">Bänder / Sehnen</option><option value="nerven">Nervensystem</option></select></label>
 <label class="inline"><input type="checkbox" id="labels-an"/> Ortslabels</label></div></details>
 </div><p id="text-path-note">Körperregion direkt wählen — auch ohne 3D, per Berührung oder Tastatur.</p><div id="hotspots" class="region-buttons" aria-label="Körperregionen"></div>
 <h3 id="avatar-heading">Männlicher 3D-Avatar — drehen, zoomen, antippen</h3><p id="zoom-kette" class="zoom-kette muted" aria-live="polite">Körper</p><div id="avatar-stage" aria-label="Zusätzliche 3D-Ansicht"></div>

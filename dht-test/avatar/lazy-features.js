@@ -9,10 +9,32 @@ export async function mountLazyFeatures(){
  for(const [index,f] of features.entries()){
   if(!flags[index])continue;
   const button=document.createElement('button');button.id=f.id;button.type='button';button.className='secondary';button.textContent=f.label;host.append(button);
-  let pending;
-  f.open=async()=>{
-   if(!pending){button.setAttribute('aria-busy','true');pending=import(f.file).then(m=>m[f.mount]()).then(()=>{button.setAttribute('aria-expanded','true');}).catch(e=>{pending=null;button.textContent=f.label+' — erneut versuchen';button.title=e.message;throw e;}).finally(()=>button.removeAttribute('aria-busy'));}
-   await pending;document.getElementById(f.section)?.scrollIntoView({block:'start'});
+  let pending, slot;
+  f.open = async () => {
+   if (!pending) {
+    // Reserve this feature's place at activation. A late resource must never move the pointer target.
+    slot = document.createElement('div');
+    const loading = document.createElement('p');
+    loading.setAttribute('role', 'status');
+    loading.textContent = 'Abschnitt wird geladen …';
+    slot.append(loading);
+    host.parentElement.append(slot);
+    button.setAttribute('aria-busy', 'true');
+    pending = import(f.file).then(module => module[f.mount](slot)).then(() => {
+     button.setAttribute('aria-expanded', String(Boolean(document.getElementById(f.section))));
+    }).catch(error => {
+     slot.remove();
+     slot = pending = null;
+     button.textContent = f.label + ' — erneut versuchen';
+     button.title = error.message;
+     throw error;
+    }).finally(() => {
+     loading.remove();
+     button.removeAttribute('aria-busy');
+    });
+   }
+   (document.getElementById(f.section) || slot)?.scrollIntoView({block:'start'});
+   await pending;
   };
   button.addEventListener('click',()=>f.open().catch(()=>{}));
  }

@@ -1,0 +1,27 @@
+Nervensystem und verfeinerte Organoberflächen
+
+Z-Anatomy – The libre 3D atlas of anatomy. Anatomie und Gestaltung: Gauthier Kervyn.
+BodyParts3D, © The Database Center for Life Science, Kousaku Okubo.
+Für Hirnnerven nennt der Quellatlas außerdem University of Dundee, CAHID
+(Cranial Nerves and Foramina, CC BY 4.0), für Hirnmaterial Brainder und
+White matter der University of Washington.
+
+Quelle: https://github.com/Z-Anatomy/Models-of-human-anatomy/tree/0c86264359f22c3bad3e475a853faf54e23b7948
+Atlas und hier abgeleitete Geometrien: Creative Commons Namensnennung –
+Weitergabe unter gleichen Bedingungen 4.0 International.
+https://creativecommons.org/licenses/by-sa/4.0/
+BodyParts3D: CC BY-SA 2.1 Japan. https://creativecommons.org/licenses/by-sa/2.1/jp/
+Dundee: https://creativecommons.org/licenses/by/4.0/
+
+Bearbeitung für den DHT: Auswahl benannter Originalobjekte, Auswertung der
+Quellmodifikatoren, Übernahme in glTF-Weltachsen, Netzreduktion in zwei
+Detailstufen und Kompression. Organfarben stammen aus der vorhandenen
+Atlasdarstellung. Die Auswahl des Lenden-Kreuz-Geflechts zeigt benannte Äste
+aus dem Lenden- und Kreuzbeinanteil. Die Großhirnansicht zeigt die Großhirnrinde.
+
+Herz und Gehirn verwenden zusätzlich bereinigte Dreiecksindizes der vorhandenen
+Atlasoberflächen. Die Nieren verwenden die vorhandene HRA-Ableitung von
+Kristen Browne und Heidi Schlehlein, 3D Reference Organ for Kidney, Male,
+Right v1.2 (CC BY 4.0). Links ist die vorhandene gespiegelte Ableitung.
+https://doi.org/10.48539/HBM272.ZVPQ.979
+https://creativecommons.org/licenses/by/4.0/

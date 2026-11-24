@@ -1,5 +1,8 @@
+import {femaleSourceNodes} from './frauatlas-quellen.js';
+import {attachOrganAtlas} from './organatlas-suche.js';
+import {organSearchTerms} from './organnamen.js';
 import {femaleDataMarkers} from './female-data-markers.js';
-import {mountAvatarShell,layerChoices} from './explore-shell.js';
+import {mountAvatarShell,layerChoices,peelLayers} from './explore-shell.js';
 import * as THREE from 'three';
 import {GLTFLoader} from './vendor/loaders/GLTFLoader.js';
 import {OrbitControls} from './vendor/controls/OrbitControls.js';
@@ -67,6 +70,8 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
   const layerStatus=host.querySelector('#layer-status');
   const {ensureLayer,loaded}=layerLifecycle({host,progress,layerStatus,
     async load(value,{background,added}){
+      // These HRA structures are already fitted and bound in this atlas's organ packs.
+      if(value==='nerven'){await ensureLayer('organ',{background});return;}
       for(const spec of web.layers[value]||[]){
         const group=(await parse(await download(spec,background))).scene;
         const ids=[];
@@ -110,17 +115,17 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
     const ordered=[...objects.values()].filter(a=>a.object).sort((a,b)=>Number(markers.present.has(b.entry.id))-Number(markers.present.has(a.entry.id))||Number(b.entry.id===selected?.id)-Number(a.entry.id===selected?.id)||priority(a)-priority(b));
     for(const a of ordered){
       const box=new THREE.Box3().setFromObject(a.object),c=box.getCenter(new THREE.Vector3());
-      const wanted=markers.present.has(a.entry.id)||a.entry.id===selected?.id||(layer==='haut'?a.layer==='organ'&&c.y<size.y*.85:a.layer===layer);
+      const wanted=markers.present.has(a.entry.id)||a.entry.id===selected?.id||(layer==='haut'?a.layer==='organ'&&c.y<size.y*.85:(layer==='nerven'?a.entry.system==='VH_F_nervous_system':a.layer===layer));
       a.object.visible=Boolean(wanted&&triangles+a.triangles<=LIMIT);
       if(a.object.visible)triangles+=a.triangles;else if(wanted)omitted++;
       surfaceSelection(a.object.material,a.object.userData.baseColor,{selected:a.entry.id===selected?.id,muted:Boolean(selected&&a.entry.id!==selected.id),opacity:layer==='haut'?.44:1});
     }
     status.textContent=`Weiblicher Glas-Avatar lokal bereit · 761 von 868 Strukturen eingepasst · ${triangles.toLocaleString('de-DE')} Dreiecke · ${omitted} Objekte durch Detailbudget ausgeblendet`;
     if(layer==='haut'&&host.dataset.organs==='error')layerStatus.textContent='Organe konnten nicht geladen werden. Die Glasfigur bleibt bedienbar.';
-    else layerStatus.textContent=layer+' · bereit';
+    else layerStatus.textContent=(layerChoices.find(c=>c[0]===layer)?.[2]||layer)+' · bereit';
     host.dataset.layer=layer;host.dataset.triangles=triangles;host.dispatchEvent(new CustomEvent('avatar-layer',{bubbles:true,detail:{layer}}));
     for(const b of host.querySelectorAll('[data-layer]'))b.setAttribute('aria-pressed',String(b.dataset.layer===layer));
-    host.querySelector('#layer-peel').value=['haut','muskel','binde','organ','skelett'].indexOf(layer);
+    host.querySelector('#layer-peel').value=peelLayers.indexOf(layer);
     host.querySelector('#layer-peel').setAttribute('aria-valuetext',layerChoices.find(c=>c[0]===layer)?.[2]||'');render();
   }
   function binding(e) {
@@ -139,10 +144,22 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
       const badge=commitSelection();
       detail.append(document.createTextNode(' — in der weiblichen Ansicht noch nicht enthalten. '));
       badge.querySelector('p').append(document.createTextNode(' · in der weiblichen Ansicht noch nicht enthalten'));
+      if (femaleSourceNodes.has(e.source_node_index)) {
+        const source = button('female-source-model', 'Quellmodell einzeln ansehen', async () => {
+          source.disabled = true;
+          try {
+            const {openOrganAtlas} = await import('./organatlas-ansicht.js');
+            if (!signal?.aborted && host.isConnected) await openOrganAtlas(host, 'frau2-' + e.source_node_index, 'frauatlas', signal);
+          } catch {
+            if (!signal?.aborted) source.textContent = 'Quellmodell erneut öffnen';
+          } finally { source.disabled = false; }
+        });
+        detail.append(source);
+      }
       detail.append(button('female-missing-male','Zur männlichen Ansicht',()=>document.querySelector('#avatar-maennlich')?.click()));binding(e);visibility();return;
     }
     try{await ensureLayer(a.layer);if(task!==generation||signal?.aborted)return;
-      commitSelection();layer=a.layer;document.querySelector('#schicht-wahl').value=layer;binding(e);visibility();
+      commitSelection();layer=layer==='nerven'&&e.system==='VH_F_nervous_system'?'nerven':a.layer;document.querySelector('#schicht-wahl').value=layer;binding(e);visibility();
     }catch(error){if(task===generation){select.value=selected?.id||'';layerStatus.textContent=error.message;}}
   }
   const rotate = angle => {camera.position.sub(controls.target).applyAxisAngle(new THREE.Vector3(0, 1, 0), angle).add(controls.target); controls.update(); render();};
@@ -153,11 +170,17 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
   const fill = () => {
     results.replaceChildren();results.hidden=!search.value;
     select.replaceChildren(new Option('Struktur wählen', ''));
-    for (const e of register.entries) if (`${femaleLabel(e)} ${e.mesh} ${/liver|hepatic/i.test(e.mesh)?'Leber':/kidney|renal/i.test(e.mesh)?'Niere':/lung|pulmon/i.test(e.mesh)?'Lunge':/stomach|gastric/i.test(e.mesh)?'Magen':''}`.toLocaleLowerCase('de').includes(search.value.toLocaleLowerCase('de'))) select.append(new Option(`${femaleLabel(e)} · ${e.mesh}`, e.id));
+    const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').trim();
+    const term = normalize(search.value);
+    const matches = register.entries.filter(e => normalize([femaleLabel(e), e.mesh, organSearchTerms(e)].join(' ')).includes(term));
+    if (term) matches.sort((a,b) => Number(layerById.has(b.id)) - Number(layerById.has(a.id))
+      || Number(normalize(organSearchTerms(b)) === term) - Number(normalize(organSearchTerms(a)) === term));
+    for (const e of matches) select.append(new Option(`${femaleLabel(e)} · ${e.mesh}`, e.id));
     if (selected) select.value = selected.id;
     if(search.value)for(const option of [...select.options].slice(1,9)){const e=objects.get(option.value)?.entry;if(e)results.append(button('female-result-'+e.source_node_index,femaleLabel(e)+(layerById.has(e.id)?'':' · in der weiblichen Ansicht noch nicht enthalten'),()=>void choose(e)));}
 
   };
+  const refreshAtlas = attachOrganAtlas(host, 'female', signal);
   search.addEventListener('input', fill); select.addEventListener('change', () => {const a = objects.get(select.value); if (a) void choose(a.entry);}); fill(); binding(null);
   const ray = new THREE.Raycaster(); let pointer = null;
   renderer.domElement.addEventListener('pointerdown', e => {pointer = [e.clientX, e.clientY];});
@@ -179,7 +202,7 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
       if(signature!==markerSignature){markerSignature=signature;visibility();}else markers.paint();
     },
     dataOrganStatus(id){const failed=host.dataset.organs==='error';return failed||loaded.has('organ')?markers.status(id,failed):'loading';},
-    async setLayer(value){const task=++generation;await ensureLayer(value);if(task!==generation)return;if(!initialLayerApplied&&value===layer){initialLayerApplied=true;visibility();return;}initialLayerApplied=true;layer=value;host.querySelector('#canvas-name').hidden=true;search.value='';fill();selected=null;lastHit=null;select.value='';delete host.dataset.selected;detail.textContent='Schicht gewechselt — Struktur wählen.';binding(null);visibility();},
+    async setLayer(value){const task=++generation;await ensureLayer(value);if(task!==generation)return;if(!initialLayerApplied&&value===layer){initialLayerApplied=true;visibility();return;}initialLayerApplied=true;layer=value;host.querySelector('#canvas-name').hidden=true;search.value='';fill();refreshAtlas();selected=null;lastHit=null;select.value='';delete host.dataset.selected;detail.textContent='Schicht gewechselt — Struktur wählen.';binding(null);visibility();},
     setOpacity(value){skinOpacity=value;skin.traverse(m=>{if(m.isMesh){const material=m.userData.skinMaterial;material.opacity=value*(economy?.48:.78);if(material.uniforms)material.uniforms.opacity.value=material.opacity;const face=m.userData.faceMaterial;face.opacity=value;face.transparent=value<1;face.depthWrite=value>=1;face.needsUpdate=true;}});render();},
     setLabels(value) {labelsOn = value; render();}, focusRegion() {},
     state() {return {sex: 'female', selected: selected?.id, quality: selected?.quality, bindingAllowed: femaleBindingAllowed(selected)&&Boolean(objects.get(selected?.id)?.object), hit: lastHit, layer, register: register.entries.length, skinOpacity, skinSide: THREE.FrontSide, viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(), visible:[...objects.values()].filter(a=>a.object?.visible).map(a=>a.entry.id), triangles: renderer.info.render.triangles, camera: camera.position.toArray(), target: controls.target.toArray()};},
@@ -191,9 +214,9 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
   const run=task=>task.catch(error=>{layerStatus.textContent='Diese Schicht konnte nicht geladen werden. Bitte erneut wählen.';});
   const changeLayer=value=>run(api.setLayer(value).then(()=>{if(matchMedia('(max-width:760px)').matches)viewport.scrollIntoView({block:'start'});}));
   for(const b of host.querySelectorAll('[data-layer]'))b.addEventListener('click',()=>changeLayer(b.dataset.layer));
-  host.querySelector('#layer-peel').addEventListener('input',e=>run(api.setLayer(['haut','muskel','binde','organ','skelett'][e.target.value])));
+  host.querySelector('#layer-peel').addEventListener('input',e=>run(api.setLayer(peelLayers[e.target.value])));
   for(const id of ['whole-body','canvas-reset'])host.querySelector('#'+id).addEventListener('click',()=>{selected=null;host.querySelector('#canvas-name').hidden=true;delete host.dataset.selected;binding(null);frame(bounds,1.12);visibility();});
-  for(const term of ['Lunge','Magen','Leber','Niere']){host.querySelector('.quick-suggestions').append(button('female-idea-'+term,term,()=>{search.value=term;fill();}));}
+  for(const term of ['Herz','Lunge','Leber','Niere','Gehirn','Darm']){host.querySelector('.quick-suggestions').append(button('female-idea-'+term,term,()=>{search.value=term;fill();refreshAtlas();}));}
   performance.mark('dht-glass-ready');
   const stopOrgans=organsAfterPaint({host,signal,ensureLayer,isSkin:()=>layer==='haut',refresh:visibility,render});
   replayPendingSelection(host,{setLayer:changeLayer});
