@@ -2,9 +2,9 @@
   {
     "id": "air-pump-test",
     "name": "Spirometrie - Lungenfunktion",
-    "quelle": "products/untersuchungen/air-pump-test.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/lungenfunktion.yaml",
+    "lead": "Lungenfunktion (Spirometrie) — schnelle Beurteilung Ihrer Atemwege und des Lungenvolumens.",
+    "body": "<p>Mit jedem Atemzug nehmen wir etwa 0,5 Liter Luft in die Lungen auf — rund 10 Liter pro Minute, 14.400 Liter am Tag und über fünf Millionen Liter im Jahr. Damit ist die Lunge das Organ, das am direktesten mit der Außenwelt in Kontakt steht. Die Lungen enthalten bis zu 500 Millionen Lungenbläschen mit einer Gesamtoberfläche von etwa 70 Quadratmetern.</p>\n\n\n<p>Die Messung erfasst unter anderem das ausgeatmete Volumen in einer Sekunde und das maximale Atemvolumen. Abweichungen können auf Asthma, chronisch obstruktive Lungenerkrankung (COPD) oder andere Lungenerkrankungen hinweisen — die Einordnung erfolgt immer im Gesamtbild mit Beschwerden, Vorgeschichte und gegebenenfalls weiteren Untersuchungen.</p>\n\n<p>Bitte verzichten Sie vor dem Termin auf Rauchen und starke koffeinhaltige Getränke, sofern nichts anderes mit uns vereinbart ist. Bringen Sie Ihre üblichen Medikamente und eine Liste Ihrer Atemwegsmedikamente mit, damit wir die Messung richtig interpretieren können.</p>\n\n<p>Die Lunge kann durch Schadstoffe, angeborene Veränderungen oder Infektionen geschädigt werden. Mit der Spirometrie lässt sich die Lungenfunktion einfach und schmerzfrei beurteilen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Wir setzen Ihnen zunächst eine Nasenklammer auf, da die Messung der Luftströme ausschließlich über den Mund erfolgt. Sie atmen anschließend nach Anleitung über ein Mundstück und führen vorgegebene Atemmanöver durch.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -12,9 +12,9 @@
   {
     "id": "ergometrie",
     "name": "Belastungs-EKG",
-    "quelle": "products/untersuchungen/ergometrie.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/belastungs-ekg.yaml",
+    "lead": "Belastungs-EKG — die Belastungsfähigkeit Ihres Herzens unter kontrollierten Bedingungen prüfen.",
+    "body": "<p>Das Belastungs-EKG (Ergometrie) prüft die Belastungsfähigkeit Ihres Herzens. Während der Untersuchung kann das Herz bis zu dreimal pro Sekunde schlagen und das Blut durch das gesamte Gefäßsystem von rund 100.000 Kilometern Länge pumpen.</p>\n\n\n<p>Beim Belastungs-EKG (Ergometrie) steigern wir die Belastung in festen Schritten, während das EKG den Herzrhythmus und mögliche Hinweise auf eine Minderdurchblutung des Herzmuskels (zum Beispiel Veränderungen der ST-Strecke) unter Belastung aufzeichnet. So sehen wir, ob der Herzmuskel bei Alltags- oder Sportbelastung ausreichend mit Sauerstoff versorgt wird.</p>\n\n\n<p>Das Verfahren eignet sich zur Abklärung von Belastungsbeschwerden wie Druck auf der Brust, Atemnot oder ungewöhnlicher Erschöpfung, wenn das Ruhe-EKG unauffällig ist. Es hilft auch bei der Kontrolle nach Herzinfarkt oder bei der Einschätzung der Belastbarkeit vor Sport oder bestimmten Berufen — immer zusammen mit Ihrer Vorgeschichte und weiteren Befunden.</p>\n\n<p>Bitte kommen Sie in bequemer Kleidung und festen Schuhen. Ein leichtes Frühstück ist in Ordnung; verzichten Sie auf schwere Mahlzeiten und intensives Training unmittelbar vor dem Termin. Medikamente nehmen Sie wie vereinbart; wichtige Veränderungen besprechen wir vorher mit Ihnen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Sie fahren auf einem Ergometer (stationäres Fahrrad). Alle zwei Minuten erhöhen wir die Wattzahl. Während der gesamten Untersuchung schreiben wir ein EKG und überwachen Blutdruck und Sauerstoffsättigung. Über Telemonitoring wird das EKG durchgehend von einer Ärztin oder einem Arzt überwacht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -22,9 +22,9 @@
   {
     "id": "gaming-reaktionszeit",
     "name": "Eye Check",
-    "quelle": "products/untersuchungen/gaming-reaktionszeit.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/eye-check.yaml",
+    "lead": "Eye-Check — KI-gestütztes Netzhaut-Screening zur Früherkennung diabetischer und vaskulärer Veränderungen am Auge.",
+    "body": "<p>Beim Eye-Check fertigen wir eine hochauflösende Aufnahme Ihrer Netzhaut an. Eine medizinisch zertifizierte KI-Plattform analysiert das Bild und erkennt frühe Hinweise auf diabetische Retinopathie — eine der häufigsten Ursachen für Sehverlust im Erwerbsalter, die sich über Jahre ohne Beschwerden entwickelt. Auch andere Veränderungen am Augenhintergrund, die auf systemische Erkrankungen hinweisen können, werden mit erfasst.</p>\n\n<p>Die Untersuchung dauert wenige Minuten, ist berührungslos und schmerzfrei. Pupillenerweiternde Tropfen sind in der Regel nicht erforderlich, sodass Sie unmittelbar nach dem Termin wieder uneingeschränkt sehen und am Verkehr teilnehmen können. Auffällige Befunde besprechen wir im persönlichen Gespräch und überweisen bei Bedarf gezielt zur Augenärztin oder zum Augenarzt zur weiterführenden Abklärung.</p>\n\n<p>Besonders sinnvoll ist der Eye-Check bei Diabetes mellitus Typ 1 oder 2, dauerhaft erhöhtem Blutdruck oder familiärer Vorbelastung für Augenerkrankungen. Zum Abschluss erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -32,9 +32,9 @@
   {
     "id": "sono-abdomen",
     "name": "Ultraschall: Bauchorgane",
-    "quelle": "products/untersuchungen/sono-abdomen.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie.yaml",
+    "lead": "Sonographie des Bauchraums — alle wichtigen Organe in einer Untersuchung.",
+    "body": "<p>Bei der Sonographie des Bauchraums beurteilen wir alle wichtigen inneren Organe in einer einzigen Untersuchung — schmerzfrei, strahlenfrei, in etwa 20 Minuten.</p>\n\n<p>Was wir uns ansehen:</p>\n\n<ul>\n<li><strong>Leber</strong> — ein Organ, das selbst nach Verlust von 75 Prozent seiner Substanz innerhalb von Monaten regenerieren kann.</li>\n<li><strong>Nieren</strong> — filtern jährlich bis zu 55.000 Liter Blut.</li>\n<li><strong>Milz</strong> — funktioniert wie der Ölfilter des Körpers; Veränderungen weisen auf Erkrankungen des Blutes oder Lymphsystems hin.</li>\n<li><strong>Bauchspeicheldrüse</strong> — nur 100 Gramm schwer, aber zentral für Verdauung und Zuckerstoffwechsel.</li>\n<li><strong>Darm</strong> — etwa 7 Meter lang, mit Wänden von wenigen Millimetern Dicke und einem reichen Mikrobiom.</li>\n<li>Gallenblase und Gallenwege, Harnblase, Prostata bzw. Uterus, Becken- und Beingefäße.</li>\n</ul>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen. Die Untersuchung dauert etwa 20 Minuten.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -42,9 +42,9 @@
   {
     "id": "sono-check",
     "name": "Ultraschall: Komplett Check",
-    "quelle": "products/untersuchungen/sono-check.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "https://westend-hausarzt.com/sono-check/",
+    "lead": "Sono-Check — alle wichtigen Organe in einer Ultraschalluntersuchung.",
+    "body": "<p>Beim Sono-Check beurteilen wir in einer einzigen Untersuchung alle wichtigen inneren Organe. Wir prüfen unter anderem:</p>\n\n<ul>\n<li><strong>Schilddrüse</strong> — Knoten und Größenveränderungen</li>\n<li><strong>Halsgefäße</strong> — Hinweise auf Verkalkungen</li>\n<li><strong>Herz</strong> — Pumpfunktion und strukturelle Veränderungen</li>\n<li><strong>Milz</strong> — Größe und Raumforderungen</li>\n<li><strong>Nieren</strong> — Harnstau, Zysten oder Raumforderungen</li>\n<li><strong>Leber</strong> — Fett- und Strukturveränderungen</li>\n<li><strong>Gallenwege</strong> — Gallensteine, Rückstau</li>\n<li><strong>Bauchspeicheldrüse</strong> — Zysten oder Raumforderungen</li>\n<li><strong>Darm</strong> — Hinweise auf Entzündungsveränderungen</li>\n<li><strong>Harnblase</strong> — Hinweise auf Polypen</li>\n<li><strong>Prostata</strong> — Größe und Raumforderungen</li>\n<li><strong>Uterus</strong> — Myome und andere Veränderungen</li>\n<li><strong>Becken- und Beingefäße</strong> — Hinweise auf Verkalkungen</li>\n</ul>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen. Die Untersuchung dauert etwa 45 Minuten.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -52,9 +52,9 @@
   {
     "id": "ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom",
     "name": "Ultraschall: Bauchspeicheldrüse",
-    "quelle": "products/untersuchungen/ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie-bauchspeicheldruese.yaml",
+    "lead": "Ultraschall der Bauchspeicheldrüse — frühe Veränderungen erkennen.",
+    "body": "<p>Obwohl sie nur 70 bis 100 Gramm wiegt, ist die Bauchspeicheldrüse (Pankreas) wichtig für Verdauung und Zuckerstoffwechsel. Sie liegt in der Mitte des Oberbauchs und steht in engem Kontakt zu Magen, Leber, Darm und Milz.</p>\n\n<p>Funktionsstörungen können zu Diabetes oder einer gestörten Verdauung mit anhaltendem Durchfall führen. Tumore der Bauchspeicheldrüse sind im Frühstadium oft schwer zu erkennen — der Ultraschall ist eine wichtige Untersuchung zur Beurteilung.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Bauchspeicheldrüse und der angrenzenden Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -62,9 +62,9 @@
   {
     "id": "ultraschall-leber-krebsscreening",
     "name": "Ultraschall: Leber und Gallenblase",
-    "quelle": "products/untersuchungen/ultraschall-leber-krebsscreening.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie-leber.yaml",
+    "lead": "Ultraschall der Leber und Gallenwege — Veränderungen früh sichtbar machen.",
+    "body": "<p>Die Leber ist mit etwa 1,5 Kilogramm das größte innere Stoffwechselorgan. Selbst bei Verlust von bis zu 75 Prozent ihres Gewebes kann sie wieder zur normalen Größe heranwachsen. Sie ist zentral für Verdauung, Entgiftung, Speicherung von Nährstoffen sowie den Fett-, Zucker- und Eiweißstoffwechsel und filtert das gesamte Blutvolumen bis zu 30 Mal am Tag.</p>\n\n<p>Trotz ihrer hohen Regenerationsfähigkeit kann die Leber durch ungünstige Ernährung, bestimmte Medikamente oder übermäßigen Alkoholkonsum chronisch geschädigt werden. Den Grad der Veränderung lässt sich im Ultraschall gut beurteilen — von der Fettleber über fortgeschrittene Strukturveränderungen bis hin zu Raumforderungen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Leber und der Gallenwege durch. Es ist günstig, etwa vier Stunden vor der Untersuchung nichts zu essen und nur Wasser zu trinken.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -72,9 +72,9 @@
   {
     "id": "ultraschall-niere-und-ableitende-harnwege-krebsscreening",
     "name": "Ultraschall: Nieren und Harnwege",
-    "quelle": "products/untersuchungen/ultraschall-niere-und-ableitende-harnwege-krebsscreening.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie-nieren.yaml",
+    "lead": "Ultraschall der Nieren und ableitenden Harnwege — Raumforderungen früh erkennen.",
+    "body": "<p>Die Nieren sind die Filtereinheit des Körpers. Pro Tag filtern sie etwa 360 Liter Blut — das gesamte Blutvolumen passiert die Nieren rund 30 Mal täglich. Davon scheiden wir bis zu zwei Liter Urin pro Tag aus.</p>\n\n<p>Bei der Ultraschalluntersuchung schauen wir gezielt nach Veränderungen, Zysten und Raumforderungen in den Nieren sowie der ableitenden Harnwege bis hin zur Harnblase.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Nieren und der ableitenden Harnwege durch. Es ist günstig, mit gefüllter Blase zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -82,9 +82,9 @@
   {
     "id": "ultraschall-prostata-und-harnblase-krebsscreening",
     "name": "Ultraschall: Prostata und Harnblase",
-    "quelle": "products/untersuchungen/ultraschall-prostata-und-harnblase-krebsscreening.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie-prostata.yaml",
+    "lead": "Ultraschall von Prostata und Harnblase — Größe, Restharn und Raumforderungen beurteilen.",
+    "body": "<p>Bei jungen Männern hat die Prostata etwa die Größe einer Walnuss und wiegt rund 20 Gramm. Mit zunehmendem Alter kann sich die Prostata vergrößern, was zu Beschwerden wie häufigem Harndrang, schwachem Harnstrahl oder unvollständiger Blasenentleerung führen kann. Prostatakrebs ist eine der häufigsten Krebsarten beim Mann.</p>\n\n<p>Bei der Untersuchung messen wir die Größe Ihrer Prostata, bestimmen das Restharnvolumen und beurteilen Harnblase und Prostata auf Auffälligkeiten.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Prostata und der Harnblase durch. Es ist günstig, mit gefüllter Blase zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -92,9 +92,9 @@
   {
     "id": "ultraschall-schilddruse-krebsscreening",
     "name": "Ultraschall: Schilddrüse",
-    "quelle": "products/untersuchungen/ultraschall-schilddruse-krebsscreening.yaml",
-    "lead": "",
-    "body": "",
+    "quelle": "pages/_shared/sonographie-schilddruese.yaml",
+    "lead": "Früherkennung von Knoten und Gewebeveränderungen der Schilddrüse.",
+    "body": "<p>Die Schilddrüse produziert Hormone, die Energieverbrauch und Stoffwechsel regulieren. Eine Unterfunktion kann zu Müdigkeit, Gewichtszunahme und Stimmungsschwankungen führen, während eine Überfunktion Nervosität, Herzrasen und Gewichtsverlust verursacht. Die Schilddrüse liegt schmetterlingsförmig dem Kehlkopf an. Als stoffwechselaktives Organ können sich Knoten bilden, die im Labor nicht nachweisbar, aber im Ultraschall gut zu beurteilen sind. Bei Verdacht auf bösartige Veränderungen sollten die betreffenden Knoten weiter abgeklärt werden.</p>\n\n\n<p>Im Ultraschall beurteilen wir Größe, Struktur und Durchblutung der Schilddrüse sowie auffällige Knoten. Die Befunde setzen wir mit Schilddrüsenhormonen im Blut und Ihrer Symptomatik zusammen — die Sonographie allein stellt keine Diagnose, sondern hilft bei der gezielten weiteren Abklärung.</p>\n\n<p>Eine spezielle Vorbereitung ist nicht erforderlich. Kommen Sie in bequemer Kleidung; Halsketten können Sie für die Untersuchung ablegen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Zunächst tasten wir Ihre Schilddrüse ab und im Anschluss wird die Ultraschalluntersuchung durchgeführt. Hierzu legen Sie sich auf eine Liege und überstrecken den Kopf leicht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht. Bei auffälligen Knoten besprechen wir mit Ihnen das weitere Vorgehen — meist durch Verlaufskontrolle, in seltenen Fällen durch eine Feinnadelpunktion.</p>\n",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
     "cta_label": "Termin vereinbaren"
@@ -164,10 +164,10 @@
     "name": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)",
     "quelle": "pages/_shared/gesundheits-check.yaml",
     "lead": "",
-    "body": "",
+    "body": "<p><a href=\"https://westend-hausarzt.com/health-check/\">Gesundheits-Check auf der Praxisseite öffnen</a></p>",
     "source_available": false,
-    "cta_url": null,
-    "cta_label": null
+    "cta_url": "https://westend-hausarzt.com/health-check/",
+    "cta_label": "Gesundheits-Check öffnen"
   },
   {
     "id": "labor-basis-check",
