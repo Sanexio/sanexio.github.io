@@ -9,7 +9,7 @@
       <a href="/laborprogramme/">Laborprogramme</a>
       <a href="/#roadmap">Roadmap</a>
       <a href="/investoren/">Investoren</a>
-      <a href="/#kontakt">Kontakt</a>
+      <a href="/#kontakt">Kontakt</a>{!['/dht', '/dht/'].includes(Astro.url.pathname) && <a href="/pitch/" aria-current={Astro.url.pathname === '/pitch/' ? 'page' : undefined}>Pitch</a>}
     </nav>
   </div>
 </header>
