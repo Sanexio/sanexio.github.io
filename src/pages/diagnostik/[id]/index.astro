@@ -1,0 +1,32 @@
+---
+import Default from '../../../layouts/Default.astro';
+import Nav from '../../../components/Nav.astro';
+import ContactFooter from '../../../components/ContactFooter.astro';
+import LaborProgramCard from '../../../components/LaborProgramCard.astro';
+import details from '../../../data/diagnostik-details.json';
+import laborData from '../../../data/laborprogramme.json';
+
+export function getStaticPaths() {
+  if (new Set(details.map(item => item.id)).size !== details.length) throw new Error('Doppelte Diagnostik-Details');
+  return details.map(item => ({ params: { id: item.id }, props: { item } }));
+}
+const { item } = Astro.props;
+const program = laborData.programmes.find(p => p.praxis_slug === item.id);
+const title = `${item.name} | Diagnostik | Sanexio`;
+const description = item.lead || item.name;
+---
+<Default {title} {description} canonical={new URL(`/diagnostik/${item.id}/`, Astro.site).href}>
+  <Nav />
+  <main id="inhalt" class="sx-section">
+    <div class="sx-container sx-prose">
+      <a href="/diagnostik/">← Zur Diagnostik</a>
+      <p class="sx-eyebrow">Diagnostik</p>
+      <h1>{item.name}</h1>
+      {item.lead && <p class="sx-lead">{item.lead}</p>}
+      {item.body ? <div set:html={item.body} /> : <p>Weitere Informationen zu dieser Untersuchung erhältst Du auf Anfrage.</p>}
+      <div class="sx-actions"><a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a></div>
+    </div>
+    {program && <div class="sx-container"><LaborProgramCard {program} infoboxHeading={laborData.infobox_heading} disclaimerDu={laborData.disclaimer_du} /></div>}
+  </main>
+  <ContactFooter />
+</Default>

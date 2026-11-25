@@ -1,0 +1,210 @@
+[
+  {
+    "id": "air-pump-test",
+    "name": "Spirometrie - Lungenfunktion",
+    "quelle": "products/untersuchungen/air-pump-test.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ergometrie",
+    "name": "Belastungs-EKG",
+    "quelle": "products/untersuchungen/ergometrie.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "gaming-reaktionszeit",
+    "name": "Eye Check",
+    "quelle": "products/untersuchungen/gaming-reaktionszeit.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "sono-abdomen",
+    "name": "Ultraschall: Bauchorgane",
+    "quelle": "products/untersuchungen/sono-abdomen.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "sono-check",
+    "name": "Ultraschall: Komplett Check",
+    "quelle": "products/untersuchungen/sono-check.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom",
+    "name": "Ultraschall: Bauchspeicheldrüse",
+    "quelle": "products/untersuchungen/ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ultraschall-leber-krebsscreening",
+    "name": "Ultraschall: Leber und Gallenblase",
+    "quelle": "products/untersuchungen/ultraschall-leber-krebsscreening.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ultraschall-niere-und-ableitende-harnwege-krebsscreening",
+    "name": "Ultraschall: Nieren und Harnwege",
+    "quelle": "products/untersuchungen/ultraschall-niere-und-ableitende-harnwege-krebsscreening.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ultraschall-prostata-und-harnblase-krebsscreening",
+    "name": "Ultraschall: Prostata und Harnblase",
+    "quelle": "products/untersuchungen/ultraschall-prostata-und-harnblase-krebsscreening.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "ultraschall-schilddruse-krebsscreening",
+    "name": "Ultraschall: Schilddrüse",
+    "quelle": "products/untersuchungen/ultraschall-schilddruse-krebsscreening.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": true
+  },
+  {
+    "id": "body-check",
+    "name": "Body-Check",
+    "quelle": "pages/_shared/body-check.yaml",
+    "lead": "Body-Check — strukturierte ärztliche Bestandsaufnahme Ihres aktuellen Gesundheitszustandes.",
+    "body": "<p>Der Body-Check ist eine strukturierte ärztliche Bestandsaufnahme Ihres aktuellen Gesundheitszustandes. Geeignet sowohl für sportlich aktive Patientinnen und Patienten als auch zur Vorsorge.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Eine Ärztin oder ein Arzt führt eine ausführliche Anamnese (Gesundheitsgespräch) sowie eine vollständige klinische Untersuchung durch. Dazu gehört ein 12-Kanal-EKG sowie ein Urintest. Bringen Sie zu diesem Termin auch Ihren Impfpass mit — wir prüfen den Impfstatus gleich mit.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "carotis-duplex",
+    "name": "Carotis-Duplex",
+    "quelle": "pages/_shared/carotis-duplex.yaml",
+    "lead": "Ultraschall der Halsschlagadern — Beurteilung von Engstellen und Wandveränderungen.",
+    "body": "<p>Das menschliche Gehirn macht etwa 2 Prozent des Körpergewichts aus, benötigt aber rund 20 Prozent des gesamten Energieverbrauchs. 100 Milliarden Neuronen und Billionen von Synapsen stellen pro Sekunde bis zu 200 Millionen Verbindungen her. Nach etwa 5 bis 10 Minuten Unterbrechung der Sauerstoffversorgung wird das Gehirn irreparabel geschädigt.</p>\n\n<p>Mit dem Ultraschall der Halsschlagadern (Carotis-Duplex) prüfen wir, ob die Blutzufuhr zum Gehirn durch Engstellen eingeschränkt ist oder ob an den Gefäßen bereits Veränderungen bestehen, die das Risiko für einen Schlaganfall erhöhen können.</p>\n\n\n<p>Die Untersuchung ist schmerzfrei, ohne Strahlenbelastung und dauert in der Regel etwa 20 bis 30 Minuten. Sie eignet sich zur Risikoabschätzung bei Bluthochdruck, Diabetes, erhöhten Blutfettwerten, familiärer Belastung oder nach einem vorübergehenden neurologischen Ereignis — die Indikation besprechen wir individuell mit Ihnen.</p>\n\n<p>Für die Duplex-Sonographie ist keine besondere Vorbereitung nötig. Tragen Sie bequeme Kleidung mit einem weiten Kragenausschnitt, damit wir die Halsgefäße gut erreichen können.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Zunächst hören wir mit einem Stethoskop die Halsgefäße ab. Im Anschluss erfolgt die Ultraschalluntersuchung. Hierzu legen Sie sich auf eine Liege und überstrecken den Kopf leicht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "echokardiographie",
+    "name": "Echokardiographie",
+    "quelle": "pages/_shared/echokardiographie.yaml",
+    "lead": "Echokardiographie — das Herz in Echtzeit pumpen sehen.",
+    "body": "<p>Das Herz koordiniert über elektrische Impulse, Muskelkontraktionen und vier Herzklappen den Blutkreislauf. Bei jedem Herzschlag werden etwa 70 Milliliter Blut aus dem Herzen gepumpt. Mit rund 100.000 Schlägen pro Tag bewegt das Herz durchschnittlich etwa 7.000 Liter Blut täglich durch den Körper. Der dabei erzeugte Blutdruck liegt bei gesunden Erwachsenen zwischen 100 und 140 mmHg und treibt das Blut durch die etwa 100.000 Kilometer langen Blutgefäße.</p>\n\n<p>Mit der Echokardiographie wird das Herz in Echtzeit dargestellt. Das Verfahren erlaubt die Beurteilung von Wandbewegungsstörungen, Klappenveränderungen und strukturellen Auffälligkeiten, die im Alltag nicht zwingend mit Beschwerden einhergehen müssen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Für diese Untersuchung legen Sie sich in Linksseitenlage. Wir führen die Untersuchung mit einem speziellen Ultraschallkopf durch. Eine Vorbereitung Ihrerseits ist nicht erforderlich.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "fit-for-diving",
+    "name": "Tauchtauglichkeit",
+    "quelle": "pages/_shared/fit-for-diving.yaml",
+    "lead": "Tauchtauglichkeitsuntersuchung — Bescheinigung für Open Water und Advanced Open Water.",
+    "body": "<p>Die Tauchtauglichkeitsuntersuchung dokumentiert Ihre Eignung zum Sporttauchen. Wir untersuchen Sie wahlweise als Open Water Diver (Tauchtiefe bis 18 Meter) oder als Advanced Open Water Diver (Tauchtiefe bis 30 Meter, sowie alle Taucherinnen und Taucher über 40 Jahren). Untersuchungen für Deep-Diver oder technisches Tauchen bieten wir auf Nachfrage an.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Für Open Water Diver führen wir eine Ganzkörperuntersuchung inklusive Otoskopie (Ohruntersuchung) sowie eine Lungenfunktion durch. Bei Advanced Open Water Diver wird die Untersuchung zusätzlich um ein Belastungs-EKG ergänzt.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "kardio-check",
+    "name": "Kardio-Check",
+    "quelle": "pages/_shared/kardio-check.yaml",
+    "lead": "Kardio-Check — strukturierte Beurteilung von Herz und Lunge in einer Untersuchung.",
+    "body": "<p>Das Herz schlägt im Durchschnitt etwa 70-mal pro Minute — über 100.000-mal am Tag und mehr als 36 Millionen-mal im Jahr. Es pumpt rund fünf Liter Blut pro Minute, was über 7.000 Liter am Tag entspricht. Unter Belastung kann ein gesundes Herz bis zu 30 Liter pro Minute pumpen.</p>\n\n<p>Beim Kardio-Check beurteilen wir Herz und Lunge in einer strukturierten Untersuchung — sowohl in Ruhe als auch unter kontrollierter Belastung.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Wir beginnen mit einer klinischen Untersuchung — Herz und Lunge werden abgehört. Anschließend führen wir einen Herzultraschall (Echokardiographie) durch. Es folgen ein Belastungs-EKG (Ergometrie) sowie eine Lungenfunktion (Spirometrie).</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "komplett-check",
+    "name": "Komplett-Check",
+    "quelle": "pages/_shared/komplett-check.yaml",
+    "lead": "Komplett-Check — ausführliche Vorsorgeuntersuchung in etwa zwei Stunden.",
+    "body": "<p>Der Komplett-Check fasst eine ausführliche Vorsorgeuntersuchung zusammen. In etwa zwei Stunden führen wir eine strukturierte ärztliche Beurteilung durch.</p>\n\n<h2>Welche Untersuchungen umfasst der Komplett-Check?</h2>\n\n<ul>\n<li>Ultraschall der Schilddrüse</li>\n<li>Ultraschall der Halsgefäße (Carotis-Duplex)</li>\n<li>Echokardiographie (Herzultraschall)</li>\n<li>Ultraschall des Bauchraums</li>\n<li>Belastungs-EKG (Ergometrie)</li>\n<li>Lungenfunktion (Spirometrie)</li>\n</ul>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "source_available": true
+  },
+  {
+    "id": "gesundheits-check",
+    "name": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)",
+    "quelle": "pages/_shared/gesundheits-check.yaml",
+    "lead": "",
+    "body": "",
+    "source_available": false
+  },
+  {
+    "id": "labor-basis-check",
+    "name": "Basis-Check",
+    "quelle": "pages/_shared/labor-basis-check.yaml",
+    "lead": "Ihr Einstieg in die Laboruntersuchung: Blutbild, HbA1c, LDL-Cholesterin, Gamma-GT und Kreatinin werden bestimmt und ärztlich eingeordnet.",
+    "body": "<p>Der Basis-Check erfasst ausgewählte Blutwerte für eine erste Bestandsaufnahme. Die Ergebnisse werden im ärztlichen Gespräch im Zusammenhang mit Ihrer Vorgeschichte eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutbild und Blutbildbestandteile</li>\n<li>HbA1c (Langzeitblutzucker)</li>\n<li>LDL-Cholesterin</li>\n<li>Gamma-GT (GGT)</li>\n<li>Kreatinin</li>\n</ul>\n<h2>Für wen</h2>\n<p>Als Einstieg oder für eine ärztlich abgestimmte Verlaufskontrolle ausgewählter Basiswerte.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-erweiterter-check",
+    "name": "Erweiterter Check",
+    "quelle": "pages/_shared/labor-erweiterter-check.yaml",
+    "lead": "Ihr erweiterter Laborüberblick: Blutfette, HbA1c, Leber- und Nierenwerte, Harnsäure sowie Blutbild mit Leukozytendifferenzierung.",
+    "body": "<p>Der Erweiterte Check ergänzt die Basiswerte um weitere Blutfette, Leberwerte, Harnstoff, Harnsäure und die Differenzierung der weißen Blutkörperchen. Die ärztliche Besprechung ordnet die gemessenen Werte ein.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Nierenwerte: Kreatinin und Harnstoff</li>\n<li>Leberwerte: GOT, GPT, Gamma-GT, Gesamtbilirubin und CHE</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine erweiterte Bestandsaufnahme oder eine ärztlich abgestimmte Verlaufskontrolle.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-vorsorge-check",
+    "name": "Vorsorge-Check",
+    "quelle": "pages/_shared/labor-vorsorge-check.yaml",
+    "lead": "Ihr umfangreicheres Laborprofil: Stoffwechsel- und Organwerte, Blutbild, Eiweißanalysen, Immunglobuline, Vitamin D, TSH, CRP und NTproBNP.",
+    "body": "<p>Der Vorsorge-Check verbindet ausgewählte Stoffwechsel- und Organwerte mit Blutbild, Eiweißanalysen, Immunglobulinen sowie Vitamin D, TSH, CRP und NTproBNP. Welche Bedeutung die Ergebnisse haben, wird im ärztlichen Gespräch eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Nierenwerte: Kreatinin und Harnstoff; Natrium und Kalium</li>\n<li>Leberwerte: GOT, GPT, Gamma-GT, alkalische Phosphatase (AP), Gesamtbilirubin und CHE</li>\n<li>Weitere Enzyme: Lipase, LDH, CK und CK-MB</li>\n<li>Gesamtprotein und Proteinelektrophorese im Serum</li>\n<li>Immunglobuline: IgA, IgG, IgM und IgE</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n<li>NTproBNP, TSH und CRP</li>\n<li>25-Hydroxy-Vitamin D (25-OH-D)</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte, umfangreichere Laborbestandsaufnahme.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-stoffwechsel-werte",
+    "name": "Stoffwechsel-Werte",
+    "quelle": "pages/_shared/labor-stoffwechsel-werte.yaml",
+    "lead": "Ihr fokussiertes Stoffwechselprofil erfasst Gesamtcholesterin, LDL, HDL, Triglyzeride, HbA1c und Harnsäure.",
+    "body": "<p>Das Profil stellt ausgewählte Werte des Fett-, Zucker- und Purinstoffwechsels zusammen. Die Ergebnisse dienen als Grundlage für das ärztliche Gespräch und gegebenenfalls für einen Vergleich mit früheren Messungen.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker)</li>\n<li>Harnsäure</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine fokussierte Bestandsaufnahme oder eine ärztlich abgestimmte Verlaufskontrolle.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-risikoprofil",
+    "name": "Risikoprofil",
+    "quelle": "pages/_shared/labor-risikoprofil.yaml",
+    "lead": "Ihr Risikoprofil bündelt Blutfette, HbA1c, Harnsäure, Kreatinin, ausgewählte Leberwerte und Blutbild mit Leukozytendifferenzierung.",
+    "body": "<p>Das Profil erfasst ausgewählte Laborwerte als Grundlage für die ärztliche Risikobesprechung. Die Einordnung erfolgt im Zusammenhang mit Vorgeschichte und weiteren Untersuchungsbefunden.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Kreatinin</li>\n<li>Leberwerte: GOT, GPT und Gamma-GT</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Einordnung ausgewählter Risikofaktoren.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-immunprofil",
+    "name": "Immunprofil",
+    "quelle": "pages/_shared/labor-immunprofil.yaml",
+    "lead": "Ihr Immunprofil erfasst Blutbild und Leukozytendifferenzierung, Retikulozyten, Immunglobuline, Eiweißverteilung, Eisen, Transferrin und Mineralstoffe.",
+    "body": "<p>Das Immunprofil stellt ausgewählte Messgrößen zu Blutzellen, Immunglobulinen sowie Eisen und Mineralstoffen zusammen. Die Werte werden ärztlich im Zusammenhang mit dem Untersuchungsanlass beurteilt.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n<li>Retikulozytenzahl</li>\n<li>Immunglobuline: IgA, IgG, IgM und IgE</li>\n<li>Proteinelektrophorese im Serum</li>\n<li>Eisen und Transferrin</li>\n<li>Natrium, Kalium, Calcium und Magnesium</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Untersuchung ausgewählter Blutbild-, Immun- und Versorgungswerte.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-leberwerte",
+    "name": "Leberwerte",
+    "quelle": "pages/_shared/labor-leberwerte.yaml",
+    "lead": "Ihr Leberprofil umfasst Leberenzyme, Gesamtbilirubin, Eiweißanalysen und Gerinnungszeiten. Die Ergebnisse werden ärztlich eingeordnet.",
+    "body": "<p>Das Leberprofil kombiniert ausgewählte Leberwerte mit Gesamtprotein, Proteinelektrophorese und Gerinnungszeiten. Es bildet damit den festgelegten Untersuchungsumfang für die ärztliche Befundbesprechung ab.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Leberenzyme: GOT, GPT, Gamma-GT, GLDH, alkalische Phosphatase (AP) und CHE</li>\n<li>Gesamtbilirubin</li>\n<li>Gesamtprotein und Proteinelektrophorese im Serum</li>\n<li>Gerinnung: Thromboplastinzeit (Quick), partielle Thromboplastinzeit (PTT)</li>\n<li>Plasmathrombinzeit (PTZ)</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Bestandsaufnahme oder Verlaufskontrolle von Leberwerten.</p>",
+    "source_available": true
+  },
+  {
+    "id": "labor-nierenwerte",
+    "name": "Nierenwerte",
+    "quelle": "pages/_shared/labor-nierenwerte.yaml",
+    "lead": "Ihr Nierenprofil verbindet Kreatinin, Harnstoff und Harnsäure mit Elektrolyten, Eiweißanalysen sowie Urinsediment und einer Urinteststreifen-Untersuchung.",
+    "body": "<p>Das Nierenprofil umfasst ausgewählte Blutwerte und Urinuntersuchungen. Die Eiweißanalysen erfolgen im Serum beziehungsweise Plasma; sie sind keine Messung des Eiweißverlusts im Urin. Die Befunde werden ärztlich zusammen eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Kreatinin, Harnstoff und Harnsäure</li>\n<li>Natrium, Kalium, Calcium und anorganisches Phosphat</li>\n<li>Gesamtprotein im Serum oder Plasma; Proteinelektrophorese im Serum</li>\n<li>Urinsediment und Urinteststreifen-Untersuchung</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Untersuchung oder Verlaufskontrolle ausgewählter Nierenwerte.</p>",
+    "source_available": true
+  },
+  {
+    "id": "genetik-beratung",
+    "name": "Genetik-Beratung",
+    "quelle": "pages/_shared/labor-genetik-beratung.yaml",
+    "lead": "Dein Genom ist der Bauplan — rund 20.000 Gene auf drei Milliarden Basenpaaren. Aber ein Bauplan ist kein Schicksal: Was genetische Tests wirklich leisten, wo ihre Grenzen liegen und welche Konsequenzen ein Ergebnis hätte, klären wir im ärztlichen Gespräch — bevor du testest.",
+    "body": "<p>In fast jeder deiner Zellen liegen rund zwei Meter DNA, dicht gefaltet in einen Kern von wenigen Tausendstel Millimetern. Kommerziellen Gentests ist dieser Bauplan ein Versprechen — doch zwischen „Gen nachweisbar“ und „Krankheit wahrscheinlich“ liegt oft eine Welt aus Wahrscheinlichkeiten, Lebensstil und Umwelt. Die Genetik-Beratung sortiert das: Welche Fragen kann ein Test beantworten? Welche nicht? Und was würdest du mit der Antwort tun? Am Ende erhältst du eine schriftliche Zusammenfassung — und eine ehrliche Empfehlung, ob weiterführende Diagnostik sinnvoll ist.</p>\n\n<h2>Für wen</h2>\n\n<p>Vor einem geplanten Gentest, nach einem auffälligen Befund — oder bei familiärer Häufung von Erkrankungen, die du einordnen lassen möchtest.</p>",
+    "source_available": true
+  }
+]
