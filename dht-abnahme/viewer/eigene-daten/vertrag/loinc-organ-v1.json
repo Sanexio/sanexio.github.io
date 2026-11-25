@@ -1,0 +1,974 @@
+{
+  "version": "loinc-organ/1",
+  "hinweis": "Nur Anzeigeverknüpfungen aus nativen Tabellen. Ärztlich offene Codeergänzungen sind keine fachliche Freigabe. Gefäße ohne passende Anatomie-ID; Lunge ohne native Markerbindung.",
+  "eintraege": [
+    {
+      "marker": "HBA1C",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "nativeZiele": [
+        "pancreas"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:45",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/HealthImport.swift:6",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/INT1Modules.swift:2508",
+        "embed/avatar/manifest.json#TA2:3114:M"
+      ],
+      "pruefung": "native LOINC-Bindung"
+    },
+    {
+      "marker": "GLUC",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "nativeZiele": [
+        "pancreas"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:45",
+        "embed/avatar/manifest.json#TA2:3114:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "TRIG",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "organe": [],
+      "nativeZiele": [],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:60"
+      ],
+      "pruefung": "ärztlich offen",
+      "anzeige": "Weitere Messwerte",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "LDL",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "nativeZiele": [
+        "heart",
+        "vessels"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:48",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:51",
+        "embed/avatar/manifest.json#org1:organ:heart"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "HDL",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "nativeZiele": [
+        "heart"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:48",
+        "embed/avatar/manifest.json#org1:organ:heart"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "GPT",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "nativeZiele": [
+        "liver"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:42",
+        "embed/avatar/manifest.json#TA2:3023:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "GOT",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "nativeZiele": [
+        "liver"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:42",
+        "embed/avatar/manifest.json#TA2:3023:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "GGT",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "nativeZiele": [
+        "liver"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:42",
+        "embed/avatar/manifest.json#TA2:3023:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "BILI",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "nativeZiele": [
+        "liver"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:42",
+        "embed/avatar/manifest.json#TA2:3023:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "CRP",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "organe": [],
+      "nativeZiele": [
+        "vessels"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:51",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:63"
+      ],
+      "pruefung": "ärztlich offen",
+      "anzeige": "Weitere Messwerte",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "LEUK",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "organe": [],
+      "nativeZiele": [],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:63"
+      ],
+      "pruefung": "ärztlich offen",
+      "anzeige": "Weitere Messwerte",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "CREA",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "nativeZiele": [
+        "kidney"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:54",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/HealthImport.swift:6",
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/INT1Modules.swift:2508",
+        "embed/avatar/manifest.json#org1:organ:kidney-left",
+        "embed/avatar/manifest.json#org1:organ:kidney-right"
+      ],
+      "pruefung": "native LOINC-Bindung"
+    },
+    {
+      "marker": "UREA",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "nativeZiele": [
+        "kidney"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:54",
+        "embed/avatar/manifest.json#org1:organ:kidney-left",
+        "embed/avatar/manifest.json#org1:organ:kidney-right"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "EGFR",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "nativeZiele": [
+        "kidney"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:54",
+        "embed/avatar/manifest.json#org1:organ:kidney-left",
+        "embed/avatar/manifest.json#org1:organ:kidney-right"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "TSH",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "nativeZiele": [
+        "thyroid"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:57",
+        "embed/avatar/manifest.json#TA2:3863:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "FT4",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "nativeZiele": [
+        "thyroid"
+      ],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/IOSRuleEngine.swift:57",
+        "embed/avatar/manifest.json#TA2:3863:M"
+      ],
+      "pruefung": "ärztlich offen",
+      "codeHerkunft": "Standard-LOINC ergänzt; Variante, Methode und Material ärztlich zu prüfen"
+    },
+    {
+      "marker": "K",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "organe": [],
+      "nativeZiele": [],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/INT1Modules.swift:2508"
+      ],
+      "pruefung": "native LOINC ohne Organbindung",
+      "anzeige": "Weitere Messwerte"
+    },
+    {
+      "marker": "NA",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "organe": [],
+      "nativeZiele": [],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/INT1Modules.swift:2508"
+      ],
+      "pruefung": "native LOINC ohne Organbindung",
+      "anzeige": "Weitere Messwerte"
+    },
+    {
+      "marker": "HB",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "organe": [],
+      "nativeZiele": [],
+      "herkunft": [
+        "~/Cortex/projects/_ai-cooperation-outbox/fix1-app-befunde/app/Sources/MA2/INT1Modules.swift:2508"
+      ],
+      "pruefung": "native LOINC ohne Organbindung",
+      "anzeige": "Weitere Messwerte"
+    }
+  ],
+  "anatomie": [
+    {
+      "id": "TA2:2780:M",
+      "bezeichnung": "Gaumensegel",
+      "herkunft": "embed/avatar/manifest.json#TA2:2780:M"
+    },
+    {
+      "id": "TA2:2781:M",
+      "bezeichnung": "Gaumenzäpfchen",
+      "herkunft": "embed/avatar/manifest.json#TA2:2781:M"
+    },
+    {
+      "id": "TA2:2790:M",
+      "bezeichnung": "Zahnfleisch",
+      "herkunft": "embed/avatar/manifest.json#TA2:2790:M"
+    },
+    {
+      "id": "TA2:2800:L",
+      "bezeichnung": "Ohrspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2800:L"
+    },
+    {
+      "id": "TA2:2800:R",
+      "bezeichnung": "Ohrspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2800:R"
+    },
+    {
+      "id": "TA2:2805:L",
+      "bezeichnung": "Ohrspeicheldrüsengang",
+      "herkunft": "embed/avatar/manifest.json#TA2:2805:L"
+    },
+    {
+      "id": "TA2:2805:R",
+      "bezeichnung": "Ohrspeicheldrüsengang",
+      "herkunft": "embed/avatar/manifest.json#TA2:2805:R"
+    },
+    {
+      "id": "TA2:2806:L",
+      "bezeichnung": "TA2:2806:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:2806:L"
+    },
+    {
+      "id": "TA2:2806:R",
+      "bezeichnung": "TA2:2806:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:2806:R"
+    },
+    {
+      "id": "TA2:2807:L",
+      "bezeichnung": "Unterzungenspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2807:L"
+    },
+    {
+      "id": "TA2:2807:R",
+      "bezeichnung": "Unterzungenspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2807:R"
+    },
+    {
+      "id": "TA2:2810:L",
+      "bezeichnung": "Unterkieferspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2810:L"
+    },
+    {
+      "id": "TA2:2810:R",
+      "bezeichnung": "Unterkieferspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:2810:R"
+    },
+    {
+      "id": "TA2:2811:L",
+      "bezeichnung": "Wharton-Gang",
+      "herkunft": "embed/avatar/manifest.json#TA2:2811:L"
+    },
+    {
+      "id": "TA2:2811:R",
+      "bezeichnung": "Wharton-Gang",
+      "herkunft": "embed/avatar/manifest.json#TA2:2811:R"
+    },
+    {
+      "id": "TA2:2820:M",
+      "bezeichnung": "Zunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:2820:M"
+    },
+    {
+      "id": "TA2:2862:M",
+      "bezeichnung": "TA2:2862:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2862:M"
+    },
+    {
+      "id": "TA2:2875:M",
+      "bezeichnung": "TA2:2875:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2875:M"
+    },
+    {
+      "id": "TA2:2879:M",
+      "bezeichnung": "TA2:2879:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2879:M"
+    },
+    {
+      "id": "TA2:2887:M",
+      "bezeichnung": "Speiseröhre",
+      "herkunft": "embed/avatar/manifest.json#TA2:2887:M"
+    },
+    {
+      "id": "TA2:2914:M",
+      "bezeichnung": "TA2:2914:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2914:M"
+    },
+    {
+      "id": "TA2:2944:M",
+      "bezeichnung": "Zwölffingerdarm",
+      "herkunft": "embed/avatar/manifest.json#TA2:2944:M"
+    },
+    {
+      "id": "TA2:2958:M",
+      "bezeichnung": "Leerdarm",
+      "herkunft": "embed/avatar/manifest.json#TA2:2958:M"
+    },
+    {
+      "id": "TA2:2976:M",
+      "bezeichnung": "Wurmfortsatz",
+      "herkunft": "embed/avatar/manifest.json#TA2:2976:M"
+    },
+    {
+      "id": "TA2:2982:M",
+      "bezeichnung": "aufsteigendes Kolon",
+      "herkunft": "embed/avatar/manifest.json#TA2:2982:M"
+    },
+    {
+      "id": "TA2:2984:M",
+      "bezeichnung": "Querkolon",
+      "herkunft": "embed/avatar/manifest.json#TA2:2984:M"
+    },
+    {
+      "id": "TA2:2986:M",
+      "bezeichnung": "absteigendes Kolon",
+      "herkunft": "embed/avatar/manifest.json#TA2:2986:M"
+    },
+    {
+      "id": "TA2:2987:M",
+      "bezeichnung": "Sigmoid",
+      "herkunft": "embed/avatar/manifest.json#TA2:2987:M"
+    },
+    {
+      "id": "TA2:2994:M",
+      "bezeichnung": "TA2:2994:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2994:M"
+    },
+    {
+      "id": "TA2:2995:M",
+      "bezeichnung": "TA2:2995:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2995:M"
+    },
+    {
+      "id": "TA2:2996:M",
+      "bezeichnung": "TA2:2996:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:2996:M"
+    },
+    {
+      "id": "TA2:3023:M",
+      "bezeichnung": "Leber",
+      "herkunft": "embed/avatar/manifest.json#TA2:3023:M"
+    },
+    {
+      "id": "TA2:3068:M",
+      "bezeichnung": "TA2:3068:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3068:M"
+    },
+    {
+      "id": "TA2:3069:M",
+      "bezeichnung": "TA2:3069:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3069:M"
+    },
+    {
+      "id": "TA2:3071:M",
+      "bezeichnung": "TA2:3071:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3071:M"
+    },
+    {
+      "id": "TA2:3073:M",
+      "bezeichnung": "TA2:3073:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3073:M"
+    },
+    {
+      "id": "TA2:3076:M",
+      "bezeichnung": "TA2:3076:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3076:M"
+    },
+    {
+      "id": "TA2:3077:M",
+      "bezeichnung": "TA2:3077:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3077:M"
+    },
+    {
+      "id": "TA2:3079:M",
+      "bezeichnung": "TA2:3079:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3079:M"
+    },
+    {
+      "id": "TA2:3080:M",
+      "bezeichnung": "TA2:3080:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3080:M"
+    },
+    {
+      "id": "TA2:3081:M",
+      "bezeichnung": "Gallenblase",
+      "herkunft": "embed/avatar/manifest.json#TA2:3081:M"
+    },
+    {
+      "id": "TA2:3103:M",
+      "bezeichnung": "Hauptgallengang",
+      "herkunft": "embed/avatar/manifest.json#TA2:3103:M"
+    },
+    {
+      "id": "TA2:3114:M",
+      "bezeichnung": "Bauchspeicheldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3114:M"
+    },
+    {
+      "id": "TA2:3129:M",
+      "bezeichnung": "Bauchspeicheldrüsengang",
+      "herkunft": "embed/avatar/manifest.json#TA2:3129:M"
+    },
+    {
+      "id": "TA2:3131:M",
+      "bezeichnung": "Pankreasnebengang",
+      "herkunft": "embed/avatar/manifest.json#TA2:3131:M"
+    },
+    {
+      "id": "TA2:3158:M",
+      "bezeichnung": "TA2:3158:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3158:M"
+    },
+    {
+      "id": "TA2:3190:M",
+      "bezeichnung": "Kehldeckel",
+      "herkunft": "embed/avatar/manifest.json#TA2:3190:M"
+    },
+    {
+      "id": "TA2:3213:M",
+      "bezeichnung": "Luftröhre",
+      "herkunft": "embed/avatar/manifest.json#TA2:3213:M"
+    },
+    {
+      "id": "TA2:3237:R",
+      "bezeichnung": "Rechter Hauptbronchus",
+      "herkunft": "embed/avatar/manifest.json#TA2:3237:R"
+    },
+    {
+      "id": "TA2:3238:R",
+      "bezeichnung": "TA2:3238:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3238:R"
+    },
+    {
+      "id": "TA2:3239:R",
+      "bezeichnung": "TA2:3239:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3239:R"
+    },
+    {
+      "id": "TA2:3240:R",
+      "bezeichnung": "TA2:3240:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3240:R"
+    },
+    {
+      "id": "TA2:3241:R",
+      "bezeichnung": "TA2:3241:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3241:R"
+    },
+    {
+      "id": "TA2:3242:R",
+      "bezeichnung": "TA2:3242:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3242:R"
+    },
+    {
+      "id": "TA2:3243:R",
+      "bezeichnung": "TA2:3243:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3243:R"
+    },
+    {
+      "id": "TA2:3244:R",
+      "bezeichnung": "TA2:3244:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3244:R"
+    },
+    {
+      "id": "TA2:3245:R",
+      "bezeichnung": "TA2:3245:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3245:R"
+    },
+    {
+      "id": "TA2:3246:R",
+      "bezeichnung": "TA2:3246:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3246:R"
+    },
+    {
+      "id": "TA2:3247:R",
+      "bezeichnung": "TA2:3247:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3247:R"
+    },
+    {
+      "id": "TA2:3248:R",
+      "bezeichnung": "TA2:3248:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3248:R"
+    },
+    {
+      "id": "TA2:3249:R",
+      "bezeichnung": "TA2:3249:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3249:R"
+    },
+    {
+      "id": "TA2:3250:R",
+      "bezeichnung": "TA2:3250:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3250:R"
+    },
+    {
+      "id": "TA2:3251:R",
+      "bezeichnung": "TA2:3251:R",
+      "herkunft": "embed/avatar/manifest.json#TA2:3251:R"
+    },
+    {
+      "id": "TA2:3252:L",
+      "bezeichnung": "Linker Hauptbronchus",
+      "herkunft": "embed/avatar/manifest.json#TA2:3252:L"
+    },
+    {
+      "id": "TA2:3253:L",
+      "bezeichnung": "TA2:3253:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3253:L"
+    },
+    {
+      "id": "TA2:3254:L",
+      "bezeichnung": "TA2:3254:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3254:L"
+    },
+    {
+      "id": "TA2:3255:L",
+      "bezeichnung": "TA2:3255:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3255:L"
+    },
+    {
+      "id": "TA2:3256:L",
+      "bezeichnung": "TA2:3256:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3256:L"
+    },
+    {
+      "id": "TA2:3257:L",
+      "bezeichnung": "TA2:3257:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3257:L"
+    },
+    {
+      "id": "TA2:3258:L",
+      "bezeichnung": "TA2:3258:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3258:L"
+    },
+    {
+      "id": "TA2:3259:L",
+      "bezeichnung": "TA2:3259:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3259:L"
+    },
+    {
+      "id": "TA2:3260:L",
+      "bezeichnung": "TA2:3260:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3260:L"
+    },
+    {
+      "id": "TA2:3261:L",
+      "bezeichnung": "TA2:3261:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3261:L"
+    },
+    {
+      "id": "TA2:3262:L",
+      "bezeichnung": "TA2:3262:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3262:L"
+    },
+    {
+      "id": "TA2:3263:L",
+      "bezeichnung": "TA2:3263:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3263:L"
+    },
+    {
+      "id": "TA2:3264:L",
+      "bezeichnung": "TA2:3264:L",
+      "herkunft": "embed/avatar/manifest.json#TA2:3264:L"
+    },
+    {
+      "id": "TA2:3284:R",
+      "bezeichnung": "Oberlappen der rechten Lunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:3284:R"
+    },
+    {
+      "id": "TA2:3289:R",
+      "bezeichnung": "Mittellappen der rechten Lunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:3289:R"
+    },
+    {
+      "id": "TA2:3293:R",
+      "bezeichnung": "Unterlappen der rechten Lunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:3293:R"
+    },
+    {
+      "id": "TA2:3300:L",
+      "bezeichnung": "Oberlappen der linken Lunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:3300:L"
+    },
+    {
+      "id": "TA2:3308:L",
+      "bezeichnung": "Unterlappen der linken Lunge",
+      "herkunft": "embed/avatar/manifest.json#TA2:3308:L"
+    },
+    {
+      "id": "TA2:3322:M",
+      "bezeichnung": "Brustfell",
+      "herkunft": "embed/avatar/manifest.json#TA2:3322:M"
+    },
+    {
+      "id": "TA2:3394:L",
+      "bezeichnung": "Harnleiter",
+      "herkunft": "embed/avatar/manifest.json#TA2:3394:L"
+    },
+    {
+      "id": "TA2:3394:R",
+      "bezeichnung": "Harnleiter",
+      "herkunft": "embed/avatar/manifest.json#TA2:3394:R"
+    },
+    {
+      "id": "TA2:3401:M",
+      "bezeichnung": "Harnblase",
+      "herkunft": "embed/avatar/manifest.json#TA2:3401:M"
+    },
+    {
+      "id": "TA2:3425:M",
+      "bezeichnung": "Harnröhre",
+      "herkunft": "embed/avatar/manifest.json#TA2:3425:M"
+    },
+    {
+      "id": "TA2:3576:L",
+      "bezeichnung": "Hoden",
+      "herkunft": "embed/avatar/manifest.json#TA2:3576:L"
+    },
+    {
+      "id": "TA2:3576:R",
+      "bezeichnung": "Hoden",
+      "herkunft": "embed/avatar/manifest.json#TA2:3576:R"
+    },
+    {
+      "id": "TA2:3603:L",
+      "bezeichnung": "Nebenhoden",
+      "herkunft": "embed/avatar/manifest.json#TA2:3603:L"
+    },
+    {
+      "id": "TA2:3603:R",
+      "bezeichnung": "Nebenhoden",
+      "herkunft": "embed/avatar/manifest.json#TA2:3603:R"
+    },
+    {
+      "id": "TA2:3621:L",
+      "bezeichnung": "Samenleiter",
+      "herkunft": "embed/avatar/manifest.json#TA2:3621:L"
+    },
+    {
+      "id": "TA2:3621:R",
+      "bezeichnung": "Samenleiter",
+      "herkunft": "embed/avatar/manifest.json#TA2:3621:R"
+    },
+    {
+      "id": "TA2:3631:L",
+      "bezeichnung": "Samenblase",
+      "herkunft": "embed/avatar/manifest.json#TA2:3631:L"
+    },
+    {
+      "id": "TA2:3631:R",
+      "bezeichnung": "Samenblase",
+      "herkunft": "embed/avatar/manifest.json#TA2:3631:R"
+    },
+    {
+      "id": "TA2:3636:L",
+      "bezeichnung": "Spritzkanal",
+      "herkunft": "embed/avatar/manifest.json#TA2:3636:L"
+    },
+    {
+      "id": "TA2:3636:R",
+      "bezeichnung": "Spritzkanal",
+      "herkunft": "embed/avatar/manifest.json#TA2:3636:R"
+    },
+    {
+      "id": "TA2:3637:M",
+      "bezeichnung": "Vorsteherdrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3637:M"
+    },
+    {
+      "id": "TA2:3668:M",
+      "bezeichnung": "Eichel",
+      "herkunft": "embed/avatar/manifest.json#TA2:3668:M"
+    },
+    {
+      "id": "TA2:3678:M",
+      "bezeichnung": "Penisschwellkörper",
+      "herkunft": "embed/avatar/manifest.json#TA2:3678:M"
+    },
+    {
+      "id": "TA2:3681:M",
+      "bezeichnung": "Harnröhrenschwellkörper",
+      "herkunft": "embed/avatar/manifest.json#TA2:3681:M"
+    },
+    {
+      "id": "TA2:3744:M",
+      "bezeichnung": "TA2:3744:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3744:M"
+    },
+    {
+      "id": "TA2:3749:M",
+      "bezeichnung": "TA2:3749:M",
+      "herkunft": "embed/avatar/manifest.json#TA2:3749:M"
+    },
+    {
+      "id": "TA2:3750:M",
+      "bezeichnung": "Kleines Netz",
+      "herkunft": "embed/avatar/manifest.json#TA2:3750:M"
+    },
+    {
+      "id": "TA2:3757:M",
+      "bezeichnung": "großes Netz",
+      "herkunft": "embed/avatar/manifest.json#TA2:3757:M"
+    },
+    {
+      "id": "TA2:3855:M",
+      "bezeichnung": "Adenohypophyse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3855:M"
+    },
+    {
+      "id": "TA2:3859:M",
+      "bezeichnung": "Neurohypophyse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3859:M"
+    },
+    {
+      "id": "TA2:3862:M",
+      "bezeichnung": "Zirbeldrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3862:M"
+    },
+    {
+      "id": "TA2:3863:M",
+      "bezeichnung": "Schilddrüse",
+      "herkunft": "embed/avatar/manifest.json#TA2:3863:M"
+    },
+    {
+      "id": "TA2:3874:L",
+      "bezeichnung": "Nebenniere",
+      "herkunft": "embed/avatar/manifest.json#TA2:3874:L"
+    },
+    {
+      "id": "TA2:3874:R",
+      "bezeichnung": "Nebenniere",
+      "herkunft": "embed/avatar/manifest.json#TA2:3874:R"
+    },
+    {
+      "id": "org1:organ:heart",
+      "bezeichnung": "Herz",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:heart"
+    },
+    {
+      "id": "org1:organ:brain",
+      "bezeichnung": "Gehirn",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:brain"
+    },
+    {
+      "id": "org1:organ:lung-left",
+      "bezeichnung": "Lunge links",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:lung-left"
+    },
+    {
+      "id": "org1:organ:lung-right",
+      "bezeichnung": "Lunge rechts",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:lung-right"
+    },
+    {
+      "id": "org1:organ:stomach",
+      "bezeichnung": "Magen",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:stomach"
+    },
+    {
+      "id": "org1:organ:kidney-left",
+      "bezeichnung": "Niere links",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:kidney-left"
+    },
+    {
+      "id": "org1:organ:kidney-right",
+      "bezeichnung": "Niere rechts",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:kidney-right"
+    },
+    {
+      "id": "org1:organ:spleen",
+      "bezeichnung": "Milz",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:spleen"
+    },
+    {
+      "id": "org1:organ:small-intestine",
+      "bezeichnung": "Dünndarm",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:small-intestine"
+    },
+    {
+      "id": "org1:organ:large-intestine",
+      "bezeichnung": "Dickdarm",
+      "herkunft": "embed/avatar/manifest.json#org1:organ:large-intestine"
+    }
+  ]
+}

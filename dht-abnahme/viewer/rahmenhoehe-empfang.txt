@@ -1,0 +1,31 @@
+Rahmenhöhe für die Wirtsseite (Beispiel, von deren Betreiber einzusetzen)
+
+<iframe id="dht-auswahl" title="Körperauswahl" src="/pfad/index.html"></iframe>
+<script>
+const frame = document.getElementById('dht-auswahl');
+const childOrigin = new URL(frame.src, location.href).origin;
+window.addEventListener('message', event => {
+  if (event.source !== frame.contentWindow || event.origin !== childOrigin) return;
+  if (!Number.isInteger(event.data) || event.data < 1 || event.data > 100000) return;
+  clearInterval(retry);
+  frame.style.height = event.data + 'px';
+});
+function requestHeight() {
+  frame.contentWindow.postMessage('dht-height-request', childOrigin);
+}
+const retry = setInterval(requestHeight, 200);
+setTimeout(() => clearInterval(retry), 10000);
+frame.addEventListener('load', requestHeight);
+// Erfasst auch ein bereits geladenes Widget; Wiederholungen sind idempotent.
+requestHeight();
+</script>
+
+Das Widget meldet ausschließlich eine ganze Zahl: die Inhaltshöhe in CSS-Pixeln.
+Keine Auswahl, Texte, Kennungen oder sonstigen Inhalte. Quelle und Ursprung
+werden geprüft; kein Stern als Zielursprung. Keine Abhängigkeit von gleicher
+Herkunft: das Beispiel funktioniert auch bei einer anderen Einbett-Herkunft.
+Nach Freigabe der Höhenanpassung scrollt die Wirtsseite; das Widget hat keinen
+zweiten vertikalen Scrollbereich. Änderungen durch Schritte, Details,
+Geschlechtswechsel, Nachladen und Breitenwechsel werden beobachtet.
+Ohne Empfänger bleibt der selbständige Ablauf benutzbar. Die fremde Wirtsseite
+wurde nicht verändert. Lokaler Beleg: tools/browser-tests/fixtures/br9-frame.html.

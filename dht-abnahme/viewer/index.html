@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de" data-ready="false">
+<head>
+<meta charset="utf-8"/>
+<meta name="dht-selection-root" content="./"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DHT — Körper erkunden</title>
+<meta name="referrer" content="no-referrer"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"/>
+<script type="importmap">{"imports":{"three":"./avatar/vendor/three.module.js"}}</script>
+<link rel="stylesheet" href="./styles.css"/>
+<link rel="preload" as="fetch" href="./katalog-patient.json" crossorigin="anonymous"/>
+<link rel="modulepreload" href="./eigene-daten/einstieg.js"/>
+<link rel="modulepreload" href="./eigene-daten/kontext.js"/>
+<link rel="modulepreload" href="./avatar/female-summary.js"/>
+<link rel="modulepreload" href="./avatar/lazy-features.js"/>
+<link rel="modulepreload" href="./avatar/local-source.js"/>
+<link rel="modulepreload" href="./offline-cache.js"/>
+<link rel="modulepreload" href="./avatar/avatar-view.js"/>
+<link rel="modulepreload" href="./avatar/preview-view.js"/>
+<link rel="modulepreload" href="./avatar/explore-shell.js"/>
+<link rel="icon" type="image/svg+xml" href="./icons/vitruv.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png"/>
+<link rel="shortcut icon" type="image/png" href="./icons/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png"/>
+<link rel="manifest" href="./icons/site.webmanifest"/>
+<meta name="theme-color" content="#c8161d"/>
+</head>
+<body>
+<div class="app" data-mode="explore">
+<div class="notice-rail"><details id="mvp-hinweis"><summary title="MVP · frühe Testfassung – Ihre Verbesserungsvorschläge sind willkommen">MVP · frühe Testfassung – Ihre Verbesserungsvorschläge sind willkommen</summary>
+<div class="mvp-text"><p>Sie sehen eine frühe Testfassung (MVP) des Digital Health Twin (DHT). Sie zeigt, wohin die Entwicklung geht, und ist noch nicht vollständig.</p>
+<p>Keine Diagnose, keine Behandlungsempfehlung. Ihre Angaben bleiben auf Ihrem Gerät.</p>
+<p>Was fehlt Ihnen? Was ist unklar? Was würden Sie anders machen? Schreiben Sie uns über die Kontaktseite. Bitte schreiben Sie keine Gesundheitsangaben in Ihre Rückmeldung.</p>
+</div><a id="health-graph-link" href="./voll/health-graph.html" target="_blank" rel="noopener noreferrer">Interaktiver Wissensgraph</a></details><nav class="explore-tabs" role="tablist" aria-label="DHT entdecken"><button id="explore-tab" type="button" role="tab" aria-selected="true" aria-controls="schritt-region">Körper erkunden</button><button id="pain-tab" type="button" role="tab" aria-selected="false" aria-controls="schritt-region">Wo tut es weh?</button></nav><header><h1>Wo tut es weh?</h1></header>
+<p id="safety-core">Keine Diagnose. Angaben bleiben lokal.</p>
+<div class="notice" id="female-standhinweis" role="status" hidden></div>
+</div><div class="app-content"><p class="notice" id="ladefehler" hidden></p>
+<nav class="steps" aria-label="Schritte">
+<span class="step" data-step="1" data-active="true">1 · Region</span>
+<span class="step" data-step="2">2 · Bereich</span>
+<span class="step" data-step="3">3 · Seite</span>
+<span class="step" data-step="4">4 · Genauer</span>
+<span class="step" data-step="5">5 · Übernehmen</span>
+</nav>
+<div class="layout">
+<section class="panel silhouette" id="schritt-region" aria-label="Körperregion wählen"><h2>Körperregion wählen</h2>
+<div class="anatomie-toolbar" role="toolbar" aria-label="Darstellung">
+<span id="avatar-geschlechtswahl">Männliche Darstellung</span>
+<p class="atlas-hinweis" id="atlas-schicht-hinweis" role="note">Illustrative Studienhülle nach Außenmaßen · Organe (Atlas)</p>
+<details id="darstellungsregler"><summary>Darstellung einstellen</summary><div class="display-controls"><label class="inline">Hülle <input type="range" id="huelle-alpha" min="0" max="100" value="100"/></label>
+<label class="inline">Schicht <select id="schicht-wahl"><option value="haut">Studienhülle</option><option value="skelett">Skelett</option><option value="muskel">Muskeln</option><option value="organ">Organe (Atlas)</option><option value="binde">Bänder / Sehnen</option><option value="nerven">Nervensystem</option><option value="gefaesse">Gefäßsystem</option></select></label>
+<label class="inline"><input type="checkbox" id="labels-an"/> Ortslabels</label></div></details>
+</div><p id="text-path-note">Körperregion direkt wählen — auch ohne 3D, per Berührung oder Tastatur.</p><div id="hotspots" class="region-buttons" aria-label="Körperregionen"></div>
+<h3 id="avatar-heading">Männlicher 3D-Avatar — drehen, zoomen, antippen</h3><p id="zoom-kette" class="zoom-kette muted" aria-live="polite">Körper</p><div id="avatar-stage" aria-label="Zusätzliche 3D-Ansicht"></div>
+</section>
+<section class="panel workflow">
+<aside class="listebox" aria-label="Bisherige Auswahlen"><h2>Ihre Liste</h2><ul id="orte-liste" class="orteliste"></ul><div class="actions"><button type="button" class="primary hidden" id="fertig-uebernehmen">Für Termin übernehmen</button><button type="button" class="primary hidden" id="zusammenfassung">Zusammenfassung ansehen</button></div></aside>
+<div id="schritt-struktur" class="hidden"><h2 id="region-titel">Region</h2><p id="lexikon-text" class="lexikon muted" hidden></p><div class="choices" id="struktur-liste"></div><div class="actions"><button type="button" class="secondary" id="zurueck-region">Zurück zum Körper</button></div></div>
+<div id="schritt-seite" class="hidden"><h2>Links oder rechts?</h2><div class="feinliste" id="seite-liste"></div><p id="seite-hinweis" style="color:#9b3b12;font-size:.9rem"></p><div class="actions"><button type="button" class="secondary" id="zurueck-seite">Zurück</button><button type="button" class="primary" id="weiter-fein">Weiter</button></div></div>
+<div id="schritt-fein" class="hidden"><h2 id="struktur-titel">Bereich</h2><p id="fein-lead">Wo genau in dieser Region?</p><div class="feinliste" id="fein-liste"></div><p id="fein-hinweis" style="color:#9b3b12;font-size:.9rem"></p><div class="actions"><button type="button" class="secondary" id="zurueck-struktur">Zurück</button><button type="button" class="secondary" id="hinzufuegen">Weitere Stelle zur Liste</button></div></div>
+<div id="schritt-ausgabe" class="hidden output"><h2>Ihre Auswahl</h2><p id="ausgabe-text"></p><ul id="ausgabe-liste" class="orteliste"></ul><p id="lokal-hinweis">Diese Angaben bleiben auf Ihrem Gerät. Es wird nichts übertragen und nichts gespeichert, wenn Sie die Seite schließen.</p><pre class="json" id="json-vorschau"></pre><div class="actions"><button type="button" class="secondary" id="kopieren-json">JSON kopieren</button><button type="button" class="secondary" id="neu-start">Neu wählen</button></div><p id="kopier-status" style="font-size:.85rem;color:#4a5d73"></p></div>
+</section>
+</div>
+<details class="herkunft" id="usage-info"><summary>Hinweise und Vollansicht</summary><p>Tippen Sie auf eine Körperregion, wählen Sie den Bereich in Alltagssprache — ohne lateinische Fachbegriffe. Sie können mehrere Stellen angeben.</p><p>Keine Diagnose: Sie sagen nur, wo Ihr Problem liegt. Nichts wird automatisch an Dritte gesendet.</p><p><a href="./voll/index.html">Vollständige DHT-Browser-App (lokal)</a></p></details>
+<details class="herkunft" id="daten-herkunft"><summary>Datenherkunft, Grenzen und bekannte Lücken</summary><div id="herkunft-inhalt" class="herkunft-body muted"></div></details>
+</div></div>
+<script type="module" src="./mvp.js"></script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

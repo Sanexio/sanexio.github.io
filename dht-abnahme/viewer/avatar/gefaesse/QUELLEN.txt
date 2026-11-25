@@ -1,0 +1,24 @@
+Gefäßsystem des männlichen DHT-Referenzatlas
+
+Z-Anatomy – The libre 3D atlas of anatomy
+Gauthier Kervyn (Design, 3D, Anatomie), Marcin Zielinski (Blender-Atlas)
+Original: https://github.com/Z-Anatomy/Models-of-human-anatomy
+Gebundener Quellstand: 0c86264359f22c3bad3e475a853faf54e23b7948
+Original-Lizenz: https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/0c86264359f22c3bad3e475a853faf54e23b7948/License.txt
+
+BodyParts3D – The Database Center for Life Science (DBCLS)
+Kousaku Okubo (Originalmodell)
+Original: https://dbarchive.biosciencedbc.jp/en/bodyparts3d/desc.html
+Ursprüngliche Lizenz: Creative Commons Namensnennung – Weitergabe unter gleichen Bedingungen 2.1 Japan
+https://creativecommons.org/licenses/by-sa/2.1/jp/
+
+Gefäßableitung: Creative Commons Namensnennung – Weitergabe unter gleichen Bedingungen 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Bearbeitung für DHT: Auswahl vorhandener systemischer, Herz- und Lungengefäße,
+Auswertung von Quellkurven, Umrechnung der unveränderten Quell-Weltkoordinaten
+in den glTF-Achsenrahmen, Netzreduktion, Draco-Kompression und Farbgebung nach
+Gefäßtyp. Arterien sind rot und Venen blau, auch im Lungenkreislauf.
+Die Farben zeigen den Gefäßtyp. Die Auswahl enthält keine Nieren- oder
+Innenohrflächen. Das männliche Referenzmodell ist eine anatomische Übersicht
+und keine individuelle Darstellung.

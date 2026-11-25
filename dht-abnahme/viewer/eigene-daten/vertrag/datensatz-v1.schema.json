@@ -1,0 +1,360 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "art": {
+      "enum": [
+        "messwert",
+        "schmerzort"
+      ]
+    },
+    "loinc": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "system": {
+          "const": "http://loinc.org"
+        }
+      },
+      "required": [
+        "code",
+        "system"
+      ],
+      "additionalProperties": false
+    },
+    "bezeichnung": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wert": {
+      "type": "number"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "einheit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ucum": {
+      "type": "string",
+      "minLength": 1
+    },
+    "zeit": {
+      "type": "object",
+      "properties": {
+        "iso": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}(-\\d{2}(T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2}))?)?$"
+        },
+        "tageVorHeute": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "genauigkeit": {
+          "enum": [
+            "zeitpunkt",
+            "tag",
+            "monat"
+          ]
+        }
+      },
+      "required": [
+        "genauigkeit"
+      ],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "iso"
+          ]
+        },
+        {
+          "required": [
+            "tageVorHeute"
+          ]
+        }
+      ]
+    },
+    "quelle": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bezeichnung": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "format",
+        "bezeichnung"
+      ],
+      "additionalProperties": false
+    },
+    "bestaetigt": {
+      "type": "boolean"
+    },
+    "vergleich": {
+      "type": "object",
+      "properties": {
+        "unten": {
+          "type": "number"
+        },
+        "oben": {
+          "type": "number"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "herkunft": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "herkunft"
+      ],
+      "additionalProperties": false
+    },
+    "organe": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "zuordnungVersion": {
+      "const": "loinc-organ/1"
+    },
+    "version": {
+      "const": 1
+    },
+    "korrigiert": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "ort": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seite": {
+          "enum": [
+            "links",
+            "rechts",
+            "mitte",
+            "beidseits",
+            "ohne-Seitenangabe"
+          ]
+        },
+        "staerke": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        }
+      },
+      "required": [
+        "id",
+        "seite"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "art",
+    "bezeichnung",
+    "zeit",
+    "quelle",
+    "bestaetigt",
+    "organe",
+    "zuordnungVersion",
+    "version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dht:datensatz:v1",
+  "title": "DHT Datensatz v1",
+  "description": "Messung oder Selbstauskunft ohne Personenkennung. Fachregeln und Zeitpräzision zusätzlich in pruefen.js.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "art": {
+            "const": "messwert"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "loinc",
+          "einheit"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "wert"
+            ]
+          },
+          {
+            "required": [
+              "text"
+            ]
+          }
+        ],
+        "not": {
+          "required": [
+            "ort"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "art": {
+            "const": "schmerzort"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "ort",
+          "text"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "loinc"
+              ]
+            },
+            {
+              "required": [
+                "wert"
+              ]
+            },
+            {
+              "required": [
+                "einheit"
+              ]
+            },
+            {
+              "required": [
+                "ucum"
+              ]
+            },
+            {
+              "required": [
+                "vergleich"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "zeit": {
+            "properties": {
+              "genauigkeit": {
+                "const": "zeitpunkt"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "zeit": {
+            "required": [
+              "iso"
+            ],
+            "properties": {
+              "iso": {
+                "pattern": "T\\d{2}:\\d{2}:\\d{2}"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "zeit": {
+            "properties": {
+              "genauigkeit": {
+                "const": "monat"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "zeit": {
+            "properties": {
+              "iso": {
+                "pattern": "^\\d{4}-\\d{2}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "zeit": {
+            "properties": {
+              "genauigkeit": {
+                "const": "tag"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "zeit": {
+            "properties": {
+              "iso": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "monat-mit-tag",
+  "gueltig": false,
+  "datensatz": {
+    "id": "beispiel-hba1c-1",
+    "art": "messwert",
+    "loinc": {
+      "code": "4548-4",
+      "system": "http://loinc.org"
+    },
+    "bezeichnung": "HbA1c",
+    "wert": 5.5,
+    "einheit": "%",
+    "zeit": {
+      "iso": "2024-03-01",
+      "genauigkeit": "monat"
+    },
+    "quelle": {
+      "format": "synthetisch",
+      "bezeichnung": "Beispiel-Labor"
+    },
+    "bestaetigt": true,
+    "vergleich": {
+      "unten": 4.5,
+      "oben": 5.7,
+      "herkunft": "Beispiel-Laborbereich"
+    },
+    "organe": [
+      "TA2:3114:M"
+    ],
+    "zuordnungVersion": "loinc-organ/1",
+    "version": 1
+  }
+}
