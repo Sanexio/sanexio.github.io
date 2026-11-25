@@ -1,9 +1,50 @@
 <section class="sx-section sx-soft" id="cortex"><div class="sx-container">
  <p class="sx-eyebrow">Framework &amp; Engine</p><h2>Cortex verbindet.<br />Nexus verarbeitet.</h2>
  <p class="sx-lead">Die Sanexio GmbH ist das Unternehmen hinter dieser Entwicklung. Cortex und Nexus haben darin getrennte Rollen.</p>
+ <figure class="sx-role-figure">
+  <svg class="sx-role-diagram" viewBox="0 0 360 590" role="img" aria-labelledby="role-title role-desc" xmlns="http://www.w3.org/2000/svg">
+   <title id="role-title">Cortex verbindet. Nexus verarbeitet.</title>
+   <desc id="role-desc">Die Sanexio GmbH bildet den Rahmen. Cortex verbindet als Plattform und App-Store Apps, Praxen und Patienten. Nexus verarbeitet Daten lokal mit Nexus-KI und MLX. Zwischen Cortex und Nexus fließen Daten und Aufträge.</desc>
+   <rect class="frame" x="1" y="1" width="358" height="588" rx="22" />
+   <circle class="accent" cx="31" cy="34" r="5" />
+   <text class="label" x="47" y="39">SANEXIO GMBH</text>
+   <text class="small" x="25" y="66">Unternehmen hinter der Entwicklung</text>
+   <rect class="panel" x="20" y="88" width="320" height="176" rx="16" />
+   <text class="kicker" x="38" y="117">PLATTFORM &amp; APP-STORE</text>
+   <text class="heading" x="38" y="151">Cortex verbindet.</text>
+   <text class="body" x="38" y="179">Cortex verbindet</text>
+   <g class="chips"><rect x="38" y="197" width="66" height="38" rx="19"/><rect x="111" y="197" width="79" height="38" rx="19"/><rect x="197" y="197" width="105" height="38" rx="19"/></g>
+   <g class="chip-text"><text x="71" y="221">Apps</text><text x="150" y="221">Praxen</text><text x="249" y="221">Patienten</text></g>
+   <path class="flow" d="M164 278v54m0 0-6-7m6 7 6-7M196 332v-54m0 0-6 7m6-7 6 7" />
+   <rect class="flow-label-bg" x="91" y="291" width="178" height="28" rx="14" />
+   <text class="flow-label" x="180" y="310">Daten &amp; Aufträge</text>
+   <rect class="panel" x="20" y="346" width="320" height="175" rx="16" />
+   <text class="kicker" x="38" y="375">ENGINE</text>
+   <text class="heading" x="38" y="409">Nexus verarbeitet.</text>
+   <text class="body" x="38" y="437">Daten werden lokal verarbeitet.</text>
+   <g class="chips"><rect x="38" y="456" width="101" height="38" rx="19"/><rect x="146" y="456" width="69" height="38" rx="19"/></g>
+   <g class="chip-text"><text x="88" y="480">Nexus-KI</text><text x="180" y="480">MLX</text></g>
+   <text class="small" x="25" y="556">Getrennte Rollen. Gemeinsam verbunden.</text>
+  </svg>
+ </figure>
  <p>Der Digital Health Twin ist das Hauptprojekt von Cortex. Die weiteren Cortex-Projekte werden weiter verfolgt: Die Laborprogramme sollen Werte mit Organen im Twin verbinden; die Partnerpraxis bietet den Bezug zur Anwendung im Praxisalltag. Praxis-Webseite und Patientenportal begleiten die digitale Kommunikation und den Zugang zur Versorgung; weitere Werkzeuge unterstützen die Praxisorganisation.</p>
  <div class="sx-grid">
   <article class="sx-card"><span class="sx-tag">Harness &amp; Produktplattform</span><h3>Cortex</h3><p>Cortex ist unser KI-Framework. Es verbindet Modelle, Werkzeuge, Berechtigungen und Arbeitsabläufe. Alle Produkte der Palette nutzen diese gemeinsame Plattform.</p></article>
   <article class="sx-card"><span class="sx-tag">Eigenes KI-Modell &amp; Engine</span><h3>Nexus</h3><p>Nexus ist unsere KI-Engine auf Open-Weight-Basis. LoRA auf proprietären Daten spezialisiert sie für die Medizin. Sie läuft auf einem eigenen Server in Deutschland.</p></article>
  </div>
 </div></section>
+
+<style>
+ .sx-role-figure { margin: 2.5rem auto; max-width: 560px; }
+ .sx-role-diagram { display: block; width: 100%; height: auto; font-family: var(--sx-font-body); }
+ .frame { fill: var(--sx-c-bg); stroke: var(--sx-c-line); }
+ .panel { fill: var(--sx-c-surface); stroke: var(--sx-c-line); }
+ .accent { fill: var(--sx-c-accent); }
+ .label, .kicker { fill: var(--sx-c-accent); font-weight: 700; letter-spacing: .08em; font-size: 11px; }
+ .small { fill: var(--sx-c-ink-subtle); font-size: 12px; }
+ .heading { fill: var(--sx-c-ink); font-size: 23px; font-weight: 750; letter-spacing: -.03em; }
+ .body { fill: var(--sx-c-ink-subtle); font-size: 14px; }
+ .chips rect, .flow-label-bg { fill: var(--sx-c-accent-soft); }
+ .chip-text, .flow-label { fill: var(--sx-c-ink); font-size: 12px; font-weight: 650; text-anchor: middle; }
+ .flow { fill: none; stroke: var(--sx-c-accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+</style>
