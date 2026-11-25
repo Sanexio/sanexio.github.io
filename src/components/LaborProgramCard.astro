@@ -65,10 +65,10 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
         <tbody>
           {program.positionen.map((pos) => (
             <tr>
-              <td>{pos.ziffer}</td>
-              <td>{pos.bezeichnung}</td>
-              <td>{pos.faktor.toLocaleString('de-DE')}</td>
-              <td>{pos.betrag_display}</td>
+              <td data-label="Ziffer">{pos.ziffer}</td>
+              <td data-label="Bezeichnung">{pos.bezeichnung}</td>
+              <td data-label="Faktor">{pos.faktor.toLocaleString('de-DE')}</td>
+              <td data-label="Betrag">{pos.betrag_display}</td>
             </tr>
           ))}
         </tbody>
@@ -149,6 +149,16 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
   th {
     font-weight: 650;
     color: var(--sx-c-ink-muted);
+  }
+  td { overflow-wrap: anywhere; }
+  /* Handy: gestapelte Zeilen statt breiter Tabelle, Inhalt und Betraege unveraendert */
+  @media (max-width: 640px) {
+    .table-wrap { overflow-x: visible; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    tr { padding: 0.6rem 0; border-bottom: 1px solid var(--sx-c-line); }
+    td { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0.5rem; padding: 0.15rem 0; border-bottom: 0; }
+    td::before { content: attr(data-label); font-weight: 650; color: var(--sx-c-ink-muted); }
   }
   .labor-disclaimer {
     border-top: 1px solid var(--sx-c-line);
