@@ -1,0 +1,15 @@
+---
+import untersuchungen from '../data/untersuchungen.json';
+if (new Set(untersuchungen.map(u => u.id)).size !== untersuchungen.length) throw new Error('Doppelte Untersuchungen');
+---
+<div class="sx-grid sx-grid-four">
+  {untersuchungen.map(u => <article class="sx-card untersuchung-card" id={`untersuchung-${u.id}`}>
+    {u.motiv && <img src={`/images/diagnostik/${u.id}.webp`} alt="" loading="lazy" decoding="async" width="640" height="360" />}
+    <h3>{u.name}</h3>
+  </article>)}
+</div>
+<style>
+  .untersuchung-card { padding: 1.5rem; }
+  .untersuchung-card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
+  h3 { margin: 1rem 0 0; }
+</style>

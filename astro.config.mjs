@@ -12,7 +12,7 @@ export default defineConfig({
     hooks: {
       'astro:build:done': async ({ dir }) => {
         for (const name of await readdir(dir)) {
-          if (name === 'dht' || name === 'dht-test' || name.startsWith('dht-abnahme')) {
+          if (name === 'dht' || name === 'dht-test' || name.startsWith('dht-abnahme') || name === 'pitch' || name === 'investoren') {
             await rm(new URL(`${name}/`, dir), { recursive: true, force: true });
           }
         }

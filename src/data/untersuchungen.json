@@ -1,0 +1,104 @@
+[
+  {
+    "id": "air-pump-test",
+    "name": "Spirometrie - Lungenfunktion",
+    "quelle": "products/untersuchungen/air-pump-test.yaml",
+    "motiv": "Bilder-Diagnostik/lungenfunktion-hero.jpg"
+  },
+  {
+    "id": "ergometrie",
+    "name": "Belastungs-EKG",
+    "quelle": "products/untersuchungen/ergometrie.yaml",
+    "motiv": "Bilder-Diagnostik/belastungs-ekg-hero.jpg"
+  },
+  {
+    "id": "gaming-reaktionszeit",
+    "name": "Eye Check",
+    "quelle": "products/untersuchungen/gaming-reaktionszeit.yaml",
+    "motiv": "Bilder-Diagnostik/eye-check-hero.jpg"
+  },
+  {
+    "id": "sono-abdomen",
+    "name": "Ultraschall: Bauchorgane",
+    "quelle": "products/untersuchungen/sono-abdomen.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-hero.jpg"
+  },
+  {
+    "id": "sono-check",
+    "name": "Ultraschall: Komplett Check",
+    "quelle": "products/untersuchungen/sono-check.yaml",
+    "motiv": "Bilder-Diagnostik/sono-check-hero.jpg"
+  },
+  {
+    "id": "ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom",
+    "name": "Ultraschall: Bauchspeicheldrüse",
+    "quelle": "products/untersuchungen/ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-bauchspeicheldruese-hero.jpg"
+  },
+  {
+    "id": "ultraschall-leber-krebsscreening",
+    "name": "Ultraschall: Leber und Gallenblase",
+    "quelle": "products/untersuchungen/ultraschall-leber-krebsscreening.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-leber-hero.jpg"
+  },
+  {
+    "id": "ultraschall-niere-und-ableitende-harnwege-krebsscreening",
+    "name": "Ultraschall: Nieren und Harnwege",
+    "quelle": "products/untersuchungen/ultraschall-niere-und-ableitende-harnwege-krebsscreening.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-nieren-hero.jpg"
+  },
+  {
+    "id": "ultraschall-prostata-und-harnblase-krebsscreening",
+    "name": "Ultraschall: Prostata und Harnblase",
+    "quelle": "products/untersuchungen/ultraschall-prostata-und-harnblase-krebsscreening.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-prostata-hero.jpg"
+  },
+  {
+    "id": "ultraschall-schilddruse-krebsscreening",
+    "name": "Ultraschall: Schilddrüse",
+    "quelle": "products/untersuchungen/ultraschall-schilddruse-krebsscreening.yaml",
+    "motiv": "Bilder-Diagnostik/sonographie-schilddruese-hero.jpg"
+  },
+  {
+    "id": "body-check",
+    "name": "Body-Check",
+    "quelle": "pages/_shared/body-check.yaml",
+    "motiv": null
+  },
+  {
+    "id": "carotis-duplex",
+    "name": "Carotis-Duplex",
+    "quelle": "pages/_shared/carotis-duplex.yaml",
+    "motiv": "Bilder-Diagnostik/carotis-duplex-hero.jpg"
+  },
+  {
+    "id": "echokardiographie",
+    "name": "Echokardiographie",
+    "quelle": "pages/_shared/echokardiographie.yaml",
+    "motiv": "Bilder-Diagnostik/echokardiographie-hero.jpg"
+  },
+  {
+    "id": "fit-for-diving",
+    "name": "Tauchtauglichkeit",
+    "quelle": "pages/_shared/fit-for-diving.yaml",
+    "motiv": "Bilder-Diagnostik/fit-for-diving-hero.jpg"
+  },
+  {
+    "id": "kardio-check",
+    "name": "Kardio-Check",
+    "quelle": "pages/_shared/kardio-check.yaml",
+    "motiv": "Bilder-Diagnostik/kardio-check-hero.jpg"
+  },
+  {
+    "id": "komplett-check",
+    "name": "Komplett-Check",
+    "quelle": "pages/_shared/komplett-check.yaml",
+    "motiv": "Bilder-Diagnostik/komplett-check-hero.jpg"
+  },
+  {
+    "id": "gesundheits-check",
+    "name": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)",
+    "quelle": "pages/_shared/gesundheits-check.yaml",
+    "motiv": null
+  }
+]

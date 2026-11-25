@@ -1,0 +1,68 @@
+---
+import OrganGallery from '../../components/OrganGallery.astro';
+import Default from '../../layouts/Default.astro';
+import Nav from '../../components/Nav.astro';
+import ContactFooter from '../../components/ContactFooter.astro';
+import LaborProgramCard from '../../components/LaborProgramCard.astro';
+import LaborProgramGrid from '../../components/LaborProgramGrid.astro';
+import laborData from '../../data/laborprogramme.json';
+import UntersuchungsGrid from '../../components/UntersuchungsGrid.astro';
+
+const title = 'Diagnostik | Sanexio — Datenbasis für den Digital Health Twin';
+const description =
+  'Diagnostik und Laborprogramme als Datenbasis für Deinen persönlichen Digital Health Twin — verbunden mit 3D-Organ-Ansichten.';
+---
+
+<Default {title} {description} canonical={new URL('/diagnostik/', Astro.site).href} extraJsonLd={{ "@context": "https://schema.org", "@type": "WebPage", name: "Diagnostik", description, url: new URL("/diagnostik/", Astro.site).href }}>
+  <Nav />
+  <main id="inhalt">
+    <section class="sx-section" aria-labelledby="labor-title">
+      <div class="sx-container sx-prose">
+        <p class="sx-eyebrow">Digital Health Twin</p>
+        <h1 id="labor-title">Diagnostik</h1>
+        <p class="sx-lead">
+          Laborprogramme und Check-up-Untersuchungen bilden eine Datenbasis für Deinen persönlichen Digital Health Twin — vom Basis-Check bis zu organbezogenen Untersuchungen. Die
+          drehbaren Organ-Modelle und die Reise durch den Körper zeigen, wo im Körper die Messgrößen
+          hingehören; sie ersetzen keine ärztliche Beratung.
+        </p>
+        <div class="sx-actions">
+          <a class="sx-btn sx-btn-primary" href="/#dht">Den Twin verstehen</a>
+          <a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a>
+          <a class="sx-btn" href="/blog/werkstattbericht-3d-organe-schritt-fuer-schritt/">3D-Werkstatt im Blog</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sx-section sx-soft" aria-labelledby="reise-title">
+      <div class="sx-container">
+        <h2 id="reise-title">Reise durch deinen Körper – in 3D</h2>
+        <h3>Laborprogramme</h3>
+        <LaborProgramGrid />
+        <h3>Check-up-Untersuchungen</h3>
+        <UntersuchungsGrid />
+      </div>
+    </section>
+
+    <section class="sx-section" aria-label="Laborprogramme mit GOÄ-Preisen im Detail">
+      <div class="sx-container">
+        <article id="genetik-beratung" class="sx-card" style="padding: 1.5rem; margin-block: 2rem;">
+          <h2>Genetik-Beratung</h2>
+          <p>Was steht wirklich in deinen Genen — und was nicht? Ärztliche Beratung zu genetischen Tests, Einordnung vorhandener Befunde, schriftliche Zusammenfassung.</p>
+        </article>
+        {laborData.programmes.map((program) => (
+          <LaborProgramCard
+            program={program}
+            infoboxHeading={laborData.infobox_heading}
+            disclaimerDu={laborData.disclaimer_du}
+          />
+        ))}
+      </div>
+    </section>
+    <section class="sx-section" aria-label="Drehbare anatomische Referenzmodelle">
+      <div class="sx-container">
+        <OrganGallery organs={['herz-male', 'leber-male', 'niere-male']} compact />
+      </div>
+    </section>
+  </main>
+  <ContactFooter />
+</Default>

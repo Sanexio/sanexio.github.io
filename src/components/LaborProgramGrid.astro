@@ -12,8 +12,12 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
     <LaborVisual {program} />
     <h3>{program.praxis_name}</h3>
     <LaborPrice amount={program.goae_summe_eur} />
-    <a class="sx-btn" href={`/laborprogramme/#${program.praxis_slug}`}>Programm ansehen</a>
+    <a class="sx-btn" href={`/diagnostik/#${program.praxis_slug}`}>Programm ansehen</a>
   </article>)}
+  <article class="sx-card journey-card">
+    <h3>Genetik-Beratung</h3>
+    <a class="sx-btn" href="/diagnostik/#genetik-beratung">Programm ansehen</a>
+  </article>
 </div>
 
 <style>
