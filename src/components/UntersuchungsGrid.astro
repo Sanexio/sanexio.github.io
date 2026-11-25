@@ -2,7 +2,7 @@
 import untersuchungen from '../data/untersuchungen.json';
 if (new Set(untersuchungen.map(u => u.id)).size !== untersuchungen.length) throw new Error('Doppelte Untersuchungen');
 ---
-<div class="sx-grid sx-grid-four">
+<div class="sx-cg sx-g17">
   {untersuchungen.map(u => <article class="sx-card untersuchung-card" id={`untersuchung-${u.id}`}>
     {u.motiv ? <img src={`/images/diagnostik/${u.id === "fit-for-diving" ? "fit-for-diving-dht" : u.id}.webp`} alt="" loading="lazy" decoding="async" width="640" height="360" /> : <div class="neutral-motif" aria-hidden="true"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="25"/><path d="M32 19v26M19 32h26"/></svg></div>}
     <h3>{u.name}</h3>
@@ -10,11 +10,11 @@ if (new Set(untersuchungen.map(u => u.id)).size !== untersuchungen.length) throw
   </article>)}
 </div>
 <style>
-  .untersuchung-card { position: relative; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .untersuchung-card { position: relative; gap: 1rem; }
   .untersuchung-card .sx-btn { margin-top: auto; }
   .untersuchung-card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
   .neutral-motif { display: grid; place-items: center; aspect-ratio: 16 / 9; border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); color: var(--sx-c-accent); }
   .untersuchung-card a::after { content: ""; position: absolute; inset: 0; }
   .untersuchung-card:focus-within { outline: 3px solid var(--sx-c-accent); outline-offset: 3px; }
-  h3 { margin: 1rem 0 0; }
+  .untersuchung-card h3 { margin: 0; }
 </style>

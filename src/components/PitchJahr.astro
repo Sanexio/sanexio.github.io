@@ -6,26 +6,26 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
  <p class="sx-eyebrow">Business Model Canvas · Kundenbeziehungen</p>
  <h2 id="f15">Ein Jahr mit dem Twin</h2>
  <p class="sx-lead"><strong>Patient Empowerment:</strong> Der Twin führt, motiviert und erklärt, die Patientin entscheidet. Beispiel: 58 Jahre, Blutdruck 148/94, LDL 182 mg/dl, Kreatinin leicht steigend</p>
- <div class="sx-grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">{monate.map(([m,t,s]) => <article class="sx-card"><span class="sx-step">{s}</span><h3>{m}</h3><p>{t}</p></article>)}</div>
- <div class="sx-grid sx-grid-four">{kp.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
+ <div class="sx-cg sx-g5">{monate.map(([m,t,s]) => <article class="sx-card"><span class="sx-step">{s}</span><h3>{m}</h3><p>{t}</p></article>)}</div>
+ <div class="sx-cg sx-g4">{kp.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
  <p class="sx-slide-note">Beispielverlauf zur Veranschaulichung, keine echte Patientin</p>
 </div></section>
 
 <section class="sx-section sx-soft" id="erloese" aria-labelledby="f16"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Einnahmequellen</p>
  <h2 id="f16">Woran Sanexio und die Praxen verdienen</h2>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-sub">Vertrieb · Cortex Local für Praxen</span><p>Kostenlos: lokale KI plus Praxis-Apps, Kernbausteine offen. Lizenz pro Praxis, beliebig viele Rechner. Senkt die Einstiegshürde auf null.</p></article>
   <article class="sx-card"><span class="sx-sub">Erlös 1 · Patientenplattform</span><p>Twin, Check-up- und Longevity-Pakete. Die Praxis rechnet selbst ab, oder Sanexio rechnet ab und beteiligt die Praxis (Kooperationsmodell). So wird jede Partnerpraxis Teil unseres Vertriebsnetzes.</p></article>
   <article class="sx-card"><span class="sx-sub">Erlös 2 · Upgrades und Bundles</span><p>Erweiterte App-Versionen, Zusatzpakete, Kontingente. Freischaltung per signiertem Praxis-Schlüssel, ohne Patientendaten.</p></article>
  </div>
- <h3 style="margin-top:3rem">Ein Check zu 800 € im Kooperationsmodell (Annahme)</h3>
+ <h3 class="sx-h3-gap">Ein Check zu 800 € im Kooperationsmodell (Annahme)</h3>
  <p class="sx-lead">Die Erlösteilung ist das Vertriebsnetz: Jede Partnerpraxis bietet den Twin ihren Patient:innen an und verdient an jedem Check mit. Je mehr Praxen, desto mehr Vertrieb, ohne eigene Außendienstkosten.</p>
- <div class="sx-grid sx-grid-2">
+ <div class="sx-cg sx-g2">
   <article class="sx-card sx-kpi"><span class="sx-number">70 %</span><p>Praxis · 560 €</p></article>
   <article class="sx-card sx-kpi"><span class="sx-number">30 %</span><p>Sanexio · 240 €</p></article>
  </div>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-step">Stufe 1</span><h3>Check-ups</h3></article>
   <article class="sx-card"><span class="sx-step">Stufe 2</span><h3>Longevity</h3></article>
   <article class="sx-card"><span class="sx-step">Stufe 3</span><h3>Human Enhancement</h3></article>
@@ -37,13 +37,13 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
 <section class="sx-section" id="ressourcen" aria-labelledby="f17"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselressourcen · Wettbewerbsvorteil</p>
  <h2 id="f17">Eigene KI, eigenes Wissen, eigene Daten</h2>
- <div class="sx-grid sx-grid-four">
+ <div class="sx-cg sx-g4">
   <article class="sx-card"><span class="sx-sub">Eigene KI · Nexus</span><p>Unabhängig von den großen Anbietern, auf unserem Server in Deutschland, mit eigener Gewichtung und proprietären Daten. Die Gewichte verlassen nie das Haus.</p></article>
   <article class="sx-card"><span class="sx-sub">Eigenes KI-Framework · Cortex</span><p>Harness und Produktplattform in einem: steuert die KI-Agenten, verbindet Wissensgraph, Regeln und Werkzeuge, lernt aus jeder Aufgabe. Heute 55 Werkzeuge auf fünf Rechnern.</p></article>
   <article class="sx-card"><span class="sx-sub">Medizinisches Domänenwissen</span><p>Vorsorge-, Labor-, Impf- und Abrechnungsregeln, im Praxisbetrieb geprüft und als Code hinterlegt. Ärztliche Urteile kommen laufend dazu.</p></article>
-  <article class="sx-card"><span class="sx-sub">Patient:innen seit 1997</span><span class="sx-number" style="font-size:2.4rem">≈ 23.000</span><p>Proprietärer Datensatz mit Verläufen, deren Ausgang wir kennen. Er bleibt in der Praxis; trainiert wird nur pseudonymisiert im Haus.</p></article>
+  <article class="sx-card"><span class="sx-sub">Patient:innen seit 1997</span><span class="sx-number">≈ 23.000</span><p>Proprietärer Datensatz mit Verläufen, deren Ausgang wir kennen. Er bleibt in der Praxis; trainiert wird nur pseudonymisiert im Haus.</p></article>
  </div>
- <div class="sx-grid sx-grid-2">
+ <div class="sx-cg sx-g2">
   <article class="sx-card"><span class="sx-sub">Schwer zu kopieren</span><p>Ärztlich kuratierte Urteile, Verläufe mit bekanntem Ausgang und die Einbindung in den Praxisablauf. Das entsteht nur über Jahre im Betrieb.</p></article>
   <article class="sx-card"><span class="sx-sub">Für alle verfügbar</span><p>Offene Basismodelle und Trainingstechnik. Sie sind unser Werkzeug, nicht unser Vorsprung.</p></article>
  </div>
@@ -53,12 +53,12 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
 <section class="sx-section sx-soft" id="architektur" aria-labelledby="f18"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselressourcen · Architektur</p>
  <h2 id="f18">Drei Schichten mit kontrolliertem Ingress und Egress</h2>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-sub">Clients · beim Kunden</span><p>iOS-App mit On-Device-Inferenz, Praxis-Apps, Web-Frontends</p></article>
   <article class="sx-card"><span class="sx-sub">Cortex · KI-Framework · on-premise</span><p>Agenten-Orchestrierung, Wissensgraph (Ontologie), Regel-Engine, RAG, Evaluierung</p></article>
   <article class="sx-card"><span class="sx-sub">Nexus · eigenes LLM · eigener Server</span><p>Open-Weight-Basismodell mit eigenem LoRA-Fine-Tuning, Inferenz-Server, Trainingsdaten</p></article>
  </div>
- <div class="sx-grid sx-grid-2">
+ <div class="sx-cg sx-g2">
   <article class="sx-card"><span class="sx-sub">Ingress-Gateway</span><p>Schema-Validierung mit Allowlist (JSON-Schema, keine unbekannten Felder). Nur typisierte Telemetrie: Enums, begrenzte Zähler, Versionen, Hashes. Kein Freitext. Datenklasse aus dem Payload-Typ abgeleitet, fail-closed.</p></article>
   <article class="sx-card"><span class="sx-sub">Egress-Gateway</span><p>Nur signierte Release-Bundles mit freigegebenen Wissensartefakten und Open-Weight-Basismodell. Keine eigenen Gewichte, keine PHI. Code-Signing und Manipulationsprüfung beim Update.</p></article>
  </div>
@@ -68,13 +68,13 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
 <section class="sx-section" id="sicherheit" aria-labelledby="f19"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselaktivitäten · Deployment</p>
  <h2 id="f19">Wo die Datenverarbeitung läuft und wie sie abgesichert ist</h2>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-sub">iOS-App (Twin) · Edge · on-device</span><ul class="sx-list"><li>On-Device-Inferenz: Qwen3 via MLX</li><li>HealthKit-Import mit Einwilligung</li><li>Lokale, verschlüsselte Datenhaltung</li><li>Offline-fähig</li></ul><p class="sx-note">Modell auf dem Gerät: in Entwicklung</p></article>
   <article class="sx-card"><span class="sx-sub">Nexus-Server · eigener Server · Deutschland</span><ul class="sx-list"><li>Eigenes LLM, LoRA-Fine-Tuning</li><li>Inferenz-API für Fallback-Anfragen</li><li>Signierte Release-Bundles</li><li>Evaluierung und Model-Registry</li></ul></article>
   <article class="sx-card"><span class="sx-sub">Cortex Local (Praxis) · on-premise</span><ul class="sx-list"><li>Lokale LLMs, Agenten</li><li>PVS-Anbindung über JSON-RPC</li><li>Lastverteilung im Praxis-Cluster</li><li>PHI bleibt im Haus</li></ul></article>
  </div>
- <p class="sx-note" style="margin-top:1.5rem">Zwischen den Ebenen fließen: Query ohne PHI · Telemetrie · Wissen · Updates</p>
- <div class="sx-grid sx-grid-three">
+ <p class="sx-note sx-note-gap">Zwischen den Ebenen fließen: Query ohne PHI · Telemetrie · Wissen · Updates</p>
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-sub">Egress-Kontrolle</span><p>Allowlist an genau einem Gateway, fail-closed, ohne Kill-Switch. Nicht gelistete Ziele und Felder werden abgewiesen.</p></article>
   <article class="sx-card"><span class="sx-sub">Datenklassen</span><p>K0 bis K3. Patientendaten (K3) werden nur lokal verarbeitet und gehen nie an Cloud-Modelle.</p></article>
   <article class="sx-card"><span class="sx-sub">Nachweis</span><p>An der PVS-Anbindung: 0 False Positives bei 165 echten Schreibvorgängen, 17 von 17 Exfiltrationswegen im Pentest abgewiesen.</p></article>

@@ -1,12 +1,11 @@
 <a class="sx-skip sx-btn" href="#inhalt">Zum Inhalt</a>
 <header class="sx-nav">
   <div class="sx-container sx-nav-inner">
-    <a href="/" class="sx-brand" aria-label="Sanexio Startseite">sanexio<span aria-hidden="true">.</span></a>
-    <a href="/" class="sx-home" aria-label="Zur Startseite">⌂ <span>Startseite</span></a>
+    <a href="/" class="sx-brand" aria-label="Sanexio, zur Startseite">sanexio<span aria-hidden="true">.</span></a>
     <nav aria-label="Hauptnavigation">
-      <a href="/dht-abnahme-3/">DHT testen <small>(Beispieldaten)</small></a>
+      <a href="/#cortex">Cortex &amp; Nexus</a>
+      <a href="/dht-abnahme-3/">DHT testen</a>
       <a href="/#apps">Cortex-Apps</a>
-      <a href="/#pitch">Pitch</a>
       <a href="/diagnostik/">Diagnostik</a>
       <a href="/#kontakt">Kontakt</a>
     </nav>
@@ -14,11 +13,15 @@
 </header>
 <style>
  .sx-nav { position: sticky; top: 0; z-index: 100; background: var(--sx-c-bg); border-bottom: 1px solid var(--sx-c-line); }
- .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem 2rem; padding-block: 1rem; }
+ .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .2rem 2rem; padding-block: .6rem; }
  .sx-brand { font: 800 1.9rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
  .sx-brand span { color: var(--sx-c-accent); }
- .sx-home { display: inline-flex; align-items: center; min-height: 44px; gap: .3rem; font-weight: 600; font-size: .85rem; text-decoration: none; }
- nav { display: flex; flex-wrap: wrap; gap: .15rem 1.3rem; }
- nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .82rem; font-weight: 600; text-decoration: none; }
- @media(max-width: 767px) { nav { width: 100%; gap: 0 1rem; } nav a { font-size: .76rem; } }
+ nav { display: flex; flex-wrap: nowrap; gap: 0 1.6rem; }
+ nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .85rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+ @media(max-width: 767px) {
+  .sx-nav-inner { flex-direction: column; align-items: stretch; gap: 0; }
+  .sx-brand { align-self: flex-start; }
+  nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+  nav a { font-size: .7rem; line-height: 1.2; white-space: normal; justify-content: center; text-align: center; padding-inline: .1rem; }
+ }
 </style>

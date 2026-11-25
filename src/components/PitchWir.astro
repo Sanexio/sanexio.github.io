@@ -1,28 +1,15 @@
 ---
-const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['90 %','der gebuchten privaten Check-ups werden wahrgenommen'],['17','Behandlungsräume'],['≈ 3.000','Behandlungsfälle pro Quartal'],['23.000','Patient:innen seit 1997 im Datensatz'],['≈ 440','private Check-ups 2025, je knapp 800 €'],['≈ 350.000 €','Erlös aus privaten Check-ups 2025']];
 ---
-<section class="sx-section" id="pitch" aria-labelledby="f2"><div class="sx-container">
- <p class="sx-eyebrow">Wer wir sind · Praxisgemeinschaft Sanexio · Sanexio GmbH</p>
- <h2 id="f2">Wir behandeln Patient:innen und bauen die Software dafür selbst</h2>
- <p class="sx-lead">Dr. Stracke führt beide Unternehmen: geschäftsführender Gesellschafter der Praxisgemeinschaft und Geschäftsführer der Sanexio GmbH. Team, Patient:innen, Daten und Entwicklung liegen in einer Hand, deshalb entsteht der funktionierende Prototyp in Eigenregie.</p>
- <div class="sx-grid sx-grid-2">
-  <article class="sx-card"><h3>Die Praxis</h3><p>Frankfurt-Westend, Grüneburgweg. Rund 500 m², neun Fachrichtungen unter einem Dach, eigene Organisation. Hier entsteht der Alltag, den unsere Software abbildet.</p></article>
-  <article class="sx-card"><h3>Die Firma</h3><p>IT- und Infrastruktur-Dienstleister für Ärzt:innen und Service-Dienstleister für Patient:innen. Entwickelt die Plattform Cortex und die KI Nexus und erprobt jedes Produkt zuerst in der eigenen Praxis.</p></article>
- </div>
- <div class="sx-grid sx-grid-four">{kpis.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
- <p class="sx-slide-note">Teamgröße, Räume, Fälle: Praxisprofil Stand 13.04.2026 · Check-ups 2025: Schätzung aus Ø 8,5 pro Woche × knapp 800 €</p>
-</div></section>
-
 <section class="sx-section sx-soft" id="these" aria-labelledby="f3"><div class="sx-container">
  <p class="sx-eyebrow">Die These</p>
  <h2 id="f3">SaaS, wie wir es kennen, verliert seine Grundlage</h2>
  <p class="sx-lead">KI macht Standard-Software schnell nachbaubar. Damit verliert das Abo-Modell seinen Schutz. Nur Dienstleister mit proprietären Daten, spezialisierter Software und eigens gewichteten Open-Weight-Modellen werden bestehen bleiben.</p>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><h3>Software wird billig</h3><p>KI-Agenten bauen Fachanwendungen in wenigen Tagen nach. Was früher ein Entwicklerteam über Jahre gekostet hat, kostet heute einen Bruchteil, und Funktionen allein schützen niemanden mehr.</p></article>
   <article class="sx-card"><h3>Super-Apps greifen nach allem</h3><p>OpenAI, Google und andere bauen Super-Apps und Agenten, die Termine, Dokumente und Abrechnung gleich mit erledigen. Standard-Software wird somit on demand von KI-Agenten nach den Bedürfnissen der Anwender erstellt.</p></article>
   <article class="sx-card"><h3>Wer Daten abgibt, wird austauschbar</h3><p>Diese Plattformen leben von zentral gesammelten Daten. Wer seine Daten dort ablegt, trainiert die KI eines anderen und gibt damit sein eigentliches Alleinstellungsmerkmal aus der Hand.</p></article>
  </div>
- <div class="sx-grid sx-grid-2">
+ <div class="sx-cg sx-g2">
   <article class="sx-card"><span class="sx-sub">Bisher · Software mieten</span><p>Man zahlt jeden Monat ein Abo, der Anbieter bestimmt die Funktionen, und die Daten liegen auf seinen Servern. Wer kündigt, verliert Werkzeug und Daten zugleich.</p></article>
   <article class="sx-card"><span class="sx-sub">Künftig · Software und Daten besitzen</span><p>Die Software wird einmal gebaut, läuft lokal und wird von der KI laufend angepasst. Software und Daten gehören Praxis und Patient:in und bleiben dauerhaft bei ihnen.</p></article>
  </div>
@@ -33,13 +20,13 @@ const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['90 %','der gebuchten 
 <section class="sx-section" id="ueberleben" aria-labelledby="f4"><div class="sx-container">
  <p class="sx-eyebrow">Wer überlebt</p>
  <h2 id="f4">Nur drei Arten von Softwareanbietern werden überleben</h2>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-number">1</span><h3>Spezialisiert und reguliert</h3><p>Software, die in keinem KI-Trainingsdatensatz steckt oder streng reguliert ist. Beispiele sind die Steuerung eines Atomkraftwerks oder ein Medizinprodukt.</p></article>
   <article class="sx-card"><span class="sx-number">2</span><h3>Proprietäre Daten</h3><p>Wer Daten besitzt, die sonst niemand hat, kann damit eine KI trainieren, die niemand nachbauen kann. Je länger und tiefer die Daten, desto größer der Abstand.</p></article>
   <article class="sx-card"><span class="sx-number">3</span><h3>Netzwerkeffekt</h3><p>Plattformen, deren Wert mit jedem weiteren Nutzer wächst, sind kaum zu verdrängen. Das bekannteste Beispiel ist Meta mit seinen Netzwerken.</p></article>
  </div>
  <p class="sx-claim">Sanexio steht in zwei dieser drei Gruppen: spezialisiertes Domänenwissen der medizinischen Versorgung und ein großer proprietärer Datensatz.</p>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-sub">Code wird billig, Daten noch teurer</span><h3>Warum sich Software umkehrt</h3><p>Bisher war das Programmieren der Engpass. Künftig schreibt die KI den Code, und knapp bleiben nur gute Daten und das Vertrauen der Nutzer.</p></article>
   <article class="sx-card"><span class="sx-sub">Die Oberfläche verschwindet</span><h3>Agenten statt Apps</h3><p>Nutzer sagen einer KI, was erledigt werden soll. Die einzelnen Programme laufen unsichtbar dahinter und werden dadurch austauschbar.</p></article>
   <article class="sx-card"><span class="sx-sub">Preis pro Platz fällt weg</span><h3>Lizenzen verlieren Sinn</h3><p>Wenn Agenten die Arbeit erledigen, gibt es weniger Nutzerplätze zu verkaufen. Bezahlt wird dann für Ergebnisse statt für Zugänge.</p></article>

@@ -12,14 +12,12 @@ const prod = [
  ['Webseite und Wartezimmer','Praxiswebseite, Terminwege und Bildschirme im Wartezimmer.','ersetzt: Baukasten und Wartezimmer-TV im Abo'],
 ];
 ---
-<section class="sx-section sx-soft" id="apps" aria-labelledby="apps-title"><div class="sx-container">
+<section class="sx-section" id="apps" aria-labelledby="apps-title"><div class="sx-container">
  <p class="sx-eyebrow">Cortex-Produkte · Aufbau: Nexus, Cortex, Produkte</p>
  <h2 id="apps-title">Cortex-Produkte: der Twin und was wir an SaaS ersetzen</h2>
  <p class="sx-lead">Produkte auf Cortex: SaaS, das wir in der eigenen Praxis Schritt für Schritt ersetzen.</p>
- <div class="sx-grid sx-grid-three">
+ <div class="sx-cg sx-g8">
   {first.map(a => <article class="sx-card"><span class="sx-sub">{a.k}</span><h3>{a.t}</h3><p>{a.p}</p>{a.href && <a class="sx-btn sx-btn-primary" href={a.href}>{a.cta}</a>}</article>)}
- </div>
- <div class="sx-grid sx-grid-three">
   {prod.map(([t,p,r]) => <article class="sx-card"><span class="sx-sub">für Praxen</span><h3>{t}</h3><p>{p}</p><p class="sx-note">{r}</p></article>)}
  </div>
 </div></section>

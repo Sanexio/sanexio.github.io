@@ -5,15 +5,15 @@ const orte = [['Laborwerte','Praxissoftware'],['Blutdruck, Puls','Notizbuch'],['
  <p class="sx-eyebrow">Das Problem</p>
  <h2 id="f9">Gesundheitsdaten gibt es genug, nur nicht dort, wo sie wirken</h2>
  <h3>Heute: zehn Orte, kein holistisches Bild</h3>
- <div class="sx-grid sx-grid-5" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem">{orte.map(([a,b]) => <article class="sx-card" style="padding:1.1rem 1.3rem"><strong>{a}</strong><p style="margin:.2rem 0 0;font-size:.92rem">{b}</p></article>)}</div>
+ <div class="sx-cg sx-g10">{orte.map(([a,b]) => <article class="sx-card sx-card-kurz"><strong>{a}</strong><p>{b}</p></article>)}</div>
  <p class="sx-claim">Patient:innen bleiben Zuschauer ihrer eigenen Gesundheit. Nur 26 % fühlen sich bei Selbstzahlerleistungen gut informiert.</p>
- <h3 style="margin-top:3rem">Mit dem Twin: vom Messwert zum ganzen Körper</h3>
- <div class="sx-media-row" style="--cols:3">
+ <h3 class="sx-h3-gap">Mit dem Twin: vom Messwert zum ganzen Körper</h3>
+ <div class="sx-cg sx-g3">
   <article class="sx-card"><span class="sx-step">1 · Der Messwert</span><h3>Kreatinin · 3 Jahre</h3><p>Leicht steigend, Kontrolle im Juli.</p><p class="sx-note">Verlauf und nächster Schritt</p></article>
   <figure class="sx-media"><img src="/pitch-medien/pitch-f444dff73369.webp" alt="Darstellung beider Nieren" loading="lazy" width="1280" height="1280" /><figcaption><strong>2 · Das Organ</strong> · Weitere Parameter wie Urin und Blutdruck</figcaption></figure>
   <article class="sx-card"><span class="sx-step">3 · Der ganze Körper</span><h3>Ihr persönlicher Twin</h3></article>
  </div>
- <div class="sx-media-row" style="--cols:2">
+ <div class="sx-cg sx-g2">
   <figure class="sx-media"><img src="/pitch-medien/pitch-ee961783a20e.webp" alt="Twin im Zustand Jetzt: Organe rot und orange" loading="lazy" width="1200" height="1800" /><figcaption><strong>Jetzt</strong> · Score 0. Leber und Schilddrüse stark belastet, Herz, Nieren und Gefäße leicht.</figcaption></figure>
   <figure class="sx-media"><img src="/pitch-medien/pitch-df921ead40b4.webp" alt="Twin im Zustand Gesund: Organe grün" loading="lazy" width="1200" height="1800" /><figcaption><strong>Gesund</strong> · Score 100. Alle Organe im Zielbereich. So sieht derselbe Körper aus, wenn die Werte stimmen.</figcaption></figure>
  </div>
@@ -23,26 +23,16 @@ const orte = [['Laborwerte','Praxissoftware'],['Blutdruck, Puls','Notizbuch'],['
 <section class="sx-section sx-soft" id="twin-leistet" aria-labelledby="f10"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Value Proposition</p>
  <h2 id="f10">Was der Twin leistet</h2>
- <div class="sx-media-row" style="--cols:3">
+ <div class="sx-cg sx-g3">
   <figure class="sx-media"><img src="/pitch-medien/pitch-568b139b29d4.webp" alt="App-Ansicht Ganzer Körper mit nach Belastung markierten Organen" loading="lazy" width="1206" height="2622" /><figcaption><strong>Ganzer Körper</strong> · Organe markiert nach Belastung</figcaption></figure>
   <figure class="sx-media"><img src="/pitch-medien/pitch-b0a7faf39d72.webp" alt="App-Ansicht Organ Niere mit Zustand und Erklärung" loading="lazy" width="1206" height="1972" /><figcaption><strong>Organ: Niere</strong> · Zustand, Treiber, Empfehlung</figcaption></figure>
   <figure class="sx-media"><img src="/pitch-medien/pitch-ee8488484ac2.webp" alt="App-Ansicht Verlauf Ruhepuls" loading="lazy" width="1206" height="2262" /><figcaption><strong>Verlauf: Ruhepuls</strong> · Kurve mit Erklärung</figcaption></figure>
  </div>
- <div class="sx-grid sx-grid-four">
+ <div class="sx-cg sx-g4">
   <article class="sx-card"><span class="sx-sub">Datenspiegel</span><p>Eigene Werte im Verlauf: Labor, Vitaldaten, Vorsorge. Kurven werden exakt berechnet, die KI erklärt nur Berechnetes.</p></article>
   <article class="sx-card"><span class="sx-sub">3D-Organ-Atlas</span><p>Vom Ganzkörper ins Organ, Zustand in ärztlich abgenommenen Stufen statt nackter Zahl.</p></article>
   <article class="sx-card"><span class="sx-sub">Erklärwissen</span><p>Zu jedem Wert: was er bedeutet, welches Organ er betrifft, was als Nächstes sinnvoll ist.</p></article>
   <article class="sx-card"><span class="sx-sub">Für die Praxis</span><p>Lokale KI ohne Abo, weniger Erklärzeit, Vorsorge zum richtigen Zeitpunkt, Anteil an jedem Check.</p></article>
  </div>
  <p class="sx-slide-note">App LifeLinker im Simulator, nur Demo-Daten</p>
-</div></section>
-
-<section class="sx-section" id="aufbau" aria-labelledby="f11"><div class="sx-container">
- <p class="sx-eyebrow">Aufbau · Nexus, Cortex, Produkte</p>
- <h2 id="f11">Cortex und Nexus tragen jedes Produkt</h2>
- <div class="sx-grid sx-grid-2">
-  <article class="sx-card"><span class="sx-sub">Cortex</span><p>Unser KI-Framework, Harness und Produktplattform in einem. Es verbindet Wissen, Regeln und KI-Agenten; jedes Produkt oben läuft darauf. In der Praxis läuft es als Cortex Local auf den eigenen Rechnern.</p></article>
-  <article class="sx-card"><span class="sx-sub">Nexus</span><p>Unser eigenes KI-Modell, der Kern unter Cortex. Unabhängig von den großen Anbietern, auf unserem Server, mit eigener Gewichtung und proprietären Daten.</p></article>
- </div>
- <p class="sx-slide-note">Sanexio entwickelt und betreibt alle drei Ebenen · erprobt in der Praxisgemeinschaft Sanexio mit neun Fachrichtungen, Bausteine teils im Einsatz, teils im Aufbau. Die Produkte stehen oben im Abschnitt <a href="#apps">Cortex-Apps</a>.</p>
 </div></section>

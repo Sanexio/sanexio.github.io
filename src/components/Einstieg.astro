@@ -1,0 +1,16 @@
+---
+const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['90 %','der gebuchten privaten Check-ups werden wahrgenommen'],['17','Behandlungsräume'],['≈ 3.000','Behandlungsfälle pro Quartal'],['23.000','Patient:innen seit 1997 im Datensatz'],['≈ 440','private Check-ups 2025, je knapp 800 €'],['≈ 350.000 €','Erlös aus privaten Check-ups 2025']];
+---
+<section class="sx-section" id="start" aria-labelledby="f2"><div class="sx-container">
+ <p class="sx-eyebrow">KI-Startup im Gesundheitswesen · Wer wir sind · Praxisgemeinschaft Sanexio · Sanexio GmbH</p>
+ <h1 id="f2" class="sx-h1">Wir behandeln Patient:innen und bauen die Software dafür selbst</h1>
+ <p class="sx-lead">Dr. Stracke führt beide Unternehmen: geschäftsführender Gesellschafter der Praxisgemeinschaft und Geschäftsführer der Sanexio GmbH. Team, Patient:innen, Daten und Entwicklung liegen in einer Hand, deshalb entsteht der funktionierende Prototyp in Eigenregie.</p>
+ <div class="sx-actions"><a class="sx-btn sx-btn-primary" href="/dht-abnahme-3/">DHT testen</a><a class="sx-btn" href="#cortex">Cortex &amp; Nexus</a></div>
+ <p class="sx-note">Die DHT-Testseite zeigt Beispieldaten.</p>
+ <div class="sx-cg sx-g2">
+  <article class="sx-card"><h3>Die Praxis</h3><p>Frankfurt-Westend, Grüneburgweg. Rund 500 m², neun Fachrichtungen unter einem Dach, eigene Organisation. Hier entsteht der Alltag, den unsere Software abbildet.</p></article>
+  <article class="sx-card"><h3>Die Firma</h3><p>IT- und Infrastruktur-Dienstleister für Ärzt:innen und Service-Dienstleister für Patient:innen. Entwickelt die Plattform Cortex und die KI Nexus und erprobt jedes Produkt zuerst in der eigenen Praxis.</p></article>
+ </div>
+ <div class="sx-cg sx-g8">{kpis.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
+ <p class="sx-slide-note">Teamgröße, Räume, Fälle: Praxisprofil Stand 13.04.2026 · Check-ups 2025: Schätzung aus Ø 8,5 pro Woche × knapp 800 €</p>
+</div></section>

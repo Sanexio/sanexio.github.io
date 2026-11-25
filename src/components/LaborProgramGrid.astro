@@ -7,7 +7,7 @@ const programmes = laborData.programmes;
 if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) throw new Error('Doppelte Laborprogramme');
 ---
 
-<div class="sx-grid sx-grid-four">
+<div class="sx-cg sx-g9">
   {programmes.map(program => <article class="sx-card journey-card">
     <LaborVisual {program} />
     <h3>{program.praxis_name}</h3>
@@ -22,11 +22,11 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
 </div>
 
 <style>
-  .journey-card { position: relative; display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
+  .journey-card { position: relative; gap: 1rem; }
   .neutral-motif { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); color: var(--sx-c-accent); }
   .genetik-motif { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
   .journey-card a::after { content: ""; position: absolute; inset: 0; }
   .journey-card:focus-within { outline: 3px solid var(--sx-c-accent); outline-offset: 3px; }
-  h3 { margin: 0; }
+  .journey-card h3 { margin: 0; }
   .journey-card .sx-btn { margin-top: auto; }
 </style>
