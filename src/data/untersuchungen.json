@@ -63,7 +63,7 @@
     "id": "body-check",
     "name": "Body-Check",
     "quelle": "pages/_shared/body-check.yaml",
-    "motiv": null
+    "motiv": "3D/avatar-kachel/poster.webp"
   },
   {
     "id": "carotis-duplex",
@@ -81,7 +81,7 @@
     "id": "fit-for-diving",
     "name": "Tauchtauglichkeit",
     "quelle": "pages/_shared/fit-for-diving.yaml",
-    "motiv": "Bilder-Diagnostik/fit-for-diving-hero.jpg"
+    "motiv": "3D/erythrozyt-kachel/poster.webp"
   },
   {
     "id": "kardio-check",
@@ -99,6 +99,6 @@
     "id": "gesundheits-check",
     "name": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)",
     "quelle": "pages/_shared/gesundheits-check.yaml",
-    "motiv": null
+    "motiv": "3D/herz-kachel/poster.webp"
   }
 ]

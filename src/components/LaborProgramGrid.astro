@@ -15,7 +15,7 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
     <a class="sx-btn" href={`/diagnostik/${program.praxis_slug}/`} aria-label={`Details zu ${program.praxis_name}`}>Programm ansehen</a>
   </article>)}
   <article class="sx-card journey-card">
-    <div class="neutral-motif" aria-hidden="true"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="25"/><path d="M32 19v26M19 32h26"/></svg></div>
+    <img class="genetik-motif" src="/images/diagnostik/genetik-beratung.webp" alt="Molekülmodell von Hämoglobin als allgemeine Darstellung der Molekülebene" width="800" height="800" loading="lazy" decoding="async" />
     <h3>Genetik-Beratung</h3>
     <a class="sx-btn" href="/diagnostik/genetik-beratung/" aria-label="Details zur Genetik-Beratung">Programm ansehen</a>
   </article>
@@ -24,6 +24,7 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
 <style>
   .journey-card { position: relative; display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
   .neutral-motif { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); color: var(--sx-c-accent); }
+  .genetik-motif { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
   .journey-card a::after { content: ""; position: absolute; inset: 0; }
   .journey-card:focus-within { outline: 3px solid var(--sx-c-accent); outline-offset: 3px; }
   h3 { margin: 0; }

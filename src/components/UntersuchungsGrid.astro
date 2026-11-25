@@ -4,7 +4,7 @@ if (new Set(untersuchungen.map(u => u.id)).size !== untersuchungen.length) throw
 ---
 <div class="sx-grid sx-grid-four">
   {untersuchungen.map(u => <article class="sx-card untersuchung-card" id={`untersuchung-${u.id}`}>
-    {u.motiv ? <img src={`/images/diagnostik/${u.id}.webp`} alt="" loading="lazy" decoding="async" width="640" height="360" /> : <div class="neutral-motif" aria-hidden="true"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="25"/><path d="M32 19v26M19 32h26"/></svg></div>}
+    {u.motiv ? <img src={`/images/diagnostik/${u.id === "fit-for-diving" ? "fit-for-diving-dht" : u.id}.webp`} alt="" loading="lazy" decoding="async" width="640" height="360" /> : <div class="neutral-motif" aria-hidden="true"><svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="25"/><path d="M32 19v26M19 32h26"/></svg></div>}
     <h3>{u.name}</h3>
     <a class="sx-btn" href={`/diagnostik/${u.id}/`} aria-label={`Details zu ${u.name}`}>Details ansehen</a>
   </article>)}

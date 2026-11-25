@@ -5,6 +5,7 @@ import ContactFooter from '../../../components/ContactFooter.astro';
 import LaborProgramCard from '../../../components/LaborProgramCard.astro';
 import details from '../../../data/diagnostik-details.json';
 import laborData from '../../../data/laborprogramme.json';
+import untersuchungen from '../../../data/untersuchungen.json';
 
 export function getStaticPaths() {
   if (new Set(details.map(item => item.id)).size !== details.length) throw new Error('Doppelte Diagnostik-Details');
@@ -21,12 +22,20 @@ const description = item.lead || item.name;
     <div class="sx-container sx-prose">
       <a href="/diagnostik/">← Zur Diagnostik</a>
       <p class="sx-eyebrow">Diagnostik</p>
-      <h1>{item.name}</h1>
+      <h1>{item.heading || item.name}</h1>
       {item.lead && <p class="sx-lead">{item.lead}</p>}
       {item.body ? <div set:html={item.body} /> : <p>Weitere Informationen zu dieser Untersuchung erhältst Du auf Anfrage.</p>}
+      {item.related && <section><h2>{item.related.heading}</h2><div class="sx-grid sx-grid-four">{item.related.items.map((related) => <article class="sx-card"><p><strong>{related.title}</strong></p><p>{related.teaser}</p><a href={related.href}>Mehr erfahren</a></article>)}</div></section>}
+      {program && <LaborProgramCard {program} infoboxHeading={laborData.infobox_heading} disclaimerDu={laborData.disclaimer_sie} detail />}
+      {item.cta_heading && <h2>{item.cta_heading}</h2>}
       <div class="sx-actions">{item.cta_url ? <a class="sx-btn sx-btn-primary" href={item.cta_url}>{item.cta_label || 'Termin vereinbaren'}</a> : <a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a>}</div>
     </div>
-    {program && <div class="sx-container"><LaborProgramCard {program} infoboxHeading={laborData.infobox_heading} disclaimerDu={laborData.disclaimer_du} /></div>}
+
+    {item.id !== 'gesundheits-check' && <div class="sx-container sx-prose">
+      <section><h2>Weitere Untersuchungen</h2><div class="sx-actions">{untersuchungen.filter(u => u.id !== item.id && u.id !== 'gesundheits-check').map(u => <a class="sx-btn" href={`/diagnostik/${u.id}/`}>{u.name}</a>)}</div></section>
+      <section><h2>Laboruntersuchungen</h2><div class="sx-actions">{laborData.programmes.filter(p => p.praxis_slug !== item.id).map(p => <a class="sx-btn" href={`/diagnostik/${p.praxis_slug}/`}>{p.praxis_name}</a>)}</div></section>
+    </div>}
   </main>
   <ContactFooter />
+  {item.id === "gesundheits-check" && <><script is:inline defer src="/scripts/gesundheits-check/wizard.js"></script><script is:inline defer src="/scripts/gesundheits-check/wizard-a1-risk-score.js"></script></>}
 </Default>
