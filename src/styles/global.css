@@ -47,3 +47,29 @@ button,summary { font: inherit; cursor: pointer; }
 }
 @media(min-width: 1100px) { .sx-container { padding-inline: var(--sx-space-container-x-desktop); } .sx-grid-four { grid-template-columns: repeat(4,minmax(0,1fr)); } }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Pitch-Abschnitte: nur Bausteine auf bestehenden --sx-* Tokens */
+.sx-slide-note { color: var(--sx-c-ink-muted); font-size: .85rem; margin-top: 2rem; max-width: var(--sx-content-max); }
+.sx-claim { font-family: var(--sx-font-display); font-weight: 750; letter-spacing: -.03em; line-height: 1.2; font-size: clamp(1.4rem, 3vw, 2.2rem); max-width: 56rem; margin: 2rem 0 0; }
+.sx-grid-2 { grid-template-columns: 1fr; }
+.sx-media { margin: 0; }
+.sx-media img, .sx-media video { width: 100%; height: auto; border-radius: var(--sx-radius-card); border: 1px solid var(--sx-c-line); background: var(--sx-c-bg-soft); }
+.sx-media figcaption { color: var(--sx-c-ink-muted); font-size: .85rem; margin-top: .6rem; }
+.sx-media-row { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2.5rem; align-items: start; }
+.sx-kpi { text-align: left; }
+.sx-kpi .sx-number { margin-bottom: .4rem; }
+.sx-kpi p { margin: 0; font-size: .95rem; }
+.sx-list { margin: 1rem 0 0; padding-left: 1.2rem; color: var(--sx-c-ink-subtle); }
+.sx-list li { margin-bottom: .5rem; }
+.sx-step { font-family: var(--sx-font-display); font-weight: 750; color: var(--sx-c-accent); font-size: .85rem; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: .6rem; }
+.sx-card h3 { margin-top: 0; }
+.sx-sub { display: block; font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sx-c-accent); margin-bottom: .5rem; }
+.sx-bar-row { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
+.sx-bar { height: 10px; border-radius: 999px; background: var(--sx-c-accent-soft); overflow: hidden; margin-top: .8rem; }
+.sx-bar i { display: block; height: 100%; background: var(--sx-c-accent); }
+@media(min-width: 768px) {
+ .sx-grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+ .sx-grid-four { grid-template-columns: repeat(2, minmax(0,1fr)); }
+ .sx-media-row { grid-template-columns: repeat(var(--cols, 2), minmax(0,1fr)); }
+ .sx-bar-row { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media(min-width: 1100px) { .sx-grid-four { grid-template-columns: repeat(4,minmax(0,1fr)); } .sx-grid-5 { grid-template-columns: repeat(5,minmax(0,1fr)); } }

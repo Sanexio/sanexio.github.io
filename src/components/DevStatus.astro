@@ -1,6 +1,0 @@
----
-import data from '../data/sanexiotext.json';
-const d = data.apps;
----
-<section class="sx-section" id="produkte"><div class="sx-container"><p class="sx-eyebrow">Cortex – die Plattform für den Praxisalltag</p><h2>{d.ueberschrift}</h2><p class="sx-lead">{d.einleitung}</p>
-<div class="sx-grid sx-grid-three">{d.eintraege.map(p => <article class="sx-card"><span class="sx-tag">{p.status}</span><h3>{p.titel}</h3><p>{p.text}</p></article>)}</div></div></section>
