@@ -1,0 +1,12 @@
+{
+  "schema": "dht-graph-synthetic/1",
+  "knoten": [
+    { "id": "lab-hba1c", "label": "HbA1c erhöht", "typ": "labor" },
+    { "id": "org-pankreas", "label": "Bauchspeicheldrüse", "typ": "organ" },
+    { "id": "cond-diabetes", "label": "Zuckerstoffwechsel (Orientierung)", "typ": "hinweis" }
+  ],
+  "kanten": [
+    { "von": "lab-hba1c", "nach": "cond-diabetes", "relation": "korreliert" },
+    { "von": "cond-diabetes", "nach": "org-pankreas", "relation": "betrifft" }
+  ]
+}

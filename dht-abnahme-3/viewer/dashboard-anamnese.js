@@ -1,0 +1,20 @@
+export function mountAnamnese(onLegacy) {
+  const app=document.querySelector('.app'), root=document.createElement('section');
+  root.id='dashboard-anamnese'; root.className='dashboard-anamnese'; root.hidden=true; root.setAttribute('aria-label','Anamnese');
+  root.innerHTML=`<h2>Vorbereitung des Arztgesprächs</h2><p class="anamnese-warning">Dient der Vorbereitung des Arztgesprächs, stellt keine Diagnose, ersetzt keine Untersuchung.</p><p>Ihre Angaben bleiben auf diesem Gerät und werden beim Schließen gelöscht.</p><button type="button" id="anamnese-stellen">Körperstelle markieren</button><form><label>Organ auswählen <select name="organ" required><option value="">Bitte auswählen</option></select></label><label>Ort <input name="ort" autocomplete="off"></label><label>Seit wann <input name="seit" autocomplete="off"></label><label>Stärke von 0 bis 10 <input name="staerke" type="number" min="0" max="10" step="1"></label><label>Art der Beschwerden <input name="art" placeholder="z. B. stechend, dumpf" autocomplete="off"></label><label>Auslöser <textarea name="ausloeser"></textarea></label><label>Begleitbeschwerden <textarea name="begleit"></textarea></label><label>Weitere Angaben <textarea name="freitext"></textarea></label><button type="submit">Zusammenfassung ansehen</button><button type="button" id="anamnese-beispiel">Synthetisches Beispiel einsetzen</button><button type="reset">Eingaben löschen</button></form><section id="anamnese-summary" hidden aria-live="polite"><h2>Für das Arztgespräch</h2><dl></dl></section>`;
+  document.querySelector('.app-content').prepend(root);
+  const form=root.querySelector('form'), select=form.elements.organ, summary=root.querySelector('#anamnese-summary');
+  root.querySelector('#anamnese-stellen').addEventListener('click',onLegacy);
+  let names=new Map(),pending;
+  function ensureNames(){return pending ||= fetch('./eigene-daten/vertrag/loinc-organ-v1.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
+    for(const {id,bezeichnung:name} of data.anatomie.sort((a,b)=>a.bezeichnung.localeCompare(b.bezeichnung,'de'))){names.set(id,name);if(![...select.options].some(o=>o.value===id))select.add(new Option(name,id));}
+  }).catch(()=>{select.setCustomValidity('Organliste konnte nicht geladen werden.');root.insertAdjacentText('afterbegin','Organliste konnte nicht geladen werden. ');});}
+
+  const labels={organ:'Organ',ort:'Ort',seit:'Seit wann',staerke:'Stärke (0–10)',art:'Art',ausloeser:'Auslöser',begleit:'Begleitbeschwerden',freitext:'Weitere Angaben'};
+  form.addEventListener('submit',event=>{event.preventDefault();const dl=summary.querySelector('dl');dl.replaceChildren();for(const [key,label] of Object.entries(labels)){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=(key==='organ'?names.get(select.value):form.elements[key].value)||'Keine Angabe';dl.append(dt,dd);}summary.hidden=false;summary.scrollIntoView({block:'nearest'});});
+  const clearSummary=()=>{summary.hidden=true;summary.querySelector('dl').replaceChildren();};
+  form.addEventListener('input',clearSummary);form.addEventListener('change',clearSummary);
+  form.addEventListener('reset',()=>{summary.hidden=true;summary.querySelector('dl').replaceChildren();});
+  root.querySelector('#anamnese-beispiel').addEventListener('click',()=>{form.reset();const option=[...select.options].find(x=>x.textContent.toLowerCase()==='herz');if(option)select.value=option.value;for(const [key,value] of Object.entries({ort:'Brustbereich',seit:'seit drei Tagen',staerke:'3',art:'dumpf',ausloeser:'bei Bewegung',begleit:'Müdigkeit',freitext:'Synthetisches Beispiel – keine echten Angaben.'}))form.elements[key].value=value;});
+  return {show(){root.hidden=false;ensureNames();},hide(){root.hidden=true;},organ(id,name){if(root.hidden)return;if(names.has(id))select.value=id;else if(name){let option=[...select.options].find(o=>o.value===id);if(!option){option=new Option(name,id);select.add(option);}names.set(id,name);select.value=id;}select.dispatchEvent(new Event('change',{bubbles:true}));}};
+}

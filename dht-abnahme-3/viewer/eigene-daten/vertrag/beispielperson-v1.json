@@ -1,0 +1,3612 @@
+{
+  "version": 1,
+  "synthetisch": true,
+  "datensaetze": [
+    {
+      "id": "beispiel-hba1c-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 5.5,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hba1c-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 5.6,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hba1c-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 5.9,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hba1c-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 6.1,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hba1c-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 5.9,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hba1c-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "4548-4",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HbA1c",
+      "wert": 5.8,
+      "einheit": "%",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4.5,
+        "oben": 5.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 92,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 94,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 102,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 108,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 99,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gluc-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2345-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Glukose",
+      "wert": 97,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 70,
+        "oben": 100,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3114:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 130,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 144,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 162,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 157,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 148,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-trig-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2571-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Triglyceride",
+      "wert": 140,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 40,
+        "oben": 150,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 119,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 128,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 135,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 130,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 124,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ldl-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2089-1",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "LDL-Cholesterin",
+      "wert": 118,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 116,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 52,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 50,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 48,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 49,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 51,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hdl-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2085-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "HDL-Cholesterin",
+      "wert": 53,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 45,
+        "oben": 90,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:heart"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 23,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 29,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 39,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 42,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 34,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-gpt-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "1742-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GPT (ALT)",
+      "wert": 31,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 24,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 25,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 36,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 32,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 29,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-got-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "1920-8",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GOT (AST)",
+      "wert": 27,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 35,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 43,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 51,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 65,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 61,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 56,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ggt-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2324-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "GGT",
+      "wert": 49,
+      "einheit": "U/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 60,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 0.8,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 0.9,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 1.3,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 1.1,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 0.9,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-bili-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "1975-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Bilirubin",
+      "wert": 0.8,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.2,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3023:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 1.8,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 2.1,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 7.2,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 3.5,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 2.6,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crp-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "1988-5",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "CRP",
+      "wert": 1.9,
+      "einheit": "mg/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0,
+        "oben": 5,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 6.3,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 6.8,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 10.6,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 8.3,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 7.1,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-leuk-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "6690-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Leukozyten",
+      "wert": 6.7,
+      "einheit": "10^9/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 4,
+        "oben": 10,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 0.92,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 0.98,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 1.07,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 1.24,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 1.34,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-crea-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2160-0",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kreatinin",
+      "wert": 1.5,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.6,
+        "oben": 1.2,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 32,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 35,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 38,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 46,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 48,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-urea-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "3091-6",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Harnstoff",
+      "wert": 51,
+      "einheit": "mg/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 17,
+        "oben": 50,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 93,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 90,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 87,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 81,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 78,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-egfr-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "33914-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "eGFR",
+      "wert": 74,
+      "einheit": "ml/min",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 60,
+        "oben": 120,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "org1:organ:kidney-left",
+        "org1:organ:kidney-right"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 1.8,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 2.2,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 2.8,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 4.3,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 3.5,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-tsh-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "3016-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "TSH",
+      "wert": 3.1,
+      "einheit": "mU/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.4,
+        "oben": 4,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 1.2,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 1.18,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 1.12,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 0.85,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 1.02,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ft4-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "3024-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "fT4",
+      "wert": 1.1,
+      "einheit": "ng/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 0.9,
+        "oben": 1.7,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [
+        "TA2:3863:M"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.1,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.3,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.2,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.5,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.4,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-k-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2823-3",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Kalium",
+      "wert": 4.3,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 3.5,
+        "oben": 5.1,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 140,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 141,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 139,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 138,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 140,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-na-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "2951-2",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Natrium",
+      "wert": 141,
+      "einheit": "mmol/l",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 135,
+        "oben": 145,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.7,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.5,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.4,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.8,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.6,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-hb-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "718-7",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "Hämoglobin",
+      "wert": 13.9,
+      "einheit": "g/dl",
+      "zeit": {
+        "tageVorHeute": 12,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Labor"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "unten": 12,
+        "oben": 16,
+        "herkunft": "Beispiel-Laborbereich"
+      },
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ort-1",
+      "art": "schmerzort",
+      "bezeichnung": "Stirn · vorne",
+      "text": "Selbstauskunft",
+      "ort": {
+        "id": "kopf-TA2-520-M",
+        "seite": "mitte"
+      },
+      "zeit": {
+        "tageVorHeute": 21,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Selbstauskunft"
+      },
+      "bestaetigt": true,
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ort-2",
+      "art": "schmerzort",
+      "bezeichnung": "Knie · vorne",
+      "text": "Selbstauskunft",
+      "ort": {
+        "id": "bein_links-TA2-1390-L",
+        "seite": "links"
+      },
+      "zeit": {
+        "tageVorHeute": 40,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Selbstauskunft"
+      },
+      "bestaetigt": true,
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-ort-3",
+      "art": "schmerzort",
+      "bezeichnung": "Bauch · Oberbauch",
+      "text": "Selbstauskunft",
+      "ort": {
+        "id": "bauch-TA2-2901-M",
+        "seite": "mitte"
+      },
+      "zeit": {
+        "tageVorHeute": 80,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Selbstauskunft"
+      },
+      "bestaetigt": true,
+      "organe": [],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-1",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.12,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 720,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-2",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.18,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 570,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-3",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.1,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 420,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-4",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.25,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 270,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-5",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.22,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 120,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    },
+    {
+      "id": "beispiel-fev1-6",
+      "art": "messwert",
+      "loinc": {
+        "code": "20150-9",
+        "system": "http://loinc.org"
+      },
+      "bezeichnung": "FEV1 · beide Lungen (Beispiel)",
+      "wert": 3.28,
+      "einheit": "L",
+      "zeit": {
+        "tageVorHeute": 14,
+        "genauigkeit": "tag"
+      },
+      "quelle": {
+        "format": "synthetisch",
+        "bezeichnung": "Beispiel-Spirometrie · beide Lungen"
+      },
+      "bestaetigt": true,
+      "vergleich": {
+        "text": "Synthetischer Verlauf; kein individueller Sollwert und kein linker Teilwert",
+        "herkunft": "Erfundene Beispielmessungen"
+      },
+      "organe": [
+        "org1:organ:lung-left"
+      ],
+      "zuordnungVersion": "loinc-organ/1",
+      "version": 1
+    }
+  ]
+}

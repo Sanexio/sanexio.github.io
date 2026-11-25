@@ -1,0 +1,7 @@
+{
+  "schema": "dht-katalog-synthetic/1",
+  "angebote": [
+    { "id": "vorsorge-check", "titel": "Vorsorge-Gespräch", "hinweis": "Keine Therapieempfehlung — nur Katalogdarstellung." },
+    { "id": "ernaehrung-info", "titel": "Ernährungsberatung (Info)", "hinweis": "Termin über Praxis — nicht online buchbar in dieser Demo." }
+  ]
+}
