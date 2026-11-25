@@ -2,15 +2,12 @@
 <header class="sx-nav">
   <div class="sx-container sx-nav-inner">
     <a href="/" class="sx-brand" aria-label="Sanexio Startseite">sanexio<span aria-hidden="true">.</span></a>
+    <a href="/" class="sx-home" aria-label="Zur Startseite">⌂ <span>Startseite</span></a>
     <nav aria-label="Hauptnavigation">
-      <a href="/">Startseite</a>
-      <a href="/#cortex">Cortex &amp; Nexus</a>
       <a href="/#dht">Digital Health Twin</a>
-      <a href="/dht/">DHT-Vorschau (MVP)</a>
       <a href="/diagnostik/">Diagnostik</a>
-      <a href="/#roadmap">Roadmap</a>
+      <a href="/#cortex">Cortex &amp; Nexus</a>
       <a href="/investoren/">Investoren</a>
-      <a href="/pitch/">Pitch</a>
       <a href="/#kontakt">Kontakt</a>
     </nav>
   </div>
@@ -20,6 +17,7 @@
  .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem 2rem; padding-block: 1rem; }
  .sx-brand { font: 800 1.9rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
  .sx-brand span { color: var(--sx-c-accent); }
+ .sx-home { display: inline-flex; align-items: center; min-height: 44px; gap: .3rem; font-weight: 600; font-size: .85rem; text-decoration: none; }
  nav { display: flex; flex-wrap: wrap; gap: .15rem 1.3rem; }
  nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .82rem; font-weight: 600; text-decoration: none; }
  @media(max-width: 767px) { nav { width: 100%; gap: 0 1rem; } nav a { font-size: .76rem; } }
