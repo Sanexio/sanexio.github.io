@@ -41,7 +41,7 @@ const webLd = {
 const ldGraph = extraJsonLd
   ? [orgLd, webLd, ...(Array.isArray(extraJsonLd) ? extraJsonLd : [extraJsonLd])]
   : [orgLd, webLd];
-const jsonLd = JSON.stringify(ldGraph).replace(/</g, '\u003c');
+const jsonLd = JSON.stringify(ldGraph).replace(/</g, '\\u003c');
 ---
 
 <!DOCTYPE html>
