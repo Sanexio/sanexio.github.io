@@ -59,3 +59,5 @@ html body .app[data-dashboard=true] [hidden]{display:none!important}
 html body .app[data-dashboard=true]>.notice-rail:has(.dht-navigation){display:block;position:fixed;left:2px;top:2px;width:var(--dht-left-width);height:auto;max-height:calc(100dvh - 4px);overflow:auto;box-sizing:border-box;padding:8px;z-index:25;background:#f5f9fa;border:1px solid #cbd9df;border-radius:12px}
 html body .app[data-dashboard=true]>.notice-rail:has(.dht-navigation)>:not(.dht-navigation){display:none}
 html body .app[data-dashboard=true][data-dock=bottom]>.notice-rail:has(.dht-navigation){left:var(--dht-dock-left);top:var(--dht-content-top);width:var(--dht-dock-width);padding:4px}
+
+html body .app[data-dashboard=true] .avatar-labels .avatar-label{pointer-events:auto;cursor:pointer;box-sizing:border-box;height:44px;min-height:44px;width:166px;max-width:166px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}

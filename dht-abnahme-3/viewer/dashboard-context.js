@@ -12,16 +12,18 @@ export function mountDashboardContext(app){
  const hint=document.createElement('p');hint.className='dashboard-hint';hint.textContent='Drehen oder Verschieben wählen · Rad oder ＋/− zum Zoomen. Organ wählen für Gewebe, Zelle und Molekül, soweit belegt.';
  context.append(heading,level,text,hint);host.querySelector('.avatar-search')?.after(context);
  const sample=document.createElement('section');sample.id='dashboard-example-panel';sample.hidden=true;sample.setAttribute('aria-label','Beispielmessreihe der Ebene');host.append(sample);
+ let selectedExplanation=null;
  function update(detail){
   if(!detail)return;const zoom=host.querySelector('#zoom-panel');const depth=Number(zoom?.dataset.level||0);
   const label=depth>1?['Körper','Organ','Gewebe','Zelle','Molekül'][depth]:detail.scope;
   const nextLevel=label+' · '+(depth>1?host.querySelector('#zoom-location')?.textContent:detail.title),nextText=depth>1?host.querySelector('#zoom-explanation')?.textContent:descriptions[detail.layer]||descriptions.haut;
-  if(level.textContent!==nextLevel)level.textContent=nextLevel;if(text.textContent!==nextText)text.textContent=nextText;
+  if(selectedExplanation && selectedExplanation.depth===depth){if(level.textContent!==selectedExplanation.name)level.textContent=selectedExplanation.name;if(text.textContent!==selectedExplanation.text)text.textContent=selectedExplanation.text;}else{if(level.textContent!==nextLevel)level.textContent=nextLevel;if(text.textContent!==nextText)text.textContent=nextText;}
   context.dataset.scope=label;
  }
+ app.addEventListener('structure-explanation',event=>{const {name,text:explanation}=event.detail;const depth=Number(host.querySelector('#zoom-panel:not([hidden])')?.dataset.level||0);selectedExplanation=name?{name,text:explanation,depth}:null;if(name){level.textContent=name;text.textContent=explanation;}},eventOptions);
  let last={scope:'Übersicht',title:'Ganzer Körper',layer:'haut'};
  app.addEventListener('avatar-context',event=>{last=event.detail;update(last);},eventOptions);
- app.addEventListener('avatar-layer',event=>{last={...last,layer:event.detail.layer};sample.hidden=true;update(last);},eventOptions);
+ app.addEventListener('avatar-layer',event=>{last={...last,layer:event.detail.layer};selectedExplanation=null;sample.hidden=true;update(last);},eventOptions);
  const observer=new MutationObserver(()=>update(last));
  observer.observe(host,{subtree:true,childList:true,attributes:true,attributeFilter:['data-level','hidden']});
  app.addEventListener('dashboard-example',event=>{

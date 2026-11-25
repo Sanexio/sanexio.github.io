@@ -569,6 +569,8 @@ const lazyFeatures=mountLazyFeatures();
 if (parent !== window) import('./frame-height.js');
 document.documentElement.dataset.ready='true';
 performance.mark('dht-text-ready');
+// Optional dashboard enhancements load only after the usable text interface.
+if(new URLSearchParams(location.search).get('modus')!=='schmerz')setTimeout(()=>{for(const name of ['panels','spiel','entdecken']){const link=document.createElement('link');link.rel='stylesheet';link.href='./'+name+'.css';document.head.append(link);}Promise.all([import('./panels.js'),import('./tour.js'),import('./entdecken.js'),import('./wissenswert.js')]).catch(error=>console.error('Dashboard konnte nicht vollständig geladen werden',error));},0);
 enableOfflineCache();
 avatarTimer = setTimeout(loadAvatar, 0);
 await lazyFeatures;

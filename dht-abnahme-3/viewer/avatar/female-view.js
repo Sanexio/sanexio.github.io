@@ -1,3 +1,4 @@
+import {structurePickLabel} from './structure-pick-label.js';
 import {dashboardMotion,dashboardContext,layerExampleMarker,surfaceExampleAnchor} from './dashboard-motion.js';
 import {femaleSourceNodes} from './frauatlas-quellen.js';
 import {attachOrganAtlas} from './organatlas-suche.js';
@@ -91,6 +92,7 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
   const bounds = new THREE.Box3().setFromObject(skin), center = bounds.getCenter(new THREE.Vector3()), size = bounds.getSize(new THREE.Vector3());
   let layer = 'haut', selected = null, labelsOn = false, lastHit = null, generation=0,initialLayerApplied=false;
   let dataActive=false;
+  const pickLabel=structurePickLabel({viewport,camera,THREE});
   const skinExample=surfaceExampleAnchor(THREE,skin,'haut','Hautoberfläche');
   const exampleMarker=layerExampleMarker({THREE,host,viewport,camera,enabled:()=>dataActive&&layer!=='organ',anchor:()=>{if(layer==='haut')return skinExample;for(const a of objects.values()){if((a.layer===layer||(layer==='nerven'&&a.entry.system==='VH_F_nervous_system'))&&a.object?.visible&&femaleBindingAllowed(a.entry))return {object:a.object,layer,id:a.entry.id,name:femaleLabel(a.entry)};}return null;}});
   function frame(box, factor = 1.12) {
@@ -100,7 +102,7 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
     controls.target.copy(c); camera.position.copy(c).addScaledVector(dir, distance); controls.update(); render();
   }
   function render() {
-    renderer.render(scene, camera); markers.paint();exampleMarker.paint();dashboardContext({host,camera,controls,bodyHeight:size.y,layer,selected:!!selected,name:selected?femaleLabel(selected):'Struktur'});labels.replaceChildren();
+    renderer.render(scene, camera); pickLabel.paint(); markers.paint();exampleMarker.paint();dashboardContext({host,camera,controls,bodyHeight:size.y,layer,selected:!!selected,name:selected?femaleLabel(selected):'Struktur'});labels.replaceChildren();
     if (!labelsOn) return;
     const candidates = [...objects.values()].filter(a => a.object?.visible);
     if (selected) candidates.sort((a, b) => Number(b.entry.id === selected.id) - Number(a.entry.id === selected.id));
@@ -115,14 +117,14 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
     skin.traverse(m=>{if(m.isMesh)m.material=layer==='haut'?[m.userData.skinMaterial,m.userData.faceMaterial]:m.userData.outlineMaterial;});
     let triangles=skinTriangles,omitted=0;
     // Torso organs first in the glass overview; no skull/eye fragments in the face.
-    const priority=a=>/bronchopulmonary|^VH_F_(left|right)_(cardiac_atrium|ventricle)$|^VH_F_interventricular_septum$/i.test(a.entry.mesh)?0:/mammary_lobes/i.test(a.entry.mesh)?1:/lung|stomach|intestin|colon|uter|heart|bladder/i.test(a.entry.mesh)?2:3;
+    const priority=a=>layer==='nerven'&&/spinal_cord|lateral_hemisphere_of_cerebellum|basilar_part_of_pons/i.test(a.entry.mesh)?-1:/bronchopulmonary|^VH_F_(left|right)_(cardiac_atrium|ventricle)$|^VH_F_interventricular_septum$/i.test(a.entry.mesh)?0:/mammary_lobes/i.test(a.entry.mesh)?1:/lung|stomach|intestin|colon|uter|heart|bladder/i.test(a.entry.mesh)?2:3;
     const ordered=[...objects.values()].filter(a=>a.object).sort((a,b)=>Number(markers.present.has(b.entry.id))-Number(markers.present.has(a.entry.id))||Number(b.entry.id===selected?.id)-Number(a.entry.id===selected?.id)||priority(a)-priority(b));
     for(const a of ordered){
       const box=new THREE.Box3().setFromObject(a.object),c=box.getCenter(new THREE.Vector3());
       const wanted=markers.present.has(a.entry.id)||a.entry.id===selected?.id||(layer==='haut'?a.layer==='organ'&&c.y<size.y*.85:(layer==='nerven'?a.entry.system==='VH_F_nervous_system':a.layer===layer));
       a.object.visible=Boolean(wanted&&triangles+a.triangles<=LIMIT);
       if(a.object.visible)triangles+=a.triangles;else if(wanted)omitted++;
-      surfaceSelection(a.object.material,a.object.userData.baseColor,{selected:a.entry.id===selected?.id,muted:Boolean(selected&&a.entry.id!==selected.id),opacity:layer==='haut'?.44:1});
+      surfaceSelection(a.object.material,a.object.userData.baseColor,{selected:a.entry.id===selected?.id,muted:Boolean(selected&&!lastHit&&a.entry.id!==selected.id),opacity:layer==='haut'?.44:1});
     }
     status.textContent=`Weiblicher Glas-Avatar lokal bereit · 761 von 868 Strukturen eingepasst · ${triangles.toLocaleString('de-DE')} Dreiecke · ${omitted} Objekte durch Detailbudget ausgeblendet`;
     if(layer==='haut'&&host.dataset.organs==='error')layerStatus.textContent='Organe konnten nicht geladen werden. Die Glasfigur bleibt bedienbar.';
@@ -163,7 +165,7 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
       detail.append(button('female-missing-male','Zur männlichen Ansicht',()=>document.querySelector('#avatar-maennlich')?.click()));binding(e);visibility();return;
     }
     try{await ensureLayer(a.layer);if(task!==generation||signal?.aborted)return;
-      commitSelection();if(femaleBindingAllowed(e))host.dispatchEvent(new CustomEvent('anamnese-auswahl',{bubbles:true,detail:{id:e.id,name:femaleLabel(e)}}));layer=layer==='nerven'&&e.system==='VH_F_nervous_system'?'nerven':a.layer;document.querySelector('#schicht-wahl').value=layer;binding(e);visibility();
+      commitSelection();if(femaleBindingAllowed(e))host.dispatchEvent(new CustomEvent('anamnese-auswahl',{bubbles:true,detail:{id:e.id,name:femaleLabel(e)}}));layer=hit?layer:layer==='nerven'&&e.system==='VH_F_nervous_system'?'nerven':a.layer;document.querySelector('#schicht-wahl').value=layer;binding(e);visibility();
     }catch(error){if(task===generation){select.value=selected?.id||'';layerStatus.textContent=error.message;}}
   }
   const rotate = angle => {camera.position.sub(controls.target).applyAxisAngle(new THREE.Vector3(0, 1, 0), angle).add(controls.target); controls.update(); render();};
@@ -186,13 +188,23 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
   };
   const refreshAtlas = attachOrganAtlas(host, 'female', signal);
   search.addEventListener('input', fill); select.addEventListener('change', () => {const a = objects.get(select.value); if (a) void choose(a.entry);}); fill(); binding(null);
-  const ray = new THREE.Raycaster(); let pointer = null;
-  renderer.domElement.addEventListener('pointerdown', e => {pointer = [e.clientX, e.clientY];});
+  const ray = new THREE.Raycaster(); let pointer = null, pointerMoved = false;
+  renderer.domElement.addEventListener('pointerdown', e => {pointerMoved=Boolean(pointer);pointer = [e.clientX, e.clientY];});
+  renderer.domElement.addEventListener('pointermove', e => {if(pointer&&Math.hypot(e.clientX-pointer[0],e.clientY-pointer[1])>=5)pointerMoved=true;});
+  renderer.domElement.addEventListener('pointercancel', () => {pointer=null;pointerMoved=true;});
   renderer.domElement.addEventListener('pointerup', e => {
-    if (!pointer || Math.hypot(e.clientX - pointer[0], e.clientY - pointer[1]) > 5) {pointer = null; return;} pointer = null;
+    if (!pointer || pointerMoved || Math.hypot(e.clientX - pointer[0], e.clientY - pointer[1]) >= 5) {pointer = null; return;} pointer = null;
     const r = renderer.domElement.getBoundingClientRect(); ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, 1 - (e.clientY - r.top) / r.height * 2), camera);
-    const meshes = []; scene.traverse(m => {if (m.isMesh && m.visible && m.userData.entry) meshes.push(m);});
-    const hit = ray.intersectObjects(meshes, false)[0]; if (hit) choose(hit.object.userData.entry, {faceIndex: hit.faceIndex, point: hit.point.toArray()});
+    const meshes = []; scene.traverse(m => {if (!m.isMesh || !m.userData.entry) return;for(let o=m;o;o=o.parent)if(!o.visible)return;meshes.push(m);});
+    const hit = ray.intersectObjects(meshes, false)[0] || (layer==='haut'?ray.intersectObject(skin,true)[0]:null);
+    const original=hit?.object.userData.entry;
+    const groupLabels={haut:'Haut',organ:'Organe (Gruppe)',skelett:'Skelett (Gruppe)',muskel:'Muskulatur (Gruppe)',binde:'Bindegewebe (Gruppe)',nerven:'Nervensystem (Gruppe)'};
+    const entry=original || (hit?{id:'haut',groupLabel:'Haut'}:null);
+    if (!entry || selected?.id === entry.id) {++generation;selected=null;lastHit=null;select.value='';delete host.dataset.selected;pickLabel.clear();host.querySelector('#canvas-name').hidden=true;binding(null);visibility();return;}
+    const name=femaleBindingAllowed(entry)?femaleLabel(entry):groupLabels[original ? (layer==='nerven'?'nerven':objects.get(entry.id)?.layer) : 'haut'];
+    pickLabel.show(name,hit.point);host.dispatchEvent(new CustomEvent('dht:struktur-gewaehlt',{bubbles:true,detail:{id:entry.id,name,ebene:layer}}));
+    if(femaleBindingAllowed(entry)){void choose(entry, {faceIndex: hit.faceIndex, point: hit.point.toArray()});return;}
+    ++generation;selected={...entry,groupLabel:name};lastHit={faceIndex:hit.faceIndex,point:hit.point.toArray()};select.value='';host.dataset.selected=entry.id;detail.textContent=name;binding(null);visibility();
   });
   host.querySelector('#female-credits').textContent='Hülle: MakeHuman hm08 und Kern-Targets, CC0-1.0. Atlas: CC BY 4.0; Kristen Browne; Heidi Schlehlein; HuBMAP; Courtesy of the U.S. National Library of Medicine. Abgeleitete Namenszuordnungen: CC BY-SA 4.0. '+femaleFitNote;
   const disposeMotion=dashboardMotion({THREE,host,viewport,canvas:renderer.domElement,camera,controls,actions,render});
@@ -207,11 +219,11 @@ export async function createFemaleView(host, register, {signal,onDataOrgan=()=>{
       if(signature!==markerSignature){markerSignature=signature;visibility();}else markers.paint();
     },
     dataOrganStatus(id){const failed=host.dataset.organs==='error';return failed||loaded.has('organ')?markers.status(id,failed):'loading';},
-    async setLayer(value){const task=++generation;await ensureLayer(value);if(task!==generation)return;if(!initialLayerApplied&&value===layer){initialLayerApplied=true;visibility();return;}initialLayerApplied=true;layer=value;host.querySelector('#canvas-name').hidden=true;search.value='';fill();refreshAtlas();selected=null;lastHit=null;select.value='';delete host.dataset.selected;detail.textContent='Schicht gewechselt — Struktur wählen.';binding(null);visibility();},
+    async setLayer(value){const task=++generation;await ensureLayer(value);if(task!==generation)return;if(!initialLayerApplied&&value===layer){initialLayerApplied=true;visibility();return;}initialLayerApplied=true;pickLabel.clear();layer=value;host.querySelector('#canvas-name').hidden=true;search.value='';fill();refreshAtlas();selected=null;lastHit=null;select.value='';delete host.dataset.selected;detail.textContent='Schicht gewechselt — Struktur wählen.';binding(null);visibility();},
     setOpacity(value){skinOpacity=value;skin.traverse(m=>{if(m.isMesh){const material=m.userData.skinMaterial;material.opacity=value*(economy?.48:.78);if(material.uniforms)material.uniforms.opacity.value=material.opacity;const face=m.userData.faceMaterial;face.opacity=value;face.transparent=value<1;face.depthWrite=value>=1;face.needsUpdate=true;}});render();},
     setLabels(value) {labelsOn = value; render();}, focusRegion() {},
     state() {return {sex: 'female', selected: selected?.id, quality: selected?.quality, bindingAllowed: femaleBindingAllowed(selected)&&Boolean(objects.get(selected?.id)?.object), hit: lastHit, layer, register: register.entries.length, skinOpacity, skinSide: THREE.FrontSide, viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(), visible:[...objects.values()].filter(a=>a.object?.visible).map(a=>a.entry.id), triangles: renderer.info.render.triangles, camera: camera.position.toArray(), target: controls.target.toArray()};},
-    dispose() {disposeMotion();exampleMarker.dispose();stopOrgans();disposeStudio();resize.disconnect(); controls.dispose(); scene.traverse(m => {if (m.isMesh) {m.geometry.dispose();for(const mat of new Set([...(Array.isArray(m.material)?m.material:[m.material]),m.userData.skinMaterial,m.userData.outlineMaterial,m.userData.faceMaterial].filter(Boolean)))mat.dispose();}}); renderer.dispose();}
+    dispose() {pickLabel.dispose();disposeMotion();exampleMarker.dispose();stopOrgans();disposeStudio();resize.disconnect(); controls.dispose(); scene.traverse(m => {if (m.isMesh) {m.geometry.dispose();for(const mat of new Set([...(Array.isArray(m.material)?m.material:[m.material]),m.userData.skinMaterial,m.userData.outlineMaterial,m.userData.faceMaterial].filter(Boolean)))mat.dispose();}}); renderer.dispose();}
   };
   Object.defineProperty(host, 'avatarInventory', {value: () => [...objects.values()].map(a => ({id: a.entry.id, node: a.entry.source_node_index, name:a.entry.mesh, available:Boolean(a.layer),loaded:Boolean(a.object),visible:Boolean(a.object?.visible),triangles:a.triangles,materials:a.object?[{opacity:a.object.material.opacity,depthWrite:a.object.material.depthWrite,transparent:a.object.material.transparent}]:[]}))});
   Object.defineProperty(host, 'avatarState', {value: () => api.state()});

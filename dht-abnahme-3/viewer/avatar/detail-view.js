@@ -1,6 +1,6 @@
+import {structurePickLabel} from './structure-pick-label.js';
 import {dashboardMotion,dashboardContext,layerExampleMarker,surfaceExampleAnchor} from './dashboard-motion.js';
 import {attachOrganAtlas} from './organatlas-suche.js';
-import {bindMuscleParts} from './muskelgruppen.js';
 import {atlasSurfaces,nerveEntries,brainEntry} from './nerven/schicht.js';
 import {createDataMarkers} from './data-markers.js';
 import {layerLifecycle,organsAfterPaint,surfaceSelection,replayPendingSelection} from './layer-lifecycle.js';
@@ -57,13 +57,6 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   host.querySelector('#muscle-coverage').textContent=`Muskeln: ${representedMuscles} von ${muscleEntries.length} Einträgen mit eigener 3D-Darstellung.`;
   if (manifest.sex !== 'male' || manifest.register_count !== 1559) throw new Error('Anatomieregister nicht freigegeben');
   const showLexicon = await createStructureLexicon(host, manifest, manifestBytes);
-  const partResponse = await fetch(new URL('muskelgruppen.json', BASE), {signal});
-  if (partResponse.ok) {
-    const coverage = bindMuscleParts(manifest, await partResponse.json());
-    const note = document.createElement('p');
-    note.textContent = `${coverage.parts} weitere Atlasstrukturen sind einzeln auswählbar. Für ${coverage.groups} Muskeleinträge lassen sich ihre Bestandteile gemeinsam anzeigen.`;
-    host.querySelector('#muscle-coverage').after(note);
-  }
   performance.mark('dht-detail-scripts');
   const renderer = new THREE.WebGLRenderer({ antialias: !preview?.lowPower, alpha: true, preserveDrawingBuffer: true });
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
@@ -141,6 +134,19 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     }
   }
   searchable.forEach(indexPaths);
+  let muscleCatalog;
+  function ensureMuscleCatalog() {
+    return muscleCatalog ||= Promise.all([import('./muskelgruppen.js'), fetch(new URL('muskelgruppen.json', BASE), {signal})]).then(async ([{bindMuscleParts}, response]) => {
+      if (!response.ok) throw Error('Muskelregister fehlt');
+      const coverage=bindMuscleParts(manifest, await response.json());
+      for(const entry of manifest.entries) if(!entries.has(entry.id)) searchable.push(entry);
+      for(const entry of searchable) entries.set(entry.id,entry);
+      pathEntries.clear(); searchable.forEach(indexPaths);
+      const note=document.createElement('p');
+      note.textContent=`${coverage.parts} weitere Atlasstrukturen sind einzeln auswählbar. Für ${coverage.groups} Muskeleinträge lassen sich ihre Bestandteile gemeinsam anzeigen.`;
+      host.querySelector('#muscle-coverage').after(note); fillSelect({catalogue:true});
+    }).catch(error=>{muscleCatalog=undefined;throw error;});
+  }
   let vesselRegister;
   function ensureVesselRegister() {
     return vesselRegister ||= import('./gefaesse/katalog.js').then(({vesselEntries})=>{
@@ -160,9 +166,11 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       throw error;
     });
   }
+  const anamneseActive=()=>host.closest('.app')?.querySelector('#pain-tab')?.getAttribute('aria-selected')==='true';
   const progressive=await (await fetch(new URL('progressive.json',BASE),{signal})).json();
   const {ensureLayer,loaded}=layerLifecycle({host,progress,layerStatus,
     async load(value,{background,added}) {
+      if(value==='muskel') await ensureMuscleCatalog();
       if(value==='gefaesse'){
         progress.removeAttribute('value');
         layerStatus.textContent='Gefäßsystem wird geladen …';
@@ -194,9 +202,10 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       }
       const pack=progressive.layers[value];const bundle=await download(pack.file,'Schicht wird geladen',pack.bytes,background);
       if(await digest(bundle)!==pack.sha256)throw Error('Schicht-Prüfsumme abweichend');
+      if(background && value!=='organ' && anamneseActive())throw new Error('Hintergrundladen pausiert');
       const baked=await surfaces.load(value);
       let i=0;
-      for(const segment of pack.assets){const asset=manifest.assets.find(a=>a.file===segment.file);if(!asset||asset.sha256!==segment.sha256||asset.length!==segment.length)throw Error('Einzelbindung abweichend');
+      for(const segment of pack.assets){if(background && value!=='organ' && anamneseActive())throw new Error('Hintergrundladen pausiert');const asset=manifest.assets.find(a=>a.file===segment.file);if(!asset||asset.sha256!==segment.sha256||asset.length!==segment.length)throw Error('Einzelbindung abweichend');
     const data=bundle.slice(segment.offset,segment.offset+segment.length);
     if(await digest(data)!==asset.sha256) throw new Error('Anatomie-Prüfsumme abweichend');
     const surface = organSurfaces.get(asset.sha256);
@@ -227,8 +236,9 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   });
   let layerGeneration=0;
   let skinOpacity=1;
-  let layer='haut', selected=null, lastHit=null, pins=[], labelsEnabled=false, regionBox=null;
+  let layer='haut', selected=null, lastHit=null, pins=[], labelsEnabled=false, regionBox=null, skinSelected=false;
   const raycaster=new THREE.Raycaster();
+  const pickLabel=structurePickLabel({viewport,camera,THREE});
   const selectedBox=()=>{
     const box=new THREE.Box3();
     for(const file of selected?.geometry||[]) {const a=assets.get(file);if(a?.group.visible)box.union(new THREE.Box3().setFromObject(a.group));}
@@ -250,33 +260,45 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   actions.append(btn('Ganze Figur','avatar-body',reset),btn('Region','avatar-region',()=>{if(regionBox)frame(regionBox);}),btn('Körperteil','avatar-focus',()=>{frame(selectedBox());}),btn('↶ Drehen','avatar-left',()=>rotate(Math.PI/6)),btn('Drehen ↷','avatar-right',()=>rotate(-Math.PI/6)),btn('＋ Näher','avatar-near',()=>zoom(0.75)),btn('− Weiter','avatar-far',()=>zoom(1.33)));
   host.querySelector('#avatar-region').disabled=true;host.querySelector('#avatar-focus').disabled=true;
   for(const name of ['Gewebe','Zelle','Molekül']){const b=btn(`${name} · keine Daten`,`avatar-${name.toLowerCase()}`,()=>{});b.disabled=true;actions.append(b);}
+  // Only explicit aggregate-to-geometry relationships from the atlas are used.
+  const overviewIds = new Set(['TA2:3023:M','TA2:3114:M','TA2:3081:M','TA2:3213:M','TA2:3401:M','TA2:3863:M',
+    'kms2:bone:femur-l:L','kms2:bone:femur-r:R','kms2:bone:humerus-l:L','kms2:bone:humerus-r:R',
+    'kms2:bone:scapula-l:L','kms2:bone:scapula-r:R','kms2:bone:tibia-l:L','kms2:bone:tibia-r:R','kms2:bone:sternum:M',
+    'kms2:tendon:achilles-tendon:L','kms2:tendon:achilles-tendon:R','kms2:ligament:1679:M','kms2:ligament:1680:M',
+    'nerven:gehirn','gefaesse:aorta','gefaesse:inferior-vena-cava']);
   function renderLabels(){
     labelsHost.replaceChildren();if(!labelsEnabled)return;
-    let candidates=pins.filter(e=>e.geometry.some(f=>assets.get(f)?.group.visible));
-    if(candidates.length<8) for(const a of assets.values()) {
-      const e=pathEntries.get(a.file)?.[0];
-      if(a.group.visible&&e&&!candidates.includes(e))candidates.push(e);
-      if(candidates.length>=8)break;
-    }
+    const depth=Number(host.querySelector('#zoom-panel:not([hidden])')?.dataset.level || 0);
+    if(depth>1)return;
+    const overview = searchable.filter(e=>e.id.startsWith('org1:organ:') || overviewIds.has(e.id) || e.atlasGroup);
+    const close=selected && bodyBox.getSize(new THREE.Vector3()).y / camera.position.distanceTo(controls.target)>=.85;
+    const parent=close ? (selected.geometry.length>1 ? selected : overview.find(e=>e.geometry.length>1 && selected.geometry.some(f=>e.geometry.includes(f)))) : null;
+    let candidates=close ? (parent ? searchable.filter(e=>e.id!==parent.id && e.geometry.length===1 && parent.geometry.includes(e.geometry[0]) && (e.id.startsWith('atlas:muskel:') || e.kind==='organ')) : []) : overview;
+    candidates=candidates.filter(e=>e.geometry.some(f=>assets.get(f)?.group.visible));
+    labelsHost.dataset.labelLevel=close?'organ':'uebersicht';
     const occupied=[];
-    for(const e of candidates.slice(0,8)) {
+    const limit=viewport.clientWidth<500?1:5;
+    for(const e of candidates) {
+      if(occupied.length>=limit)break;
       const box=new THREE.Box3(); for(const f of e.geometry){const a=assets.get(f);if(a?.group.visible)box.union(new THREE.Box3().setFromObject(a.group));}
       if(box.isEmpty())continue;
       const world=box.getCenter(new THREE.Vector3()); // Box3.setFromObject already returns world coordinates
       const p=world.clone().project(camera);if(Math.abs(p.x)>1||Math.abs(p.y)>1||p.z>1||p.z< -1)continue;
       const anchorX=(p.x+1)*viewport.clientWidth/2, anchorY=(1-p.y)*viewport.clientHeight/2;
-      let x=Math.min(viewport.clientWidth-170,Math.max(2,anchorX+12)),y=Math.max(0,Math.min(viewport.clientHeight-25,anchorY));
-      while(occupied.some(q=>Math.abs(q.x-x)<170&&Math.abs(q.y-y)<24)&&y<viewport.clientHeight-25)y+=24;
-      if(y>viewport.clientHeight-25){ y=anchorY-24; while(occupied.some(q=>Math.abs(q.x-x)<170&&Math.abs(q.y-y)<24)&&y>0)y-=24; if(y<0)continue; }
+      let x=Math.min(viewport.clientWidth-170,Math.max(2,anchorX+12)),y=Math.max(0,Math.min(viewport.clientHeight-44,anchorY));
+      while(occupied.some(q=>Math.abs(q.x-x)<170&&Math.abs(q.y-y)<44)&&y<viewport.clientHeight-44)y+=44;
+      if(y>viewport.clientHeight-44){ y=anchorY-44; while(occupied.some(q=>Math.abs(q.x-x)<170&&Math.abs(q.y-y)<44)&&y>0)y-=44; if(y<0)continue; }
+      if(Math.abs(y-anchorY)>88)continue;
+      if(occupied.some(q=>Math.abs(q.x-x)<170&&Math.abs(q.y-y)<44))continue;
       occupied.push({x,y});
-      const el=document.createElement('span');el.className='avatar-label';el.textContent=label(e).split(' · ')[0];el.style.left=`${x}px`;el.style.top=`${y}px`;el.dataset.entry=e.id;el.dataset.world=world.toArray().join(',');el.dataset.anchor=`${anchorX},${anchorY}`;
+      const el=document.createElement('button');el.type='button';el.className='avatar-label';el.textContent=label(e).split(' · ')[0];el.addEventListener('click',()=>{showLexicon(e);});el.style.left=`${x}px`;el.style.top=`${y}px`;el.dataset.entry=e.id;el.dataset.world=world.toArray().join(',');el.dataset.anchor=`${anchorX},${anchorY}`;
       const line=document.createElement('span');line.className='avatar-leader';line.style.left=`${anchorX}px`;line.style.top=`${anchorY}px`;line.style.width=`${Math.hypot(x-anchorX,y-anchorY)}px`;line.style.transform=`rotate(${Math.atan2(y-anchorY,x-anchorX)}rad)`;labelsHost.append(line,el);
     }
   }
   const dataMarkers=createDataMarkers({THREE,viewport,assets,manifest,camera,choose});
   const skinExample=surfaceExampleAnchor(THREE,hull,'haut','Hautoberfläche');
   const exampleMarker=layerExampleMarker({THREE,host,viewport,camera,enabled:()=>dataMarkers.active&&layer!=='organ',anchor:()=>{if(layer==='haut')return skinExample;for(const [file,a] of assets){if(!a.group.visible)continue;const entry=pathEntries.get(file)?.[0];if(entry)return {object:a.group,layer,id:entry.id,name:Array.isArray(entry.names.de)?entry.names.de[0]:entry.names.de||'Struktur'};}return null;}});
-  function render(){camera.updateMatrixWorld();dataMarkers.paint();renderer.render(scene,camera);exampleMarker.paint();renderLabels();dashboardContext({host,camera,controls,bodyHeight:bodyBox.getSize(new THREE.Vector3()).y,layer,selected:!!selected,name:Array.isArray(selected?.names?.de)?selected.names.de[0]:selected?.names?.de||'Struktur'});}
+  function render(){camera.updateMatrixWorld();dataMarkers.paint();renderer.render(scene,camera);pickLabel.paint();exampleMarker.paint();renderLabels();dashboardContext({host,camera,controls,bodyHeight:bodyBox.getSize(new THREE.Vector3()).y,layer,selected:!!selected,name:Array.isArray(selected?.names?.de)?selected.names.de[0]:selected?.names?.de||'Struktur'});}
   function updateVisibility(){
     const outline=layer!=='haut';legend.hidden=layer!=='nerven';vesselLegend.hidden=layer!=='gefaesse';
     viewport.style.background='radial-gradient(ellipse at 45% 26%, #426b80 0%, #294d66 57%, #183649 100%)';
@@ -303,6 +325,7 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   }
   function restoreMaterials(){cancelAnimationFrame(glowFrame);for(const a of assets.values())a.group.traverse(o=>{if(o.isMesh){o.material.emissiveIntensity=.35;o.material.emissive.setHex(0);o.material.color.copy(o.userData.baseColor);o.material.opacity=layer==='haut'?.32:1;o.material.transparent=layer==='haut';o.material.depthWrite=layer!=='haut';o.material.needsUpdate=true;}});}
   async function choose(e,hit=null){
+    skinSelected=false;
     if(e.wholeAtlas)return switchLayer('gefaesse');
     const generation=++layerGeneration;
     if(e.geometry.length){const kind=['nerve','vessel'].includes(e.kind)?e.kind:manifest.assets.find(a=>a.file===e.geometry[0])?.kind;const target=Object.keys(layerKinds).find(k=>k!=='haut'&&layerKinds[k].includes(kind));if(!loaded.has(target))await ensureLayer(target);}if(generation!==layerGeneration)return;
@@ -330,17 +353,17 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
     for(const file of e.geometry){const selectedAsset=assets.get(file);if(!selectedAsset)continue;
       if(!selectedAsset.group.visible){for(const other of assets.values())other.group.visible=false;selectedAsset.group.visible=true;}
     }
-    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);surfaceSelection(o.material,o.userData.baseColor,{selected:chosen,muted:exploring()&&!chosen,opacity:layer==='haut'?.32:1});}});
+    for(const asset of assets.values())asset.group.traverse(o=>{if(o.isMesh){const chosen=e.geometry.includes(asset.file);surfaceSelection(o.material,o.userData.baseColor,{selected:chosen,muted:!hit&&exploring()&&!chosen,opacity:layer==='haut'?.32:1});}});
     pins=pins.filter(p=>p.id!==e.id);pins.unshift(e);pins=pins.slice(0,8);
     const box=selectedBox();regionBox=box.clone().expandByScalar(0.15);regionBox.intersect(bodyBox);
     host.querySelector('#avatar-focus').disabled=box.isEmpty();host.querySelector('#avatar-region').disabled=box.isEmpty();
     detail.replaceChildren();const title=document.createElement('strong'),latin=document.createElement('small');title.textContent=Array.isArray(e.names.de)?e.names.de.join(', '):e.names.de||'Körperteil';latin.textContent=Array.isArray(e.names.la)?e.names.la.join(', '):e.names.la||'';detail.append(title,latin);syncBadge();
-    if(exploring())frame(box,1.65);
+    if(exploring()&&!hit)frame(box,1.65);
     else if(dataMarkers.active)frame(bodyBox,1.12);
 
     host.dataset.selected=e.id;render();pulseSelection(e);
     if(e.kind!=='vessel')onDataOrgan(e.id);
-    if(!dataMarkers.active&&!['nerve','vessel'].includes(e.kind))await selectZoom(e);
+    if(!hit&&!dataMarkers.active&&!['nerve','vessel'].includes(e.kind))await selectZoom(e);
   }
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('de').replace(/ß/g,'ss').trim();
   const results=host.querySelector('#search-results');
@@ -469,38 +492,41 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
   const switchLayer=async value=>{const control=document.getElementById('schicht-wahl');control.value=value;control.dispatchEvent(new Event('change',{bubbles:true}));await api.setLayer(value);};
   for(const b of host.querySelectorAll('.layer-button'))b.addEventListener('click',()=>run(()=>switchLayer(b.dataset.layer)));
   host.querySelector('#layer-peel').addEventListener('input',e=>run(()=>switchLayer(peelLayers[Number(e.target.value)])));
-  host.querySelector('#whole-body').addEventListener('click',()=>{zoomView?.hide();badge.hidden=true;selected=null;lastHit=null;delete host.dataset.selected;showLexicon(null);detail.textContent='Entdecken Sie Ihren Körper';reset();restoreMaterials();render();});
+  host.querySelector('#whole-body').addEventListener('click',()=>{pickLabel.clear();zoomView?.hide();badge.hidden=true;selected=null;skinSelected=false;lastHit=null;delete host.dataset.selected;showLexicon(null);detail.textContent='Entdecken Sie Ihren Körper';reset();restoreMaterials();render();});
   host.querySelector('#canvas-reset').addEventListener('click',()=>host.querySelector('#whole-body').click());
+  function clearPick(){++layerGeneration; selected=null;skinSelected=false;lastHit=null;select.value='';delete host.dataset.selected;pickLabel.clear();badge.hidden=true;zoomView?.hide();detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;showLexicon(null);restoreMaterials();render();}
   function pick(clientX,clientY,hover=false){
     const r=renderer.domElement.getBoundingClientRect();raycaster.setFromCamera(new THREE.Vector2((clientX-r.left)/r.width*2-1,1-(clientY-r.top)/r.height*2),camera);
     const meshes=[];for(const a of assets.values())if(layer!=='haut'&&a.group.visible)a.group.traverse(o=>{if(o.isMesh)meshes.push(o);});
     const hit=raycaster.intersectObjects(meshes,false)[0];
-    if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){if(selected)return;detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
+    if(hit){const e=hit.object.userData.entries[0];if(e){if(hover){if(selected)return;detail.replaceChildren();const name=document.createElement("strong"),latin=document.createElement("small");name.textContent=Array.isArray(e.names.de)?e.names.de.join(", "):e.names.de||"Körperteil";latin.textContent=Array.isArray(e.names.la)?e.names.la.join(", "):e.names.la||"";detail.append(name,latin);syncBadge();showLexicon(e);return;}if(selected?.id===e.id){clearPick();return;} const name=label(e).split(' · ')[0]; pickLabel.show(name,hit.point); host.dispatchEvent(new CustomEvent('dht:struktur-gewaehlt',{bubbles:true,detail:{id:e.id,name,ebene:layer}})); void choose(e,{point:hit.point.toArray(),faceIndex:hit.faceIndex,file:hit.object.userData.asset.file});}return;}
     const shellHit=(layer==='haut')?raycaster.intersectObject(hull,true)[0]:null;
-    if(shellHit){if(exploring()){detail.replaceChildren();const name=document.createElement('strong'),latin=document.createElement('small');name.textContent='Haut';latin.textContent='Cutis · vereinfachte Körperhülle';detail.append(name,latin);syncBadge();showLexicon(null);return;}if(hover)return;const p=shellHit.point;const region=p.y>1.52?'kopf':p.y>1.43?'hals':Math.abs(p.x)>0.20&&p.y>0.76?(p.x>0?'arm_links':'arm_rechts'):p.y>1.16?'brust':p.y>0.97?'bauch':p.y>0.78?'becken':p.x>0?'bein_links':'bein_rechts';onRegion(region);}
+    if(!shellHit&&!hover){clearPick();return;}
+    if(shellHit){if(hover)return;const p=shellHit.point;const region=p.y>1.52?'kopf':p.y>1.43?'hals':Math.abs(p.x)>0.20&&p.y>0.76?(p.x>0?'arm_links':'arm_rechts'):p.y>1.16?'brust':p.y>0.97?'bauch':p.y>0.78?'becken':p.x>0?'bein_links':'bein_rechts';if(skinSelected){clearPick();if(!exploring())onRegion(region);return;}clearPick();skinSelected=true;host.dataset.selected='haut';detail.textContent='Haut · Cutis · vereinfachte Körperhülle';pickLabel.show('Haut',p);host.dispatchEvent(new CustomEvent('dht:struktur-gewaehlt',{bubbles:true,detail:{id:'haut',name:'Haut',ebene:layer}}));render();if(!exploring())onRegion(region);}
   }
-  let pointer=null, tapPending=false;
-  renderer.domElement.addEventListener('pointerdown',ev=>{tapPending=false;pointer=[ev.clientX,ev.clientY];});
-  renderer.domElement.addEventListener('pointerup',ev=>{tapPending=Boolean(pointer&&Math.hypot(ev.clientX-pointer[0],ev.clientY-pointer[1])<5);pointer=null;});
+  let pointer=null, tapPending=false, pointerMoved=false;
+  renderer.domElement.addEventListener('pointerdown',ev=>{tapPending=false;pointerMoved=Boolean(pointer);pointer=[ev.clientX,ev.clientY];});
+  renderer.domElement.addEventListener('pointerup',ev=>{tapPending=Boolean(pointer&&!pointerMoved&&Math.hypot(ev.clientX-pointer[0],ev.clientY-pointer[1])<5);pointer=null;});
   // Finish the native gesture before a region change scrolls/reorders the page.
   renderer.domElement.addEventListener('click',ev=>{if(tapPending){tapPending=false;pick(ev.clientX,ev.clientY);}});
-  renderer.domElement.addEventListener('pointermove',ev=>{if(!pointer&&ev.pointerType==='mouse'&&exploring())pick(ev.clientX,ev.clientY,true);});
+  renderer.domElement.addEventListener('pointermove',ev=>{if(pointer&&Math.hypot(ev.clientX-pointer[0],ev.clientY-pointer[1])>=5)pointerMoved=true;else if(!pointer&&ev.pointerType==='mouse'&&exploring())pick(ev.clientX,ev.clientY,true);});
   renderer.domElement.addEventListener('pointercancel',()=>{pointer=null;tapPending=false;});
   renderer.domElement.addEventListener('keydown',ev=>{if(ev.key==='ArrowLeft'){ev.preventDefault();rotate(Math.PI/12);}if(ev.key==='ArrowRight'){ev.preventDefault();rotate(-Math.PI/12);}if(ev.key==='+')zoom(0.8);if(ev.key==='-')zoom(1.25);});
   const disposeMotion=dashboardMotion({THREE,host,viewport,canvas:renderer.domElement,camera,controls,actions,render});
   controls.addEventListener('change',render);
+  host.addEventListener('zoom-level-change',render,{signal});
   const resize=new ResizeObserver(()=>{const w=viewport.clientWidth,h=viewport.clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();render();});resize.observe(viewport);
   performance.mark('dht-detail-built');
   reset();if(preview){preview.freeze();rotate(-preview.angle);}updateVisibility();performance.mark('dht-detail-frame');if(preview&&!matchMedia('(prefers-reduced-motion: reduce)').matches)await preview.canvas.animate([{opacity:1},{opacity:0}],{duration:180}).finished;preview?.dispose();renderer.domElement.id='avatar-canvas';host.dataset.ready='true';performance.mark('dht-glass-ready');host.setAttribute('aria-busy','false');progress.hidden=true;
   const api={
     setDataMarkers(counts, selected){dataMarkers.set(counts,selected);if(!counts)restoreMaterials();render();},
     selectDataOrgan(id){const e=manifest.entries.find(e=>e.id===id);if(e)return choose(e);},
-    async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){zoomView?.hide();badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}const showWholeVessels=value==='gefaesse'&&layer!==value;layer=value;updateVisibility();if(showWholeVessels)reset();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
+    async setLayer(value){const generation=++layerGeneration;await ensureLayer(value);if(generation!==layerGeneration)return;if(layer!==value){skinSelected=false;pickLabel.clear();zoomView?.hide();badge.hidden=true;restoreMaterials();selected=null;lastHit=null;select.value='';delete host.dataset.selected;showLexicon(null);detail.textContent='Tippen Sie auf einen Körperteil oder suchen Sie einen Namen.';host.querySelector('#avatar-focus').disabled=true;}const showWholeVessels=value==='gefaesse'&&layer!==value;layer=value;updateVisibility();if(showWholeVessels)reset();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)renderer.domElement.animate([{opacity:.6},{opacity:1}],{duration:240});},
     setOpacity(value){skinOpacity=Math.min(1,Math.max(0,value));hull.traverse(o=>{if(o.isMesh){const opacity=Math.min(1,Math.max(0,value));const m=o.userData.skinMaterial;m.opacity=opacity*(economy?.48:.78);if(m.uniforms)m.uniforms.opacity.value=m.opacity;}});render();},
     setLabels(value){labelsEnabled=value;render();},
     focusRegion(id){const bounds={kopf:[1.48,1.72],hals:[1.4,1.53],brust:[1.15,1.44],bauch:[0.96,1.17],becken:[0.77,0.98],ruecken:[0.85,1.48],arm_links:[0.7,1.45],arm_rechts:[0.7,1.45],bein_links:[0,0.85],bein_rechts:[0,0.85]}[id];if(!bounds)return;regionBox=bodyBox.clone();regionBox.min.y=bounds[0];regionBox.max.y=bounds[1];if(id.endsWith('_links'))regionBox.min.x=0;if(id.endsWith('_rechts'))regionBox.max.x=0;host.querySelector('#avatar-region').disabled=false;frame(regionBox);},
-    state(){return {viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(),revision:THREE.REVISION,selected:selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},skinOpacity,hullOpacity:layer==='haut'?skinOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
-    dispose(){disposeMotion();exampleMarker.dispose();searchDisposed=true;document.removeEventListener('pointerup',finishResultPointer,true);document.removeEventListener('pointercancel',finishResultPointer,true);zoomView?.dispose();cancelAnimationFrame(glowFrame);clearTimeout(preloadTimer);stopOrgans();disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
+    state(){return {viewProjection:new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse).toArray(),revision:THREE.REVISION,selected:skinSelected?'haut':selected?.id,hit:lastHit,layer,camera:camera.position.toArray(),target:controls.target.toArray(),triangles:renderer.info.render.triangles,outline: {visible:layer!=='haut',meshes:(()=>{const rows=[];hull.traverse(o=>{if(o.isMesh)rows.push({opacity:o.material.opacity,depthWrite:o.material.depthWrite});});return rows;})()},skinOpacity,hullOpacity:layer==='haut'?skinOpacity:hull.children.find(o=>o.isMesh)?.material.opacity,highlighted:[...assets.values()].filter(a=>{let lit=false;a.group.traverse(o=>{if(o.isMesh&&o.material.emissive.getHex()!==0)lit=true;});return a.group.visible&&lit;}).map(a=>a.file),visible:[...assets.values()].filter(a=>a.group.visible).map(a=>a.file),labels:labelsHost.querySelectorAll('.avatar-label').length,register:manifest.register_count};},
+    dispose(){pickLabel.dispose();disposeMotion();exampleMarker.dispose();searchDisposed=true;document.removeEventListener('pointerup',finishResultPointer,true);document.removeEventListener('pointercancel',finishResultPointer,true);zoomView?.dispose();cancelAnimationFrame(glowFrame);clearTimeout(preloadTimer);if(preloadIdle && window.cancelIdleCallback)cancelIdleCallback(preloadIdle);stopOrgans();disposeStudio();resize.disconnect();controls.dispose();scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();if(o.userData.hull){o.userData.skinMaterial.dispose();o.userData.outlineMaterial.dispose();}}});renderer.dispose();},
   };
   // Read-only observability; interaction always follows the actual DOM/canvas handlers.
   Object.defineProperty(host,'avatarState',{value:()=>api.state()});
@@ -516,16 +542,20 @@ export async function createAvatarView(host, { onRegion = () => {}, signal, prev
       rows.push({id:'AHF2_male_study_envelope',name:o.name,positions:points,indices:g.index?Array.from(g.index.array):Array.from({length:p.count},(_,i)=>i)});
     }});return rows;
   }});
-  let preloadTimer=0;
+  let preloadTimer=0, preloadIdle=0, preloadCancelled=false;
+  const cancelPreload=()=>{preloadCancelled=true;clearTimeout(preloadTimer);if(preloadIdle && window.cancelIdleCallback)cancelIdleCallback(preloadIdle);};
+  for(const event of ['pointerdown','keydown','change'])host.closest('.app').addEventListener(event,cancelPreload,{once:true,signal});
   const stopOrgans=organsAfterPaint({host,signal,ensureLayer,isSkin:()=>layer==='haut',refresh:updateVisibility,render,
     fade(t){for(const a of assets.values())if(a.kind==='organ')a.group.traverse(o=>{if(o.isMesh)o.material.opacity=.32*t;});},
-    onReady(){preloadTimer=setTimeout(()=>{
-      if(signal?.aborted || !host.isConnected || navigator.connection?.saveData || layer!=='haut' || host.dataset.loading==='true')return;
+    onReady(){const preload=async()=>{
+      if(preloadCancelled || anamneseActive() || signal?.aborted || !host.isConnected || navigator.connection?.saveData || layer!=='haut' || host.dataset.loading==='true')return;
       for(const value of ['muskel','nerven']){
+        if(preloadCancelled || anamneseActive() || signal?.aborted || !host.isConnected || layer!=='haut' || host.dataset.loading==='true')return;
         performance.mark(`dht-preload-${value}-start`);
-        ensureLayer(value,{background:true}).then(()=>performance.mark(`dht-preload-${value}-ready`)).catch(()=>{});
+        try {await ensureLayer(value,{background:true});performance.mark(`dht-preload-${value}-ready`);} catch {return;}
       }
-    },2000);}
+    };
+    preloadTimer=setTimeout(()=>{if(preloadCancelled)return;if(window.requestIdleCallback)preloadIdle=requestIdleCallback(preload);else preload();},2000);}
   });
   replayPendingSelection(host,{choose:id=>{const e=entries.get(id);if(e)run(()=>choose(e));},setLayer:value=>run(()=>switchLayer(value))});
   return api;

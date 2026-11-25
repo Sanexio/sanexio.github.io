@@ -22,6 +22,7 @@ export async function createStructureLexicon(host, manifest, manifestBytes) {
     delete box.dataset.entry; delete box.dataset.source; delete box.dataset.sourceSha256;
     if (failure) {box.textContent = `Lexikonbindung nicht verfügbar: ${failure}.`; return;}
     const binding = bindings.get(entry?.id);
+    host.dispatchEvent(new CustomEvent('structure-explanation',{bubbles:true,detail:{name:entry ? (Array.isArray(entry.names?.de) ? entry.names.de[0] : entry.names?.de) || entry.id : '',text:binding?.text || ''}}));
     if(!binding&&document.querySelector('.app')?.dataset.mode==='explore'){box.textContent='';return;}
     if (!binding) {box.textContent = entry ? 'Kein quellengebundener Lexikontext für diese Registerstruktur vorhanden.' : 'Lexikon: Registerstruktur wählen; Texte erscheinen nur bei belegter Einzelbindung.'; return;}
     box.dataset.entry = binding.id; box.dataset.source = binding.source; box.dataset.sourceSha256 = binding.source_sha256;

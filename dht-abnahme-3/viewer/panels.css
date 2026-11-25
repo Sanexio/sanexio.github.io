@@ -1,0 +1,68 @@
+/* Sanexio Praxis 2025: shared semantic tokens for dashboard contributors. */
+:root {
+  --sx-c-bg: #FBFBFD; --sx-c-bg-soft: #F5F5F7; --sx-c-surface: #FFFFFF;
+  --sx-c-ink: #1D1D1F; --sx-c-ink-subtle: #424245; --sx-c-ink-muted: #6E6E73;
+  --sx-c-line: #D2D2D7; --sx-c-accent: #C8161D; --sx-c-accent-hover: #8B0F14;
+  --sx-c-accent-soft: rgba(200,22,29,.07); --sx-c-accent-ring: rgba(200,22,29,.30);
+  --sx-c-on-accent: #FFFFFF; --sx-c-success: #2D7A4F;
+  --sx-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sx-font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --sx-radius-card: 18px; --sx-radius-md: 18px; --sx-radius-pill: 999px;
+  --sx-shadow-card: 0 8px 24px rgba(0,0,0,.04);
+}
+html body .app[data-dashboard=true] {
+  --bg:var(--sx-c-bg); --card:var(--sx-c-surface); --ink:var(--sx-c-ink);
+  --muted:var(--sx-c-ink-muted); --line:var(--sx-c-line);
+  --accent:var(--sx-c-accent); --accent-soft:var(--sx-c-accent-soft);
+  color:var(--sx-c-ink); font-family:var(--sx-font-body);
+}
+html body .app[data-dashboard=true] :is(.dashboard-nav,.hd-organ-panel,.dashboard-anamnese,#dashboard-example-panel,.discovery-card,#search-results) {
+  background:var(--sx-c-surface); color:var(--sx-c-ink); border:1px solid var(--sx-c-line);
+  border-radius:var(--sx-radius-card); box-shadow:var(--sx-shadow-card);
+}
+html body .app[data-dashboard=true]>.notice-rail:has(.dht-navigation) {background:var(--sx-c-surface);border-color:var(--sx-c-line);border-radius:var(--sx-radius-card);box-shadow:var(--sx-shadow-card)}
+html body .app[data-dashboard=true] :is(h1,h2,h3) {font-family:var(--sx-font-display);color:var(--sx-c-ink);letter-spacing:-.025em}
+html body .app[data-dashboard=true] .dashboard-nav h1 {font-size:24px;letter-spacing:-.035em}
+html body .app[data-dashboard=true] :is(#dashboard-context,.dashboard-hint) {color:var(--sx-c-ink-subtle);border-color:var(--sx-c-line)}
+html body .app[data-dashboard=true] #avatar-stage>#canvas-name {background:var(--sx-c-bg-soft);color:var(--sx-c-ink);border-radius:var(--sx-radius-card)}
+/* The example marker is intentionally excluded: its position and appearance identify measurements. */
+html body .app[data-dashboard=true] button:not(.dashboard-example-marker):not(.data-organ-markers button),
+html body .app[data-dashboard=true] .sx-btn {
+  background:var(--sx-c-surface);color:var(--sx-c-ink);border:1px solid var(--sx-c-line);
+  border-radius:var(--sx-radius-pill);font-family:var(--sx-font-body);font-weight:650;
+  transition:background-color .15s ease,border-color .15s ease,color .15s ease;
+}
+html body .app[data-dashboard=true] button:not(.dashboard-example-marker):not(.data-organ-markers button):hover:not(:disabled),
+html body .app[data-dashboard=true] .sx-btn:hover {background:var(--sx-c-bg-soft);border-color:var(--sx-c-ink-muted)}
+html body .app[data-dashboard=true] :is(button.primary,.sx-btn-primary,button[aria-selected=true],button[aria-pressed=true]):not(.dashboard-example-marker):not(.data-organ-markers button) {
+  background:var(--sx-c-accent);border-color:var(--sx-c-accent);color:var(--sx-c-on-accent);box-shadow:none;
+}
+html body .app[data-dashboard=true] :is(button.primary,.sx-btn-primary,button[aria-selected=true],button[aria-pressed=true]):hover:not(:disabled) {background:var(--sx-c-accent-hover);border-color:var(--sx-c-accent-hover);color:var(--sx-c-on-accent)}
+html body .app[data-dashboard=true] button:active:not(:disabled):not(.dashboard-example-marker):not(.data-organ-markers button) {background:var(--sx-c-accent-soft);border-color:var(--sx-c-accent)}
+html body .app[data-dashboard=true] button:disabled {opacity:.48;cursor:not-allowed}
+html body .app[data-dashboard=true] :is(button,input,select,textarea,summary,a):focus-visible {outline:3px solid var(--sx-c-accent);outline-offset:3px}
+html body .app[data-dashboard=true] :is(input:not([type=range]):not([type=checkbox]):not([type=radio]),select,textarea) {background:var(--sx-c-surface);color:var(--sx-c-ink);border:1px solid var(--sx-c-line);border-radius:var(--sx-radius-card);padding:10px 12px}
+html body .app[data-dashboard=true] :is(input[type=range],input[type=checkbox],input[type=radio]) {accent-color:var(--sx-c-accent)}
+@media (prefers-reduced-motion:reduce) {html body .app[data-dashboard=true] button {transition:none}}
+/* Optional shared variants for future panels; no markup changes required. */
+html body .app[data-dashboard=true] .sx-btn-icon {display:inline-flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;padding:0}
+html body .app[data-dashboard=true] :is(button.primary,.sx-btn-primary,button[aria-selected=true],button[aria-pressed=true]):active:not(:disabled) {background:var(--sx-c-accent-hover);color:var(--sx-c-on-accent)}
+
+/* Sanexio token values, sourced from /_astro/_slug_.kbCm8BHo.css. */
+.app{--sx-c-bg:#fbfbfd;--sx-c-bg-soft:#f5f5f7;--sx-c-surface:#fff;--sx-c-ink:#1d1d1f;--sx-c-ink-subtle:#424245;--sx-c-ink-muted:#6e6e73;--sx-c-line:#d2d2d7;--sx-c-accent:#c8161d;--sx-c-accent-hover:#8b0f14;--sx-c-accent-soft:#c8161d12;--sx-c-accent-ring:#c8161d4d;--sx-c-on-accent:#fff;--sx-font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--sx-radius-card:18px;--sx-shadow-card:0 8px 24px #0000000a}
+#dht-panels{font-family:var(--sx-font-body);color:var(--sx-c-ink);margin:4px 0 10px;overflow-wrap:anywhere}
+#dht-panels>summary{cursor:pointer;padding:10px;border:1px solid var(--sx-c-line);border-radius:var(--sx-radius-card);background:var(--sx-c-surface);font-weight:700;min-height:44px;box-sizing:border-box}
+.dht-panel-grid{display:grid;gap:8px;margin-top:8px}
+.dht-card{background:var(--sx-c-surface);border:1px solid var(--sx-c-line);border-radius:var(--sx-radius-card);box-shadow:var(--sx-shadow-card);padding:12px;min-width:0}
+.dht-card h2{font-size:15px;line-height:1.25;margin:0 0 8px;color:var(--sx-c-ink)}
+.dht-card p,.dht-card small{font-size:12px;line-height:1.4;color:var(--sx-c-ink-subtle)}
+.dht-card button{font:inherit;font-size:12px;min-height:44px;max-width:100%;padding:6px 9px;border:1px solid var(--sx-c-line);border-radius:var(--sx-radius-card);background:var(--sx-c-bg-soft);color:var(--sx-c-ink);cursor:pointer}
+.dht-card button:hover:not(:disabled){border-color:var(--sx-c-accent);color:var(--sx-c-accent-hover)}
+.dht-card button:focus-visible,#dht-panels>summary:focus-visible{outline:3px solid var(--sx-c-accent-ring);outline-offset:2px}
+.dht-card button[aria-pressed=true]{background:var(--sx-c-accent);color:var(--sx-c-on-accent);border-color:var(--sx-c-accent)}
+.dht-card button:disabled{opacity:.55;cursor:not-allowed}.panel-actions{display:grid;gap:5px}.panel-level{display:grid;gap:2px;margin:5px 0}.panel-level small{padding:0 4px}.panel-chart{height:40px;display:flex;align-items:end;gap:3px;margin:8px 0}.panel-chart span{flex:1;background:var(--sx-c-accent);border-radius:var(--sx-radius-card)}
+html body .app[data-dashboard=true] .dashboard-nav{background:var(--sx-c-bg-soft);border-color:var(--sx-c-line);color:var(--sx-c-ink)}
+html body .app[data-dashboard=true] .dashboard-nav h1{color:var(--sx-c-ink)}
+html body .app[data-dashboard=true] .dashboard-nav button{background:var(--sx-c-surface);color:var(--sx-c-ink);border:1px solid var(--sx-c-line);border-radius:var(--sx-radius-card)}
+html body .app[data-dashboard=true] .dashboard-nav button[aria-pressed=true],html body .app[data-dashboard=true] .dashboard-nav button[aria-selected=true]{background:var(--sx-c-accent);color:var(--sx-c-on-accent);border-color:var(--sx-c-accent);box-shadow:none}
+html body .app[data-dashboard=true] .dashboard-nav button:focus-visible{outline:3px solid var(--sx-c-accent-ring);outline-offset:2px}

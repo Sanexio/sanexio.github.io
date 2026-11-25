@@ -8,7 +8,7 @@ export async function mountZoom(host,{organ,body}){
  const style=document.createElement('style');style.textContent=`
  #zoom-panel{position:absolute;z-index:6;bottom:8px;left:8px;right:8px;padding:10px;border-radius:14px;background:rgba(246,251,252,.97);color:#16394c;box-shadow:0 4px 20px #122e4930;font-size:13px;line-height:1.25}
  #zoom-variants[hidden],#zoom-panel[hidden],#zoom-surface[hidden]{display:none}#zoom-variants{display:flex;gap:6px;margin:4px 0}#zoom-variants button{flex:1;min-height:44px}#zoom-variants button[aria-pressed="true"]{background:#184f69;color:white}#zoom-panel p{margin:4px 0}#zoom-location{display:block;font-size:15px}#zoom-steps{display:flex;gap:3px;margin:7px 0}#zoom-steps button{flex:1;min-width:0;padding:6px 2px;min-height:44px;font-size:12px;border-radius:7px}#zoom-steps button[aria-current="step"]{background:#184f69;color:white;box-shadow:inset 0 -3px #f0ba77}#zoom-steps button:disabled{background:#e5e9eb;color:#58666c;opacity:.65}.zoom-buttons{display:flex;gap:8px}.zoom-buttons button{min-height:44px}#zoom-in{flex:1;background:#184f69;color:#fff;font-size:17px}#zoom-in:disabled{opacity:.45}#zoom-credit{display:block;font-size:11px;margin-top:3px}#zoom-progress{width:100%}#zoom-status{font-size:12px}#zoom-source{font-size:11px;overflow-wrap:anywhere}#zoom-source small{display:block;max-height:90px;overflow:auto}
- #zoom-surface{position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse at 45% 26%,#fff,#e2edf0 57%,#c5d8df);display:flex;align-items:flex-start;justify-content:center;padding:12px 8px calc(var(--zoom-panel-height, 210px) + 12px);box-sizing:border-box}#zoom-surface img{width:100%;height:100%;object-fit:contain}#zoom-surface canvas{width:100%;height:100%;display:block;touch-action:none}#zoom-surface:focus-within{outline:2px solid #184f69}
+ #zoom-surface{position:absolute;inset:0;z-index:4;background:radial-gradient(ellipse at 45% 26%,#fff,#e2edf0 57%,#c5d8df);display:flex;align-items:flex-start;justify-content:center;padding:12px 8px calc(var(--zoom-panel-height, 210px) + 12px);box-sizing:border-box}#zoom-surface img{width:100%;height:100%;object-fit:contain}#zoom-surface canvas{width:100%;height:100%;display:block;touch-action:none}#zoom-surface:focus-within{outline:2px solid #184f69}.zoom-reference-label{position:absolute;top:8px;left:8px;max-width:calc(100% - 16px);min-height:44px;z-index:1}
  @media(max-width:760px){.avatar-viewport:has(#zoom-panel:not([hidden])){min-height:560px;height:560px!important}}
  @media(max-width:440px){#zoom-panel{padding:8px;font-size:12px}#zoom-location{font-size:14px}#zoom-steps button{font-size:11px}}
  `;host.append(style);viewport.append(panel);
@@ -31,12 +31,13 @@ export async function mountZoom(host,{organ,body}){
   const target=names.findIndex((_,i)=>i>level&&available(i));next.disabled=target<0||busy;back.disabled=level===0||busy;
   next.textContent=target>=0?`Hineinzoomen · ${names[target]}`:'Hineinzoomen';
   const missing=names.filter((_,i)=>i>1&&!available(i));
-  $('#zoom-explanation').textContent=level>1?(spec(level).sentence||''):missing.length?`${missing.join(' / ')}: ${catalog.missing}`:'';
+  $('#zoom-explanation').textContent=level>1?'':missing.length?`${missing.join(' / ')}: ${catalog.missing}`:'';
   const credit=$('#zoom-source small');credit.replaceChildren();
   const s=level>1?spec(level):null;$('#zoom-credit').textContent='Quelle: '+(s?s.credit.split(' · ')[0]+' · '+s.license:'LOOK1-Atlas');credit.append(document.createTextNode(s?`${s.bytes.toLocaleString('de-DE')} Bytes · ${s.credit} · ${s.license}. Thematische Referenz; nicht räumlich im Organ registriert. `:'Bestehender LOOK1-Atlas. '));
   if(s?.limits)credit.append(document.createTextNode(s.limits+' '));
   if(s?.file==='renal_corpuscle_kidney.png')credit.append(document.createTextNode('Deutsche Beschriftung: Übersetzung, ärztliche Prüfung ausstehend. '));
   const link=document.createElement('a');link.href=new URL(s?'QUELLEN-LIZENZEN.txt':'../sources/ZOOM1-Atlas-Quellen.txt',BASE);link.textContent='Quellen und Lizenzen (.txt)';link.target='_blank';link.rel='noopener';credit.append(link);
+  host.dispatchEvent(new CustomEvent('zoom-level-change'));
  }
  function clear(){controller?.abort();dispose();dispose=()=>{};surface.replaceChildren();surface.hidden=true;progress.hidden=true;}
  async function bytes(s,signal){
@@ -64,6 +65,11 @@ export async function mountZoom(host,{organ,body}){
    }else{
     const {drawZoom}=await import('./zoom-renderer.js');if(token!==generation)return;
     dispose=await drawZoom(surface,s,b);if(token!==generation){dispose();return;}
+   }
+   if(target===2){
+    const label=document.createElement('button');label.type='button';label.className='zoom-reference-label';label.textContent=s.title;
+    label.addEventListener('click',()=>host.dispatchEvent(new CustomEvent('structure-explanation',{bubbles:true,detail:{name:s.title,text:''}})));
+    surface.append(label);
    }
    level=target;variants[target]=variant;status.textContent=s.kind==='image'?'Referenzschema / Bild':'Ziehen zum Drehen · Pfeiltasten';
   }catch(e){if(token!==generation)return;clear();level=choices(target).length>1?target:previous;status.textContent='Diese Stufe konnte nicht geladen werden: '+e.message;}

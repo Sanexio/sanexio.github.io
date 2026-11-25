@@ -1,0 +1,193 @@
+{
+  "ebenen": [
+    {
+      "id": "muskel",
+      "name": "Muskeln",
+      "kurz": "Entdecke die Muskeln in der Körperansicht.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "skelett",
+      "name": "Skelett",
+      "kurz": "Entdecke das Skelett in der Körperansicht.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "organ",
+      "name": "Organe",
+      "kurz": "Entdecke Organe im anatomischen Atlas.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "binde",
+      "name": "Bänder & Sehnen",
+      "kurz": "Entdecke Bänder und Sehnen in der Körperansicht.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "nerven",
+      "name": "Nervensystem",
+      "kurz": "Entdecke das Nervensystem in der Körperansicht.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "gefaesse",
+      "name": "Gefäßsystem",
+      "kurz": "Entdecke das Gefäßsystem in der Körperansicht.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    }
+  ],
+  "was_sehe_ich": [
+    {
+      "id": "organ-bauchspeicheldruese",
+      "name": "Bauchspeicheldrüse",
+      "text": "Die Bauchspeicheldrüse liegt hinter dem Magen. Sie bildet Verdauungsenzyme und Hormone (z. B. Insulin), die den Blutzucker mitregeln.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-bauchspeicheldruese (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-gallenblase",
+      "name": "Gallenblase",
+      "text": "Die Gallenblase speichert Galle aus der Leber und entleert sie beim Essen in den Darm — besonders bei fetthaltigen Mahlzeiten.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-gallenblase (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-harnblase",
+      "name": "Harnblase",
+      "text": "Die Harnblase speichert Urin, bis er über die Harnröhre entleert wird. Muskel und Nerven steuern Füllen und Entleeren.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-harnblase (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-harnleiter",
+      "name": "Harnleiter",
+      "text": "Die Harnleiter verbinden Nieren und Harnblase und transportieren Urin in eine Richtung.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-harnleiter (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-leber",
+      "name": "Leber",
+      "text": "Die Leber entgiftet, speichert Nährstoffe und bildet Galle. Sie regeneriert sich oft bemerkenswert gut.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-leber (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-luftroehre",
+      "name": "Luftröhre",
+      "text": "Die Luftröhre verbindet Kehlkopf und Bronchien und transportiert Atemluft mit warmen, feuchten Schleimhäuten.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-luftroehre (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-schilddruese",
+      "name": "Schilddrüse",
+      "text": "Die Schilddrüse am Hals bildet Hormone, die Stoffwechsel, Herz und Wärmehaushalt mitsteuern.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-schilddruese (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-speiseroehre",
+      "name": "Speiseröhre",
+      "text": "Die Speiseröhre transportiert zerkaute Nahrung vom Mund in den Magen — eine muskuläre Schlauchstruktur.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-speiseroehre (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-zunge",
+      "name": "Zunge",
+      "text": "Die Zunge schmeckt, hilft beim Sprechen und Wälzen der Nahrung und ist reich durchblutet.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-zunge (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-nebenniere",
+      "name": "Nebenniere",
+      "text": "Die Nebennieren sitzen oben auf beiden Nieren und bilden Stresshormone, Mineralocorticoide und kleine Mengen Geschlechtshormone.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-nebenniere (Abschnitt Was ist das?)"
+    }
+  ],
+  "tour": [
+    {
+      "id": "start",
+      "text": "Entdecke die Körperansicht als anatomischen Atlas.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "schicht",
+      "text": "Wähle eine Schicht und betrachte die dargestellten Strukturen.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "struktur",
+      "text": "Wähle eine Struktur aus und entdecke, wie sie heißt.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "beispiel",
+      "text": "Beachte: Die Browseransicht verwendet Beispieldaten und zeigt keine persönliche medizinische Deutung.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    }
+  ],
+  "wusstest_du": [
+    {
+      "id": "organ-bauchspeicheldruese",
+      "text": "Die Bauchspeicheldrüse liegt hinter dem Magen. Sie bildet Verdauungsenzyme und Hormone (z. B. Insulin), die den Blutzucker mitregeln.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-bauchspeicheldruese (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-gallenblase",
+      "text": "Die Gallenblase speichert Galle aus der Leber und entleert sie beim Essen in den Darm — besonders bei fetthaltigen Mahlzeiten.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-gallenblase (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-harnblase",
+      "text": "Die Harnblase speichert Urin, bis er über die Harnröhre entleert wird. Muskel und Nerven steuern Füllen und Entleeren.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-harnblase (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-harnleiter",
+      "text": "Die Harnleiter verbinden Nieren und Harnblase und transportieren Urin in eine Richtung.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-harnleiter (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-leber",
+      "text": "Die Leber entgiftet, speichert Nährstoffe und bildet Galle. Sie regeneriert sich oft bemerkenswert gut.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-leber (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-luftroehre",
+      "text": "Die Luftröhre verbindet Kehlkopf und Bronchien und transportiert Atemluft mit warmen, feuchten Schleimhäuten.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-luftroehre (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-schilddruese",
+      "text": "Die Schilddrüse am Hals bildet Hormone, die Stoffwechsel, Herz und Wärmehaushalt mitsteuern.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-schilddruese (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-speiseroehre",
+      "text": "Die Speiseröhre transportiert zerkaute Nahrung vom Mund in den Magen — eine muskuläre Schlauchstruktur.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-speiseroehre (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-zunge",
+      "text": "Die Zunge schmeckt, hilft beim Sprechen und Wälzen der Nahrung und ist reich durchblutet.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-zunge (Abschnitt Was ist das?)"
+    },
+    {
+      "id": "organ-nebenniere",
+      "text": "Die Nebennieren sitzen oben auf beiden Nieren und bilden Stresshormone, Mineralocorticoide und kleine Mengen Geschlechtshormone.",
+      "quelle": "embed/avatar/lexikon-bindungen.json#organ-nebenniere (Abschnitt Was ist das?)"
+    }
+  ],
+  "hinweise": [
+    {
+      "id": "beispieldaten",
+      "text": "Die Browseransicht zeigt Beispieldaten. Sie sind keine persönlichen Gesundheitsdaten.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "atlas",
+      "text": "Der DHT ist ein anatomischer Atlas; die Darstellung ist keine persönliche medizinische Deutung.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung und Datenschutz"
+    },
+    {
+      "id": "darstellung",
+      "text": "Der Atlas zeigt eine anatomische Körperansicht, keine persönliche medizinische Deutung.",
+      "quelle": "v2/pitch-mappe/FAKTENBLATT_DHT.md, Einleitung"
+    }
+  ]
+}

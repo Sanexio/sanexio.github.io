@@ -2,6 +2,7 @@ import {germanOrganName} from './organnamen.js';
 export {femaleCounts, femaleNote, femaleFitNote} from './female-summary.js';
 
 export function femaleLabel(e) {
+  if (e.groupLabel) return e.groupLabel;
   if (!['gesichert', 'wahrscheinlich'].includes(e.quality)) return 'noch nicht benannt';
   const name = [e.names?.de || germanOrganName(e), e.names?.la].flat().filter(Boolean).join(' · ') || e.source_label;
   if (!name) throw new Error('Belegter Name fehlt');

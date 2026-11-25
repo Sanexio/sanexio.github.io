@@ -1,0 +1,9 @@
+.entdecken-progress{display:grid;gap:4px;margin:10px 0;padding:8px;border:1px solid var(--sx-c-line);border-radius:6px;background:var(--sx-c-surface);color:var(--sx-c-ink);font-size:12px;line-height:1.4}
+.entdecken-progress progress{width:100%;height:6px;accent-color:var(--sx-c-accent)}
+.entdecken-status:empty{display:none}
+.entdecken-new{animation:entdecken-feedback .5s ease-out}
+.layer-button,.avatar-actions button{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.layer-button:hover,.avatar-actions button:hover{box-shadow:0 0 0 2px var(--sx-c-line)}
+.layer-button:active,.avatar-actions button:active{transform:scale(.98)}
+@keyframes entdecken-feedback{from{box-shadow:0 0 0 3px var(--sx-c-accent)}to{box-shadow:0 0 0 0 var(--sx-c-surface)}}
+@media (prefers-reduced-motion:reduce){.entdecken-new{animation:none}.layer-button,.avatar-actions button{transition:none}.layer-button:active,.avatar-actions button:active{transform:none}}

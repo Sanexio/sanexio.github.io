@@ -1,0 +1,12 @@
+/* Sanexio reference tokens, sourced from the site's stylesheet. */
+:root{--sx-c-bg:#fbfbfd;--sx-c-bg-soft:#f5f5f7;--sx-c-surface:#fff;--sx-c-line:#d2d2d7;--sx-c-ink:#1d1d1f;--sx-c-ink-muted:#6e6e73;--sx-c-accent:#c8161d;--sx-c-accent-hover:#8b0f14;--sx-c-accent-soft:#c8161d12;--sx-c-on-accent:#fff}
+html body .app[data-dashboard=true] .dashboard-nav,html body .app[data-dashboard=true]>.notice-rail:has(.dht-navigation){background:var(--sx-c-bg);border-color:var(--sx-c-line);border-radius:4px;color:var(--sx-c-ink)}
+html body .app[data-dashboard=true] .dashboard-nav h1{color:var(--sx-c-ink)}
+html body .app[data-dashboard=true] .layer-bar button,html body .app[data-dashboard=true] .avatar-actions button,html body .app[data-dashboard=true] .dht-navigation button{background:var(--sx-c-surface);color:var(--sx-c-ink);border:1px solid var(--sx-c-line);border-radius:4px}
+html body .app[data-dashboard=true] .layer-bar button[aria-pressed=true],html body .app[data-dashboard=true] #avatar-grab[aria-pressed=true],html body .app[data-dashboard=true] .dht-navigation button[aria-selected=true]{background:var(--sx-c-accent-soft);color:var(--sx-c-accent-hover);border-color:var(--sx-c-accent);box-shadow:inset 3px 0 var(--sx-c-accent)}
+[data-dht-tour],.dht-wissenswert{margin:8px 0;padding:8px;border:1px solid var(--sx-c-line);border-radius:4px;background:var(--sx-c-surface);font-size:12px;line-height:1.4}
+[data-dht-tour] p,.dht-wissenswert p{margin:6px 0}[data-dht-tour] div div{display:flex;flex-wrap:wrap;gap:4px}[data-dht-tour] button{min-height:44px;padding:5px}
+/* Keep the first orientation in the mobile control area, below the 3D canvas. */
+@media (max-width:779px), (max-height:619px){
+ html body .app[data-dashboard=true] [data-dht-tour]:has(> div:not([hidden])){position:fixed;z-index:50;left:2px;right:2px;top:calc(var(--dht-canvas-top) + var(--dht-canvas-height) + 32px);max-height:calc(100dvh - var(--dht-canvas-top) - var(--dht-canvas-height) - 36px);overflow:auto;box-sizing:border-box;margin:0}
+}
