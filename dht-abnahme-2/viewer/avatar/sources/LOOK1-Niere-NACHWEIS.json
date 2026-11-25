@@ -1,0 +1,35 @@
+{
+  "license": "CC-BY-4.0",
+  "commercial_use": true,
+  "basis": "Attribution 4.0, keine NC/ND-Klausel; lokale NIH-API CC-BY und HRA-Katalog CC-BY-4.0",
+  "nih_entry": "3DPX-021002",
+  "attribution": "Kristen Browne; Heidi Schlehlein (2022), doi:10.48539/HBM272.ZVPQ.979",
+  "modifications": "Web-LOD; Atlas-Skalierung; links gespiegelt; Vertex-AO",
+  "local_evidence": [
+    {
+      "file": "LIZENZ.md",
+      "bytes": 1286,
+      "sha256": "7fd17b75e07993df59dab98bc8c6af5f2bbc751ff2b047b990c700727f0e91fd"
+    },
+    {
+      "file": "meta.json",
+      "bytes": 1623,
+      "sha256": "d08cb522a1a0474b9466bf1f1181d5f885ac93d5412b490d14a04ddbd742ed42"
+    },
+    {
+      "file": "beleg_nih_api.json",
+      "bytes": 491,
+      "sha256": "94469c44ea7d176a768f046f9301c10d6cabfff95af90c804dcadb496819d2cd"
+    },
+    {
+      "file": "beleg_nih_api_full.json",
+      "bytes": 21202,
+      "sha256": "47df748046ac0eb3bb58478d7ab46e525aa4bb0a8a98863c7a5ac071e0889a79"
+    },
+    {
+      "file": "niere.opt.glb",
+      "bytes": 343684,
+      "sha256": "78045340d5e4d68c23c4e04659c133469c3173476710c54b1cb92ba4a3080756"
+    }
+  ]
+}

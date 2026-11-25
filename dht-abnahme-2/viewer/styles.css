@@ -1,0 +1,289 @@
+/* see project - system fonts only */
+:root{color-scheme:light dark;--bg:#f4f6f8;--card:#fff;--ink:#14212e;--muted:#4a5d73;--accent:#0b6e6e;--accent-soft:#d7f0ef;--line:#c5d0db;--warn:#8a5a10;--warn-bg:#fff4df;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}.app{max-width:920px;margin:0 auto;padding:16px}header h1{font-size:1.25rem;margin:0 0 6px;font-weight:650}header p{margin:0 0 12px;color:var(--muted);line-height:1.45;font-size:.95rem}.notice{background:var(--warn-bg);border:1px solid #e2c78e;color:var(--warn);border-radius:8px;padding:10px 12px;font-size:.9rem;line-height:1.4;margin-bottom:14px}.steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.step{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:.85rem;color:var(--muted)}.step[data-active=true]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);font-weight:600}.layout{display:grid;grid-template-columns:minmax(220px,280px) 1fr;gap:16px}@media(max-width:720px){.layout{grid-template-columns:1fr}}.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}.panel h2{margin:0 0 10px;font-size:1rem}.hotspot{fill:#9bb4cc;fill-opacity:.35;stroke:#4a6582;stroke-width:1.2;cursor:pointer}.hotspot:hover,.hotspot:focus{fill:var(--accent);fill-opacity:.45;outline:none}.hotspot[data-selected=true]{fill:var(--accent);fill-opacity:.55;stroke:var(--accent)}.choices{display:grid;gap:8px}.choice{text-align:left;width:100%;border:1px solid var(--line);background:#fbfcfd;border-radius:10px;padding:10px 12px;cursor:pointer;font:inherit;color:inherit}.choice:hover{border-color:var(--accent)}.choice[data-selected=true]{border-color:var(--accent);background:var(--accent-soft)}.choice small{display:block;color:var(--muted);margin-top:4px;font-size:.82rem}.feinliste label{display:block;margin:6px 0;font-size:.92rem}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}button.primary{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer}button.secondary{background:#eef2f6;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:inherit;cursor:pointer}pre.json{background:#0f1a26;color:#e7eef6;border-radius:8px;padding:12px;overflow:auto;font-size:.82rem;line-height:1.4}.hidden{display:none!important}.listebox{border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:12px;background:#fbfcfd}.orteliste{margin:0 0 8px;padding-left:18px;font-size:.92rem;line-height:1.45}.orteliste li{margin:4px 0}.orteliste .muted{color:var(--muted);list-style:none;margin-left:-18px}button.linkish{border:none;background:none;color:var(--accent);cursor:pointer;font:inherit;padding:0;text-decoration:underline}.herkunft{margin:0 0 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);padding:8px 12px;font-size:.88rem}.herkunft summary{cursor:pointer;font-weight:600;color:var(--muted)}.herkunft-body{margin-top:10px;line-height:1.45;white-space:pre-wrap;font-size:.85rem;color:var(--muted)}.anatomie-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-size:.85rem}.anatomie-toolbar .inline{display:inline-flex;align-items:center;gap:6px}.zoom-kette{font-size:.85rem;margin:0 0 8px}.lexikon{font-size:.88rem;line-height:1.4;margin:0 0 10px}.spot-label{font-size:9px;fill:#0b3d3c;pointer-events:none}
+
+.app{max-width:1440px}.layout{grid-template-columns:minmax(420px,1.3fr) minmax(280px,1fr)}
+.avatar-viewport{position:relative;width:100%;height:640px;overflow:hidden;border-radius:10px;background:#eaf0f3}
+.avatar-viewport canvas{display:block;width:100%;height:100%;touch-action:none}
+.avatar-labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}.avatar-label{position:absolute;max-width:168px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#ffffffea;border:1px solid #7aa5a0;border-radius:4px;padding:2px 4px;color:#124d49;font-size:11px}
+.avatar-leader{position:absolute;height:1px;background:#336d66;transform-origin:left center}.avatar-actions,.region-buttons{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.avatar-actions button{padding:6px 9px;font-size:.82rem}.avatar-actions button:disabled{opacity:.5;cursor:default}
+.avatar-search{display:grid;gap:6px}.avatar-search label{display:grid;gap:4px}.avatar-search input,.avatar-search select{font:inherit;max-width:100%;width:100%;padding:6px}.avatar-search select{font-size:.85rem}#avatar-status,#avatar-treffer{font-size:.85rem;line-height:1.5;overflow-wrap:anywhere}.muted{color:var(--muted)}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.avatar-viewport{height:560px}}
+
+#avatar-geschlechtswahl{display:inline-flex;gap:6px}#avatar-geschlechtswahl [aria-pressed="true"]{outline:2px solid var(--accent)}button:disabled{cursor:not-allowed}
+
+#female-load-progress{display:block;width:100%;height:16px;margin:8px 0}#female-load-progress[hidden]{display:none}
+
+/* BR8: complete touch targets and a single document-order workflow. */
+button,input,select,textarea,summary,a{font:inherit}button,input,select,textarea,summary{min-height:44px;min-width:44px}a{display:inline-flex;min-height:44px;min-width:44px;align-items:center}button{touch-action:manipulation}.avatar-actions button{min-height:44px;min-width:44px;font-size:1rem}input[type=checkbox],input[type=radio]{width:44px;height:44px;flex:0 0 44px;margin:0;vertical-align:middle}input[type=range]{height:44px;min-width:100px;max-width:100%}select,input[type=search],input[type=number]{font-size:1rem;max-width:100%}.step{font-size:1rem;color:#14212e}.step[data-active=true]{color:#064b4b;border-color:#064b4b}.step:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #095b95;outline-offset:3px}summary{cursor:pointer;padding:10px 4px;line-height:1.5}.display-controls{display:flex;flex-wrap:wrap;gap:12px}.anatomie-toolbar{margin-top:12px;font-size:1rem}.anatomie-toolbar .inline{min-height:44px}#safety-core{font-size:1rem;margin:4px 0 10px;color:#704506}#text-path-note{font-size:1rem;line-height:1.45}.feinliste label{display:flex;align-items:center;gap:10px;min-height:44px;font-size:1rem}.workflow{display:flex;flex-direction:column}.workflow .listebox{order:2}.app[data-step="1"] .listebox:has(.muted){display:none}.region-buttons button{min-height:44px}.female-core{margin:0;font-weight:600}#female-standhinweis{padding:6px 10px;margin:4px 0 10px}#female-standhinweis summary{font-weight:600;padding:4px 0;line-height:1.4}#avatar-heading{font-size:1rem;margin:12px 0 6px}#optional-functions{margin:16px 0}.herkunft{margin-top:12px}.herkunft p{line-height:1.5}.avatar-search label{min-width:0}.panel{min-width:0}#body-measures label{display:block}#body-measures input{display:block;width:100%}#body-measures button{margin:4px}#female-standhinweis[hidden]{display:none}#male-load-progress{width:100%;height:16px}#male-load-progress[hidden]{display:none}
+@media(max-width:760px){
+ :root{color-scheme:light}.app{padding:10px}.layout{grid-template-columns:minmax(0,1fr);gap:10px}.panel{padding:10px}header h1{font-size:1.25rem}.steps{margin:6px 0 10px}.step:not([data-active=true]){display:none}.step{padding:4px 10px;border-radius:6px}.step[data-active=true]::after{content:' / 5'}.region-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.region-buttons button{padding:8px 10px;text-align:left}#text-path-note{margin:0 0 8px}.avatar-viewport{height:clamp(240px,43vh,400px)}.app:not([data-step="1"]) .workflow{order:-1}.choice small,.orteliste,.zoom-kette,.lexikon,.herkunft,.herkunft-body,#avatar-status,#avatar-treffer,pre.json,header p,.feinliste label,.anatomie-toolbar,.avatar-search select,.notice,#kopier-status{font-size:1rem!important}.choice{font-size:1rem}.anatomie-toolbar{gap:6px;margin-bottom:6px}#darstellungsregler{width:100%}.display-controls{display:grid;grid-template-columns:1fr;gap:6px}.display-controls .inline{display:flex;justify-content:space-between}.avatar-actions{gap:8px}.avatar-actions button{flex:1 1 auto}#female-standhinweis{font-size:1rem;line-height:1.35}#female-standhinweis summary{font-size:1rem}#safety-core{line-height:1.4}.herkunft summary{color:#14212e}.avatar-search{font-size:1rem}
+}
+@media(max-height:450px) and (orientation:landscape){.region-buttons{grid-template-columns:repeat(4,minmax(0,1fr))}.avatar-viewport{height:260px}.app{padding:8px}.steps{margin:4px 0}}
+
+@media(max-width:760px){#seite-hinweis,#fein-hinweis{font-size:16px!important}}
+
+/* Long provenance URLs must not enlarge the mobile layout viewport. */
+.panel,.herkunft{overflow-wrap:anywhere;max-width:100%}.panel select,.panel input{max-width:100%}
+#safety-core{background:var(--bg);padding:6px 0}
+.app{--notice-offset:12px}
+:where(button,input,select,section,#hotspots,[id^="schritt"],#avatar-heading){scroll-margin-top:var(--notice-offset,48px)}
+.app[data-step="1"] .workflow:has(#fertig-uebernehmen.hidden):has(#zusammenfassung.hidden){display:none}
+#avatar-geschlechtswahl button{appearance:none;background:#eef2f6;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 14px;font:inherit;cursor:pointer;min-height:44px;min-width:44px}
+#avatar-geschlechtswahl button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+
+/* Female notice occupies its own row; content cannot scroll underneath it. */
+.app[data-sex="weiblich"]{height:100dvh;display:flex;flex-direction:column;overflow:hidden}.notice-rail{flex:none}.app-content{min-height:0}.app[data-sex="weiblich"] .app-content{flex:1;overflow:auto;scroll-padding:12px}.height-embedded.app{height:auto;overflow:visible}.height-embedded.app .app-content{overflow:visible}
+@media(max-height:450px){.app[data-sex="weiblich"] header{display:none}#female-standhinweis{font-size:14px;line-height:1.25}#female-standhinweis summary{font-size:14px;min-height:44px}#safety-core{margin:0;padding:2px 0}.anatomie-toolbar{margin-top:0}}
+
+/* BR10: one compact disclosure row; the full label is the accessible name. */
+#mvp-hinweis{border:1px solid var(--line);border-radius:8px;background:var(--card);margin:0 0 6px;min-width:0}
+#mvp-hinweis summary{display:list-item;list-style-position:inside;white-space:normal;overflow:visible;overflow-wrap:normal;min-height:44px;padding:10px 8px;font-size:14px;line-height:24px;color:var(--ink)}
+.mvp-text{padding:0 10px 10px;line-height:1.45;font-size:16px}.mvp-text p{margin:0 0 12px}
+#mvp-kontakt{background:var(--accent);color:#fff;border-radius:8px;padding:10px 12px;text-decoration:none;min-height:44px}
+/* Keep the first region reachable in short landscape viewports. */
+@media(max-height:450px){.notice-rail header{display:none}}
+
+/* BR12: exploration is the first entrance; the pain workflow keeps its own view. */
+:root{color-scheme:light}.explore-tabs{display:flex;gap:8px;margin:8px 0}.explore-tabs button{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--ink);cursor:pointer;font-weight:650}.explore-tabs [aria-selected=true]{background:var(--accent);border-color:var(--accent);color:white}
+.app[data-mode=explore]{max-width:1220px}.app[data-mode=explore] header,.app[data-mode=explore] .steps,.app[data-mode=explore] #hotspots,.app[data-mode=explore] #text-path-note,.app[data-mode=explore] #avatar-heading,.app[data-mode=explore] #zoom-kette,.app[data-mode=explore] #schritt-region>h2,.app[data-mode=explore] .workflow,.app[data-mode=explore] #optional-functions,.app[data-mode=explore] #usage-info,.app[data-mode=explore] #daten-herkunft{display:none!important}
+.app[data-mode=explore] .layout{display:block}.app[data-mode=explore] #schritt-region{padding:16px;border-radius:20px;border:1px solid #d3e0e3;background:#fff}.app[data-mode=explore] #avatar-stage{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px 24px;align-items:start}
+.app[data-mode=explore] #avatar-stage>.avatar-viewport{grid-column:1;grid-row:1/6;height:100%;min-height:550px;align-self:stretch;background:linear-gradient(#eaf0f3,#f7f8fa)}
+.app[data-mode=explore] .avatar-search{grid-column:2;grid-row:1}.app[data-mode=explore] .layer-panel{grid-column:2;grid-row:2}.app[data-mode=explore] .discovery-card{grid-column:2;grid-row:3}.app[data-mode=explore] #avatar-lexikon{grid-column:2;grid-row:4;margin:0;line-height:1.55}.app[data-mode=explore] #technical-info{grid-column:2;grid-row:5;font-size:.9rem;color:var(--muted)}.app[data-mode=explore] .avatar-actions{grid-column:1;grid-row:6;margin:0}
+.avatar-search input{border:2px solid #7aa8a5;border-radius:12px;background:white;min-height:52px;padding:10px 12px}.avatar-search>label{font-weight:700}.quick-suggestions{display:flex;flex-wrap:wrap;gap:6px}.quick-suggestions button{border:1px solid #bbd9d6;background:#eff8f6;color:#174e48;border-radius:999px;min-height:44px;padding:6px 12px;font-size:.9rem;cursor:pointer}
+.layer-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.layer-button{min-height:54px;border:1px solid #b7cacd;border-radius:10px;padding:6px;background:#f3f6f8;color:#203d46;cursor:pointer;font-size:.9rem}.layer-button span{display:block;font-size:22px;line-height:22px}.layer-button[aria-pressed=true]{background:#d7f0e9;border:2px solid #126b60;color:#064a42;font-weight:700}.peel-label{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:.9rem}.peel-label input{flex:1;min-width:80px}.start-hint{font-size:.95rem;line-height:1.4;color:#425b66;margin:8px 0}.start-hint.dismissed{display:none}#layer-status{font-size:.9rem;color:#365b58;margin:6px 0}#male-load-progress{height:8px;accent-color:var(--accent)}.discovery-card{background:#f1f7f6;border:1px solid #d4e5df;border-radius:12px;padding:12px}#avatar-treffer{margin:0 0 8px}#avatar-treffer strong{display:block;font-size:1.45rem;color:#145c52}#avatar-treffer small{display:block;font-size:.86rem;color:#536870}#whole-body{border-radius:9px;min-height:44px}
+#search-results{max-height:280px;overflow:auto;padding:6px;border:1px solid #c4d8d6;border-radius:10px;background:#fff}#search-results[hidden]{display:none}#search-results p{margin:6px;font-size:.85rem;color:#486561}#search-results button{display:block;width:100%;text-align:left;padding:8px;margin:3px 0;border-radius:8px}#search-results small{display:block;font-size:.8rem;color:#536870}.app[data-mode=explore] .avatar-actions button{flex:1;font-size:.9rem}.app[data-mode=explore] #avatar-region,.app[data-mode=explore] #avatar-focus,.app[data-mode=explore] #avatar-body,.app[data-mode=explore] #avatar-gewebe,.app[data-mode=explore] #avatar-zelle,.app[data-mode=explore] #avatar-molekül{display:none}
+.app[data-mode=pain] .layer-panel{display:none}.app[data-mode=pain] .quick-suggestions{display:none}.app[data-mode=pain] .avatar-search{margin-top:10px}.app[data-mode=pain] .avatar-viewport{margin-top:8px}#technical-info select{max-width:100%;width:100%}
+@media(max-width:760px){
+ .app[data-mode=explore]{padding:8px}.explore-tabs{gap:6px}.explore-tabs button{font-size:.95rem;padding:8px}.app[data-mode=explore] #safety-core{font-size:.85rem;margin:2px 0;padding:2px 0}.app[data-mode=explore] #schritt-region{padding:8px;border-radius:14px}.app[data-mode=explore] #avatar-stage{display:flex;flex-direction:column;gap:8px}.app[data-mode=explore] #avatar-stage>*{width:100%;min-width:0}.app[data-mode=explore] .avatar-search{order:0;gap:6px}.app[data-mode=explore] .layer-panel{order:1}.app[data-mode=explore] #avatar-stage>.avatar-viewport{order:2;height:320px;min-height:0;flex:none}.app[data-mode=explore] .avatar-actions{order:3}.app[data-mode=explore] .discovery-card{order:4}.app[data-mode=explore] #avatar-lexikon{order:5}.app[data-mode=explore] #technical-info{order:6}.app[data-mode=explore] .layer-bar{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.app[data-mode=explore] .layer-button{font-size:11px;line-height:14px;padding:4px 2px;min-width:44px;min-height:58px}.app[data-mode=explore] .layer-button span{font-size:20px}.app[data-mode=explore] .quick-suggestions{gap:4px}.app[data-mode=explore] .quick-suggestions button{font-size:12px;padding:4px 8px}.app[data-mode=explore] .start-hint{font-size:12px;margin:4px 0}.peel-label{margin:0;font-size:13px}.avatar-search input{font-size:16px!important;min-height:48px}.avatar-search>label{font-size:.95rem}.app[data-mode=explore] #layer-status{font-size:12px;margin:2px 0}.app[data-mode=explore] #male-load-progress{margin:0}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+#canvas-name{display:none}#canvas-name[hidden]{display:none!important}
+@media(max-width:760px){.app[data-mode=explore] #canvas-name:not([hidden]){display:block;position:absolute;z-index:2;left:8px;right:8px;top:8px;background:#fffffff0;border:1px solid #bbd9d6;border-radius:10px;padding:8px;box-shadow:0 2px 10px #21443b15}.app[data-mode=explore] #canvas-name p{margin:0 0 4px}#canvas-name strong{display:block;font-size:20px;color:#145c52}#canvas-name small{display:block;font-size:12px;color:#536870}#canvas-reset{padding:6px 10px;border-radius:8px;font-size:13px}}
+@media(max-height:450px) and (orientation:landscape){.app[data-mode=pain] #schritt-region{display:flex;flex-direction:column}.app[data-mode=pain] #schritt-region>h2{order:0}.app[data-mode=pain] #text-path-note{order:1}.app[data-mode=pain] #hotspots{order:2}.app[data-mode=pain] .anatomie-toolbar{order:3}.app[data-mode=pain] #avatar-heading{order:4}.app[data-mode=pain] #zoom-kette{order:5}.app[data-mode=pain] #avatar-stage{order:6}}
+
+#search-results .quick-suggestions button{width:auto;border-radius:999px;margin:0;padding:6px 12px}#muscle-notice{font-size:.85rem;color:#536870;margin:6px 0}
+
+/* INT1: keep the fit limitation visible without pushing the figure off screen. */
+.female-fit{font-size:.85rem;line-height:1.35;margin:4px 0}
+.app[data-sex=weiblich][data-mode=explore] #avatar-stage>#female-load-progress{order:1}
+@media(max-width:760px){
+ .app[data-sex=weiblich][data-mode=explore] #avatar-stage>.avatar-viewport{order:-1;height:320px}
+}
+.app[data-sex=weiblich] #avatar-treffer,.app[data-sex=weiblich] #canvas-name p{overflow-wrap:anywhere}
+
+/* INT1M: neutral compact disclosure, with full provenance inside. */
+#female-standhinweis{background:var(--card);border-color:var(--line);color:var(--muted)}
+#female-standhinweis summary{font-weight:400}
+
+.atlas-open {margin-top:.4rem}
+.app:not([data-mode="explore"]) .atlas-open {display:none}
+.organ-atlas {width:min(42rem,92vw);max-height:90dvh;box-sizing:border-box;overflow:auto;padding:1rem 1.2rem;border:1px solid #b6ccd4;border-radius:1rem;background:#f8fbfc;color:#193747;box-shadow:0 1rem 4rem #132a4255}
+.organ-atlas::backdrop {background:#0d2537b3}
+.organ-atlas .atlas-heading {display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.75rem}
+.organ-atlas h2,.organ-atlas p {margin:.45rem 0}
+.organ-atlas label {display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.organ-atlas select {flex:1;min-width:0}
+.organ-atlas [hidden] {display:none}
+.organ-atlas .atlas-vessels {margin:.6rem 0}
+.organ-atlas .atlas-stage {overflow:hidden;border-radius:.65rem}
+.organ-atlas .atlas-stage canvas {max-height:51dvh;touch-action:none}
+.organ-atlas details {margin-top:.6rem;overflow-wrap:anywhere}
+.nerven-legende:not([hidden]) { display:flex; flex-wrap:wrap; gap:.3rem 1rem; margin:.4rem 0; }
+.nerven-legende span { display:inline-flex; align-items:center; gap:.4rem; font-size:.82rem; }
+.nerven-legende i { width:.7rem; height:.7rem; border-radius:50%; border:1px solid #405967; }
+
+/* Existing canvas gets more room while preserving the established mobile control order. */
+@media(max-width:760px){.app[data-mode=explore] #avatar-stage>.avatar-viewport{height:360px}.app[data-mode=pain] .avatar-viewport{height:clamp(360px,56dvh,480px)}}
+
+/* LAYOUT: the body is the primary surface; controls continue below it. */
+html body .app:is([data-mode=explore],[data-mode=pain],[data-mode=data]){
+  max-width:none;padding:2px;display:flex;flex-direction:column;height:auto;overflow:visible;
+}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data])>.notice-rail{display:flex;flex-direction:column;gap:2px}
+.app .explore-tabs{order:1;margin:0;gap:4px;flex:none}
+.app .explore-tabs button{min-height:44px;padding:4px 8px;font-size:14px}
+.app #female-standhinweis{order:3;margin:0 0 4px;padding:0 8px;flex:none}
+.app #female-standhinweis summary{font-size:14px;line-height:20px;min-height:44px;padding:4px 0}
+.app>.app-content{order:2;flex:none;overflow:visible;min-width:0}
+.app .notice-rail>header{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.app #safety-core{order:2;margin:0;padding:0 4px;font-size:12px;line-height:20px}
+.app #hd-banner{order:4;margin:4px 0;padding:4px 8px}
+.app #mvp-hinweis{order:0;margin:0}
+.app #mvp-hinweis summary{padding:2px 8px;line-height:20px;font-size:14px}
+.app:is([data-mode=explore],[data-mode=pain]) .layout{display:flex;flex-direction:column;gap:8px}
+.app:is([data-mode=explore],[data-mode=pain]) #schritt-region{
+  display:flex;flex-direction:column;padding:0;border:0;border-radius:0;
+}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) #avatar-stage{
+  display:flex;flex-direction:column;gap:8px;order:-1;min-width:0;
+}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) #avatar-stage>.avatar-viewport{
+  order:-1;width:100%;height:calc(var(--dht-viewport-height,100dvh) - var(--dht-rail-height,112px) - var(--dht-region-height,0px))!important;min-height:0!important;flex:none;
+  margin:0;border-radius:12px;background:#d9e6ec;
+}
+.app .avatar-viewport canvas{filter:contrast(1.16) saturate(1.18)}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) .avatar-search{order:1;margin:0}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) .layer-panel{order:2}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) .layer-bar{
+  display:flex;overflow-x:auto;gap:6px;padding:3px;scroll-padding:3px;
+}
+.app .layer-button{flex:1 0 106px;min-height:48px;font-size:14px}
+.app .layer-button span{display:inline;margin-right:6px;font-size:18px}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) .avatar-actions{order:0;margin:0;gap:6px}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) .discovery-card{order:3}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) #avatar-lexikon{order:4}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) #technical-info{order:5}
+.app:is([data-mode=explore],[data-mode=pain]) .workflow{order:1}
+.app[data-mode=pain] .steps{margin:4px 0}
+.app[data-mode=pain] #schritt-region>h2{order:0}
+.app[data-mode=pain] #schritt-region>#avatar-stage{order:-1}
+/* Example readings retain their existing DOM and handlers. No panel covers the body. */
+.app[data-mode=data]>.app-content{display:flex;flex-direction:column}
+.app[data-mode=data] .app-content>.layout{
+  order:0;position:relative;top:auto;left:auto;transform:none;width:100%;max-width:none;
+}
+.app[data-mode=data] #avatar-stage>.avatar-viewport{
+  height:calc(var(--dht-viewport-height,100dvh) - var(--dht-rail-height,112px) - var(--dht-region-height,0px))!important;min-height:0!important;border-radius:12px;
+}
+.app[data-mode=data] #hd-workspace{order:1;min-height:0;padding:8px}
+.app[data-mode=data] .hd-organ-list{
+  padding-top:0;width:100%;display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;
+}
+.app[data-mode=data] .hd-organ-list>h2,.app[data-mode=data] .hd-list-note{flex-basis:100%}
+.app[data-mode=data] .hd-organ-list>button{flex:1 1 140px}
+.app[data-mode=data] .hd-workspace .hd-welcome:not([hidden]){
+  position:relative;top:auto;left:auto;right:auto;width:auto;padding:12px;
+}
+/* Preserve the proven card/chart space; keep the field on screen. */
+.app[data-mode=data] .hd-organ-panel{
+ position:fixed;top:auto;right:8px;bottom:4px;left:auto;width:420px;
+ height:560px;max-height:calc(100dvh - 8px);margin:0;border-radius:14px;z-index:20;
+}
+.app[data-mode=data] .hd-organ-panel.hd-expanded,
+.app[data-mode=data] .hd-organ-panel:has(details[open]){
+ position:fixed;top:auto;right:8px;bottom:4px;left:auto;
+ width:min(700px,calc(100vw - 260px));height:calc(100dvh - 170px);
+}
+.app[data-mode=data] .hd-grip{display:none}
+@media(min-width:761px) and (max-width:1100px){
+ .app[data-mode=data] .hd-organ-panel{width:330px}
+ .app[data-mode=data] .hd-organ-panel.hd-expanded,
+ .app[data-mode=data] .hd-organ-panel:has(details[open]){width:min(700px,calc(100vw - 260px))}
+}
+@media(max-width:760px){
+ .app[data-mode=data] .hd-organ-panel{
+  left:0;right:0;bottom:0;width:100%;height:49dvh;max-height:none;border-radius:22px 22px 0 0;
+ }
+ .app[data-mode=data] .hd-organ-panel.hd-expanded,
+ .app[data-mode=data] .hd-organ-panel:has(details[open]){
+  left:0;right:0;bottom:0;width:100%;height:92dvh;max-height:none;
+ }
+ .app[data-mode=data] .hd-grip{display:block}
+}
+@media(max-height:450px){
+  .app .explore-tabs button{font-size:12px}
+}
+
+.app[data-mode=pain]>.app-content{display:flex;flex-direction:column}
+.app[data-mode=pain] .app-content>.layout{order:0}
+.app[data-mode=pain] .steps{order:1}
+.app[data-mode=pain] .app-content>.herkunft{order:2}
+
+.app[data-mode=pain] #hotspots{order:-2;display:flex;flex-wrap:nowrap;overflow-x:auto;margin:0 0 4px;gap:6px}
+.app[data-mode=pain] #hotspots button{flex:0 0 140px;min-height:44px}
+
+@media(max-width:360px){.app .explore-tabs button{font-size:12px}}
+@media(max-height:450px){
+ .app:is([data-mode=explore],[data-mode=pain],[data-mode=data])>.notice-rail{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+ .app #mvp-hinweis{grid-column:1;grid-row:1}
+ .app .explore-tabs{grid-column:2;grid-row:1}
+ .app #safety-core{grid-column:1/-1;grid-row:2}
+ .app #female-standhinweis{grid-column:1/-1;grid-row:3}
+}
+
+/* Measure the notice rail once per layout change, so the whole figure fits. */
+html body .app[data-sex=weiblich]{height:100dvh;overflow:hidden}
+html body .app[data-sex=weiblich]>.app-content{flex:1;min-height:0;overflow:auto}
+html body .app.height-embedded{height:auto;overflow:visible}
+html body .app.height-embedded>.app-content{flex:none;overflow:visible}
+.app[data-mode=pain]{--dht-region-height:48px}
+
+.app[data-mode=pain] #hotspots button{
+ flex:0 0 auto;min-width:100px;height:44px;min-height:44px;
+ padding:4px 12px;line-height:20px;white-space:nowrap;
+}
+
+/* One visible layer control; the existing detail controls keep their handlers. */
+.app .dht-navigation{display:grid;grid-template-columns:minmax(0,1fr) 106px;gap:4px;align-items:start;order:1;min-width:0}
+.app .dht-navigation>.explore-tabs{display:flex;min-width:0;margin:0;gap:4px;grid-column:1;grid-row:1}
+body .app .dht-navigation>.explore-tabs button{flex:1 1 0;min-width:0;min-height:44px;padding:4px;font-size:14px;white-space:normal}
+.app .dht-layer-select{display:flex;align-items:center;min-width:0;min-height:44px;font-size:0;margin:0;grid-column:2;grid-row:1}
+.app .dht-layer-select select{width:100%;min-width:0;min-height:44px;max-width:100%;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px}
+@media(max-width:760px){body .app .dht-navigation>.explore-tabs button{font-size:12px}}
+@media(max-width:360px){body .app .dht-navigation>.explore-tabs button{font-size:11px}}
+@media(max-height:450px){.app .dht-navigation{grid-column:2;grid-row:1}}
+.app:is([data-mode=explore],[data-mode=pain],[data-mode=data]) #avatar-stage>.avatar-viewport{background:radial-gradient(ellipse at 45% 26%,#426b80 0%,#294d66 57%,#183649 100%)!important}
+
+/* An open measurement history owns the expanded height; its summary closes it. */
+.hd-organ-panel:has(details[open]) .hd-grip { display:none; }
+
+/* Let a vertical touch gesture reach the controls below the body. */
+@media(pointer:coarse){.avatar-viewport > #avatar-canvas{touch-action:pan-y!important}}
+
+
+/* The canvas and the controls own separate viewport rectangles in every mode. */
+html,html body{height:100%;overflow:hidden}
+html body .app[data-mode]:is([data-mode=explore],[data-mode=pain],[data-mode=data]){height:100dvh;max-width:none;padding:2px;overflow:hidden}
+html body .app[data-mode]>.notice-rail{flex:none}
+html body .app[data-mode]>.app-content{display:block;position:fixed;left:var(--dht-dock-left);top:var(--dht-dock-top);width:var(--dht-dock-width);height:var(--dht-dock-height);overflow:auto;overscroll-behavior:contain;min-height:0;padding:2px;box-sizing:border-box}
+html body .app[data-mode] .app-content>.layout{position:static;transform:none;width:100%;max-width:none;display:flex;flex-direction:column}
+html body .app[data-mode] #schritt-region{padding:0;border:0;min-width:0}
+html body .app[data-mode] #avatar-stage{display:flex;flex-direction:column;min-width:0}
+html body .app[data-mode] #avatar-stage>.avatar-viewport{position:fixed;left:2px;top:var(--dht-canvas-top);width:var(--dht-canvas-width);height:var(--dht-canvas-height)!important;min-height:0!important;max-width:none;border-radius:10px;overflow:hidden;margin:0;z-index:1}
+html body .app[data-mode] .dht-notices{font-size:12px;line-height:1.4;margin-bottom:8px}
+html body .app[data-mode] .dht-notices #mvp-hinweis summary{font-size:12px;line-height:1.35;padding:4px;min-height:44px}
+html body .app[data-mode] .dht-notices #safety-core{font-size:12px;line-height:1.4;margin:4px}
+html body .app[data-mode] .avatar-search{order:-2}
+html body .app[data-mode] #hd-workspace{padding:0;min-height:0}
+html body .app[data-mode] .hd-organ-list{display:flex;flex-direction:column;gap:6px;width:100%;padding-top:0}
+html body .app[data-mode] .hd-organ-list>button{flex:none;width:100%;overflow-wrap:anywhere}
+html body .app[data-mode] .hd-intro{padding:4px 0 8px}
+html body .app[data-mode] .hd-intro h1{font-size:22px}
+html body .app[data-mode] .hd-view-switch{flex-wrap:wrap}
+html body .app[data-mode] .hd-workspace .hd-welcome:not([hidden]){position:static;width:auto;padding:8px}
+html body .app[data-mode] .hd-organ-panel,
+html body .app[data-mode] .hd-organ-panel.hd-expanded,
+html body .app[data-mode] .hd-organ-panel:has(details[open]){position:fixed;left:var(--dht-dock-left);top:var(--dht-dock-top);right:auto;bottom:auto;width:var(--dht-dock-width);height:var(--dht-dock-height);max-height:var(--dht-dock-height);box-sizing:border-box;border-radius:12px;z-index:20;animation:none}
+html body .app[data-mode] .hd-panel-heading{flex:none;padding:4px 8px;gap:2px;flex-wrap:wrap}
+html body .app[data-mode] .hd-panel-heading h2{font-size:18px;overflow-wrap:anywhere;flex:1;min-width:0}
+html body .app[data-mode] .hd-panel-example{font-size:11px;line-height:1.3}
+html body .app[data-mode] .hd-panel-content{min-height:0;padding:0 8px;overflow:auto;overscroll-behavior:contain}
+html body .app[data-mode] .hd-doctor{padding:4px 8px;font-size:11px}
+html body .app[data-mode] .hd-card{padding:10px 0}
+html body .app[data-mode] .hd-periods{flex-wrap:wrap}
+html body .app[data-mode] .hd-large-chart{overflow-x:auto}
+html body .app[data-mode] .hd-large-chart svg{min-width:280px;height:180px}
+html body .app[data-mode] .hd-series summary{min-height:44px}
+html body .app[data-mode] .hd-grip{display:none}
+html body .app[data-mode][data-dock=bottom] .hd-grip,
+html body .app[data-mode][data-dock=bottom] .hd-organ-panel:has(details[open]) .hd-grip{display:block;flex:none;min-height:24px!important;height:24px}
+html body .app[data-mode][data-dock=bottom] .hd-panel-heading{flex-wrap:nowrap}
+html body .app[data-mode][data-dock=bottom] .hd-panel-example{flex-basis:auto;max-width:90px}
+html body .app[data-mode][data-dock=bottom] .hd-panel-heading h2{font-size:16px}
+html body .app[data-mode][data-dock=bottom] .hd-organ-list{display:grid;grid-template-columns:1fr 1fr}
+html body .app[data-mode][data-dock=bottom] .hd-organ-list>h2,html body .app[data-mode][data-dock=bottom] .hd-list-note{grid-column:1/-1}
+html body .app[data-mode] .hd-workspace[hidden],html body .app[data-mode] .hd-workspace [hidden]{display:none!important}
+
+html body .app[data-mode] #avatar-stage>#canvas-name,
+html body .app[data-mode] #avatar-stage>#zoom-panel,
+html body .app[data-mode] #avatar-stage>#zoom-surface{position:static;inset:auto;width:100%;padding:8px;box-sizing:border-box;order:0;max-height:none;margin:4px 0;box-shadow:none;overflow:auto}
+html body .app[data-mode] #avatar-stage>#zoom-surface{height:260px;min-height:200px}
+html body .app[data-mode] #avatar-stage>#zoom-surface canvas{max-width:100%}
+html body .app[data-mode] #avatar-stage>#zoom-panel #zoom-steps{flex-wrap:wrap}
+html body .app[data-mode] #avatar-stage>#zoom-panel #zoom-steps button{flex:1 1 60px}
+/* All navigation spans the rail; the former landscape notice column is empty. */
+html body .app[data-mode]>.notice-rail{display:block}
+html body .app[data-mode] .hd-panel-content{scroll-padding-block:12px}
+html body .app[data-mode] .hd-series>summary{scroll-margin-block:12px}
+
+@media(max-width:600px) and (orientation:portrait){html body .app[data-mode] .hd-card:has(details[open]) .hd-large-chart svg{height:72px}html body .app[data-mode] .hd-large-chart .hd-axis{font-size:11px;margin:2px 0}}
