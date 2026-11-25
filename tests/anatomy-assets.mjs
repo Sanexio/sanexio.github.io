@@ -45,8 +45,10 @@ for (const [slug, count] of Object.entries({
   'mitbauen-wie-nutzer-den-dht-mitgestalten': 2, 'health-graph-engine-des-dht': 3,
 })) {
   const html = await readFile(`dist/blog/${slug}/index.html`, 'utf8');
-  const json = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s);
-  const graph = JSON.parse(json[1])['@graph'];
+  const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].map(match => JSON.parse(match[1]));
+  const graphs = schemas.filter(schema => Array.isArray(schema['@graph']));
+  assert.equal(graphs.length, 1, `${slug}: expected one gallery graph`);
+  const graph = graphs[0]['@graph'];
   assert.equal(graph.filter(x => x['@type'] === '3DModel').length, count);
   assert.equal(graph.filter(x => x['@type'] === 'ImageObject').length, count);
   for (const entry of graph) { assert(entry.creditText); assert(entry.license.startsWith('https://')); }
