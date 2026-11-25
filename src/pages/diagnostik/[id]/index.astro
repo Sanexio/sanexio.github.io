@@ -24,7 +24,7 @@ const description = item.lead || item.name;
       <h1>{item.name}</h1>
       {item.lead && <p class="sx-lead">{item.lead}</p>}
       {item.body ? <div set:html={item.body} /> : <p>Weitere Informationen zu dieser Untersuchung erhältst Du auf Anfrage.</p>}
-      <div class="sx-actions"><a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a></div>
+      <div class="sx-actions">{item.cta_url ? <a class="sx-btn sx-btn-primary" href={item.cta_url}>{item.cta_label || 'Termin vereinbaren'}</a> : <a class="sx-btn" href="/#kontakt">Kontakt aufnehmen</a>}</div>
     </div>
     {program && <div class="sx-container"><LaborProgramCard {program} infoboxHeading={laborData.infobox_heading} disclaimerDu={laborData.disclaimer_du} /></div>}
   </main>
