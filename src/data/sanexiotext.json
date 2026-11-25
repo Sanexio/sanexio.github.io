@@ -1,0 +1,204 @@
+{
+  "dht": {
+    "ueberschrift": "Deine Gesundheit. Deine Daten. Dein Twin.",
+    "einleitung": "Der Digital Health Twin soll Deine Gesundheitsdaten als digitale Patientenakte bündeln – in einem Abbild von Dir. Dein Laborwert soll direkt am Organ erscheinen, statt in einer Zahlenkolonne.",
+    "punkte": [
+      {
+        "titel": "Du entscheidest",
+        "text": "Befunde, Werte und Verläufe sollen in Deinem Twin zusammenlaufen. Du bestimmst, wer was sehen darf, und kannst Freigaben jederzeit ändern."
+      },
+      {
+        "titel": "Brücke zur Praxis",
+        "text": "Ärzt:innen sollen Dir Programme anbieten, deren Ergebnisse in Deinen Twin fließen. So sprecht Ihr über echte Verläufe statt über Erinnerungen."
+      },
+      {
+        "titel": "Selbst trainieren",
+        "text": "Ein Trainingsprogramm soll Dir zeigen, wie Du Deine Gesundheit selbst beeinflusst. Heute zeigt die Demo mit Beispieldaten Körper, Messreihen und „Wo tut es weh?“."
+      }
+    ]
+  },
+  "cortex": {
+    "ueberschrift": "Cortex ist die Plattform, Nexus der Motor",
+    "unterzeile": "Cortex verbindet. Nexus verarbeitet.",
+    "absaetze": [
+      "Stell Dir Cortex wie einen App-Store für Gesundheit vor: Hier entstehen der Digital Health Twin, Praxis-Webseite, Patientenportal und Werkzeuge für die Praxisorganisation.",
+      "Nexus ist der Motor darunter. Er verarbeitet die Daten, und die Nexus-KI rechnet direkt auf Deinem Gerät, mit MLX von Apple.",
+      "So soll ein Netz entstehen, über das Ärzt:innen ihre Programme zu Patient:innen bringen. Dahinter steht die Sanexio GmbH, gegründet von einem Arzt."
+    ]
+  },
+  "aktuell": {
+    "ueberschrift": "DHT aktuell: Dein Körper in 3D",
+    "einleitung": "Stand 25.11.2026: Das ist neu, das prüfen wir gerade, und daran bauen wir noch. Ehrlich sortiert, alles mit Beispieldaten.",
+    "eintraege": [
+      {
+        "titel": "3D-Twin mit sechs Ebenen",
+        "text": "Sechs Ebenen bis hinunter zu Nerven und Gefäßen, als männliche und weibliche Figur, mit Messreihen je Organ. Alles mit Beispieldaten.",
+        "status": "neu"
+      },
+      {
+        "titel": "Neues Dashboard",
+        "text": "Der Twin in der Mitte, Navigation links, Erklärungen rechts. Den ganzen Körper greifen und verschieben, Messpunkte bleiben stabil.",
+        "status": "in Abnahme"
+      },
+      {
+        "titel": "Wo tut es weh?",
+        "text": "Das Anamnese-Werkzeug fragt, wo es wehtut. Deine Eingaben bleiben auf Deinem Gerät, nichts wird übertragen.",
+        "status": "in Abnahme"
+      },
+      {
+        "titel": "Schneller Start",
+        "text": "Erster sichtbarer Körper am Desktop in 0,71 statt 1,51 Sekunden (lokal gemessen), am Handy mit 4G in 2,2.",
+        "status": "neu"
+      },
+      {
+        "titel": "Reise durch Deinen Körper",
+        "text": "9 Laborprogramme und 17 Check-up-Untersuchungen, anschaulich in 3D erklärt. Schon live.",
+        "status": "neu"
+      },
+      {
+        "titel": "iPhone-App mit Haut-Ebene",
+        "text": "Sieben Ebenen einschließlich Haut, in Gerätetests auf echten iPhones. Die Face-ID- und HealthKit-Abnahme steht noch aus.",
+        "status": "in Entwicklung"
+      }
+    ],
+    "hinweis": "Entwicklungsprototyp mit Beispieldaten und Referenzmodellen: kein individuelles Körpermodell, keine Diagnose."
+  },
+  "roadmap": {
+    "ueberschrift": "Wohin die Reise geht: sechs Etappen",
+    "einleitung": "Dein Digital Health Twin läuft heute schon als Entwicklungsstand. Hier siehst Du, wohin wir ihn führen: von Deiner Akte über ärztliche Programme bis zur Plattform für Praxen. Ziele sind Ziele, keine Termine.",
+    "eintraege": [
+      {
+        "titel": "Twin zum Anfassen",
+        "zeitraum": "Heute · Stand 25.11.2026",
+        "text": "Du drehst Deinen Körper in 3D, schaltest Ebenen durch und siehst, wo Messwerte hingehören.",
+        "status": "läuft",
+        "ergebnisse": [
+          "3D-Twin mit 6 Ebenen inklusive Nerven und Gefäßen, männlich und weiblich, Messreihen je Organ (46/46 Prüffälle grün, alles mit Beispieldaten)",
+          "„Wo tut es weh?“: Anamnese-Werkzeug, Eingaben bleiben auf Deinem Gerät",
+          "„Reise durch Deinen Körper in 3D“ live mit 9 Laborprogrammen und 17 Check-up-Untersuchungen; iOS-App mit 7 Ebenen im Test auf echten iPhones"
+        ]
+      },
+      {
+        "titel": "Deine digitale Akte",
+        "zeitraum": "Als Nächstes · Ziel, nicht terminiert",
+        "text": "Aus dem Twin wird Deine medizinische Akte, und Du entscheidest, was hineinkommt und wer es sieht.",
+        "status": "geplant",
+        "ergebnisse": [
+          "Gesundheitsdaten (z. B. aus HealthKit) fließen nur nach Deiner ausdrücklichen Freigabe ein",
+          "Verlaufsdiagramme zeigen Messwerte und ihre Entwicklung über die Zeit",
+          "Freigaben an Ärzt:innen sollen nachvollziehbar und widerrufbar werden (Zielbild)"
+        ]
+      },
+      {
+        "titel": "Brücke zur Ärzt:in",
+        "zeitraum": "Danach · Ziel, nicht terminiert",
+        "text": "Der Twin verbindet Dich mit Deiner Ärzt:in: Ärztliche Programme laufen darüber, ihre Ergebnisse landen in Deinem Twin.",
+        "status": "geplant",
+        "ergebnisse": [
+          "Ärztliche Programme, zum Start Check-ups, speisen ihre Ergebnisse in Deine Akte ein",
+          "Trainingsprogramm für Deine eigene Gesundheitsoptimierung, begleitet von Deiner Ärzt:in",
+          "Erste Mit-Ärzt:innen als Beta-Anwender:innen, ausgehend von der eigenen Praxis"
+        ]
+      },
+      {
+        "titel": "Netz für Programme",
+        "zeitraum": "Ziel nach der Pilotphase · offen",
+        "text": "Der Twin wird zum Verteilweg: Ärzt:innen bringen ihre Programme direkt zu Patient:innen.",
+        "status": "geplant",
+        "ergebnisse": [
+          "Programme aus mehreren Praxen erreichen Patient:innen über denselben Twin",
+          "Stufe 1 Check-ups, Stufe 2 Longevity",
+          "Wir wollen Drittanbieter-Software ersetzen, statt eine weitere danebenzustellen"
+        ]
+      },
+      {
+        "titel": "Cortex für Praxen",
+        "zeitraum": "Parallel in Vorbereitung · Ziel, nicht terminiert",
+        "text": "Cortex wird der App-Store für Praxen: Anwendungen für den Praxisalltag, die zusammenspielen und auch ohne Nexus laufen.",
+        "status": "geplant",
+        "ergebnisse": [
+          "Erste Praxis-App (Zeiterfassung) als Pilot für Mac, Linux und Windows; Herauslösen aus dem Bestandscode ist erledigt (Stand 16.10.2026), Portierung offen",
+          "Eigener Store mit signierten Updates und Lizenzprüfung (Entscheid: eigener Store zuerst)",
+          "Weitere Kandidaten laut Konzept: Dokumenten-Workflows, Qualitätsmanagement, Verwaltung der Praxis-Webseite"
+        ]
+      },
+      {
+        "titel": "Nexus-KI auf Deinem Gerät",
+        "zeitraum": "Langfristiges Ziel · ohne Datum",
+        "text": "Nexus wird die Engine im Hintergrund: eigene KI, die mit Apples MLX auf Deinem Gerät rechnet, damit Deine Daten bei Dir bleiben.",
+        "status": "geplant",
+        "ergebnisse": [
+          "Nexus-KI rechnet lokal auf iPhone und Mac",
+          "Fachlich geprüfte Spezialisierung für Medizin mit nachvollziehbaren Evaluationen",
+          "Eigenes Modell auf eigenem Server in Deutschland; am Ende läuft die Plattform ohne externe KI-Abhängigkeit („Vision erreicht“)"
+        ]
+      }
+    ]
+  },
+  "apps": {
+    "ueberschrift": "Eine Plattform statt vieler Einzeldienste",
+    "einleitung": "Dienstplan hier, Qualitätsmanagement dort, Dokumente irgendwo dazwischen? Cortex holt die Werkzeuge Deiner Praxis unter ein Dach: ein Zugang, ein Stil, jede App einzeln nutzbar.",
+    "eintraege": [
+      {
+        "titel": "Praxissoftware-Anbindung",
+        "text": "Wiederkehrende Aufgaben wie Recalls und Regeln in Deiner Praxissoftware entstehen reproduzierbar aus geprüften Vorlagen statt per Hand – das spart Klickarbeit und vermeidet vergessene Nachsorge.",
+        "status": "im Einsatz (in der eigenen Praxis); Weiterentwicklung läuft"
+      },
+      {
+        "titel": "Qualitätsmanagement",
+        "text": "QM-Module, Volltextsuche und ein Anmerkungs-Workflow: Das Team kommentiert direkt an der Stelle, Du gibst frei, und die Verbesserung fließt zurück – statt Ordner, die niemand liest.",
+        "status": "im Einsatz (in der eigenen Praxis); als Produkt für andere Praxen in Vorbereitung"
+      },
+      {
+        "titel": "Dokumente & Schreibdienst",
+        "text": "Befunde, Amtsanfragen, Kassen- und Behördenpost nach festen Regeln bearbeiten und Scans einheitlich benennen – weniger Suchen, weniger Ablage-Chaos.",
+        "status": "im Einsatz (in der eigenen Praxis); als Produkt für andere Praxen in Vorbereitung"
+      },
+      {
+        "titel": "Dienstplan & Zeiterfassung",
+        "text": "Arbeitszeiten, Berichte und Erinnerungen in einer App auf eigener Infrastruktur – weniger Zettelwirtschaft bei der Abrechnung der Stunden.",
+        "status": "im Einsatz (Pilot-App); Weiterentwicklung läuft"
+      },
+      {
+        "titel": "Praxis-Webseite",
+        "text": "Deine Webseite mit einheitlichem Design und zentral gepflegten Inhalten wie Untersuchungen und Laborprogrammen – ein Pflegeort statt mehrerer Baustellen.",
+        "status": "im Einsatz"
+      },
+      {
+        "titel": "Überweisung & Befundaustausch",
+        "text": "Eine Plattform für Überweisungen und Befunde innerhalb einer Praxisgemeinschaft, mit verschlüsselten Anhängen – weniger Faxen und Nachtelefonieren.",
+        "status": "in Entwicklung"
+      },
+      {
+        "titel": "Beleg-Abgleich & Kalkulation",
+        "text": "Bankbuchungen und Belege werden automatisch vorgeschlagen und zugeordnet (Du bestätigst); anteilige Kosten in Praxisgemeinschaften sollen sich per Knopfdruck berechnen lassen – weniger Excel-Handarbeit zum Monatsende.",
+        "status": "in Entwicklung (Kalkulation noch nicht produktiv)"
+      },
+      {
+        "titel": "Sprachsteuerung & Dokumenterstellung",
+        "text": "Klinische Dokumente per Sprache und KI-Unterstützung erzeugen, wobei die Verarbeitung lokal auf dem eigenen Gerät bleibt – weniger Tippen, keine Daten auf fremden Servern.",
+        "status": "in Entwicklung (Modellprüfung)"
+      },
+      {
+        "titel": "Academy",
+        "text": "Der Wegweiser durch Cortex: Zu jeder App gibt es Anleitung und Erklärung – Dein Team findet Antworten, statt zu raten.",
+        "status": "in Entwicklung (inkl. iOS-Gerüst)"
+      },
+      {
+        "titel": "Marketing & Beiträge",
+        "text": "Kampagnen und Social-Media-Beiträge der Praxis an einem Ort vorbereiten – weniger Last-Minute-Posten.",
+        "status": "in Entwicklung"
+      },
+      {
+        "titel": "App-Store für Praxen",
+        "text": "Das Dach über allem: Apps einzeln dazubuchen, jede läuft auch allein, auf Mac, Linux und Windows – Du nutzt nur, was Deine Praxis braucht.",
+        "status": "geplant (Konzept liegt vor, Umsetzung in ersten Schritten)"
+      },
+      {
+        "titel": "Digital Health Twin (DHT)",
+        "text": "Brücke zwischen Patient:in und Praxis: 3D-Körper mit sechs Ebenen, Messreihen je Organ und das Anamnese-Werkzeug „Wo tut es weh?“ – derzeit mit Beispieldaten, kein Diagnoseinstrument.",
+        "status": "in Entwicklung (Browser-Fassung in Abnahme, iOS-App in Gerätetests)"
+      }
+    ]
+  }
+}

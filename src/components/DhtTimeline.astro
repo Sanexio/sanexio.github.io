@@ -1,10 +1,10 @@
 ---
-import { dhtPhases } from '../data/dht-phases';
+import data from '../data/sanexiotext.json';
+const d = data.dht;
 ---
 <section class="sx-section" id="dht"><div class="sx-container">
- <p class="sx-eyebrow">Ein Produkt der Cortex-Palette</p><h2>Digital Health Twin.<br />Ein gemeinsames Bild der Gesundheit.</h2>
- <p class="sx-lead">Der Digital Health Twin läuft auf der Nexus-Engine. Er ordnet gesundheitliche Informationen im Verlauf ein und verbindet Patient:innen mit ihren Ärzt:innen.</p>
+ <p class="sx-eyebrow">Digital Health Twin</p><h2>{d.ueberschrift}</h2><p class="sx-lead">{d.einleitung}</p>
  <p><a class="sx-btn" href="/dht/">DHT-Vorschau (MVP) öffnen</a></p>
- <div class="sx-grid sx-grid-three">{dhtPhases.map((p, i) => <article class="sx-card"><span class="sx-number" aria-hidden="true">0{i + 1}</span><h3>{p.name}</h3><p>{p.description}</p></article>)}</div>
+ <div class="sx-grid sx-grid-three">{d.punkte.map(p => <article class="sx-card"><h3>{p.titel}</h3><p>{p.text}</p></article>)}</div>
  <p class="sx-note" style="margin-top: 1.5rem">Der Twin befindet sich in Entwicklung. Er ersetzt keine ärztliche Untersuchung und keine ärztliche Entscheidung.</p>
 </div></section>
