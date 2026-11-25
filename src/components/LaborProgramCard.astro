@@ -24,9 +24,10 @@ interface Props {
   program: Program;
   infoboxHeading: string;
   disclaimerDu: string;
+  detail?: boolean;
 }
 
-const { program, infoboxHeading, disclaimerDu } = Astro.props;
+const { program, infoboxHeading, disclaimerDu, detail = false } = Astro.props;
 
 const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzte (GOÄ). Dieses Programm umfasst ${program.anzahl_ziffern} Laborpositionen mit folgenden GOÄ-Ziffern: ${program.ziffern_gruppiert}.`;
 
@@ -36,7 +37,7 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
   <header class="labor-card-head">
     <div>
       <p class="sx-eyebrow" style="margin-bottom: 0.5rem">Laborprogramm</p>
-      <h2 class="labor-shop">{program.shop_name}</h2>
+      {detail ? <p class="labor-shop">{program.shop_name}</p> : <h2 class="labor-shop">{program.shop_name}</h2>}
       <p class="labor-praxis">{program.praxis_name}</p>
     </div>
     <LaborVisual program={program} />
@@ -45,7 +46,7 @@ const infoboxBody = `Die Abrechnung erfolgt nach der Gebührenordnung für Ärzt
   <LaborPrice amount={program.goae_summe_eur} />
 
   <aside class="goae-infobox" aria-labelledby={`${program.praxis_slug}-goae-title`}>
-    <h3 id={`${program.praxis_slug}-goae-title`}>{infoboxHeading}</h3>
+    {detail ? <h2 id={`${program.praxis_slug}-goae-title`}>{infoboxHeading}</h2> : <h3 id={`${program.praxis_slug}-goae-title`}>{infoboxHeading}</h3>}
     <p>{infoboxBody}</p>
   </aside>
 

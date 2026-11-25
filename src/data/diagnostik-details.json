@@ -7,7 +7,9 @@
     "body": "<p>Mit jedem Atemzug nehmen wir etwa 0,5 Liter Luft in die Lungen auf — rund 10 Liter pro Minute, 14.400 Liter am Tag und über fünf Millionen Liter im Jahr. Damit ist die Lunge das Organ, das am direktesten mit der Außenwelt in Kontakt steht. Die Lungen enthalten bis zu 500 Millionen Lungenbläschen mit einer Gesamtoberfläche von etwa 70 Quadratmetern.</p>\n\n\n<p>Die Messung erfasst unter anderem das ausgeatmete Volumen in einer Sekunde und das maximale Atemvolumen. Abweichungen können auf Asthma, chronisch obstruktive Lungenerkrankung (COPD) oder andere Lungenerkrankungen hinweisen — die Einordnung erfolgt immer im Gesamtbild mit Beschwerden, Vorgeschichte und gegebenenfalls weiteren Untersuchungen.</p>\n\n<p>Bitte verzichten Sie vor dem Termin auf Rauchen und starke koffeinhaltige Getränke, sofern nichts anderes mit uns vereinbart ist. Bringen Sie Ihre üblichen Medikamente und eine Liste Ihrer Atemwegsmedikamente mit, damit wir die Messung richtig interpretieren können.</p>\n\n<p>Die Lunge kann durch Schadstoffe, angeborene Veränderungen oder Infektionen geschädigt werden. Mit der Spirometrie lässt sich die Lungenfunktion einfach und schmerzfrei beurteilen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Wir setzen Ihnen zunächst eine Nasenklammer auf, da die Messung der Luftströme ausschließlich über den Mund erfolgt. Sie atmen anschließend nach Anleitung über ein Mundstück und führen vorgegebene Atemmanöver durch.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Lungenfunktion?",
+    "heading": "Lungenfunktion (Spirometrie)"
   },
   {
     "id": "ergometrie",
@@ -17,7 +19,9 @@
     "body": "<p>Das Belastungs-EKG (Ergometrie) prüft die Belastungsfähigkeit Ihres Herzens. Während der Untersuchung kann das Herz bis zu dreimal pro Sekunde schlagen und das Blut durch das gesamte Gefäßsystem von rund 100.000 Kilometern Länge pumpen.</p>\n\n\n<p>Beim Belastungs-EKG (Ergometrie) steigern wir die Belastung in festen Schritten, während das EKG den Herzrhythmus und mögliche Hinweise auf eine Minderdurchblutung des Herzmuskels (zum Beispiel Veränderungen der ST-Strecke) unter Belastung aufzeichnet. So sehen wir, ob der Herzmuskel bei Alltags- oder Sportbelastung ausreichend mit Sauerstoff versorgt wird.</p>\n\n\n<p>Das Verfahren eignet sich zur Abklärung von Belastungsbeschwerden wie Druck auf der Brust, Atemnot oder ungewöhnlicher Erschöpfung, wenn das Ruhe-EKG unauffällig ist. Es hilft auch bei der Kontrolle nach Herzinfarkt oder bei der Einschätzung der Belastbarkeit vor Sport oder bestimmten Berufen — immer zusammen mit Ihrer Vorgeschichte und weiteren Befunden.</p>\n\n<p>Bitte kommen Sie in bequemer Kleidung und festen Schuhen. Ein leichtes Frühstück ist in Ordnung; verzichten Sie auf schwere Mahlzeiten und intensives Training unmittelbar vor dem Termin. Medikamente nehmen Sie wie vereinbart; wichtige Veränderungen besprechen wir vorher mit Ihnen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Sie fahren auf einem Ergometer (stationäres Fahrrad). Alle zwei Minuten erhöhen wir die Wattzahl. Während der gesamten Untersuchung schreiben wir ein EKG und überwachen Blutdruck und Sauerstoffsättigung. Über Telemonitoring wird das EKG durchgehend von einer Ärztin oder einem Arzt überwacht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für ein Belastungs-EKG?",
+    "heading": "Belastungs-EKG (Ergometrie)"
   },
   {
     "id": "gaming-reaktionszeit",
@@ -27,17 +31,46 @@
     "body": "<p>Beim Eye-Check fertigen wir eine hochauflösende Aufnahme Ihrer Netzhaut an. Eine medizinisch zertifizierte KI-Plattform analysiert das Bild und erkennt frühe Hinweise auf diabetische Retinopathie — eine der häufigsten Ursachen für Sehverlust im Erwerbsalter, die sich über Jahre ohne Beschwerden entwickelt. Auch andere Veränderungen am Augenhintergrund, die auf systemische Erkrankungen hinweisen können, werden mit erfasst.</p>\n\n<p>Die Untersuchung dauert wenige Minuten, ist berührungslos und schmerzfrei. Pupillenerweiternde Tropfen sind in der Regel nicht erforderlich, sodass Sie unmittelbar nach dem Termin wieder uneingeschränkt sehen und am Verkehr teilnehmen können. Auffällige Befunde besprechen wir im persönlichen Gespräch und überweisen bei Bedarf gezielt zur Augenärztin oder zum Augenarzt zur weiterführenden Abklärung.</p>\n\n<p>Besonders sinnvoll ist der Eye-Check bei Diabetes mellitus Typ 1 oder 2, dauerhaft erhöhtem Blutdruck oder familiärer Vorbelastung für Augenerkrankungen. Zum Abschluss erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für den Eye-Check?",
+    "heading": "Eye-Check"
   },
   {
     "id": "sono-abdomen",
     "name": "Ultraschall: Bauchorgane",
     "quelle": "pages/_shared/sonographie.yaml",
     "lead": "Sonographie des Bauchraums — alle wichtigen Organe in einer Untersuchung.",
-    "body": "<p>Bei der Sonographie des Bauchraums beurteilen wir alle wichtigen inneren Organe in einer einzigen Untersuchung — schmerzfrei, strahlenfrei, in etwa 20 Minuten.</p>\n\n<p>Was wir uns ansehen:</p>\n\n<ul>\n<li><strong>Leber</strong> — ein Organ, das selbst nach Verlust von 75 Prozent seiner Substanz innerhalb von Monaten regenerieren kann.</li>\n<li><strong>Nieren</strong> — filtern jährlich bis zu 55.000 Liter Blut.</li>\n<li><strong>Milz</strong> — funktioniert wie der Ölfilter des Körpers; Veränderungen weisen auf Erkrankungen des Blutes oder Lymphsystems hin.</li>\n<li><strong>Bauchspeicheldrüse</strong> — nur 100 Gramm schwer, aber zentral für Verdauung und Zuckerstoffwechsel.</li>\n<li><strong>Darm</strong> — etwa 7 Meter lang, mit Wänden von wenigen Millimetern Dicke und einem reichen Mikrobiom.</li>\n<li>Gallenblase und Gallenwege, Harnblase, Prostata bzw. Uterus, Becken- und Beingefäße.</li>\n</ul>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen. Die Untersuchung dauert etwa 20 Minuten.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
+    "body": "<h2>Sonographie der Bauchorgane</h2>\n<p>Bei der Sonographie des Bauchraums beurteilen wir alle wichtigen inneren Organe in einer einzigen Untersuchung — schmerzfrei, strahlenfrei, in etwa 20 Minuten.</p>\n\n<p>Was wir uns ansehen:</p>\n\n<ul>\n<li><strong>Leber</strong> — ein Organ, das selbst nach Verlust von 75 Prozent seiner Substanz innerhalb von Monaten regenerieren kann.</li>\n<li><strong>Nieren</strong> — filtern jährlich bis zu 55.000 Liter Blut.</li>\n<li><strong>Milz</strong> — funktioniert wie der Ölfilter des Körpers; Veränderungen weisen auf Erkrankungen des Blutes oder Lymphsystems hin.</li>\n<li><strong>Bauchspeicheldrüse</strong> — nur 100 Gramm schwer, aber zentral für Verdauung und Zuckerstoffwechsel.</li>\n<li><strong>Darm</strong> — etwa 7 Meter lang, mit Wänden von wenigen Millimetern Dicke und einem reichen Mikrobiom.</li>\n<li>Gallenblase und Gallenwege, Harnblase, Prostata bzw. Uterus, Becken- und Beingefäße.</li>\n</ul>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen. Die Untersuchung dauert etwa 20 Minuten.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "related": {
+      "heading": "Weitere Sonographie-Untersuchungen",
+      "items": [
+        {
+          "title": "Schilddrüse",
+          "teaser": "Knoten, Zysten und Größenveränderungen sichtbar machen.",
+          "href": "https://westend-hausarzt.com/sonographie/schilddruese/"
+        },
+        {
+          "title": "Gefäß-Sonographie der Beine",
+          "teaser": "Beurteilung der venösen und arteriellen Beingefäße.",
+          "href": "https://westend-hausarzt.com/sonographie/beingefaesse/"
+        },
+        {
+          "title": "Echokardiographie",
+          "teaser": "Ultraschall des Herzens — Pumpfunktion, Klappen, Wandbewegungen.",
+          "href": "https://westend-hausarzt.com/echokardiographie/"
+        },
+        {
+          "title": "Carotis-Duplex",
+          "teaser": "Halsschlagadern — Beurteilung von Gefäßwand und Durchfluss.",
+          "href": "https://westend-hausarzt.com/carotis-duplex/"
+        }
+      ]
+    },
+    "cta_heading": "Termin für eine Sonographie?",
+    "heading": "Bauchorgane"
   },
   {
     "id": "sono-check",
@@ -47,7 +80,9 @@
     "body": "<p>Beim Sono-Check beurteilen wir in einer einzigen Untersuchung alle wichtigen inneren Organe. Wir prüfen unter anderem:</p>\n\n<ul>\n<li><strong>Schilddrüse</strong> — Knoten und Größenveränderungen</li>\n<li><strong>Halsgefäße</strong> — Hinweise auf Verkalkungen</li>\n<li><strong>Herz</strong> — Pumpfunktion und strukturelle Veränderungen</li>\n<li><strong>Milz</strong> — Größe und Raumforderungen</li>\n<li><strong>Nieren</strong> — Harnstau, Zysten oder Raumforderungen</li>\n<li><strong>Leber</strong> — Fett- und Strukturveränderungen</li>\n<li><strong>Gallenwege</strong> — Gallensteine, Rückstau</li>\n<li><strong>Bauchspeicheldrüse</strong> — Zysten oder Raumforderungen</li>\n<li><strong>Darm</strong> — Hinweise auf Entzündungsveränderungen</li>\n<li><strong>Harnblase</strong> — Hinweise auf Polypen</li>\n<li><strong>Prostata</strong> — Größe und Raumforderungen</li>\n<li><strong>Uterus</strong> — Myome und andere Veränderungen</li>\n<li><strong>Becken- und Beingefäße</strong> — Hinweise auf Verkalkungen</li>\n</ul>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen. Die Untersuchung dauert etwa 45 Minuten.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Sono-Check?",
+    "heading": "Sono-Check"
   },
   {
     "id": "ultraschall-bauchspeicheldruse-krebsscreening-pankreaskarzinom",
@@ -57,7 +92,9 @@
     "body": "<p>Obwohl sie nur 70 bis 100 Gramm wiegt, ist die Bauchspeicheldrüse (Pankreas) wichtig für Verdauung und Zuckerstoffwechsel. Sie liegt in der Mitte des Oberbauchs und steht in engem Kontakt zu Magen, Leber, Darm und Milz.</p>\n\n<p>Funktionsstörungen können zu Diabetes oder einer gestörten Verdauung mit anhaltendem Durchfall führen. Tumore der Bauchspeicheldrüse sind im Frühstadium oft schwer zu erkennen — der Ultraschall ist eine wichtige Untersuchung zur Beurteilung.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Bauchspeicheldrüse und der angrenzenden Organe durch. Es ist günstig, nüchtern zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Sonographie der Bauchspeicheldrüse?",
+    "heading": "Bauchspeicheldrüse"
   },
   {
     "id": "ultraschall-leber-krebsscreening",
@@ -67,7 +104,9 @@
     "body": "<p>Die Leber ist mit etwa 1,5 Kilogramm das größte innere Stoffwechselorgan. Selbst bei Verlust von bis zu 75 Prozent ihres Gewebes kann sie wieder zur normalen Größe heranwachsen. Sie ist zentral für Verdauung, Entgiftung, Speicherung von Nährstoffen sowie den Fett-, Zucker- und Eiweißstoffwechsel und filtert das gesamte Blutvolumen bis zu 30 Mal am Tag.</p>\n\n<p>Trotz ihrer hohen Regenerationsfähigkeit kann die Leber durch ungünstige Ernährung, bestimmte Medikamente oder übermäßigen Alkoholkonsum chronisch geschädigt werden. Den Grad der Veränderung lässt sich im Ultraschall gut beurteilen — von der Fettleber über fortgeschrittene Strukturveränderungen bis hin zu Raumforderungen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Leber und der Gallenwege durch. Es ist günstig, etwa vier Stunden vor der Untersuchung nichts zu essen und nur Wasser zu trinken.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Sonographie der Leber und Gallenblase?",
+    "heading": "Leber und Gallenblase"
   },
   {
     "id": "ultraschall-niere-und-ableitende-harnwege-krebsscreening",
@@ -77,7 +116,9 @@
     "body": "<p>Die Nieren sind die Filtereinheit des Körpers. Pro Tag filtern sie etwa 360 Liter Blut — das gesamte Blutvolumen passiert die Nieren rund 30 Mal täglich. Davon scheiden wir bis zu zwei Liter Urin pro Tag aus.</p>\n\n<p>Bei der Ultraschalluntersuchung schauen wir gezielt nach Veränderungen, Zysten und Raumforderungen in den Nieren sowie der ableitenden Harnwege bis hin zur Harnblase.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Nieren und der ableitenden Harnwege durch. Es ist günstig, mit gefüllter Blase zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Sonographie der Nieren und Harnwege?",
+    "heading": "Nieren und Harnwege"
   },
   {
     "id": "ultraschall-prostata-und-harnblase-krebsscreening",
@@ -87,7 +128,9 @@
     "body": "<p>Bei jungen Männern hat die Prostata etwa die Größe einer Walnuss und wiegt rund 20 Gramm. Mit zunehmendem Alter kann sich die Prostata vergrößern, was zu Beschwerden wie häufigem Harndrang, schwachem Harnstrahl oder unvollständiger Blasenentleerung führen kann. Prostatakrebs ist eine der häufigsten Krebsarten beim Mann.</p>\n\n<p>Bei der Untersuchung messen wir die Größe Ihrer Prostata, bestimmen das Restharnvolumen und beurteilen Harnblase und Prostata auf Auffälligkeiten.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Während Sie entspannt auf einer Liege ruhen, führen wir die Sonographie der Prostata und der Harnblase durch. Es ist günstig, mit gefüllter Blase zur Untersuchung zu kommen.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Sonographie der Prostata und Harnblase?",
+    "heading": "Prostata und Harnblase"
   },
   {
     "id": "ultraschall-schilddruse-krebsscreening",
@@ -97,7 +140,9 @@
     "body": "<p>Die Schilddrüse produziert Hormone, die Energieverbrauch und Stoffwechsel regulieren. Eine Unterfunktion kann zu Müdigkeit, Gewichtszunahme und Stimmungsschwankungen führen, während eine Überfunktion Nervosität, Herzrasen und Gewichtsverlust verursacht. Die Schilddrüse liegt schmetterlingsförmig dem Kehlkopf an. Als stoffwechselaktives Organ können sich Knoten bilden, die im Labor nicht nachweisbar, aber im Ultraschall gut zu beurteilen sind. Bei Verdacht auf bösartige Veränderungen sollten die betreffenden Knoten weiter abgeklärt werden.</p>\n\n\n<p>Im Ultraschall beurteilen wir Größe, Struktur und Durchblutung der Schilddrüse sowie auffällige Knoten. Die Befunde setzen wir mit Schilddrüsenhormonen im Blut und Ihrer Symptomatik zusammen — die Sonographie allein stellt keine Diagnose, sondern hilft bei der gezielten weiteren Abklärung.</p>\n\n<p>Eine spezielle Vorbereitung ist nicht erforderlich. Kommen Sie in bequemer Kleidung; Halsketten können Sie für die Untersuchung ablegen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Zunächst tasten wir Ihre Schilddrüse ab und im Anschluss wird die Ultraschalluntersuchung durchgeführt. Hierzu legen Sie sich auf eine Liege und überstrecken den Kopf leicht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht. Bei auffälligen Knoten besprechen wir mit Ihnen das weitere Vorgehen — meist durch Verlaufskontrolle, in seltenen Fällen durch eine Feinnadelpunktion.</p>\n",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Schilddrüsen-Sonographie?",
+    "heading": "Schilddrüse"
   },
   {
     "id": "body-check",
@@ -107,7 +152,9 @@
     "body": "<p>Der Body-Check ist eine strukturierte ärztliche Bestandsaufnahme Ihres aktuellen Gesundheitszustandes. Geeignet sowohl für sportlich aktive Patientinnen und Patienten als auch zur Vorsorge.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Eine Ärztin oder ein Arzt führt eine ausführliche Anamnese (Gesundheitsgespräch) sowie eine vollständige klinische Untersuchung durch. Dazu gehört ein 12-Kanal-EKG sowie ein Urintest. Bringen Sie zu diesem Termin auch Ihren Impfpass mit — wir prüfen den Impfstatus gleich mit.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Body-Check?",
+    "heading": "Body-Check"
   },
   {
     "id": "carotis-duplex",
@@ -117,7 +164,9 @@
     "body": "<p>Das menschliche Gehirn macht etwa 2 Prozent des Körpergewichts aus, benötigt aber rund 20 Prozent des gesamten Energieverbrauchs. 100 Milliarden Neuronen und Billionen von Synapsen stellen pro Sekunde bis zu 200 Millionen Verbindungen her. Nach etwa 5 bis 10 Minuten Unterbrechung der Sauerstoffversorgung wird das Gehirn irreparabel geschädigt.</p>\n\n<p>Mit dem Ultraschall der Halsschlagadern (Carotis-Duplex) prüfen wir, ob die Blutzufuhr zum Gehirn durch Engstellen eingeschränkt ist oder ob an den Gefäßen bereits Veränderungen bestehen, die das Risiko für einen Schlaganfall erhöhen können.</p>\n\n\n<p>Die Untersuchung ist schmerzfrei, ohne Strahlenbelastung und dauert in der Regel etwa 20 bis 30 Minuten. Sie eignet sich zur Risikoabschätzung bei Bluthochdruck, Diabetes, erhöhten Blutfettwerten, familiärer Belastung oder nach einem vorübergehenden neurologischen Ereignis — die Indikation besprechen wir individuell mit Ihnen.</p>\n\n<p>Für die Duplex-Sonographie ist keine besondere Vorbereitung nötig. Tragen Sie bequeme Kleidung mit einem weiten Kragenausschnitt, damit wir die Halsgefäße gut erreichen können.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Zunächst hören wir mit einem Stethoskop die Halsgefäße ab. Im Anschluss erfolgt die Ultraschalluntersuchung. Hierzu legen Sie sich auf eine Liege und überstrecken den Kopf leicht.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Carotis-Duplex-Sonographie?",
+    "heading": "Carotis-Duplex"
   },
   {
     "id": "echokardiographie",
@@ -127,7 +176,9 @@
     "body": "<p>Das Herz koordiniert über elektrische Impulse, Muskelkontraktionen und vier Herzklappen den Blutkreislauf. Bei jedem Herzschlag werden etwa 70 Milliliter Blut aus dem Herzen gepumpt. Mit rund 100.000 Schlägen pro Tag bewegt das Herz durchschnittlich etwa 7.000 Liter Blut täglich durch den Körper. Der dabei erzeugte Blutdruck liegt bei gesunden Erwachsenen zwischen 100 und 140 mmHg und treibt das Blut durch die etwa 100.000 Kilometer langen Blutgefäße.</p>\n\n<p>Mit der Echokardiographie wird das Herz in Echtzeit dargestellt. Das Verfahren erlaubt die Beurteilung von Wandbewegungsstörungen, Klappenveränderungen und strukturellen Auffälligkeiten, die im Alltag nicht zwingend mit Beschwerden einhergehen müssen.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Für diese Untersuchung legen Sie sich in Linksseitenlage. Wir führen die Untersuchung mit einem speziellen Ultraschallkopf durch. Eine Vorbereitung Ihrerseits ist nicht erforderlich.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für eine Echokardiographie?",
+    "heading": "Echokardiographie"
   },
   {
     "id": "fit-for-diving",
@@ -137,7 +188,9 @@
     "body": "<p>Die Tauchtauglichkeitsuntersuchung dokumentiert Ihre Eignung zum Sporttauchen. Wir untersuchen Sie wahlweise als Open Water Diver (Tauchtiefe bis 18 Meter) oder als Advanced Open Water Diver (Tauchtiefe bis 30 Meter, sowie alle Taucherinnen und Taucher über 40 Jahren). Untersuchungen für Deep-Diver oder technisches Tauchen bieten wir auf Nachfrage an.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Für Open Water Diver führen wir eine Ganzkörperuntersuchung inklusive Otoskopie (Ohruntersuchung) sowie eine Lungenfunktion durch. Bei Advanced Open Water Diver wird die Untersuchung zusätzlich um ein Belastungs-EKG ergänzt.</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Tauchtauglichkeit?",
+    "heading": "Tauchtauglichkeit"
   },
   {
     "id": "kardio-check",
@@ -147,7 +200,9 @@
     "body": "<p>Das Herz schlägt im Durchschnitt etwa 70-mal pro Minute — über 100.000-mal am Tag und mehr als 36 Millionen-mal im Jahr. Es pumpt rund fünf Liter Blut pro Minute, was über 7.000 Liter am Tag entspricht. Unter Belastung kann ein gesundes Herz bis zu 30 Liter pro Minute pumpen.</p>\n\n<p>Beim Kardio-Check beurteilen wir Herz und Lunge in einer strukturierten Untersuchung — sowohl in Ruhe als auch unter kontrollierter Belastung.</p>\n\n<h2>Wie wird die Untersuchung durchgeführt?</h2>\n\n<p>Wir beginnen mit einer klinischen Untersuchung — Herz und Lunge werden abgehört. Anschließend führen wir einen Herzultraschall (Echokardiographie) durch. Es folgen ein Belastungs-EKG (Ergometrie) sowie eine Lungenfunktion (Spirometrie).</p>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Kardio-Check?",
+    "heading": "Kardio-Check"
   },
   {
     "id": "komplett-check",
@@ -157,17 +212,20 @@
     "body": "<p>Der Komplett-Check fasst eine ausführliche Vorsorgeuntersuchung zusammen. In etwa zwei Stunden führen wir eine strukturierte ärztliche Beurteilung durch.</p>\n\n<h2>Welche Untersuchungen umfasst der Komplett-Check?</h2>\n\n<ul>\n<li>Ultraschall der Schilddrüse</li>\n<li>Ultraschall der Halsgefäße (Carotis-Duplex)</li>\n<li>Echokardiographie (Herzultraschall)</li>\n<li>Ultraschall des Bauchraums</li>\n<li>Belastungs-EKG (Ergometrie)</li>\n<li>Lungenfunktion (Spirometrie)</li>\n</ul>\n\n<p>Zum Abschluss der Untersuchung erhalten Sie Ihren persönlichen Befundbericht.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für Komplett-Check?",
+    "heading": "Komplett-Check"
   },
   {
     "id": "gesundheits-check",
     "name": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)",
     "quelle": "pages/_shared/gesundheits-check.yaml",
-    "lead": "",
-    "body": "<p><a href=\"https://westend-hausarzt.com/health-check/\">Gesundheits-Check auf der Praxisseite öffnen</a></p>",
-    "source_available": false,
+    "lead": "Drei evidenzbasierte Selbst-Tests in jeweils einer Minute. Die Ergebnisse sind eine Orientierung und ersetzen keine ärztliche Beurteilung — bei auffälligen Werten vereinbaren Sie bitte einen Termin in unserer internistischen Sprechstunde.",
+    "body": "<section class=\"pxz-os pxz-wizard\" data-pxz-wizard data-key=\"a1_findrisk\" aria-labelledby=\"pxz-wizard-a1_findrisk-1-title\">\n              <header class=\"pxz-os-head\">\n          <h2 id=\"pxz-wizard-a1_findrisk-1-title\" class=\"pxz-os-title\">Diabetes-Risiko in 1 Minute (FINDRISK)</h2>\n          <p class=\"pxz-os-lead\">Wissenschaftlich validierter Selbst-Test des Finnischen Diabetes-Risikoscores. 8 Fragen, sofortige Einordnung.</p>        </header>\n      \n      <div class=\"pxz-wizard-progress\" aria-hidden=\"true\"><span class=\"pxz-wizard-bar\" style=\"--p:0%\"></span></div>\n      <div class=\"pxz-wizard-stage\" role=\"status\" aria-live=\"polite\"></div>\n\n      <div class=\"pxz-os-actions pxz-wizard-nav\">\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-back hidden>Zurück</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-primary\" data-pxz-next>Weiter</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-restart hidden>Neu starten</button>\n      </div>\n\n      <p class=\"pxz-os-disclaimer\">\n        <strong>Hinweis:</strong>\n        Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.      </p>\n    </section>\n\n    <script type=\"application/json\" class=\"pxz-wizard-data\">\n    {\"key\":\"a1_findrisk\",\"lang\":\"de\",\"steps\":[{\"id\":\"age\",\"type\":\"radio\",\"label\":{\"de\":\"Wie alt sind Sie?\",\"en\":\"How old are you?\",\"fr\":\"Quel âge avez-vous ?\",\"es\":\"¿Qué edad tiene?\",\"it\":\"Quanti anni ha?\",\"pt-pt\":\"Que idade tem?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Unter 45 Jahren\",\"en\":\"Under 45\",\"fr\":\"Moins de 45 ans\",\"es\":\"Menos de 45\",\"it\":\"Meno di 45 anni\",\"pt-pt\":\"Menos de 45 anos\"}},{\"value\":\"2\",\"label\":{\"de\":\"45–54 Jahre\",\"en\":\"45–54\",\"fr\":\"45–54 ans\",\"es\":\"45–54\",\"it\":\"45–54 anni\",\"pt-pt\":\"45–54 anos\"}},{\"value\":\"3\",\"label\":{\"de\":\"55–64 Jahre\",\"en\":\"55–64\",\"fr\":\"55–64 ans\",\"es\":\"55–64\",\"it\":\"55–64 anni\",\"pt-pt\":\"55–64 anos\"}},{\"value\":\"4\",\"label\":{\"de\":\"Über 64 Jahre\",\"en\":\"Over 64\",\"fr\":\"Plus de 64 ans\",\"es\":\"Más de 64\",\"it\":\"Più di 64 anni\",\"pt-pt\":\"Mais de 64 anos\"}}]},{\"id\":\"bmi\",\"type\":\"radio\",\"label\":{\"de\":\"Wie hoch ist Ihr Body-Mass-Index?\",\"en\":\"What is your Body Mass Index?\",\"fr\":\"Quel est votre indice de masse corporelle ?\",\"es\":\"¿Cuál es su IMC?\",\"it\":\"Qual è il suo indice di massa corporea?\",\"pt-pt\":\"Qual é o seu IMC?\"},\"help\":{\"de\":\"BMI = Gewicht in kg ÷ (Größe in m)². Beispiel: 80 kg bei 1,75 m → 80 ÷ (1,75 × 1,75) = 26,1.\",\"en\":\"BMI = weight (kg) ÷ height (m)². Example: 80 kg at 1.75 m → 26.1.\",\"fr\":\"IMC = poids (kg) ÷ taille (m)². Exemple : 80 kg à 1,75 m → 26,1.\",\"es\":\"IMC = peso (kg) ÷ altura (m)². Ej.: 80 kg a 1,75 m → 26,1.\",\"it\":\"IMC = peso (kg) ÷ altezza (m)². Es.: 80 kg a 1,75 m → 26,1.\",\"pt-pt\":\"IMC = peso (kg) ÷ altura (m)². Ex.: 80 kg a 1,75 m → 26,1.\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Unter 25\",\"en\":\"Under 25\",\"fr\":\"Moins de 25\",\"es\":\"Menos de 25\",\"it\":\"Meno di 25\",\"pt-pt\":\"Menos de 25\"}},{\"value\":\"1\",\"label\":{\"de\":\"25–30\",\"en\":\"25–30\",\"fr\":\"25–30\",\"es\":\"25–30\",\"it\":\"25–30\",\"pt-pt\":\"25–30\"}},{\"value\":\"3\",\"label\":{\"de\":\"Über 30\",\"en\":\"Over 30\",\"fr\":\"Plus de 30\",\"es\":\"Más de 30\",\"it\":\"Più di 30\",\"pt-pt\":\"Mais de 30\"}}]},{\"id\":\"waist\",\"type\":\"radio\",\"label\":{\"de\":\"Wie groß ist Ihr Taillenumfang?\",\"en\":\"What is your waist circumference?\",\"fr\":\"Quel est votre tour de taille ?\",\"es\":\"¿Cuál es su perímetro abdominal?\",\"it\":\"Qual è la sua circonferenza vita?\",\"pt-pt\":\"Qual é o seu perímetro de cintura?\"},\"help\":{\"de\":\"Gemessen waagerecht auf Höhe des Bauchnabels.\",\"en\":\"Measured horizontally at the level of the navel.\",\"fr\":\"Mesuré à l'horizontale au niveau du nombril.\",\"es\":\"Medido horizontalmente a la altura del ombligo.\",\"it\":\"Misurata orizzontalmente all'altezza dell'ombelico.\",\"pt-pt\":\"Medido horizontalmente ao nível do umbigo.\"},\"options\":[{\"value\":\"w_m_lt94\",\"label\":{\"de\":\"Mann · unter 94 cm\",\"en\":\"Male · under 94 cm\",\"fr\":\"Homme · moins de 94 cm\",\"es\":\"Hombre · menos de 94 cm\",\"it\":\"Uomo · meno di 94 cm\",\"pt-pt\":\"Homem · menos de 94 cm\"}},{\"value\":\"w_m_9402\",\"label\":{\"de\":\"Mann · 94–102 cm\",\"en\":\"Male · 94–102 cm\",\"fr\":\"Homme · 94–102 cm\",\"es\":\"Hombre · 94–102 cm\",\"it\":\"Uomo · 94–102 cm\",\"pt-pt\":\"Homem · 94–102 cm\"}},{\"value\":\"w_m_gt102\",\"label\":{\"de\":\"Mann · über 102 cm\",\"en\":\"Male · over 102 cm\",\"fr\":\"Homme · plus de 102 cm\",\"es\":\"Hombre · más de 102 cm\",\"it\":\"Uomo · oltre 102 cm\",\"pt-pt\":\"Homem · mais de 102 cm\"}},{\"value\":\"w_f_lt80\",\"label\":{\"de\":\"Frau · unter 80 cm\",\"en\":\"Female · under 80 cm\",\"fr\":\"Femme · moins de 80 cm\",\"es\":\"Mujer · menos de 80 cm\",\"it\":\"Donna · meno di 80 cm\",\"pt-pt\":\"Mulher · menos de 80 cm\"}},{\"value\":\"w_f_8088\",\"label\":{\"de\":\"Frau · 80–88 cm\",\"en\":\"Female · 80–88 cm\",\"fr\":\"Femme · 80–88 cm\",\"es\":\"Mujer · 80–88 cm\",\"it\":\"Donna · 80–88 cm\",\"pt-pt\":\"Mulher · 80–88 cm\"}},{\"value\":\"w_f_gt88\",\"label\":{\"de\":\"Frau · über 88 cm\",\"en\":\"Female · over 88 cm\",\"fr\":\"Femme · plus de 88 cm\",\"es\":\"Mujer · más de 88 cm\",\"it\":\"Donna · oltre 88 cm\",\"pt-pt\":\"Mulher · mais de 88 cm\"}}]},{\"id\":\"activity\",\"type\":\"radio\",\"label\":{\"de\":\"Bewegen Sie sich mindestens 30 Minuten täglich (Beruf + Freizeit)?\",\"en\":\"Do you have at least 30 minutes of physical activity per day (work + leisure)?\",\"fr\":\"Avez-vous au moins 30 minutes d'activité physique par jour ?\",\"es\":\"¿Realiza al menos 30 minutos diarios de actividad física?\",\"it\":\"Fa almeno 30 minuti di attività fisica al giorno?\",\"pt-pt\":\"Tem pelo menos 30 minutos de actividade física por dia?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Ja\",\"en\":\"Yes\",\"fr\":\"Oui\",\"es\":\"Sí\",\"it\":\"Sì\",\"pt-pt\":\"Sim\"}},{\"value\":\"2\",\"label\":{\"de\":\"Nein\",\"en\":\"No\",\"fr\":\"Non\",\"es\":\"No\",\"it\":\"No\",\"pt-pt\":\"Não\"}}]},{\"id\":\"veggies\",\"type\":\"radio\",\"label\":{\"de\":\"Essen Sie täglich Obst, Gemüse oder Salat?\",\"en\":\"Do you eat fruit, vegetables or salad every day?\",\"fr\":\"Mangez-vous des fruits, légumes ou salade chaque jour ?\",\"es\":\"¿Come fruta, verduras o ensalada todos los días?\",\"it\":\"Mangia frutta, verdura o insalata ogni giorno?\",\"pt-pt\":\"Come fruta, vegetais ou salada todos os dias?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Ja, jeden Tag\",\"en\":\"Yes, every day\",\"fr\":\"Oui, chaque jour\",\"es\":\"Sí, todos los días\",\"it\":\"Sì, ogni giorno\",\"pt-pt\":\"Sim, todos os dias\"}},{\"value\":\"1\",\"label\":{\"de\":\"Nicht täglich\",\"en\":\"Not every day\",\"fr\":\"Pas tous les jours\",\"es\":\"No todos los días\",\"it\":\"Non ogni giorno\",\"pt-pt\":\"Não todos os dias\"}}]},{\"id\":\"bp_med\",\"type\":\"radio\",\"label\":{\"de\":\"Nehmen Sie regelmäßig Medikamente gegen Bluthochdruck?\",\"en\":\"Do you regularly take blood-pressure medication?\",\"fr\":\"Prenez-vous régulièrement des médicaments contre l'hypertension ?\",\"es\":\"¿Toma medicación habitual para la hipertensión?\",\"it\":\"Assume regolarmente farmaci per la pressione alta?\",\"pt-pt\":\"Toma medicação regular para a tensão alta?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Nein\",\"en\":\"No\",\"fr\":\"Non\",\"es\":\"No\",\"it\":\"No\",\"pt-pt\":\"Não\"}},{\"value\":\"2\",\"label\":{\"de\":\"Ja\",\"en\":\"Yes\",\"fr\":\"Oui\",\"es\":\"Sí\",\"it\":\"Sì\",\"pt-pt\":\"Sim\"}}]},{\"id\":\"glucose_history\",\"type\":\"radio\",\"label\":{\"de\":\"Wurde bei Ihnen schon einmal ein erhöhter Blutzucker festgestellt (z. B. bei einer Untersuchung oder in der Schwangerschaft)?\",\"en\":\"Have you ever been told you had elevated blood sugar (e.g. at a check-up or in pregnancy)?\",\"fr\":\"Vous a-t-on déjà mesuré une glycémie élevée (examen ou grossesse) ?\",\"es\":\"¿Le han detectado alguna vez un nivel alto de glucosa (revisión o embarazo)?\",\"it\":\"Le è mai stato riscontrato un livello alto di glicemia (controllo o gravidanza)?\",\"pt-pt\":\"Já lhe foi detectado açúcar elevado no sangue (exame ou gravidez)?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Nein\",\"en\":\"No\",\"fr\":\"Non\",\"es\":\"No\",\"it\":\"No\",\"pt-pt\":\"Não\"}},{\"value\":\"5\",\"label\":{\"de\":\"Ja\",\"en\":\"Yes\",\"fr\":\"Oui\",\"es\":\"Sí\",\"it\":\"Sì\",\"pt-pt\":\"Sim\"}}]},{\"id\":\"family\",\"type\":\"radio\",\"label\":{\"de\":\"Gab es in Ihrer Familie Fälle von Diabetes mellitus (Typ 1 oder Typ 2)?\",\"en\":\"Has any family member ever been diagnosed with diabetes (type 1 or 2)?\",\"fr\":\"Y a-t-il des cas de diabète (type 1 ou 2) dans votre famille ?\",\"es\":\"¿Hay casos de diabetes (tipo 1 o 2) en su familia?\",\"it\":\"Ci sono casi di diabete (tipo 1 o 2) in famiglia?\",\"pt-pt\":\"Há casos de diabetes (tipo 1 ou 2) na sua família?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Nein\",\"en\":\"No\",\"fr\":\"Non\",\"es\":\"No\",\"it\":\"No\",\"pt-pt\":\"Não\"}},{\"value\":\"3\",\"label\":{\"de\":\"Großeltern, Tante, Onkel, Cousin/e\",\"en\":\"Grandparent, aunt, uncle, cousin\",\"fr\":\"Grands-parents, oncle, tante, cousin\",\"es\":\"Abuelos, tío/a, primo/a\",\"it\":\"Nonni, zii, cugini\",\"pt-pt\":\"Avós, tios, primos\"}},{\"value\":\"5\",\"label\":{\"de\":\"Eltern, Geschwister oder eigene Kinder\",\"en\":\"Parent, sibling or own child\",\"fr\":\"Parent, fratrie ou enfant\",\"es\":\"Padres, hermanos o hijos\",\"it\":\"Genitore, fratello/sorella o figlio\",\"pt-pt\":\"Pais, irmãos ou filhos\"}}]}],\"i18n\":{\"step_label\":\"Schritt\",\"of\":\"von\",\"next\":\"Weiter\",\"back\":\"Zurück\",\"submit\":\"Auswertung anzeigen\",\"restart\":\"Neu starten\",\"required\":\"Bitte eine Auswahl treffen.\",\"invalid_number\":\"Bitte eine gültige Zahl eingeben.\",\"result_title\":\"Ihr Ergebnis\",\"risk_low\":\"Niedriges Risiko\",\"risk_mod\":\"Erhöhtes Risiko\",\"risk_high\":\"Hohes Risiko\",\"risk_veryhigh\":\"Sehr hohes Risiko\",\"cta_book\":\"Termin in der Praxis vereinbaren\",\"cta_print\":\"Ergebnis drucken\",\"disclaimer_label\":\"Hinweis\",\"disclaimer\":\"Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.\"},\"tool_i18n\":{\"summary_low\":\"Ihr 10-Jahres-Risiko für Typ-2-Diabetes liegt bei rund 1 %. Bleiben Sie bei dem, was Sie tun.\",\"summary_mod_low\":\"Ihr 10-Jahres-Risiko liegt bei etwa 4 %. Gut, aber Ernährung und Bewegung lohnen einen Blick.\",\"summary_mod\":\"Ihr 10-Jahres-Risiko liegt bei rund 17 %. Ein internistischer Check-Up + Nüchternblutzucker ist sinnvoll.\",\"summary_high\":\"Ihr 10-Jahres-Risiko liegt bei rund 33 %. Wir empfehlen einen zeitnahen Termin in der internistischen Sprechstunde.\",\"summary_veryhigh\":\"Ihr 10-Jahres-Risiko liegt bei rund 50 %. Bitte vereinbaren Sie kurzfristig einen Termin — der Score erfasst nicht alle individuellen Faktoren, aber das Risiko ist substanziell.\",\"advice_active\":\"30 Minuten zügiges Gehen pro Tag halbiert das Diabetesrisiko in Studien.\",\"advice_diet\":\"Eine mediterrane Kost mit täglich Gemüse, Obst und Vollkorn senkt das Risiko nachweislich.\",\"advice_check\":\"Internistische Sprechstunde bei Dr. Stracke umfasst Nüchternblutzucker, HbA1c und Lipidprofil.\",\"score_label\":\"Ihr FINDRISK-Score\"},\"cta_url\":\"https://www.doctolib.de/gemeinschaftspraxis/frankfurt-am-main/praxis-dr-stracke-kollegen-frankfurt-am-main?utm_campaign=website-button&utm_source=praxis-dr-stracke-kollegen-frankfurt-am-main-website-button&utm_medium=referral&utm_content=option-1&utm_term=praxis-dr-stracke-kollegen\",\"cta_label\":\"Termin in der Praxis vereinbaren\",\"meta\":[]}    </script>\n        <section class=\"pxz-os pxz-wizard\" data-pxz-wizard data-key=\"a1_score2\" aria-labelledby=\"pxz-wizard-a1_score2-2-title\">\n              <header class=\"pxz-os-head\">\n          <h2 id=\"pxz-wizard-a1_score2-2-title\" class=\"pxz-os-title\">Herz-Kreislauf-Risiko (ESC SCORE2)</h2>\n          <p class=\"pxz-os-lead\">Vereinfachte Schätzung Ihres 10-Jahres-Risikos für Herzinfarkt oder Schlaganfall auf Basis der ESC-Tabellen 2021 für die Niedrig-Risiko-Region Deutschland.</p>        </header>\n<img class=\"health-motif\" src=\"/images/diagnostik/gesundheits-check.webp\" alt=\"DHT-Modell des Herzens\" loading=\"lazy\" width=\"800\" height=\"800\">\n      \n      <div class=\"pxz-wizard-progress\" aria-hidden=\"true\"><span class=\"pxz-wizard-bar\" style=\"--p:0%\"></span></div>\n      <div class=\"pxz-wizard-stage\" role=\"status\" aria-live=\"polite\"></div>\n\n      <div class=\"pxz-os-actions pxz-wizard-nav\">\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-back hidden>Zurück</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-primary\" data-pxz-next>Weiter</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-restart hidden>Neu starten</button>\n      </div>\n\n      <p class=\"pxz-os-disclaimer\">\n        <strong>Hinweis:</strong>\n        Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.      </p>\n    </section>\n\n    <script type=\"application/json\" class=\"pxz-wizard-data\">\n    {\"key\":\"a1_score2\",\"lang\":\"de\",\"steps\":[{\"id\":\"age\",\"type\":\"number\",\"min\":40,\"max\":89,\"stepv\":1,\"unit\":\"Jahre\",\"label\":{\"de\":\"Wie alt sind Sie? (40–89 Jahre)\",\"en\":\"How old are you? (40–89 years)\",\"fr\":\"Quel âge avez-vous ? (40–89 ans)\",\"es\":\"¿Qué edad tiene? (40–89 años)\",\"it\":\"Quanti anni ha? (40–89 anni)\",\"pt-pt\":\"Que idade tem? (40–89 anos)\"}},{\"id\":\"sex\",\"type\":\"radio\",\"label\":{\"de\":\"Biologisches Geschlecht\",\"en\":\"Biological sex\",\"fr\":\"Sexe biologique\",\"es\":\"Sexo biológico\",\"it\":\"Sesso biologico\",\"pt-pt\":\"Sexo biológico\"},\"options\":[{\"value\":\"f\",\"label\":{\"de\":\"Weiblich\",\"en\":\"Female\",\"fr\":\"Femme\",\"es\":\"Mujer\",\"it\":\"Femminile\",\"pt-pt\":\"Feminino\"}},{\"value\":\"m\",\"label\":{\"de\":\"Männlich\",\"en\":\"Male\",\"fr\":\"Homme\",\"es\":\"Hombre\",\"it\":\"Maschile\",\"pt-pt\":\"Masculino\"}}]},{\"id\":\"smoker\",\"type\":\"radio\",\"label\":{\"de\":\"Rauchen Sie aktuell?\",\"en\":\"Do you currently smoke?\",\"fr\":\"Fumez-vous actuellement ?\",\"es\":\"¿Fuma actualmente?\",\"it\":\"Fuma attualmente?\",\"pt-pt\":\"Fuma atualmente?\"},\"options\":[{\"value\":\"0\",\"label\":{\"de\":\"Nein (Nie- oder Ex-Raucher)\",\"en\":\"No\",\"fr\":\"Non\",\"es\":\"No\",\"it\":\"No\",\"pt-pt\":\"Não\"}},{\"value\":\"1\",\"label\":{\"de\":\"Ja\",\"en\":\"Yes\",\"fr\":\"Oui\",\"es\":\"Sí\",\"it\":\"Sì\",\"pt-pt\":\"Sim\"}}]},{\"id\":\"sbp\",\"type\":\"number\",\"min\":90,\"max\":220,\"stepv\":1,\"unit\":\"mmHg\",\"label\":{\"de\":\"Systolischer Blutdruck (mmHg)\",\"en\":\"Systolic blood pressure (mmHg)\",\"fr\":\"Pression artérielle systolique (mmHg)\",\"es\":\"Presión arterial sistólica (mmHg)\",\"it\":\"Pressione arteriosa sistolica (mmHg)\",\"pt-pt\":\"Pressão arterial sistólica (mmHg)\"},\"help\":{\"de\":\"Der obere Wert beim Blutdruckmessen. Falls unsicher: 130 als groben Mittelwert.\",\"en\":\"The upper number on a blood-pressure reading. If unsure: 130 as a rough average.\",\"fr\":\"Valeur supérieure de la tension. En cas de doute : 130.\",\"es\":\"Valor superior de la tensión. Si duda: 130.\",\"it\":\"Valore superiore della pressione. Se non sicuro: 130.\",\"pt-pt\":\"Valor superior da tensão. Se em dúvida: 130.\"}},{\"id\":\"non_hdl\",\"type\":\"number\",\"min\":50,\"max\":350,\"stepv\":1,\"unit\":\"mg/dL\",\"label\":{\"de\":\"Non-HDL-Cholesterin (mg/dL)\",\"en\":\"Non-HDL cholesterol (mg/dL)\",\"fr\":\"Cholestérol non-HDL (mg/dL)\",\"es\":\"Colesterol no-HDL (mg/dL)\",\"it\":\"Colesterolo non-HDL (mg/dL)\",\"pt-pt\":\"Colesterol não-HDL (mg/dL)\"},\"help\":{\"de\":\"Berechnet aus Gesamt-Cholesterin minus HDL. Typischer Bereich 100–220 mg/dL. Falls unbekannt: 160 als Schätzung.\",\"en\":\"Total cholesterol minus HDL. Typical range 100–220 mg/dL. If unknown: 160 as estimate.\",\"fr\":\"Cholestérol total moins HDL. Plage typique 100–220 mg/dL. Si inconnu : 160.\",\"es\":\"Colesterol total menos HDL. Rango típico 100–220 mg/dL. Si desconoce: 160.\",\"it\":\"Colesterolo totale meno HDL. Range tipico 100–220 mg/dL. Se ignoto: 160.\",\"pt-pt\":\"Colesterol total menos HDL. Intervalo típico 100–220 mg/dL. Se desconhecido: 160.\"}}],\"i18n\":{\"step_label\":\"Schritt\",\"of\":\"von\",\"next\":\"Weiter\",\"back\":\"Zurück\",\"submit\":\"Auswertung anzeigen\",\"restart\":\"Neu starten\",\"required\":\"Bitte eine Auswahl treffen.\",\"invalid_number\":\"Bitte eine gültige Zahl eingeben.\",\"result_title\":\"Ihr Ergebnis\",\"risk_low\":\"Niedriges Risiko\",\"risk_mod\":\"Erhöhtes Risiko\",\"risk_high\":\"Hohes Risiko\",\"risk_veryhigh\":\"Sehr hohes Risiko\",\"cta_book\":\"Termin in der Praxis vereinbaren\",\"cta_print\":\"Ergebnis drucken\",\"disclaimer_label\":\"Hinweis\",\"disclaimer\":\"Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.\"},\"tool_i18n\":{\"summary_low\":\"Geringes 10-Jahres-Risiko. Allgemeine Vorsorge ausreichend.\",\"summary_mod\":\"Moderates 10-Jahres-Risiko. Eine internistische Beratung zu Lebensstil und ggf. Cholesterin lohnt sich.\",\"summary_high\":\"Hohes 10-Jahres-Risiko. Internistische Sprechstunde mit individueller Therapieplanung empfohlen.\",\"summary_veryhigh\":\"Sehr hohes 10-Jahres-Risiko. Zeitnaher Termin sinnvoll — auch wenn Sie sich beschwerdefrei fühlen.\",\"unit\":\"% in 10 Jahren\",\"advice_lipids\":\"Lipidprofil + LDL-Zielwert besprechen — ggf. Statin-Therapie.\",\"advice_bp\":\"Blutdruck-Selbstmessung über 7 Tage als Grundlage für die Therapieentscheidung.\",\"advice_smoking\":\"Rauchstopp ist die einzige Maßnahme, die das CV-Risiko innerhalb von Monaten halbiert.\",\"advice_check\":\"Internistische Vorsorge inkl. EKG, Belastungs-EKG und Carotis-Duplex bei Bedarf.\"},\"cta_url\":\"https://www.doctolib.de/gemeinschaftspraxis/frankfurt-am-main/praxis-dr-stracke-kollegen-frankfurt-am-main?utm_campaign=website-button&utm_source=praxis-dr-stracke-kollegen-frankfurt-am-main-website-button&utm_medium=referral&utm_content=option-1&utm_term=praxis-dr-stracke-kollegen\",\"cta_label\":\"Termin in der Praxis vereinbaren\",\"meta\":[]}    </script>\n        <section class=\"pxz-os pxz-wizard\" data-pxz-wizard data-key=\"a1_fib4\" aria-labelledby=\"pxz-wizard-a1_fib4-3-title\">\n              <header class=\"pxz-os-head\">\n          <h2 id=\"pxz-wizard-a1_fib4-3-title\" class=\"pxz-os-title\">Leber-Fibrose-Screening (Fib-4)</h2>\n          <p class=\"pxz-os-lead\">Aus vier Routine-Laborwerten lässt sich abschätzen, ob bei einer Fettleber bereits fortgeschrittene Bindegewebsumbauten (Fibrose) wahrscheinlich sind.</p>        </header>\n<img class=\"health-motif\" src=\"/images/diagnostik/gesundheits-check-leber.webp\" alt=\"DHT-Modell der Leber\" loading=\"lazy\" width=\"800\" height=\"800\">\n      \n      <div class=\"pxz-wizard-progress\" aria-hidden=\"true\"><span class=\"pxz-wizard-bar\" style=\"--p:0%\"></span></div>\n      <div class=\"pxz-wizard-stage\" role=\"status\" aria-live=\"polite\"></div>\n\n      <div class=\"pxz-os-actions pxz-wizard-nav\">\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-back hidden>Zurück</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-primary\" data-pxz-next>Weiter</button>\n        <button type=\"button\" class=\"pxz-btn pxz-btn-ghost\" data-pxz-restart hidden>Neu starten</button>\n      </div>\n\n      <p class=\"pxz-os-disclaimer\">\n        <strong>Hinweis:</strong>\n        Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.      </p>\n    </section>\n\n    <script type=\"application/json\" class=\"pxz-wizard-data\">\n    {\"key\":\"a1_fib4\",\"lang\":\"de\",\"steps\":[{\"id\":\"age\",\"type\":\"number\",\"min\":18,\"max\":100,\"stepv\":1,\"unit\":\"Jahre\",\"label\":{\"de\":\"Ihr Alter (Jahre)\",\"en\":\"Your age (years)\",\"fr\":\"Votre âge\",\"es\":\"Su edad\",\"it\":\"La sua età\",\"pt-pt\":\"A sua idade\"}},{\"id\":\"ast\",\"type\":\"number\",\"min\":5,\"max\":800,\"stepv\":1,\"unit\":\"U/L\",\"label\":{\"de\":\"AST / GOT (U/L)\",\"en\":\"AST (U/L)\",\"fr\":\"AST/ASAT (U/L)\",\"es\":\"AST (U/L)\",\"it\":\"AST (U/L)\",\"pt-pt\":\"AST (U/L)\"},\"help\":{\"de\":\"Steht im Laborbefund als AST oder GOT. Normwert je nach Labor 10–35 U/L.\",\"en\":\"Listed as AST or SGOT on lab reports. Normal range 10–35 U/L.\",\"fr\":\"AST/ASAT. 10–35 U/L.\",\"es\":\"AST/GOT. 10–35 U/L.\",\"it\":\"AST/GOT. 10–35 U/L.\",\"pt-pt\":\"AST/TGO. 10–35 U/L.\"}},{\"id\":\"alt\",\"type\":\"number\",\"min\":5,\"max\":800,\"stepv\":1,\"unit\":\"U/L\",\"label\":{\"de\":\"ALT / GPT (U/L)\",\"en\":\"ALT (U/L)\",\"fr\":\"ALT/ALAT (U/L)\",\"es\":\"ALT (U/L)\",\"it\":\"ALT (U/L)\",\"pt-pt\":\"ALT (U/L)\"}},{\"id\":\"plt\",\"type\":\"number\",\"min\":30,\"max\":600,\"stepv\":1,\"unit\":\"×10⁹/L\",\"label\":{\"de\":\"Thrombozyten (×10⁹/L bzw. /nL)\",\"en\":\"Platelets (×10⁹/L)\",\"fr\":\"Plaquettes\",\"es\":\"Plaquetas\",\"it\":\"Piastrine\",\"pt-pt\":\"Plaquetas\"},\"help\":{\"de\":\"Häufig als „Thrombozyten\\\" oder „PLT\\\" angegeben. Normwert 150–400 ×10⁹/L.\",\"en\":\"Normal 150–400 ×10⁹/L.\",\"fr\":\"Normal 150–400.\",\"es\":\"Normal 150–400.\",\"it\":\"Normale 150–400.\",\"pt-pt\":\"Normal 150–400.\"}}],\"i18n\":{\"step_label\":\"Schritt\",\"of\":\"von\",\"next\":\"Weiter\",\"back\":\"Zurück\",\"submit\":\"Auswertung anzeigen\",\"restart\":\"Neu starten\",\"required\":\"Bitte eine Auswahl treffen.\",\"invalid_number\":\"Bitte eine gültige Zahl eingeben.\",\"result_title\":\"Ihr Ergebnis\",\"risk_low\":\"Niedriges Risiko\",\"risk_mod\":\"Erhöhtes Risiko\",\"risk_high\":\"Hohes Risiko\",\"risk_veryhigh\":\"Sehr hohes Risiko\",\"cta_book\":\"Termin in der Praxis vereinbaren\",\"cta_print\":\"Ergebnis drucken\",\"disclaimer_label\":\"Hinweis\",\"disclaimer\":\"Dieses Tool dient ausschließlich der Orientierung und ersetzt keine ärztliche Beurteilung. Im Notfall wählen Sie 112.\"},\"tool_i18n\":{\"summary_low\":\"Fib-4 unter 1,3: fortgeschrittene Fibrose unwahrscheinlich.\",\"summary_mod\":\"Fib-4 zwischen 1,3 und 2,67: unklarer Bereich. Internistische Sonographie + ggf. transiente Elastographie sinnvoll.\",\"summary_high\":\"Fib-4 über 2,67: hohe Wahrscheinlichkeit für fortgeschrittene Fibrose. Bitte zeitnah internistisch abklären.\",\"unit\":\"\",\"advice_us\":\"Bauchsonographie der Leber gehört in der internistischen Sprechstunde zum Standard.\",\"advice_alc\":\"Alkohol weglassen ist die effektivste Einzelmaßnahme bei jeder Form der Leberverfettung.\",\"advice_metabo\":\"Stoffwechsel-Check: HbA1c, Lipide, Ferritin — Fettleber ist häufig mit Insulinresistenz vergesellschaftet.\"},\"cta_url\":\"https://www.doctolib.de/gemeinschaftspraxis/frankfurt-am-main/praxis-dr-stracke-kollegen-frankfurt-am-main?utm_campaign=website-button&utm_source=praxis-dr-stracke-kollegen-frankfurt-am-main-website-button&utm_medium=referral&utm_content=option-1&utm_term=praxis-dr-stracke-kollegen\",\"cta_label\":\"Termin in der Praxis vereinbaren\",\"meta\":[]}    </script>\n      ",
+    "source_available": true,
     "cta_url": "https://westend-hausarzt.com/health-check/",
-    "cta_label": "Gesundheits-Check öffnen"
+    "cta_label": "Gesundheits-Check öffnen",
+    "heading": "Gesundheits-Check (FINDRISK · CV-Risiko · Leber)"
   },
   {
     "id": "labor-basis-check",
@@ -177,7 +235,9 @@
     "body": "<p>Der Basis-Check erfasst ausgewählte Blutwerte für eine erste Bestandsaufnahme. Die Ergebnisse werden im ärztlichen Gespräch im Zusammenhang mit Ihrer Vorgeschichte eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutbild und Blutbildbestandteile</li>\n<li>HbA1c (Langzeitblutzucker)</li>\n<li>LDL-Cholesterin</li>\n<li>Gamma-GT (GGT)</li>\n<li>Kreatinin</li>\n</ul>\n<h2>Für wen</h2>\n<p>Als Einstieg oder für eine ärztlich abgestimmte Verlaufskontrolle ausgewählter Basiswerte.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für einen Basis-Check?",
+    "heading": "Basis-Check"
   },
   {
     "id": "labor-erweiterter-check",
@@ -187,7 +247,9 @@
     "body": "<p>Der Erweiterte Check ergänzt die Basiswerte um weitere Blutfette, Leberwerte, Harnstoff, Harnsäure und die Differenzierung der weißen Blutkörperchen. Die ärztliche Besprechung ordnet die gemessenen Werte ein.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Nierenwerte: Kreatinin und Harnstoff</li>\n<li>Leberwerte: GOT, GPT, Gamma-GT, Gesamtbilirubin und CHE</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine erweiterte Bestandsaufnahme oder eine ärztlich abgestimmte Verlaufskontrolle.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für den Erweiterten Check?",
+    "heading": "Erweiterter Check"
   },
   {
     "id": "labor-vorsorge-check",
@@ -197,7 +259,9 @@
     "body": "<p>Der Vorsorge-Check verbindet ausgewählte Stoffwechsel- und Organwerte mit Blutbild, Eiweißanalysen, Immunglobulinen sowie Vitamin D, TSH, CRP und NTproBNP. Welche Bedeutung die Ergebnisse haben, wird im ärztlichen Gespräch eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Nierenwerte: Kreatinin und Harnstoff; Natrium und Kalium</li>\n<li>Leberwerte: GOT, GPT, Gamma-GT, alkalische Phosphatase (AP), Gesamtbilirubin und CHE</li>\n<li>Weitere Enzyme: Lipase, LDH, CK und CK-MB</li>\n<li>Gesamtprotein und Proteinelektrophorese im Serum</li>\n<li>Immunglobuline: IgA, IgG, IgM und IgE</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n<li>NTproBNP, TSH und CRP</li>\n<li>25-Hydroxy-Vitamin D (25-OH-D)</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte, umfangreichere Laborbestandsaufnahme.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für den Vorsorge-Check?",
+    "heading": "Vorsorge-Check"
   },
   {
     "id": "labor-stoffwechsel-werte",
@@ -207,7 +271,9 @@
     "body": "<p>Das Profil stellt ausgewählte Werte des Fett-, Zucker- und Purinstoffwechsels zusammen. Die Ergebnisse dienen als Grundlage für das ärztliche Gespräch und gegebenenfalls für einen Vergleich mit früheren Messungen.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker)</li>\n<li>Harnsäure</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine fokussierte Bestandsaufnahme oder eine ärztlich abgestimmte Verlaufskontrolle.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Stoffwechsel-Werte?",
+    "heading": "Stoffwechsel-Werte"
   },
   {
     "id": "labor-risikoprofil",
@@ -217,7 +283,9 @@
     "body": "<p>Das Profil erfasst ausgewählte Laborwerte als Grundlage für die ärztliche Risikobesprechung. Die Einordnung erfolgt im Zusammenhang mit Vorgeschichte und weiteren Untersuchungsbefunden.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutfette: Gesamtcholesterin, LDL, HDL und Triglyzeride</li>\n<li>HbA1c (Langzeitblutzucker) und Harnsäure</li>\n<li>Kreatinin</li>\n<li>Leberwerte: GOT, GPT und Gamma-GT</li>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Einordnung ausgewählter Risikofaktoren.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für das Risikoprofil?",
+    "heading": "Risikoprofil"
   },
   {
     "id": "labor-immunprofil",
@@ -227,7 +295,9 @@
     "body": "<p>Das Immunprofil stellt ausgewählte Messgrößen zu Blutzellen, Immunglobulinen sowie Eisen und Mineralstoffen zusammen. Die Werte werden ärztlich im Zusammenhang mit dem Untersuchungsanlass beurteilt.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Blutbild und Differenzierung der Leukozyten</li>\n<li>Retikulozytenzahl</li>\n<li>Immunglobuline: IgA, IgG, IgM und IgE</li>\n<li>Proteinelektrophorese im Serum</li>\n<li>Eisen und Transferrin</li>\n<li>Natrium, Kalium, Calcium und Magnesium</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Untersuchung ausgewählter Blutbild-, Immun- und Versorgungswerte.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für das Immunprofil?",
+    "heading": "Immunprofil"
   },
   {
     "id": "labor-leberwerte",
@@ -237,7 +307,9 @@
     "body": "<p>Das Leberprofil kombiniert ausgewählte Leberwerte mit Gesamtprotein, Proteinelektrophorese und Gerinnungszeiten. Es bildet damit den festgelegten Untersuchungsumfang für die ärztliche Befundbesprechung ab.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Leberenzyme: GOT, GPT, Gamma-GT, GLDH, alkalische Phosphatase (AP) und CHE</li>\n<li>Gesamtbilirubin</li>\n<li>Gesamtprotein und Proteinelektrophorese im Serum</li>\n<li>Gerinnung: Thromboplastinzeit (Quick), partielle Thromboplastinzeit (PTT)</li>\n<li>Plasmathrombinzeit (PTZ)</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Bestandsaufnahme oder Verlaufskontrolle von Leberwerten.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Leberwerte?",
+    "heading": "Leberwerte"
   },
   {
     "id": "labor-nierenwerte",
@@ -247,7 +319,9 @@
     "body": "<p>Das Nierenprofil umfasst ausgewählte Blutwerte und Urinuntersuchungen. Die Eiweißanalysen erfolgen im Serum beziehungsweise Plasma; sie sind keine Messung des Eiweißverlusts im Urin. Die Befunde werden ärztlich zusammen eingeordnet.</p>\n<h2>Wir bestimmen</h2>\n<ul>\n<li>Kreatinin, Harnstoff und Harnsäure</li>\n<li>Natrium, Kalium, Calcium und anorganisches Phosphat</li>\n<li>Gesamtprotein im Serum oder Plasma; Proteinelektrophorese im Serum</li>\n<li>Urinsediment und Urinteststreifen-Untersuchung</li>\n</ul>\n<h2>Für wen</h2>\n<p>Für eine ärztlich abgestimmte Untersuchung oder Verlaufskontrolle ausgewählter Nierenwerte.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Nierenwerte?",
+    "heading": "Nierenwerte"
   },
   {
     "id": "genetik-beratung",
@@ -257,6 +331,8 @@
     "body": "<p>In fast jeder deiner Zellen liegen rund zwei Meter DNA, dicht gefaltet in einen Kern von wenigen Tausendstel Millimetern. Kommerziellen Gentests ist dieser Bauplan ein Versprechen — doch zwischen „Gen nachweisbar“ und „Krankheit wahrscheinlich“ liegt oft eine Welt aus Wahrscheinlichkeiten, Lebensstil und Umwelt. Die Genetik-Beratung sortiert das: Welche Fragen kann ein Test beantworten? Welche nicht? Und was würdest du mit der Antwort tun? Am Ende erhältst du eine schriftliche Zusammenfassung — und eine ehrliche Empfehlung, ob weiterführende Diagnostik sinnvoll ist.</p>\n\n<h2>Für wen</h2>\n\n<p>Vor einem geplanten Gentest, nach einem auffälligen Befund — oder bei familiärer Häufung von Erkrankungen, die du einordnen lassen möchtest.</p>",
     "source_available": true,
     "cta_url": "https://westend-hausarzt.com/service/terminanfrage/",
-    "cta_label": "Termin vereinbaren"
+    "cta_label": "Termin vereinbaren",
+    "cta_heading": "Termin für die Genetik-Beratung?",
+    "heading": "Genetik-Beratung"
   }
 ]

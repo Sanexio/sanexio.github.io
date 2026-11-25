@@ -1231,5 +1231,6 @@
       "organ_id": "niere-male",
       "image_webp": "/images/labor/labor-nierenwerte.webp"
     }
-  ]
+  ],
+  "disclaimer_sie": "Die gesetzlichen Krankenkassen erstatten die Kosten dieser Leistung nicht. Private Krankenversicherungen erstatten sie im Regelfall — fragen Sie aber sicherheitshalber vorher bei Ihrer Versicherung nach. Ansonsten gilt der Preis für Selbstzahler; die Abrechnung erfolgt nach der Gebührenordnung für Ärzte (GOÄ)."
 }
