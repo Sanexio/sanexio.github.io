@@ -2,4 +2,4 @@
 const destination = new URL('/diagnostik/', Astro.site).href;
 ---
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8" /><title>Weiterleitung zur Diagnostik</title><link rel="canonical" href={destination} /><script is:inline>window.location.replace('/diagnostik/' + window.location.search + window.location.hash);</script></head><body><p>Die Seite ist umgezogen: <a href="/diagnostik/">Diagnostik öffnen</a>.</p></body></html>
+<html lang="de"><head><meta charset="utf-8" /><title>Weiterleitung zur Diagnostik</title><link rel="canonical" href={destination} /><script is:inline>window.location.replace('/diagnostik/' + window.location.search + window.location.hash);</script></head><body><p>Die Seite ist umgezogen: <a href="/diagnostik/">Diagnostik öffnen</a>.</p><p><a href="/">Zur Startseite</a></p></body></html>
