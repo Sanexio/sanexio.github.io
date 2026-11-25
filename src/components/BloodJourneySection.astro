@@ -7,11 +7,10 @@
       <video
         id="blood-journey-video"
         muted
-        autoplay
         playsinline
         loop
         controls
-        preload="auto"
+        preload="none"
         poster="/videos/blood-journey-poster.jpg"
         width="1920"
         height="1080"
@@ -26,21 +25,17 @@
     const video = document.getElementById('blood-journey-video');
     if (!(video instanceof HTMLVideoElement)) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    video.muted = true;
-    if (reducedMotion) {
-      video.autoplay = false;
-      video.removeAttribute('autoplay');
+    const loadVideo = () => {
+      const small = window.matchMedia('(max-width: 768px)').matches || navigator.connection?.saveData;
+      video.src = small ? '/videos/blood-journey-720.mp4' : '/videos/blood-journey-1080.mp4';
       video.preload = 'metadata';
-    }
-
-    const useSmallVideo = window.matchMedia('(max-width: 768px)').matches
-      || navigator.connection?.saveData;
-    video.src = useSmallVideo
-      ? '/videos/blood-journey-720.mp4'
-      : '/videos/blood-journey-1080.mp4';
-
-    if (!reducedMotion) video.play().catch(() => {});
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) { loadVideo(); observer.disconnect(); }
+      }, { rootMargin: '200px' });
+      observer.observe(video);
+    } else loadVideo();
   })();
 </script>
 
