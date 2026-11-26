@@ -117,6 +117,10 @@ button,summary { font: inherit; cursor: pointer; }
 @media(min-width: 700px) { .sx-cg.sx-g8 { --c: var(--md); } }
 @media(min-width: 900px) { .sx-cg.sx-g8 { --c: var(--lg); } }
 @media(min-width: 1200px) { .sx-cg.sx-g8 { --c: var(--xl); } }
+/* Fuenf Zahlenkarten: am Rechner eine Reihe, schmaler 3 + 2 bzw. 2 + 2 + 1 mittig */
+.sx-cg.sx-kpi5 { --c: 2; }
+@media(min-width: 700px) { .sx-cg.sx-kpi5 { --c: 3; } }
+@media(min-width: 900px) { .sx-cg.sx-kpi5 { --c: 5; } }
 
 /* Karten: einheitlicher Innenabstand, Textspalte, Fuss bündig unten */
 .sx-home .sx-card, .sx-cg > .sx-card { container-type: inline-size; display: flex; flex-direction: column; padding: clamp(1.25rem, 2.2vw, 2rem); text-align: left; }
