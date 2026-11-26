@@ -30,9 +30,21 @@ if [ -z "${STATICRYPT_PASSWORD:-}" ]; then
 fi
 [ -d "$DIST" ] || { echo "FEHLER: Ordner $DIST fehlt." >&2; exit 1; }
 
-# 1. Unverschluesselte Altseiten aus der bisherigen Auslieferung dazuholen
-geholt=0
+# Fester Salzwert: damit ein gemerktes Passwort ueber Deploys hinweg gilt
+SALZ="$(sed -n 's/.*"salt": *"\([0-9a-f]\{32\}\)".*/\1/p' "$HIER/staticrypt.json")"
+[ -n "$SALZ" ] || { echo "FEHLER: Salzwert in staticrypt.json fehlt." >&2; exit 1; }
+
+# 1. Altseiten aus der bisherigen Auslieferung pruefen und bei Bedarf dazuholen.
+#    Jede Seite wird in eine Datei geholt und dort geprueft - NICHT ueber eine
+#    Pipe mit grep -q: unter pipefail bricht das bei grossen Dateien ab (SIGPIPE)
+#    und die Seite galt faelschlich als unverschluesselt. Folge am 26.11.2026:
+#    health-graph.html wurde bei jedem Deploy erneut verschluesselt (7 Schichten,
+#    Groesse jedes Mal verdoppelt) bis GitHubs 100-MB-Grenze den Deploy stoppte.
+#    Deshalb werden Schichten gezaehlt: genau 1 = in Ordnung, 0 oder mehr als 1 =
+#    Klartext herstellen und unten genau einmal verschluesseln.
+geholt=0; geheilt=0; unlesbar=0
 if [ -n "$ALTREF" ]; then
+    PRUEF="$(mktemp -d)"
     while IFS= read -r -d '' pfad; do
         case "$pfad" in *.html) ;; *) continue ;; esac
         if printf '%s' "$pfad" | grep -Eq "$AUSGENOMMEN"; then continue; fi
@@ -40,17 +52,28 @@ if [ -n "$ALTREF" ]; then
         ueberspringen=0
         for o in "${OFFEN[@]}"; do [ "$pfad" = "$o" ] && ueberspringen=1; done
         [ "$ueberspringen" = 1 ] && continue
-        if git show "$ALTREF:$pfad" | grep -q 'staticryptInitiator'; then continue; fi
+        git cat-file -p "$ALTREF:$pfad" > "$PRUEF/seite.html"
+        schichten=0
+        while grep -q 'staticryptInitiator' "$PRUEF/seite.html"; do
+            rm -rf "$PRUEF/aus"
+            if [ "$schichten" -ge 12 ] || ! (cd "$PRUEF" && npx --yes "staticrypt@$VERSION" seite.html --decrypt -d aus -c false -s "$SALZ" > /dev/null 2>&1) || [ ! -s "$PRUEF/aus/seite.html" ]; then
+                schichten=-1; break
+            fi
+            mv "$PRUEF/aus/seite.html" "$PRUEF/seite.html"
+            schichten=$((schichten + 1))
+        done
+        if [ "$schichten" = 1 ]; then continue; fi
+        if [ "$schichten" = -1 ]; then
+            echo "WARNUNG: $pfad laesst sich nicht entschluesseln (anderes Passwort?) - bleibt unveraendert." >&2
+            unlesbar=$((unlesbar + 1)); continue
+        fi
         mkdir -p "$DIST/$(dirname "$pfad")"
-        git show "$ALTREF:$pfad" > "$DIST/$pfad"
-        geholt=$((geholt + 1))
+        cp "$PRUEF/seite.html" "$DIST/$pfad"
+        if [ "$schichten" = 0 ]; then geholt=$((geholt + 1)); else geheilt=$((geheilt + 1)); echo "Geheilt ($schichten Schichten): $pfad"; fi
     done < <(git ls-tree -r -z --name-only "$ALTREF")
+    rm -rf "$PRUEF"
 fi
-echo "Altseiten dazugeholt: $geholt"
-
-# Fester Salzwert: damit ein gemerktes Passwort ueber Deploys hinweg gilt
-SALZ="$(sed -n 's/.*"salt": *"\([0-9a-f]\{32\}\)".*/\1/p' "$HIER/staticrypt.json")"
-[ -n "$SALZ" ] || { echo "FEHLER: Salzwert in staticrypt.json fehlt." >&2; exit 1; }
+echo "Altseiten: $geholt unverschluesselt dazugeholt, $geheilt mehrfach verschluesselte geheilt, $unlesbar nicht lesbar"
 
 # 2. Pflichtseiten beiseitelegen (kommen auch bei Abbruch zurueck)
 ABLAGE="$(mktemp -d)"
