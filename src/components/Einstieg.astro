@@ -6,7 +6,7 @@ const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['90 %','der gebuchten 
  <h1 id="f2" class="sx-h1">Wir behandeln Patient:innen und entwickeln die Software dafür selbst</h1>
  <div class="sx-lead-duo">
  <p class="sx-lead">Das <a href="https://westend-hausarzt.com/" target="_blank" rel="noopener">Praxiszentrum Dr. Stracke und Kollegen</a> im Frankfurter Westend vereint neun Fachrichtungen unter einem Dach – von Allgemeinmedizin und Innerer Medizin über Gynäkologie, Urologie, HNO und Neurologie bis zu Chirurgie, Psycho- und Physiotherapie. Kurze Wege und die enge Abstimmung zwischen den Fachärzt:innen prägen den Praxisalltag.</p>
- <p class="sx-lead">Wir sind ein Team aus Ärzt:innen und IT-Fachleuten unter der Leitung von Dr. Stracke. Er führt die Praxisgemeinschaft als geschäftsführender Gesellschafter und die Sanexio GmbH als Geschäftsführer. Wir entwickeln eigene digitale Tools für unsere Praxisabläufe und bauen sie Schritt für Schritt aus. Dabei orientieren wir uns daran, was unsere Patient:innen und unser Praxisteam im Alltag brauchen.</p>
+ <p class="sx-lead">Bei uns arbeiten Ärzt:innen und IT-Fachleute Hand in Hand – die Praxisgemeinschaft und die Sanexio GmbH haben mit Dr. Stracke dieselbe Leitung. Wir entwickeln eigene digitale Tools für unsere Praxisabläufe und bauen sie Schritt für Schritt aus. Dabei orientieren wir uns daran, was unsere Patient:innen und unser Praxisteam im Alltag brauchen.</p>
  </div>
  <div class="sx-cg sx-g2">
   <article class="sx-card"><h3>Die Praxis</h3><p>Frankfurt-Westend, Grüneburgweg. Rund 500 m², neun Fachrichtungen unter einem Dach, eigene Organisation. Hier entsteht der Alltag, den unsere Software abbildet.</p></article>
@@ -15,3 +15,29 @@ const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['90 %','der gebuchten 
  <div class="sx-cg sx-g8">{kpis.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
  <p class="sx-slide-note">Teamgröße, Räume, Fälle: Praxisprofil Stand 13.04.2026 · Check-ups 2025: Schätzung aus Ø 8,5 pro Woche × knapp 800 €</p>
 </div></section>
+<script>
+ // Symmetrie: nebeneinander stehende Einleitungsabsaetze bekommen dieselbe Zeilenzahl.
+ // Dazu wird der Wortabstand in kleinsten Schritten angepasst (hoechstens 0,12 em).
+ function gleicheZeilen() {
+  document.querySelectorAll('.sx-lead-duo').forEach((duo) => {
+   const ps = Array.from(duo.querySelectorAll<HTMLElement>('.sx-lead'));
+   ps.forEach((p) => (p.style.wordSpacing = ''));
+   if (ps.length !== 2 || ps[0].offsetTop !== ps[1].offsetTop) return;
+   const [a, b] = ps.map((p) => p.offsetHeight);
+   if (a === b) return;
+   const lang = a > b ? ps[0] : ps[1];
+   const kurz = a > b ? ps[1] : ps[0];
+   // erst nur die laengere Spalte enger setzen, sonst nur die kuerzere weiter
+   for (const [el, richtung] of [[lang, -1], [kurz, 1]] as [HTMLElement, number][]) {
+    for (let i = 1; i <= 14; i++) {
+     el.style.wordSpacing = `${richtung * 0.01 * i}em`;
+     if (lang.offsetHeight === kurz.offsetHeight) return;
+    }
+    el.style.wordSpacing = '';
+   }
+  });
+ }
+ gleicheZeilen();
+ document.fonts?.ready.then(gleicheZeilen);
+ window.addEventListener('resize', gleicheZeilen);
+</script>
