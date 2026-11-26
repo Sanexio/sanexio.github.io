@@ -24,9 +24,16 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
 <style>
   .journey-card { position: relative; gap: 1rem; }
   .neutral-motif { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); color: var(--sx-c-accent); }
-  .genetik-motif { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
+  .genetik-motif { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: calc(var(--sx-radius-card) - 6px); }
+  .journey-card :global(.labor-visual img) { aspect-ratio: 16 / 9; object-fit: cover; border-radius: calc(var(--sx-radius-card) - 6px); }
+  .genetik-motif, .journey-card :global(.labor-visual img) { transition: filter var(--sx-dur, .22s) var(--sx-ease, ease); }
   .journey-card a::after { content: ""; position: absolute; inset: 0; }
   .journey-card:focus-within { outline: 3px solid var(--sx-c-accent); outline-offset: 3px; }
   .journey-card h3 { margin: 0; }
   .journey-card .sx-btn { margin-top: auto; }
+  @media (hover: hover) {
+    .journey-card:hover .genetik-motif, .journey-card:hover :global(.labor-visual img) { filter: saturate(1.08) brightness(1.03); }
+    .journey-card:hover .sx-btn { border-color: var(--sx-c-accent); color: var(--sx-c-accent); }
+  }
+  @media (prefers-reduced-motion: reduce) { .genetik-motif, .journey-card :global(.labor-visual img) { transition: none; } }
 </style>

@@ -1,27 +1,36 @@
+---
+const pfad = Astro.url.pathname;
+---
 <a class="sx-skip sx-btn" href="#inhalt">Zum Inhalt</a>
 <header class="sx-nav">
   <div class="sx-container sx-nav-inner">
     <a href="/" class="sx-brand" aria-label="Sanexio, zur Startseite">sanexio<span aria-hidden="true">.</span></a>
     <nav aria-label="Hauptnavigation">
       <a href="/#cortex">Cortex &amp; Nexus</a>
-      <a href="/dht-abnahme-3/">DHT testen</a>
+      <a href="/dht-abnahme-3/" class="sx-nav-cta-link"><span class="sx-nav-cta">DHT testen</span></a>
       <a href="/#apps">Cortex-Apps</a>
-      <a href="/diagnostik/">Diagnostik</a>
+      <a href="/diagnostik/" aria-current={pfad.startsWith('/diagnostik') ? 'page' : undefined}>Diagnostik</a>
       <a href="/#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 <style>
- .sx-nav { position: sticky; top: 0; z-index: 100; background: var(--sx-c-bg); border-bottom: 1px solid var(--sx-c-line); }
+ .sx-nav { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--sx-c-bg) 82%, transparent); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid var(--sx-c-line-soft, #E5E5EA); }
  .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .2rem 2rem; padding-block: .6rem; }
- .sx-brand { font: 800 1.9rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
+ .sx-brand { font: 800 1.6rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
  .sx-brand span { color: var(--sx-c-accent); }
  nav { display: flex; flex-wrap: nowrap; gap: 0 1.6rem; }
- nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .85rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+ nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .85rem; font-weight: 600; text-decoration: none; white-space: nowrap; color: var(--sx-c-ink-subtle); background-image: linear-gradient(var(--sx-c-accent), var(--sx-c-accent)); background-size: 0 2px; background-position: 0 calc(100% - 8px); background-repeat: no-repeat; transition: color var(--sx-dur, .22s) var(--sx-ease, ease), background-size var(--sx-dur, .22s) var(--sx-ease, ease); }
+ nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { color: var(--sx-c-ink); background-size: 100% 2px; }
+ nav a.sx-nav-cta-link { background-image: none; }
+ .sx-nav-cta { background: var(--sx-c-accent); color: #fff; border-radius: var(--sx-radius-pill); padding: .45rem .95rem; transition: background-color var(--sx-dur, .22s) var(--sx-ease, ease); }
+ .sx-nav-cta-link:hover .sx-nav-cta, .sx-nav-cta-link:focus-visible .sx-nav-cta { background: var(--sx-c-accent-hover); color: #fff; }
  @media(max-width: 767px) {
   .sx-nav-inner { flex-direction: column; align-items: stretch; gap: 0; }
   .sx-brand { align-self: flex-start; }
-  nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
-  nav a { font-size: .7rem; line-height: 1.2; white-space: normal; justify-content: center; text-align: center; padding-inline: .1rem; }
+  nav { display: flex; gap: 1.1rem; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; mask-image: linear-gradient(90deg, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { white-space: nowrap; font-size: .82rem; flex: 0 0 auto; }
  }
+ @media (prefers-reduced-motion: reduce) { nav a, .sx-nav-cta { transition: none; } }
 </style>
