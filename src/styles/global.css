@@ -120,7 +120,15 @@ button,summary { font: inherit; cursor: pointer; }
 
 /* Karten: einheitlicher Innenabstand, Textspalte, Fuss bündig unten */
 .sx-home .sx-card, .sx-cg > .sx-card { container-type: inline-size; display: flex; flex-direction: column; padding: clamp(1.25rem, 2.2vw, 2rem); text-align: left; }
-.sx-card.sx-kpi { box-shadow: none; background: var(--sx-c-surface); border-top: 2px solid var(--sx-c-accent); padding-block: 1.25rem; }
+.sx-card.sx-kpi { box-shadow: none; background: var(--sx-c-surface); padding-block: 1.25rem; }
+.sx-card.sx-kpi::before { content: ""; display: block; width: 1.75rem; height: 3px; border-radius: 3px; background: var(--sx-c-accent); margin-bottom: .9rem; }
+.sx-card.sx-kpi .sx-number { white-space: nowrap; }
+.sx-card.sx-kpi p { hyphens: auto; -webkit-hyphens: auto; }
+@media(max-width: 699px) {
+ .sx-card.sx-kpi { padding-inline: 1rem; }
+ .sx-card.sx-kpi .sx-number { font-size: 1.3rem; }
+ .sx-card.sx-kpi p { font-size: .82rem; line-height: 1.45; }
+}
 .sx-card > :last-child { margin-bottom: 0; }
 .sx-card h3 { font-size: clamp(1.05rem, 6.2cqi, 1.4rem); line-height: 1.2; margin: 0 0 .7rem; overflow-wrap: break-word; }
 .sx-card .sx-sub, .sx-card .sx-step { font-size: .68rem; letter-spacing: .08em; line-height: 1.35; margin-bottom: .6rem; overflow-wrap: break-word; }
