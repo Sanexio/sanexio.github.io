@@ -8,6 +8,7 @@
   --color-subtle: #424245;
   --color-muted: #6E6E73;
   --color-line: #D2D2D7;
+  --color-line-soft: #E5E5EA;
   --color-red: #C8161D;
   --color-red-dark: #8B0F14;
   --color-red-tint: rgba(200,22,29,.07);
@@ -15,9 +16,10 @@
   --color-green: #2D7A4F;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --radius-card: 18px;
+  --radius-card: 20px;
   --radius-pill: 999px;
-  --shadow-card: 0 8px 24px rgba(0,0,0,.04);
+  --shadow-card: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --shadow-hover: 0 2px 4px rgba(0,0,0,.05), 0 16px 40px rgba(0,0,0,.09);
   --space-4: 16px;
   --space-6: 24px;
   --space-8: 40px;
@@ -31,6 +33,7 @@
   --sx-c-ink-subtle: var(--color-subtle);
   --sx-c-ink-muted: var(--color-muted);
   --sx-c-line: var(--color-line);
+  --sx-c-line-soft: var(--color-line-soft);
   --sx-c-accent: var(--color-red);
   --sx-c-accent-hover: var(--color-red-dark);
   --sx-c-accent-soft: var(--color-red-tint);
@@ -45,8 +48,12 @@
   --sx-radius-md: var(--radius-card);
   --sx-radius-pill: var(--radius-pill);
   --sx-shadow-card: var(--shadow-card);
+  --sx-shadow-hover: var(--shadow-hover);
+  --sx-ease: cubic-bezier(.2,.7,.2,1);
+  --sx-dur: .22s;
   --sx-container-max: 1200px;
   --sx-content-max: 56rem;
+  --sx-lead-max: 44rem;
   --sx-space-container-x-mobile: var(--space-6);
   --sx-space-container-x-tablet: var(--space-8);
   --sx-space-container-x-desktop: var(--space-11);
