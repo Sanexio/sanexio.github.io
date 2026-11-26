@@ -178,7 +178,14 @@ button,summary { font: inherit; cursor: pointer; }
 .sx-home > section:first-of-type { background: radial-gradient(1100px 520px at 88% -8%, rgba(200,22,29,.07), transparent 62%), var(--sx-c-bg); }
 .sx-home > section.sx-soft { background: transparent; }
 .sx-home > section:nth-of-type(even) { background: var(--sx-c-bg-soft); }
-.sx-home .sx-lead { max-width: var(--sx-lead-max); }
+.sx-home .sx-lead { max-width: var(--sx-content-max); }
+/* Zwei Einleitungsabsaetze nebeneinander: nutzt die volle Containerbreite */
+.sx-lead-duo { display: grid; gap: 1.1rem 3.5rem; }
+.sx-home .sx-lead-duo .sx-lead { max-width: none; }
+@media(min-width: 900px) {
+ .sx-lead-duo { grid-template-columns: 1fr 1fr; align-items: start; }
+ .sx-home .sx-lead-duo .sx-lead { font-size: clamp(1.05rem, 1.45vw, 1.18rem); line-height: 1.6; }
+}
 .sx-home .sx-claim, .sx-home .sx-slide-note { max-width: var(--sx-content-max); }
 .sx-prose a, .sx-card p a { text-decoration-color: var(--sx-c-accent-ring); text-decoration-thickness: 1.5px; }
 .sx-lead a { color: var(--sx-c-ink); text-decoration: underline; text-decoration-color: var(--sx-c-accent); text-decoration-thickness: 1.5px; }
