@@ -33,6 +33,18 @@ jobs:
       - name: Build (Astro)
         run: bun run build
 
+      - name: Passwortschutz (alle Seiten verschluesseln)
+        # Die ganze Seite liegt hinter einer Passwortabfrage. Das Passwort steht
+        # NICHT im Repo, sondern im Repository-Secret SITE_PASSWORD. Fehlt es,
+        # bricht der Schritt ab - es wird nie ungeschuetzt ausgeliefert.
+        # Der Abruf von gh-pages holt unverschluesselte Altseiten und
+        # DHT-Vorschauen dazu (keep_files laesst sie sonst offen liegen).
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: |
+          git fetch --depth 1 origin gh-pages:refs/remotes/origin/gh-pages
+          tools/passwortschutz/schuetzen.sh dist refs/remotes/origin/gh-pages
+
       - name: Add .nojekyll
         # Tells GitHub Pages to skip Jekyll processing — required because
         # Astro emits files with leading underscores (e.g. _astro/) that
