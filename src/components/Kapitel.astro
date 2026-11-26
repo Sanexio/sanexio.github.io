@@ -1,0 +1,12 @@
+---
+// Kapitelband: gliedert die Startseite in die sechs Teile des Pitch.
+interface Props { nr: string; titel: string; id: string }
+const { nr, titel, id } = Astro.props;
+---
+<div class="sx-kapitel" id={id}><div class="sx-container"><span class="sx-kapitel-nr" aria-hidden="true">{nr}</span><span class="sx-kapitel-titel">{titel}</span></div></div>
+<style>
+ .sx-kapitel { background: var(--sx-c-ink); color: #fff; }
+ .sx-kapitel .sx-container { display: flex; align-items: baseline; gap: 1rem; padding-block: 1.05rem; }
+ .sx-kapitel-nr { font-family: var(--sx-font-display); font-weight: 700; font-size: 1.05rem; color: #ff6b70; font-variant-numeric: tabular-nums; }
+ .sx-kapitel-titel { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+</style>

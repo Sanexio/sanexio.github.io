@@ -1,6 +1,10 @@
 ---
+interface Props { nur?: string[] }
+const { nur } = Astro.props;
+// Abschnitte einzeln platzierbar: <Baustein nur={['id']} /> zeigt nur die genannten.
+const zeig = (id: string) => !nur || nur.includes(id);
 ---
-<section class="sx-section" id="vorteile" aria-labelledby="f7"><div class="sx-container">
+{zeig('vorteile') && (<section class="sx-section" id="vorteile" aria-labelledby="f7"><div class="sx-container">
  <p class="sx-eyebrow">Komparativer Konkurrenzvorteil</p>
  <h2 id="f7">Zwei Vorteile, die kein Softwareanbieter kopieren kann</h2>
  <div class="sx-cg sx-g2">
@@ -14,9 +18,9 @@
   <article class="sx-card"><p>Die Regulierung als Medizinprodukt schützt zusätzlich vor Nachahmern.</p></article>
  </div>
  <p class="sx-claim">Beide Vorteile wirken zusammen: eigene Daten und eigenes Wissen, um sie richtig zu nutzen</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section sx-soft" id="oekosystem" aria-labelledby="f8"><div class="sx-container">
+{zeig('oekosystem') && (<section class="sx-section sx-soft" id="oekosystem" aria-labelledby="f8"><div class="sx-container">
  <p class="sx-eyebrow">Das Cortex-Ökosystem</p>
  <h2 id="f8">Zwei Zielgruppen, eine Schnittstelle: der Digital Health Twin</h2>
  <div class="sx-cg sx-g3">
@@ -30,4 +34,4 @@
  </div>
  <p class="sx-claim">Für Patient:innen ihr Körper als Bild. Für die Praxis die digitale Patientenakte, sobald die Patient:in sie freigibt.</p>
  <p class="sx-slide-note">Die Freigabe liegt immer bei den Patient:innen</p>
-</div></section>
+</div></section>)}

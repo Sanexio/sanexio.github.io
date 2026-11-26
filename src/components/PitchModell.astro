@@ -10,16 +10,20 @@ const canvas = [
  ['Einnahmequellen','Check-up- und Longevity-Pakete (Anteil im Kooperationsmodell; die Partnerpraxen sind damit zugleich das Vertriebsnetz), Twin Plus als Abo, kostenpflichtige Erweiterungen für Praxen'],
 ];
 const kan = [['Praxis','Praxiszentrum am Grüneburgweg: Praxisgemeinschaft, rund 500 m², mehrere Kolleg:innen unter einem Dach. Partnerpraxis Nr. 1, zu denselben Bedingungen wie jede weitere Praxis.'],['Check-up','Der Check-up-Termin ist der Einstieg. Die Ärztin stellt den Twin vor.'],['App Store','Die App LifeLinker, heute als Testversion auf TestFlight.'],['Wartezimmer und Webseite','Film „Blood Journey“ auf den Bildschirmen, Selbsttests auf der Webseite, QR-Code auf dem Laborbefund.'],['Kolleg:innen','Empfehlung in der Praxisgemeinschaft, danach unter Mit-Ärzt:innen.']];
+interface Props { nur?: string[] }
+const { nur } = Astro.props;
+// Abschnitte einzeln platzierbar: <Baustein nur={['id']} /> zeigt nur die genannten.
+const zeig = (id: string) => !nur || nur.includes(id);
 ---
-<section class="sx-section sx-soft" id="modell" aria-labelledby="f12"><div class="sx-container">
+{zeig('modell') && (<section class="sx-section sx-soft" id="modell" aria-labelledby="f12"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas</p>
  <h2 id="f12">Das Geschäftsmodell auf einen Blick</h2>
  <div class="sx-card sx-card-breit"><span class="sx-sub">Value Proposition</span><p><strong>Der Kern, den niemand kopieren kann:</strong> proprietäre Daten von 23.000 Patient:innen seit 1997, ärztliches Domänenwissen und eine lokale KI, die darauf mit eigener Gewichtung trainiert ist.</p><p><strong>Daraus für Patient:innen:</strong> der eigene Twin auf dem iPhone, Werte verstehen, selbst entscheiden, wer was sieht.</p><p><strong>Daraus für Praxen:</strong> lokale KI statt Software-Abos, etwa für Diktat, Termine, Recall, Befunderklärung, QM und Dienstplan.</p></div>
  <div class="sx-cg sx-g8">{canvas.map(([t,p]) => <article class="sx-card"><span class="sx-sub">{t}</span><p>{p}</p></article>)}</div>
  <p class="sx-slide-note">Aufbau nach Osterwalder und Pigneur, Business Model Generation (2010). Die folgenden Abschnitte gehen die neun Felder einzeln durch.</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section" id="segmente" aria-labelledby="f13"><div class="sx-container">
+{zeig('segmente') && (<section class="sx-section" id="segmente" aria-labelledby="f13"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Kundensegmente</p>
  <h2 id="f13">Zwei Kundengruppen, zwei Orte der Datenverarbeitung</h2>
  <div class="sx-cg sx-g2">
@@ -27,9 +31,9 @@ const kan = [['Praxis','Praxiszentrum am Grüneburgweg: Praxisgemeinschaft, rund
   <article class="sx-card"><span class="sx-sub">B2B · danach · Praxen</span><h3>Haus- und Fachärzt:innen mit eigener Praxis</h3><ul class="sx-list"><li>Zuerst Kolleg:innen der Praxisgemeinschaft, dann weitere Mit-Ärzt:innen</li><li>Später möglich: Kassen und Arbeitgeber, nicht Teil des Pilots</li></ul><h3>Datenverarbeitung in der Praxis</h3><p>Auf den Rechnern in der Praxis. Cortex Local bringt lokale Modelle und Praxis-Apps mit. Patientendaten bleiben im Haus.</p></article>
  </div>
  <p class="sx-slide-note">Modell auf dem iPhone: Qwen3 über MLX, in Entwicklung</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section sx-soft" id="kanaele" aria-labelledby="f14"><div class="sx-container">
+{zeig('kanaele') && (<section class="sx-section sx-soft" id="kanaele" aria-labelledby="f14"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Kanäle</p>
  <h2 id="f14">Der erste Kanal ist unsere eigene Praxis</h2>
  <div class="sx-cg sx-g6">{kan.map(([t,p]) => <article class="sx-card"><span class="sx-sub">{t}</span><p>{p}</p></article>)}
@@ -37,4 +41,4 @@ const kan = [['Praxis','Praxiszentrum am Grüneburgweg: Praxisgemeinschaft, rund
  </div>
  <p class="sx-claim">Warum die eigene Praxis zuerst: Hier laufen Datenschranke, Vorsorge-Regeln, Webseite und Kampagne bereits. Was hier funktioniert, übertragen wir auf die nächsten Praxen.</p>
  <p class="sx-slide-note">Praxiszentrum Dr. Stracke &amp; Kollegen · westend-hausarzt.com</p>
-</div></section>
+</div></section>)}

@@ -4,6 +4,7 @@ import DhtAktuell from '../components/DhtAktuell.astro';
 import Default from '../layouts/Default.astro';
 import Nav from '../components/Nav.astro';
 import Einstieg from '../components/Einstieg.astro';
+import Kapitel from '../components/Kapitel.astro';
 import LlmConcept from '../components/LlmConcept.astro';
 import Hero from '../components/Hero.astro';
 import Apps from '../components/Apps.astro';
@@ -16,7 +17,21 @@ import PitchJahr from '../components/PitchJahr.astro';
 import PitchZukunft from '../components/PitchZukunft.astro';
 import ContactFooter from '../components/ContactFooter.astro';
 ---
-<Default><Nav /><main id="inhalt" class="sx-home"><Einstieg /><LlmConcept /><Hero /><DhtAktuell /><Apps /><Aufbau /><LaborJourney /><PitchWir /><PitchVorteil /><PitchProblem /><PitchModell /><PitchJahr /><PitchZukunft /></main><ContactFooter /><script is:inline>
+<Default><Nav /><main id="inhalt" class="sx-home">
+ {/* Aufbau des Pitch in sechs Kapiteln (Vorgabe Dr. Stracke, 26.11.2026) */}
+ <Kapitel nr="01" id="kapitel-1" titel="Praxis und Sanexio" />
+ <Einstieg />
+ <Kapitel nr="02" id="kapitel-2" titel="Das Problem mit SaaS und unsere Lösung" />
+ <PitchWir /><LlmConcept nur={['edge']} /><PitchVorteil nur={['vorteile']} />
+ <Kapitel nr="03" id="kapitel-3" titel="Cortex und Nexus mit den Cortex-Produkten" />
+ <LlmConcept nur={['cortex']} /><Aufbau /><PitchJahr nur={['ressourcen','architektur','sicherheit']} /><Apps />
+ <Kapitel nr="04" id="kapitel-4" titel="Hauptprodukt: der Digital Health Twin" />
+ <Hero /><PitchProblem /><PitchVorteil nur={['oekosystem']} /><PitchJahr nur={['jahr']} /><DhtAktuell />
+ <Kapitel nr="05" id="kapitel-5" titel="Check-up-Untersuchungen und erste Testpraxis" />
+ <LaborJourney /><PitchModell nur={['kanaele']} />
+ <Kapitel nr="06" id="kapitel-6" titel="Business Case" />
+ <PitchModell nur={['modell','segmente']} /><PitchJahr nur={['erloese']} /><PitchZukunft />
+</main><ContactFooter /><script is:inline>
 (function () {
   /* Rubrik und Titel je Kartenzeile auf gleiche Hoehe bringen, damit Titel und Text bündig stehen. */
   var SEL = [':scope > .sx-sub, :scope > .sx-step', ':scope > h3'];

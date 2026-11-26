@@ -1,5 +1,10 @@
-
-<section class="sx-section" id="cortex" aria-labelledby="f6"><div class="sx-container">
+---
+interface Props { nur?: string[] }
+const { nur } = Astro.props;
+// Abschnitte einzeln platzierbar: <Baustein nur={['id']} /> zeigt nur die genannten.
+const zeig = (id: string) => !nur || nur.includes(id);
+---
+{zeig('cortex') && (<section class="sx-section" id="cortex" aria-labelledby="f6"><div class="sx-container">
  <p class="sx-eyebrow">Cortex und Nexus</p>
  <h2 id="f6">Offene Modelle in der Hand der Nutzer, darauf unsere eigene KI</h2>
  <div class="sx-cg sx-g2">
@@ -39,9 +44,9 @@
   </svg>
  </figure>
  <p class="sx-slide-note">Cortex = Plattform beim Nutzer · Nexus = Kern bei Sanexio · Gewichte von Nexus verlassen nie das Haus</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section" id="edge" aria-labelledby="f5"><div class="sx-container">
+{zeig('edge') && (<section class="sx-section" id="edge" aria-labelledby="f5"><div class="sx-container">
  <p class="sx-eyebrow">Was wir anders machen</p>
  <h2 id="f5">„Wir sind nicht SaaS<sup>1</sup>. Wir geben Euch die Kontrolle zurück!“</h2>
  <p class="sx-lead">Wir sind EDGE: Die KI kommt zu den Daten, nie die Daten zur KI.</p>
@@ -53,7 +58,7 @@
   <article class="sx-card"><span class="sx-number">E</span><h3>Exclusive Model</h3><p>Nexus: Open-Weight-Basis, mit LoRA auf unseren proprietären Daten feinjustiert.</p></article>
  </div>
  <p class="sx-slide-note"><sup>1</sup> SaaS, Software as a Service: gemietete Software aus der Cloud, monatlich bezahlt; die Daten liegen beim Anbieter.</p>
-</div></section>
+</div></section>)}
 
 <style>
  .sx-role-figure { margin: 2.5rem auto; max-width: 560px; }

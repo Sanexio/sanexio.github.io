@@ -1,17 +1,21 @@
 ---
 const monate = [['Januar','Der Twin zeigt Herz und Gefäße orange, die Niere gelb. Zum ersten Mal sieht sie, wo ihr Körper steht.','Check-up'],['Februar','Der Twin zeigt ihr mit dem Schalter „Gesund“, wohin es gehen kann, und schlägt ein erstes Ziel vor: 7.000 Schritte am Tag.','Verstehen'],['Ab März','Der Twin übernimmt die Steuerung: Er setzt Wochenziele, misst über Apple Health mit und meldet sich, sobald die Kurve sinkt.','Steuern'],['Juli','Die Praxis erinnert pünktlich. Blutdruck 136/86, LDL 141. Das Gespräch dauert halb so lang, weil es ihr der Twin schon erklärt hat.','Kontrolle'],['Dezember','Blutdruck 128/82, LDL 112, Niere stabil. Die Organe im Twin sind grün. Sie bucht den Longevity-Check fürs nächste Jahr.','Ziel erreicht']];
 const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Cholesterin, von 182 auf 112 mg/dl'],['früh','Nierenwert erkannt, bevor er auffällig wurde'],['2 Checks','gebucht statt keiner: Erlös für Praxis und Sanexio']];
+interface Props { nur?: string[] }
+const { nur } = Astro.props;
+// Abschnitte einzeln platzierbar: <Baustein nur={['id']} /> zeigt nur die genannten.
+const zeig = (id: string) => !nur || nur.includes(id);
 ---
-<section class="sx-section" id="jahr" aria-labelledby="f15"><div class="sx-container">
+{zeig('jahr') && (<section class="sx-section" id="jahr" aria-labelledby="f15"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Kundenbeziehungen</p>
  <h2 id="f15">Ein Jahr mit dem Twin</h2>
  <p class="sx-lead"><strong>Patient Empowerment:</strong> Der Twin führt, motiviert und erklärt, die Patientin entscheidet. Beispiel: 58 Jahre, Blutdruck 148/94, LDL 182 mg/dl, Kreatinin leicht steigend</p>
  <div class="sx-cg sx-g5">{monate.map(([m,t,s]) => <article class="sx-card"><span class="sx-step">{s}</span><h3>{m}</h3><p>{t}</p></article>)}</div>
  <div class="sx-cg sx-g4">{kp.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
  <p class="sx-slide-note">Beispielverlauf zur Veranschaulichung, keine echte Patientin</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section sx-soft" id="erloese" aria-labelledby="f16"><div class="sx-container">
+{zeig('erloese') && (<section class="sx-section sx-soft" id="erloese" aria-labelledby="f16"><div class="sx-container">
  <p class="sx-eyebrow">Business Model Canvas · Einnahmequellen</p>
  <h2 id="f16">Woran Sanexio und die Praxen verdienen</h2>
  <div class="sx-cg sx-g3">
@@ -32,9 +36,9 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
  </div>
  <p class="sx-claim">Twin Plus als Abo: 9,90 € im Monat (Annahme)</p>
  <p class="sx-slide-note">Preise und Stufennamen sind noch nicht festgelegt; alle Beträge sind Annahmen für das Rechenmodell</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section" id="ressourcen" aria-labelledby="f17"><div class="sx-container">
+{zeig('ressourcen') && (<section class="sx-section" id="ressourcen" aria-labelledby="f17"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselressourcen · Wettbewerbsvorteil</p>
  <h2 id="f17">Eigene KI, eigenes Wissen, eigene Daten</h2>
  <div class="sx-cg sx-g4">
@@ -48,9 +52,9 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
   <article class="sx-card"><span class="sx-sub">Für alle verfügbar</span><p>Offene Basismodelle und Trainingstechnik. Sie sind unser Werkzeug, nicht unser Vorsprung.</p></article>
  </div>
  <p class="sx-slide-note">Patientenzahl: Angabe Dr. Stracke, Gesamtbestand der Praxis</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section sx-soft" id="architektur" aria-labelledby="f18"><div class="sx-container">
+{zeig('architektur') && (<section class="sx-section sx-soft" id="architektur" aria-labelledby="f18"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselressourcen · Architektur</p>
  <h2 id="f18">Drei Schichten mit kontrolliertem Ingress und Egress</h2>
  <div class="sx-cg sx-g3">
@@ -63,9 +67,9 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
   <article class="sx-card"><span class="sx-sub">Egress-Gateway</span><p>Nur signierte Release-Bundles mit freigegebenen Wissensartefakten und Open-Weight-Basismodell. Keine eigenen Gewichte, keine PHI. Code-Signing und Manipulationsprüfung beim Update.</p></article>
  </div>
  <p class="sx-slide-note">Datenklassen K0 bis K3, PHI verlässt nie die Praxis</p>
-</div></section>
+</div></section>)}
 
-<section class="sx-section" id="sicherheit" aria-labelledby="f19"><div class="sx-container">
+{zeig('sicherheit') && (<section class="sx-section" id="sicherheit" aria-labelledby="f19"><div class="sx-container">
  <p class="sx-eyebrow">Schlüsselaktivitäten · Deployment</p>
  <h2 id="f19">Wo die Datenverarbeitung läuft und wie sie abgesichert ist</h2>
  <div class="sx-cg sx-g3">
@@ -80,4 +84,4 @@ const kp = [['−20','mmHg systolisch in zwölf Monaten'],['−38 %','LDL-Choles
   <article class="sx-card"><span class="sx-sub">Nachweis</span><p>An der PVS-Anbindung: 0 False Positives bei 165 echten Schreibvorgängen, 17 von 17 Exfiltrationswegen im Pentest abgewiesen.</p></article>
  </div>
  <p class="sx-slide-note">Grundsatz: PHI bleibt in der Instanz, nach außen gehen nur Regeln und Beschreibungen</p>
-</div></section>
+</div></section>)}
