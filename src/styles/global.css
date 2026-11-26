@@ -181,3 +181,4 @@ button,summary { font: inherit; cursor: pointer; }
 .sx-home .sx-lead { max-width: var(--sx-lead-max); }
 .sx-home .sx-claim, .sx-home .sx-slide-note { max-width: var(--sx-content-max); }
 .sx-prose a, .sx-card p a { text-decoration-color: var(--sx-c-accent-ring); text-decoration-thickness: 1.5px; }
+.sx-lead a { color: var(--sx-c-ink); text-decoration: underline; text-decoration-color: var(--sx-c-accent); text-decoration-thickness: 1.5px; }
