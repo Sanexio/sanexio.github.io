@@ -12,9 +12,14 @@ if (new Set(untersuchungen.map(u => u.id)).size !== untersuchungen.length) throw
 <style>
   .untersuchung-card { position: relative; gap: 1rem; }
   .untersuchung-card .sx-btn { margin-top: auto; }
-  .untersuchung-card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--sx-radius-card); }
+  .untersuchung-card img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: calc(var(--sx-radius-card) - 6px); transition: filter var(--sx-dur, .22s) var(--sx-ease, ease); }
   .neutral-motif { display: grid; place-items: center; aspect-ratio: 16 / 9; border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); color: var(--sx-c-accent); }
   .untersuchung-card a::after { content: ""; position: absolute; inset: 0; }
   .untersuchung-card:focus-within { outline: 3px solid var(--sx-c-accent); outline-offset: 3px; }
   .untersuchung-card h3 { margin: 0; }
+  @media (hover: hover) {
+    .untersuchung-card:hover img { filter: saturate(1.08) brightness(1.03); }
+    .untersuchung-card:hover .sx-btn { border-color: var(--sx-c-accent); color: var(--sx-c-accent); }
+  }
+  @media (prefers-reduced-motion: reduce) { .untersuchung-card img { transition: none; } }
 </style>
