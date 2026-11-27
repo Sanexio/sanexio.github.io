@@ -1,0 +1,166 @@
+---
+import labor from '../data/laborprogramme.json';
+import unters from '../data/untersuchungen.json';
+import '../styles/businesswege.css';
+
+const progs = Array.isArray(labor) ? labor : Object.values(labor).find(Array.isArray);
+if (!progs || !progs.every((p) => typeof p.praxis_name === 'string' && typeof p.praxis_slug === 'string' && Number.isFinite(p.goae_summe_eur))) {
+  throw new Error('Laborprogramme fehlen oder enthalten ungültige Preise.');
+}
+const cent = (wert: number) => Math.round(wert * 100) / 100;
+const euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
+const zeilen = [
+  { name: 'Check-up (Annahme aus dem Rechenmodell)', preis: 800, quelle: 'annahme' },
+  ...progs.map((p) => ({ name: 'Labor · ' + p.praxis_name, preis: p.goae_summe_eur, quelle: 'goae', slug: p.praxis_slug })),
+].map((z) => ({ ...z, praxis: cent(z.preis * 0.7), sanexio: cent(z.preis * 0.3) }));
+const summen = zeilen.reduce((s, z) => ({ preis: cent(s.preis + z.preis), praxis: cent(s.praxis + z.praxis), sanexio: cent(s.sanexio + z.sanexio) }), { preis: 0, praxis: 0, sanexio: 0 });
+const namen = unters.map((u) => u.name).join(', ');
+const regler = [
+  { id: 'praxen', label: 'Partnerpraxen', min: 1, max: 100, step: 1, value: 11 },
+  { id: 'menge', label: 'Vermittelte Untersuchungen je Praxis und Monat', min: 5, max: 200, step: 5, value: 25 },
+];
+const kreditRegler = [
+  { id: 'kredit', label: 'Kreditsumme', min: 100000, max: 3000000, step: 50000, value: 1000000, text: euro.format(1000000) },
+  { id: 'zins', label: 'Zinssatz', min: 2, max: 12, step: 0.5, value: 7, text: '7,0 %' },
+  { id: 'jahre', label: 'Laufzeit in Jahren', min: 3, max: 10, step: 1, value: 5, text: '5 Jahre' },
+];
+const crowdRegler = [
+  { id: 'leute', label: 'Unterstützer:innen', min: 100, max: 20000, step: 100, value: 2000, text: '2.000' },
+  { id: 'beitrag', label: 'Beitrag je Person', min: 10, max: 500, step: 1, value: 79, text: euro.format(79) },
+];
+---
+<section id="vermittlung" class="sx-section"><div class="sx-container">
+  <p class="sx-eyebrow">Business Case · Vermittlung</p>
+  <h2>Patient:innen buchen bei Sanexio, die Partnerpraxis untersucht</h2>
+  <p class="sx-lead">Jede Untersuchung, die eine Partnerpraxis durchführen kann, lässt sich über unsere Plattform vermitteln. 30 % des Betrags bleiben bei Sanexio, 70 % gehen an die Praxis.</p>
+  <ol class="sx-bw-flow">
+    <li class="sx-card"><span class="sx-step">1 · Buchen</span><h3>Termin über die Plattform</h3><p>Patient:innen wählen die Untersuchung, buchen einen Termin in einer Partnerpraxis und zahlen den Betrag an Sanexio.</p></li>
+    <li class="sx-card"><span class="sx-step">2 · Untersuchen</span><h3>Die Praxis macht die Medizin</h3><p>Die Partnerpraxis führt die Untersuchung durch. Ärztliche Verantwortung und Patientendaten bleiben bei ihr.</p></li>
+    <li class="sx-card"><span class="sx-step">3 · Auszahlen</span><h3>70 % an die Praxis</h3><p>Sanexio überweist der Partnerpraxis den Betrag abzüglich 30 %. Die 30 % finanzieren Plattform, Twin und Nexus.</p></li>
+  </ol>
+  <h3 class="sx-h3-gap">Was je Untersuchung bei Sanexio bleibt</h3>
+  <div class="sx-card sx-card-breit"><div class="sx-table-wrap"><table class="sx-table sx-bw-tabelle">
+    <thead><tr><th scope="col">Untersuchung</th><th scope="col">Preis</th><th scope="col">Partnerpraxis 70 %</th><th scope="col">Sanexio 30 %</th></tr></thead>
+    <tbody>{zeilen.map((z) => <tr><th scope="row">{z.name}</th><td>{euro.format(z.preis)}</td><td>{euro.format(z.praxis)}</td><td>{euro.format(z.sanexio)}</td></tr>)}</tbody>
+    <tfoot><tr><th scope="row">Summe aller Programme</th><td>{euro.format(summen.preis)}</td><td>{euro.format(summen.praxis)}</td><td>{euro.format(summen.sanexio)}</td></tr></tfoot>
+  </table></div></div>
+  <p class="sx-slide-note">Weitere Untersuchungen in Partnerpraxen mit passender Ausstattung, Preis wird noch festgelegt: {namen}</p>
+  <p class="sx-slide-note sx-slide-note-2">Laborpreise nach GOÄ (Summe je Programm). {labor.disclaimer_sie}</p>
+</div></section>
+<section id="rechner" class="sx-section sx-soft"><div class="sx-container">
+  <p class="sx-eyebrow">Business Case · Zum Durchspielen</p>
+  <h2>Drehen Sie selbst an den Reglern</h2>
+  <div class="sx-bw-rechner" data-bw-rechner>
+    <div class="sx-card sx-bw-regler">
+      {regler.map((r) => <div><label for={'bw-' + r.id}>{r.label}</label><input id={'bw-' + r.id} type="range" class="sx-bw-range" min={r.min} max={r.max} step={r.step} value={r.value} data-bw={r.id} /><output for={'bw-' + r.id} data-bw-out={r.id}>{r.value}</output></div>)}
+      <fieldset class="sx-bw-mix"><legend>Welche Untersuchungen werden gebucht?</legend>
+        {zeilen.map((z) => <label><input type="checkbox" data-bw-preis={z.preis} checked /> {z.name}</label>)}
+      </fieldset>
+    </div>
+    <div class="sx-card sx-bw-ergebnis" aria-live="polite">
+      <span class="sx-sub">Pro Jahr</span>
+      <div class="sx-bw-out"><span class="sx-number" data-bw-out="umsatz"></span><p>Umsatz über die Plattform</p></div>
+      <div class="sx-bw-out sx-bw-out-s"><span class="sx-number" data-bw-out="sanexio"></span><p>bleiben bei Sanexio (30 %)</p></div>
+      <div class="sx-bw-out"><span class="sx-number" data-bw-out="praxis"></span><p>gehen an die Partnerpraxen (70 %)</p></div>
+      <div class="sx-bw-bar" role="img" data-bw-bar aria-label="30 % Sanexio, 70 % Partnerpraxen"><i class="sx-bw-bar-s" style="width:30%"></i><i class="sx-bw-bar-p" style="width:70%"></i></div>
+      <p class="sx-note">Durchschnittspreis der Auswahl: <span data-bw-out="schnitt"></span></p>
+    </div>
+  </div>
+  <p class="sx-slide-note">Startwerte sind Beispielwerte zum Durchspielen, keine Prognose.</p>
+</div></section>
+<section id="wege" class="sx-section"><div class="sx-container">
+  <p class="sx-eyebrow">Business Case · Finanzierung</p>
+  <h2>Zwei Wege, ein Kern</h2>
+  <p class="sx-lead">Wir können Sanexio auf zwei Wegen finanzieren. Wählen Sie, welchen Sie sehen möchten.</p>
+  <div class="sx-bw-kern"><strong>Auf beiden Wegen gilt:</strong> Nexus gehört der Sanexio GmbH, mit Modell, Gewichten, Trainingsdaten und Feintuning. Daran ändert keine Finanzierung etwas.</div>
+  <div class="sx-bw-switch" role="tablist" aria-label="Finanzierungsweg">
+    <button id="bw-tab-a" type="button" role="tab" class="sx-bw-tab" data-bw-tab="a" aria-selected="true" aria-controls="bw-weg-a"><span class="sx-sub">Weg A</span><strong>Fremdkapital</strong><span>Für Kapitalgeber</span></button>
+    <button id="bw-tab-b" type="button" role="tab" class="sx-bw-tab" data-bw-tab="b" aria-selected="false" aria-controls="bw-weg-b"><span class="sx-sub">Weg B</span><strong>Open Source und Crowdfunding</strong><span>Für die Community</span></button>
+  </div>
+  <div class="sx-bw-weg sx-bw-weg-a" id="bw-weg-a" role="tabpanel" aria-labelledby="bw-tab-a">
+    <h3>An Kapitalgeber: Sie finanzieren das Fundament, wir zahlen aus dem laufenden Vermittlungsanteil zurück.</h3>
+    <div class="sx-cg sx-g3">
+      <article class="sx-card"><span class="sx-sub">Wofür das Geld ist</span><p>Verschlüsselter, gespiegelter Speicher, Gutachten zur Regulierung, ärztliche Zeit für die Kuratierung und Trainings-Hardware.</p></article>
+      <article class="sx-card"><span class="sx-sub">Woraus wir zurückzahlen</span><p>Aus den 30 % jeder vermittelten Untersuchung. Patient:innen zahlen vorab an Sanexio, der Erlös entsteht mit jedem Termin.</p></article>
+      <article class="sx-card"><span class="sx-sub">Was Sie absichert</span><p>Eine laufende Praxis als erster Partner, ein eigener Datensatz seit 1997 und Nexus als Kern, der nicht geteilt wird.</p></article>
+    </div>
+    <div class="sx-card sx-bw-mini" data-bw-kredit>
+      {kreditRegler.map((r) => <div><label for={'bw-' + r.id}>{r.label}</label><input id={'bw-' + r.id} type="range" class="sx-bw-range" min={r.min} max={r.max} step={r.step} value={r.value} data-bw={r.id} /><output for={'bw-' + r.id} data-bw-out={r.id}>{r.text}</output></div>)}
+      <p class="sx-bw-satz">Jährliche Rate: <strong data-bw-out="rate"></strong>. Das entspricht rund <strong data-bw-out="rate-u"></strong> vermittelten Untersuchungen pro Monat.</p>
+    </div>
+    <p class="sx-slide-note">Reglerwerte sind Beispiele. Konditionen ergeben sich erst aus Angeboten.</p>
+    <a class="sx-btn sx-btn-primary" href="mailto:s.stracke@sanexio.de?subject=Sanexio%20Fremdkapital">Gespräch als Kapitalgeber</a>
+  </div>
+  <div class="sx-bw-weg sx-bw-weg-b" id="bw-weg-b" role="tabpanel" aria-labelledby="bw-tab-b">
+    <h3>An die Community: Bauen Sie mit an der Medizin, die Ihnen gehört.</h3>
+    <div class="sx-cg sx-g3">
+      <article class="sx-card"><span class="sx-sub">Was offen wird</span><p>Das Cortex-Framework, Bausteine der Harness und die Praxis-Apps erscheinen unter einer offenen Lizenz. Jede Praxis und jede Entwicklerin kann sie prüfen, nutzen und verbessern.</p></article>
+      <article class="sx-card"><span class="sx-sub">Was bei Sanexio bleibt</span><p>Nexus mit Modell, Gewichten und Trainingsdaten, die Vermittlungsplattform und die Marke. So bleibt das Projekt unabhängig und finanziert sich selbst.</p></article>
+      <article class="sx-card"><span class="sx-sub">Wie Sie mitmachen</span><p>Als Unterstützer:in über Crowdfunding, als Ärztin oder Arzt mit Fachwissen, als Entwickler:in mit Code. Wer früh dabei ist, testet den Twin als Erste:r.</p></article>
+    </div>
+    <div class="sx-card sx-bw-mini" data-bw-crowd>
+      {crowdRegler.map((r) => <div><label for={'bw-' + r.id}>{r.label}</label><input id={'bw-' + r.id} type="range" class="sx-bw-range" min={r.min} max={r.max} step={r.step} value={r.value} data-bw={r.id} /><output for={'bw-' + r.id} data-bw-out={r.id}>{r.text}</output></div>)}
+      <p class="sx-bw-satz">Zusammen: <strong data-bw-out="crowd"></strong>. Das deckt rund <strong data-bw-out="crowd-m"></strong> Monate Vermittlungsanteil im Rechner oben.</p>
+    </div>
+    <p class="sx-slide-note">Reglerwerte sind Beispiele. Crowdinvesting unterliegt eigenen gesetzlichen Vorgaben; die Ausgestaltung prüfen wir vor dem Start.</p>
+    <a class="sx-btn sx-btn-primary" href="mailto:s.stracke@sanexio.de?subject=Sanexio%20Community">Mitmachen in der Community</a>
+    <a class="sx-btn" href="/blog/mitbauen-wie-nutzer-den-dht-mitgestalten/">Wie Mitbauen geht</a>
+  </div>
+</div></section>
+<script>
+  const ganz = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 });
+  const dezimal = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const millionen = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const geld = (wert: number) => wert >= 1000000 ? `${millionen.format(wert / 1000000)} Mio. €` : `${ganz.format(wert)} €`;
+  const wert = (name: string) => Number(document.querySelector<HTMLInputElement>(`[data-bw="${name}"]`)?.value ?? 0);
+  function ausgabe(name: string, text: string) {
+    document.querySelectorAll<HTMLElement>(`[data-bw-out="${name}"]`).forEach((el) => { el.textContent = text; });
+  }
+  function rechnen() {
+    const preise = Array.from(document.querySelectorAll<HTMLInputElement>('[data-bw-preis]:checked'), (el) => Number(el.dataset.bwPreis));
+    const schnitt = preise.length ? preise.reduce((summe, preis) => summe + preis, 0) / preise.length : 0;
+    const umsatz = wert('praxen') * wert('menge') * 12 * schnitt;
+    const sanexio = umsatz * 0.3;
+    ['praxen', 'menge', 'leute'].forEach((name) => ausgabe(name, ganz.format(wert(name))));
+    ['kredit', 'beitrag'].forEach((name) => ausgabe(name, geld(wert(name))));
+    ausgabe('zins', `${dezimal.format(wert('zins'))} %`);
+    ausgabe('jahre', `${ganz.format(wert('jahre'))} Jahre`);
+    ausgabe('umsatz', geld(umsatz));
+    ausgabe('sanexio', geld(sanexio));
+    ausgabe('praxis', geld(umsatz * 0.7));
+    ausgabe('schnitt', geld(schnitt));
+    const q = wert('zins') / 100;
+    const rate = wert('kredit') * q / (1 - Math.pow(1 + q, -wert('jahre')));
+    ausgabe('rate', geld(rate));
+    ausgabe('rate-u', schnitt ? ganz.format(Math.ceil(rate / 12 / (schnitt * 0.3))) : '–');
+    const crowd = wert('leute') * wert('beitrag');
+    ausgabe('crowd', geld(crowd));
+    ausgabe('crowd-m', sanexio ? dezimal.format(crowd / (sanexio / 12)) : '–');
+  }
+  document.querySelectorAll<HTMLInputElement>('[data-bw], [data-bw-preis]').forEach((el) => {
+    el.addEventListener('input', rechnen);
+    el.addEventListener('change', rechnen);
+  });
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-bw-tab]'));
+  function waehlen(tab: HTMLButtonElement) {
+    tabs.forEach((t) => {
+      const aktiv = t === tab;
+      t.setAttribute('aria-selected', String(aktiv));
+      t.tabIndex = aktiv ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls') ?? '');
+      if (panel) panel.hidden = !aktiv;
+    });
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => waehlen(tab));
+    tab.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      const ziel = tabs[(index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+      waehlen(ziel);
+      ziel.focus();
+    });
+  });
+  if (tabs[0]) waehlen(tabs[0]);
+  rechnen();
+</script>

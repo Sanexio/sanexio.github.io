@@ -15,6 +15,7 @@ import PitchProblem from '../components/PitchProblem.astro';
 import PitchModell from '../components/PitchModell.astro';
 import PitchJahr from '../components/PitchJahr.astro';
 import PitchZukunft from '../components/PitchZukunft.astro';
+import BusinessWege from '../components/BusinessWege.astro';
 import ContactFooter from '../components/ContactFooter.astro';
 ---
 <Default><Nav /><main id="inhalt" class="sx-home">
@@ -30,7 +31,7 @@ import ContactFooter from '../components/ContactFooter.astro';
  <Kapitel nr="05" id="kapitel-5" titel="Check-up-Untersuchungen und erste Testpraxis" />
  <LaborJourney /><PitchModell nur={['kanaele']} />
  <Kapitel nr="06" id="kapitel-6" titel="Business Case" />
- <PitchModell nur={['modell','segmente']} /><PitchJahr nur={['erloese']} /><PitchZukunft />
+ <PitchModell nur={['modell','segmente']} /><PitchJahr nur={['erloese']} /><BusinessWege /><PitchZukunft />
 </main><ContactFooter /><script is:inline>
 (function () {
   /* Rubrik und Titel je Kartenzeile auf gleiche Hoehe bringen, damit Titel und Text bündig stehen. */
