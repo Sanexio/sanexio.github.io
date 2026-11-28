@@ -14,8 +14,6 @@ import PitchVorteil from '../components/PitchVorteil.astro';
 import PitchProblem from '../components/PitchProblem.astro';
 import PitchModell from '../components/PitchModell.astro';
 import PitchJahr from '../components/PitchJahr.astro';
-import PitchZukunft from '../components/PitchZukunft.astro';
-import BusinessWege from '../components/BusinessWege.astro';
 import ContactFooter from '../components/ContactFooter.astro';
 ---
 <Default><Nav /><main id="inhalt" class="sx-home">
@@ -31,7 +29,12 @@ import ContactFooter from '../components/ContactFooter.astro';
  <Kapitel nr="05" id="kapitel-5" titel="Check-ups und erste Testpraxis" />
  <LaborJourney /><PitchModell nur={['kanaele']} />
  <Kapitel nr="06" id="kapitel-6" titel="Geschäftsmodell und Finanzierung" />
- <PitchModell nur={['modell','segmente']} /><PitchJahr nur={['erloese']} /><BusinessWege /><PitchZukunft />
+ <section class="sx-section" id="business-case" aria-labelledby="bc-title"><div class="sx-container">
+ <p class="sx-eyebrow">Business Case</p>
+ <h2 id="bc-title">Zahlen, Szenarien und zwei Wege der Finanzierung</h2>
+ <p class="sx-lead">Den vollständigen Business Case mit Rechnern zum Durchspielen, Fünf-Jahres-Blick und den Wegen Fremdkapital sowie Open Source und Crowdfunding zeigen wir in einem geschützten Bereich.</p>
+ <div class="sx-actions"><a class="sx-btn sx-btn-primary" href="/business-case/">Business Case öffnen (mit Passwort)</a></div>
+</div></section>
 </main><ContactFooter /><script is:inline>
 (function () {
   /* Rubrik und Titel je Kartenzeile auf gleiche Hoehe bringen, damit Titel und Text bündig stehen. */

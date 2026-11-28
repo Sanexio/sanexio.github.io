@@ -1,0 +1,41 @@
+---
+import Default from '../layouts/Default.astro';
+import Nav from '../components/Nav.astro';
+import Kapitel from '../components/Kapitel.astro';
+import CheckupZahlen from '../components/CheckupZahlen.astro';
+import PitchModell from '../components/PitchModell.astro';
+import PitchJahr from '../components/PitchJahr.astro';
+import BusinessWege from '../components/BusinessWege.astro';
+import PitchZukunft from '../components/PitchZukunft.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+---
+<Default title="Sanexio · Business Case" description="Sanexio · Business Case"><Nav /><main id="inhalt" class="sx-home">
+ <Kapitel nr="06" id="kapitel-6" titel="Geschäftsmodell und Finanzierung" />
+ <CheckupZahlen />
+ <PitchModell nur={['modell','segmente']} /><PitchJahr nur={['erloese']} /><BusinessWege /><PitchZukunft />
+</main><ContactFooter /><script is:inline>
+(function () {
+  /* Rubrik und Titel je Kartenzeile auf gleiche Hoehe bringen, damit Titel und Text bündig stehen. */
+  var SEL = [':scope > .sx-sub, :scope > .sx-step', ':scope > h3'];
+  function run() {
+    document.querySelectorAll('.sx-cg').forEach(function (g) {
+      var cards = [].slice.call(g.children);
+      SEL.forEach(function (sel) {
+        cards.forEach(function (c) { var l = c.querySelector(sel); if (l) l.style.minHeight = ''; });
+        var rows = {};
+        cards.forEach(function (c) { var l = c.querySelector(sel); if (l) (rows[c.offsetTop] = rows[c.offsetTop] || []).push(l); });
+        Object.keys(rows).forEach(function (k) {
+          var m = 0; rows[k].forEach(function (l) { m = Math.max(m, l.getBoundingClientRect().height); });
+          if (rows[k].length > 1) rows[k].forEach(function (l) { l.style.minHeight = m + 'px'; });
+        });
+      });
+    });
+  }
+  var t;
+  function later() { clearTimeout(t); t = setTimeout(run, 60); }
+  if (document.readyState !== 'loading') run(); else document.addEventListener('DOMContentLoaded', run);
+  window.addEventListener('load', run);
+  window.addEventListener('resize', later);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run);
+})();
+</script></Default>
