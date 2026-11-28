@@ -33,7 +33,7 @@ jobs:
       - name: Build (Astro)
         run: bun run build
 
-      - name: Passwortschutz (alle Seiten verschluesseln)
+      - name: Passwortschutz (nur Business Case verschluesseln)
         # Die ganze Seite liegt hinter einer Passwortabfrage. Das Passwort steht
         # NICHT im Repo, sondern im Repository-Secret SITE_PASSWORD. Fehlt es,
         # bricht der Schritt ab - es wird nie ungeschuetzt ausgeliefert.

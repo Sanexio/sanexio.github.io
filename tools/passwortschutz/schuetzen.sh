@@ -40,7 +40,7 @@ SALZ="$(sed -n 's/.*"salt": *"\([0-9a-f]\{32\}\)".*/\1/p' "$HIER/staticrypt.json
 #    Groesse jedes Mal verdoppelt) bis GitHubs 100-MB-Grenze den Deploy stoppte.
 #    Geschuetzt: genau 1 Schicht bleibt bestehen; sonst unten einmal verschluesseln.
 #    Oeffentlich: alle vorhandenen Schichten entfernen; Klartext bleibt bestehen.
-geholt=0; geheilt=0; unlesbar=0
+geholt=0; geheilt=0; geoeffnet=0; unlesbar=0
 if [ -n "$ALTREF" ]; then
     PRUEF="$(mktemp -d)"
     while IFS= read -r -d '' pfad; do
@@ -68,11 +68,13 @@ if [ -n "$ALTREF" ]; then
         fi
         mkdir -p "$DIST/$(dirname "$pfad")"
         cp "$PRUEF/seite.html" "$DIST/$pfad"
-        if [ "$schichten" = 0 ]; then geholt=$((geholt + 1)); else geheilt=$((geheilt + 1)); echo "Geheilt ($schichten Schichten): $pfad"; fi
+        if [ "$schichten" = 0 ]; then geholt=$((geholt + 1))
+        elif [[ "$pfad" =~ $GESCHUETZT ]]; then geheilt=$((geheilt + 1)); echo "Geheilt ($schichten Schichten): $pfad"
+        else geoeffnet=$((geoeffnet + 1)); echo "Geoeffnet (oeffentlich, $schichten Schicht(en) entfernt): $pfad"; fi
     done < <(git ls-tree -r -z --name-only "$ALTREF")
     rm -rf "$PRUEF"
 fi
-echo "Altseiten: $geholt unverschluesselt dazugeholt, $geheilt mehrfach verschluesselte geheilt, $unlesbar nicht lesbar"
+echo "Altseiten: $geholt unverschluesselt dazugeholt, $geheilt geschuetzte geheilt, $geoeffnet oeffentliche entschluesselt, $unlesbar nicht lesbar"
 
 # 3. Nur den Business Case verschluesseln (an Ort und Stelle)
 [ -d "$DIST/business-case" ] || { echo "FEHLER: Ordner $DIST/business-case fehlt." >&2; exit 1; }
