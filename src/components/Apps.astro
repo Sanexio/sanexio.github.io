@@ -1,7 +1,8 @@
 ---
 const first = [
  { t: 'Digital Health Twin', k: 'Für Patient:innen', p: 'Die persönliche Gesundheitsakte zeigt Messwerte nach Organ und im Verlauf.', href: '/dht-abnahme-3/', cta: 'Twin mit Beispieldaten testen' },
- { t: 'Atlas, macOS-App von Sanexio', k: 'Für Ärzt:innen', p: 'Atlas entwirft die Gesprächsnotiz. Erst nach ärztlicher Signatur übernimmt die Praxissoftware den Text.' },
+ // Fußnote 4: Langform laut Nutzerentscheid 27.11.2026 (Nexus/_rules/user-directives.md), „überall immer die Erklärung für Atlas“
+ { t: 'Atlas, macOS-App von Sanexio', k: 'Für Ärzt:innen', p: 'Atlas entwirft die Gesprächsnotiz. Erst nach ärztlicher Signatur übernimmt die Praxissoftware den Text.', atlas: true },
  { t: 'Cortex Marketing, macOS-App von Sanexio', k: 'Für Praxen', p: 'Die App automatisiert Kampagnen für Praxis und Sanexio-Marken, etwa mit dem Beitrags-Autopiloten.' },
 ];
 const prod = [
@@ -17,7 +18,10 @@ const prod = [
  <h2 id="apps-title">Vom Arztgespräch bis zum Dienstplan</h2>
  <p class="sx-lead">Mit Cortex ersetzen wir schrittweise Software-Abos in der Praxis. Erste Anwendungen laufen im Alltag, weitere erproben wir.</p>
  <div class="sx-cg sx-g8">
-  {first.map(a => <article class="sx-card"><span class="sx-sub">{a.k}</span><h3>{a.t}</h3><p>{a.p}</p>{a.href && <a class="sx-btn sx-btn-primary" href={a.href}>{a.cta}</a>}</article>)}
+  {first.map(a => <article class="sx-card"><span class="sx-sub">{a.k}</span>{a.atlas
+   ? <h3>Atlas<sup class="sx-fn-ref"><a href="#apps-fn-atlas" id="apps-fn-atlas-ref">4</a></sup>, macOS-App von Sanexio</h3>
+   : <h3>{a.t}</h3>}<p>{a.p}</p>{a.href && <a class="sx-btn sx-btn-primary" href={a.href}>{a.cta}</a>}{a.atlas &&
+   <ol class="sx-fn-liste" aria-label="Fußnoten"><li id="apps-fn-atlas" value="4"><span>ATLAS steht für „Advanced Thinking, Learning &amp; Assistance System“.</span> <a class="sx-fn-zurueck" href="#apps-fn-atlas-ref" aria-label="Zurück zur Textstelle">↩</a></li></ol>}</article>)}
   {prod.map(([t,p,r]) => <article class="sx-card"><span class="sx-sub">Für Praxen</span><h3>{t}</h3><p>{p}</p><p class="sx-note">{r}</p></article>)}
  </div>
 </div></section>
