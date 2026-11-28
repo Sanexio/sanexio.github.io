@@ -5,8 +5,58 @@ const { nr, titel, id } = Astro.props;
 ---
 <div class="sx-kapitel" id={id}><div class="sx-container"><span class="sx-kapitel-nr" aria-hidden="true">{nr}</span><span class="sx-kapitel-titel">{titel}</span></div></div>
 <style>
- .sx-kapitel { background: var(--sx-c-ink); color: #fff; }
- .sx-kapitel .sx-container { display: flex; align-items: baseline; gap: 1rem; padding-block: 1.05rem; }
- .sx-kapitel-nr { font-family: var(--sx-font-display); font-weight: 700; font-size: 1.05rem; color: #ff6b70; font-variant-numeric: tabular-nums; }
- .sx-kapitel-titel { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+ .sx-kapitel {
+  background: var(--sx-c-ink);
+  color: #fff;
+  border-top: 4px solid var(--sx-c-accent);
+  scroll-margin-top: 72px;
+ }
+ .sx-kapitel .sx-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: clamp(1rem, 3vw, 2rem);
+  padding-block: clamp(2.2rem, 5vw, 3.6rem);
+ }
+ .sx-kapitel-nr {
+  font-family: var(--sx-font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: #ff6b70;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+ }
+ .sx-kapitel-titel {
+  font-family: var(--sx-font-display);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-wrap: balance;
+  max-width: 32ch;
+ }
+ .sx-kapitel-titel::before {
+  content: "Kapitel";
+  display: block;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.45rem;
+ }
+ @media (max-width: 700px) {
+  .sx-kapitel .sx-container {
+   column-gap: 0.9rem;
+  }
+  .sx-kapitel-nr {
+   font-size: clamp(2.2rem, 11vw, 2.8rem);
+  }
+  .sx-kapitel-titel {
+   font-size: clamp(1.2rem, 5.4vw, 1.5rem);
+  }
+ }
 </style>
