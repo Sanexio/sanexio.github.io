@@ -289,3 +289,18 @@ button,summary { font: inherit; cursor: pointer; }
 @media (max-width: 699px) { .sx-home .sx-card p, .sx-home .sx-card li { text-align: left; } }
 /* Hochziffern in grossen Ueberschriften: klein und ohne Zeilensprung (keine Luecke, kein Ueberlappen) */
 h1 .sx-fn-ref, h2 .sx-fn-ref, h3 .sx-fn-ref { font-size: .38em; vertical-align: 0; position: relative; top: -1.35em; margin-left: .04em; line-height: 0; }
+
+/* Mobil: volle Kartenbreite; nur Kennzahlen duerfen ab 160px zweispaltig stehen. */
+@media (max-width: 559px) {
+ .sx-cg { --c: 1; }
+ .sx-cg.sx-g8, .sx-cg.sx-kpi5 { --c: 1; }
+ .sx-cg.sx-kpi5 > * { flex-basis: max(160px, calc((100% - var(--gap)) / 2 - .5px)); }
+ h1, h2, h3 { min-width: 0; max-width: 100%; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
+ .sx-table-wrap { min-width: 0; max-width: 100%; overflow-x: auto; }
+}
+/* iPhone: alle Menuepunkte sichtbar (zwei Zeilen statt versteckter Wischzeile); Einleitung ohne Blocksatz-Luecken */
+@media (max-width: 767px) {
+}
+@media (max-width: 699px) {
+  .sx-lead-duo .sx-lead { text-align: left; hyphens: manual; }
+}

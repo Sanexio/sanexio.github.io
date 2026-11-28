@@ -17,10 +17,10 @@ const pfad = Astro.url.pathname;
 </header>
 <style>
  .sx-nav { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--sx-c-bg) 82%, transparent); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid var(--sx-c-line-soft, #E5E5EA); }
- .sx-nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .2rem 2rem; padding-block: .6rem; }
+ .sx-nav-inner { display: flex; flex-wrap: wrap; min-width: 0; max-width: 100%; align-items: center; justify-content: space-between; gap: .2rem 2rem; padding-block: .6rem; }
  .sx-brand { font: 800 1.6rem var(--sx-font-display); letter-spacing: -.06em; text-decoration: none; }
  .sx-brand span { color: var(--sx-c-accent); }
- nav { display: flex; flex-wrap: nowrap; gap: 0 1.6rem; }
+ nav { display: flex; flex-wrap: nowrap; min-width: 0; max-width: 100%; gap: 0 1.6rem; }
  nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: .85rem; font-weight: 600; text-decoration: none; white-space: nowrap; color: var(--sx-c-ink-subtle); background-image: linear-gradient(var(--sx-c-accent), var(--sx-c-accent)); background-size: 0 2px; background-position: 0 calc(100% - 8px); background-repeat: no-repeat; transition: color var(--sx-dur, .22s) var(--sx-ease, ease), background-size var(--sx-dur, .22s) var(--sx-ease, ease); }
  nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { color: var(--sx-c-ink); background-size: 100% 2px; }
  nav a.sx-nav-cta-link { background-image: none; }
@@ -29,9 +29,9 @@ const pfad = Astro.url.pathname;
  @media(max-width: 767px) {
   .sx-nav-inner { flex-direction: column; align-items: stretch; gap: 0; }
   .sx-brand { align-self: flex-start; }
-  nav { display: flex; gap: 1.1rem; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; mask-image: linear-gradient(90deg, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  nav { display: flex; flex-wrap: wrap; gap: 0 1.1rem; min-width: 0; max-width: 100%; overflow: visible; }
   nav::-webkit-scrollbar { display: none; }
-  nav a { white-space: nowrap; font-size: .82rem; flex: 0 0 auto; }
+  nav a { white-space: nowrap; font-size: .82rem; flex: 0 0 auto; min-height: 40px; }
  }
  @media (prefers-reduced-motion: reduce) { nav a, .sx-nav-cta { transition: none; } }
 </style>
