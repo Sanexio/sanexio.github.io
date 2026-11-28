@@ -1,39 +1,53 @@
 ---
-const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['17','Behandlungsräume'],['≈ 3.000','Behandlungsfälle pro Quartal'],['23.000','Patient:innen seit 1997 im Datensatz']];
+const kpis = [['9','Fachrichtungen'],['8','Ärzt:innen'],['17','Behandlungsräume'],['≈ 3.000','Behandlungsfälle pro Quartal'],['25.000','Patient:innen seit 1997 im Datensatz']];
 ---
 <section class="sx-section" id="start" aria-labelledby="f2"><div class="sx-container">
  <p class="sx-eyebrow">KI-Startup im Gesundheitswesen · Wer wir sind · Praxisgemeinschaft Sanexio · Sanexio GmbH</p>
  <h1 id="f2" class="sx-h1">Wir behandeln Patient:innen und entwickeln die Software dafür selbst</h1>
  <div class="sx-lead-duo">
- <p class="sx-lead">Das <a href="https://westend-hausarzt.com/" target="_blank" rel="noopener">Praxiszentrum Dr. Stracke und Kollegen</a> im Frankfurter Westend vereint neun Fachrichtungen unter einem Dach – von Allgemeinmedizin und Innerer Medizin über Gynäkologie, Urologie, HNO und Neurologie bis zu Chirurgie, Psycho- und Physiotherapie. Kurze Wege und die enge Abstimmung zwischen den Fachärzt:innen prägen den Praxisalltag.</p>
- <p class="sx-lead">Bei uns arbeiten Ärzt:innen und IT-Fachleute Hand in Hand – die Praxisgemeinschaft und die Sanexio GmbH haben mit Dr. Stracke dieselbe Leitung. Wir entwickeln eigene digitale Tools für unsere Praxisabläufe und bauen sie Schritt für Schritt aus. Dabei orientieren wir uns daran, was unsere Patient:innen und unser Praxisteam im Alltag brauchen.</p>
+ <p class="sx-lead">Im <a href="https://westend-hausarzt.com/" target="_blank" rel="noopener">Praxiszentrum Dr. Stracke und Kollegen</a> im Frankfurter Westend arbeiten neun Fachrichtungen unter einem Dach. Dazu gehören Allgemeinmedizin, Innere Medizin, Gynäkologie, Urologie, HNO, Neurologie, Chirurgie, Psychotherapie und Physiotherapie. Kurze Wege und die enge Abstimmung zwischen den Fachärzt:innen prägen den Praxisalltag.</p>
+ <p class="sx-lead">Dr. Stracke leitet die Praxisgemeinschaft und die Sanexio GmbH. So können unsere Ärzt:innen mit dem IT-Team direkt an den Werkzeugen arbeiten, die sie täglich brauchen. Was wir als Nächstes verbessern, ergibt sich aus der Arbeit mit unseren Patient:innen.</p>
  </div>
  <div class="sx-cg sx-g2">
-  <article class="sx-card"><h3>Die Praxis</h3><p>Frankfurt-Westend, Grüneburgweg. Rund 500 m², neun Fachrichtungen unter einem Dach, eigene Organisation. Hier entsteht der Alltag, den unsere Software abbildet.</p></article>
-  <article class="sx-card"><h3>Die Firma</h3><p>IT- und Infrastruktur-Dienstleister für Ärzt:innen und Service-Dienstleister für Patient:innen. Entwickelt die Plattform Cortex und die KI Nexus und erprobt jedes Produkt zuerst in der eigenen Praxis.</p></article>
+  <article class="sx-card"><h3>Die Praxis</h3><p>Frankfurt-Westend, Grüneburgweg. Rund 500 m², neun Fachrichtungen unter einem Dach. Hier organisiert unser Team die Versorgung über neun Fachrichtungen hinweg. Diese Abläufe bilden wir in der Software ab.</p></article>
+  <article class="sx-card"><h3>Die Sanexio GmbH</h3><p>Sanexio entwickelt die Cortex-Plattform und das KI-Framework Nexus für Praxen und Patient:innen. Neue Anwendungen erproben wir zuerst im eigenen Praxiszentrum.</p></article>
  </div>
  <div class="sx-cg sx-kpi5">{kpis.map(([n,l]) => <article class="sx-card sx-kpi"><span class="sx-number">{n}</span><p>{l}</p></article>)}</div>
 </div></section>
 <script>
  // Symmetrie: nebeneinander stehende Einleitungsabsaetze bekommen dieselbe Zeilenzahl.
- // Dazu wird der Wortabstand in kleinsten Schritten angepasst (hoechstens 0,12 em).
+ // Zuerst nur der Wortabstand (hoechstens 0,14 em). Reicht das nicht, bekommt die laengere
+ // Spalte schrittweise mehr Breite (hoechstens 60:40), jeweils erneut mit Wortabstand.
  function gleicheZeilen() {
-  document.querySelectorAll('.sx-lead-duo').forEach((duo) => {
+  document.querySelectorAll<HTMLElement>('.sx-lead-duo').forEach((duo) => {
    const ps = Array.from(duo.querySelectorAll<HTMLElement>('.sx-lead'));
+   duo.style.gridTemplateColumns = '';
    ps.forEach((p) => (p.style.wordSpacing = ''));
    if (ps.length !== 2 || ps[0].offsetTop !== ps[1].offsetTop) return;
-   const [a, b] = ps.map((p) => p.offsetHeight);
-   if (a === b) return;
-   const lang = a > b ? ps[0] : ps[1];
-   const kurz = a > b ? ps[1] : ps[0];
-   // erst nur die laengere Spalte enger setzen, sonst nur die kuerzere weiter
-   for (const [el, richtung] of [[lang, -1], [kurz, 1]] as [HTMLElement, number][]) {
-    for (let i = 1; i <= 14; i++) {
-     el.style.wordSpacing = `${richtung * 0.01 * i}em`;
-     if (lang.offsetHeight === kurz.offsetHeight) return;
+   const gleich = () => ps[0].offsetHeight === ps[1].offsetHeight;
+   const abstand = () => {
+    if (gleich()) return true;
+    const lang = ps[0].offsetHeight > ps[1].offsetHeight ? ps[0] : ps[1];
+    const kurz = lang === ps[0] ? ps[1] : ps[0];
+    for (const [el, richtung] of [[lang, -1], [kurz, 1]] as [HTMLElement, number][]) {
+     for (let i = 1; i <= 14; i++) {
+      el.style.wordSpacing = `${richtung * 0.01 * i}em`;
+      if (gleich()) return true;
+     }
+     el.style.wordSpacing = '';
     }
-    el.style.wordSpacing = '';
+    return false;
+   };
+   if (abstand()) return;
+   const ersteLaenger = ps[0].offsetHeight > ps[1].offsetHeight;
+   for (let k = 1; k <= 20; k++) {
+    const r = 1 + 0.01 * k; // bis 1,2 : 0,8 = 60:40
+    duo.style.gridTemplateColumns = ersteLaenger ? `${r}fr ${2 - r}fr` : `${2 - r}fr ${r}fr`;
+    ps.forEach((p) => (p.style.wordSpacing = ''));
+    if (abstand()) return;
    }
+   duo.style.gridTemplateColumns = '';
+   ps.forEach((p) => (p.style.wordSpacing = ''));
   });
  }
  gleicheZeilen();

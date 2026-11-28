@@ -2,4 +2,4 @@
 import data from '../data/sanexiotext.json';
 const d = data.aktuell;
 ---
-<section class="sx-section" id="dht-aktuell"><div class="sx-container"><p class="sx-eyebrow">DHT aktuell</p><h2>{d.ueberschrift}</h2><p class="sx-lead">{d.einleitung}</p><p class="sx-note">{d.hinweis}</p><div class="sx-cg sx-g6">{d.eintraege.map(p => <article class="sx-card"><span class="sx-tag">{p.status}</span><h3>{p.titel}</h3><p>{p.text}</p></article>)}</div></div></section>
+<section class="sx-section" id="dht-aktuell"><div class="sx-container"><p class="sx-eyebrow">Entwicklungsstand · 25. November 2026</p><h2>{d.ueberschrift}</h2><p class="sx-lead">{d.einleitung}</p><p class="sx-note">{d.hinweis}</p><div class="sx-cg sx-g6">{d.eintraege.map(p => <article class="sx-card"><span class="sx-tag">{p.status}</span><h3>{p.titel}</h3><p>{p.text}</p></article>)}</div></div></section>

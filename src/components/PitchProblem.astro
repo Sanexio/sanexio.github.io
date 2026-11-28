@@ -1,38 +1,38 @@
 ---
-const orte = [['Laborwerte','Praxissoftware'],['Blutdruck, Puls','Notizbuch'],['Schritte, Schlaf','Smartwatch'],['Gewicht','Waagen-App'],['Arztbrief','Papier, Schublade'],['Befund Facharzt','PDF in der Mail'],['Impfungen','gelbes Heft'],['Medikamente','Zettel im Portemonnaie'],['Ultraschall, Röntgen','CD im Regal'],['Vorsorgetermine','im Kopf, oft vergessen']];
+const orte = [['Laborwerte','Praxissoftware'],['Blutdruck, Puls','Notizbuch'],['Schritte, Schlaf','Smartwatch'],['Gewicht','Waagen-App'],['Arztbrief','Befund in der Schublade'],['Befund Facharzt','PDF in der Mail'],['Impfungen','Gelbes Heft'],['Medikamente','Zettel im Portemonnaie'],['Ultraschall, Röntgen','CD im Regal'],['Vorsorgetermine','Eigene Erinnerung']];
 ---
 <section class="sx-section" id="problem" aria-labelledby="f9"><div class="sx-container">
- <p class="sx-eyebrow">Das Problem</p>
- <h2 id="f9">Gesundheitsdaten gibt es genug, nur nicht dort, wo sie wirken</h2>
- <h3>Heute: zehn Orte, kein holistisches Bild</h3>
+ <p class="sx-eyebrow">Der Alltag vor dem Arztgespräch</p>
+ <h2 id="f9">Der Befund liegt in der Praxis. Den Puls kennt die Uhr.</h2>
+ <h3>Zehn Orte für die eigene Krankengeschichte</h3>
  <div class="sx-cg sx-g10">{orte.map(([a,b]) => <article class="sx-card sx-card-kurz"><strong>{a}</strong><p>{b}</p></article>)}</div>
- <p class="sx-claim">Patient:innen bleiben Zuschauer ihrer eigenen Gesundheit. Nur 26 % fühlen sich bei Selbstzahlerleistungen gut informiert.</p>
- <h3 class="sx-h3-gap">Mit dem Twin: vom Messwert zum ganzen Körper</h3>
+ <p class="sx-claim">Nur 26 % der befragten gesetzlich Versicherten fühlten sich über individuelle Gesundheitsleistungen (IGeL) gut informiert.</p>
+ <h3 class="sx-h3-gap">Ein Nierenwert im Zusammenhang</h3>
  <div class="sx-cg sx-g3">
-  <article class="sx-card"><span class="sx-step">1 · Der Messwert</span><h3>Kreatinin · 3 Jahre</h3><p>Leicht steigend, Kontrolle im Juli.</p><p class="sx-note">Verlauf und nächster Schritt</p></article>
-  <figure class="sx-media"><img src="/pitch-medien/pitch-f444dff73369.webp" alt="Darstellung beider Nieren" loading="lazy" width="1280" height="1280" /><figcaption><strong>2 · Das Organ</strong> · Weitere Parameter wie Urin und Blutdruck</figcaption></figure>
-  <article class="sx-card"><span class="sx-step">3 · Der ganze Körper</span><h3>Ihr persönlicher Twin</h3></article>
+  <article class="sx-card"><span class="sx-step">1 · Der Messwert</span><h3>Kreatinin über 3 Jahre</h3><p>Der Wert steigt leicht. Nächste Kontrolle im Juli.</p><p class="sx-note">Messwert und Kontrolltermin in einer Ansicht</p></article>
+  <figure class="sx-media"><img src="/pitch-medien/pitch-f444dff73369.webp" alt="Beide Nieren im Organmodell" loading="lazy" width="1280" height="1280" /><figcaption><strong>2 · Das Organ</strong> · Weitere Parameter wie Urin und Blutdruck</figcaption></figure>
+  <article class="sx-card"><span class="sx-step">3 · Der ganze Körper</span><h3>Ihr Twin im Überblick</h3></article>
  </div>
  <div class="sx-cg sx-g2">
   <figure class="sx-media"><img src="/pitch-medien/pitch-ee961783a20e.webp" alt="Twin im Zustand Jetzt: Organe rot und orange" loading="lazy" width="1200" height="1800" /><figcaption><strong>Jetzt</strong> · Score 0. Leber und Schilddrüse stark belastet, Herz, Nieren und Gefäße leicht.</figcaption></figure>
   <figure class="sx-media"><img src="/pitch-medien/pitch-df921ead40b4.webp" alt="Twin im Zustand Gesund: Organe grün" loading="lazy" width="1200" height="1800" /><figcaption><strong>Gesund</strong> · Score 100. Alle Organe im Zielbereich. So sieht derselbe Körper aus, wenn die Werte stimmen.</figcaption></figure>
  </div>
- <p class="sx-slide-note">Quelle: MD Bund, IGeL-Report 2024 · Twin-Ansichten aus der App, Demo-Profil „belastet“ und Schalter „Gesund“, nicht die Werte der abgebildeten Person</p>
+ <p class="sx-slide-note">Befragung · Medizinischer Dienst Bund, IGeL-Report 2024. App-Bilder · Demo-Profil „belastet“ und Vergleichsansicht „Gesund“.</p>
 </div></section>
 
 <section class="sx-section sx-soft" id="twin-leistet" aria-labelledby="f10"><div class="sx-container">
- <p class="sx-eyebrow">Business Model Canvas · Value Proposition</p>
- <h2 id="f10">Was der Twin leistet</h2>
+ <p class="sx-eyebrow">Nutzen für Patient:innen und Praxen</p>
+ <h2 id="f10">Vom Laborwert zur Frage fürs nächste Arztgespräch</h2>
  <div class="sx-cg sx-g3">
-  <figure class="sx-media"><img src="/pitch-medien/pitch-568b139b29d4.webp" alt="App-Ansicht Ganzer Körper mit nach Belastung markierten Organen" loading="lazy" width="1206" height="2622" /><figcaption><strong>Ganzer Körper</strong> · Organe markiert nach Belastung</figcaption></figure>
-  <figure class="sx-media"><img src="/pitch-medien/pitch-b0a7faf39d72.webp" alt="App-Ansicht Organ Niere mit Zustand und Erklärung" loading="lazy" width="1206" height="1972" /><figcaption><strong>Organ: Niere</strong> · Zustand, Treiber, Empfehlung</figcaption></figure>
-  <figure class="sx-media"><img src="/pitch-medien/pitch-ee8488484ac2.webp" alt="App-Ansicht Verlauf Ruhepuls" loading="lazy" width="1206" height="2262" /><figcaption><strong>Verlauf: Ruhepuls</strong> · Kurve mit Erklärung</figcaption></figure>
+  <figure class="sx-media"><img src="/pitch-medien/pitch-568b139b29d4.webp" alt="Ganzkörperansicht mit farblich markierten Organen" loading="lazy" width="1206" height="2622" /><figcaption><strong>Ganzer Körper</strong> · Organe markiert nach Belastung</figcaption></figure>
+  <figure class="sx-media"><img src="/pitch-medien/pitch-b0a7faf39d72.webp" alt="Detailansicht der Niere mit Erläuterung" loading="lazy" width="1206" height="1972" /><figcaption><strong>Organ: Niere</strong> · Zustand, Treiber, Empfehlung</figcaption></figure>
+  <figure class="sx-media"><img src="/pitch-medien/pitch-ee8488484ac2.webp" alt="Ruhepuls im Zeitverlauf" loading="lazy" width="1206" height="2262" /><figcaption><strong>Verlauf: Ruhepuls</strong> · Kurve mit Erklärung</figcaption></figure>
  </div>
  <div class="sx-cg sx-g4">
-  <article class="sx-card"><span class="sx-sub">Datenspiegel</span><p>Eigene Werte im Verlauf: Labor, Vitaldaten, Vorsorge. Kurven werden exakt berechnet, die KI erklärt nur Berechnetes.</p></article>
-  <article class="sx-card"><span class="sx-sub">3D-Organ-Atlas</span><p>Vom Ganzkörper ins Organ, Zustand in ärztlich abgenommenen Stufen statt nackter Zahl.</p></article>
-  <article class="sx-card"><span class="sx-sub">Erklärwissen</span><p>Zu jedem Wert: was er bedeutet, welches Organ er betrifft, was als Nächstes sinnvoll ist.</p></article>
-  <article class="sx-card"><span class="sx-sub">Für die Praxis</span><p>Lokale KI ohne Abo, weniger Erklärzeit, Vorsorge zum richtigen Zeitpunkt, Anteil an jedem Check.</p></article>
+  <article class="sx-card"><span class="sx-sub">Werte im Verlauf</span><p>Die Software berechnet Labor- und Vitalwertkurven und zeigt den Vorsorgestatus. Die KI erklärt die berechneten Verläufe.</p></article>
+  <article class="sx-card"><span class="sx-sub">Organe in 3D</span><p>Ein Klick auf die Niere zeigt ihre Werte, eingeordnet in ärztlich geprüfte Stufen.</p></article>
+  <article class="sx-card"><span class="sx-sub">Befunde verstehen</span><p>Was bedeutet der Wert? Welches Organ betrifft er? Was frage ich beim nächsten Termin?</p></article>
+  <article class="sx-card"><span class="sx-sub">Für die Praxis</span><p>Das Modell soll Befundgespräche erleichtern. Geplant sind eine Basisversion ohne Abo und ein Erlösanteil für die Praxis pro gebuchter Untersuchung.</p></article>
  </div>
- <p class="sx-slide-note">App LifeLinker im Simulator, nur Demo-Daten</p>
+ <p class="sx-slide-note">App LifeLinker im Simulator · Ansicht mit Beispieldaten</p>
 </div></section>

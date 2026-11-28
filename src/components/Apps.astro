@@ -1,23 +1,23 @@
 ---
 const first = [
- { t: 'Digital Health Twin', k: 'für Patient:innen', p: 'Die eigene Gesundheitsakte auf dem iPhone, mit Organ-Dashboard und Verlauf.', href: '/dht-abnahme-3/', cta: 'DHT testen (Beispieldaten)' },
- { t: 'Atlas', k: 'für Ärzt:innen · macOS-App der Sanexio GmbH', p: 'Atlas erstellt im Arztgespräch Notizen. Nur von der Ärztin bzw. dem Arzt signierte Notizen gehen an die Praxissoftware.' },
- { t: 'Cortex Marketing', k: 'für Praxen · macOS-App der Sanexio GmbH', p: 'Marketing-Automation und Kampagnen für die Praxis und die Sanexio-Marken, zum Beispiel der Beitrags-Autopilot.' },
+ { t: 'Digital Health Twin', k: 'Für Patient:innen', p: 'Die persönliche Gesundheitsakte zeigt Messwerte nach Organ und im Verlauf.', href: '/dht-abnahme-3/', cta: 'Twin mit Beispieldaten testen' },
+ { t: 'Atlas, macOS-App von Sanexio', k: 'Für Ärzt:innen', p: 'Atlas entwirft die Gesprächsnotiz. Erst nach ärztlicher Signatur übernimmt die Praxissoftware den Text.' },
+ { t: 'Cortex Marketing, macOS-App von Sanexio', k: 'Für Praxen', p: 'Die App automatisiert Kampagnen für Praxis und Sanexio-Marken, etwa mit dem Beitrags-Autopiloten.' },
 ];
 const prod = [
- ['Praxissoftware-Anbindung','Vorsorge-Erinnerungen, Laborprogramme und Abrechnungsregeln in der vorhandenen Software.','ersetzt: Zusatzmodule im Abo'],
- ['Qualitätsmanagement','Abläufe, Hygiene- und Datenschutzpläne als lebendes Handbuch.','ersetzt: QM-Software im Abo'],
- ['Dokumente und Verwaltung','Befunde, Anfragen und Schreiben sortieren und vorbereiten, im Haus.','ersetzt: Dokumentenmanagement im Abo'],
- ['Personal und Dienstplan','Dienstplanung und Zeiterfassung für das Praxisteam.','ersetzt: Dienstplan-Software im Abo'],
- ['Webseite und Wartezimmer','Praxiswebseite, Terminwege und Bildschirme im Wartezimmer.','ersetzt: Baukasten und Wartezimmer-TV im Abo'],
+ ['Anbindung an die Praxissoftware','Vorsorgeerinnerungen, Laborprogramme und Abrechnungsregeln im gewohnten Praxissystem.','Alternative zu abonnierten Zusatzmodulen'],
+ ['Qualitätsmanagement','Ein gemeinsames Handbuch bündelt Arbeitsabläufe, Hygiene- und Datenschutzpläne.','Alternative zum QM-Abo'],
+ ['Dokumente und Verwaltung','Das Team sortiert Befunde und Anfragen und bereitet Schreiben direkt im Praxisnetz vor.','Alternative zum Abo für Dokumentenverwaltung'],
+ ['Personal und Dienstplan','Das Praxisteam plant Dienste und erfasst Arbeitszeiten.','Alternative zum Dienstplan-Abo'],
+ ['Website und Wartezimmer','Das Team pflegt Website, Online-Terminbuchung und Inhalte für die Wartezimmerbildschirme.','Alternative zu Abos für Website-Baukasten und Wartezimmer-TV'],
 ];
 ---
 <section class="sx-section" id="apps" aria-labelledby="apps-title"><div class="sx-container">
- <p class="sx-eyebrow">Cortex-Produkte · Aufbau: Nexus, Cortex, Produkte</p>
- <h2 id="apps-title">Cortex-Produkte: der Twin und was wir an SaaS ersetzen</h2>
- <p class="sx-lead">Produkte auf Cortex: SaaS, das wir in der eigenen Praxis Schritt für Schritt ersetzen.</p>
+ <p class="sx-eyebrow">Produkte auf Cortex</p>
+ <h2 id="apps-title">Vom Arztgespräch bis zum Dienstplan</h2>
+ <p class="sx-lead">Mit Cortex ersetzen wir schrittweise Software-Abos in der Praxis. Erste Anwendungen laufen im Alltag, weitere erproben wir.</p>
  <div class="sx-cg sx-g8">
   {first.map(a => <article class="sx-card"><span class="sx-sub">{a.k}</span><h3>{a.t}</h3><p>{a.p}</p>{a.href && <a class="sx-btn sx-btn-primary" href={a.href}>{a.cta}</a>}</article>)}
-  {prod.map(([t,p,r]) => <article class="sx-card"><span class="sx-sub">für Praxen</span><h3>{t}</h3><p>{p}</p><p class="sx-note">{r}</p></article>)}
+  {prod.map(([t,p,r]) => <article class="sx-card"><span class="sx-sub">Für Praxen</span><h3>{t}</h3><p>{p}</p><p class="sx-note">{r}</p></article>)}
  </div>
 </div></section>

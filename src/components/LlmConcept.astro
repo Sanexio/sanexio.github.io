@@ -6,14 +6,14 @@ const zeig = (id: string) => !nur || nur.includes(id);
 ---
 {zeig('cortex') && (<section class="sx-section" id="cortex" aria-labelledby="f6"><div class="sx-container">
  <p class="sx-eyebrow">Cortex und Nexus</p>
- <h2 id="f6">Offene Modelle in der Hand der Nutzer, darauf unsere eigene KI</h2>
+ <h2 id="f6">Wie wir KI in die Praxis bringen</h2>
  <div class="sx-cg sx-g2">
-  <article class="sx-card"><span class="sx-sub">Cortex</span><h3>Unser KI-Framework, Harness und Produktplattform in einem.</h3><p>Cortex nutzt Open-Source-Modelle, die beim Nutzer laufen und ihm gehören: auf dem iPhone und auf den Praxisrechnern. Kein Abo, keine Abhängigkeit von einem großen Anbieter, keine Daten in fremder Cloud.</p></article>
-  <article class="sx-card"><span class="sx-sub">Nexus</span><h3>Unsere eigene KI, in zwei Schritten.</h3><p><strong>Schritt 1 · heute:</strong> Lokale Open-Weight-Modelle wie Qwen, angepasst an unser medizinisches Wissen, auf eigenen Rechnern.</p><p><strong>Schritt 2 · Ziel:</strong> Ein eigenes Modell mit eigener Gewichtung, trainiert auf unserem proprietären Datensatz, auf unserem Server in Deutschland.</p></article>
+  <article class="sx-card"><span class="sx-sub">Cortex</span><h3>Unsere Plattform</h3><p>Cortex nutzt Open-Source-Modelle, die beim Nutzer laufen und ihm gehören. Kein Abo, keine Abhängigkeit von einem großen Anbieter, keine Daten in fremder Cloud.</p></article>
+  <article class="sx-card"><span class="sx-sub">Nexus</span><h3>Unser medizinisches Modell</h3><p>Modelle mit offenen Gewichten wie Qwen laufen heute auf unseren Rechnern. Wir passen sie an unser medizinisches Wissen an.</p><p>Unser Ziel sind eigene Modellgewichte. Dafür wollen wir in Deutschland auf unserem Server mit pseudonymisierten Praxisverläufen trainieren.</p></article>
  </div>
  <div class="sx-cg sx-g3">
-  <article class="sx-card"><span class="sx-sub">Eigentum</span><p>Modelle und Daten gehören dem Nutzer, nicht dem Anbieter.</p></article>
-  <article class="sx-card"><span class="sx-sub">Unabhängigkeit</span><p>Kein Preis- oder Abschaltrisiko durch die großen US-Anbieter.</p></article>
+  <article class="sx-card"><span class="sx-sub">Kontrolle vor Ort</span><p>Patient:innen entscheiden selbst, wer ihre Daten sieht.</p></article>
+  <article class="sx-card"><span class="sx-sub">Unabhängigkeit</span><p>Preise und Ausfälle externer KI-Dienste beeinflussen den lokalen Betrieb nicht.</p></article>
   <article class="sx-card"><span class="sx-sub">Datenschutz</span><p>Patientendaten verlassen nie Praxis oder iPhone.</p></article>
  </div>
  <figure class="sx-role-figure">
@@ -43,21 +43,21 @@ const zeig = (id: string) => !nur || nur.includes(id);
    </g>
   </svg>
  </figure>
- <p class="sx-slide-note">Cortex = Plattform beim Nutzer · Nexus = Kern bei Sanexio · Gewichte von Nexus verlassen nie das Haus</p>
+ <p class="sx-slide-note">Cortex läuft vor Ort. Die eigenen Nexus-Gewichte bleiben bei Sanexio.</p>
 </div></section>)}
 
 {zeig('edge') && (<section class="sx-section" id="edge" aria-labelledby="f5"><div class="sx-container">
  <p class="sx-eyebrow">Was wir anders machen</p>
- <h2 id="f5">„Wir sind nicht SaaS<sup>1</sup>. Wir geben Euch die Kontrolle zurück!“</h2>
+ <h2 id="f5">Wir sind nicht SaaS. Wir geben Usern die Kontrolle zurück!</h2>
  <p class="sx-lead">Wir sind EDGE: Die KI kommt zu den Daten, nie die Daten zur KI.</p>
  <p class="sx-note">EDGE – The AI comes to the data. Never the other way round.</p>
  <div class="sx-cg sx-g4">
-  <article class="sx-card"><span class="sx-number">E</span><h3>Edge Inference</h3><p>Die Modelle rechnen dort, wo die Daten entstehen: auf dem iPhone und im Praxisnetz. Für die Inferenz auf dem Gerät nutzen wir MLX, Apples Framework für maschinelles Lernen auf Apple Silicon.</p></article>
-  <article class="sx-card"><span class="sx-number">D</span><h3>Data Sovereignty</h3><p>Daten bleiben verschlüsselt beim Eigentümer, unter deutschem Recht und ohne US-Cloud.</p></article>
-  <article class="sx-card"><span class="sx-number">G</span><h3>Guardrails</h3><p>Allowlist an jedem Ausgang, Datenklassen, Audit-Log und Ablehnung im Zweifel.</p></article>
-  <article class="sx-card"><span class="sx-number">E</span><h3>Exclusive Model</h3><p>Nexus: Open-Weight-Basis, mit LoRA auf unseren proprietären Daten feinjustiert.</p></article>
+  <article class="sx-card"><span class="sx-number">E</span><h3>Edge Inference</h3><p>Für unsere erste KI nutzen wir MLX, Apples Software für maschinelles Lernen auf eigenen Chips. Die Modelle rechnen dort, wo die Daten entstehen: auf dem iPhone und im Praxisnetz. Andere Betriebssysteme werden folgen.</p></article>
+  <article class="sx-card"><span class="sx-number">D</span><h3>Data Sovereignty</h3><p>Befunde sollen verschlüsselt auf dem iPhone und im Praxisnetz bleiben. Dafür ist kein Cloud-Dienst nötig.</p></article>
+  <article class="sx-card"><span class="sx-number">G</span><h3>Guardrails</h3><p>Die Software prüft Ziel und Datenklasse, protokolliert die Entscheidung und lässt nur freigegebene Übertragungen zu.</p></article>
+  <article class="sx-card"><span class="sx-number">E</span><h3>Exclusive Model</h3><p>Nexus baut auf Modellen mit offenen Gewichten auf. Wir passen sie auf unserem Server an medizinische Aufgaben an.</p></article>
  </div>
- <p class="sx-slide-note"><sup>1</sup> SaaS, Software as a Service: gemietete Software aus der Cloud, monatlich bezahlt; die Daten liegen beim Anbieter.</p>
+ <p class="sx-slide-note">SaaS steht für „Software as a Service“. Kund:innen nutzen die Software als Dienst, häufig im Abonnement.</p>
 </div></section>)}
 
 <style>

@@ -27,37 +27,37 @@
     ]
   },
   "aktuell": {
-    "ueberschrift": "DHT aktuell: Dein Körper in 3D",
-    "einleitung": "Stand 25.11.2026: Das ist neu, das prüfen wir gerade, und daran bauen wir noch. Ehrlich sortiert, alles mit Beispieldaten.",
+    "ueberschrift": "Was Sie im 3D-Prototyp heute ausprobieren können",
+    "einleitung": "Das Körpermodell läuft im Browser. Die App testen wir auf iPhones. Beide zeigen Beispieldaten.",
     "eintraege": [
       {
-        "titel": "3D-Twin mit sechs Ebenen",
-        "text": "Sechs Ebenen bis hinunter zu Nerven und Gefäßen, als männliche und weibliche Figur, mit Messreihen je Organ. Alles mit Beispieldaten.",
+        "titel": "Sechs Ebenen in 3D",
+        "text": "Beide Modelle, männlich und weiblich, zeigen sechs Ebenen bis zu Nerven und Gefäßen sowie Beispieldaten je Organ.",
         "status": "neu"
       },
       {
         "titel": "Neues Dashboard",
-        "text": "Der Twin in der Mitte, Navigation links, Erklärungen rechts. Den ganzen Körper greifen und verschieben, Messpunkte bleiben stabil.",
+        "text": "Links wählen Sie die Ansicht, rechts lesen Sie die Erklärung. Verschieben Sie den Körper in der Mitte, bleiben die Messpunkte am Organ.",
         "status": "in Abnahme"
       },
       {
         "titel": "Wo tut es weh?",
-        "text": "Das Anamnese-Werkzeug fragt, wo es wehtut. Deine Eingaben bleiben auf Deinem Gerät, nichts wird übertragen.",
+        "text": "Sie geben an, wo Sie Schmerzen spüren. Ihre Angaben zur Anamnese bleiben auf dem Gerät.",
         "status": "in Abnahme"
       },
       {
-        "titel": "Schneller Start",
-        "text": "Erster sichtbarer Körper am Desktop in 0,71 statt 1,51 Sekunden (lokal gemessen), am Handy mit 4G in 2,2.",
+        "titel": "Kürzere Ladezeit",
+        "text": "Das Modell erschien im lokalen Desktop-Test nach 0,71 Sekunden, zuvor nach 1,51. Am Handy über 4G waren es 2,2 Sekunden.",
         "status": "neu"
       },
       {
-        "titel": "Reise durch Deinen Körper",
-        "text": "9 Laborprogramme und 17 Check-up-Untersuchungen, anschaulich in 3D erklärt. Schon live.",
+        "titel": "Labor und Check-ups in 3D",
+        "text": "Die Diagnostikseite erklärt bereits 9 Laborprogramme und 17 Check-up-Untersuchungen.",
         "status": "neu"
       },
       {
-        "titel": "iPhone-App mit Haut-Ebene",
-        "text": "Sieben Ebenen einschließlich Haut, in Gerätetests auf echten iPhones. Die Face-ID- und HealthKit-Abnahme steht noch aus.",
+        "titel": "iPhone-App im Gerätetest",
+        "text": "Die App zeigt sieben Ebenen einschließlich Haut. Die Freigabetests für Face ID und HealthKit stehen aus.",
         "status": "in Entwicklung"
       }
     ],

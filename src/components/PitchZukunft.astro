@@ -1,84 +1,84 @@
 ---
-const partner = [['Eterno','Erster strategischer Partner. Dr. Stracke praktiziert bereits bei Eterno in Frankfurt; dort lassen sich Twin und Cortex im laufenden Betrieb erproben und über weitere Standorte ausrollen.'],['Partnerpraxen','Untersuchen, beraten, kuratieren die KI-Ergebnisse ärztlich. Bleiben verantwortlich für ihre Patientendaten. Anteil an jedem Paket.'],['Labore','Liefern die Werte aus Check-up und Longevity-Paketen. Sie bilden den Kern des Datenspiegels.'],['Apple','iPhone und Apple Health als Datenquelle mit Einwilligung, App Store als Vertrieb, MLX als Laufzeit für das Modell auf dem Gerät.'],['Hersteller der Praxissoftware','Die Schnittstelle zur Praxissoftware liefert Labor, Diagnosen und Vorsorgestatus, abgesichert durch unsere Schranke.'],['Offene Sprachmodelle','Basis für die Modelle auf iPhone und Praxisrechnern, etwa Qwen unter Apache-Lizenz. Die medizinische Stärke kommt aus unserem Feintuning.'],['Apotheken, Kliniken, Versicherungen','Andere Leistungserbringer und Kostenträger, mit denen Patient:innen ihren Twin teilen können, wenn sie das wollen.']];
-const stufen = [['Stufe 1','Unsere Praxis läuft auf Cortex','Wir beginnen im eigenen Haus. Unsere Abläufe laufen schon über Cortex, und der Twin startet mit unseren Patient:innen als Organ-Dashboard, das jedes Organsystem mit seinen Werten verständlich macht.','Vorhanden: 55 Werkzeuge, Datenschranke, Twin-Prototyp, Installer','heute bis Mitte 2027'],['Stufe 2','Cortex festigt sich, Nexus wächst','Cortex wird zur geschlossenen Plattform. Parallel entsteht Nexus aus Open-Weight-Modellen, die wir mit unserem Wissen feinjustieren. Das Dashboard wächst Organ für Organ, und jedes Modell muss sich messbar beweisen.','Gewichte bleiben im Haus','2027'],['Stufe 3','Eigene Gewichte, sicheres Netz','Nexus bekommt eigene Gewichte aus unserem Datensatz. Zugleich sichern wir das Netz mit getrennten Mandanten, geprüften Identitäten und klaren Wegen für Anfragen und Lernsignale. Dann öffnen wir für weitere Praxen.','Angriffstest vor jedem Start','2027 bis 2028'],['Stufe 4','Der Twin geht hinaus','Der holistische Twin kommt in den App Store. Weitere Partnerpraxen schließen sich an, Schritt für Schritt und nach Freigabe.','Nur nach ausdrücklicher Entscheidung','ab 2028']];
+const partner = [['Eterno · erster strategischer Partner','Dr. Stracke praktiziert bei Eterno in Frankfurt. Dort lassen sich Twin und Cortex im Alltag erproben. Weitere Standorte kommen später infrage.'],['Partnerpraxen · Untersuchung und Beratung','Die Praxen untersuchen, beraten und prüfen die KI-Ergebnisse. Sie verantworten die Patientendaten und erhalten im Modell einen Anteil am Paket.'],['Labore · Messwerte für den Twin','Laborbefunde aus Check-ups und Longevity-Paketen liefern die Werte für die Verlaufskurven im Twin.'],['Apple · technische Infrastruktur','Vorgesehen sind Apple Health als Datenquelle mit Einwilligung, MLX für die KI auf dem iPhone und der App Store für den Vertrieb.'],['Anbieter von Praxissoftware · Schnittstellen','Die Schnittstelle zum Praxissystem liefert Laborwerte, Diagnosen und Vorsorgestatus. Eine Zugriffskontrolle sichert den Datenaustausch.'],['Offene Sprachmodelle · technische Basis','Offene Modelle wie Qwen können wir auf eigenen Rechnern an medizinische Aufgaben anpassen.'],['Apotheken, Kliniken und Versicherungen','Später sollen Patient:innen auch für diese Stellen gezielt Informationen aus ihrem Twin freigeben können.']];
+const stufen = [['Stufe 1','Den Twin beim Check-up erproben','Cortex unterstützt bereits Abläufe in unserer Praxis. Mit dem Organ-Dashboard wollen wir im nächsten Schritt prüfen, wie gut unsere Patient:innen ihre Werte nach dem Check-up verstehen.','Heute vorhanden sind 55 Werkzeuge, die Kontrolle der Datenübertragung, der Twin-Prototyp und ein Installationsprogramm.','bis Mitte 2027'],['Stufe 2','Das Organ-Dashboard ausbauen','Wir führen die Cortex-Bausteine zu einer Plattform zusammen und passen offene Basismodelle für Nexus an. Weitere Organe kommen ins Dashboard, sobald das jeweilige Modell die Prüfung besteht.','Die eigenen Modellgewichte verbleiben bei Sanexio.','2027'],['Stufe 3','Weitere Praxen anbinden','Nexus soll eigene, mit geeigneten Praxisdaten trainierte Modellgewichte erhalten. Für den Anschluss weiterer Praxen trennen wir die Datenbestände und prüfen Identitäten und Datenwege.','Ein Sicherheitstest ist vor jeder Inbetriebnahme vorgesehen.','2027 bis 2028'],['Stufe 4','Den Twin im App Store anbieten','Nach der Freigabe wollen wir die App mit der Körper- und Organansicht veröffentlichen und schrittweise weitere Partnerpraxen anschließen.','Die Veröffentlichung setzt eine ausdrückliche Freigabe voraus.','ab 2028']];
 ---
 <section class="sx-section sx-soft" id="partner" aria-labelledby="f20"><div class="sx-container">
- <p class="sx-eyebrow">Business Model Canvas · Schlüsselpartner</p>
- <h2 id="f20">Mit wem wir das Modell umsetzen</h2>
+ <p class="sx-eyebrow">Partner und Infrastruktur</p>
+ <h2 id="f20">Wer den Twin in die Versorgung bringt</h2>
  <div class="sx-cg sx-g7">{partner.map(([t,p]) => <article class="sx-card"><span class="sx-sub">{t}</span><p>{p}</p></article>)}</div>
- <p class="sx-slide-note">Partnerrollen als Zielbild; Verträge mit Laboren, Herstellern und Prüfern sind noch nicht geschlossen</p>
+ <p class="sx-slide-note">Verträge mit Laboren, Herstellern und externen Prüfern stehen noch aus.</p>
 </div></section>
 
 <section class="sx-section" id="kosten" aria-labelledby="f21"><div class="sx-container">
- <p class="sx-eyebrow">Business Model Canvas · Kostenstruktur</p>
- <h2 id="f21">Kosten und Rechnung je Kundengruppe</h2>
- <article class="sx-card sx-card-breit"><span class="sx-sub">Feste Kosten</span>
-  <ul class="sx-list"><li>Entwicklung von App, Cortex Local und Cortex</li><li>Ärztliche Zeit für die Kuratierung</li><li>Verschlüsselter, gespiegelter Speicher für Gesundheitsdaten</li><li>Trainings-Grafikkarte, erst nach Messlauf</li><li>Gutachten zur Regulierung mit externer Prüfung</li></ul>
-  <p style="margin-top:1rem"><strong>Variable Kosten fallen kaum an: die KI läuft auf dem iPhone und in der Praxis.</strong></p></article>
+ <p class="sx-eyebrow">Kosten und Erlöse</p>
+ <h2 id="f21">Was der Aufbau kostet und welchen Erlös wir je Praxis ansetzen</h2>
+ <article class="sx-card sx-card-breit"><span class="sx-sub">Die wichtigsten Kosten</span>
+  <ul class="sx-list"><li>Entwicklung der App, der Plattform Cortex und der Praxisversion Cortex Local</li><li>Ärztliche Zeit für die Prüfung von Regeln, Befunden und Modellergebnissen</li><li>Verschlüsselter, gespiegelter Speicher für Gesundheitsdaten</li><li>Grafikkarte für das Training, sobald ein Testlauf den Bedarf zeigt</li><li>Externe Gutachten zur regulatorischen Einordnung</li></ul>
+  <p style="margin-top:1rem"><strong>Bei lokal ausgeführten Anfragen entfällt die Gebühr für einen Cloud-Dienst. Hardware, Wartung und ärztliche Prüfung verursachen weiterhin Kosten.</strong></p></article>
  <div class="sx-cg sx-g2">
-  <article class="sx-card sx-kpi"><span class="sx-sub">B2C · je aktiver Person</span><span class="sx-number">≈ 252 €</span><p><strong>Erlös für Sanexio pro Jahr</strong></p><p>240 € Anteil am Check (ein Check zu 800 € pro Jahr)</p><p>12 € Twin Plus (10 % abonnieren)</p><p class="sx-note">Kaum Infrastrukturkosten: Inferenz auf dem iPhone, Nexus nur bei Bedarf</p></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">B2B · je Partnerpraxis</span><span class="sx-number">≈ 76.100 €</span><p><strong>Erlös für Sanexio pro Jahr, bei 300 aktiven Nutzer:innen</strong></p><p>Die Praxis verdient parallel rund 168.000 €</p><p>Einstieg für die Praxis: 0 €</p><p class="sx-note">Kaum Infrastrukturkosten: lokale Modelle auf vorhandenen Praxisrechnern</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Je aktiver Person ·</span><span class="sx-number">rund 252 €</span><p><strong>Jahreserlös für Sanexio im Basismodell</strong></p><p>240 € Anteil am Check (ein Check zu 800 € pro Jahr)</p><p>12 € Twin Plus (10 % abonnieren)</p><p class="sx-note">Kaum Infrastrukturkosten: Inferenz auf dem iPhone, Nexus nur bei Bedarf</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Je Partnerpraxis mit 300 aktiven Nutzer:innen ·</span><span class="sx-number">rund 76.100 €</span><p><strong>Jahreserlös für Sanexio</strong></p><p>Die Praxis verdient parallel rund 168.000 €</p><p>Einstieg für die Praxis: 0 €</p><p class="sx-note">Kaum Infrastrukturkosten: lokale Modelle auf vorhandenen Praxisrechnern</p></article>
  </div>
- <p class="sx-slide-note">Alle Werte aus den Basisannahmen des Rechenmodells; Investitionsbeträge nennen wir, wenn Angebote vorliegen</p>
+ <p class="sx-slide-note">Die Modellwerte enthalten Check-ups, anteilige Abos und auf Praxisebene zusätzlich Upgrades. Investitionsbeträge folgen, sobald Angebote vorliegen.</p>
 </div></section>
 
 <section class="sx-section sx-soft" id="umsatz" aria-labelledby="f22"><div class="sx-container">
- <p class="sx-eyebrow">Business Case · Rechenmodell</p>
- <h2 id="f22">Umsatz in drei Szenarien bis 2029</h2>
- <p class="sx-lead">Erlös Sanexio, Mio €</p>
+ <p class="sx-eyebrow">Erlösmodell bis 2029</p>
+ <h2 id="f22">Welcher Jahreserlös mit 51 Praxen möglich wäre</h2>
+ <p class="sx-lead">Jährlicher Erlös für Sanexio im Basisszenario, in Mio. €</p>
  <div class="sx-cg sx-g3">
-  <article class="sx-card sx-kpi"><span class="sx-sub">2027 · nur Partner Nr. 1</span><span class="sx-number">0,20</span><p>Mio € Sanexio</p></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">2028 · Basisszenario</span><span class="sx-number">1,14</span><p>Mio € Sanexio</p></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">2029 · Basisszenario</span><span class="sx-number">4,31</span><p>Mio € Sanexio</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">2027 · erste Praxis ·</span><span class="sx-number">0,20</span><p>Mio. €</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">2028 · 11 Praxen ·</span><span class="sx-number">1,14</span><p>Mio. €</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">2029 · 51 Praxen ·</span><span class="sx-number">4,31</span><p>Mio. €</p></article>
  </div>
- <h3 class="sx-h3-gap">2029 in drei Szenarien (Erlös Sanexio, Mio €)</h3>
+ <h3 class="sx-h3-gap">Sanexio-Erlös 2029 je nach Zahl der Partnerpraxen</h3>
  <div class="sx-bar-row">
-  <article class="sx-card sx-kpi"><span class="sx-sub">konservativ</span><span class="sx-number">2,41</span><div class="sx-bar" role="img" aria-label="2,41 von 8,12 Mio. Euro"><i style="width:30%"></i></div></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">Basis</span><span class="sx-number">4,31</span><div class="sx-bar" role="img" aria-label="4,31 von 8,12 Mio. Euro"><i style="width:53%"></i></div></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">ambitioniert</span><span class="sx-number">8,12</span><div class="sx-bar" role="img" aria-label="8,12 von 8,12 Mio. Euro"><i style="width:100%"></i></div></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Konservativ ·</span><span class="sx-number">2,41 Mio. €</span><div class="sx-bar" role="img" aria-label="2,41 von 8,11 Mio. Euro"><i style="width:30%"></i></div></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Basis ·</span><span class="sx-number">4,31 Mio. €</span><div class="sx-bar" role="img" aria-label="4,31 von 8,11 Mio. Euro"><i style="width:53%"></i></div></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Ambitioniert ·</span><span class="sx-number">8,11 Mio. €</span><div class="sx-bar" role="img" aria-label="8,11 von 8,11 Mio. Euro"><i style="width:100%"></i></div></article>
  </div>
- <h3 class="sx-h3-gap">Basisszenario</h3>
+ <h3 class="sx-h3-gap">Erlöse für Sanexio und Praxen im Basisszenario</h3>
  <div class="sx-card sx-card-breit"><div class="sx-table-wrap"><table class="sx-table"><thead><tr><td></td><th scope="col">2027</th><th scope="col">2028</th><th scope="col">2029</th></tr></thead><tbody>
   <tr><th scope="row">Partnerpraxen</th><td>1</td><td>11</td><td>51</td></tr>
-  <tr><th scope="row">Sanexio</th><td>0,20 Mio €</td><td>1,14 Mio €</td><td>4,31 Mio €</td></tr>
-  <tr><th scope="row">Anteil der Praxen</th><td>0,45 Mio €</td><td>2,52 Mio €</td><td>9,52 Mio €</td></tr>
+  <tr><th scope="row">Erlös Sanexio</th><td>0,20 Mio. €</td><td>1,14 Mio. €</td><td>4,31 Mio. €</td></tr>
+  <tr><th scope="row">Erlös der Praxen</th><td>0,45 Mio. €</td><td>2,52 Mio. €</td><td>9,52 Mio. €</td></tr>
  </tbody></table></div></div>
- <p class="sx-slide-note"><strong>Annahmen:</strong> Partner Nr. 1: 800, 1.500, 2.000 aktive Nutzer:innen. Weitere Partner: je 300. Jede aktive Person bucht einen Check pro Jahr zu 800 €, davon 30 % an Sanexio. 10 % Twin Plus zu 9,90 €/Monat. 30 % der Praxen buchen ein Upgrade zu 149 €/Monat. Konservativ: 25 weitere Partner bis 2029. Ambitioniert: 100.</p>
- <p class="sx-slide-note sx-slide-note-2">Alle Werte sind Annahmen zur Validierung im Pilot, keine Prognose. Partnerpraxis Nr. 1 zu denselben Bedingungen wie alle weiteren</p>
+ <p class="sx-slide-note">Wir rechnen in der ersten Praxis mit 800, 1.500 und 2.000 aktiven Personen, in jeder weiteren mit 300. Pro Person und Jahr setzen wir einen Check zu 800 € an, davon 30 % für Sanexio. 10 % der Aktiven buchen Twin Plus für 9,90 € im Monat. 30 % der Praxen wählen ein Upgrade für 149 € im Monat. Für 2029 rechnen wir je nach Szenario mit 25, 50 oder 100 weiteren Praxen.</p>
+ <p class="sx-slide-note sx-slide-note-2">Die Zahlen sind Szenarien. Im Pilotbetrieb prüfen wir insbesondere Buchungen und Zahlungsbereitschaft. Für die erste Praxis gelten dieselben Konditionen wie für alle weiteren.</p>
 </div></section>
 
 <section class="sx-section" id="markt" aria-labelledby="f23"><div class="sx-container">
  <p class="sx-eyebrow">Marktpotenzial</p>
- <h2 id="f23">Vom Gesamtmarkt zu unserem Anteil</h2>
+ <h2 id="f23">Wir starten mit Check-ups für Selbstzahler:innen</h2>
  <div class="sx-cg sx-g3">
-  <article class="sx-card sx-kpi"><span class="sx-sub">Gesamtmarkt</span><span class="sx-number">65 Mrd. €</span><p><strong>Gesundheitsausgaben privater Haushalte</strong></p><p>65 Mrd. € gaben private Haushalte in Deutschland 2024 selbst für Gesundheit aus, 12,1 % aller Gesundheitsausgaben von 538 Mrd. €.</p><p class="sx-note">Statistisches Bundesamt, Pressemitteilung Nr. 115 (April 2026), Gesundheitsausgaben 2024</p></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">Adressierbarer Markt</span><span class="sx-number">≥ 2,4 Mrd. €</span><p><strong>Selbstzahlerleistungen in Praxen</strong></p><p>Mindestens 2,4 Mrd. € pro Jahr für individuelle Gesundheitsleistungen in Arztpraxen. Das ist eine Mindestschätzung; Versicherte unter 18 und über 80 sind nicht erfasst.</p><p class="sx-note">Medizinischer Dienst Bund, IGeL-Report 2024 (forsa-Befragung, 2.013 Versicherte)</p></article>
-  <article class="sx-card sx-kpi"><span class="sx-sub">Unser Ziel</span><span class="sx-number">13,8 Mio. €</span><p><strong>Ziel 2029</strong></p><p>Rund 13,8 Mio. € Umsatz im Verbund 2029 mit 51 Partnerpraxen (Basisszenario), davon 4,3 Mio. € bei Sanexio.</p><p class="sx-note">Eigenes Rechenmodell</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Marktumfeld</span><span class="sx-number">65 Mrd. €</span><p><strong>Gesundheitsausgaben privater Haushalte und Organisationen ohne Erwerbszweck</strong></p><p>65 Mrd. € gaben private Haushalte in Deutschland 2024 selbst für Gesundheit aus, 12,1 % aller Gesundheitsausgaben von 538 Mrd. €.</p><p class="sx-note">Statistisches Bundesamt, Pressemitteilung Nr. 115 (April 2026), Gesundheitsausgaben 2024</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">IGeL in Deutschland</span><span class="sx-number">mindestens 2,4 Mrd. € im Jahr</span><p><strong>Ausgaben gesetzlich Versicherter</strong></p><p>Mindestens 2,4 Mrd. € pro Jahr für individuelle Gesundheitsleistungen in Arztpraxen. Das ist eine Mindestschätzung; Versicherte unter 18 und über 80 sind nicht erfasst.</p><p class="sx-note">Medizinischer Dienst Bund, IGeL-Report 2024 (forsa-Befragung, 2.013 Versicherte)</p></article>
+  <article class="sx-card sx-kpi"><span class="sx-sub">Basisszenario 2029</span><span class="sx-number">rund 13,8 Mio. €</span><p><strong>Jahreserlös von Sanexio und Partnerpraxen zusammen</strong></p><p>Rund 13,8 Mio. € Umsatz im Verbund 2029 mit 51 Partnerpraxen (Basisszenario), davon 4,3 Mio. € bei Sanexio.</p><p class="sx-note">Eigenes Rechenmodell</p></article>
  </div>
- <p class="sx-claim">Wachstumsfeld: Digital Twins in der Medizin weltweit 4,47 Mrd. USD (2025), Prognose 59,94 Mrd. USD (2030) laut MarketsandMarkets. Andere Studien liegen deutlich darunter.</p>
- <p class="sx-slide-note">Quellen: Destatis 2026; MD Bund, IGeL-Report 2024; MarketsandMarkets, Digital Twins in Healthcare Market (2025)</p>
+ <p class="sx-claim">Den Weltmarkt für medizinische Digital Twins schätzte MarketsandMarkets 2025 auf 4,47 Mrd. US-Dollar. Der Anbieter prognostizierte für 2030 59,94 Mrd. US-Dollar. Andere Marktstudien liegen deutlich darunter.</p>
+ <p class="sx-slide-note">Quellen sind Destatis (Gesundheitsausgaben in Deutschland 2024, veröffentlicht 2026), der IGeL-Report 2024 des Medizinischen Dienstes Bund und MarketsandMarkets (2025).</p>
 </div></section>
 
 <section class="sx-section sx-soft" id="stufenplan" aria-labelledby="f24"><div class="sx-container">
- <p class="sx-eyebrow">Stufenplan</p>
- <h2 id="f24">In vier Stufen vom eigenen Haus in den App Store</h2>
- <div class="sx-cg sx-g4">{stufen.map(([s,t,p,n,z]) => <article class="sx-card"><span class="sx-step">{s} · {z}</span><h3>{t}</h3><p>{p}</p><p class="sx-note"><strong>{n}</strong></p></article>)}</div>
- <p class="sx-claim">Unser Grundsatz: Jede Stufe endet mit einem Nachweis der Wirkung. Bis der verschlüsselte Speicher samt Wiederherstellung geprüft ist, arbeitet der Twin nur mit Testdaten.</p>
- <p class="sx-slide-note">Zeithorizonte sind ein Vorschlag zur Bestätigung</p>
+ <p class="sx-eyebrow">Produktentwicklung</p>
+ <h2 id="f24">Von der ersten Erprobung in Frankfurt bis zum Start im App Store</h2>
+ <div class="sx-cg sx-g4">{stufen.map(([s,t,p,n,z]) => <article class="sx-card"><span class="sx-step">{s} · {z} ·</span><h3>{t}</h3><p>{p}</p><p class="sx-note"><strong>{n}</strong></p></article>)}</div>
+ <p class="sx-claim">Jede Stufe endet mit einer Prüfung. Bis Speicher und Datenwiederherstellung erfolgreich getestet sind, nutzt der Twin ausschließlich Testdaten.</p>
+ <p class="sx-slide-note">Die Zeiträume sind Planungsziele.</p>
 </div></section>
 
 <section class="sx-section" id="investoren" aria-labelledby="f25"><div class="sx-container">
- <p class="sx-eyebrow">Nächste Schritte</p>
- <h2 id="f25">Was wir jetzt gemeinsam anstoßen</h2>
+ <p class="sx-eyebrow">Finanzierung der Pilotphase</p>
+ <h2 id="f25">Wir suchen Kapital für die Pilotphase</h2>
  <div class="sx-cg sx-g2">
   <article class="sx-card sx-card-schritte">
    <ol class="sx-steps">
-    <li><span class="sx-number">1</span><div><h3>Den Pilot starten</h3><p>Unsere eigenen Patient:innen erleben den Twin als Erste. Vorher legen wir fest, woran wir den Nutzen messen, damit jeder Fortschritt sichtbar wird.</p></div></li>
-    <li><span class="sx-number">2</span><div><h3>Drei bis fünf Partnerpraxen gewinnen</h3><p>Zuerst die Kolleg:innen der Praxisgemeinschaft, dann befreundete Ärzt:innen. Sie testen mit, bringen ihr Wissen ein und wachsen mit uns.</p></div></li>
-    <li><span class="sx-number">3</span><div><h3>Das Fundament finanzieren</h3><p>Mit Ihrer Unterstützung bauen wir den sicheren Speicher, klären die Regulierung und schaffen ärztliche Zeit für die Kuratierung. Alles Weitere wächst ohne laufende Cloud-Kosten.</p></div></li>
+    <li><span class="sx-number">1 ·</span><div><h3>Den Pilotbetrieb in Frankfurt starten.</h3><p>Verstehen Patient:innen nach dem Check-up, wie sich ihr Befund verändert hat? Vor dem ersten Einsatz legen wir fest, wie wir das messen.</p></div></li>
+    <li><span class="sx-number">2 ·</span><div><h3>Drei bis fünf Partnerpraxen gewinnen.</h3><p>Mit Kolleg:innen aus der Praxisgemeinschaft und unserem Netzwerk erproben wir den Twin unter unterschiedlichen Praxisbedingungen.</p></div></li>
+    <li><span class="sx-number">3 ·</span><div><h3>Den Aufbau finanzieren.</h3><p>Wir suchen ein Darlehen für sicheren Speicher, regulatorische Gutachten und ärztliche Zeit zur Prüfung der Inhalte. Über die Konditionen möchten wir mit Ihnen sprechen.</p></div></li>
    </ol>
-   <div class="sx-actions"><a class="sx-btn sx-btn-primary" href="mailto:s.stracke@sanexio.de?subject=Sanexio%20Investition">Gespräch aufnehmen</a><a class="sx-btn" href="/dht-abnahme-3/">DHT testen (Beispieldaten)</a></div>
+   <div class="sx-actions"><a class="sx-btn sx-btn-primary" href="mailto:s.stracke@sanexio.de?subject=Sanexio%20Investition">Pilotfinanzierung besprechen</a><a class="sx-btn" href="/dht-abnahme-3/">Twin-Demo öffnen</a></div>
   </article>
-  <figure class="sx-media sx-media-fill"><img src="/pitch-medien/pitch-f883ff606a89.webp" alt="Kampagnenbild Reise durch den Körper: anatomisches Herz" loading="lazy" width="1280" height="1280" /><figcaption>Sanexio · Cortex · powered by Nexus · Bild: Kampagne „Reise durch den Körper“</figcaption></figure>
+  <figure class="sx-media sx-media-fill"><img src="/pitch-medien/pitch-f883ff606a89.webp" alt="Anatomisches Herz aus der Kampagne „Reise durch den Körper“" loading="lazy" width="1280" height="1280" /><figcaption>Sanexio · Cortex · powered by Nexus · Bild: Kampagne „Reise durch den Körper“</figcaption></figure>
  </div>
 </div></section>

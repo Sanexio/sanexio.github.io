@@ -4,12 +4,18 @@ interface Props {
   program: { praxis_slug: string; praxis_name: string; image_webp: string | null };
 }
 const { program } = Astro.props;
-const motif = laborVisuals[program.praxis_slug];
+const pitchMotifs: Record<string, string> = {
+  'labor-basis-check': 'Herz, Leber und Nieren im Überblick',
+  'labor-erweiterter-check': 'Herz, Gefäße, Leber und Nieren im Überblick',
+  'labor-risikoprofil': 'Blutgefäß im Längsschnitt mit Blutzellen und Plaqueablagerung',
+  'labor-nierenwerte': 'Beide Nieren mit verzweigten Gefäßen',
+};
+const motif = pitchMotifs[program.praxis_slug] ?? laborVisuals[program.praxis_slug];
 if (program.image_webp && !motif) throw new Error(`Motivbeschreibung fehlt: ${program.praxis_slug}`);
 ---
 <div class="labor-visual">
   {program.image_webp ? <img src={program.image_webp} width="960" height="540"
-    loading="lazy" decoding="async" alt={`${program.praxis_name}: ${motif}`} />
+    loading="lazy" decoding="async" alt={motif} />
     : <span class="sx-note">{program.praxis_name}</span>}
 </div>
 <style>
