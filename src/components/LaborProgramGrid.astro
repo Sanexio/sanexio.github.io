@@ -1,5 +1,6 @@
 ---
 import laborData from '../data/laborprogramme.json';
+import { anzeigename } from '../data/pitch-anzeigenamen';
 import LaborVisual from './LaborVisual.astro';
 import LaborPrice from './LaborPrice.astro';
 
@@ -10,9 +11,9 @@ if (new Set(programmes.map(p => p.praxis_slug)).size !== programmes.length) thro
 <div class="sx-cg sx-g9">
   {programmes.map(program => <article class="sx-card journey-card">
     <LaborVisual {program} />
-    <h3>{program.praxis_name}</h3>
+    <h3>{anzeigename(program.praxis_name)}</h3>
     <LaborPrice amount={program.goae_summe_eur} />
-    <a class="sx-btn" href={`/diagnostik/${program.praxis_slug}/`} aria-label={`Details zu ${program.praxis_name}`}>Programm ansehen</a>
+    <a class="sx-btn" href={`/diagnostik/${program.praxis_slug}/`} aria-label={`Details zu ${anzeigename(program.praxis_name)}`}>Programm ansehen</a>
   </article>)}
   <article class="sx-card journey-card">
     <img class="genetik-motif" src="/images/diagnostik/genetik-beratung.webp" alt="Hämoglobin als Beispiel für den Aufbau eines Moleküls" width="800" height="800" loading="lazy" decoding="async" />

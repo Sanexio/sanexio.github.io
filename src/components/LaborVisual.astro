@@ -1,5 +1,6 @@
 ---
 import { laborVisuals } from '../data/labor-visuals';
+import { anzeigename } from '../data/pitch-anzeigenamen';
 interface Props {
   program: { praxis_slug: string; praxis_name: string; image_webp: string | null };
 }
@@ -16,7 +17,7 @@ if (program.image_webp && !motif) throw new Error(`Motivbeschreibung fehlt: ${pr
 <div class="labor-visual">
   {program.image_webp ? <img src={program.image_webp} width="960" height="540"
     loading="lazy" decoding="async" alt={motif} />
-    : <span class="sx-note">{program.praxis_name}</span>}
+    : <span class="sx-note">{anzeigename(program.praxis_name)}</span>}
 </div>
 <style>
   .labor-visual { display: grid; place-items: center; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; border: 1px solid var(--sx-c-line); border-radius: var(--sx-radius-card); background: var(--sx-c-bg-soft); }

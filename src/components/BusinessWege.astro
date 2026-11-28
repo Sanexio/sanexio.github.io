@@ -1,6 +1,6 @@
 ---
 import labor from '../data/laborprogramme.json';
-import unters from '../data/untersuchungen.json';
+import { anzeigename } from '../data/pitch-anzeigenamen';
 import '../styles/businesswege.css';
 
 const progs = Array.isArray(labor) ? labor : Object.values(labor).find(Array.isArray);
@@ -11,10 +11,9 @@ const cent = (wert: number) => Math.round(wert * 100) / 100;
 const euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
 const zeilen = [
   { name: 'Check-up (Modellannahme)', preis: 800, quelle: 'annahme' },
-  ...progs.map((p) => ({ name: 'Labor · ' + p.praxis_name, preis: p.goae_summe_eur, quelle: 'goae', slug: p.praxis_slug })),
+  ...progs.map((p) => ({ name: 'Labor · ' + anzeigename(p.praxis_name), preis: p.goae_summe_eur, quelle: 'goae', slug: p.praxis_slug })),
 ].map((z) => ({ ...z, praxis: cent(z.preis * 0.7), sanexio: cent(z.preis * 0.3) }));
 const summen = zeilen.reduce((s, z) => ({ preis: cent(s.preis + z.preis), praxis: cent(s.praxis + z.praxis), sanexio: cent(s.sanexio + z.sanexio) }), { preis: 0, praxis: 0, sanexio: 0 });
-const namen = unters.map((u) => u.name).join(', ');
 const regler = [
   { id: 'praxen', label: 'Partnerpraxen', min: 1, max: 100, step: 1, value: 11 },
   { id: 'menge', label: 'Buchungen je Praxis und Monat', min: 5, max: 200, step: 5, value: 25 },
@@ -64,7 +63,6 @@ const crowdRegler = [
     <tfoot><tr><th scope="row">Summe bei je einer Buchung</th><td>{euro.format(summen.preis)}</td><td>{euro.format(summen.praxis)}</td><td>{euro.format(summen.sanexio)}</td></tr></tfoot>
   </table></div></div>
   <p class="sx-slide-note">Je nach Ausstattung der Partnerpraxis kommen weitere Untersuchungen infrage. Dazu zählen Spirometrie, Belastungs-EKG, Eye Check, Carotis-Duplex, Echokardiographie, Tauchtauglichkeit, Body-Check, Kardio-Check, Komplett-Check und Gesundheits-Check (FINDRISK, Herz-Kreislauf-Risiko, Leber). Beim Ultraschall sind Bauchorgane, Bauchspeicheldrüse, Leber und Gallenblase, Nieren und Harnwege, Prostata und Harnblase, Schilddrüse sowie ein Komplett-Check vorgesehen. Die Preise sind offen.</p>
-  <p class="sx-slide-note sx-slide-note-2">Laborpreise nach GOÄ (Summe je Programm). {labor.disclaimer_sie}</p>
 </div></section>
 <section id="rechner" class="sx-section sx-soft"><div class="sx-container">
   <p class="sx-eyebrow">Interaktiver Erlösrechner</p>
